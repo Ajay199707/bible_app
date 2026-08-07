@@ -95,11 +95,21 @@ function playWebSpeech(text) {
           const n = (v.name || '').toLowerCase();
           return l.includes('ta') || n.includes('tamil');
         });
-        if (taVoice) currentUtterance.voice = taVoice;
+        if (taVoice) {
+          currentUtterance.voice = taVoice;
+        } else {
+          // No Tamil voice found on system, fallback immediately
+          playAudioStream(text);
+          return;
+        }
       } else {
         const enVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
         if (enVoice) currentUtterance.voice = enVoice;
       }
+    } else if (currentLang === 'ta') {
+      // If voices array is empty (can happen on some browsers), fallback to stream for Tamil
+      playAudioStream(text);
+      return;
     }
 
     currentUtterance.onend = () => {
