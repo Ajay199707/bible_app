@@ -134,7 +134,9 @@ function applySettings(newSettings) {
       viewMode: settings.viewMode,
       fontSize: settings.fontSize,
       lineHeight: settings.lineHeight,
-      activeTtsVerse: currentTtsVerse
+      activeTtsVerse: currentTtsVerse,
+      primaryLang: settings.primaryLang,
+      secondaryLang: settings.secondaryLang
     });
   }
 }
