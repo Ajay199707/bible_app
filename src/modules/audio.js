@@ -1,6 +1,7 @@
 let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 let currentUtterance = null;
 let htmlAudioElement = null;
+let activeBlobUrl = null;
 let isPlaying = false;
 let isPausedState = false;
 let activeVerseIndex = -1;
@@ -52,15 +53,18 @@ function speakNextVerse() {
     return;
   }
 
-  // Check if browser has native Tamil SpeechSynthesis voice
+  // Check if native SpeechSynthesis has native Tamil voice installed
   const voices = synth ? (synth.getVoices() || []) : [];
-  const hasNativeTaVoice = voices.some(v => (v.lang || '').toLowerCase().includes('ta') || (v.name || '').toLowerCase().includes('tamil'));
+  const hasNativeTaVoice = voices.some(v => 
+    (v.lang || '').toLowerCase().includes('ta') || 
+    (v.name || '').toLowerCase().includes('tamil')
+  );
 
   if (currentLang === 'ta' && !hasNativeTaVoice) {
     // ----------------------------------------------------
-    // Online High-Quality Tamil Audio Stream Fallback
+    // Unrestricted Blob-based Tamil Audio Streamer
     // ----------------------------------------------------
-    playOnlineAudioStream(textToRead, 'ta');
+    playTamilBlobAudioStream(textToRead);
   } else {
     // ----------------------------------------------------
     // Native Web Speech API Engine
@@ -69,9 +73,54 @@ function speakNextVerse() {
   }
 }
 
+function playTamilBlobAudioStream(text) {
+  cleanupBlobAudio();
+
+  // Limit chunk size for reliable TTS response
+  const cleanText = text.slice(0, 200);
+  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ta&q=${encodeURIComponent(cleanText)}`;
+
+  fetch(ttsUrl, { referrerPolicy: 'no-referrer' })
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.blob();
+    })
+    .then(blob => {
+      if (!isPlaying || isPausedState) return;
+
+      activeBlobUrl = URL.createObjectURL(blob);
+      htmlAudioElement = new Audio(activeBlobUrl);
+      htmlAudioElement.playbackRate = playbackRate;
+
+      htmlAudioElement.onended = () => {
+        cleanupBlobAudio();
+        if (isPlaying && !isPausedState) {
+          activeVerseIndex++;
+          speakNextVerse();
+        }
+      };
+
+      htmlAudioElement.onerror = (err) => {
+        console.warn('Tamil blob audio play warning:', err);
+        cleanupBlobAudio();
+        if (isPlaying && !isPausedState) {
+          activeVerseIndex++;
+          setTimeout(speakNextVerse, 150);
+        }
+      };
+
+      return htmlAudioElement.play();
+    })
+    .catch(err => {
+      console.warn('Failed to fetch Tamil blob audio stream, trying native speech fallback:', err);
+      playNativeSpeechSynthesis(text);
+    });
+}
+
 function playNativeSpeechSynthesis(text) {
   if (!synth) {
-    playOnlineAudioStream(text, currentLang);
+    activeVerseIndex++;
+    speakNextVerse();
     return;
   }
 
@@ -106,54 +155,32 @@ function playNativeSpeechSynthesis(text) {
     };
 
     currentUtterance.onerror = (err) => {
-      console.warn('Native SpeechSynthesis fallback to audio stream:', err);
+      console.warn('Native SpeechSynthesis warning:', err);
       if (isPlaying && !isPausedState) {
-        playOnlineAudioStream(text, currentLang);
+        activeVerseIndex++;
+        setTimeout(speakNextVerse, 150);
       }
     };
 
     synth.speak(currentUtterance);
   } catch (e) {
-    playOnlineAudioStream(text, currentLang);
+    activeVerseIndex++;
+    speakNextVerse();
   }
 }
 
-function playOnlineAudioStream(text, lang) {
+function cleanupBlobAudio() {
+  if (activeBlobUrl) {
+    try { URL.revokeObjectURL(activeBlobUrl); } catch (e) {}
+    activeBlobUrl = null;
+  }
   if (htmlAudioElement) {
     try {
       htmlAudioElement.pause();
       htmlAudioElement.src = '';
     } catch (e) {}
+    htmlAudioElement = null;
   }
-
-  // Google Translate TTS audio stream URL
-  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${lang === 'ta' ? 'ta' : 'en'}&q=${encodeURIComponent(text)}`;
-
-  htmlAudioElement = new Audio(ttsUrl);
-  htmlAudioElement.playbackRate = playbackRate;
-
-  htmlAudioElement.onended = () => {
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      speakNextVerse();
-    }
-  };
-
-  htmlAudioElement.onerror = (err) => {
-    console.warn('Online audio stream error, skipping to next verse:', err);
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      setTimeout(speakNextVerse, 200);
-    }
-  };
-
-  htmlAudioElement.play().catch(err => {
-    console.warn('HTML5 Audio playback blocked or failed:', err);
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      setTimeout(speakNextVerse, 300);
-    }
-  });
 }
 
 export function pauseAudio() {
@@ -190,13 +217,7 @@ export function stopAudio() {
     try { synth.cancel(); } catch (e) {}
   }
 
-  if (htmlAudioElement) {
-    try {
-      htmlAudioElement.pause();
-      htmlAudioElement.currentTime = 0;
-      htmlAudioElement = null;
-    } catch (e) {}
-  }
+  cleanupBlobAudio();
 }
 
 export function setPlaybackRate(rate) {
