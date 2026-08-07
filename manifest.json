@@ -1,0 +1,22 @@
+{
+  "name": "Holy Bible (English & Tamil வேதாகமம்)",
+  "short_name": "Bible வேதாகமம்",
+  "description": "Read, study, and listen to the Holy Bible in English and Tamil side-by-side offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0f14",
+  "theme_color": "#f59e0b",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/data/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/data/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
