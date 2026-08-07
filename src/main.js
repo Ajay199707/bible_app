@@ -160,29 +160,27 @@ function setupEventListeners() {
     const mode = settings.viewMode || 'parallel';
     
     let queue = [];
-    const maxVerses = Math.max((scripture.primary || []).length, (scripture.secondary || []).length);
-    const pLang = settings.primaryLang || 'en';
-    const sLang = settings.secondaryLang || 'ta';
+    const maxVerses = Math.max((scripture.en || []).length, (scripture.ta || []).length);
     
     for (let i = 0; i < maxVerses; i++) {
       const vNum = i + 1;
-      const pV = (scripture.primary || []).find(v => v.verse === vNum);
-      const sV = (scripture.secondary || []).find(v => v.verse === vNum);
+      const pV = (scripture.en || []).find(v => v.verse === vNum);
+      const sV = (scripture.ta || []).find(v => v.verse === vNum);
       
       if (mode === 'parallel') {
-        if (pV) queue.push({ verse: vNum, text: pV.text, lang: pLang });
-        if (sV) queue.push({ verse: vNum, text: sV.text, lang: sLang });
-      } else if (mode === 'secondary') {
-        if (sV) queue.push({ verse: vNum, text: sV.text, lang: sLang });
+        if (pV) queue.push({ verse: vNum, text: pV.text, lang: 'en' });
+        if (sV) queue.push({ verse: vNum, text: sV.text, lang: 'ta' });
+      } else if (mode === 'ta') {
+        if (sV) queue.push({ verse: vNum, text: sV.text, lang: 'ta' });
       } else {
-        if (pV) queue.push({ verse: vNum, text: pV.text, lang: pLang });
+        if (pV) queue.push({ verse: vNum, text: pV.text, lang: 'en' });
       }
     }
     
     if (queue.length > 0) {
       if (playIcon) playIcon.className = 'fa-solid fa-stop';
 
-      const targetLang = (mode === 'secondary') ? sLang : pLang;
+      const targetLang = (mode === 'ta') ? 'ta' : 'en';
       playChapterVerses(queue, targetLang, 1.0, (vNum) => {
         document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
         const activeRow = document.querySelector(`.verse-row[data-verse="${vNum}"]`);
@@ -349,28 +347,24 @@ function setupEventListeners() {
     } else if (action === 'audio-verse') {
       const scripture = getChapterScripture(bookId, chapter);
       const mode = settings.viewMode || 'parallel';
-      const pLang = settings.primaryLang || 'en';
-      const sLang = settings.secondaryLang || 'ta';
-      const pLangObj = getLangByCode(pLang);
-      const sLangObj = getLangByCode(sLang);
-      const pV = (scripture.primary || []).find(v => v.verse === verse);
-      const sV = (scripture.secondary || []).find(v => v.verse === verse);
+      const pV = (scripture.en || []).find(v => v.verse === verse);
+      const sV = (scripture.ta || []).find(v => v.verse === verse);
       
       let queue = [];
       if (mode === 'parallel') {
-        if (pV) queue.push({ verse: verse, text: pV.text, lang: pLang });
-        if (sV) queue.push({ verse: verse, text: sV.text, lang: sLang });
-      } else if (mode === 'secondary') {
-        if (sV) queue.push({ verse: verse, text: sV.text, lang: sLang });
+        if (pV) queue.push({ verse: verse, text: pV.text, lang: 'en' });
+        if (sV) queue.push({ verse: verse, text: sV.text, lang: 'ta' });
+      } else if (mode === 'ta') {
+        if (sV) queue.push({ verse: verse, text: sV.text, lang: 'ta' });
       } else {
-        if (pV) queue.push({ verse: verse, text: pV.text, lang: pLang });
+        if (pV) queue.push({ verse: verse, text: pV.text, lang: 'en' });
       }
 
       if (queue.length > 0) {
         row.classList.add('tts-active');
         btn.classList.add('playing');
 
-        const targetLang = (mode === 'secondary') ? sLang : pLang;
+        const targetLang = (mode === 'ta') ? 'ta' : 'en';
         playChapterVerses(queue, targetLang, 1.0, null, () => {
           row.classList.remove('tts-active');
           btn.classList.remove('playing');
