@@ -211,11 +211,14 @@ function setupEventListeners() {
   });
 
   // View Mode Pills Toggle (Parallel | English | Tamil)
-  document.querySelectorAll('.mode-pills-group .mode-pill[data-mode]').forEach(btn => {
+  document.querySelectorAll('.mode-pills-group .mode-pill').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const mode = e.target.dataset.mode;
-      if (mode) {
-        applySettings({ viewMode: mode });
+      const modeBtn = e.target.closest('.mode-pill');
+      if (modeBtn) {
+        const mode = modeBtn.dataset.mode;
+        if (mode) {
+          applySettings({ viewMode: mode });
+        }
       }
     });
   });

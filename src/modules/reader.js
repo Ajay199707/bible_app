@@ -20,13 +20,18 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
 
   if (viewMode === 'parallel') {
     headerDiv.innerHTML = `
-      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="${sLang.fontClass}">${book.nameEn} ${chapter}</span></h2>
+      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="${sLang.fontClass}">${book.nameTa || book.nameEn} ${chapter}</span></h2>
       <p class="sub-heading">Parallel Bible View (${pLang.name} & ${sLang.nativeName})</p>
+    `;
+  } else if (viewMode === 'secondary') {
+    headerDiv.innerHTML = `
+      <h2 class="${sLang.fontClass}">${book.nameTa || book.nameEn} ${chapter}</h2>
+      <p class="sub-heading">${sLang.nativeName} Bible</p>
     `;
   } else {
     headerDiv.innerHTML = `
       <h2 class="${pLang.fontClass}">${book.nameEn} ${chapter}</h2>
-      <p class="sub-heading">${pLang.nativeName} Bible</p>
+      <p class="sub-heading">${pLang.name} Bible</p>
     `;
   }
   containerEl.appendChild(headerDiv);
@@ -80,6 +85,20 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-audio-verse" title="Listen (${pLang.name} + ${sLang.name})" data-action="audio-verse">
             <i class="fa-solid fa-volume-high"></i>
           </button>
+        </div>
+      `;
+    } else if (viewMode === 'secondary') {
+      verseRow.innerHTML = `
+        <div class="verse-cell single-cell ${sLang.fontClass}">
+          <span class="verse-num">${verseNum}</span>
+          <span class="verse-text">${sObj.text}</span>
+        </div>
+        <div class="verse-actions-toolbar">
+          <button class="action-btn btn-bookmark ${bookmarked ? 'active' : ''}" title="Bookmark" data-action="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+          <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
+          <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
+          <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
+          <button class="action-btn btn-audio-verse" title="Listen (${sLang.name})" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
     } else {

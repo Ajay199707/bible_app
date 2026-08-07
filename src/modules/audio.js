@@ -151,7 +151,7 @@ function playAudioStream(text, itemLang) {
   const langObj = getLangByCode(itemLang);
   const targetLang = itemLang;
   
-  if (typeof responsiveVoice !== 'undefined') {
+  if (typeof responsiveVoice !== 'undefined' && !['ml', 'te', 'kn'].includes(itemLang)) {
     const rvLang = langObj.rvVoice;
     responsiveVoice.speak(cleanText, rvLang, {
       rate: playbackRate,
