@@ -140,6 +140,27 @@ function playAudioStream(text) {
 
   const cleanText = text.slice(0, 250);
   const targetLang = currentLang === 'ta' ? 'ta' : 'en';
+  if (typeof responsiveVoice !== 'undefined') {
+    const rvLang = currentLang === 'ta' ? "Tamil Male" : "UK English Male";
+    responsiveVoice.speak(cleanText, rvLang, {
+      rate: playbackRate,
+      onend: () => {
+        if (isPlaying && !isPausedState) {
+          activeVerseIndex++;
+          speakNextVerse();
+        }
+      },
+      onerror: (err) => {
+        console.warn('ResponsiveVoice error:', err);
+        fallbackToGoogleTTS(cleanText, targetLang);
+      }
+    });
+  } else {
+    fallbackToGoogleTTS(cleanText, targetLang);
+  }
+}
+
+function fallbackToGoogleTTS(cleanText, targetLang) {
   const ttsUrl = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=${targetLang}&q=${encodeURIComponent(cleanText)}`;
 
   if (htmlAudioElement) {
