@@ -276,10 +276,12 @@ function setupEventListeners() {
       const scripture = getChapterScripture(bookId, chapter);
       const taV = scripture.ta.find(v => v.verse === verse);
       if (taV) {
-        playChapterVerses([taV], 'ta', 1.0, (vNum) => {
-          currentTtsVerse = vNum;
-        }, () => {
-          currentTtsVerse = -1;
+        row.classList.add('tts-active');
+        btn.classList.add('playing');
+
+        playChapterVerses([taV], 'ta', 1.0, null, () => {
+          row.classList.remove('tts-active');
+          btn.classList.remove('playing');
         });
       }
     }

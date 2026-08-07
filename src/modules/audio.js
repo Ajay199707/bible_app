@@ -1,26 +1,37 @@
+let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
+let currentUtterance = null;
 let htmlAudioElement = null;
 let isPlaying = false;
 let isPausedState = false;
 let activeVerseIndex = -1;
 let versesQueue = [];
-let currentLang = 'ta'; // Default Tamil
+let currentLang = 'ta';
 let playbackRate = 1.0;
 let onVerseHighlightCallback = null;
 let onEndCallback = null;
+let availableVoices = [];
 
 export function initAudio() {
   stopAudio();
+  if (synth) {
+    const updateVoices = () => {
+      try {
+        availableVoices = synth.getVoices() || [];
+      } catch (e) {
+        availableVoices = [];
+      }
+    };
+    updateVoices();
+    if (synth.onvoiceschanged !== undefined) {
+      synth.onvoiceschanged = updateVoices;
+    }
+  }
 }
 
 export function playChapterVerses(verses, lang = 'ta', rate = 1.0, onVerseHighlight = null, onComplete = null) {
   stopAudio();
 
   if (!verses || verses.length === 0) return;
-
-  // Pre-create HTML5 audio element on user gesture
-  if (typeof window !== 'undefined' && !htmlAudioElement) {
-    htmlAudioElement = new Audio();
-  }
 
   versesQueue = verses;
   currentLang = lang || 'ta';
@@ -55,20 +66,73 @@ function speakNextVerse() {
     return;
   }
 
-  playDirectAudioStream(textToRead, currentLang);
+  // Try Web Speech API first
+  if (synth) {
+    playWebSpeech(textToRead);
+  } else {
+    playAudioStream(textToRead);
+  }
 }
 
-function playDirectAudioStream(text, lang) {
-  if (!htmlAudioElement) {
-    htmlAudioElement = new Audio();
+function playWebSpeech(text) {
+  try {
+    if (synth.paused) synth.resume();
+
+    currentUtterance = new SpeechSynthesisUtterance(text);
+    currentUtterance.rate = playbackRate;
+    currentUtterance.pitch = 1.0;
+    currentUtterance.volume = 1.0;
+
+    const targetLang = currentLang === 'ta' ? 'ta-IN' : 'en-US';
+    currentUtterance.lang = targetLang;
+
+    // Pick best available voice for language
+    const voices = availableVoices.length > 0 ? availableVoices : (synth.getVoices() || []);
+    if (voices.length > 0) {
+      if (currentLang === 'ta') {
+        const taVoice = voices.find(v => {
+          const l = (v.lang || '').toLowerCase();
+          const n = (v.name || '').toLowerCase();
+          return l.includes('ta') || n.includes('tamil');
+        });
+        if (taVoice) currentUtterance.voice = taVoice;
+      } else {
+        const enVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
+        if (enVoice) currentUtterance.voice = enVoice;
+      }
+    }
+
+    currentUtterance.onend = () => {
+      if (isPlaying && !isPausedState) {
+        activeVerseIndex++;
+        speakNextVerse();
+      }
+    };
+
+    currentUtterance.onerror = (err) => {
+      console.warn('WebSpeech error, trying Audio Stream fallback:', err);
+      playAudioStream(text);
+    };
+
+    synth.speak(currentUtterance);
+  } catch (e) {
+    playAudioStream(text);
+  }
+}
+
+function playAudioStream(text) {
+  if (htmlAudioElement) {
+    try {
+      htmlAudioElement.pause();
+      htmlAudioElement.src = '';
+    } catch (e) {}
   }
 
-  // Sanitize text length per verse chunk
   const cleanText = text.slice(0, 250);
-  const targetLang = lang === 'ta' ? 'ta' : 'en';
+  const targetLang = currentLang === 'ta' ? 'ta' : 'en';
   const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${targetLang}&q=${encodeURIComponent(cleanText)}`;
 
-  // Use no-referrer policy to bypass domain referrer blocking on GitHub Pages & mobile
+  htmlAudioElement = new Audio();
   htmlAudioElement.referrerPolicy = 'no-referrer';
   htmlAudioElement.src = ttsUrl;
   htmlAudioElement.playbackRate = playbackRate;
@@ -81,23 +145,24 @@ function playDirectAudioStream(text, lang) {
   };
 
   htmlAudioElement.onerror = (err) => {
-    console.warn('Audio stream error for verse:', activeVerseIndex, err);
-    // Pause on error instead of rapidly skipping all verses
-    stopAudio();
+    console.warn('Audio stream play error:', err);
+    if (isPlaying && !isPausedState) {
+      activeVerseIndex++;
+      if (onEndCallback) onEndCallback();
+    }
   };
 
-  const playPromise = htmlAudioElement.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(err => {
-      console.warn('Audio play promise blocked by browser:', err);
-      stopAudio();
-    });
-  }
+  htmlAudioElement.play().catch(err => {
+    console.warn('HTML5 Audio play blocked by browser policy:', err);
+  });
 }
 
 export function pauseAudio() {
   if (isPlaying) {
     isPausedState = true;
+    if (synth && synth.speaking) {
+      try { synth.pause(); } catch (e) {}
+    }
     if (htmlAudioElement && !htmlAudioElement.paused) {
       try { htmlAudioElement.pause(); } catch (e) {}
     }
@@ -107,6 +172,9 @@ export function pauseAudio() {
 export function resumeAudio() {
   if (isPausedState) {
     isPausedState = false;
+    if (synth && synth.paused) {
+      try { synth.resume(); } catch (e) {}
+    }
     if (htmlAudioElement && htmlAudioElement.paused) {
       try { htmlAudioElement.play(); } catch (e) {}
     }
@@ -119,11 +187,15 @@ export function stopAudio() {
   activeVerseIndex = -1;
   versesQueue = [];
 
+  if (synth) {
+    try { synth.cancel(); } catch (e) {}
+  }
+
   if (htmlAudioElement) {
     try {
       htmlAudioElement.pause();
-      htmlAudioElement.currentTime = 0;
       htmlAudioElement.src = '';
+      htmlAudioElement = null;
     } catch (e) {}
   }
 }
