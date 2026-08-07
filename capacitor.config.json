@@ -1,6 +1,6 @@
 {
   "appId": "com.bible.englishtamil",
-  "appName": "English Tamil Bible",
+  "appName": "Holy Bible",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {
