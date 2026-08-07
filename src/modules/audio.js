@@ -1,7 +1,6 @@
 let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 let currentUtterance = null;
 let htmlAudioElement = null;
-let activeBlobUrl = null;
 let isPlaying = false;
 let isPausedState = false;
 let activeVerseIndex = -1;
@@ -20,7 +19,7 @@ export function playChapterVerses(verses, lang = 'ta', rate = 1.0, onVerseHighli
 
   if (!verses || verses.length === 0) return;
 
-  // Pre-create/unlock HTML5 Audio element in synchronous click context
+  // Pre-create and unlock HTML5 Audio element synchronously on user click
   if (typeof window !== 'undefined') {
     if (!htmlAudioElement) {
       htmlAudioElement = new Audio();
@@ -60,7 +59,7 @@ function speakNextVerse() {
     return;
   }
 
-  // Check native SpeechSynthesis for Tamil voice
+  // Check if browser has native Tamil SpeechSynthesis voice
   const voices = synth ? (synth.getVoices() || []) : [];
   const taVoice = voices.find(v => 
     (v.lang || '').toLowerCase().includes('ta') || 
@@ -71,61 +70,49 @@ function speakNextVerse() {
     if (taVoice) {
       playNativeSpeechSynthesis(textToRead, taVoice);
     } else {
-      // Use pre-unlocked HTML5 Audio stream for Tamil
-      playTamilAudioDirectStream(textToRead);
+      // Use Direct No-Referrer HTML5 Audio Stream for Tamil
+      playTamilDirectAudioStream(textToRead);
     }
   } else {
     playNativeSpeechSynthesis(textToRead, null);
   }
 }
 
-function playTamilAudioDirectStream(text) {
-  cleanupBlobOnly();
+function playTamilDirectAudioStream(text) {
+  if (!htmlAudioElement) {
+    htmlAudioElement = new Audio();
+  }
 
   const cleanText = text.slice(0, 200);
   const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ta&q=${encodeURIComponent(cleanText)}`;
 
-  // Fetch as Blob with no-referrer
-  fetch(ttsUrl, { referrerPolicy: 'no-referrer' })
-    .then(res => res.blob())
-    .then(blob => {
-      if (!isPlaying || isPausedState) return;
+  // Set no-referrer policy directly on audio element to bypass domain blocking & CORS restrictions
+  htmlAudioElement.referrerPolicy = 'no-referrer';
+  htmlAudioElement.src = ttsUrl;
+  htmlAudioElement.playbackRate = playbackRate;
 
-      activeBlobUrl = URL.createObjectURL(blob);
-      if (!htmlAudioElement) htmlAudioElement = new Audio();
+  htmlAudioElement.onended = () => {
+    if (isPlaying && !isPausedState) {
+      activeVerseIndex++;
+      speakNextVerse();
+    }
+  };
 
-      htmlAudioElement.src = activeBlobUrl;
-      htmlAudioElement.playbackRate = playbackRate;
+  htmlAudioElement.onerror = (err) => {
+    console.warn('Tamil audio stream playback warning:', err);
+    if (isPlaying && !isPausedState) {
+      activeVerseIndex++;
+      setTimeout(speakNextVerse, 150);
+    }
+  };
 
-      htmlAudioElement.onended = () => {
-        cleanupBlobOnly();
-        if (isPlaying && !isPausedState) {
-          activeVerseIndex++;
-          speakNextVerse();
-        }
-      };
-
-      htmlAudioElement.onerror = (err) => {
-        console.warn('Tamil audio stream playback warning:', err);
-        cleanupBlobOnly();
-        if (isPlaying && !isPausedState) {
-          activeVerseIndex++;
-          setTimeout(speakNextVerse, 150);
-        }
-      };
-
-      const playPromise = htmlAudioElement.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(err => {
-          console.warn('Audio play promise blocked, trying native speech fallback:', err);
-          playNativeSpeechSynthesis(text, null);
-        });
-      }
-    })
-    .catch(err => {
-      console.warn('Fetch Tamil audio failed, using native speech fallback:', err);
+  const playPromise = htmlAudioElement.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(err => {
+      console.warn('Audio play promise blocked, trying native speech fallback:', err);
       playNativeSpeechSynthesis(text, null);
     });
+  }
 }
 
 function playNativeSpeechSynthesis(text, customVoice) {
@@ -184,13 +171,6 @@ function playNativeSpeechSynthesis(text, customVoice) {
   }
 }
 
-function cleanupBlobOnly() {
-  if (activeBlobUrl) {
-    try { URL.revokeObjectURL(activeBlobUrl); } catch (e) {}
-    activeBlobUrl = null;
-  }
-}
-
 export function pauseAudio() {
   if (isPlaying) {
     isPausedState = true;
@@ -231,8 +211,6 @@ export function stopAudio() {
       htmlAudioElement.src = '';
     } catch (e) {}
   }
-
-  cleanupBlobOnly();
 }
 
 export function setPlaybackRate(rate) {
