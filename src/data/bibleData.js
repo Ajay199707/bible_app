@@ -9,9 +9,12 @@ export function initBibleData() {
   if (isLoaded) return Promise.resolve(true);
   if (loadPromise) return loadPromise;
 
+  const baseUrl = import.meta.env.BASE_URL || './';
+  const cleanBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+
   loadPromise = Promise.all([
-    fetch('/data/english_bible.json').then(res => res.json()),
-    fetch('/data/tamil_bible.json').then(res => res.json())
+    fetch(`${cleanBase}data/english_bible.json`).then(res => res.json()),
+    fetch(`${cleanBase}data/tamil_bible.json`).then(res => res.json())
   ]).then(([enData, taData]) => {
     englishBibleRaw = enData;
     tamilBibleRaw = taData;
