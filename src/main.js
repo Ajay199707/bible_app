@@ -272,6 +272,16 @@ function setupEventListeners() {
       }).then(() => {
         alert('Verse copied to clipboard!');
       });
+    } else if (action === 'audio-tamil') {
+      const scripture = getChapterScripture(bookId, chapter);
+      const taV = scripture.ta.find(v => v.verse === verse);
+      if (taV) {
+        playChapterVerses([taV], 'ta', 1.0, (vNum) => {
+          currentTtsVerse = vNum;
+        }, () => {
+          currentTtsVerse = -1;
+        });
+      }
     }
   });
 
