@@ -18,14 +18,16 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
   const headerDiv = document.createElement('div');
   headerDiv.className = 'reader-header-title';
 
+  const sBookName = (secondaryLang === 'ta' && book.nameTa) ? book.nameTa : book.nameEn;
+
   if (viewMode === 'parallel') {
     headerDiv.innerHTML = `
-      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="${sLang.fontClass}">${book.nameTa || book.nameEn} ${chapter}</span></h2>
+      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="${sLang.fontClass}">${sBookName} ${chapter}</span></h2>
       <p class="sub-heading">Parallel Bible View (${pLang.name} & ${sLang.nativeName})</p>
     `;
   } else if (viewMode === 'secondary') {
     headerDiv.innerHTML = `
-      <h2 class="${sLang.fontClass}">${book.nameTa || book.nameEn} ${chapter}</h2>
+      <h2 class="${sLang.fontClass}">${sBookName} ${chapter}</h2>
       <p class="sub-heading">${sLang.nativeName} Bible</p>
     `;
   } else {
