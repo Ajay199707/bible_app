@@ -1,9 +1,14 @@
-name: Build Android APK & iOS App
+name: Build Android APK, iOS App & Deploy GitHub Pages
 
 on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   # ----------------------------------------------------
@@ -100,3 +105,31 @@ jobs:
         with:
           name: English-Tamil-Bible-iOS-App
           path: ios/App/Out/English-Tamil-Bible-iOS-App.zip
+
+  # ----------------------------------------------------
+  # 3. DEPLOY TO GITHUB PAGES (Free Live Web Hosting)
+  # ----------------------------------------------------
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Production Web Bundle
+        run: npm run build
+
+      - name: Deploy to GitHub Pages Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
