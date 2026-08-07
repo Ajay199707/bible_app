@@ -1,5 +1,5 @@
 import { BIBLE_BOOKS, getBookById } from './data/books.js';
-import { getChapterScripture, initBibleData, setActiveLanguages } from './data/bibleData.js';
+import { getChapterScripture, initBibleData } from './data/bibleData.js';
 import { renderReaderContent } from './modules/reader.js';
 import { 
   getSettings, saveSettings, getLastRead, saveLastRead, 
