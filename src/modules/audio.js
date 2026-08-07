@@ -140,10 +140,16 @@ function playAudioStream(text) {
 
   const cleanText = text.slice(0, 250);
   const targetLang = currentLang === 'ta' ? 'ta' : 'en';
-  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${targetLang}&q=${encodeURIComponent(cleanText)}`;
+  const ttsUrl = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=${targetLang}&q=${encodeURIComponent(cleanText)}`;
+
+  if (htmlAudioElement) {
+    try {
+      htmlAudioElement.pause();
+      htmlAudioElement.src = '';
+    } catch (e) {}
+  }
 
   htmlAudioElement = new Audio();
-  htmlAudioElement.referrerPolicy = 'no-referrer';
   htmlAudioElement.src = ttsUrl;
   htmlAudioElement.playbackRate = playbackRate;
 
