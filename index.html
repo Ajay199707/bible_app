@@ -20,7 +20,7 @@
   
   <!-- ResponsiveVoice TTS Fallback -->
   <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-  <script type="module" crossorigin src="./assets/index-BEyJzYg_.js"></script>
+  <script type="module" crossorigin src="./assets/index-D9fqGXFj.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-DWN26PCr.css">
 </head>
 <body>
@@ -62,11 +62,6 @@
         <span>Saved</span>
       </button>
 
-      <!-- Language Picker Icon -->
-      <button class="nav-btn nav-btn-icon" id="btn-open-lang-picker" title="Change Language">
-        <i class="fa-solid fa-globe"></i>
-      </button>
-
       <!-- Settings Dropdown -->
       <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
         <i class="fa-solid fa-sliders"></i>
@@ -99,8 +94,8 @@
     <!-- Mode Selector Pills (Parallel | English | Tamil) -->
     <div class="mode-pills-group">
       <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
-      <button class="mode-pill" data-mode="primary" id="pill-primary"><span id="pill-label-primary">English</span></button>
-      <button class="mode-pill" data-mode="secondary" id="pill-secondary"><span id="pill-label-secondary">தமிழ்</span></button>
+      <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+      <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
     </div>
   </section>
 
@@ -257,56 +252,7 @@
     </div>
   </div>
 
-  <!-- ═══ FIRST LAUNCH LANGUAGE SETUP OVERLAY ═══ -->
-  <div class="lang-setup-overlay" id="lang-setup-overlay">
-    <div class="lang-setup-card">
-      <div class="lang-setup-header">
-        <div class="lang-setup-icon"><i class="fa-solid fa-globe"></i></div>
-        <h2>Choose Your Bible Language</h2>
-        <p>Select your primary and secondary reading languages. You can change this anytime.</p>
-      </div>
 
-      <div class="lang-section">
-        <h3><span class="lang-section-num">1</span> Primary Language <span class="lang-section-hint">(main text)</span></h3>
-        <div class="lang-cards-grid" id="lang-primary-grid"></div>
-      </div>
-
-      <div class="lang-section">
-        <h3><span class="lang-section-num">2</span> Secondary Language <span class="lang-section-hint">(parallel text)</span></h3>
-        <div class="lang-cards-grid" id="lang-secondary-grid"></div>
-      </div>
-
-      <button class="lang-setup-btn" id="btn-lang-setup-save">
-        <i class="fa-solid fa-check-circle"></i> Start Reading
-      </button>
-    </div>
-  </div>
-
-  <!-- ═══ MID-SESSION LANGUAGE PICKER MODAL ═══ -->
-  <div class="modal-overlay" id="lang-picker-modal">
-    <div class="modal-card" style="max-width: 560px;">
-      <div class="modal-header">
-        <h3><i class="fa-solid fa-globe" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> Change Language</h3>
-        <button class="modal-close-btn" id="btn-lang-picker-close"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="modal-body">
-        <div class="lang-section">
-          <h3><span class="lang-section-num">1</span> Primary Language</h3>
-          <div class="lang-cards-grid" id="lang-picker-primary-grid"></div>
-        </div>
-        <div class="lang-section" style="margin-top: 1.25rem;">
-          <h3><span class="lang-section-num">2</span> Secondary Language</h3>
-          <div class="lang-cards-grid" id="lang-picker-secondary-grid"></div>
-        </div>
-        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
-          <button class="nav-btn" id="btn-lang-picker-close" style="opacity: 0.6;">Cancel</button>
-          <button class="nav-btn" id="btn-lang-picker-save" style="background: var(--accent-gold); color: #000; font-weight: 700;">
-            <i class="fa-solid fa-check"></i> Apply Language
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
