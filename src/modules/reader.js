@@ -1,11 +1,15 @@
 import { getBookById } from '../data/books.js';
 import { getChapterScripture } from '../data/bibleData.js';
+import { getLangByCode } from '../data/languages.js';
 import { isBookmarked, getVerseHighlight, getVerseNote } from './storage.js';
 
 export function renderReaderContent(containerEl, bookId, chapter, options = {}) {
-  const { viewMode = 'parallel', fontSize = 'md', lineHeight = 'relaxed', activeTtsVerse = -1 } = options;
+  const { viewMode = 'parallel', fontSize = 'md', lineHeight = 'relaxed', activeTtsVerse = -1,
+    primaryLang = 'en', secondaryLang = 'ta' } = options;
   const book = getBookById(bookId);
   const scripture = getChapterScripture(bookId, chapter);
+  const pLang = getLangByCode(primaryLang);
+  const sLang = getLangByCode(secondaryLang);
 
   containerEl.innerHTML = '';
   containerEl.className = `reader-container view-mode-${viewMode} font-size-${fontSize} line-height-${lineHeight}`;
@@ -13,21 +17,16 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
   // Reader Header Title
   const headerDiv = document.createElement('div');
   headerDiv.className = 'reader-header-title';
-  
+
   if (viewMode === 'parallel') {
     headerDiv.innerHTML = `
-      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="ta-font">${book.nameTa} ${chapter}</span></h2>
-      <p class="sub-heading">Parallel Bible View (English KJV & தமிழ் வேதாகமம்)</p>
-    `;
-  } else if (viewMode === 'ta') {
-    headerDiv.innerHTML = `
-      <h2 class="ta-font">${book.nameTa} ${chapter}</h2>
-      <p class="sub-heading">தமிழ் சத்திய வேதாகமம் (BSI)</p>
+      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="${sLang.fontClass}">${book.nameEn} ${chapter}</span></h2>
+      <p class="sub-heading">Parallel Bible View (${pLang.name} & ${sLang.nativeName})</p>
     `;
   } else {
     headerDiv.innerHTML = `
-      <h2>${book.nameEn} ${chapter}</h2>
-      <p class="sub-heading">Holy Bible (King James Version)</p>
+      <h2 class="${pLang.fontClass}">${book.nameEn} ${chapter}</h2>
+      <p class="sub-heading">${pLang.nativeName} Bible</p>
     `;
   }
   containerEl.appendChild(headerDiv);
@@ -36,14 +35,14 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
   const versesWrapper = document.createElement('div');
   versesWrapper.className = 'verses-wrapper';
 
-  const enList = scripture.en;
-  const taList = scripture.ta;
-  const maxVerses = Math.max(enList.length, taList.length);
+  const primaryList = scripture.primary || scripture.en || [];
+  const secondaryList = scripture.secondary || scripture.ta || [];
+  const maxVerses = Math.max(primaryList.length, secondaryList.length);
 
   for (let i = 0; i < maxVerses; i++) {
     const verseNum = i + 1;
-    const enObj = enList.find(v => v.verse === verseNum) || { verse: verseNum, text: '' };
-    const taObj = taList.find(v => v.verse === verseNum) || { verse: verseNum, text: '' };
+    const pObj = primaryList.find(v => v.verse === verseNum) || { verse: verseNum, text: '' };
+    const sObj = secondaryList.find(v => v.verse === verseNum) || { verse: verseNum, text: '' };
 
     const verseRow = document.createElement('div');
     const highlightColor = getVerseHighlight(bookId, chapter, verseNum);
@@ -57,58 +56,44 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
 
     if (viewMode === 'parallel') {
       verseRow.innerHTML = `
-        <div class="verse-cell verse-en">
+        <div class="verse-cell verse-en ${pLang.fontClass}">
           <span class="verse-num">${verseNum}</span>
-          <span class="verse-text">${enObj.text}</span>
+          <span class="verse-text">${pObj.text}</span>
         </div>
-        <div class="verse-cell verse-ta ta-font">
+        <div class="verse-cell verse-ta ${sLang.fontClass}">
           <span class="verse-num">${verseNum}</span>
-          <span class="verse-text">${taObj.text}</span>
+          <span class="verse-text">${sObj.text}</span>
         </div>
         <div class="verse-actions-toolbar">
-          <button class="action-btn btn-bookmark ${bookmarked ? 'active' : ''}" title="Bookmark / புக்மார்க்" data-action="bookmark">
+          <button class="action-btn btn-bookmark ${bookmarked ? 'active' : ''}" title="Bookmark" data-action="bookmark">
             <i class="fa-solid fa-bookmark"></i>
           </button>
-          <button class="action-btn btn-highlight" title="Highlight / கலர் குறிப்பு" data-action="highlight">
+          <button class="action-btn btn-highlight" title="Highlight" data-action="highlight">
             <i class="fa-solid fa-highlighter"></i>
           </button>
-          <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes / குறிப்புகள்" data-action="note">
+          <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note">
             <i class="fa-solid fa-note-sticky"></i>
           </button>
-          <button class="action-btn btn-copy" title="Copy Verse / பிரதியெடு" data-action="copy">
+          <button class="action-btn btn-copy" title="Copy" data-action="copy">
             <i class="fa-solid fa-copy"></i>
           </button>
-          <button class="action-btn btn-audio-verse" title="Listen Verse (Dual) / வசனம் கேள்" data-action="audio-verse">
+          <button class="action-btn btn-audio-verse" title="Listen (${pLang.name} + ${sLang.name})" data-action="audio-verse">
             <i class="fa-solid fa-volume-high"></i>
           </button>
         </div>
       `;
-    } else if (viewMode === 'ta') {
-      verseRow.innerHTML = `
-        <div class="verse-cell verse-ta single-cell ta-font">
-          <span class="verse-num">${verseNum}</span>
-          <span class="verse-text">${taObj.text}</span>
-        </div>
-        <div class="verse-actions-toolbar">
-          <button class="action-btn btn-bookmark ${bookmarked ? 'active' : ''}" title="Bookmark" data-action="bookmark"><i class="fa-solid fa-bookmark"></i></button>
-          <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
-          <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
-          <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
-          <button class="action-btn btn-audio-verse" title="Listen Tamil Verse" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
-        </div>
-      `;
     } else {
       verseRow.innerHTML = `
-        <div class="verse-cell verse-en single-cell">
+        <div class="verse-cell single-cell ${pLang.fontClass}">
           <span class="verse-num">${verseNum}</span>
-          <span class="verse-text">${enObj.text}</span>
+          <span class="verse-text">${pObj.text}</span>
         </div>
         <div class="verse-actions-toolbar">
           <button class="action-btn btn-bookmark ${bookmarked ? 'active' : ''}" title="Bookmark" data-action="bookmark"><i class="fa-solid fa-bookmark"></i></button>
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
-          <button class="action-btn btn-audio-verse" title="Listen English Verse" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
+          <button class="action-btn btn-audio-verse" title="Listen (${pLang.name})" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
     }
@@ -125,3 +110,4 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
 
   containerEl.appendChild(versesWrapper);
 }
+

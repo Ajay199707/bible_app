@@ -1,5 +1,5 @@
 import { BIBLE_BOOKS, getBookById } from './data/books.js';
-import { getChapterScripture, initBibleData } from './data/bibleData.js';
+import { getChapterScripture, initBibleData, setActiveLanguages } from './data/bibleData.js';
 import { renderReaderContent } from './modules/reader.js';
 import { 
   getSettings, saveSettings, getLastRead, saveLastRead, 
@@ -10,6 +10,8 @@ import { playChapterVerses, pauseAudio, resumeAudio, stopAudio, setPlaybackRate,
 import { searchBible } from './modules/search.js';
 import { getDailyVerse, copyVerseToClipboard } from './modules/dailyVerse.js';
 import { READING_PLANS } from './modules/plans.js';
+import { showLangSetup, showLangPicker, initLangSetupEvents } from './modules/langSetup.js';
+import { getLangByCode } from './data/languages.js';
 
 // Application State
 let settings = getSettings();
@@ -24,13 +26,24 @@ let editingNoteVerseObj = null;
 document.addEventListener('DOMContentLoaded', () => {
   initAudio();
   applySettings(settings);
-  
-  // Load full authentic Bible datasets first
-  initBibleData().then(() => {
-    loadScripture(currentBookId, currentChapter);
-  });
-  
+  initLangSetupEvents();
   setupEventListeners();
+
+  const handleLangChange = (primary, secondary) => {
+    settings = getSettings();
+    setActiveLanguages(primary, secondary).then(() => {
+      loadScripture(currentBookId, currentChapter);
+    });
+  };
+
+  if (settings.isFirstLaunch) {
+    showLangSetup(handleLangChange);
+  } else {
+    // Load full authentic Bible datasets first
+    initBibleData(settings.primaryLang, settings.secondaryLang).then(() => {
+      loadScripture(currentBookId, currentChapter);
+    });
+  }
 
   // Register PWA Service Worker
   if ('serviceWorker' in navigator) {
@@ -48,12 +61,20 @@ function loadScripture(bookId, chapter) {
   saveLastRead(currentBookId, currentChapter);
 
   const book = getBookById(currentBookId);
+  const pLang = getLangByCode(settings.primaryLang);
+  const sLang = getLangByCode(settings.secondaryLang);
 
   // Update navbar title label
   const labelEl = document.getElementById('current-book-label');
   if (labelEl) {
-    labelEl.textContent = `${book.nameEn} ${currentChapter} | ${book.nameTa} ${currentChapter}`;
+    labelEl.textContent = `${book.nameEn} ${currentChapter} | ${book.nameTa || book.nameEn} ${currentChapter}`;
   }
+
+  // Update mode pills text
+  const primaryPill = document.getElementById('pill-label-primary');
+  const secondaryPill = document.getElementById('pill-label-secondary');
+  if (primaryPill) primaryPill.textContent = pLang.name;
+  if (secondaryPill) secondaryPill.textContent = sLang.nativeName;
 
   // Update chapter nav buttons
   const prevBtn = document.getElementById('btn-prev-chap');
@@ -71,7 +92,9 @@ function loadScripture(bookId, chapter) {
     viewMode: settings.viewMode,
     fontSize: settings.fontSize,
     lineHeight: settings.lineHeight,
-    activeTtsVerse: currentTtsVerse
+    activeTtsVerse: currentTtsVerse,
+    primaryLang: settings.primaryLang,
+    secondaryLang: settings.secondaryLang
   });
 
   // Scroll to top
@@ -107,6 +130,17 @@ function setupEventListeners() {
     loadScripture(43, 1); // Jump to John 1
   });
 
+  // Language Picker
+  document.getElementById('btn-open-lang-picker')?.addEventListener('click', () => {
+    const handleLangChange = (primary, secondary) => {
+      settings = getSettings();
+      setActiveLanguages(primary, secondary).then(() => {
+        loadScripture(currentBookId, currentChapter);
+      });
+    };
+    showLangPicker(handleLangChange);
+  });
+
   // Chapter Navigation Arrows
   document.getElementById('btn-prev-chap')?.addEventListener('click', () => {
     if (currentChapter > 1) {
@@ -128,29 +162,41 @@ function setupEventListeners() {
 
   // Play Entire Chapter Button
   document.getElementById('btn-play-chapter')?.addEventListener('click', () => {
+    const playIcon = document.querySelector('#btn-play-chapter i');
+    const audioState = getAudioState();
+    
+    if (audioState.isPlaying) {
+      stopAudio();
+      if (playIcon) playIcon.className = 'fa-solid fa-play';
+      document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+      return;
+    }
+
     const scripture = getChapterScripture(currentBookId, currentChapter);
     const mode = settings.viewMode || 'parallel';
     
     let queue = [];
-    const maxVerses = Math.max(scripture.en.length, scripture.ta.length);
+    const maxVerses = Math.max((scripture.primary || []).length, (scripture.secondary || []).length);
+    const pLang = settings.primaryLang || 'en';
+    const sLang = settings.secondaryLang || 'ta';
     
     for (let i = 0; i < maxVerses; i++) {
       const vNum = i + 1;
-      const enV = scripture.en.find(v => v.verse === vNum);
-      const taV = scripture.ta.find(v => v.verse === vNum);
+      const pV = (scripture.primary || []).find(v => v.verse === vNum);
+      const sV = (scripture.secondary || []).find(v => v.verse === vNum);
       
       if (mode === 'parallel') {
-        if (enV) queue.push({ verse: vNum, text: enV.text, lang: 'en' });
-        if (taV) queue.push({ verse: vNum, text: taV.text, lang: 'ta' });
-      } else if (mode === 'en') {
-        if (enV) queue.push({ verse: vNum, text: enV.text, lang: 'en' });
+        if (pV) queue.push({ verse: vNum, text: pV.text, lang: pLang });
+        if (sV) queue.push({ verse: vNum, text: sV.text, lang: sLang });
       } else {
-        if (taV) queue.push({ verse: vNum, text: taV.text, lang: 'ta' });
+        if (pV) queue.push({ verse: vNum, text: pV.text, lang: pLang });
       }
     }
     
     if (queue.length > 0) {
-      playChapterVerses(queue, mode === 'en' ? 'en' : 'ta', 1.0, (vNum) => {
+      if (playIcon) playIcon.className = 'fa-solid fa-stop';
+
+      playChapterVerses(queue, pLang, 1.0, (vNum) => {
         document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
         const activeRow = document.querySelector(`.verse-row[data-verse="${vNum}"]`);
         if (activeRow) {
@@ -159,6 +205,7 @@ function setupEventListeners() {
         }
       }, () => {
         document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+        if (playIcon) playIcon.className = 'fa-solid fa-play';
       });
     }
   });
@@ -298,38 +345,40 @@ function setupEventListeners() {
       openModal('modal-note-editor');
     } else if (action === 'copy') {
       const scripture = getChapterScripture(bookId, chapter);
-      const enV = scripture.en.find(v => v.verse === verse);
-      const taV = scripture.ta.find(v => v.verse === verse);
+      const pV = (scripture.primary || []).find(v => v.verse === verse);
+      const sV = (scripture.secondary || []).find(v => v.verse === verse);
       const book = getBookById(bookId);
       copyVerseToClipboard({
-        textEn: enV ? enV.text : '',
-        textTa: taV ? taV.text : '',
+        textEn: pV ? pV.text : '',
+        textTa: sV ? sV.text : '',
         refEn: `${book.nameEn} ${chapter}:${verse}`,
-        refTa: `${book.nameTa} ${chapter}:${verse}`
+        refTa: `${book.nameTa || book.nameEn} ${chapter}:${verse}`
       }).then(() => {
         alert('Verse copied to clipboard!');
       });
     } else if (action === 'audio-verse') {
       const scripture = getChapterScripture(bookId, chapter);
       const mode = settings.viewMode || 'parallel';
-      const enV = scripture.en.find(v => v.verse === verse);
-      const taV = scripture.ta.find(v => v.verse === verse);
+      const pLang = settings.primaryLang || 'en';
+      const sLang = settings.secondaryLang || 'ta';
+      const pLangObj = getLangByCode(pLang);
+      const sLangObj = getLangByCode(sLang);
+      const pV = (scripture.primary || []).find(v => v.verse === verse);
+      const sV = (scripture.secondary || []).find(v => v.verse === verse);
       
       let queue = [];
       if (mode === 'parallel') {
-        if (enV) queue.push({ verse: verse, text: enV.text, lang: 'en' });
-        if (taV) queue.push({ verse: verse, text: taV.text, lang: 'ta' });
-      } else if (mode === 'en') {
-        if (enV) queue.push({ verse: verse, text: enV.text, lang: 'en' });
+        if (pV) queue.push({ verse: verse, text: pV.text, lang: pLang });
+        if (sV) queue.push({ verse: verse, text: sV.text, lang: sLang });
       } else {
-        if (taV) queue.push({ verse: verse, text: taV.text, lang: 'ta' });
+        if (pV) queue.push({ verse: verse, text: pV.text, lang: pLang });
       }
 
       if (queue.length > 0) {
         row.classList.add('tts-active');
         btn.classList.add('playing');
 
-        playChapterVerses(queue, mode === 'en' ? 'en' : 'ta', 1.0, null, () => {
+        playChapterVerses(queue, pLang, 1.0, null, () => {
           row.classList.remove('tts-active');
           btn.classList.remove('playing');
         });

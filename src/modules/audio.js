@@ -1,3 +1,5 @@
+import { getLangByCode } from '../data/languages.js';
+
 let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 let currentUtterance = null;
 let htmlAudioElement = null;
@@ -89,22 +91,23 @@ function playWebSpeech(text, itemLang) {
     currentUtterance.pitch = 1.0;
     currentUtterance.volume = 1.0;
 
-    const targetLang = itemLang === 'ta' ? 'ta-IN' : 'en-US';
+    const langObj = getLangByCode(itemLang);
+    const targetLang = itemLang === 'en' ? 'en-US' : (itemLang === 'ta' ? 'ta-IN' : (itemLang === 'hi' ? 'hi-IN' : (itemLang === 'ml' ? 'ml-IN' : (itemLang === 'te' ? 'te-IN' : (itemLang === 'kn' ? 'kn-IN' : 'en-US')))));
     currentUtterance.lang = targetLang;
 
     // Pick best available voice for language
     const voices = availableVoices.length > 0 ? availableVoices : (synth.getVoices() || []);
     if (voices.length > 0) {
-      if (itemLang === 'ta') {
-        const taVoice = voices.find(v => {
+      if (itemLang !== 'en') {
+        const localVoice = voices.find(v => {
           const l = (v.lang || '').toLowerCase();
           const n = (v.name || '').toLowerCase();
-          return l.includes('ta') || n.includes('tamil');
+          return l.includes(itemLang) || n.includes(langObj.name.toLowerCase());
         });
-        if (taVoice) {
-          currentUtterance.voice = taVoice;
+        if (localVoice) {
+          currentUtterance.voice = localVoice;
         } else {
-          // No Tamil voice found on system, fallback immediately
+          // No local voice found on system, fallback immediately
           playAudioStream(text, itemLang);
           return;
         }
@@ -112,8 +115,8 @@ function playWebSpeech(text, itemLang) {
         const enVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
         if (enVoice) currentUtterance.voice = enVoice;
       }
-    } else if (itemLang === 'ta') {
-      // If voices array is empty (can happen on some browsers), fallback to stream for Tamil
+    } else if (itemLang !== 'en') {
+      // If voices array is empty (can happen on some browsers), fallback to stream for local languages
       playAudioStream(text, itemLang);
       return;
     }
@@ -145,9 +148,11 @@ function playAudioStream(text, itemLang) {
   }
 
   const cleanText = text.slice(0, 250);
-  const targetLang = itemLang === 'ta' ? 'ta' : 'en';
+  const langObj = getLangByCode(itemLang);
+  const targetLang = itemLang;
+  
   if (typeof responsiveVoice !== 'undefined') {
-    const rvLang = itemLang === 'ta' ? "Tamil Male" : "UK English Male";
+    const rvLang = langObj.rvVoice;
     responsiveVoice.speak(cleanText, rvLang, {
       rate: playbackRate,
       onend: () => {

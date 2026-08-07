@@ -8,13 +8,16 @@ const STORAGE_KEYS = {
 };
 
 const DEFAULT_SETTINGS = {
-  theme: 'dark', // 'dark' | 'light' | 'sepia'
-  fontSize: 'md', // 'sm' | 'md' | 'lg' | 'xl'
-  lineHeight: 'relaxed', // 'normal' | 'relaxed' | 'spacious'
-  viewMode: 'parallel', // 'parallel' | 'en' | 'ta'
-  uiLang: 'ta', // 'ta' | 'en'
-  audioLang: 'ta', // 'ta' | 'en'
-  audioSpeed: 1.0
+  theme: 'dark',
+  fontSize: 'md',
+  lineHeight: 'relaxed',
+  viewMode: 'parallel',
+  uiLang: 'ta',
+  audioLang: 'ta',
+  audioSpeed: 1.0,
+  primaryLang: 'en',    // Primary language code
+  secondaryLang: 'ta',  // Secondary language code
+  isFirstLaunch: true   // Shows language setup on first open
 };
 
 const DEFAULT_LAST_READ = {

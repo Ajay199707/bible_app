@@ -323,3 +323,139 @@ body {
     display: none;
   }
 }
+
+/* ── LANGUAGE UI STYLES ── */
+.lang-setup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lang-setup-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lang-setup-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+.lang-setup-overlay.open .lang-setup-card {
+  transform: translateY(0);
+}
+.lang-setup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.lang-setup-icon {
+  font-size: 3rem;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+.lang-setup-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+.lang-setup-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.lang-section {
+  margin-bottom: 1.5rem;
+}
+.lang-section h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lang-section-num {
+  background: var(--accent-gold);
+  color: #000;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.lang-section-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.lang-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+.lang-card {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.lang-card:hover {
+  background: var(--bg-hover);
+}
+.lang-card.selected {
+  border-color: var(--accent-gold);
+  background: rgba(228, 173, 104, 0.1);
+}
+.lang-flag-badge {
+  font-size: 1.8rem;
+}
+.lang-native {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+.lang-english {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.lang-setup-btn {
+  width: 100%;
+  background: var(--accent-gold);
+  color: #000;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: opacity 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+.lang-setup-btn:hover {
+  opacity: 0.9;
+}
