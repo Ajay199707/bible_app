@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button id="play">Play</button>
+  <script>
+    document.getElementById("play").onclick = async () => {
+      try {
+        const url = "https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ta&q=" + encodeURIComponent("ஆதியிலே தேவன்");
+        console.log("URL:", url);
+        const audio = new Audio();
+        audio.src = url;
+        audio.onerror = (e) => console.error("Audio error:", audio.error);
+        await audio.play();
+        console.log("Played successfully");
+      } catch(e) {
+        console.error("Play error:", e);
+      }
+    };
+  </script>
+</body>
+</html>
