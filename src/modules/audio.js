@@ -20,6 +20,13 @@ export function playChapterVerses(verses, lang = 'ta', rate = 1.0, onVerseHighli
 
   if (!verses || verses.length === 0) return;
 
+  // Pre-create/unlock HTML5 Audio element in synchronous click context
+  if (typeof window !== 'undefined') {
+    if (!htmlAudioElement) {
+      htmlAudioElement = new Audio();
+    }
+  }
+
   versesQueue = verses;
   currentLang = lang || 'ta';
   playbackRate = rate || 1.0;
@@ -53,47 +60,45 @@ function speakNextVerse() {
     return;
   }
 
-  // Check if native SpeechSynthesis has native Tamil voice installed
+  // Check native SpeechSynthesis for Tamil voice
   const voices = synth ? (synth.getVoices() || []) : [];
-  const hasNativeTaVoice = voices.some(v => 
+  const taVoice = voices.find(v => 
     (v.lang || '').toLowerCase().includes('ta') || 
     (v.name || '').toLowerCase().includes('tamil')
   );
 
-  if (currentLang === 'ta' && !hasNativeTaVoice) {
-    // ----------------------------------------------------
-    // Unrestricted Blob-based Tamil Audio Streamer
-    // ----------------------------------------------------
-    playTamilBlobAudioStream(textToRead);
+  if (currentLang === 'ta') {
+    if (taVoice) {
+      playNativeSpeechSynthesis(textToRead, taVoice);
+    } else {
+      // Use pre-unlocked HTML5 Audio stream for Tamil
+      playTamilAudioDirectStream(textToRead);
+    }
   } else {
-    // ----------------------------------------------------
-    // Native Web Speech API Engine
-    // ----------------------------------------------------
-    playNativeSpeechSynthesis(textToRead);
+    playNativeSpeechSynthesis(textToRead, null);
   }
 }
 
-function playTamilBlobAudioStream(text) {
-  cleanupBlobAudio();
+function playTamilAudioDirectStream(text) {
+  cleanupBlobOnly();
 
-  // Limit chunk size for reliable TTS response
   const cleanText = text.slice(0, 200);
   const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ta&q=${encodeURIComponent(cleanText)}`;
 
+  // Fetch as Blob with no-referrer
   fetch(ttsUrl, { referrerPolicy: 'no-referrer' })
-    .then(res => {
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return res.blob();
-    })
+    .then(res => res.blob())
     .then(blob => {
       if (!isPlaying || isPausedState) return;
 
       activeBlobUrl = URL.createObjectURL(blob);
-      htmlAudioElement = new Audio(activeBlobUrl);
+      if (!htmlAudioElement) htmlAudioElement = new Audio();
+
+      htmlAudioElement.src = activeBlobUrl;
       htmlAudioElement.playbackRate = playbackRate;
 
       htmlAudioElement.onended = () => {
-        cleanupBlobAudio();
+        cleanupBlobOnly();
         if (isPlaying && !isPausedState) {
           activeVerseIndex++;
           speakNextVerse();
@@ -101,23 +106,29 @@ function playTamilBlobAudioStream(text) {
       };
 
       htmlAudioElement.onerror = (err) => {
-        console.warn('Tamil blob audio play warning:', err);
-        cleanupBlobAudio();
+        console.warn('Tamil audio stream playback warning:', err);
+        cleanupBlobOnly();
         if (isPlaying && !isPausedState) {
           activeVerseIndex++;
           setTimeout(speakNextVerse, 150);
         }
       };
 
-      return htmlAudioElement.play();
+      const playPromise = htmlAudioElement.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => {
+          console.warn('Audio play promise blocked, trying native speech fallback:', err);
+          playNativeSpeechSynthesis(text, null);
+        });
+      }
     })
     .catch(err => {
-      console.warn('Failed to fetch Tamil blob audio stream, trying native speech fallback:', err);
-      playNativeSpeechSynthesis(text);
+      console.warn('Fetch Tamil audio failed, using native speech fallback:', err);
+      playNativeSpeechSynthesis(text, null);
     });
 }
 
-function playNativeSpeechSynthesis(text) {
+function playNativeSpeechSynthesis(text, customVoice) {
   if (!synth) {
     activeVerseIndex++;
     speakNextVerse();
@@ -136,14 +147,18 @@ function playNativeSpeechSynthesis(text) {
     const targetLang = currentLang === 'ta' ? 'ta-IN' : 'en-US';
     currentUtterance.lang = targetLang;
 
-    const voices = synth.getVoices() || [];
-    if (voices.length > 0) {
-      if (currentLang === 'ta') {
-        const taVoice = voices.find(v => (v.lang || '').toLowerCase().includes('ta') || (v.name || '').toLowerCase().includes('tamil'));
-        if (taVoice) currentUtterance.voice = taVoice;
-      } else {
-        const enVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
-        if (enVoice) currentUtterance.voice = enVoice;
+    if (customVoice) {
+      currentUtterance.voice = customVoice;
+    } else {
+      const voices = synth.getVoices() || [];
+      if (voices.length > 0) {
+        if (currentLang === 'ta') {
+          const taV = voices.find(v => (v.lang || '').toLowerCase().includes('ta') || (v.name || '').toLowerCase().includes('tamil'));
+          if (taV) currentUtterance.voice = taV;
+        } else {
+          const enV = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
+          if (enV) currentUtterance.voice = enV;
+        }
       }
     }
 
@@ -169,17 +184,10 @@ function playNativeSpeechSynthesis(text) {
   }
 }
 
-function cleanupBlobAudio() {
+function cleanupBlobOnly() {
   if (activeBlobUrl) {
     try { URL.revokeObjectURL(activeBlobUrl); } catch (e) {}
     activeBlobUrl = null;
-  }
-  if (htmlAudioElement) {
-    try {
-      htmlAudioElement.pause();
-      htmlAudioElement.src = '';
-    } catch (e) {}
-    htmlAudioElement = null;
   }
 }
 
@@ -189,7 +197,7 @@ export function pauseAudio() {
     if (synth && synth.speaking) {
       try { synth.pause(); } catch (e) {}
     }
-    if (htmlAudioElement) {
+    if (htmlAudioElement && !htmlAudioElement.paused) {
       try { htmlAudioElement.pause(); } catch (e) {}
     }
   }
@@ -217,7 +225,14 @@ export function stopAudio() {
     try { synth.cancel(); } catch (e) {}
   }
 
-  cleanupBlobAudio();
+  if (htmlAudioElement) {
+    try {
+      htmlAudioElement.pause();
+      htmlAudioElement.src = '';
+    } catch (e) {}
+  }
+
+  cleanupBlobOnly();
 }
 
 export function setPlaybackRate(rate) {
