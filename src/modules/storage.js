@@ -12,12 +12,13 @@ const DEFAULT_SETTINGS = {
   fontSize: 'md', // 'sm' | 'md' | 'lg' | 'xl'
   lineHeight: 'relaxed', // 'normal' | 'relaxed' | 'spacious'
   viewMode: 'parallel', // 'parallel' | 'en' | 'ta'
-  uiLang: 'en', // 'en' | 'ta'
+  uiLang: 'ta', // 'ta' | 'en'
+  audioLang: 'ta', // 'ta' | 'en'
   audioSpeed: 1.0
 };
 
 const DEFAULT_LAST_READ = {
-  bookId: 43, // John
+  bookId: 1, // Genesis / ஆதியாகமம்
   chapter: 1
 };
 

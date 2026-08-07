@@ -1,27 +1,35 @@
-let synth = window.speechSynthesis;
+let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 let currentUtterance = null;
 let isPlaying = false;
 let isPausedState = false;
 let activeVerseIndex = -1;
 let versesQueue = [];
-let currentLang = 'en';
+let currentLang = 'ta'; // Default audio language to Tamil (தமிழ்)
 let playbackRate = 1.0;
 let onVerseHighlightCallback = null;
 let onEndCallback = null;
+let availableVoices = [];
 
 export function initAudio() {
-  if (!window.speechSynthesis) {
-    console.warn('Speech synthesis not supported on this browser.');
+  if (!synth) return;
+
+  const loadVoices = () => {
+    availableVoices = synth.getVoices();
+  };
+
+  loadVoices();
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = loadVoices;
   }
 }
 
-export function playChapterVerses(verses, lang = 'en', rate = 1.0, onVerseHighlight = null, onComplete = null) {
+export function playChapterVerses(verses, lang = 'ta', rate = 1.0, onVerseHighlight = null, onComplete = null) {
   stopAudio();
 
   if (!verses || verses.length === 0 || !synth) return;
 
   versesQueue = verses;
-  currentLang = lang;
+  currentLang = lang || 'ta';
   playbackRate = rate;
   activeVerseIndex = 0;
   onVerseHighlightCallback = onVerseHighlight;
@@ -46,21 +54,36 @@ function speakNextVerse() {
     onVerseHighlightCallback(vItem.verse, activeVerseIndex);
   }
 
+  // Speak verse number and verse text
   const textToRead = `${vItem.verse}. ${vItem.text}`;
   currentUtterance = new SpeechSynthesisUtterance(textToRead);
 
-  // Set language
-  currentUtterance.lang = currentLang === 'ta' ? 'ta-IN' : 'en-US';
+  // Set language & rate
   currentUtterance.rate = playbackRate;
+  currentUtterance.pitch = 1.0;
 
-  // Try finding best voice for Tamil or English
-  const voices = synth.getVoices();
   if (currentLang === 'ta') {
-    const taVoice = voices.find(v => v.lang.includes('ta') || v.lang.includes('TA'));
-    if (taVoice) currentUtterance.voice = taVoice;
+    currentUtterance.lang = 'ta-IN';
+    // Search for best Tamil voice
+    const voices = availableVoices.length > 0 ? availableVoices : synth.getVoices();
+    const taVoice = voices.find(v => 
+      v.lang.toLowerCase().includes('ta') || 
+      v.name.toLowerCase().includes('tamil') ||
+      v.name.toLowerCase().includes('ta-in')
+    );
+    if (taVoice) {
+      currentUtterance.voice = taVoice;
+    }
   } else {
-    const enVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('David') || v.name.includes('Samantha')));
-    if (enVoice) currentUtterance.voice = enVoice;
+    currentUtterance.lang = 'en-US';
+    const voices = availableVoices.length > 0 ? availableVoices : synth.getVoices();
+    const enVoice = voices.find(v => 
+      v.lang.toLowerCase().startsWith('en') && 
+      (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Samantha') || v.name.includes('David'))
+    );
+    if (enVoice) {
+      currentUtterance.voice = enVoice;
+    }
   }
 
   currentUtterance.onend = () => {
@@ -71,12 +94,20 @@ function speakNextVerse() {
   };
 
   currentUtterance.onerror = (err) => {
-    console.error('Audio TTS error:', err);
-    activeVerseIndex++;
-    speakNextVerse();
+    console.warn('Audio TTS playback warning:', err);
+    if (isPlaying && !isPausedState) {
+      activeVerseIndex++;
+      setTimeout(speakNextVerse, 200);
+    }
   };
 
-  synth.speak(currentUtterance);
+  try {
+    synth.speak(currentUtterance);
+  } catch (e) {
+    console.error('Failed to invoke SpeechSynthesis:', e);
+    activeVerseIndex++;
+    speakNextVerse();
+  }
 }
 
 export function pauseAudio() {
@@ -106,7 +137,6 @@ export function stopAudio() {
 export function setPlaybackRate(rate) {
   playbackRate = rate;
   if (currentUtterance && isPlaying) {
-    // restart current verse with new rate
     synth.cancel();
     speakNextVerse();
   }

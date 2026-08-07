@@ -14,10 +14,10 @@ import { READING_PLANS } from './modules/plans.js';
 // Application State
 let settings = getSettings();
 let lastRead = getLastRead();
-let currentBookId = lastRead.bookId || 43; // Default John
+let currentBookId = lastRead.bookId || 1; // Default Genesis / ஆதியாகமம்
 let currentChapter = lastRead.chapter || 1;
 let currentTtsVerse = -1;
-let currentTtsLang = 'en';
+let currentTtsLang = 'ta'; // Default Tamil narration
 let editingNoteVerseObj = null;
 
 // Initialize App
