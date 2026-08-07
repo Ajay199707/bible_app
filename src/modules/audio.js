@@ -4,48 +4,43 @@ let isPlaying = false;
 let isPausedState = false;
 let activeVerseIndex = -1;
 let versesQueue = [];
-let currentLang = 'ta'; // Default language setting: Tamil
+let currentLang = 'ta'; // Default Tamil
 let playbackRate = 1.0;
 let onVerseHighlightCallback = null;
 let onEndCallback = null;
-let availableVoices = [];
 
 export function initAudio() {
   if (!synth) return;
-
-  // Make sure audio is completely stopped on initial load
-  stopAudio();
-
-  const loadVoices = () => {
-    try {
-      availableVoices = synth.getVoices() || [];
-    } catch (e) {
-      availableVoices = [];
+  // Ensure synth is not stuck in paused state on page load
+  try {
+    if (synth.paused) {
+      synth.resume();
     }
-  };
-
-  loadVoices();
-  if (synth.onvoiceschanged !== undefined) {
-    synth.onvoiceschanged = loadVoices;
-  }
+  } catch (e) {}
 }
 
 export function playChapterVerses(verses, lang = 'ta', rate = 1.0, onVerseHighlight = null, onComplete = null) {
-  // Always stop previous speech before starting
-  stopAudio();
-
   if (!verses || verses.length === 0 || !synth) return;
+
+  // Unstick synth if browser left it in paused state
+  try {
+    if (synth.paused) synth.resume();
+    if (synth.speaking) synth.cancel();
+  } catch (e) {}
 
   versesQueue = verses;
   currentLang = lang || 'ta';
-  playbackRate = rate;
+  playbackRate = rate || 1.0;
   activeVerseIndex = 0;
   onVerseHighlightCallback = onVerseHighlight;
   onEndCallback = onComplete;
   isPlaying = true;
   isPausedState = false;
 
-  speakNextVerse();
+  // Short timeout to allow synth.cancel() to clean up cleanly
+  setTimeout(() => {
+    speakNextVerse();
+  }, 50);
 }
 
 function speakNextVerse() {
@@ -62,7 +57,6 @@ function speakNextVerse() {
     onVerseHighlightCallback(vItem.verse, activeVerseIndex);
   }
 
-  // Speak scripture text directly without reading "1, 2, 3" verse numbers aloud
   const textToRead = vItem.text ? vItem.text.trim() : '';
   if (!textToRead) {
     activeVerseIndex++;
@@ -70,58 +64,57 @@ function speakNextVerse() {
     return;
   }
 
-  currentUtterance = new SpeechSynthesisUtterance(textToRead);
-  currentUtterance.rate = playbackRate;
-  currentUtterance.pitch = 1.0;
-
-  if (currentLang === 'ta') {
-    currentUtterance.lang = 'ta-IN';
-    
-    // Find matching Tamil voice if available
-    const voices = availableVoices.length > 0 ? availableVoices : (synth.getVoices() || []);
-    const taVoice = voices.find(v => {
-      const l = (v.lang || '').toLowerCase();
-      const n = (v.name || '').toLowerCase();
-      return l.startsWith('ta') || l.includes('ta-in') || l.includes('ta_in') || n.includes('tamil') || n.includes('ta-in');
-    });
-
-    if (taVoice) {
-      currentUtterance.voice = taVoice;
-    }
-  } else {
-    currentUtterance.lang = 'en-US';
-    
-    const voices = availableVoices.length > 0 ? availableVoices : (synth.getVoices() || []);
-    const enVoice = voices.find(v => {
-      const l = (v.lang || '').toLowerCase();
-      const n = (v.name || '').toLowerCase();
-      return l.startsWith('en') && (n.includes('google') || n.includes('natural') || n.includes('samantha') || n.includes('david'));
-    });
-
-    if (enVoice) {
-      currentUtterance.voice = enVoice;
-    }
-  }
-
-  currentUtterance.onend = () => {
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      speakNextVerse();
-    }
-  };
-
-  currentUtterance.onerror = (err) => {
-    console.warn('Audio TTS error:', err);
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      setTimeout(speakNextVerse, 150);
-    }
-  };
-
   try {
+    currentUtterance = new SpeechSynthesisUtterance(textToRead);
+    currentUtterance.rate = playbackRate;
+    currentUtterance.pitch = 1.0;
+    currentUtterance.volume = 1.0;
+
+    const targetLang = currentLang === 'ta' ? 'ta-IN' : 'en-US';
+    currentUtterance.lang = targetLang;
+
+    // Check available voices
+    const voices = synth.getVoices() || [];
+    if (voices.length > 0) {
+      if (currentLang === 'ta') {
+        const taVoice = voices.find(v => {
+          const l = (v.lang || '').toLowerCase();
+          const n = (v.name || '').toLowerCase();
+          return l.includes('ta') || n.includes('tamil');
+        });
+        if (taVoice) {
+          currentUtterance.voice = taVoice;
+        }
+      } else {
+        const enVoice = voices.find(v => {
+          const l = (v.lang || '').toLowerCase();
+          return l.startsWith('en');
+        });
+        if (enVoice) {
+          currentUtterance.voice = enVoice;
+        }
+      }
+    }
+
+    currentUtterance.onend = () => {
+      if (isPlaying && !isPausedState) {
+        activeVerseIndex++;
+        speakNextVerse();
+      }
+    };
+
+    currentUtterance.onerror = (err) => {
+      console.warn('Audio TTS utterance warning/end:', err);
+      if (isPlaying && !isPausedState) {
+        activeVerseIndex++;
+        setTimeout(speakNextVerse, 100);
+      }
+    };
+
+    if (synth.paused) synth.resume();
     synth.speak(currentUtterance);
-  } catch (e) {
-    console.error('Failed to invoke SpeechSynthesis:', e);
+  } catch (err) {
+    console.error('SpeechSynthesis error:', err);
     activeVerseIndex++;
     speakNextVerse();
   }
@@ -129,14 +122,18 @@ function speakNextVerse() {
 
 export function pauseAudio() {
   if (synth && isPlaying) {
-    synth.pause();
+    try {
+      synth.pause();
+    } catch (e) {}
     isPausedState = true;
   }
 }
 
 export function resumeAudio() {
   if (synth && isPausedState) {
-    synth.resume();
+    try {
+      synth.resume();
+    } catch (e) {}
     isPausedState = false;
   }
 }
@@ -156,7 +153,9 @@ export function stopAudio() {
 export function setPlaybackRate(rate) {
   playbackRate = rate;
   if (currentUtterance && isPlaying) {
-    synth.cancel();
+    try {
+      synth.cancel();
+    } catch (e) {}
     speakNextVerse();
   }
 }
