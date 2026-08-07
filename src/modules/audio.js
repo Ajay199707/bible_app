@@ -1,4 +1,3 @@
-import { getLangByCode } from '../data/languages.js';
 
 let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 let currentUtterance = null;
@@ -148,11 +147,10 @@ function playAudioStream(text, itemLang) {
   }
 
   const cleanText = text.slice(0, 250);
-  const langObj = getLangByCode(itemLang);
   const targetLang = itemLang;
   
-  if (typeof responsiveVoice !== 'undefined' && !['ml', 'te', 'kn'].includes(itemLang)) {
-    const rvLang = langObj.rvVoice;
+  if (typeof responsiveVoice !== 'undefined') {
+    const rvLang = (itemLang === 'ta') ? 'Tamil Male' : 'UK English Male';
     responsiveVoice.speak(cleanText, rvLang, {
       rate: playbackRate,
       onend: () => {

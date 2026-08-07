@@ -14,10 +14,7 @@ const DEFAULT_SETTINGS = {
   viewMode: 'parallel',
   uiLang: 'ta',
   audioLang: 'ta',
-  audioSpeed: 1.0,
-  primaryLang: 'en',    // Primary language code
-  secondaryLang: 'ta',  // Secondary language code
-  isFirstLaunch: true   // Shows language setup on first open
+  audioSpeed: 1.0
 };
 
 const DEFAULT_LAST_READ = {

@@ -10,8 +10,6 @@ import { playChapterVerses, pauseAudio, resumeAudio, stopAudio, setPlaybackRate,
 import { searchBible } from './modules/search.js';
 import { getDailyVerse, copyVerseToClipboard } from './modules/dailyVerse.js';
 import { READING_PLANS } from './modules/plans.js';
-import { showLangSetup, showLangPicker, initLangSetupEvents } from './modules/langSetup.js';
-import { getLangByCode } from './data/languages.js';
 
 // Application State
 let settings = getSettings();
@@ -26,24 +24,12 @@ let editingNoteVerseObj = null;
 document.addEventListener('DOMContentLoaded', () => {
   initAudio();
   applySettings(settings);
-  initLangSetupEvents();
   setupEventListeners();
 
-  const handleLangChange = (primary, secondary) => {
-    settings = getSettings();
-    setActiveLanguages(primary, secondary).then(() => {
-      loadScripture(currentBookId, currentChapter);
-    });
-  };
-
-  if (settings.isFirstLaunch) {
-    showLangSetup(handleLangChange);
-  } else {
-    // Load full authentic Bible datasets first
-    initBibleData(settings.primaryLang, settings.secondaryLang).then(() => {
-      loadScripture(currentBookId, currentChapter);
-    });
-  }
+  // Load full authentic Bible datasets first
+  initBibleData().then(() => {
+    loadScripture(currentBookId, currentChapter);
+  });
 
   // Register PWA Service Worker
   if ('serviceWorker' in navigator) {
@@ -61,35 +47,18 @@ function loadScripture(bookId, chapter) {
   saveLastRead(currentBookId, currentChapter);
 
   const book = getBookById(currentBookId);
-  const pLang = getLangByCode(settings.primaryLang);
-  const sLang = getLangByCode(settings.secondaryLang);
 
   // Update navbar title label
   const labelEl = document.getElementById('current-book-label');
   if (labelEl) {
-    const pBookName = book.nameEn;
-    const sBookName = (settings.secondaryLang === 'ta' && book.nameTa) ? book.nameTa : book.nameEn;
-
-    if (settings.viewMode === 'primary') {
-      labelEl.textContent = `${pBookName} ${currentChapter}`;
-    } else if (settings.viewMode === 'secondary') {
-      labelEl.textContent = `${sBookName} ${currentChapter}`;
+    if (settings.viewMode === 'en') {
+      labelEl.textContent = `${book.nameEn} ${currentChapter}`;
+    } else if (settings.viewMode === 'ta') {
+      labelEl.textContent = `${book.nameTa} ${currentChapter}`;
     } else {
-      labelEl.textContent = `${pBookName} ${currentChapter} | ${sBookName} ${currentChapter}`;
+      labelEl.textContent = `${book.nameEn} ${currentChapter} | ${book.nameTa} ${currentChapter}`;
     }
   }
-
-  // Update app logo subtext dynamically based on secondary language
-  const logoSubtext = document.querySelector('.logo-subtext');
-  if (logoSubtext) {
-    logoSubtext.textContent = sLang.bibleName || pLang.bibleName;
-  }
-
-  // Update mode pills text
-  const primaryPill = document.getElementById('pill-label-primary');
-  const secondaryPill = document.getElementById('pill-label-secondary');
-  if (primaryPill) primaryPill.textContent = pLang.name;
-  if (secondaryPill) secondaryPill.textContent = sLang.nativeName;
 
   // Update chapter nav buttons
   const prevBtn = document.getElementById('btn-prev-chap');
@@ -134,9 +103,7 @@ function applySettings(newSettings) {
       viewMode: settings.viewMode,
       fontSize: settings.fontSize,
       lineHeight: settings.lineHeight,
-      activeTtsVerse: currentTtsVerse,
-      primaryLang: settings.primaryLang,
-      secondaryLang: settings.secondaryLang
+      activeTtsVerse: currentTtsVerse
     });
   }
 }

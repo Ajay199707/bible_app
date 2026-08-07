@@ -1,15 +1,11 @@
 import { getBookById } from '../data/books.js';
 import { getChapterScripture } from '../data/bibleData.js';
-import { getLangByCode } from '../data/languages.js';
 import { isBookmarked, getVerseHighlight, getVerseNote } from './storage.js';
 
 export function renderReaderContent(containerEl, bookId, chapter, options = {}) {
-  const { viewMode = 'parallel', fontSize = 'md', lineHeight = 'relaxed', activeTtsVerse = -1,
-    primaryLang = 'en', secondaryLang = 'ta' } = options;
+  const { viewMode = 'parallel', fontSize = 'md', lineHeight = 'relaxed', activeTtsVerse = -1 } = options;
   const book = getBookById(bookId);
   const scripture = getChapterScripture(bookId, chapter);
-  const pLang = getLangByCode(primaryLang);
-  const sLang = getLangByCode(secondaryLang);
 
   containerEl.innerHTML = '';
   containerEl.className = `reader-container view-mode-${viewMode} font-size-${fontSize} line-height-${lineHeight}`;
@@ -18,22 +14,20 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
   const headerDiv = document.createElement('div');
   headerDiv.className = 'reader-header-title';
 
-  const sBookName = (secondaryLang === 'ta' && book.nameTa) ? book.nameTa : book.nameEn;
-
   if (viewMode === 'parallel') {
     headerDiv.innerHTML = `
-      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="${sLang.fontClass}">${sBookName} ${chapter}</span></h2>
-      <p class="sub-heading">Parallel Bible View (${pLang.name} & ${sLang.nativeName})</p>
+      <h2>${book.nameEn} ${chapter} <span class="divider-slash">|</span> <span class="ta-font">${book.nameTa} ${chapter}</span></h2>
+      <p class="sub-heading">Parallel Bible View (English & தமிழ்)</p>
     `;
-  } else if (viewMode === 'secondary') {
+  } else if (viewMode === 'ta') {
     headerDiv.innerHTML = `
-      <h2 class="${sLang.fontClass}">${sBookName} ${chapter}</h2>
-      <p class="sub-heading">${sLang.nativeName} Bible</p>
+      <h2 class="ta-font">${book.nameTa} ${chapter}</h2>
+      <p class="sub-heading">தமிழ் Bible</p>
     `;
   } else {
     headerDiv.innerHTML = `
-      <h2 class="${pLang.fontClass}">${book.nameEn} ${chapter}</h2>
-      <p class="sub-heading">${pLang.name} Bible</p>
+      <h2>${book.nameEn} ${chapter}</h2>
+      <p class="sub-heading">English Bible</p>
     `;
   }
   containerEl.appendChild(headerDiv);
@@ -42,8 +36,8 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
   const versesWrapper = document.createElement('div');
   versesWrapper.className = 'verses-wrapper';
 
-  const primaryList = scripture.primary || scripture.en || [];
-  const secondaryList = scripture.secondary || scripture.ta || [];
+  const primaryList = scripture.en || [];
+  const secondaryList = scripture.ta || [];
   const maxVerses = Math.max(primaryList.length, secondaryList.length);
 
   for (let i = 0; i < maxVerses; i++) {
@@ -63,11 +57,11 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
 
     if (viewMode === 'parallel') {
       verseRow.innerHTML = `
-        <div class="verse-cell verse-en ${pLang.fontClass}">
+        <div class="verse-cell verse-en">
           <span class="verse-num">${verseNum}</span>
           <span class="verse-text">${pObj.text}</span>
         </div>
-        <div class="verse-cell verse-ta ${sLang.fontClass}">
+        <div class="verse-cell verse-ta ta-font">
           <span class="verse-num">${verseNum}</span>
           <span class="verse-text">${sObj.text}</span>
         </div>
@@ -84,14 +78,14 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-copy" title="Copy" data-action="copy">
             <i class="fa-solid fa-copy"></i>
           </button>
-          <button class="action-btn btn-audio-verse" title="Listen (${pLang.name} + ${sLang.name})" data-action="audio-verse">
+          <button class="action-btn btn-audio-verse" title="Listen (English + Tamil)" data-action="audio-verse">
             <i class="fa-solid fa-volume-high"></i>
           </button>
         </div>
       `;
-    } else if (viewMode === 'secondary') {
+    } else if (viewMode === 'ta') {
       verseRow.innerHTML = `
-        <div class="verse-cell single-cell ${sLang.fontClass}">
+        <div class="verse-cell single-cell ta-font">
           <span class="verse-num">${verseNum}</span>
           <span class="verse-text">${sObj.text}</span>
         </div>
@@ -100,12 +94,12 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
-          <button class="action-btn btn-audio-verse" title="Listen (${sLang.name})" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
+          <button class="action-btn btn-audio-verse" title="Listen (Tamil)" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
     } else {
       verseRow.innerHTML = `
-        <div class="verse-cell single-cell ${pLang.fontClass}">
+        <div class="verse-cell single-cell">
           <span class="verse-num">${verseNum}</span>
           <span class="verse-text">${pObj.text}</span>
         </div>
@@ -114,7 +108,7 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
-          <button class="action-btn btn-audio-verse" title="Listen (${pLang.name})" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
+          <button class="action-btn btn-audio-verse" title="Listen (English)" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
     }
