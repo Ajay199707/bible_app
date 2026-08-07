@@ -78,9 +78,6 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-copy" title="Copy Verse / பிரதியெடு" data-action="copy">
             <i class="fa-solid fa-copy"></i>
           </button>
-          <button class="action-btn btn-audio-verse" title="Read Verse / வாசி" data-action="audio">
-            <i class="fa-solid fa-volume-high"></i>
-          </button>
         </div>
       `;
     } else if (viewMode === 'ta') {
@@ -94,7 +91,6 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
-          <button class="action-btn btn-audio-verse" title="Read Verse" data-action="audio"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
     } else {
@@ -108,7 +104,6 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
-          <button class="action-btn btn-audio-verse" title="Read Verse" data-action="audio"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
     }

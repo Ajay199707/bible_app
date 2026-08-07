@@ -230,82 +230,7 @@ function setupEventListeners() {
   document.getElementById('setting-size-lg')?.addEventListener('click', () => applySettings({ fontSize: 'lg' }));
   document.getElementById('setting-size-xl')?.addEventListener('click', () => applySettings({ fontSize: 'xl' }));
 
-  // Audio Narration Controls
-  const playBtn = document.getElementById('btn-audio-play-pause');
-  const stopBtn = document.getElementById('btn-audio-stop');
-  const langEnBtn = document.getElementById('btn-audio-lang-en');
-  const langTaBtn = document.getElementById('btn-audio-lang-ta');
-  const speedSelect = document.getElementById('audio-speed-select');
-
-  langEnBtn?.addEventListener('click', () => {
-    currentTtsLang = 'en';
-    langEnBtn.classList.add('active');
-    langTaBtn.classList.remove('active');
-  });
-
-  langTaBtn?.addEventListener('click', () => {
-    currentTtsLang = 'ta';
-    langTaBtn.classList.add('active');
-    langEnBtn.classList.remove('active');
-  });
-
-  speedSelect?.addEventListener('change', (e) => {
-    const rate = parseFloat(e.target.value);
-    setPlaybackRate(rate);
-  });
-
-  playBtn?.addEventListener('click', () => {
-    const audioState = getAudioState();
-    if (audioState.isPlaying) {
-      if (audioState.isPaused) {
-        resumeAudio();
-      } else {
-        pauseAudio();
-      }
-    } else {
-      // Start reading chapter
-      const scripture = getChapterScripture(currentBookId, currentChapter);
-      const versesToRead = currentTtsLang === 'ta' ? scripture.ta : scripture.en;
-
-      playChapterVerses(
-        versesToRead,
-        currentTtsLang,
-        parseFloat(speedSelect ? speedSelect.value : 1.0),
-        (verseNum) => {
-          currentTtsVerse = verseNum;
-          updateAudioUiState();
-          // Highlight active verse in reader
-          const root = document.getElementById('reader-root');
-          renderReaderContent(root, currentBookId, currentChapter, {
-            viewMode: settings.viewMode,
-            fontSize: settings.fontSize,
-            lineHeight: settings.lineHeight,
-            activeTtsVerse: currentTtsVerse
-          });
-        },
-        () => {
-          currentTtsVerse = -1;
-          updateAudioUiState();
-        }
-      );
-    }
-    updateAudioUiState();
-  });
-
-  stopBtn?.addEventListener('click', () => {
-    stopAudio();
-    currentTtsVerse = -1;
-    updateAudioUiState();
-    const root = document.getElementById('reader-root');
-    renderReaderContent(root, currentBookId, currentChapter, {
-      viewMode: settings.viewMode,
-      fontSize: settings.fontSize,
-      lineHeight: settings.lineHeight,
-      activeTtsVerse: -1
-    });
-  });
-
-  // Reader Action Delegation (Bookmark, Highlight, Note, Copy, Audio)
+  // Reader Action Delegation (Bookmark, Highlight, Note, Copy)
   document.getElementById('reader-root')?.addEventListener('click', (e) => {
     const btn = e.target.closest('.action-btn');
     if (!btn) return;
@@ -346,14 +271,6 @@ function setupEventListeners() {
         refTa: `${book.nameTa} ${chapter}:${verse}`
       }).then(() => {
         alert('Verse copied to clipboard!');
-      });
-    } else if (action === 'audio') {
-      const scripture = getChapterScripture(bookId, chapter);
-      const versesToRead = currentTtsLang === 'ta' ? scripture.ta.filter(v => v.verse === verse) : scripture.en.filter(v => v.verse === verse);
-      playChapterVerses(versesToRead, currentTtsLang, 1.0, (vNum) => {
-        currentTtsVerse = vNum;
-      }, () => {
-        currentTtsVerse = -1;
       });
     }
   });
