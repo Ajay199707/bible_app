@@ -126,6 +126,43 @@ function setupEventListeners() {
     }
   });
 
+  // Play Entire Chapter Button
+  document.getElementById('btn-play-chapter')?.addEventListener('click', () => {
+    const scripture = getChapterScripture(currentBookId, currentChapter);
+    const mode = settings.viewMode || 'parallel';
+    
+    let queue = [];
+    const maxVerses = Math.max(scripture.en.length, scripture.ta.length);
+    
+    for (let i = 0; i < maxVerses; i++) {
+      const vNum = i + 1;
+      const enV = scripture.en.find(v => v.verse === vNum);
+      const taV = scripture.ta.find(v => v.verse === vNum);
+      
+      if (mode === 'parallel') {
+        if (enV) queue.push({ verse: vNum, text: enV.text, lang: 'en' });
+        if (taV) queue.push({ verse: vNum, text: taV.text, lang: 'ta' });
+      } else if (mode === 'en') {
+        if (enV) queue.push({ verse: vNum, text: enV.text, lang: 'en' });
+      } else {
+        if (taV) queue.push({ verse: vNum, text: taV.text, lang: 'ta' });
+      }
+    }
+    
+    if (queue.length > 0) {
+      playChapterVerses(queue, mode === 'en' ? 'en' : 'ta', 1.0, (vNum) => {
+        document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+        const activeRow = document.querySelector(`.verse-row[data-verse="${vNum}"]`);
+        if (activeRow) {
+          activeRow.classList.add('tts-active');
+          activeRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, () => {
+        document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+      });
+    }
+  });
+
   // View Mode Pills Toggle (Parallel | English | Tamil)
   document.querySelectorAll('.mode-pills-group .mode-pill[data-mode]').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -272,14 +309,27 @@ function setupEventListeners() {
       }).then(() => {
         alert('Verse copied to clipboard!');
       });
-    } else if (action === 'audio-tamil') {
+    } else if (action === 'audio-verse') {
       const scripture = getChapterScripture(bookId, chapter);
+      const mode = settings.viewMode || 'parallel';
+      const enV = scripture.en.find(v => v.verse === verse);
       const taV = scripture.ta.find(v => v.verse === verse);
-      if (taV) {
+      
+      let queue = [];
+      if (mode === 'parallel') {
+        if (enV) queue.push({ verse: verse, text: enV.text, lang: 'en' });
+        if (taV) queue.push({ verse: verse, text: taV.text, lang: 'ta' });
+      } else if (mode === 'en') {
+        if (enV) queue.push({ verse: verse, text: enV.text, lang: 'en' });
+      } else {
+        if (taV) queue.push({ verse: verse, text: taV.text, lang: 'ta' });
+      }
+
+      if (queue.length > 0) {
         row.classList.add('tts-active');
         btn.classList.add('playing');
 
-        playChapterVerses([taV], 'ta', 1.0, null, () => {
+        playChapterVerses(queue, mode === 'en' ? 'en' : 'ta', 1.0, null, () => {
           row.classList.remove('tts-active');
           btn.classList.remove('playing');
         });

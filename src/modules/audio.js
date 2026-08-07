@@ -28,13 +28,17 @@ export function initAudio() {
   }
 }
 
-export function playChapterVerses(verses, lang = 'ta', rate = 1.0, onVerseHighlight = null, onComplete = null) {
+export function playChapterVerses(verses, defaultLang = 'ta', rate = 1.0, onVerseHighlight = null, onComplete = null) {
   stopAudio();
 
   if (!verses || verses.length === 0) return;
 
-  versesQueue = verses;
-  currentLang = lang || 'ta';
+  versesQueue = verses.map(v => ({
+    ...v,
+    lang: v.lang || defaultLang
+  }));
+  
+  currentLang = defaultLang;
   playbackRate = rate || 1.0;
   activeVerseIndex = 0;
   onVerseHighlightCallback = onVerseHighlight;
@@ -60,6 +64,8 @@ function speakNextVerse() {
   }
 
   const textToRead = vItem.text ? vItem.text.trim() : '';
+  const itemLang = vItem.lang || currentLang;
+  
   if (!textToRead) {
     activeVerseIndex++;
     speakNextVerse();
@@ -68,13 +74,13 @@ function speakNextVerse() {
 
   // Try Web Speech API first
   if (synth) {
-    playWebSpeech(textToRead);
+    playWebSpeech(textToRead, itemLang);
   } else {
-    playAudioStream(textToRead);
+    playAudioStream(textToRead, itemLang);
   }
 }
 
-function playWebSpeech(text) {
+function playWebSpeech(text, itemLang) {
   try {
     if (synth.paused) synth.resume();
 
@@ -83,13 +89,13 @@ function playWebSpeech(text) {
     currentUtterance.pitch = 1.0;
     currentUtterance.volume = 1.0;
 
-    const targetLang = currentLang === 'ta' ? 'ta-IN' : 'en-US';
+    const targetLang = itemLang === 'ta' ? 'ta-IN' : 'en-US';
     currentUtterance.lang = targetLang;
 
     // Pick best available voice for language
     const voices = availableVoices.length > 0 ? availableVoices : (synth.getVoices() || []);
     if (voices.length > 0) {
-      if (currentLang === 'ta') {
+      if (itemLang === 'ta') {
         const taVoice = voices.find(v => {
           const l = (v.lang || '').toLowerCase();
           const n = (v.name || '').toLowerCase();
@@ -99,16 +105,16 @@ function playWebSpeech(text) {
           currentUtterance.voice = taVoice;
         } else {
           // No Tamil voice found on system, fallback immediately
-          playAudioStream(text);
+          playAudioStream(text, itemLang);
           return;
         }
       } else {
         const enVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
         if (enVoice) currentUtterance.voice = enVoice;
       }
-    } else if (currentLang === 'ta') {
+    } else if (itemLang === 'ta') {
       // If voices array is empty (can happen on some browsers), fallback to stream for Tamil
-      playAudioStream(text);
+      playAudioStream(text, itemLang);
       return;
     }
 
@@ -121,16 +127,16 @@ function playWebSpeech(text) {
 
     currentUtterance.onerror = (err) => {
       console.warn('WebSpeech error, trying Audio Stream fallback:', err);
-      playAudioStream(text);
+      playAudioStream(text, itemLang);
     };
 
     synth.speak(currentUtterance);
   } catch (e) {
-    playAudioStream(text);
+    playAudioStream(text, itemLang);
   }
 }
 
-function playAudioStream(text) {
+function playAudioStream(text, itemLang) {
   if (htmlAudioElement) {
     try {
       htmlAudioElement.pause();
@@ -139,9 +145,9 @@ function playAudioStream(text) {
   }
 
   const cleanText = text.slice(0, 250);
-  const targetLang = currentLang === 'ta' ? 'ta' : 'en';
+  const targetLang = itemLang === 'ta' ? 'ta' : 'en';
   if (typeof responsiveVoice !== 'undefined') {
-    const rvLang = currentLang === 'ta' ? "Tamil Male" : "UK English Male";
+    const rvLang = itemLang === 'ta' ? "Tamil Male" : "UK English Male";
     responsiveVoice.speak(cleanText, rvLang, {
       rate: playbackRate,
       onend: () => {
