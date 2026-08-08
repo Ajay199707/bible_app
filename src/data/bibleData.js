@@ -1,3 +1,5 @@
+import { getBookById } from './books.js';
+
 // Cache: langCode -> raw bible data
 const bibleCache = {};
 let loadPromise = null;
