@@ -51,7 +51,6 @@
   background: var(--bg-surface);
   border: 1px solid transparent;
   transition: var(--transition);
-  scroll-margin-top: 140px;
 }
 
 .view-mode-en .verse-row,
