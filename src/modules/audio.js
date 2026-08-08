@@ -46,6 +46,8 @@ export function playChapterVerses(verses, defaultLang = 'ta', rate = 1.0, onVers
   if (typeof responsiveVoice !== 'undefined') {
     try {
       responsiveVoice.init();
+      // Speak a silent space to activate the cloud voice engine context under a user gesture
+      responsiveVoice.speak(" ", "UK English Male", { volume: 0 });
     } catch (e) {}
   }
 
