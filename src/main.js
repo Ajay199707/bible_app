@@ -27,8 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
 
   // Load full authentic Bible datasets first
-  initBibleData().then(() => {
+  const dbLoadPromise = initBibleData().then(() => {
     loadScripture(currentBookId, currentChapter);
+  });
+
+  // Enable play button after ResponsiveVoice is ready or a 2.5-second timeout
+  const enablePlayBtn = () => {
+    const playBtn = document.getElementById('btn-play-chapter');
+    if (playBtn) playBtn.disabled = false;
+  };
+  if (typeof window !== 'undefined' && window.responsiveVoice) {
+    window.responsiveVoice.OnVoiceReady = enablePlayBtn;
+  }
+
+  // Fade out preloader after minimum 2.5s to ensure audio engines are fully loaded and cached
+  Promise.all([dbLoadPromise, new Promise(r => setTimeout(r, 2500))]).then(() => {
+    const preloader = document.getElementById('app-preloader');
+    if (preloader) {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.remove();
+        enablePlayBtn();
+      }, 500); // Wait for CSS fade-out transition to complete
+    } else {
+      enablePlayBtn();
+    }
   });
 
   // Register PWA Service Worker
@@ -39,16 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  // Enable play button after ResponsiveVoice is ready or a 2-second timeout
-  const enablePlayBtn = () => {
-    const playBtn = document.getElementById('btn-play-chapter');
-    if (playBtn) playBtn.disabled = false;
-  };
-  if (typeof window !== 'undefined' && window.responsiveVoice) {
-    window.responsiveVoice.OnVoiceReady = enablePlayBtn;
-  }
-  setTimeout(enablePlayBtn, 2000);
 });
 
 function loadScripture(bookId, chapter) {
