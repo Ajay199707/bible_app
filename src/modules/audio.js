@@ -41,6 +41,13 @@ export function playChapterVerses(verses, defaultLang = 'ta', rate = 1.0, onVers
       htmlAudioElement = new Audio();
     } catch (e) {}
   }
+
+  if (typeof responsiveVoice !== 'undefined') {
+    try {
+      responsiveVoice.init();
+    } catch (e) {}
+  }
+
   stopAudio();
 
   if (!verses || verses.length === 0) return;
@@ -234,7 +241,7 @@ function fallbackToGoogleTTS(cleanText, targetLang) {
       console.warn('Audio stream play error:', err);
       if (isPlaying && !isPausedState) {
         activeVerseIndex++;
-        if (onEndCallback) onEndCallback();
+        speakNextVerse();
       }
     };
 
