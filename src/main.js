@@ -14,8 +14,17 @@ import { READING_PLANS } from './modules/plans.js';
 // Application State
 let settings = getSettings();
 let lastRead = getLastRead();
-let currentBookId = 1; // Always start at Genesis / ஆதியாகமம்
-let currentChapter = 1; // Always start at Chapter 1
+let currentBookId = lastRead ? lastRead.bookId : 1;
+let currentChapter = lastRead ? lastRead.chapter : 1;
+
+// Override book and chapter if we are currently on a pre-rendered static page (SSG)
+const pathName = window.location.pathname;
+const staticPageMatch = pathName.match(/book_(\d+)_chapter_(\d+)\.html/);
+if (staticPageMatch) {
+  currentBookId = Number(staticPageMatch[1]);
+  currentChapter = Number(staticPageMatch[2]);
+}
+
 let currentTtsVerse = -1;
 let currentTtsLang = 'ta'; // Default Tamil narration
 let editingNoteVerseObj = null;
