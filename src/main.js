@@ -19,10 +19,15 @@ let currentChapter = lastRead ? lastRead.chapter : 1;
 
 // Override book and chapter if we are currently on a pre-rendered static page (SSG)
 const pathName = window.location.pathname;
-const staticPageMatch = pathName.match(/book_(\d+)_chapter_(\d+)\.html/);
+const staticPageMatch = pathName.match(/\/([a-z0-9_]+)_chapter_(\d+)\.html/);
 if (staticPageMatch) {
-  currentBookId = Number(staticPageMatch[1]);
-  currentChapter = Number(staticPageMatch[2]);
+  const cleanName = staticPageMatch[1];
+  const chapterNum = Number(staticPageMatch[2]);
+  const book = BIBLE_BOOKS.find(b => b.nameEn.toLowerCase().replace(/[^a-z0-9]+/g, '_') === cleanName);
+  if (book) {
+    currentBookId = book.id;
+    currentChapter = chapterNum;
+  }
 }
 
 let currentTtsVerse = -1;
@@ -73,9 +78,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  // Handle browser Back/Forward navigation
+  window.addEventListener('popstate', () => {
+    const path = window.location.pathname;
+    const match = path.match(/\/([a-z0-9_]+)_chapter_(\d+)\.html/);
+    if (match) {
+      const cleanName = match[1];
+      const chapterNum = Number(match[2]);
+      const book = BIBLE_BOOKS.find(b => b.nameEn.toLowerCase().replace(/[^a-z0-9]+/g, '_') === cleanName);
+      if (book) {
+        loadScripture(book.id, chapterNum, null, false);
+      }
+    }
+  });
 });
 
-function loadScripture(bookId, chapter, targetVerse = null) {
+function updateBrowserUrl(bookId, chapter) {
+  const book = getBookById(bookId);
+  if (!book) return;
+  const cleanBookName = book.nameEn.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+  const fileName = `${cleanBookName}_chapter_${chapter}.html`;
+
+  const pathName = window.location.pathname;
+  if (pathName.includes('/chapters/')) {
+    window.history.pushState(null, '', fileName);
+  } else {
+    window.history.pushState(null, '', `chapters/${fileName}`);
+  }
+}
+
+function loadScripture(bookId, chapter, targetVerse = null, pushToHistory = true) {
   currentBookId = Number(bookId);
   currentChapter = Number(chapter);
   saveLastRead(currentBookId, currentChapter);
@@ -114,6 +146,10 @@ function loadScripture(bookId, chapter, targetVerse = null) {
     primaryLang: settings.primaryLang,
     secondaryLang: settings.secondaryLang
   });
+
+  if (pushToHistory) {
+    updateBrowserUrl(currentBookId, currentChapter);
+  }
 
   if (targetVerse) {
     setTimeout(() => {

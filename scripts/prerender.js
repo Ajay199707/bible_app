@@ -107,7 +107,8 @@ englishBooks.forEach((enBookObj, bIdx) => {
     pageHtml = pageHtml.replace('<main id="reader-root">', `<main id="reader-root">${readerHtml}`);
 
     // Write file to chapters directory
-    const fileName = `book_${bookId}_chapter_${chapterNum}.html`;
+    const cleanBookName = enBookName.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+    const fileName = `${cleanBookName}_chapter_${chapterNum}.html`;
     fs.writeFileSync(path.join(chaptersDir, fileName), pageHtml, 'utf-8');
 
     // Add to sitemap list
