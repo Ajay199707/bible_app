@@ -146,13 +146,11 @@ function setupEventListeners() {
 
   // Play Entire Chapter Button
   document.getElementById('btn-play-chapter')?.addEventListener('click', () => {
-    const playIcon = document.querySelector('#btn-play-chapter i');
     const audioState = getAudioState();
     
     if (audioState.isPlaying) {
       stopAudio();
-      if (playIcon) playIcon.className = 'fa-solid fa-play';
-      document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+      updateAudioUiState();
       return;
     }
 
@@ -178,8 +176,6 @@ function setupEventListeners() {
     }
     
     if (queue.length > 0) {
-      if (playIcon) playIcon.className = 'fa-solid fa-stop';
-
       const targetLang = (mode === 'ta') ? 'ta' : 'en';
       playChapterVerses(queue, targetLang, 1.0, (vNum) => {
         document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
@@ -189,9 +185,9 @@ function setupEventListeners() {
           activeRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }, () => {
-        document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
-        if (playIcon) playIcon.className = 'fa-solid fa-play';
+        updateAudioUiState();
       });
+      updateAudioUiState();
     }
   });
 
@@ -202,6 +198,14 @@ function setupEventListeners() {
       if (modeBtn) {
         const mode = modeBtn.dataset.mode;
         if (mode) {
+          stopAudio();
+          updateAudioUiState();
+          // Remove highlight from any active tts rows
+          document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+          // Reset main play button icon
+          const playIcon = document.querySelector('#btn-play-chapter i');
+          if (playIcon) playIcon.className = 'fa-solid fa-play';
+
           applySettings({ viewMode: mode });
         }
       }
@@ -402,14 +406,19 @@ function setupEventListeners() {
 }
 
 function updateAudioUiState() {
-  const iconState = document.getElementById('audio-icon-state');
+  const playIcon = document.querySelector('#btn-play-chapter i');
   const audioState = getAudioState();
-  if (iconState) {
+  if (playIcon) {
     if (audioState.isPlaying && !audioState.isPaused) {
-      iconState.className = 'fa-solid fa-pause';
+      playIcon.className = 'fa-solid fa-stop';
     } else {
-      iconState.className = 'fa-solid fa-play';
+      playIcon.className = 'fa-solid fa-play';
     }
+  }
+  
+  if (!audioState.isPlaying) {
+    document.querySelectorAll('.verse-row').forEach(r => r.classList.remove('tts-active'));
+    document.querySelectorAll('.btn-audio-verse').forEach(b => b.classList.remove('playing'));
   }
 }
 

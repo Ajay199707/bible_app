@@ -146,6 +146,12 @@ function playAudioStream(text, itemLang) {
     } catch (e) {}
   }
 
+  if (typeof responsiveVoice !== 'undefined') {
+    try {
+      responsiveVoice.cancel();
+    } catch (e) {}
+  }
+
   const cleanText = text.slice(0, 250);
   const targetLang = itemLang;
   
@@ -212,6 +218,9 @@ export function pauseAudio() {
     if (htmlAudioElement && !htmlAudioElement.paused) {
       try { htmlAudioElement.pause(); } catch (e) {}
     }
+    if (typeof responsiveVoice !== 'undefined') {
+      try { responsiveVoice.pause(); } catch (e) {}
+    }
   }
 }
 
@@ -223,6 +232,9 @@ export function resumeAudio() {
     }
     if (htmlAudioElement && htmlAudioElement.paused) {
       try { htmlAudioElement.play(); } catch (e) {}
+    }
+    if (typeof responsiveVoice !== 'undefined') {
+      try { responsiveVoice.resume(); } catch (e) {}
     }
   }
 }
@@ -242,6 +254,12 @@ export function stopAudio() {
       htmlAudioElement.pause();
       htmlAudioElement.src = '';
       htmlAudioElement = null;
+    } catch (e) {}
+  }
+
+  if (typeof responsiveVoice !== 'undefined') {
+    try {
+      responsiveVoice.cancel();
     } catch (e) {}
   }
 }
