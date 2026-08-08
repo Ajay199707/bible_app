@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is a placeholder only. The full 1,189-page sitemap is generated
+     automatically by scripts/prerender.js during the build process and
+     written to dist/sitemap.xml which gets deployed to GitHub Pages. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ajay199707.github.io/bible_app/</loc>
