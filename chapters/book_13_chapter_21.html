@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 21 |  21 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 21 ( 21) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 21 |  21</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And Satan stood up against Israel, and provoked David to number Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">சாத்தான் இஸ்ரவேலுக்கு விரோதமாய் எழும்பி, இஸ்ரவேலைத் தொகையிடுகிறதற்குத் தாவீதை ஏவிவிட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And David said to Joab and to the rulers of the people, Go, number Israel from Beersheba even to Dan; and bring the number of them to me, that I may know it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்படியே தாவீது யோவாபையும், ஜனத்தின் சேர்வைக்காரரையும் நோக்கி: நீங்கள் போய், பெயெர்செபாதொடங்கித் தாண்மட்டும் இருக்கிற இஸ்ரவேலை எண்ணி, அவர்கள் இலக்கத்தை நான் அறியும்படிக்கு, என்னிடத்தில் கொண்டுவாருங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And Joab answered, The LORD make his people an hundred times so many more as they be: but, my lord the king, are they not all my lord's servants? why then does my lord require this thing? why will he be a cause of trespass to Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அப்பொழுது யோவாப் கர்த்தருடைய ஜனங்கள் இப்போது இருக்கிறதைப்பார்க்கிலும் நூறத்தனையாய் அவர் வர்த்திக்கப்பண்ணுவாராக; ஆனாலும் ராஜாவாகிய என் ஆண்டவனே, அவர்களெல்லாரும் என் ஆண்டவனின் சேவகரல்லவா? என் ஆண்டவன் இதை விசாரிப்பானேன்? இஸ்ரவேலின்மேல் குற்றமுண்டாக இது நடக்கவேண்டியது என்ன என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Nevertheless the king's word prevailed against Joab. Wherefore Joab departed, and went throughout all Israel, and came to Jerusalem.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">யோவாப் அப்படிச் சொல்லியும், ராஜாவின் வார்த்தை மேலிட்டபடியினால், யோவாப் புறப்பட்டு, இஸ்ரவேல் எங்கும் சுற்றித்திரிந்து எருசலேமுக்கு வந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And Joab gave the sum of the number of the people unto David. And all they of Israel were a thousand thousand and an hundred thousand men that drew sword: and Judah was four hundred threescore and ten thousand men that drew sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">ஜனத்தை இலக்கம்பார்த்து, தொகையைத் தாவீதிடத்தில் கொடுத்தான்; இஸ்ரவேலிலெல்லாம் பட்டயம் உருவத்தக்கவர்கள் பதினொருலட்சம்பேரும், யூதாவில் பட்டயம் உருவத்தக்கவர்கள் நாலுலட்சத்து எழுபதினாயிரம்பேரும் இருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">But Levi and Benjamin counted he not among them: for the king's word was abominable to Joab.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஆனாலும் ராஜாவின் வார்த்தை யோவாபுக்கு அருவருப்பாயிருந்தபடியினால், லேவி பென்யமீன் கோத்திங்களிலுள்ளவர்களை அவர்களுடைய இலக்கத்திற்குட்பட எண்ணாதேபோனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And God was displeased with this thing; therefore he stroke Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">இந்தக் காரியம் தேவனுடைய பார்வைக்கு ஆகாததானபடியினால் அவர் இஸ்ரவேலை வாதித்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And David said unto God, I have sinned greatly, because I have done this thing: but now, I plead to you, do away the iniquity of your servant; for I have done very foolishly.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">தாவீது தேவனை நோக்கி: நான் இந்தக் காரியத்தைச் செய்ததினால் மிகவும் பாவஞ்செய்தேன்; இப்போதும் உம்முடைய அடியேனின் அக்கிரமத்தை நீக்கிவிடும்; வெகு புத்தியீனமாய்ச் செய்தேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And the LORD spoke unto Gad, David's seer, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர், தாவீதின் ஞானதிருஷ்டிக்காரனாகிய காத்துடனே பேசி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Go and tell David, saying, Thus says the LORD, I offer you three things: choose you one of them, that I may do it unto you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">நீ தாவீதினிடத்தில் போய் மூன்று காரியங்களை உனக்கு முன்பாக வைக்கிறேன்; அவைகளில் ஒரு காரியத்தைத் தெரிந்துகொள்; அதை நான் உனக்குச்செய்வேன் என்று கர்த்தர் உரைக்கிறார் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">So Gad came to David, and said unto him, Thus says the LORD, Choose you</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அப்படியே காத் தாவீதினிடத்தில் வந்து, அவனை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Either three years' famine; or three months to be destroyed before your foes, while that the sword of yours enemies overtakes you; or else three days the sword of the LORD, even the pestilence, in the land, and the angel of the LORD destroying throughout all the coasts of Israel. Now therefore advise yourself what word I shall bring again to him that sent me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">மூன்று வருஷத்துப் பஞ்சமோ? அல்லது உன் பகைஞரின் பட்டயம் உன்னைப் பின்தொடர நீ உன் சத்துருக்களுக்கு முன்பாக முறிந்தோடிப்போகச் செய்யும் மூன்று மாதச் சங்காரமோ? அல்லது மூன்றுநாள் கர்த்தருடைய தூதன் இஸ்ரவேலுடைய எல்லையெங்கும் சங்காரம் உண்டாகும்படி தேசத்தில் நிற்கும் கர்த்தருடைய பட்டயமாகிய கொள்ளை நோயோ? இவைகளில் ஒன்றைத் தெரிந்துகொள் என்று கர்த்தர் உரைக்கிறார். இப்போதும் என்னை அனுப்பினவருக்கு நான் என்ன மறுஉத்தரவு கொண்டுபோகவேண்டும் என்பதை யோசித்துப்பாரும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And David said unto Gad, I am in a great strait: let me fall now into the hand of the LORD; for very great are his mercies: but let me not fall into the hand of man.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது தாவீது கர்த்தரை நோக்கி: கொடிய இடுக்கணில் அகப்பட்டிருக்கிறேன்; இப்போது நான் கர்த்தருடைய கையிலே விழுவேனாக; அவருடைய இரக்கங்கள் மகா பெரியது; மனுஷர் கையிலே விழாதிருப்பேனாக என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">So the LORD sent pestilence upon Israel: and there fell of Israel seventy thousand men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ஆகையால் கர்த்தர் இஸ்ரவேலிலே கொள்ளைநோயை வரப்பண்ணினார், அதினால் இஸ்ரவேலில் எழுபதினாயிரம்பேர் மடிந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And God sent an angel unto Jerusalem to destroy it: and as he was destroying, the LORD beheld, and he repented him of the evil, and said to the angel that destroyed, It is enough, stay now yours hand. And the angel of the LORD stood by the threshing floor of Ornan the Jebusite.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">எருசலேமையும் அழிக்க தேவன் ஒரு தூதனை அனுப்பினான்; ஆனாலும் ஒருவன் அழிக்கையில் கர்த்தர் பார்த்து, அந்தத் தீங்குக்கு மனஸ்தாபப்பட்டு, சங்கரிக்கிற தூதனை நோக்கி: போதும்; இப்போது உன் கையை நிறுத்து என்றார்; கர்த்தருடைய தூதன் எபூசியனாகிய ஒர்னானின் களத்தண்டையிலே நின்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And David lifted up his eyes, and saw the angel of the LORD stand between the earth and the heaven, having a drawn sword in his hand stretched out over Jerusalem. Then David and the elders of Israel, who were clothed in sackcloth, fell upon their faces.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">தாவீது தன் கண்களை ஏறெடுத்து, பூமிக்கும் வானத்திற்கும் நடுவே நிற்கிற கர்த்தருடைய தூதன் உருவின பட்டயத்தைத் தன் கையில் பிடித்து, அதை எருசலேமின்மேல் நீட்டியிருக்கக் கண்டான்; அப்பொழுது தாவீதும் மூப்பர்களும் இரட்டுப் போர்த்துக்கொண்டு முகங்குப்புற விழுந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And David said unto God, Is it not I that commanded the people to be numbered? even I it is that have sinned and done evil indeed; but as for these sheep, what have they done? let yours hand, I pray you, O LORD my God, be on me, and on my father's house; but not on your people, that they should be plagued.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">தாவீது தேவனை நோக்கி: ஜனத்தை எண்ணச் சொன்னவன் நான் அல்லவோ? நான்தான் பாவஞ்செய்தேன்; பொல்லாப͠Ϊு நடப்பிĠύதேன்; இந்த ஆடுகள் என்ன செய்ĠΤு? என் தேவனாகிய கர்த்தாவே, வாதிக்கும்படி உம்முடைய கரம் உம்முடைய ஜனத்திற்கு விரோதமாயிராமல், எனக்கும் என் தகப்பன் வீட்டிற்கும் விரோதமாயிருப்பதாக என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Then the angel of the LORD commanded Gad to say to David, that David should go up, and set up an altar unto the LORD in the threshing floor of Ornan the Jebusite.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அப்பொழுது எபூசியனாகிய ஒர்னானின் களத்திலே கர்த்தருக்கு ஒரு பலிபீடத்தை உண்டாக்கும்படி, தாவீது அங்கே போகவேண்டுமென்று தாவீதுக்குச் சொல் என்று கர்த்தருடைய தூதன் காத்துக்குக் கட்டளையிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And David went up at the saying of Gad, which he spoke in the name of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்படியே தாவீது கர்த்தரின் நாமத்திலே காத் சொன்ன வார்த்தையின்படியே போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And Ornan turned back, and saw the angel; and his four sons with him hid themselves. Now Ornan was threshing wheat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஒர்னான் திரும்பிப்பார்த்தான்; அவனும் அவனோடிருக்கிற அவனுடைய நாலு குமாரரும் அந்த தேவதூதனைக் கண்டு ஒளித்துக்கொண்டார்கள்; ஒர்னான் போரடித்துக்கொண்டிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And as David came to Ornan, Ornan looked and saw David, and went out of the threshing floor, and bowed himself to David with his face to the ground.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">தாவீது ஒர்னானிடத்தில் வந்தபோது ஒர்னான் கவனித்துத் தாவீதைப் பார்த்து, அவன் களத்திலிருந்து புறப்பட்டுவந்து, தரைமட்டும் குனிந்து தாவீதை வணங்கினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Then David said to Ornan, Grant me the place of this threshing floor, that I may build an altar therein unto the LORD: you shall grant it me for the full price: that the plague may be stayed from the people.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பொழுது தாவீது ஒர்னானை நோக்கி: இந்தக் களத்தின் நிலத்திலே நான் கர்த்தருக்கு ஒரு பலிபீடத்தைக் கட்டும்படிக்கு அதை எனக்குக் கொடு; ஜனத்தைவிட்டு நிறுத்தப்பட, எனக்கு அதைப் பெறும் விலைக்குக் கொடு என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And Ornan said unto David, Take it to you, and let my lord the king do that which is good in his eyes: lo, I give you the oxen also for burnt offerings, and the threshing instruments for wood, and the wheat for the food offering; I give it all.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">ஒர்னான் தாவீதை நோக்கி: ராஜாவாகிய என் ஆண்டவன் அதை வாங்கிக்கொண்டு, தம்முடைய பார்வைக்கு நலமானபடி செய்வாராக; இதோ, சர்வாங்கதகனங்களுக்கு மாடுகளும், விறகுக்குப் போரடிக்கிற உருளைகளும், போஜனபலிக்குக் கோதுமையும் ஆகிய யாவையும் கொடுக்கிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And king David said to Ornan, Nay; but I will verily buy it for the full price: for I will not take that which is yours for the LORD, nor offer burnt offerings without cost.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அதற்குத் தாவீதுராஜா ஒர்னானை நோக்கி: அப்படியல்ல, நான் உன்னுடையதை இலவசமாய் வாங்கி, கர்த்தருக்குச் சர்வாங்க தகனத்தைப் பலியிடாமல், அதை பெறும் விலைக்கு வாங்குவேன் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">So David gave to Ornan for the place six hundred shekels of gold by weight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">தாவீது அந்த நிலத்திற்கு அறுநூறு சேக்கல் நிறைபொன்னை ஒர்னானுக்குக்குக் கொடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And David built there an altar unto the LORD, and offered burnt offerings and peace offerings, and called upon the LORD; and he answered him from heaven by fire upon the altar of burnt offering.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அங்கே கர்த்தருக்கு ஒரு பலிபீடத்தைக் கட்டி, சர்வாங்க தகனபலிகளையும் சமாதான பலிகளையும் செலுத்தி, கர்த்தரை நோக்கி விண்ணப்பம்பண்ணினான்; அப்பொழுது அவர் வானத்திலிருந்து சர்வாங்க தகனபலிபீடத்தின்மேல் இறங்கின அக்கினியில் அவனுக்கு மறுஉத்தரவு கொடுத்ததுமல்லாமல்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And the LORD commanded the angel; and he put up his sword again into the sheath thereof.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">தேவதூதன் தன்னுடைய பட்டயத்தை உறையிலே திரும்பப் போடவேண்டும் என்று கர்த்தர் அவனுக்குச் சொன்னார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">At that time when David saw that the LORD had answered him in the threshing floor of Ornan the Jebusite, then he sacrificed there.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">எபூசியனாகிய ஒர்னானின் களத்திலே கர்த்தர் தனக்கு உத்தரவு அருளினதைத் தாவீது அக்காலத்திலே, கண்டு அங்கேதானே பலியிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">For the tabernacle of the LORD, which Moses made in the wilderness, and the altar of the burnt offering, were at that season in the high place at Gibeon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">மோசே வனாந்தரத்தில் உண்டாக்கின கர்த்தருடைய வாசஸ்தலமும் சர்வாங்க தகனபலிபீடமும் அக்காலத்திலே கிபியோனின் மேட்டில் இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">But David could not go before it to enquire of God: for he was afraid because of the sword of the angel of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">தாவீது கர்த்தருடைய தூதனின் பட்டயத்திற்குப் பயந்திருந்தபடியால், அவன் தேவசந்நிதியில் போய் விசாரிக்கக் கூடாதிருந்தது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 8 |  8 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 8 ( 8) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 8 |  8</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then Solomon assembled the elders of Israel, and all the heads of the tribes, the chief of the fathers of the children of Israel, unto king Solomon in Jerusalem, that they might bring up the ark of the covenant of the LORD out of the city of David, which is Zion.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அப்பொழுது கர்த்தருடைய உடன்படிக்கைப் பெட்டியைச் சீயோன் என்னும் தாவீதின் நகரத்திலிருந்து கொண்டுவரும்படி சாலொமோன் இஸ்ரவேலின் மூப்பரையும், கோத்திரப் பிரபுக்களாகிய இஸ்ரவேல் புத்திரரிலுள்ள பிதாக்களின் தலைவர் அனைவரையும், எருசலேமில் ராஜாவாகிய சாலொமோன் தன்னிடத்திலே கூடிவரச்செய்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And all the men of Israel assembled themselves unto king Solomon at the feast in the month Ethanim, which is the seventh month.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">இஸ்ரவேல் மனுஷரெல்லாரும் ஏழாம் மாதமாகிய ஏத்தானீம்மாதத்துப் பண்டிகையிலே, ராஜாவாகிய சாலொமோனிடத்தில் கூடிவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And all the elders of Israel came, and the priests took up the ark.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">இஸ்ரவேலின் மூப்பர் அனைவரும் வந்திருக்கையில், ஆசாரியர் கர்த்தருடைய பெட்டியை எடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And they brought up the ark of the LORD, and the tabernacle of the congregation, and all the holy vessels that were in the tabernacle, even those did the priests and the Levites bring up.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பெட்டியையும், ஆசரிப்புக் கூடாரத்தையும், கூடாரத்திலிருந்த பரிசுத்த பணிமுட்டுகள் அனைத்தையும் சுமந்து கொண்டுவந்தார்கள்; ஆசாரியரும், லேவியரும், அவைகளைச் சுமந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And king Solomon, and all the congregation of Israel, that were assembled unto him, were with him before the ark, sacrificing sheep and oxen, that could not be told nor numbered for multitude.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">ராஜாவாகிய சாலொமோனும் அவனோடேகூடின இஸ்ரவேல் சபையனைத்தும் பெட்டிக்கு முன்பாக நடந்து, எண்ணிக்கையும் கணக்குமில்லாத திரளான ஆடுகளையும் மாடுகளையும் பலியிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And the priests brought in the ark of the covenant of the LORD unto his place, into the oracle of the house, to the most holy place, even under the wings of the cherubims.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அப்படியே ஆசாரியர்கள் கர்த்தருடைய உடன்படிக்கைப்பெட்டியை ஆலயத்தின் சந்நிதி ஸ்தானமாகிய மகாபரிசுத்த ஸ்தானத்திலே கேருபீன்களுடைய செட்டைகளின்கீழே கொண்டுவந்து வைத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">For the cherubims spread forth their two wings over the place of the ark, and the cherubims covered the ark and the staves thereof above.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">கேருபீன்கள் பெட்டியிருக்கும் ஸ்தானத்திலே தங்கள் இரண்டு செட்டைகளையும் விரித்து, உயர இருந்து பெட்டியையும் அதின் தண்டுகளையும் மூடிக்கொண்டிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And they drew out the staves, that the ends of the staves were seen out in the holy place before the oracle, and they were not seen without: and there they are unto this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">தண்டுகளின் முனைகள் சந்நிதி ஸ்தானத்திற்கு முன்னான பரிசுத்த ஸ்தலத்திலே காணப்படத்தக்கதாய் அந்தத் தண்டுகளை முன்னுக்கு இழுத்தார்கள்; ஆகிலும் வெளியே அவைகள் காணப்படவில்லை; அவைகள் இந்நாள்வரைக்கும் அங்கே தான் இருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">There was nothing in the ark save the two tables of stone, which Moses put there at Horeb, when the LORD made a covenant with the children of Israel, when they came out of the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரர் எகிப்துதேசத்திலிருந்து புறப்பட்டபின் கர்த்தர் அவர்களோடே உடன்படிக்கை பண்ணுகிறபோது, மோசே ஓரேபிலே அந்தப் பெட்டியில் வைத்த இரண்டு கற்பலகைகளே அல்லாமல் அதிலே வேறொன்றும் இருந்ததில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And it came to pass, when the priests were come out of the holy place, that the cloud filled the house of the LORD,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அப்பொழுது ஆசாரியர்கள் பரிசுத்த ஸ்தலத்திலிருந்து புறப்படுகையில், மேகமானது கர்த்தருடைய ஆலயத்தை நிரப்பிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">So that the priests could not stand to minister because of the cloud: for the glory of the LORD had filled the house of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">மேகத்தினிமித்தம் ஆசாரியர்கள் ஊழியஞ்செய்கிறதற்கு நிற்கக் கூடாமற்போயிற்று; கர்த்தருடைய மகிமை கர்த்தருடைய ஆலயத்தை நிரப்பிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Then spoke Solomon, The LORD said that he would dwell in the thick darkness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது சாலொமோன்: காரிருளிலே வாசம்பண்ணுவேன் என்று கர்த்தர் சொன்னார் என்றும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">I have surely built you an house to dwell in, a settled place for you to abide in for ever.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">தேவரீர் வாசம்பண்ணத்தக்க வீடும், நீர் என்றைக்கும் தங்கத்தக்க நிலையான ஸ்தானமுமாகிய ஆலயத்தை உமக்குக் கட்டினேன் என்றும் சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And the king turned his face about, and blessed all the congregation of Israel: (and all the congregation of Israel stood;)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ராஜா முகம் திரும்பி, இஸ்ரவேல் சபையையெல்லாம் ஆசீர்வதித்தான்; இஸ்ரவேல் சபையாரெல்லாரும் நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And he said, Blessed be the LORD God of Israel, which spoke with his mouth unto David my father, and has with his hand fulfilled it, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவன் சொன்னது: இஸ்ரவேலின் தேவனாகிய கர்த்தருக்கு ஸ்தோத்திரம்; அவர் என் தகப்பனாகிய தாவீதுக்குத் தம்முடைய வாக்கினால் சொன்னதைத் தம்முடைய கரத்தினால் நிறைவேற்றினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Since the day that I brought forth my people Israel out of Egypt, I chose no city out of all the tribes of Israel to build an house, that my name might be therein; but I chose David to be over my people Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அவர் நான் என் ஜனமாகிய இஸ்ரவேலை எகிப்திலிருந்து புறப்படப்பண்ணின நாள் முதற்கொண்டு, என் நாமம் விளங்கும்படி ஒரு ஆலயத்தைக் கட்டவேண்டும் என்று நான் இஸ்ரவேலுடைய எல்லாக் கோத்திரங்களிலுமுள்ள ஒரு பட்டணத்தையும் தெரிந்துகொள்ளாமல் என் ஜனமாகிய இஸ்ரவேலின்மேல் அதிகாரியாயிருக்கும்படி தாவீதையே தெரிந்துகொண்டேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And it was in the heart of David my father to build an house for the name of the LORD God of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">இஸ்ரவேலின் தேவனாகிய கர்த்தரின் நாமத்திற்கு ஆலயத்தைக் கட்டவேண்டும் என்கிற விருப்பம் என் தகப்பனாகிய தாவீதின் இருதயத்தில் இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And the LORD said unto David my father, Whereas it was in yours heart to build an house unto my name, you did well that it was in yours heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">ஆனாலும் கர்த்தர் என் தகப்பனாகிய தாவீதை நோக்கி: என் நாமத்திற்கு ஆலயத்தைக் கட்டவேண்டும் என்கிற விருப்பம் உன் மனதிலே இருந்தது நல்லகாரியந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Nevertheless you shall not build the house; but your son that shall come forth out of your loins, he shall build the house unto my name.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ஆகிலும் நீ அந்த ஆலயத்தைக் கட்டமாட்டாய், உன் கர்ப்பப்பிறப்பாகிய உன் குமாரனே என் நாமத்திற்கு அந்த ஆலயத்தைக் கட்டுவான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the LORD has performed his word that he spoke, and I am risen up in the room of David my father, and sit on the throne of Israel, as the LORD promised, and have built an house for the name of the LORD God of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">இப்போதும் கர்த்தர் சொல்லிய தம்முடைய வார்த்தையை நிறைவேற்றினார்; கர்த்தர் சொன்னபடியே, நான் என் தகப்பனாகிய தாவீதின் ஸ்தானத்தில் எழும்பி, இஸ்ரவேலின் சிங்காசனத்தின்மேல் உட்கார்ந்து, இஸ்ரவேலின் தேவனாகிய கர்த்தரின் நாமத்திற்கு ஆலயத்தைக் கட்டினேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And I have set there a place for the ark, wherein is the covenant of the LORD, which he made with our fathers, when he brought them out of the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">கர்த்தர் நம்முடைய பிதாக்களை எகிப்துதேசத்திலிருந்து புறப்படப்பண்ணினபோது, அவர்களோடே பண்ணின உடன்படிக்கை இருக்கிற பெட்டிக்காக அதிலே ஒரு ஸ்தானத்தை உண்டாக்கினேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Solomon stood before the altar of the LORD in the presence of all the congregation of Israel, and spread forth his hands toward heaven:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">பின்பு சாலொமோன்: கர்த்தருடைய பலிபீடத்திற்குமுன்னே இஸ்ரவேல் சபையாரெல்லாருக்கும் எதிராக நின்று, வானத்திற்கு நேராய்த் தன் கைகளை விரித்து:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And he said, LORD God of Israel, there is no God like you, in heaven above, or on earth beneath, who keep covenant and mercy with your servants that walk before you with all their heart:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">இஸ்ரவேலின் தேவனாகிய கர்த்தாவே, மேலே வானத்திலும் கீழே பூமியிலும் உமக்கு ஒப்பான தேவன் இல்லை; தங்கள் முழுஇருதயத்தோடும் உமக்கு முன்பாக நடக்கிற உமது அடியாருக்கு உடன்படிக்கையையும் கிருபையையும் காத்துவருகிறீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Who have kept with your servant David my father that you promised him: you spoke also with your mouth, and have fulfilled it with yours hand, as it is this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">தேவரீர் என் தகப்பனாகிய தாவீது என்னும் உம்முடைய தாசனுக்குச் செய்த வாக்குத்தத்தத்தைக் காத்தருளினீர்; அதை உம்முடைய வாக்கினால் சொன்னீர்; இந்நாளில் இருக்கிறபடி, உம்முடைய கரத்தினால் அதை நிறைவேற்றினீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Therefore now, LORD God of Israel, keep with your servant David my father that you promised him, saying, There shall not fail you a man in my sight to sit on the throne of Israel; so that your children take heed to their way, that they walk before me as you have walked before me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">இஸ்ரவேலின் தேவனாகிய கர்த்தாவே, தேவரீர் என் தகப்பனாகிய தாவீது என்னும் உம்முடைய தாசனை நோக்கி: நீ எனக்கு முன்பாக நடந்தது போல, உன் குமாரரும் எனக்கு முன்பாக நடக்கும்படி தங்கள் வழியைக் காப்பார்களேயானால், இஸ்ரவேலின் சிங்காசனத்தின்மேல் வீற்றிருக்கும் புருஷன் எனக்கு முன்பாக உனக்கு இல்லாமற்போவதில்லை என்று சொன்னதை இப்பொழுது அவனுக்கு நிறைவேற்றும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And now, O God of Israel, let your word, I pray you, be verified, which you spoke unto your servant David my father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">இஸ்ரவேலின் தேவனே, என் தகப்பனாகிய தாவீது என்னும் உம்முடைய தாசனுக்குச் சொன்ன உம்முடைய வார்த்தை மெய்யென்று விளங்குவதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">But will God indeed dwell on the earth? behold, the heaven and heaven of heavens cannot contain you; how much less this house that I have built?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">தேவன் மெய்யாக பூமியிலே வாசம் பண்ணுவாரோ? இதோ, வானங்களும் வானாதி வானங்களும் உம்மைக் கொள்ளாதே; நான் கட்டின இந்த ஆலயம் எம்மாத்திரம்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Yet have you respect unto the prayer of your servant, and to his supplication, O LORD my God, to hearken unto the cry and to the prayer, which your servant prays before you to day:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">என் தேவனாகிய கர்த்தாவே, உமது அடியேன் இன்று உமது சந்நிதியில் செய்கிற விண்ணப்பத்தையும் மன்றாட்டையும் கேட்டு, உமது அடியேனுடைய விண்ணப்பத்தையும் வேண்டுதலையும் திருவுளத்தில் கொண்டருளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">That yours eyes may be open toward this house night and day, even toward the place of which you have said, My name shall be there: that you may hearken unto the prayer which your servant shall make toward this place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">உமது அடியேன் இவ்விடத்திலே செய்யும் விண்ணப்பத்தைக் கேட்கும்படி என்னுடைய நாமம் விளங்குமென்று நீர் சொன்ன ஸ்தலமாகிய இந்த ஆலயத்தின் மேல் உம்முடைய கண்கள் இரவும் பகலும் திறந்திருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And hearken you to the supplication of your servant, and of your people Israel, when they shall pray toward this place: and hear you in heaven your dwelling place: and when you hear, forgive.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">உமது அடியானும், இந்த ஸ்தலத்திலே விண்ணப்பஞ் செய்யப்போகிற உமது ஜனமாகிய இஸ்ரவேலும் பண்ணும் ஜெபத்தைக் கேட்டருளும்; பரலோகமாகிய உம்முடைய வாசஸ்தலத்திலே அதை நீர் கேட்பீராக, கேட்டு மன்னிப்பீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">If any man trespass against his neighbour, and an oath be laid upon him to cause him to swear, and the oath come before yours altar in this house:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">ஒருவன் தன் அயலானுக்குக் குற்றஞ்செய்திருக்கையில், இவன் அவனை ஆணையிடச்சொல்லும்போது, அந்த ஆணை இந்த ஆலயத்திலே உம்முடைய பலிபீடத்திற்கு முன் வந்தால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Then hear you in heaven, and do, and judge your servants, condemning the wicked, to bring his way upon his head; and justifying the righteous, to give him according to his righteousness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அப்பொழுது பரலோகத்தில் இருக்கிற தேவரீர் கேட்டு, துன்மார்க்கனுடைய நடக்கையை அவன் தலையின்மேல் சுமரப்பண்ணி, அவனைக் குற்றவாளியாகத் தீர்க்கவும், நீதிமானுக்கு அவனுடைய நீதிக்குத்தக்கதாய்ச் செய்து அவனை நீதிமானாக்கவும் தக்கதாய் உமது அடியாரை நியாயந்தீர்ப்பீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">When your people Israel be smitten down before the enemy, because they have sinned against you, and shall return to you, and confess your name, and pray, and make supplication unto you in this house:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">உம்முடைய ஜனங்களாகிய இஸ்ரவேலர் உமக்கு விரோதமாய்ப் பாவஞ்செய்ததினிமித்தம் சத்துருவுக்கு முன்பாக முறிந்துபோய், உம்மிடத்திற்குத் திரும்பி, உம்முடைய நாமத்தை அறிக்கைபண்ணி, இந்த ஆலயத்துக்கு நேராக உம்மை நோக்கி விண்ணப்பத்தையும் வேண்டுதலையும் செய்தால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Then hear you in heaven, and forgive the sin of your people Israel, and bring them again unto the land which you gave unto their fathers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">பரலோகத்தில் இருக்கிற தேவரீர் கேட்டு, உம்முடைய ஜனமாகிய இஸ்ரவேலின் பாவத்தை மன்னித்து, அவர்கள் பிதாக்களுக்கு நீர் கொடுத்த தேசத்துக்கு அவர்களைத் திரும்பிவரப்பண்ணுவீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">When heaven is shut up, and there is no rain, because they have sinned against you; if they pray toward this place, and confess your name, and turn from their sin, when you afflict them:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவர்கள் உமக்கு விரோதமாய்ப் பாவஞ்செய்ததினால் வானம் அடைபட்டு மழைபெய்யாதிருக்கும்போது, அவர்கள் இந்த ஸ்தலத்திற்கு நேராக விண்ணப்பஞ்செய்து, உம்முடைய நாமத்தை அறிக்கைபண்ணி, தங்களை தேவரீர் கிலேசப்படுத்துகையில் தங்கள் பாவங்களை விட்டுத் திரும்பினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Then hear you in heaven, and forgive the sin of your servants, and of your people Israel, that you teach them the good way wherein they should walk, and give rain upon your land, which you have given to your people for an inheritance.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">பரலோகத்தில் இருக்கிற தேவரீர் கேட்டு, உமது அடியாரும் உமது ஜனமாகிய இஸ்ரவேலும் செய்த பாவத்தை மன்னித்து, அவர்கள் நடக்கவேண்டிய நல்வழியை அவர்களுக்குப் போதித்து, தேவரீர் உமது ஜனத்திற்குச் சுதந்தரமாகக் கொடுத்த உமது தேசத்தில் மழைபெய்யக் கட்டளையிடுவீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">If there be in the land famine, if there be pestilence, blasting, mildew, locust, or if there be caterpillar; if their enemy besiege them in the land of their cities; whatsoever plague, whatsoever sickness there be;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">தேசத்திலே பஞ்சம் உண்டாகிற போதும், கொள்ளைநோய் உண்டாகிற போதும், வறட்சி, சாவி, வெட்டுக்கிளி, பச்சைக்கிளி உண்டாகிறபோதும், அவர் சத்துருக்கள் தேசத்திலுள்ள பட்டணங்களை முற்றிக்கைபோடுகிறபோதும், யாதொரு வாதையாகிலும் யாதொரு வியாதியாகிலும் வருகிறபோதும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">What prayer and supplication whatsoever be made by any man, or by all your people Israel, which shall know every man the plague of his own heart, and spread forth his hands toward this house:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">உம்முடைய ஜனமாகிய இஸ்ரவேல் அனைவரிலும் எந்த மனுஷனானாலும் தன் இருதயத்தின் வாதையை உணர்ந்து, இந்த ஆலயத்துக்கு நேராகத் தன் கைகளை விரித்துச் செய்யும் சகல விண்ணப்பத்தையும், சகல வேண்டுதலையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">Then hear you in heaven your dwelling place, and forgive, and do, and give to every man according to his ways, whose heart you know; (for you, even you only, know the hearts of all the children of men;)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">உம்முடைய வாசஸ்தலமாகிய பரலோகத்தில் இருக்கிற தேவரீர் கேட்டு மன்னித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">That they may fear you all the days that they live in the land which you gave unto our fathers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">தேவரீர் எங்கள் பிதாக்களுக்குக் கொடுத்த தேசத்தில் அவர்கள் உயிரோடிருக்கும் நாளெல்லாம் உமக்குப் பயப்படும்படிக்கு தேவரீர் ஒருவரே எல்லா மனுபுத்திரரின் இருதயத்தையும் அறிந்தவராதலால், நீர் அவனவன் இருதயத்தை அறிந்திருக்கிறபடியே, அவனவனுடைய வழிகளுக்குத்தக்கதாகச் செய்து, அவனவனுக்குப் பலன் அளிப்பீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">Moreover concerning a stranger, that is not of your people Israel, but comes out of a far country for your name's sake;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">உம்முடைய ஜனமாகிய இஸ்ரவேல் ஜாதியல்லாத அந்நிய ஜாதியார் உமது மகத்துவமான நாமத்தையும், உமது பலத்த கரத்தையும், உமது ஓங்கிய புயத்தையும் கேள்விப்படுவார்களே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">(For they shall hear of your great name, and of your strong hand, and of your stretched out arm;) when he shall come and pray toward this house;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">அப்படிக்கொத்த அந்நிய ஜாதியானும், உமது நாமத்தினிமித்தம் தூரதேசத்திலிருந்து வந்து, இந்த ஆலயத்துக்கு நேராக விண்ணப்பம்பண்ணினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">Hear you in heaven your dwelling place, and do according to all that the stranger calls to you for: that all people of the earth may know your name, to fear you, as do your people Israel; and that they may know that this house, which I have built, is called by your name.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">உமது வாசஸ்தலமாகிய பரலோகத்தில் இருக்கிற தேவரீர் அதைக் கேட்டு, பூமியின் ஜனங்களெல்லாரும் உம்முடைய ஜனமாகிய இஸ்ரவேலைப்போல உமக்குப் பயப்படும்படிக்கும், நான் கட்டின இந்த ஆலயத்துக்கு உம்முடைய நாமம் தரிக்கப்பட்டதென்று அறியும்படிக்கும், உம்முடைய நாமத்தை அறியத்தக்கதாக, அந்த அந்நிய ஜாதியான் உம்மை நோக்கி வேண்டிக்கொள்வதின்படியெல்லாம் தேவரீர் செய்வீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">If your people go out to battle against their enemy, anywhere you shall send them, and shall pray unto the LORD toward the city which you have chosen, and toward the house that I have built for your name:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">நீர் உம்முடைய ஜனங்களை அனுப்பும் வழியிலே அவர்கள் தங்கள் சத்துருக்களோடு யுத்தம்பண்ணப் புறப்படும் போது, நீர் தெரிந்துகொண்ட இந்த நகரத்துக்கும், உம்முடைய நாமத்துக்கு நான் கட்டின இந்த ஆலயத்துக்கும் நேராகக் கர்த்தரை நோக்கி விண்ணப்பம் பண்ணினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">Then hear you in heaven their prayer and their supplication, and maintain their cause.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">பரலோகத்தில் இருக்கிற தேவரீர் அவர்கள் விண்ணப்பத்தையும் வேண்டுதலையும் கேட்டு, அவர்கள் நியாயத்தை விசாரிப்பீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">If they sin against you, (for there is no man that sins not,) and you be angry with them, and deliver them to the enemy, so that they carry them away captives unto the land of the enemy, far or near;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">பாவஞ்செய்யாத மனுஷன் இல்லையே; ஆகையால், அவர்கள் உமக்கு விரோதமாய்ப் பாவஞ்செய்து, தேவரீர் அவர்கள்மேல் கோபங்கொண்டு, அவர்கள் சத்துருக்கள் கையில் அவர்களை ஒப்புக்கொடுத்து, அந்தச் சத்துருக்கள் அவர்களைத் தூரத்திலாகிலும் சமீபத்திலாகிலும் இருக்கிற தங்கள் தேசத்திற்குச் சிறைப்பிடித்துக்கொண்டுபோகும்போது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">Yet if they shall call to reflect themselves in the land where they were carried captives, and repent, and make supplication unto you in the land of them that carried them captives, saying, We have sinned, and have done perversely, we have committed wickedness;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">அவர்கள் சிறைப்பட்டுப் போயிருக்கிற தேசத்திலே தங்களில் உணர்வடைந்து, மனந்திரும்பி: நாங்கள் பாவஞ்செய்து, அக்கிரமம்பண்ணி, துன்மார்க்கமாய் நடந்தோம் என்று தங்கள் சிறையிருப்பான தேசத்திலே உம்மை நோக்கி வேண்டுதல் செய்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">And so return unto you with all their heart, and with all their soul, in the land of their enemies, which led them away captive, and pray unto you toward their land, which you gave unto their fathers, the city which you have chosen, and the house which I have built for your name:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">தங்களைச் சிறைபிடித்துக் கொண்ட தங்கள் சத்துருக்களின் தேசத்திலே தங்கள் முழு இருதயத்தோடும் தங்கள் முழு ஆத்துமாவோடும் உம்மிடத்தில் திரும்பி, தேவரீர் தங்கள் பிதாக்களுக்குக் கொடுத்த தங்கள் தேசத்திற்கும், தேவரீர் தெரிந்துகொண்ட இந்த நகரத்திற்கும், உம்முடைய நாமத்திற்கு நான் கட்டின இந்த ஆலயத்திற்கும் நேராக உம்மை நோக்கி விண்ணப்பம்பண்ணும்போது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">Then hear you their prayer and their supplication in heaven your dwelling place, and maintain their cause,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">உமது வாசஸ்தலமாகிய பரலோகத்தில் இருக்கிற தேவரீர் அவர்கள் விண்ணப்பத்தையும் வேண்டுதலையும் கேட்டு, அவர்கள் நியாயத்தை விசாரித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="50">
+          <div class="verse-item lang-en">
+            <span class="verse-num">50</span>
+            <span class="verse-text">And forgive your people that have sinned against you, and all their transgressions wherein they have transgressed against you, and give them compassion before them who carried them captive, that they may have compassion on them:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">50</span>
+            <span class="verse-text">உம்முடைய ஜனங்கள் உமக்கு விரோதமாய்ச் செய்த பாவத்தையும், அவர்கள் உம்முடைய கட்டளையை மீறிய அவர்கள் துரோகங்களையும் எல்லாம் மன்னித்து, அவர்களைச் சிறைபிடித்துக் கொண்டுபோகிறவர்கள் அவர்களுக்கு இரங்கத்தக்கதான இரக்கத்தை அவர்களுக்கு கிடைக்கப்பண்ணுவீராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="51">
+          <div class="verse-item lang-en">
+            <span class="verse-num">51</span>
+            <span class="verse-text">For they be your people, and yours inheritance, which you brought forth out of Egypt, from the midst of the furnace of iron:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">51</span>
+            <span class="verse-text">அவர்கள் எகிப்தென்கிற இருப்புக் காளவாயின் நடுவிலிருந்து தேவரீர் புறப்படப்பண்ணின உம்முடைய ஜனமும் உம்முடைய சுதந்தரமுமாய் இருக்கிறார்களே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="52">
+          <div class="verse-item lang-en">
+            <span class="verse-num">52</span>
+            <span class="verse-text">That yours eyes may be open unto the supplication of your servant, and unto the supplication of your people Israel, to hearken unto them in all that they call for unto you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">52</span>
+            <span class="verse-text">அவர்கள் உம்மை நோக்கி வேண்டிக்கொள்ளுவதின் படியெல்லாம் தேவரீர் அவர்களுக்குச் செய்யும்படி, உம்முடைய கண்கள் உமது அடியானின் வேண்டுதலுக்கும், உமது ஜனமாகிய இஸ்ரவேலின் வேண்டுதலுக்கும் திறந்திருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="53">
+          <div class="verse-item lang-en">
+            <span class="verse-num">53</span>
+            <span class="verse-text">For you did separate them from among all the people of the earth, to be yours inheritance, as you spoke by the hand of Moses your servant, when you brought our fathers out of Egypt, O LORD God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">53</span>
+            <span class="verse-text">கர்த்தராகிய ஆண்டவரே, நீர் எங்கள் பிதாக்களை எகிப்திலிருந்து புறப்படப்பண்ணும்போது, உம்முடைய தாசனாகிய மோசேயைக்கொண்டு சொன்னபடியே, தேவரீர் பூமியின் சகல ஜனங்களிலும் அவர்களை உமக்குச் சுதந்தரமாகப் பிரித்தெடுத்தீரே என்று விண்ணப்பம் பண்ணினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="54">
+          <div class="verse-item lang-en">
+            <span class="verse-num">54</span>
+            <span class="verse-text">And it was so, that when Solomon had made an end of praying all this prayer and supplication unto the LORD, he arose from before the altar of the LORD, from kneeling on his knees with his hands spread up to heaven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">54</span>
+            <span class="verse-text">சாலொமோன் கர்த்தரை நோக்கி, இந்த ஜெபத்தையும் வேண்டுதலையும் எல்லாம் செய்து முடித்தபின்பு, அவன் கர்த்தருடைய பலிபீடத்திற்கு முன்பாகத் தன் கைகளை வானத்திற்கு நேராக விரித்து, முழங்காற்படியிட்டிருந்ததை விட்டெழுந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="55">
+          <div class="verse-item lang-en">
+            <span class="verse-num">55</span>
+            <span class="verse-text">And he stood, and blessed all the congregation of Israel with a loud voice, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">55</span>
+            <span class="verse-text">நின்றுகொண்டு, இஸ்ரவேல் சபையையெல்லாம் ஆசீர்வதித்து, உரத்த சத்தத்தோடே சொன்னது:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="56">
+          <div class="verse-item lang-en">
+            <span class="verse-num">56</span>
+            <span class="verse-text">Blessed be the LORD, that has given rest unto his people Israel, according to all that he promised: there has not failed one word of all his good promise, which he promised by the hand of Moses his servant.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">56</span>
+            <span class="verse-text">தாம் வாக்குத்தத்தம் பண்ணினபடியெல்லாம் தம்முடைய ஜனமாகிய இஸ்ரவேலுக்கு இளைப்பாறுதலை அருளின கர்த்தருக்கு ஸ்தோத்திரம், அவர் தம்முடைய தாசனாகிய மோசேயைக் கொண்டு சொன்ன அவருடைய நல்வார்த்தையானாலும் தவறிப்போகவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="57">
+          <div class="verse-item lang-en">
+            <span class="verse-num">57</span>
+            <span class="verse-text">The LORD our God be with us, as he was with our fathers: let him not leave us, nor forsake us:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">57</span>
+            <span class="verse-text">நம்முடைய தேவனாகிய கர்த்தர் நம்மைக் கைவிடாமலும், நம்மை நெகிழவிடாமலும், அவர் நம்முடைய பிதாக்களோடு இருந்ததுபோல, நம்மோடும் இருந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="58">
+          <div class="verse-item lang-en">
+            <span class="verse-num">58</span>
+            <span class="verse-text">That he may incline our hearts unto him, to walk in all his ways, and to keep his commandments, and his statutes, and his judgments, which he commanded our fathers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">58</span>
+            <span class="verse-text">நாம் அவருடைய வழிகளில் எல்லாரும் நடக்கிறதற்கும், அவர் நம்முடைய பிதாக்களுக்குக் கட்டளையிட்ட அவருடைய கற்பனைகளையும், அவருடைய கட்டளைகளையும், அவருடைய நியாயங்களையும் கைக்கொள்ளுகிறதற்கும், நம்முடைய இருதயத்தைத் தம்மிடத்தில் சாயப்பண்ணுவாராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="59">
+          <div class="verse-item lang-en">
+            <span class="verse-num">59</span>
+            <span class="verse-text">And let these my words, wherewith I have made supplication before the LORD, be nigh unto the LORD our God day and night, that he maintain the cause of his servant, and the cause of his people Israel at all times, as the matter shall require:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">59</span>
+            <span class="verse-text">கர்த்தரே தேவன், வேறொருவரும் இல்லையென்பதை பூமியின் ஜனங்களெல்லாம் அறியும்படியாக,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="60">
+          <div class="verse-item lang-en">
+            <span class="verse-num">60</span>
+            <span class="verse-text">That all the people of the earth may know that the LORD is God, and that there is none else.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">60</span>
+            <span class="verse-text">அவர் தமது அடியானுடைய நியாயத்தையும், தமது ஜனமாகிய இஸ்ரவேலின் நியாயத்தையும், அந்தந்த நாளில் நடக்கும் காரியத்துக்குத்தக்கதாய் விசாரிப்பதற்கு, நான் கர்த்தருக்கு முன்பாக விண்ணப்பம்பண்ணின இந்த என்னுடைய வார்த்தைகள் இரவும்பகலும் நம்முடைய தேவனாகிய கர்த்தருடைய சந்நிதியில் இருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="61">
+          <div class="verse-item lang-en">
+            <span class="verse-num">61</span>
+            <span class="verse-text">Let your heart therefore be perfect with the LORD our God, to walk in his statutes, and to keep his commandments, as at this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">61</span>
+            <span class="verse-text">ஆதலால் இந்நாளில் இருக்கிறது போல, நீங்கள் அவர் கட்டளைகளில் நடந்து, அவர் கற்பனைகளைக் கைக்கொள்ள, உங்கள் இருதயம் நம்முடைய தேவனாகிய கர்த்தரோடு உத்தமமாய் இருக்கக்கடவது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="62">
+          <div class="verse-item lang-en">
+            <span class="verse-num">62</span>
+            <span class="verse-text">And the king, and all Israel with him, offered sacrifice before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">62</span>
+            <span class="verse-text">பின்பு ராஜாவும் அவனோடே இருந்த இஸ்ரவேலர் அனைவரும், கர்த்தருடைய சந்நிதியில் பலிகளைச் செலுத்தினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="63">
+          <div class="verse-item lang-en">
+            <span class="verse-num">63</span>
+            <span class="verse-text">And Solomon offered a sacrifice of peace offerings, which he offered unto the LORD, two and twenty thousand oxen, and an hundred and twenty thousand sheep. So the king and all the children of Israel dedicated the house of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">63</span>
+            <span class="verse-text">சாலொமோன் கர்த்தருக்குச் சமாதானபலிகளாக, இருபத்தீராயிரம் மாடுகளையும், இலட்சத்திருபதினாயிரம் ஆடுகளையும் பலியிட்டான்; இவ்விதமாய் ராஜாவும் இஸ்ரவேல் புத்திரர் அனைவரும் கர்த்தருடைய ஆலயத்தைப் பிரதிஷ்டைபண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="64">
+          <div class="verse-item lang-en">
+            <span class="verse-num">64</span>
+            <span class="verse-text">The same day did the king hallow the middle of the court that was before the house of the LORD: for there he offered burnt offerings, and food offerings, and the fat of the peace offerings: because the brazen altar that was before the LORD was too little to receive the burnt offerings, and food offerings, and the fat of the peace offerings.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">64</span>
+            <span class="verse-text">கர்த்தருடைய சந்நிதியில் இருந்த வெண்கலப் பலிபீடம் சர்வாங்க தகனபலிகளையும், போஜனபலிகளையும், சமாதானபலிகளின் நிணத்தையும் கொள்ளமாட்டாமல் சிறிதாயிருந்தபடியினால், ராஜா கர்த்தருடைய ஆலயத்திற்குமுன் இருக்கிற பிராகாரத்தின் நடுமையத்தைப் பரிசுத்தப்படுத்தி, அன்றையதினம் அங்கே சர்வாங்க தகனபலிகளையும், போஜனபலிகளையும், சமாதானபலிகளின் நிணத்தையும் செலுத்தினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="65">
+          <div class="verse-item lang-en">
+            <span class="verse-num">65</span>
+            <span class="verse-text">And at that time Solomon held a feast, and all Israel with him, a great congregation, from the entering in of Hamath unto the river of Egypt, before the LORD our God, seven days and seven days, even fourteen days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">65</span>
+            <span class="verse-text">அக்காலத்தில்தானே சாலொமோனும், ஆமாத்தின் எல்லைதொடங்கி எகிப்தின் நதிமட்டும் இருந்துவந்து, அவனோடே இருந்த பெரிய கூட்டமாகிய இஸ்ரவேல் அனைத்தும் நம்முடைய தேவனாகிய கர்த்தருடைய சந்நிதியில் ஏழு நாளும், அதற்குப் பின்பு வேறே ஏழு நாளும், ஆகப் பதினாலு நாள்வரைக்கும் பண்டிகையை ஆசரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="66">
+          <div class="verse-item lang-en">
+            <span class="verse-num">66</span>
+            <span class="verse-text">On the eighth day he sent the people away: and they blessed the king, and went unto their tents joyful and glad of heart for all the goodness that the LORD had done for David his servant, and for Israel his people.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">66</span>
+            <span class="verse-text">எட்டாம்நாளிலே ஜனங்களுக்கு விடைகொடுத்து அனுப்பினான்; அவர்கள் ராஜாவை வாழ்த்தி, கர்த்தர் தமது தாசனாகிய தாவீதுக்கும் தமது ஜனமாகிய இஸ்ரவேலுக்கும் செய்த எல்லா நன்மைக்காகவும் சந்தோஷப்பட்டு மனமகிழ்ச்சியோடே தங்கள் கூடாரங்களுக்குப் போய்விட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

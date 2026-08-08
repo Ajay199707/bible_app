@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 19 |  19 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 19 ( 19) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 19 |  19</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now it came to pass after this, that Nahash the king of the children of Ammon died, and his son reigned in his position.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அதன்பின்பு, அம்மோன் புத்திரரின் ராஜாவாகிய நாகாஸ் மரித்து, அவன் குமாரன் அவன் ஸ்தானத்தில் ராஜாவானான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And David said, I will show kindness unto Hanun the son of Nahash, because his father showed kindness to me. And David sent messengers to comfort him concerning his father. So the servants of David came into the land of the children of Ammon to Hanun, to comfort him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்பொழுது தாவீது: ஆனூனின் தகப்பனாகிய நாகாஸ் எனக்குத் தயவுசெய்ததுபோல, நானும் அவன் குமாரனாகிய இவனுக்குத் தயவுசெய்வேன் என்று சொல்லி, அவன் தகப்பனுக்காக அவனுக்கு ஆறுதல்சொல்ல ஸ்தானாபதிகளை அனுப்பினான்; தாவீதின் ஊழியக்காரர் ஆனூனுக்கு ஆறுதல் சொல்ல அம்மோன் புத்திரரின் தேசத்திலே வந்தபோது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">But the princes of the children of Ammon said to Hanun, Think you that David does honour your father, that he has sent comforters unto you? are not his servants come unto you in order to search, and to overthrow, and to spy out the land?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அம்மோன் புத்திரரின் பிரபுக்கள் ஆனூனைப் பார்த்து: தாவீது ஆறுதல் சொல்லுகிறவர்களை உம்மிடத்தில் அனுப்பினது, உம்முடைய தகப்பனைக் கனம்பண்ணுகிறதாய் உமக்குத் தோன்றுகிறதோ? தேசத்தை ஆராயவும், அதைக் கவிழ்த்துப்போடவும், உளவுபார்க்கவும் அல்லவோ, அவன் ஊழியக்காரர் உம்மிடத்தில் வந்தார்கள் என்று சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Wherefore Hanun took David's servants, and shaved them, and cut off their garments in the midst hard by their buttocks, and sent them away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்பொழுது ஆனூன்: தாவீதின் ஊழியக்காரரைப் பிடித்து, அவர்கள் தாடியைச் சிரைத்து, அவர்களுடைய வஸ்திரங்களை இருப்பிடமட்டும் வைத்துவிட்டு, மற்றப் பாதியைக் கத்தரித்துப்போட்டு, அவர்களை அனுப்பிவிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Then there went certain, and told David how the men were served. And he sent to meet them: for the men were greatly ashamed. And the king said, Tarry at Jericho until your beards be grown, and then return.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அந்த மனுஷர் வருகையில், அவர்கள் செய்தி தாவீதுக்கு அறிவிக்கப்பட்டது; அப்பொழுது அந்த மனுஷர் மிகவும் வெட்கப்பட்டபடியினால், அவர்களுக்கு எதிராக ராஜா ஆட்களை அனுப்பி: உங்கள் தாடி வளருமட்டும் நீங்கள் எரிகோவிலிருந்து பிற்பாடு வாருங்கள் என்று சொல்லச்சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And when the children of Ammon saw that they had made themselves abhorrent to David, Hanun and the children of Ammon sent a thousand talents of silver to hire them chariots and horsemen out of Mesopotamia, and out of Syriamaachah, and out of Zobah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அம்மோன் புத்திரர் தாங்கள் தாவீதுக்கு அருவருப்பானதைக் கண்டபோது, ஆனூனும் அம்மோன் புத்திரரும் மெசொப்பொத்தாமியாவிலும் மாக்கா சோபா என்னும் சீரியரின் தேசத்திலுமிருந்து தங்களுக்கு இரதங்களும் குதிரைவீரரும் கூலிக்கு வரும்படி ஆயிரம்தாலந்து வெள்ளியையும் அனுப்பி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">So they hired thirty and two thousand chariots, and the king of Maachah and his people; who came and pitched before Medeba. And the children of Ammon gathered themselves together from their cities, and came to battle.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">முப்பத்தீராயிரம் இரதங்களையும், மாக்காவின் ராஜாவையும், அவன் ஜனத்தையும் கூலிப்படையாக அழைப்பித்தான்; இவர்கள் வந்து, மேதேபாவுக்கு முன்புறத்திலே பாளயமிறங்கினார்கள்; அம்மோன் புத்திரரும் தங்கள் பட்டணங்களிலிருந்து கூடிக்கொண்டு யுத்தம்பண்ண வந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And when David heard of it, he sent Joab, and all the host of the mighty men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அதைத் தாவீது கேட்டபோது, யோவாபையும் பலசாலிகளின் இராணுவம் முழுவதையும் அனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And the children of Ammon came out, and put the battle in array before the gate of the city: and the kings that were come were by themselves in the field.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அம்மோன் புத்திரர் புறப்பட்டுவந்து, பட்டணத்து வாசலண்டையில் அணிவகுத்தார்கள்; வந்த ராஜாக்கள் தனித்து வெளியிலே போருக்கு ஆயத்தமாய் நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Now when Joab saw that the battle was set against him before and behind, he chose out of all the choice of Israel, and put them in array against the Syrians.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">யுத்த இராணுவங்களின் முகப்புத் தனக்கு முன்னும் பின்னும் இருக்கிறதை யோவாப் கண்டு, அவன் இஸ்ரவேலிலே தெரிந்துகொள்ளப்பட்ட அனைவரிலும் ஒரு பங்கைப் பிரித்தெடுத்து, அதைச் சீரியருக்கு எதிராக நிறுத்தி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the rest of the people he delivered unto the hand of Abishai his brother, and they set themselves in array against the children of Ammon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">மற்ற ஜனத்தை அம்மோன் புத்திரருக்கு எதிராகப் போருக்கு ஆயத்தப்படுத்தி, தன் சகோதரனாகிய அபிசாயிக்கு ஒப்புவித்து, அவனை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And he said, If the Syrians be too strong for me, then you shall help me: but if the children of Ammon be too strong for you, then I will help you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">என்னைப்பார்க்கிலும் சீரியர் பலங்கொண்டால் நீ எனக்குத் துணைநில்; உன்னைப்பார்க்கிலும் அம்மோன் புத்திரர் பலங்கொண்டால் நான் உனக்குத் துணைநிற்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Be of good courage, and let us behave ourselves valiantly for our people, and for the cities of our God: and let the LORD do that which is good in his sight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">தைரியமாயிரு; நாம் நம்முடைய ஜனத்திற்காகவும், நமது தேவனுடைய பட்டணங்களுக்காகவும் திடன்கொண்டிருக்கக்கடவோம்; கர்த்தர் தமது பார்வைக்கு நலமானதைச் செய்வாராக என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">So Joab and the people that were with him drew nigh before the Syrians unto the battle; and they fled before him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">பின்பு யோவாபும் அவனோடிருந்த ஜனமும் சீரியரோடு யுத்தம்பண்ணச் சேர்ந்தார்கள்; அவர்கள் அவனுக்கு முன்பாக முறிந்தோடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And when the children of Ammon saw that the Syrians were fled, they likewise fled before Abishai his brother, and entered into the city. Then Joab came to Jerusalem.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">சீரியர் முறிந்தோடுகிறதை அம்மோன் புத்திரர் கண்டபோது, அவர்களும் அவன் சகோதரனாகிய அபிசாயிக்கு முன்பாக முறிந்தோடிப் பட்டணத்திற்கு உட்பட்டார்கள்; யோவாப் திரும்ப எருசலேமுக்கு வந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And when the Syrians saw that they were put to the worse before Israel, they sent messengers, and drew forth the Syrians that were beyond the river: and Shophach the captain of the host of Hadarezer went before them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">தாங்கள் இஸ்ரவேலுக்கு முன்பாக முறிய அடிக்கப்பட்டதைக் கண்டபோது, அவர்கள் நதிக்கு அப்புறத்திலிருக்கிற சீரியரை வரவழைத்தார்கள்; ஆதாரேசரின் படைத்தலைவனாகிய சோப்பாக் அவர்களுக்கு முன்னாலே நடந்துபோனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And it was told David; and he gathered all Israel, and passed over Jordan, and came upon them, and set the battle in array against them. So when David had put the battle in array against the Syrians, they fought with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அது தாவீதுக்கு அறிவிக்கப்பட்டது, அவன் இஸ்ரவேலைக் கூட்டிக்கொண்டு, யோர்தானைக் கடந்து, அவர்களுக்குச் சமீபமாய் வந்தபோது, அவர்களுக்கு எதிராக இராணுவங்களை நிறுத்தினார்கள்; தாவீது சீரியருக்கு எதிராக இராணுவங்களைப் போருக்கு ஆயத்தப்படுத்தினபின் அவனோடு யுத்தம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">But the Syrians fled before Israel; and David slew of the Syrians seven thousand men which fought in chariots, and forty thousand footmen, and killed Shophach the captain of the host.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">சீரியர் இஸ்ரவேலுக்கு முன்பாக முறிந்தோடினார்கள்; தாவீது சீரியரிலே ஆயிரம் இரதங்களின் மனுஷரையும், நாற்பதினாயிரம் காலாட்களையும் கொன்று, படைத்தலைவனாகிய சோப்பாக்கையும் கொன்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And when the servants of Hadarezer saw that they were put to the worse before Israel, they made peace with David, and became his servants: neither would the Syrians help the children of Ammon any more.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">தாங்கள் இஸ்ரவேலுக்கு முன்பாகமுறிய அடிக்கப்பட்டதை ஆதாரேசரின் சேவகர் கண்டபோது அவர்கள் தாவீதோடே சமாதானம்பண்ணி, அவனைச் சேவித்தார்கள்; அப்புறம் அம்மோன் புத்திரருக்கு உதவிசெய்ய சீரியர் மனதில்லாதிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

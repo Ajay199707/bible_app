@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 21 |  21 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 21 ( 21) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 21 |  21</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And when they drew nigh unto Jerusalem, and were come to Bethphage, unto the mount of Olives, then sent Jesus two disciples,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அவர்கள் எருசலேமுக்குச் சமீபமாய்ச் சேர்ந்து, ஒலிவமலைக்கு அருகான பெத்பகேயுக்கு வந்தபோது, இயேசுவானவர் சீஷர்களில் இரண்டுபேரை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Saying unto them, Go into the village opposite to you, and immediately all of you shall find an ass tied, and a colt with her: loose them, and bring them unto me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">உங்களுக்கு எதிரே இருக்கிற கிராமத்துக்குப் போங்கள்; போனவுடனே, அங்கே ஒரு கழுதையையும் அதனோடே ஒரு குட்டியையும் கட்டியிருக்கக் காண்பீர்கள்; அவைகளை அவிழ்த்து என்னிடத்தில் கொண்டுவாருங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And if any man say ought unto you, all of you shall say, The Lord has need of them; and immediately he will send them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ஒருவன் உங்களுக்கு ஏதாகிலும் சொன்னால்: இவைகள் ஆண்டவருக்கு வேண்டுமென்று சொல்லுங்கள்; உடனே அவைகளை அனுப்பிவிடுவான் என்று சொல்லி, அவர்களை அனுப்பினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">All this was done, that it might be fulfilled which was spoken by the prophet, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">இதோ, உன் ராஜா சாந்தகுணமுள்ளவராய், கழுதையின் மேலும் கழுதைக்குட்டியாகிய மறியின்மேலும் ஏறிக்கொண்டு, உன்னிடத்தில் வருகிறார் என்று சீயோன்குமாரத்திக்குச் சொல்லுங்கள் என்று,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Tell all of you the daughter of Sion, Behold, your King comes unto you, meek, and sitting upon an ass, and a colt the foal of an ass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">தீர்க்கதரிசியினால் உரைக்கப்பட்டது நிறைவேறும்படி இதெல்லாம் நடந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And the disciples went, and did as Jesus commanded them,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">சீஷர்கள் போய், இயேசு தங்களுக்குக் கட்டளையிட்டபடியே செய்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And brought the ass, and the colt, and put on them their clothes, and they set him thereon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">கழுதையையும் குட்டியையும் கொண்டுவந்து, அவைகள் மேல் தங்கள் வஸ்திரங்களைப் போட்டு, அவரை ஏற்றினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And a very great multitude spread their garments in the way; others cut down branches from the trees, and scattered them in the way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">திரளான ஜனங்கள் தங்கள் வஸ்திரங்களை வழியிலே விரித்தார்கள்; வேறு சிலர் மரக்கிளைகளைத் தறித்து வழியிலே பரப்பினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And the multitudes that went before, and that followed, cried, saying, Hosanna to the son of David: Blessed is he that comes in the name of the Lord; Hosanna in the highest.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">முன்நடப்பாரும், பின்நடப்பாருமாகிய திரளான ஜனங்கள்: தாவீதின் குமாரனுக்கு ஓசன்னா! கர்த்தரின் நாமத்தினாலே வருகிறவர் ஸ்தோத்திரிக்கப்பட்டவர், உன்னதத்திலே ஓசன்னா என்று சொல்லி ஆர்ப்பரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And when he was come into Jerusalem, all the city was moved, saying, Who is this?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அவர் எருசலேமுக்குள் பிரவேசிக்கையில், நகரத்தார் யாவரும் ஆச்சரியப்பட்டு, இவர் யார்? என்று விசாரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the multitude said, This is Jesus the prophet of Nazareth of Galilee.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அதற்கு ஜனங்கள்: கலிலேயாவிலுள்ள நாசரேத்திலிருந்து வந்த தீர்க்கதரிசியாகிய இயேசு என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And Jesus went into the temple of God, and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">இயேசு தேவாலயத்தில் பிரவேசித்து, ஆலயத்திலே விற்கிறவர்களும் கொள்ளுகிறவர்களுமாகிய யாவரையும் வெளியிலே துரத்தி, காசுக்காரருடைய பலகைகளையும் புறா விற்கிறவர்களின் ஆசனங்களையும் கவிழ்த்து:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And said unto them, It is written, My house shall be called the house of prayer; but all of you have made it a den of thieves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">என்னுடைய வீடு ஜெபவீடு என்னப்படும் என்று எழுதியிருக்கிறது; நீங்களோ அதைக் கள்ளர் குகையாக்கினீர்கள் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And the blind and the lame came to him in the temple; and he healed them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அப்பொழுது, குருடரும் சப்பாணிகளும் தேவாலயத்திலே அவரிடத்திற்கு வந்தார்கள், அவர்களைச் சொஸ்தமாக்கினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And when the chief priests and scribes saw the wonderful things that he did, and the children crying in the temple, and saying, Hosanna to the son of David; they were sore displeased,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவர் செய்த அதிசயங்களையும், தாவீதின் குமாரனுக்கு ஓசன்னா! என்று தேவாலயத்திலே ஆர்ப்பரிக்கிற பிள்ளைகளையும், பிரதான ஆசாரியரும் வேதபாரகரும் கண்டு, கோபமடைந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And said unto him, Hear you what these say? And Jesus says unto them, Yea; have all of you never read, Out of the mouth of babes and infants you have perfected praise?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அவரை நோக்கி: இவர்கள் சொல்லுகிறதைக் கேட்கிறீரோ என்றார்கள். அதற்கு இயேசு: ஆம், கேட்கிறேன். குழந்தைகளுடைய வாயினாலும் பாலகருடைய வாயினாலும் துதி உண்டாகும்படி செய்தீர் என்பதை நீங்கள் ஒருக்காலும் வாசிக்கவில்லையா என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And he left them, and went out of the city into Bethany; and he lodged there.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அவர்களைவிட்டு நகரத்திலிருந்து புறப்பட்டு, பெத்தானியாவுக்குப் போய், அங்கே இராத்தங்கினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Now in the morning as he returned into the city, he hungered.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">காலையிலே அவர் நகரத்துக்கு திரும்பி வருகையில், அவருக்குப் பசி உண்டாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And when he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only, and said unto it, Let no fruit grow on you henceforward for ever. And presently the fig tree withered away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்பொழுது வழியருகே ஒரு அத்திமரத்தைக் கண்டு, அதனிடத்திற் போய், அதிலே இலைகளையன்றி வேறொன்றையும் காணாமல்: இனி ஒருக்காலும் உன்னிடத்தில் கனி உண்டாகாதிருக்கக்கடவது என்றார்; உடனே அத்திமரம் பட்டுப்போயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And when the disciples saw it, they marvelled, saying, How soon is the fig tree withered away!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">சீஷர்கள் அதைக்கண்டு: இந்த அத்திமரம் எத்தனை சீக்கிரமாய்ப் பட்டுப் போயிற்று! என்று சொல்லி ஆச்சரியப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Jesus answered and said unto them, Verily I say unto you, If all of you have faith, and doubt not, all of you shall not only do this which is done to the fig tree, but also if all of you shall say unto this mountain, Be you removed, and be you cast into the sea; it shall be done.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">இயேசு அவர்களை நோக்கி: நீங்கள் சந்தேகப்படாமல் விசுவாசமுள்ளவர்களாயிருந்தால், இந்த அத்திமரத்திற்கு செய்ததை நீங்கள் செய்வதுமல்லாமல், இந்த மலையைப் பார்த்து: நீ பெயர்ந்து சமுத்திரத்திலே தள்ளுண்டுபோ என்று சொன்னாலும் அப்படியாகும் என்று, மெய்யாகவே உங்களுக்குச் சொல்லுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And all things, whatsoever all of you shall ask in prayer, believing, all of you shall receive.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">மேலும், நீங்கள் விசுவாசமுள்ளவர்களாய் ஜெபத்திலே எவைகளைக் கேட்பீர்களோ அவைகளையெல்லாம் பெறுவீர்கள் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And when he was come into the temple, the chief priests and the elders of the people came unto him as he was teaching, and said, By what authority do you these things? and who gave you this authority?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவர் தேவாலயத்தில் வந்து, உபதேசம்பண்ணுகையில், பிரதான ஆசாரியரும் ஜனத்தின் மூப்பரும் அவரிடத்தில் வந்து: நீர் எந்த அதிகாரத்தினால் இவைகளைச் செய்கிறீர்? இந்த அதிகாரத்தை உமக்குக் கொடுத்தவர் யார்? என்று கேட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And Jesus answered and said unto them, I also will ask you one thing, which if all of you tell me, I in like wise will tell you by what authority I do these things.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">இயேசு அவர்களுக்கு பிரதியுத்தரமாக: நானும் உங்களிடத்தில் ஒரு காரியத்தைக் கேட்கிறேன், அதை எனக்குச் சொல்லுவீர்களானால், நானும் இன்ன அதிகாரத்தினாலே இவைகளைச் செய்கிறேன் என்று உங்களுக்குச் சொல்லுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">The baptism of John, whence was it? from heaven, or of men? And they reasoned with themselves, saying, If we shall say, From heaven; he will say unto us, Why did all of you not then believe him?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">யோவான் கொடுத்த ஸ்நானம் தேவனால் உண்டாயிற்றோ? மனுஷரால் உண்டாயிற்றோ? யாரால் உண்டாயிற்று? என்று கேட்டார். அதற்கு அவர்கள்: தேவனால் உண்டாயிற்று என்று சொல்வோமானால், பின்னை ஏன் அவனை விசுவாசிக்கவில்லை என்று நம்மைக் கேட்பார்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">But if we shall say, Of men; we fear the people; for all hold John as a prophet.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">மனுஷரால் உண்டாயிற்றென்று சொல்வோமானால், ஜனங்களுக்குப் பயப்படுகிறோம், எல்லாரும் யோவானைத் தீர்க்கத்தரிசி என்று எண்ணுகிறார்களே என்று, தங்களுக்குள்ளே ஆலோசனைபண்ணி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And they answered Jesus, and said, We cannot tell. And he said unto them, Neither tell I you by what authority I do these things.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">இயேசுவுக்குப் பிரதியுத்தரமாக: எங்களுக்குத் தெரியாது என்றார்கள். அப்பொழுது, அவர்: நானும் இன்ன அதிகாரத்தினாலே இவைகளைச் செய்கிறேனென்று உங்களுக்குச் சொல்லேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">But what think all of you? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஆயினும் உங்களுக்கு எப்படித்தோன்றுகிறது? ஒருமனுஷனுக்கு இரண்டு குமாரர் இருந்தார்கள்; மூத்தவனிடத்தில் அவன் வந்து: மகனே, நீ போய் இன்றைக்கு என் திராட்சத்தோட்டத்தில் வேலைசெய் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">He answered and said, I will not: but afterward he repented, and went.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அதற்கு அவன்: மாட்டேன் என்றான்; ஆகிலும், பின்பு அவன் மனஸ்தாபப்பட்டுப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And he came to the second, and said likewise. And he answered and said, I go, sir: and went not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">இளையவனிடத்திலும் அவன் வந்து அப்படியே சொன்னான்; அதற்கு அவன்: போகிறேன் ஐயா, என்று சொல்லியும், போகவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Whether of them two did the will of his father? They say unto him, The first. Jesus says unto them, Verily I say unto you, That the publicans and the harlots go into the kingdom of God before you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">இவ்விருவரில் எவன் தன் தகப்பனுடைய சித்தத்தின்படி செய்தவன் என்று கேட்டார்; அதற்கு அவர்கள்: மூத்தவன் தான் என்றார்கள். அப்பொழுது, இயேசு அவர்களை நோக்கி: ஆயக்காரரும் வேசிகளும் உங்களுக்கு முன்னே தேவனுடைய ராஜ்யத்தில் பிரவேசிக்கிறார்கள் என்று மெய்யாகவே உங்களுக்குச் சொல்லுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">For John came unto you in the way of righteousness, and all of you believed him not: but the publicans and the harlots believed him: and all of you, when all of you had seen it, repented not afterward, that all of you might believe him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">ஏனென்றால், யோவான் நீதிமார்க்கமாய் உங்களிடத்தில் வந்திருந்தும், நீங்கள் அவனை விசுவாசிக்கவில்லை; ஆயக்காரரும் வேசிகளுமோ அவனை விசுவாசித்தார்கள்; அதை நீங்கள் கண்டும், அவனை விசுவாசிக்கும்படியாகப் பின்பாகிலும் மனஸ்தாபப்படவில்லை என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and dug a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">வேறொரு உவமையைக் கேளுங்கள்: வீட்டெஜமானாகிய ஒரு மனுஷன் இருந்தான், அவன் ஒரு திராட்சத்தோட்டத்தை உண்டாக்கி, அதைச் சுற்றிலும் வேலியடைத்து, அதில் ஒரு ஆலையை நாட்டி, கோபுரத்தையும் கட்டி, தோட்டக்காரருக்கு அதைக் குத்தகையாக விட்டு, புறதேசத்துக்குப் போயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And when the time of the fruit drew near, he sent his servants to the husbandmen, that they might receive the fruits of it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">கனிகாலம் சமீபித்தபோது, அதின் கனிகளை வாங்கிக்கொண்டுவரும்படி தன் ஊழியக்காரரைத் தோட்டக்காரரிடத்தில் அனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And the husbandmen took his servants, and beat one, and killed another, and stoned another.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">தோட்டக்காரர் அந்த ஊழியக்காரரைப் பிடித்து, ஒருவனை அடித்து, ஒருவனைக் கொலைசெய்து, ஒருவனைக் கல்லெறிந்து கொன்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Again, he sent other servants more than the first: and they did unto them likewise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">பின்னும் அவன் முந்தினவர்களிலும் அதிகமான வேறே ஊழியக்காரரை அனுப்பினான்; அவர்களையும் அப்படியே செய்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">But last of all he sent unto them his son, saying, They will reverence my son.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">கடைசியிலே அவன்: என் குமாரனுக்கு அஞ்சுவார்கள் என்று சொல்லி, தன் குமாரனை அவர்களிடத்தில் அனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">தோட்டக்காரர் குமாரனைக் கண்டபோது: இவன் சுதந்தரவாளி, இவனைக் கொன்று, இவன் சுதந்தரத்தைக் கட்டிக்கொள்ளுவோம் வாருங்கள் என்று ஒருவரோடொருவர் சொல்லிக்கொண்டு;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And they caught him, and cast him out of the vineyard, and slew him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">அவனைப் பிடித்துத் திராட்சத்தோட்டத்திற்குப் புறம்பே தள்ளிக்கொலை செய்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">When the lord therefore of the vineyard comes, what will he do unto those husbandmen?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">அப்படியிருக்க, திராட்சத்தோட்டத்தின் எஜமான் வரும்போது, அந்த தோட்டக்காரரை என்ன செய்வான் என்று கேட்டார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">They say unto him, He will miserably destroy those wicked men, and will let out his vineyard unto other husbandmen, which shall render him the fruits in their seasons.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">அதற்கு அவர்கள்: அந்தக் கொடியவரைக் கொடுமையாய் அழித்து, ஏற்றகாலங்களில் தனக்குக் கனிகளைக் கொடுக்கத்தக்க வேறே தோட்டக்காரரிடத்தில் திராட்சத்தோட்டத்தைக் குத்தகையாகக் கொடுப்பான் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">Jesus says unto them, Did all of you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is the Lord's doing, and it is marvellous in our eyes?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">இயேசு அவர்களை நோக்கி: வீடு கட்டுகிறவர்கள் ஆகாதென்று தள்ளின கல்லே மூலைக்குத் தலைக்கல்லாயிற்று, அது கர்த்தராலே ஆயிற்று, அது நம்முடைய கண்களுக்கு ஆச்சரியமாயிருக்கிறது என்று நீங்கள் வேதத்தில் ஒருக்காலும் வாசிக்கவில்லையா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">Therefore say I unto you, The kingdom of God shall be taken from you, and given to a nation bringing forth the fruits thereof.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">ஆகையால் தேவனுடைய ராஜ்யம் உங்களிடத்திலிருந்து நீக்கப்பட்டு, அதற்கேற்ற கனிகளைத் தருகிற ஜனங்களுக்குக் கொடுக்கப்படும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And whosoever shall fall on this stone shall be broken: but on whomsoever it shall fall, it will grind him to powder.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">இந்தக் கல்லின்மேல் விழுகிறவன் நொறுங்கிப்போவான்; இது எவன் மேல் விழுமோ அவனை நசுக்கிப்போடும் என்று நான் உங்களுக்குச் சொல்லுகிறேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And when the chief priests and Pharisees had heard his parables, they perceived that he spoke of them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">பிரதான ஆசாரியரும், பரிசேயரும் அவருடைய உவமைகளைக்கேட்டு, தங்களைக்குறித்துச் சொல்லுகிறார் என்று அறிந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">But when they sought to lay hands on him, they feared the multitude, because they took him for a prophet.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">அவரைப் பிடிக்க வகைதேடினார்கள்; ஆகிலும் ஜனங்கள் அவரைத் தீர்க்கதரிசி என்று எண்ணினபடியால் அவர்களுக்குப் பயந்திருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

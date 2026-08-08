@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 19 |  19 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 19 ( 19) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 19 |  19</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then Pilate therefore took Jesus, and scourged him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அப்பொழுது பிலாத்து இயேசுவைப்பிடித்து வாரினால் அடிப்பித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And the soldiers intertwined a crown of thorns, and put it on his head, and they put on him a purple robe,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">போர்ச்சேவகர் முள்ளுகளினால் ஒரு முடியைப் பின்னி அவர் சிரசின்மேல் வைத்து, சிவப்பான ஒரு அங்கியை அவருக்கு உடுத்தி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And said, Hail, King of the Jews! and they stroke him with their hands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">யூதருடைய ராஜாவே, வாழ்க என்று சொல்லி, அவரைக் கையினால் அடித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Pilate therefore went forth again, and says unto them, Behold, I bring him forth to you, that all of you may know that I find no fault in him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பிலாத்து மறுபடியும் வெளியே வந்து: நான் இவனிடத்தில் ஒரு குற்றமும் காணேன் என்று நீங்கள் அறியும்படிக்கு, இதோ, உங்களிடத்தில் இவனை வெளியே கொண்டுவருகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Then came Jesus forth, wearing the crown of thorns, and the purple robe. And Pilate says unto them, Behold the man!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">இயேசு, முள்முடியும் சிவப்பங்கியும் தரித்தவராய், வெளியே வந்தார். அப்பொழுது பிலாத்து அவர்களை நோக்கி: இதோ, இந்த மனுஷன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">When the chief priests therefore and officers saw him, they cried out, saying, Crucify him, crucify him. Pilate says unto them, Take all of you him, and crucify him: for I find no fault in him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">பிரதான ஆசாரியரும் சேவகரும் அவரைக் கண்டபோது: சிலுவையில் அறையும் சிலுவையில் அறையும் என்று சத்தமிட்டார்கள். அதற்குப் பிலாத்து: நீங்களே இவனைக் கொண்டுபோய்ச் சிலுவையில் அறையுங்கள், நான் இவனிடத்தில் ஒரு குற்றமும் காணேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">The Jews answered him, We have a law, and by our law he ought to die, because he made himself the Son of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">யூதர்கள் அவனுக்குப் பிரதியுத்தரமாக: எங்களுக்கு ஒரு நியாயப்பிரமாணமுண்டு, இவன் தன்னை தேவனுடைய குமாரனென்று சொன்னபடியினால், அந்த நியாயப்பிரமாணத்தின்படியே, இவன் சாகவேண்டும் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">When Pilate therefore heard that saying, he was the more afraid;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">பிலாத்து இந்த வார்த்தையைக் கேட்டபொழுது அதிகமாய்ப் பயந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And went again into the judgment hall, and says unto Jesus, Whence are you? But Jesus gave him no answer.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">மறுபடியும் அரமனைக்குள்ளே போய், இயேசுவை நோக்கி: நீ எங்கேயிருந்து வந்தவன் என்றான். அதற்கு இயேசு மாறுத்தரம் ஒன்றும் சொல்லவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Then says Pilate unto him, Speak you not unto me? know you not that I have power to crucify you, and have power to release you?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அப்பொழுது பிலாத்து: நீ என்னோடே பேசுகிறதில்லையா உன்னைச் சிலுவையில் அறைய எனக்கு அதிகாரமுண்டென்றும், உன்னை விடுதலைபண்ண எனக்கு அதிகாரமுண்டென்றும் உனக்குத் தெரியாதா என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Jesus answered, You could have no power at all against me, except it were given you from above: therefore he that delivered me unto you has the greater sin.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">இயேசு பிரதியுத்தரமாக: பரத்திலிருந்து உமக்குக் கொடுக்கப்படாதிருந்தால், என்மேல் உமக்கு ஒரு அதிகாரமுமிராது; ஆனபடியினாலே என்னை உம்மிடத்தில் ஒப்புக்கொடுத்தவனுக்கு அதிக பாவமுண்டு என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And from thenceforth Pilate sought to release him: but the Jews cried out, saying, If you let this man go, you are not Caesar's friend: whosoever makes himself a king speaks against Caesar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அதுமுதல் பிலாத்து அவரை விடுதலைபண்ண வகைதேடினான். யூதர்கள் அவனை நோக்கி: இவனை விடுதலைபண்ணினால் நீர் இராயனுக்குச் சிநேகிதனல்ல; தன்னை ராஜாவென்கிறவனோ அவன் ராயனுக்கு விரோதி என்று சத்தமிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">When Pilate therefore heard that saying, he brought Jesus forth, and sat down in the judgment seat in a place that is called the Pavement, but in the Hebrew, Gabbatha.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">பிலாத்து இந்த வார்த்தையைக் கேட்டபொழுது, இயேசுவை வெளியே அழைத்துவந்து, தளவரிசைப்படுத்தின மேடையென்றும், எபிரெயு பாஷையிலே கபத்தா என்றும் சொல்லப்பட்ட இடத்திலே, நியாயாசனத்தின்மேல் உட்கார்ந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And it was the preparation of the passover, and about the sixth hour: and he says unto the Jews, Behold your King!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அந்த நாள் பஸ்காவுக்கு ஆயத்தநாளும் ஏறக்குறைய ஆறுமணி நேரமுமாயிருந்தது; அப்பொழுது அவன் யூதர்களை நோக்கி: இதோ, உங்கள் ராஜா என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">But they cried out, Away with him, away with him, crucify him. Pilate says unto them, Shall I crucify your King? The chief priests answered, We have no king but Caesar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவர்கள்: இவனை அகற்றும் அகற்றும், சிலுவையில் அறையும் என்று சத்தமிட்டார்கள். அதற்குப் பிலாத்து: உங்கள் ராஜாவை நான் சிலுவையில் அறையலாமா என்றான். பிரதான ஆசாரியர் பிரதியுத்தரமாக: இராயனேயல்லாமல் எங்களுக்கு வேறே ராஜா இல்லை என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Then delivered he him therefore unto them to be crucified. And they took Jesus, and led him away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அப்பொழுது அவரைச் சிலுவையில் அறையும்படிக்கு அவர்களிடத்தில் ஒப்புக்கொடுத்தான். அவர்கள் இயேசுவைப் பிடித்துக்கொண்டுபோனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And he bearing his cross went forth into a place called the place of a skull, which is called in the Hebrew Golgotha:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அவர் தம்முடைய சிலுவையைச் சுமந்துகொண்டு, எபிரெயு பாஷையிலே கொல்கொதா என்று சொல்லப்படும் கபாலஸ்தலம் என்கிற இடத்திற்குப் புறப்பட்டுப்போனார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Where they crucified him, and two other with him, on either side one, and Jesus in the midst.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அங்கே அவரைச் சிலுவையில் அறைந்தார்கள்; அவரோடேகூட வேறிரண்டுபேரை இரண்டு பக்கங்களிலும் இயேசுவை நடுவிலுமாகச் சிலுவைகளில் அறைந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And Pilate wrote a title, and put it on the cross. And the writing was JESUS OF NAZARETH THE KING OF THE JEWS.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பிலாத்து ஒரு மேல்விலாசத்தை எழுதி, சிலுவையின்மேல் போடுவித்தான். அதில் நசரேயனாகிய இயேசு யூதருடைய ராஜா என்று எழுதியிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">This title then read many of the Jews: for the place where Jesus was crucified was nigh to the city: and it was written in Hebrew, and Greek, and Latin.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">இயேசு சிலுவையில் அறையப்பட்ட இடம் நகரத்திற்குச் சமீபமாயிருந்தபடியினால், யூதரில் அநேகர் அந்த மேல்விலாசத்தை வாசித்தார்கள்; அது எபிரெயு கிரேக்கு லத்தீன் பாஷைகளில் எழுதியிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Then said the chief priests of the Jews to Pilate, Write not, The King of the Jews; but that he said, I am King of the Jews.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது யூதருடைய பிரதான ஆசாரியர் பிலாத்துவை நோக்கி: யூதருடைய ராஜா என்று நீர் எழுதாமல், தான் யூதருடைய ராஜா என்று அவன் சொன்னதாக எழுதும் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Pilate answered, What I have written I have written.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">பிலாத்து பிரதியுத்தரமாக: நானெழுதினது எழுதினதே என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Then the soldiers, when they had crucified Jesus, took his garments, and made four parts, to every soldier a part; and also his coat: now the coat was without seam, woven from the top throughout.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">போர்ச் சேவகர் இயேசுவைச் சிலுவையில் அறைந்தபின்பு, அவருடைய வஸ்திரங்களை எடுத்து, ஒவ்வொரு சேவகனுக்கு ஒவ்வொரு பங்காக நாலு பங்காக்கினார்கள்; அங்கியையும் எடுத்தார்கள், அந்த அங்கி, தையலில்லாமல் மேலே தொடங்கி முழுதும் நெய்யப்பட்டதாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">They said therefore among themselves, Let us not rend it, but cast lots for it, whose it shall be: that the scripture might be fulfilled, which says, They parted my raiment among them, and for my vesture they did cast lots. These things therefore the soldiers did.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அவர்கள்: இதை நாம் கிழியாமல், யாருக்கு வருமோ என்று இதைக்குறித்துச் சீட்டுப்போடுவோம் என்று ஒருவரோடொருவர் பேசிக்கொண்டார்கள். என் வஸ்திரங்களைத் தங்களுக்குள்ளே பங்கிட்டு, என் உடையின்மேல் சீட்டுப்போட்டார்கள் என்கிற வேதவாக்கியம் நிறைவேறத்தக்கதாகப் போர்ச்சேவகர் இப்படிச் செய்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Now there stood by the cross of Jesus his mother, and his mother's sister, Mary the wife of Cleophas, and Mary Magdalene.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">இயேசுவின் சிலுவையினருகே அவருடைய தாயும், அவருடைய தாயின் சகோதரி கிலெயோப்பா மரியாளும், மகதலேனா மரியாளும் நின்றுகொண்டிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">When Jesus therefore saw his mother, and the disciple standing by, whom he loved, he says unto his mother, Woman, behold your son!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அப்பொழுது இயேசு தம்முடைய தாயையும் அருகே நின்ற தமக்கு அன்பாயிருந்த சீஷனையும் கண்டு, தம்முடைய தாயை நோக்கி: ஸ்திரீயே, அதோ, உன் மகன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Then says he to the disciple, Behold your mother! And from that hour that disciple took her unto his own home.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">பின்பு அந்தச் சீஷனை நோக்கி: அதோ, உன் தாய் என்றார் அந்நேரத்தில் அந்தச் சீஷன் அவளைத் தன்னிடமாய் ஏற்றுக்கொண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">After this, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, says, I thirst.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அதன்பின்பு, எல்லாம் முடிந்தது என்று இயேசு அறிந்து, வேதவாக்கியம் நிறைவேறத்தக்கதாக: தாகமாயிருக்கிறேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Now there was set a vessel full of vinegar: and they filled a sponge with vinegar, and put it upon hyssop, and put it to his mouth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">காடி நிறைந்த பாத்திரம் அங்கே வைக்கப்பட்டிருந்தது; அவர்கள் கடற்காளானைக் காடியிலே தோய்த்து, ஈசோப்புத்தண்டில் மாட்டி, அவர் வாயினிடத்தில் நீட்டிக்கொடுத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the spirit.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">இயேசு காடியை வாங்கினபின்பு, முடிந்தது என்று சொல்லி, தலையைச்சாய்த்து, ஆவியை ஒப்புக்கொடுத்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">The Jews therefore, because it was the preparation, that the bodies should not remain upon the cross on the sabbath day, (for that sabbath day was an high day,) besought Pilate that their legs might be broken, and that they might be taken away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அந்த நாள் பெரிய ஓய்வுநாளுக்கு ஆயத்தநாளாயிருந்தபடியினால், உடல்கள் அந்த ஓய்வுநாளிலே சிலுவைகளில் இராதபடிக்கு, யூதர்கள் பிலாத்துவினிடத்தில் போய், அவர்களுடைய காலெலும்புகளை முறிக்கும்படிக்கும், உடல்களை எடுத்துப்போடும்படிக்கும் உத்தரவு கேட்டுக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Then came the soldiers, and brake the legs of the first, and of the other which was crucified with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அந்தப்படி போர்ச்சேவகர் வந்து, அவருடனேகூடச் சிலுவையில் அறையப்பட்ட முந்தினவனுடைய காலெலும்புகளையும் மற்றவனுடைய கால்களையும் முறித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">But when they came to Jesus, and saw that he was dead already, they brake not his legs:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அவர்கள் இயேசுவினிடத்தில் வந்து, அவர் மரித்திருக்கிறதைக் கண்டு, அவருடைய காலெலும்புகளை முறிக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">But one of the soldiers with a spear pierced his side, and forthwith came there out blood and water.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">ஆகிலும் போர்ச்சேவகரில் ஒருவன் ஈட்டியினாலே அவருடைய விலாவில் குத்தினான்; உடனே இரத்தமும் தண்ணீரும் புறப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And he that saw it bare record, and his record is true: and he knows that he says true, that all of you might believe.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அதைக் கண்டவன் சாட்சி கொடுக்கிறான், அவனுடைய சாட்சி மெய்யாயிருக்கிறது; நீங்கள் விசுவாசிக்கும்படி, தான் சொல்லுகிறது மெய்யென்று அவன் அறிந்திருக்கிறான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அவருடைய எலும்புகளில் ஒன்றும் முறிக்கப்படுவதில்லை என்கிற வேதவாக்கியம் நிறைவேறும்படி இவைகள் நடந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And again another scripture says, They shall look on him whom they pierced.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">அல்லாமலும் தாங்கள் குத்தினவரை நோக்கிப்பார்ப்பார்கள் என்று வேறொரு வேதவாக்கியம் சொல்லுகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And after this Joseph of Arimathaea, being a disciple of Jesus, but secretly for fear of the Jews, besought Pilate that he might take away the body of Jesus: and Pilate gave him leave. He came therefore, and took the body of Jesus.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">இவைகளுக்குப்பின்பு அரிமத்தியா ஊரானும், யூதருக்குப் பயந்ததினால் இயேசுவுக்கு அந்தரங்க சீஷனுமாகிய யோசேப்பு இயேசுவின் சரீரத்தை எடுத்துக்கொண்டுபோகும்படி பிலாத்துவினிடத்தில் உத்தரவு கேட்டான்; பிலாத்து உத்தரவு கொடுத்தான். ஆகையால் அவன் வந்து, இயேசுவின் சரீரத்தை எடுத்துக்கொண்டுபோனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And there came also Nicodemus, which at the first came to Jesus by night, and brought a mixture of myrrh and aloes, about an hundred pound weight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">ஆரம்பத்திலே ஒரு இராத்திரியில் இயேசுவினிடத்தில் வந்திருந்த நிக்கொதேமு என்பவன் வெள்ளைப்போளமும் கரியபோளமும் கலந்து ஏறக்குறைய நூறு இராத்தல் கொண்டுவந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">Then took they the body of Jesus, and wound it in linen clothes with the spices, as the manner of the Jews is to bury.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">அவர்கள் இயேசுவின் சரீரத்தை எடுத்து, யூதர்கள் அடக்கம்பண்ணும் முறைமையின்படியே அதைச் சுகந்தவர்க்கங்களுடனே சீலைகளில் சுற்றிக் கட்டினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">Now in the place where he was crucified there was a garden; and in the garden a new tomb, wherein was never man yet laid.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">அவர் சிலுவையில் அறையப்பட்ட இடத்தில் ஒரு தோட்டமும், அந்தத் தோட்டத்தில் ஒருக்காலும் ஒருவனும் வைக்கப்பட்டிராத ஒரு புதிய கல்லறையும் இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">There laid they Jesus therefore because of the Jews' preparation day; for the tomb was nigh at hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">யூதருடைய ஆயத்தநாளானபடியினாலும், அந்தக் கல்லறை சமீபமாயிருந்தபடியினாலும், அவ்விடத்திலே இயேசுவை வைத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

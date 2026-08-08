@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 8 |  8 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 8 ( 8) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 8 |  8</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">These are now the chief of their fathers, and this is the genealogy of them that went up with me from Babylon, in the reign of Artaxerxes the king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அர்தசஷ்டா ராஜா அரசாளும் காலத்தில் பாபிலோனிலிருந்து என்னோடேகூட வந்த தங்கள் பிதாக்கள் வம்சங்களின் தலைவரும் அவர்கள் வம்ச அட்டவணைகளுமாவன:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Of the sons of Phinehas; Gershom: of the sons of Ithamar; Daniel: of the sons of David; Hattush.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">பினெகாசின் புத்திரரில் கெர்சோம், இத்தாமாரின் புத்திரரில் தானியேல் தாவீதின் புத்திரரில் அத்தூஸ்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Of the sons of Shechaniah, of the sons of Pharosh; Zechariah: and with him were reckoned by genealogy of the males an hundred and fifty.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">பாரோஷின் புத்திரரில் ஒருவனான செக்கனியாவின் புத்திரரில் சகரியாவும் அவனோடேகூட வம்ச அட்டவணையில் எழுதியிருக்கிற நூற்றைம்பது ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Of the sons of Pahathmoab; Elihoenai the son of Zerahiah, and with him two hundred males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பாகரத்மோவாபின் புத்திரரில் செரகியாவின் குமாரனாகிய எலியோனாயும், அவனோடேகூட இருநூறு ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Of the sons of Shechaniah; the son of Jahaziel, and with him three hundred males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">செக்கனியாவின் புத்திரரில் யகசியேலின் குமாரனும், அவனோடேகூட முந்நூறு ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Of the sons also of Adin; Ebed the son of Jonathan, and with him fifty males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஆதினின் புத்திரரில் யோனத்தானின் குமாரனாகிய ஏபேதும், அவனோடேகூட ஐம்பது ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And of the sons of Elam; Jeshaiah the son of Athaliah, and with him seventy males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">ஏலாமின் புத்திரரில் அதலியாவின் குமாரனாகிய எஷாயாவும், அவனோடேகூட எழுபது ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And of the sons of Shephatiah; Zebadiah the son of Michael, and with him fourscore males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">செப்பதியாவின் புத்திரரில் மிகவேலின் குமாரனாகிய செப்பதியாவும், அவனோடேகூட எண்பது ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Of the sons of Joab; Obadiah the son of Jehiel, and with him two hundred and eighteen males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">யோவாபின் புத்திரரில் யெகியேலின் குமாரனாகிய ஒபதியாவும், அவனோடேகூட இருநூற்றுப் பதினெட்டு ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And of the sons of Shelomith; the son of Josiphiah, and with him an hundred and threescore males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">செலோமித்தின் புத்திரரில் யொசிபியாவின் குமாரனும், அவனோடேகூட நூற்றறுபது ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And of the sons of Bebai; Zechariah the son of Bebai, and with him twenty and eight males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">பெயாயின் புத்திரரில் பெயாயின் குமாரனாகிய சகரியாவும், அவனோடேகூட இருபத்தெட்டு ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And of the sons of Azgad; Johanan the son of Hakkatan, and with him an hundred and ten males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அஸ்காதின் புத்திரரில் காத்தானின் குமாரனாகிய யோகனானும் அவனோடேகூட நூற்றுப்பத்து ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And of the last sons of Adonikam, whose names are these, Eliphelet, Jeiel, and Shemaiah, and with them threescore males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அதோனிகாமின் கடைசிப்புத்திரரான எலிபேலேத், ஏயெல், செமாயா என்னும் நாமங்களுள்ளவர்களும், அவர்களோடேகூட அறுபது ஆண்மக்களும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Of the sons also of Bigvai; Uthai, and Zabbud, and with them seventy males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">பிக்வாயின் புத்திரரில் ஊத்தாயும், சபூதும், அவர்களோடேகூட எழுபது ஆண்மக்களுமே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And I gathered them together to the river that runs to Ahava; and there abode we in tents three days: and I viewed the people, and the priests, and found there none of the sons of Levi.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இவர்களை நான் அகாவாவுக்கு ஓடுகிற நதியண்டையிலே கூட்டிக்கொண்டுபோனேன்; அங்கே மூன்றுநாள் தங்கியிருந்தோம்; நான் ஜனங்களையும் ஆசாரியரையும் பார்வையிடும்போது, லேவியின் புத்திரரில் ஒருவரையும் அங்கே காணவில்லை,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Then sent I for Eliezer, for Ariel, for Shemaiah, and for Elnathan, and for Jarib, and for Elnathan, and for Nathan, and for Zechariah, and for Meshullam, chief men; also for Joiarib, and for Elnathan, men of understanding.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஆகையால் நான் எலியேசர், அரியேல், செமாயா, எல்நாத்தான், யாரிப், எல்நாத்தான், நாத்தான், சகரியா, மிசுல்லாம் என்னும் தலைவரையும், யோயாரிப், எல்நாத்தான் என்னும் புத்திமான்களையும் அழைப்பித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And I sent them with commandment unto Iddo the chief at the place Casiphia, and I told them what they should say unto Iddo, and to his brethren the Nethinims, at the place Casiphia, that they should bring unto us ministers for the house of our God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">கசிப்பியா என்னும் ஸ்தலத்திலிருக்கிற தலைவனாகிய இத்தோவிடத்திற்குச் செய்தி கொண்டுபோக அவர்களுக்குக் கற்பித்து, நமது தேவனுடைய ஆலயத்துப் பணிவிடைக்காரரை எங்களிடத்திற்கு அழைத்துவரும்படி அவர்கள் கசிப்பியா என்னும் ஸ்தலத்திலிருக்கிற தங்கள் சகோதரனாகிய இத்தோவுக்கும், நிதனீமியருக்கும் சொல்லவேண்டிய வார்த்தைகளைச் சொல்லிக்கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And by the good hand of our God upon us they brought us a man of understanding, of the sons of Mahli, the son of Levi, the son of Israel; and Sherebiah, with his sons and his brethren, eighteen;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்கள் எங்கள்மேலிருந்த எங்கள் தேவனுடைய தயையுள்ள கரத்தின்படியே இஸ்ரவேலுக்குப் பிறந்த லேவியின் குமாரனாகிய மகேலியின்புத்திரரில் புத்தியுள்ள மனுஷனாகிய செரபியாவும் அவன் குமாரரும் சகோதரருமான பதினெட்டுப்பேரையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And Hashabiah, and with him Jeshaiah of the sons of Merari, his brethren and their sons, twenty;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">மெராரியரின் புத்திரரில் அஷபியாவும் அவனோடே எஷாயரவும் அவன் சகோதரரும் அவர்கள் குமாரருமான இருபதுபேரையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Also of the Nethinims, whom David and the princes had appointed for the service of the Levites, two hundred and twenty Nethinims: all of them were expressed by name.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">தாவீதும் பிரபுக்களும் லேவியருக்குப் பணிவிடைக்காரராக வைத்த நிதனீமியரில் இருநூற்று இருபதுபேரையும், எங்களிடத்தில் அழைத்துக்கொண்டுவந்தார்கள்; அவர்கள் எல்லாருடைய பேர்களும் குறிக்கப்பட்டன.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Then I proclaimed a fast there, at the river of Ahava, that we might afflict ourselves before our God, to seek of him a right way for us, and for our little ones, and for all our substance.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது நாங்கள் எங்கள் தேவனுக்கு முன்பாக எங்களைத் தாழ்த்துகிறதற்கும், எங்களுக்காகவும் எங்கள் பிள்ளைகளுக்காகவும் எங்கள் சகல பொருள்களுக்காகவும் செவ்வையான வழியைத் தேடுகிறதற்கும், நான் அங்கே அந்த அகாவா நதியண்டையிலே உபவாசத்தைக் கூறினேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">For I was ashamed to require of the king a band of soldiers and horsemen to help us against the enemy in the way: because we had spoken unto the king, saying, The hand of our God is upon all them for good that seek him; but his power and his wrath is against all them that forsake him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">வழியிலே சத்துருவை விலக்கி எங்களுக்குத் துணைசெய்யும்படிக்கு, நான் ராஜாவினிடத்தில் சேவகரையும் குதிரைவீரரையும் கேட்க வெட்கப்பட்டிருந்தேன்; எங்கள் தேவனுடையகரம் தம்மைத் தேடுகிறவர்கள் எல்லார்மேலும் அவர்களுக்கு நன்மையாக இருக்கிறதென்றும், அவருடைய வல்லமையும் அவருடைய கோபமும் அவரைவிட்டு விலகுகிறவர்கள் எல்லார்மேலும் இருக்கிறதென்றும், நாங்கள் ராஜாவுக்குச் சொல்லியிருந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">So we fasted and besought our God for this: and he was implored of us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அப்படியே நாங்கள் உபவாசம்பண்ணி, எங்கள் தேவனிடத்திலே அதைத் தேடினோம்; எங்கள் விண்ணப்பத்தைக் கேட்டருளினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Then I separated twelve of the chief of the priests, Sherebiah, Hashabiah, and ten of their brethren with them,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பின்பு நான் ஆசாரியரின் தலைவரிலே பன்னிரண்டுபேராகிய செரெபியாவையும், அஷபியாவையும், அவர்கள் சகோதரரிலே பத்துப்பேரையும் பிரித்தெடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And weighed unto them the silver, and the gold, and the vessels, even the offering of the house of our God, which the king, and his counsellors, and his lords, and all Israel there present, had offered:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">ராஜாவும், அவருடைய ஆலோசனைக்காரரும், அவருடைய பிரபுக்களும், அங்கேயிருந்த சகல இஸ்ரவேலரும், எங்கள் தேவனுடைய ஆலயத்துக்கென்று எடுத்துக்கொடுத்த காணிக்கையாகிய வெள்ளியையும், பொன்னையும், பணிமுட்டுகளையும் அவர்களிடத்தில் நிறுத்துக் கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">I even weighed unto their hand six hundred and fifty talents of silver, and silver vessels an hundred talents, and of gold an hundred talents;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அவர்கள் கையிலே நான் அறுநூற்று ஐம்பது தாலந்து வெள்ளியையும், நூறுதாலந்து நிறையான வெள்ளிப் பணிமுட்டுகளையும், நூறுதாலந்து பொன்னையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Also twenty basons of gold, of a thousand drams; and two vessels of fine copper, precious as gold.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">ஆயிரம் தங்கக்காசு பெறுமான இருபது பொற்கிண்ணங்களையும், பொன்னைப்போல எண்ணப்பட்ட பளபளப்பான இரண்டு நல்ல வெண்கலப்பாத்திரங்களையும் நிறுத்துக்கொடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And I said unto them, All of you are holy unto the LORD; the vessels are holy also; and the silver and the gold are a freewill offering unto the LORD God of your fathers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அவர்களை நோக்கி: நீங்கள் கர்த்தருக்குப் பரிசுத்தமானவர்கள்; இந்தப்பணிமுட்டுகளும், உங்கள் பிதாக்களுடைய தேவனாகிய கர்த்தருக்கு மனஉற்சாகமாய்ச் செலுத்தப்பட்ட இந்த வெள்ளியும், இந்தப் பொன்னும் பரிசுத்தமானவைகள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Watch all of you, and keep them, until all of you weigh them before the chief of the priests and the Levites, and chief of the fathers of Israel, at Jerusalem, in the chambers of the house of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">நீங்கள் அதை எருசலேமிலிருக்கிற தேவனுடைய ஆலயத்தின் அறைகளில் ஆசாரியர் லேவியருடைய பிரபுக்களுக்கும் இஸ்ரவேலுடைய வம்சத்தலைவர்களுக்கும் முன்பாக நிறுத்து ஒப்புவிக்குமட்டும் விழிப்பாயிருந்து, அதைக் காத்துக்கொள்ளுங்கள் என்றேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">So took the priests and the Levites the weight of the silver, and the gold, and the vessels, to bring them to Jerusalem unto the house of our God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அப்படியே அந்த ஆசாரியரும் லேவியரும், அந்த வெள்ளியையும் பொன்னையும் பணிமுட்டுகளையும் எருசலேமிலிருக்கிற எங்கள் தேவனுடைய ஆலயத்துக்குக் கொண்டுபோகும்படிக்கு, நிறுத்து வாங்கிக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Then we departed from the river of Ahava on the twelfth day of the first month, to go unto Jerusalem: and the hand of our God was upon us, and he delivered us from the hand of the enemy, and of such as lay in wait by the way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">நாங்கள் எருசலேமுக்குப்போக, முதலாம் மாதம் பன்னிரண்டாந்தேதியிலே, அகாவா நதியைவிட்டுப் பயணம் புறப்பட்டோம்; எங்கள் தேவனுடைய கரம் எங்களது, வழியிலே சத்துருவின் கைக்கும், பதிவிருக்கிறவர்களின் கைக்கும் எங்களைத் தப்புவித்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And we came to Jerusalem, and abode there three days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">நாங்கள் எருசலேமுக்கு வந்து, அங்கே மூன்றுநாள் இருந்தபின்பு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Now on the fourth day was the silver and the gold and the vessels weighed in the house of our God by the hand of Meremoth the son of Uriah the priest; and with him was Eleazar the son of Phinehas; and with them was Jozabad the son of Jeshua, and Noadiah the son of Binnui, Levites;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">நாலாம் நாளிலே அந்த வெள்ளியும் பொன்னும் பணிமுட்டுகளும், எங்கள் தேவனுடைய ஆலயத்தில் ஆசாரியனாகிய உரியாவின் குமாரன் மெரேமேத்தின் கையிலும், பினெகாசின் குமாரன் எலெயாசாரின் கையிலும், எல்லாவற்றிற்கும் இருந்த நிறையின்படி அதையும் நிறுத்து, ஒப்புவிக்கப்பட்டது; யெசுவாவின் குமாரன் யோசபாத்தும், பின்னூயின் குமாரன் நொவதிவும் என்கிற லேவியரும் அவர்களோடேகூட இருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">By number and by weight of every one: and all the weight was written at that time.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">அந்த நிறையெல்லாம் அக்காலத்தில் எழுதப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">Also the children of those that had been carried away, which were come out of the captivity, offered burnt offerings unto the God of Israel, twelve bullocks for all Israel, ninety and six rams, seventy and seven lambs, twelve he goats for a sin offering: all this was a burnt offering unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">சிறைப்பட்டு மீண்டவர்கள் இஸ்ரவேலின் தேவனுக்குச் சர்வாங்க தகனபலிகளாக இஸ்ரவேல் அனைத்தினிமித்தம் பன்னிரண்டு காளைகளையும் தொண்ணூற்றாறு ஆட்டுக்கடாக்களையும், எழுபத்தேழு ஆட்டுக்குட்டிகளையும், பாவநிவாரணத்துக்காகப் பன்னிரண்டு வெள்ளாட்டுக்கடாக்களையும் பலியிட்டு அவையெல்லாம் கர்த்தருக்குச் சர்வாங்க தகனபலியாகச் செலுத்தினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And they delivered the king's commissions unto the king's lieutenants, and to the governors on this side the river: and they furthered the people, and the house of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">பின்பு ராஜாவின் சன்னதுகளை நதிக்கு இப்புறத்திலிருக்கிற ராஜாவின தேசாதிபதிகளுக்கும் அதிகாரிகளுக்கும் ஒப்புவித்தார்கள்; அப்பொழுது அவர்கள் ஜனங்களுக்கும் தேவனுடைய ஆலயத்துக்கும் உதவியாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

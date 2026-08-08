@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 119 |  119 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 119 ( 119) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 119 |  119</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Blessed are the undefiled in the way, who walk in the law of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">கர்த்தருடைய வேதத்தின்படி நடக்கிற உத்தம மார்க்கத்தார் பாக்கியவான்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Blessed are they that keep his testimonies, and that seek him with the whole heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அவருடைய சாட்சிகளைக் கைக்கொண்டு, அவரை முழு இருதயத்தோடும் தேடுகிறவர்கள் பாக்கியவான்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">They also do no iniquity: they walk in his ways.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவர்கள் அநியாயம் செய்வதில்லை; அவருடைய வழிகளில் நடக்கிறார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">You have commanded us to keep your precepts diligently.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">உமது கட்டளைகளை நாங்கள் கருத்தாய்க் கைக்கொள்ளும்படி நீர் கற்பித்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">O that my ways were directed to keep your statutes!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">உமது பிரமாணங்களைக் கைக்கொள்ளும்படி, என் நடைகள் ஸ்திரப்பட்டால் நலமாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Then shall I not be ashamed, when I have respect unto all your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">நான் உம்முடைய கற்பனைகளையெல்லாம் கண்ணோக்கும்போது வெட்கப்பட்டுப்போவதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">I will praise you with uprightness of heart, when I shall have learned your righteous judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">உம்முடைய நீதி நியாயங்களை நான் கற்றுக்கொள்ளும்போது, செம்மையான இருதயத்தால் உம்மைத் துதிப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">I will keep your statutes: O forsake me not utterly.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">உமது பிரமாணங்களைக் கைக்கொள்ளுவேன்; முற்றிலும் என்னைக் கைவிடாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Wherewithal shall a young man cleanse his way? by taking heed thereto according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">வாலிபன் தன் வழியை எதினால் சுத்தம்பண்ணுவான்? உமது வசனத்தின்படி தன்னைக் காத்துக்கொள்கிறதினால்தானே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">With my whole heart have I sought you: O let me not wander from your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">என் முழு இருதயத்தோடும் உம்மைத் தேடுகிறேன், என்னை உமது கற்பனைகளைவிட்டு வழிதப்பவிடாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Your word have I hid in mine heart, that I might not sin against you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நான் உமக்கு விரோதமாய்ப் பாவஞ்செய்யாதபடிக்கு, உமது வாக்கை என்னிருதயத்தில் வைத்து வைத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Blessed are you, O LORD: teach me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">கர்த்தாவே, நீர் ஸ்தோத்திரிக்கப்பட்டவர், உம்முடைய பிரமாணங்களை எனக்குப் போதியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">With my lips have I declared all the judgments of your mouth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">உம்முடைய வாக்கின் நியாயத்தீர்ப்புகளையெல்லாம் என் உதடுகளால் விவரித்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">I have rejoiced in the way of your testimonies, as much as in all riches.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">திரளான செல்வத்தில் களிகூருவதுபோல, நான் உமது சாட்சிகளின் வழியில் களிகூருகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">I will meditate in your precepts, and have respect unto your ways.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">உமது கட்டளைகளைத் தியானித்து உமது வழிகளைக் கண்ணோக்குகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">I will delight myself in your statutes: I will not forget your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">உமது பிரமாணங்களில் மனமகிழ்ச்சியாயிருக்கிறேன்; உமது வசனத்தை மறவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Deal bountifully with your servant, that I may live, and keep your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">உமது அடியேனுக்கு அனுகூலமாயிரும்; அப்பொழுது நான் பிழைத்து, உமது வசனத்தைக் கைக்கொள்வேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Open you mine eyes, that I may behold wondrous things out of your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">உமது வேதத்திலுள்ள அதிசயங்களை நான் பார்க்கும்படிக்கு என் கண்களைத் திறந்தருளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">I am a stranger in the earth: hide not your commandments from me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பூமியிலே நான் பரதேசி; உமது கற்பனைகளை எனக்கு மறையாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">My soul breaks for the longing that it has unto your judgments at all times.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">உமது நியாயங்கள்மேல் என் ஆத்துமா எக்காலமும் வைத்திருக்கிற வாஞ்சையினால் தொய்ந்துபோகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">You have rebuked the proud that are cursed, which do go astray from your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">உமது கற்பனைகளை விட்டு வழிவிலகின சபிக்கப்பட்ட அகங்காரிகளை நீர் கடிந்துகொள்ளுகிறீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Remove from me reproach and contempt; for I have kept your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">நிந்தையையும் அவமானத்தையும் என்னை விட்டகற்றும்; நான் உம்முடைய சாட்சிகளைக் கைக்கொள்ளுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Princes also did sit and speak against me: but your servant did meditate in your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">பிரபுக்களும் உட்கார்ந்து எனக்கு விரோதமாய்ப் பேசிக்கொள்ளுகிறார்கள்; உமது அடியேனோ பிரமாணங்களைத் தியானிக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Your testimonies also are my delight and my counsellors.leth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">உம்முடைய சாட்சிகள் எனக்கு இன்பமும், என் ஆலோசனைக்காரருமாயிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">My soul cleaves unto the dust: you restore life in me according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">என் ஆத்துமா மண்ணோடே ஒட்டிக்கொண்டிருக்கிறது; உமது வசனத்தின்படி என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">I have declared my ways, and you heard me: teach me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">என் வழிகளை நான் உமக்கு விவரித்துக் காட்டினபோது எனக்குச் செவிகொடுத்தீர்; உமது பிரமாணங்களை எனக்குப் போதியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Make me to understand the way of your precepts: so shall I talk of your wondrous works.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">உமது கட்டளைகளின் வழியை எனக்கு உணர்த்தியருளும் அப்பொழுது உமது அதிசயங்களைத் தியானிப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">My soul melts for heaviness: strengthen you me according unto your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">சஞ்சலத்தால் என் ஆத்துமா கரைந்துபோகிறது; உமது வசனத்தின்படி என்னை எடுத்து நிறுத்தும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Remove from me the way of lying: and grant me your law graciously.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">பொய்வழியை என்னை விட்டுவிலக்கி, உம்முடைய வேதத்தை எனக்கு அருள்செய்யும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">I have chosen the way of truth: your judgments have I laid before me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">மெய்வழியை நான் தெரிந்துகொண்டு உம்முடைய நியாயங்களை எனக்கு முன்பாக நிறுத்தினேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">I have stuck unto your testimonies: O LORD, put me not to shame.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">உமது சாட்சிகள்மேல் பற்றுதலாயிருக்கிறேன்; கர்த்தாவே, என்னை வெட்கத்திற்குட்படப்பண்ணாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">I will run the way of your commandments, when you shall enlarge my heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">நீர் என் இருதயத்தை விசாலமாக்கும்போது நான் உமது கற்பனைகளின் வழியாக ஓடுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Teach me, O LORD, the way of your statutes; and I shall keep it unto the end.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">கர்த்தாவே, உமது பிரமாணங்களின் வழியை எனக்குப் போதியும்; முடிவுபரியந்தம் நான் அதைக் காத்துக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Give me understanding, and I shall keep your law; yea, I shall observe it with my whole heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">எனக்கு உணர்வைத் தாரும்; அப்பொழுது நான் உமது வேதத்தைப் பற்றிக்கொண்டு, என் முழு இருதயத்தோடும் அதைக் கைக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">Make me to go in the path of your commandments; for therein do I delight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">உமது கற்பனைகளின் பாதையில் என்னை நடத்தும்; நான் அதில் பிரியமாயிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Incline my heart unto your testimonies, and not to covetousness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">என் இருதயம் பொருளாசையைச் சாராமல், உமது சாட்சிகளைச் சாரும்படி செய்யும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">Turn away mine eyes from beholding vanity; and you restore life in me in your way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">மாயையைப் பாராதபடி நீர் என் கண்களை விலக்கி, உமது வழிகளில் என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">Establish your word unto your servant, who is devoted to your fear.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">உமக்குப் பயப்படுகிறதற்கு ஏற்ற உமது வாக்கை உமது அடியேனுக்கு உறுதிப்படுத்தும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">Turn away my reproach which I fear: for your judgments are good.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">நான் அஞ்சுகிற நிந்தையை விலக்கியருளும்; உம்முடைய நியாயத்தீர்ப்புகள் நல்லவைகள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">Behold, I have longed after your precepts: restore life in me in your righteousness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">இதோ, உம்முடைய கட்டளைகளின்மேல் வாஞ்சையாயிருக்கிறேன்; உமது நீதியால் என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">Let your mercies come also unto me, O LORD, even your salvation, according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">கர்த்தாவே, உம்முடைய வாக்கின்படி, உமது தயவும் உமது இரட்சிப்பும் எனக்கு வருவதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">So shall I have wherewith to answer him that reproaches me: for I trust in your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">அப்பொழுது என்னை நிந்திக்கிறவனுக்கு உத்தரவு சொல்லுவேன், உம்முடைய வசனத்தை நம்பியிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And take not the word of truth utterly out of my mouth; for I have hoped in your judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">சத்திய வசனம் முற்றிலும் என் வாயினின்று நீங்கவிடாதேயும்; உம்முடைய நியாயத்தீர்ப்புகளுக்குக் காத்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">So shall I keep your law continually for ever and ever.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">நான் எப்பொழுதும் என்றைக்கும் உமது வேதத்தைக் காத்துக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And I will walk at liberty: for I seek your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">நான் உம்முடைய கட்டளைகளை ஆராய்கிறபடியால் விசாலத்திலே நடப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">I will speak of your testimonies also before kings, and will not be ashamed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">நான் உம்முடைய சாட்சிகளைக்குறித்து, ராஜாக்களுக்கு முன்பாகவும் வெட்கப்படாமல் பேசுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">And I will delight myself in your commandments, which I have loved.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">நான் பிரியப்படுகிற உமது கற்பனைகளின்பேரில் மனமகிழ்ச்சியாயிருப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">My hands also will I lift up unto your commandments, which I have loved; and I will meditate in your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">நான் பிரியப்படுகிற உமது கற்பனைகளுக்குக் கையெடுப்பேன். உமது பிரமாணங்களைத் தியானிப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">Remember the word unto your servant, upon which you have caused me to hope.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">நீர் என்னை நம்பப்பண்ணின வசனத்தை உமது அடியேனுக்காக நினைத்தருளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="50">
+          <div class="verse-item lang-en">
+            <span class="verse-num">50</span>
+            <span class="verse-text">This is my comfort in my affliction: for your word has quickened me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">50</span>
+            <span class="verse-text">அதுவே என் சிறுமையில் எனக்கு ஆறுதல், உம்முடைய வாக்கு என்னை உயிர்ப்பித்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="51">
+          <div class="verse-item lang-en">
+            <span class="verse-num">51</span>
+            <span class="verse-text">The proud have had me greatly in derision: yet have I not declined from your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">51</span>
+            <span class="verse-text">அகந்தைக்காரர் என்னை மிகவும், பரியாசம்பண்ணியும், நான் உமது வேதத்தைவிட்டு விலகினதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="52">
+          <div class="verse-item lang-en">
+            <span class="verse-num">52</span>
+            <span class="verse-text">I remembered your judgments of old, O LORD; and have comforted myself.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">52</span>
+            <span class="verse-text">கர்த்தாவே, ஆதிமுதலான உமதுநியாயத்தீர்ப்புகளை நான் நினைத்து என்னைத் தேற்றுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="53">
+          <div class="verse-item lang-en">
+            <span class="verse-num">53</span>
+            <span class="verse-text">Horror has taken hold upon me because of the wicked that forsake your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">53</span>
+            <span class="verse-text">உமது வேதத்தை விட்டு விலகுகிற துன்மார்க்கர்நிமித்தம் நடுக்கம் என்னைப் பிடித்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="54">
+          <div class="verse-item lang-en">
+            <span class="verse-num">54</span>
+            <span class="verse-text">Your statutes have been my songs in the house of my pilgrimage.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">54</span>
+            <span class="verse-text">நான் பரதேசியாய்த் தங்கும் வீட்டிலே உமது பிரமாணங்கள் எனக்குக் கீதங்களாயின.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="55">
+          <div class="verse-item lang-en">
+            <span class="verse-num">55</span>
+            <span class="verse-text">I have remembered your name, O LORD, in the night, and have kept your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">55</span>
+            <span class="verse-text">கர்த்தாவே, இராக்காலத்திலும் உமது நாமத்தை நினைத்து, உமது வேதத்தைக் கைக்கொள்ளுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="56">
+          <div class="verse-item lang-en">
+            <span class="verse-num">56</span>
+            <span class="verse-text">This I had, because I kept your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">56</span>
+            <span class="verse-text">நான் உமது கட்டளைகளைக் கைக்கொண்டபடியினால், இது எனக்குக் கிடைத்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="57">
+          <div class="verse-item lang-en">
+            <span class="verse-num">57</span>
+            <span class="verse-text">You are my portion, O LORD: I have said that I would keep your words.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">57</span>
+            <span class="verse-text">கர்த்தாவே, நீரே என் பங்கு; நான் உமது வசனங்களைக் கைக்கொள்ளுவேன் என்றேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="58">
+          <div class="verse-item lang-en">
+            <span class="verse-num">58</span>
+            <span class="verse-text">I implored your favour with my whole heart: be merciful unto me according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">58</span>
+            <span class="verse-text">முழு இருதயத்தோடும் உம்முடைய தயவுக்காகக் கெஞ்சுகிறேன்; உமது வாக்கின்படி எனக்கு இரங்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="59">
+          <div class="verse-item lang-en">
+            <span class="verse-num">59</span>
+            <span class="verse-text">I thought on my ways, and turned my feet unto your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">59</span>
+            <span class="verse-text">என் வழிகளைச் சிந்தித்துக்கொண்டு, என் கால்களை உம்முடைய சாட்சிகளுக்கு நேராகத் திருப்பினேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="60">
+          <div class="verse-item lang-en">
+            <span class="verse-num">60</span>
+            <span class="verse-text">I made haste, and delayed not to keep your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">60</span>
+            <span class="verse-text">உமது கற்பனைகளைக் கைக்கொள்ளும்படி நான் தாமதியாமல் தீவிரித்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="61">
+          <div class="verse-item lang-en">
+            <span class="verse-num">61</span>
+            <span class="verse-text">The bands of the wicked have robbed me: but I have not forgotten your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">61</span>
+            <span class="verse-text">துன்மார்க்கரின் கூட்டங்கள் என்னைக் கொள்ளையிட்டும் உம்முடைய வேதத்தை நான் மறக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="62">
+          <div class="verse-item lang-en">
+            <span class="verse-num">62</span>
+            <span class="verse-text">At midnight I will rise to give thanks unto you because of your righteous judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">62</span>
+            <span class="verse-text">உமது நீதியான நியாயத்தீர்ப்புகளினிமித்தம் உம்மைத் துதிக்கும்படி, பாதிராத்திரியில் எழுந்திருப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="63">
+          <div class="verse-item lang-en">
+            <span class="verse-num">63</span>
+            <span class="verse-text">I am a companion of all them that fear you, and of them that keep your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">63</span>
+            <span class="verse-text">உமக்குப் பயந்து, உமது கட்டளைகளைக் கைக்கொள்ளுகிற அனைவருக்கும் நான் தோழன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="64">
+          <div class="verse-item lang-en">
+            <span class="verse-num">64</span>
+            <span class="verse-text">The earth, O LORD, is full of your mercy: teach me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">64</span>
+            <span class="verse-text">கர்த்தாவே, பூமி உமது கிருபையினால் நிறைந்திருக்கிறது; உமது பிரமாணங்களை எனக்குப் போதியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="65">
+          <div class="verse-item lang-en">
+            <span class="verse-num">65</span>
+            <span class="verse-text">You have dealt well with your servant, O LORD, according unto your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">65</span>
+            <span class="verse-text">கர்த்தாவே, உமது வசனத்தின்படி உமது அடியேனை நன்றாய் நடத்தினீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="66">
+          <div class="verse-item lang-en">
+            <span class="verse-num">66</span>
+            <span class="verse-text">Teach me good judgment and knowledge: for I have believed your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">66</span>
+            <span class="verse-text">உத்தம நிதானிப்பையும் அறிவையும் எனக்குப் போதித்தருளும், உம்முடைய கற்பனைகளின்பேரில் விசுவாசமாயிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="67">
+          <div class="verse-item lang-en">
+            <span class="verse-num">67</span>
+            <span class="verse-text">Before I was afflicted I went astray: but now have I kept your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">67</span>
+            <span class="verse-text">நான் உபத்திரவப்படுவதற்கு முன் வழிதப்பி நடந்தேன்; இப்பொழுதோ உம்முடைய வார்த்தையைக் காத்து நடக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="68">
+          <div class="verse-item lang-en">
+            <span class="verse-num">68</span>
+            <span class="verse-text">You are good, and do good; teach me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">68</span>
+            <span class="verse-text">தேவரீர் நல்லவரும், நன்மை செய்கிறவருமாயிருக்கிறீர்; உமது பிரமாணங்களை எனக்குப் போதியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="69">
+          <div class="verse-item lang-en">
+            <span class="verse-num">69</span>
+            <span class="verse-text">The proud have forged a lie against me: but I will keep your precepts with my whole heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">69</span>
+            <span class="verse-text">அகங்காரிகள் எனக்கு விரோதமாய்ப் பொய்களைப் பிணைக்கிறார்கள்; நானோ முழு இருதயத்தோடும் உம்முடைய கட்டளைகளைக் கைக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="70">
+          <div class="verse-item lang-en">
+            <span class="verse-num">70</span>
+            <span class="verse-text">Their heart is as fat as grease; but I delight in your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">70</span>
+            <span class="verse-text">அவர்கள் இருதயம் நிணந்துன்னிக் கொழுத்திருக்கிறது; நானோ உம்முடைய வேதத்தில் மனமகிழ்ச்சியாயிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="71">
+          <div class="verse-item lang-en">
+            <span class="verse-num">71</span>
+            <span class="verse-text">It is good for me that I have been afflicted; that I might learn your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">71</span>
+            <span class="verse-text">நான் உபத்திரவப்பட்டது எனக்கு நல்லது; அதினால் உமது பிரமாணங்களைக் கற்றுக்கொள்ளுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="72">
+          <div class="verse-item lang-en">
+            <span class="verse-num">72</span>
+            <span class="verse-text">The law of your mouth is better unto me than thousands of gold and silver.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">72</span>
+            <span class="verse-text">அநேகமாயிரம் பொன் வெள்ளியைப் பார்க்கிலும், நீர் விளம்பின வேதமே எனக்கு நலம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="73">
+          <div class="verse-item lang-en">
+            <span class="verse-num">73</span>
+            <span class="verse-text">Your hands have made me and fashioned me: give me understanding, that I may learn your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">73</span>
+            <span class="verse-text">உம்முடைய கரங்கள் என்னை உண்டாக்கி, என்னை உருவாக்கிற்று; உம்முடைய கற்பனைகளைக் கற்றுக்கொள்ள என்னை உணர்வுள்ளவனாக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="74">
+          <div class="verse-item lang-en">
+            <span class="verse-num">74</span>
+            <span class="verse-text">They that fear you will be glad when they see me; because I have hoped in your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">74</span>
+            <span class="verse-text">நான் உம்முடைய வசனத்திற்குக் காத்திருக்கிறபடியால், உமக்குப் பயந்தவர்கள் என்னைக் கண்டு சந்தோஷப்படுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="75">
+          <div class="verse-item lang-en">
+            <span class="verse-num">75</span>
+            <span class="verse-text">I know, O LORD, that your judgments are right, and that you in faithfulness have afflicted me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">75</span>
+            <span class="verse-text">கர்த்தாவே, உமது நியாயத்தீர்ப்புகள் நீதியுள்ளதென்றும் உண்மையின்படி என்னை உபத்திரவப்படுத்தினீரென்றும் அறிவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="76">
+          <div class="verse-item lang-en">
+            <span class="verse-num">76</span>
+            <span class="verse-text">Let, I pray you, your merciful kindness be for my comfort, according to your word unto your servant.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">76</span>
+            <span class="verse-text">நீர் உமது அடியேனுக்குக் கொடுத்த உமது வாக்கின்படி, உமது கிருபை என்னைத் தேற்றுவதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="77">
+          <div class="verse-item lang-en">
+            <span class="verse-num">77</span>
+            <span class="verse-text">Let your tender mercies come unto me, that I may live: for your law is my delight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">77</span>
+            <span class="verse-text">நான் பிழைத்திருக்கும்படிக்கு உமது இரக்கங்கள் எனக்குக் கிடைப்பதாக; உம்முடைய வேதம் என் மனமகிழ்ச்சி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="78">
+          <div class="verse-item lang-en">
+            <span class="verse-num">78</span>
+            <span class="verse-text">Let the proud be ashamed; for they dealt perversely with me without a cause: but I will meditate in your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">78</span>
+            <span class="verse-text">அகங்காரிகள் என்னைப் பொய்களினால் கெடுக்கப் பார்த்தபடியால் வெட்கப்பட்டுப்போவார்களாக; நானோ உமது கட்டளைகளைத் தியானிப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="79">
+          <div class="verse-item lang-en">
+            <span class="verse-num">79</span>
+            <span class="verse-text">Let those that fear you turn unto me, and those that have known your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">79</span>
+            <span class="verse-text">உமக்குப் பயந்து, உமது சாட்சிகளை அறிந்திருக்கிறவர்கள் என்னண்டைக்குத் திரும்புவார்களாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="80">
+          <div class="verse-item lang-en">
+            <span class="verse-num">80</span>
+            <span class="verse-text">Let my heart be sound in your statutes; that I be not ashamed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">80</span>
+            <span class="verse-text">நான் வெட்கப்பட்டுப் போகாதபடிக்கு, என் இருதயம் உமது பிரமாணங்களில் உத்தமமாயிருக்கக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="81">
+          <div class="verse-item lang-en">
+            <span class="verse-num">81</span>
+            <span class="verse-text">My soul faints for your salvation: but I hope in your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">81</span>
+            <span class="verse-text">உம்முடைய இரட்சிப்புக்கு என் ஆத்துமா தவிக்கிறது; உம்முடψய வசனத்துக்குக் காத்திருΕ்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="82">
+          <div class="verse-item lang-en">
+            <span class="verse-num">82</span>
+            <span class="verse-text">Mine eyes fail for your word, saying, When will you comfort me?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">82</span>
+            <span class="verse-text">எப்பொழுது என்னைĠύ தேற்றுவீர் என்று, உம்முடைய வாக்கின்மேல் நோக்கமாய் என் கண்கள் பூத்துப்போகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="83">
+          <div class="verse-item lang-en">
+            <span class="verse-num">83</span>
+            <span class="verse-text">For I am become like a bottle in the smoke; yet do I not forget your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">83</span>
+            <span class="verse-text">புகையிலுள்ள துருத்தியைப் போலானேன்; உமது பிரமாணங்களையோ மறவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="84">
+          <div class="verse-item lang-en">
+            <span class="verse-num">84</span>
+            <span class="verse-text">How many are the days of your servant? when will you execute judgment on them that persecute me?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">84</span>
+            <span class="verse-text">உமது அடியேனுடைய நாட்கள் எம்மாத்திரம்? என்னைத் துன்பப்படுத்துகிறவர்களுக்கு நீர் எப்பொழுது நியாயத்தீர்ப்புச் செய்வீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="85">
+          <div class="verse-item lang-en">
+            <span class="verse-num">85</span>
+            <span class="verse-text">The proud have dug pits for me, which are not after your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">85</span>
+            <span class="verse-text">உம்முடைய வேதத்துக்கு விரோதமாய் அகங்காரிகள் எனக்குக் குழிகளை வெட்டினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="86">
+          <div class="verse-item lang-en">
+            <span class="verse-num">86</span>
+            <span class="verse-text">All your commandments are faithful: they persecute me wrongfully; help you me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">86</span>
+            <span class="verse-text">உம்முடைய கற்பனைகளெல்லாம் உண்மையாயிருக்கிறது; அநியாயமாய் என்னைத் துன்பப்படுத்துகிறார்கள்; நீர் எனக்குச் சகாயம்பண்ணும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="87">
+          <div class="verse-item lang-en">
+            <span class="verse-num">87</span>
+            <span class="verse-text">They had almost consumed me upon earth; but I forsook not your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">87</span>
+            <span class="verse-text">அவர்கள் என்னைப் பூமியிலிராமல் நீக்கிவிடச் சற்றே தப்பிற்று; ஆனாலும் நான் உமது கட்டளைகளை விட்டுவிடவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="88">
+          <div class="verse-item lang-en">
+            <span class="verse-num">88</span>
+            <span class="verse-text">Restore life in me after your loving kindness; so shall I keep the testimony of your mouth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">88</span>
+            <span class="verse-text">உமது கிருபையின்படியே என்னை உயிர்ப்பியும்; அப்பொழுது நான் உம்முடைய வாக்கின் சாட்சியைக் காத்து நடப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="89">
+          <div class="verse-item lang-en">
+            <span class="verse-num">89</span>
+            <span class="verse-text">For ever, O LORD, your word is settled in heaven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">89</span>
+            <span class="verse-text">கர்த்தாவே, உமது வசனம் என்றென்றைக்கும் வானங்களில் நிலைத்திருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="90">
+          <div class="verse-item lang-en">
+            <span class="verse-num">90</span>
+            <span class="verse-text">Your faithfulness is unto all generations: you have established the earth, and it abides.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">90</span>
+            <span class="verse-text">உம்முடைய உண்மை தலைமுறை தலைமுறையாக இருக்கும்; பூமியை உறுதிப்படுத்தினீர். அது நிலைத்திருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="91">
+          <div class="verse-item lang-en">
+            <span class="verse-num">91</span>
+            <span class="verse-text">They continue this day according to yours ordinances: for all are your servants.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">91</span>
+            <span class="verse-text">உம்முடைய பிரமாணங்களை நிறைவேற்றும்படி அவைகள் இந்நாள்வரைக்கும் நிற்கிறது; சமஸ்தமும் உம்மைச் சேவிக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="92">
+          <div class="verse-item lang-en">
+            <span class="verse-num">92</span>
+            <span class="verse-text">Unless your law had been my delights, I should then have perished in mine affliction.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">92</span>
+            <span class="verse-text">உமது வேதம் என் மனமகிழ்ச்சியாயிராதிருந்தால், என் துக்கத்திலே அழிந்துபோயிருப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="93">
+          <div class="verse-item lang-en">
+            <span class="verse-num">93</span>
+            <span class="verse-text">I will never forget your precepts: for with them you have quickened me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">93</span>
+            <span class="verse-text">நான் ஒருபோதும் உம்முடைய கட்டளைகளை மறக்கமாட்டேன்; அவைகளால் நீர் என்னை உயிர்ப்பித்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="94">
+          <div class="verse-item lang-en">
+            <span class="verse-num">94</span>
+            <span class="verse-text">I am yours, save me: for I have sought your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">94</span>
+            <span class="verse-text">நான் உம்முடையவன், என்னை இரட்சியும்; உம்முடைய கட்டளைகளை ஆராய்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="95">
+          <div class="verse-item lang-en">
+            <span class="verse-num">95</span>
+            <span class="verse-text">The wicked have waited for me to destroy me: but I will consider your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">95</span>
+            <span class="verse-text">துன்மார்க்கர் என்னை அழிக்கக் காத்திருக்கிறார்கள்; நான் உமது சாட்சிகளைச் சிந்தித்துக்கொண்டிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="96">
+          <div class="verse-item lang-en">
+            <span class="verse-num">96</span>
+            <span class="verse-text">I have seen an end of all perfection: but your commandment is exceeding broad.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">96</span>
+            <span class="verse-text">சகல சம்பூரணத்திற்கும் எல்லையைக் கண்டேன்; உம்முடைய கற்பனையோ மகா விஸ்தாரம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="97">
+          <div class="verse-item lang-en">
+            <span class="verse-num">97</span>
+            <span class="verse-text">O how I love your law! it is my meditation all the day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">97</span>
+            <span class="verse-text">உமது வேதத்தில் நான் எவ்வளவு பிரியமாயிருக்கிறேன்! நாள் முழுதும் அது என் தியானம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="98">
+          <div class="verse-item lang-en">
+            <span class="verse-num">98</span>
+            <span class="verse-text">You through your commandments have made me wiser than mine enemies: for they are ever with me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">98</span>
+            <span class="verse-text">நீர் உம்முடைய கற்பனைகளைக் கொண்டு, என்னை என் சத்துருக்களிலும் அதிக ஞானமுள்ளவனாக்குகிறீர்; அவைகள் என்றைக்கும் என்னுடனே இருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="99">
+          <div class="verse-item lang-en">
+            <span class="verse-num">99</span>
+            <span class="verse-text">I have more understanding than all my teachers: for your testimonies are my meditation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">99</span>
+            <span class="verse-text">உம்முடைய சாட்சிகள் என் தியானமாயிருக்கிறபடியால், எனக்குப் போதித்தவர்கள் எல்லாரிலும் அறிவுள்ளவனாயிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="100">
+          <div class="verse-item lang-en">
+            <span class="verse-num">100</span>
+            <span class="verse-text">I understand more than the ancients, because I keep your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">100</span>
+            <span class="verse-text">உம்முடைய கட்டளைகளை நான் கைக்கொண்டிருக்கிறபடியால், முதியோர்களைப் பார்க்கிலும் ஞானமுள்ளவனாயிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="101">
+          <div class="verse-item lang-en">
+            <span class="verse-num">101</span>
+            <span class="verse-text">I have refrained my feet from every evil way, that I might keep your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">101</span>
+            <span class="verse-text">உம்முடைய வசனத்தை நான் காத்து நடக்கும்படிக்கு, சகல பொல்லாத வழிகளுக்கும் என் கால்களை விலக்குகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="102">
+          <div class="verse-item lang-en">
+            <span class="verse-num">102</span>
+            <span class="verse-text">I have not departed from your judgments: for you have taught me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">102</span>
+            <span class="verse-text">நீர் எனக்குப் போதித்திருக்கிறபடியால், நான் உம்முடைய நியாயங்களை விட்டு விலகேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="103">
+          <div class="verse-item lang-en">
+            <span class="verse-num">103</span>
+            <span class="verse-text">How sweet are your words unto my taste! yea, sweeter than honey to my mouth!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">103</span>
+            <span class="verse-text">உம்முடைய வார்த்தைகள் என் நாவுக்கு எவ்வளவு இனிமையானவைகள்; என் வாய்க்கு அவைகள் தேனிலும் மதுரமாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="104">
+          <div class="verse-item lang-en">
+            <span class="verse-num">104</span>
+            <span class="verse-text">Through your precepts I get understanding: therefore I hate every false way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">104</span>
+            <span class="verse-text">உமது கட்டளைகளால் உணர்வடைந்தேன், ஆதலால் எல்லாப் பொய்வழிகளையும் வெறுக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="105">
+          <div class="verse-item lang-en">
+            <span class="verse-num">105</span>
+            <span class="verse-text">Your word is a lamp unto my feet, and a light unto my path.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">105</span>
+            <span class="verse-text">உம்முடைய வசனம் என் கால்களுக்குத் தீபமும், என் பாதைக்கு வெளிச்சமுமாயிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="106">
+          <div class="verse-item lang-en">
+            <span class="verse-num">106</span>
+            <span class="verse-text">I have sworn, and I will perform it, that I will keep your righteous judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">106</span>
+            <span class="verse-text">உம்முடைய நீதி நியாயங்களைக் காத்து நடப்பேன் என்று ஆணையிட்டேன்; அதை நிறைவேற்றுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="107">
+          <div class="verse-item lang-en">
+            <span class="verse-num">107</span>
+            <span class="verse-text">I am afflicted very much: restore life in me, O LORD, according unto your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">107</span>
+            <span class="verse-text">நான் மிகவும் உபத்திரவப்படுகிறேன்; கர்த்தாவே, உம்முடைய வசனத்தின்படியே என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="108">
+          <div class="verse-item lang-en">
+            <span class="verse-num">108</span>
+            <span class="verse-text">Accept, I plead to you, the freewill offerings of my mouth, O LORD, and teach me your judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">108</span>
+            <span class="verse-text">கர்த்தாவே, என் வாயின் உற்சாகபலிகளை நீர் அங்கீகரித்து, உமது நியாயங்களை எனக்குப் போதித்தருளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="109">
+          <div class="verse-item lang-en">
+            <span class="verse-num">109</span>
+            <span class="verse-text">My soul is continually in my hand: yet do I not forget your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">109</span>
+            <span class="verse-text">என் பிராணன் எப்பொழுதும் என் கையில் இருக்கிறது; ஆனாலும் உம்முடைய வேதத்தை மறவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="110">
+          <div class="verse-item lang-en">
+            <span class="verse-num">110</span>
+            <span class="verse-text">The wicked have laid a snare for me: yet I erred not from your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">110</span>
+            <span class="verse-text">துன்மார்க்கர் எனக்குக் கண்ணிவைக்கிறார்கள்; ஆனாலும் நான் உம்முடைய கட்டளைகளை விட்டு வழி தவறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="111">
+          <div class="verse-item lang-en">
+            <span class="verse-num">111</span>
+            <span class="verse-text">Your testimonies have I taken as an heritage for ever: for they are the rejoicing of my heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">111</span>
+            <span class="verse-text">உம்முடைய சாட்சிகளை நித்திய சுதந்தரமாக்கிக்கொண்டிருக்கிறேன், அவைகளே என் இருதயத்தின் மகிழ்ச்சி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="112">
+          <div class="verse-item lang-en">
+            <span class="verse-num">112</span>
+            <span class="verse-text">I have inclined mine heart to perform your statutes always, even unto the end.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">112</span>
+            <span class="verse-text">முடிவுபரியந்தம் இடைவிடாமல் உம்முடைய பிரமாணங்களின்படி செய்ய என் இருதயத்தைச் சாய்த்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="113">
+          <div class="verse-item lang-en">
+            <span class="verse-num">113</span>
+            <span class="verse-text">I hate vain thoughts: but your law do I love.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">113</span>
+            <span class="verse-text">வீண் சிந்தனைகளை நான் வெறுத்து, உமது வேதத்தில் பிரியப்படுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="114">
+          <div class="verse-item lang-en">
+            <span class="verse-num">114</span>
+            <span class="verse-text">You are my hiding place and my shield: I hope in your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">114</span>
+            <span class="verse-text">என் மறைவிடமும் என் கேடகமும் நீரே; உம்முடைய வசனத்துக்குக் காத்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="115">
+          <div class="verse-item lang-en">
+            <span class="verse-num">115</span>
+            <span class="verse-text">Depart from me, all of you evildoers: for I will keep the commandments of my God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">115</span>
+            <span class="verse-text">பொல்லாதவர்களே, என்னை விட்டு அகன்றுபோங்கள்; என் தேவனுடைய கற்பனைகளை நான் கைக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="116">
+          <div class="verse-item lang-en">
+            <span class="verse-num">116</span>
+            <span class="verse-text">Uphold me according unto your word, that I may live: and let me not be ashamed of my hope.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">116</span>
+            <span class="verse-text">நான் பிழைத்திருப்பதற்கு உமது வார்த்தையின்படி என்னை ஆதரித்தருளும்; என் நம்பிக்கை விருதாவாய்ப்போக என்னை வெட்கத்திற்கு உட்படுத்தாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="117">
+          <div class="verse-item lang-en">
+            <span class="verse-num">117</span>
+            <span class="verse-text">Hold you me up, and I shall be safe: and I will have respect unto your statutes continually.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">117</span>
+            <span class="verse-text">என்னை ஆதரித்தருளும்; அப்பொழுது நான் இரட்சிக்கப்பட்டு எக்காலமும் உம்முடைய பிரமாணங்களின்பேரில் நோக்கமாயிருப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="118">
+          <div class="verse-item lang-en">
+            <span class="verse-num">118</span>
+            <span class="verse-text">You have trodden down all them that go astray from your statutes: for their deceit is falsehood.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">118</span>
+            <span class="verse-text">உமது பிரமாணங்களைவிட்டு வழிவிலகுகிற யாவரையும் மிதித்துபோடுகிறீர்; அவர்களுடைய உபாயம் வெறும் பொய்யே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="119">
+          <div class="verse-item lang-en">
+            <span class="verse-num">119</span>
+            <span class="verse-text">You put away all the wicked of the earth like dross: therefore I love your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">119</span>
+            <span class="verse-text">பூமியிலுள்ள துன்மார்க்கர் யாவரையும் களிம்பைப்போல அகற்றிவிடுகிறீர்; ஆகையால் உமது சாட்சிகளில் பிரியப்படுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="120">
+          <div class="verse-item lang-en">
+            <span class="verse-num">120</span>
+            <span class="verse-text">My flesh trembles for fear of you; and I am afraid of your judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">120</span>
+            <span class="verse-text">உமக்குப் பயப்படும் பயத்தால் என் உடம்பு சிலிர்க்கிறது; உமது நியாயத்தீர்ப்புகளுக்குப் பயப்படுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="121">
+          <div class="verse-item lang-en">
+            <span class="verse-num">121</span>
+            <span class="verse-text">I have done judgment and justice: leave me not to mine oppressors.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">121</span>
+            <span class="verse-text">நியாயமும் நீதியும் செய்கிற என்னை ஒடுக்குகிறவர்களுக்கு என்னை ஒப்புக்கொடாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="122">
+          <div class="verse-item lang-en">
+            <span class="verse-num">122</span>
+            <span class="verse-text">Be guarantor for your servant for good: let not the proud oppress me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">122</span>
+            <span class="verse-text">உமது அடியேனுக்கு நன்மையாகத் துணைநில்லும்; அகங்காரிகள் என்னை யொடுக்கவொட்டாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="123">
+          <div class="verse-item lang-en">
+            <span class="verse-num">123</span>
+            <span class="verse-text">Mine eyes fail for your salvation, and for the word of your righteousness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">123</span>
+            <span class="verse-text">உமது இரட்சிப்புக்கும் உமது நீதியின் வார்த்தைக்கும் காத்திருக்கிறதினால் என் கண்கள் பூத்துப்போகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="124">
+          <div class="verse-item lang-en">
+            <span class="verse-num">124</span>
+            <span class="verse-text">Deal with your servant according unto your mercy, and teach me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">124</span>
+            <span class="verse-text">உமது அடியேனை உமது கிருபையின்படியே நடத்தி, உமது பிரமாணங்களை எனக்குப் போதியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="125">
+          <div class="verse-item lang-en">
+            <span class="verse-num">125</span>
+            <span class="verse-text">I am your servant; give me understanding, that I may know your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">125</span>
+            <span class="verse-text">நான் உமது அடியேன்; உம்முடைய சாட்சிகளை நான் அறியும்படி என்னை உணர்வுள்ளவனாக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="126">
+          <div class="verse-item lang-en">
+            <span class="verse-num">126</span>
+            <span class="verse-text">It is time for you, LORD, to work: for they have made void your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">126</span>
+            <span class="verse-text">நீதியைச் செய்யக் கர்த்தருக்கு வேளைவந்தது; அவர்கள் உம்முடைய நியாயப்பிரமாணத்தை மீறினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="127">
+          <div class="verse-item lang-en">
+            <span class="verse-num">127</span>
+            <span class="verse-text">Therefore I love your commandments above gold; yea, above fine gold.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">127</span>
+            <span class="verse-text">ஆதலால் பொன்னிலும் பசும்பொன்னிலும் அதிகமாய் உமது கற்பனைகளில் பிரியப்படுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="128">
+          <div class="verse-item lang-en">
+            <span class="verse-num">128</span>
+            <span class="verse-text">Therefore I esteem all your precepts concerning all things to be right; and I hate every false way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">128</span>
+            <span class="verse-text">எல்லாவற்றைப்பற்றியும் நீர் அருளின எல்லாக் கட்டளைகளும் செம்மையென்று எண்ணி, சகல பொய்வழிகளையும் வெறுக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="129">
+          <div class="verse-item lang-en">
+            <span class="verse-num">129</span>
+            <span class="verse-text">Your testimonies are wonderful: therefore does my soul keep them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">129</span>
+            <span class="verse-text">உம்முடைய சாட்சிகள் அதிசயமானவைகள்; ஆகையால் என் ஆத்துமா அவைகளைக் கைக்கொள்ளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="130">
+          <div class="verse-item lang-en">
+            <span class="verse-num">130</span>
+            <span class="verse-text">The entrance of your words gives light; it gives understanding unto the simple.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">130</span>
+            <span class="verse-text">உம்முடைய வசனத்தின் பிரசித்தம் வெளிச்சம் தந்து, பேதைகளை உணர்வுள்ளவர்களாக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="131">
+          <div class="verse-item lang-en">
+            <span class="verse-num">131</span>
+            <span class="verse-text">I opened my mouth, and panted: for I longed for your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">131</span>
+            <span class="verse-text">உம்முடைய கற்பனைகளை நான் வாஞ்சிக்கிறபடியால், என் வாயை ஆவென்று திறந்து அவைகளுக்கு ஏங்குகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="132">
+          <div class="verse-item lang-en">
+            <span class="verse-num">132</span>
+            <span class="verse-text">Look you upon me, and be merciful unto me, as you use to do unto those that love your name.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">132</span>
+            <span class="verse-text">உம்முடைய நாமத்தை நேசிக்கிறவர்களுக்கு வழங்கும் நியாயத்தின்படியே என்னை நோக்கிப்பார்த்து, எனக்கு இரங்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="133">
+          <div class="verse-item lang-en">
+            <span class="verse-num">133</span>
+            <span class="verse-text">Order my steps in your word: and let not any iniquity have dominion over me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">133</span>
+            <span class="verse-text">உம்முடைய வார்த்தையிலே என் காலடிகளை நிலைப்படுத்தி, ஒரு அநியாயமும் என்னை ஆளவொட்டாதேயும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="134">
+          <div class="verse-item lang-en">
+            <span class="verse-num">134</span>
+            <span class="verse-text">Deliver me from the oppression of man: so will I keep your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">134</span>
+            <span class="verse-text">மனுஷர் செய்யும் இடுக்கத்துக்கு என்னை விலக்கி விடுவித்தருளும்; அப்பொழுது நான் உம்முடைய, கட்டளைகளைக் காத்துக்கொள்வேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="135">
+          <div class="verse-item lang-en">
+            <span class="verse-num">135</span>
+            <span class="verse-text">Make your face to shine upon your servant; and teach me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">135</span>
+            <span class="verse-text">உமது அடியேன்மேல் உமது முகத்தைப் பிரகாசிக்கப்பண்ணி, உமது பிரமாணங்களை எனக்குப் போதியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="136">
+          <div class="verse-item lang-en">
+            <span class="verse-num">136</span>
+            <span class="verse-text">Rivers of waters run down mine eyes, because they keep not your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">136</span>
+            <span class="verse-text">உம்முடைய வேதத்தை மனுஷர் காத்து நடவாதபடியால், என் கண்களிலிருந்து நீர்த்தாரைகள் ஓடுகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="137">
+          <div class="verse-item lang-en">
+            <span class="verse-num">137</span>
+            <span class="verse-text">Righteous are you, O LORD, and upright are your judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">137</span>
+            <span class="verse-text">கர்த்தாவே, நீர் நீதிபரர், உமது நியாயத்தீர்ப்புகள் செம்மையானவைகள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="138">
+          <div class="verse-item lang-en">
+            <span class="verse-num">138</span>
+            <span class="verse-text">Your testimonies that you have commanded are righteous and very faithful.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">138</span>
+            <span class="verse-text">நீர் கட்டளையிட்ட சாட்சிகள் நீதியும் மகா உண்மையுமானவைகள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="139">
+          <div class="verse-item lang-en">
+            <span class="verse-num">139</span>
+            <span class="verse-text">My zeal has consumed me, because mine enemies have forgotten your words.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">139</span>
+            <span class="verse-text">என் சத்துருக்கள் உம்முடைய வசனங்களை மறந்தபடியால் என் பக்திவைராக்கியம் என்னைப் பட்சிக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="140">
+          <div class="verse-item lang-en">
+            <span class="verse-num">140</span>
+            <span class="verse-text">Your word is very pure: therefore your servant loves it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">140</span>
+            <span class="verse-text">உமது வார்த்தை மிகவும் புடமிடப்பட்டது, உமது அடியேன் அதில் பிரியப்படுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="141">
+          <div class="verse-item lang-en">
+            <span class="verse-num">141</span>
+            <span class="verse-text">I am small and despised: yet do not I forget your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">141</span>
+            <span class="verse-text">நான் சிறியவனும் அசட்டை பண்ணப்பட்டவனுமாயிருக்கிறேன்; ஆனாலும் உமது கட்டளைகளை மறவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="142">
+          <div class="verse-item lang-en">
+            <span class="verse-num">142</span>
+            <span class="verse-text">Your righteousness is an everlasting righteousness, and your law is the truth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">142</span>
+            <span class="verse-text">உம்முடைய நீதி நித்திய நீதி, உம்முடைய வேதம் சத்தியம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="143">
+          <div class="verse-item lang-en">
+            <span class="verse-num">143</span>
+            <span class="verse-text">Trouble and anguish have taken hold on me: yet your commandments are my delights.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">143</span>
+            <span class="verse-text">இக்கட்டும் நெருக்கமும் என்னைப் பிடித்தது; ஆனாலும் உம்முடைய கற்பனைகள் என் மனமகிழ்ச்சி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="144">
+          <div class="verse-item lang-en">
+            <span class="verse-num">144</span>
+            <span class="verse-text">The righteousness of your testimonies is everlasting: give me understanding, and I shall live.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">144</span>
+            <span class="verse-text">உம்முடைய சாட்சிகளின் நீதி என்றைக்கும் நிற்கும்; என்னை உணர்வுள்ளவனாக்கும், அப்பொழுது நான் பிழைத்திருப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="145">
+          <div class="verse-item lang-en">
+            <span class="verse-num">145</span>
+            <span class="verse-text">I cried with my whole heart; hear me, O LORD: I will keep your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">145</span>
+            <span class="verse-text">முழு இருதயத்தோடும் கூப்பிட்டேன், கர்த்தாவே, என் ஜெபத்தைக் கேளும்; உம்முடைய பிரமாணங்களைக் கைக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="146">
+          <div class="verse-item lang-en">
+            <span class="verse-num">146</span>
+            <span class="verse-text">I cried unto you; save me, and I shall keep your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">146</span>
+            <span class="verse-text">உம்மை நோக்கிக் கூப்பிட்டேன், என்னை இரட்சியும்; அப்பொழுது நான் உம்முடைய சாட்சிகளைக் காத்துக்கொள்ளுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="147">
+          <div class="verse-item lang-en">
+            <span class="verse-num">147</span>
+            <span class="verse-text">I prevented the dawning of the morning, and cried: I hoped in your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">147</span>
+            <span class="verse-text">அதிகாலையில் நான் எழுந்து சத்தமிட்டேன்; உம்முடைய வசனத்துக்குக் காத்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="148">
+          <div class="verse-item lang-en">
+            <span class="verse-num">148</span>
+            <span class="verse-text">Mine eyes prevent the night watches, that I might meditate in your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">148</span>
+            <span class="verse-text">உமது வசனத்தைத் தியானிக்கும்படி, குறித்த ஜாமங்களுக்கு முன்னே என் கண்கள் விழித்துக்கொள்ளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="149">
+          <div class="verse-item lang-en">
+            <span class="verse-num">149</span>
+            <span class="verse-text">Hear my voice according unto your loving kindness: O LORD, restore life in me according to your judgment.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">149</span>
+            <span class="verse-text">உம்முடைய கிருபையின்படி என் சத்தத்தைக் கேளும்; கர்த்தாவே, உம்முடைய நியாயத்தின்படி என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="150">
+          <div class="verse-item lang-en">
+            <span class="verse-num">150</span>
+            <span class="verse-text">They draw nigh that follow after mischief: they are far from your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">150</span>
+            <span class="verse-text">தீவினையைப் பின்பற்றுகிறவர்கள் சமீபிக்கிறார்கள்; அவர்கள் உம்முடைய வேதத்துக்குத் தூரமாயிருக்கிறார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="151">
+          <div class="verse-item lang-en">
+            <span class="verse-num">151</span>
+            <span class="verse-text">You are near, O LORD; and all your commandments are truth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">151</span>
+            <span class="verse-text">கர்த்தாவே, நீர் சமீபமாயிருக்கிறீர்; உமது கற்பனைகள் எல்லாம் உண்மை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="152">
+          <div class="verse-item lang-en">
+            <span class="verse-num">152</span>
+            <span class="verse-text">Concerning your testimonies, I have known of old that you have founded them for ever.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">152</span>
+            <span class="verse-text">நீர் உம்முடைய சாட்சிகளை என்றென்றைக்கும் நிற்க ஸ்தாபித்தீர் என்பதை அவைகளால் நான் நெடுநாளாய் அறிந்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="153">
+          <div class="verse-item lang-en">
+            <span class="verse-num">153</span>
+            <span class="verse-text">Consider mine affliction, and deliver me: for I do not forget your law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">153</span>
+            <span class="verse-text">என் உபத்திரவத்தைப்பார்த்து, என்னை விடுவியும், உமது வேதத்தை மறவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="154">
+          <div class="verse-item lang-en">
+            <span class="verse-num">154</span>
+            <span class="verse-text">Plead my cause, and deliver me: restore life in me according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">154</span>
+            <span class="verse-text">எனக்காக நீர் வழக்காடி என்னை மீட்டுக்கொள்ளும், உம்முடைய வார்த்தையின்படியே என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="155">
+          <div class="verse-item lang-en">
+            <span class="verse-num">155</span>
+            <span class="verse-text">Salvation is far from the wicked: for they seek not your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">155</span>
+            <span class="verse-text">இரட்சிப்பு துன்மார்க்கருக்குத் தூரமாயிருக்கிறது, அவர்கள் உமது பிரமாணங்களைத் தேடார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="156">
+          <div class="verse-item lang-en">
+            <span class="verse-num">156</span>
+            <span class="verse-text">Great are your tender mercies, O LORD: restore life in me according to your judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">156</span>
+            <span class="verse-text">கர்த்தாவே, உம்முடைய இரக்கங்கள் மிகுதியாயிருக்கிறது; உமது நியாயங்களின்படி என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="157">
+          <div class="verse-item lang-en">
+            <span class="verse-num">157</span>
+            <span class="verse-text">Many are my persecutors and mine enemies; yet do I not decline from your testimonies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">157</span>
+            <span class="verse-text">என்னைத் துன்பப்படுத்துகிறவர்களும் என்னை விரோதிக்கிறவர்களும் அநேகர்; ஆனாலும் உம்முடைய சாட்சிகளை விட்டு விலகேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="158">
+          <div class="verse-item lang-en">
+            <span class="verse-num">158</span>
+            <span class="verse-text">I beheld the transgressors, and was grieved; because they kept not your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">158</span>
+            <span class="verse-text">உமது வசனத்தைக் காத்துக் கொள்ளாத துரோகிகளை நான் கண்டபோது, எனக்கு அருவருப்பாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="159">
+          <div class="verse-item lang-en">
+            <span class="verse-num">159</span>
+            <span class="verse-text">Consider how I love your precepts: restore life in me, O LORD, according to your loving kindness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">159</span>
+            <span class="verse-text">இதோ, உம்முடைய கட்டளைகளை நேசிக்கிறேன்; கர்த்தாவே, உமது கிருபையின்படி என்னை உயிர்ப்பியும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="160">
+          <div class="verse-item lang-en">
+            <span class="verse-num">160</span>
+            <span class="verse-text">Your word is true from the beginning: and every one of your righteous judgments endures for ever.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">160</span>
+            <span class="verse-text">உம்முடைய வசனம் சமூலமும் சத்தியம், உம்முடைய நீதி நியாயமெல்லாம் நித்தியம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="161">
+          <div class="verse-item lang-en">
+            <span class="verse-num">161</span>
+            <span class="verse-text">Princes have persecuted me without a cause: but my heart stands in awe of your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">161</span>
+            <span class="verse-text">பிரபுக்கள் காரணமில்லாமல் என்னைத் துன்பப்படுத்தினார்கள்; ஆனாலும் என் இருதயம் உமது வசனத்திற்கே பயப்படுகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="162">
+          <div class="verse-item lang-en">
+            <span class="verse-num">162</span>
+            <span class="verse-text">I rejoice at your word, as one that finds great spoil.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">162</span>
+            <span class="verse-text">மிகுந்த கொள்ளையுடைமையைக் கண்டுபிடிக்கிறவன் மகிழுகிறதுபோல, நான் உமது வார்த்தையின்பேரில் மகிழுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="163">
+          <div class="verse-item lang-en">
+            <span class="verse-num">163</span>
+            <span class="verse-text">I hate and detest lying: but your law do I love.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">163</span>
+            <span class="verse-text">பொய்யைப் பகைத்து அருவருக்கிறேன்; உம்முடைய வேதத்தையோ நேசிக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="164">
+          <div class="verse-item lang-en">
+            <span class="verse-num">164</span>
+            <span class="verse-text">Seven times a day do I praise you because of your righteous judgments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">164</span>
+            <span class="verse-text">உமது நீதி நியாயங்களினிமித்தம், ஒருநாளில் ஏழுதரம் உம்மைத் துதிக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="165">
+          <div class="verse-item lang-en">
+            <span class="verse-num">165</span>
+            <span class="verse-text">Great peace have they which love your law: and nothing shall offend them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">165</span>
+            <span class="verse-text">உம்முடைய வேதத்தை நேசிக்கிறவர்களுக்கு மிகுந்த சமாதானமுண்டு; அவர்களுக்கு இடறலில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="166">
+          <div class="verse-item lang-en">
+            <span class="verse-num">166</span>
+            <span class="verse-text">LORD, I have hoped for your salvation, and done your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">166</span>
+            <span class="verse-text">கர்த்தாவே, உம்முடைய இரட்சிப்புக்கு நான் காத்திருந்து உம்முடைய கற்பனைகளின்படி செய்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="167">
+          <div class="verse-item lang-en">
+            <span class="verse-num">167</span>
+            <span class="verse-text">My soul has kept your testimonies; and I love them exceedingly.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">167</span>
+            <span class="verse-text">என் ஆத்துமா உமது சாட்சிகளைக் காக்கும்; அவைகளை நான் மிகவும் நேசிக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="168">
+          <div class="verse-item lang-en">
+            <span class="verse-num">168</span>
+            <span class="verse-text">I have kept your precepts and your testimonies: for all my ways are before you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">168</span>
+            <span class="verse-text">உமது கட்டளைகளையும் உமது சாட்சிகளையும் காத்து நடக்கிறேன்; என் வழிகளெல்லாம் உமக்கு முன்பாக இருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="169">
+          <div class="verse-item lang-en">
+            <span class="verse-num">169</span>
+            <span class="verse-text">Let my cry come near before you, O LORD: give me understanding according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">169</span>
+            <span class="verse-text">கர்த்தாவே, என் கூப்பிடுதல் உமது சந்நிதியில் வருவதாக; உமது வசனத்தின்படியே என்னை உணர்வுள்ளவனாக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="170">
+          <div class="verse-item lang-en">
+            <span class="verse-num">170</span>
+            <span class="verse-text">Let my supplication come before you: deliver me according to your word.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">170</span>
+            <span class="verse-text">என் விண்ணப்பம் உமது சந்நிதியில் வருவதாக; உமது வார்த்தையின்படி என்னை விடுவித்தருளும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="171">
+          <div class="verse-item lang-en">
+            <span class="verse-num">171</span>
+            <span class="verse-text">My lips shall utter praise, when you have taught me your statutes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">171</span>
+            <span class="verse-text">உம்முடைய பிரமாணங்களை நீர் எனக்குப் போதிக்கும்போது, என் உதடுகள் உமது துதியைப் பிரஸ்தாபப்படுத்தும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="172">
+          <div class="verse-item lang-en">
+            <span class="verse-num">172</span>
+            <span class="verse-text">My tongue shall speak of your word: for all your commandments are righteousness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">172</span>
+            <span class="verse-text">உமது கற்பனைகளெல்லாம் நீதியுள்ளவைகள்; ஆதலால், என் நாவு உம்முடைய வசனத்தை விவரித்துச்சொல்லும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="173">
+          <div class="verse-item lang-en">
+            <span class="verse-num">173</span>
+            <span class="verse-text">Let yours hand help me; for I have chosen your precepts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">173</span>
+            <span class="verse-text">நான் உம்முடைய கட்டளைகளைத் தெரிந்துகொண்டபடியால், உமது கரம் எனக்குத் துணையாயிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="174">
+          <div class="verse-item lang-en">
+            <span class="verse-num">174</span>
+            <span class="verse-text">I have longed for your salvation, O LORD; and your law is my delight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">174</span>
+            <span class="verse-text">கர்த்தாவே, உம்முடைய இரட்சிப்பின்மேல் ஆவலாயிருக்கிறேன்; உம்முடைய வேதம் என் மனமகிழ்ச்சி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="175">
+          <div class="verse-item lang-en">
+            <span class="verse-num">175</span>
+            <span class="verse-text">Let my soul live, and it shall praise you; and let your judgments help me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">175</span>
+            <span class="verse-text">என் ஆத்துமா பிழைத்திருந்து உம்மைத் துதிக்கக்கடவது; உமது நியாயத்தீர்ப்புகள் எனக்கு உதவியாயிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="176">
+          <div class="verse-item lang-en">
+            <span class="verse-num">176</span>
+            <span class="verse-text">I have gone astray like a lost sheep; seek your servant; for I do not forget your commandments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">176</span>
+            <span class="verse-text">காணாமற்போன ஆட்டைப்போல வழிதப்பிப்போனேன்; உமது அடியேனைத் தேடுவீராக; உமது கற்பனைகளை நான் மறவேன்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

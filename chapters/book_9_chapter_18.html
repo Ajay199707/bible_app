@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 18 |  18 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 18 ( 18) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 18 |  18</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அவன் சவுலோடே பேசி முடிந்த பின்பு, யோனத்தானுடைய ஆத்துமா தாவீதின் ஆத்துமாவோடே ஒன்றாய் இசைந்திருந்தது; யோனத்தான் அவனைத் தன் உயிரைப்போலச் சிநேகித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And Saul took him that day, and would let him go no more home to his father's house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">சவுல் அவனை அவன் தகப்பன் வீட்டுக்குத் திரும்பிப்போக ஒட்டாமல், அன்று முதல் தன்னிடத்தில் வைத்துக் கொண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Then Jonathan and David made a covenant, because he loved him as his own soul.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">யோனத்தான் தாவீதைத் தன் ஆத்துமாவைப் போலச் சிநேகித்ததினால், அவனும் இவனும் உடன்படிக்கைபண்ணிக் கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And Jonathan stripped himself of the robe that was upon him, and gave it to David, and his garments, even to his sword, and to his bow, and to his girdle.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">யோனத்தான் போர்த்துக்கொண்டிருந்த சால்வையைக் கழற்றி, அதையும், தன் வஸ்திரத்தையும், தன் பட்டயத்தையும், தன் வில்லையும், தன் கச்சையையும்கூடத் தாவீதுக்குக் கொடுத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And David went out anywhere Saul sent him, and behaved himself wisely: and Saul set him over the men of war, and he was accepted in the sight of all the people, and also in the sight of Saul's servants.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">தாவீது சவுல் தன்னை அனுப்புகிற எவ்விடத்திற்கும் போய், புத்தியாய்க் காரியத்தை நடப்பித்ததினால், சவுல் அவனை யுத்தமனுஷரின்மேல் அதிகாரியாக்கினான்; அவன் எல்லா ஜனத்தின் கண்களுக்கும், சவுலுடைய ஊழியக்காரரின் கண்களுக்கும்கூடப் பிரியமாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And it came to pass as they came, when David was returned from the slaughter of the Philistine, that the women came out of all cities of Israel, singing and dancing, to meet king Saul, with timbrels, with joy, and with instruments of music.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">தாவீது பெலிஸ்தனைக் கொன்று திரும்பி வந்தபின்பு, ஜனங்கள் திரும்பவரும்போதும், ஸ்திரீகள் இஸ்ரவேலின் சகல பட்டணங்களிலுமிருந்து, ஆடல் பாடலுடன் புறப்பட்டு, மேளங்களோடும் கீதவாத்தியங்களோடும் சந்தோஷமாய் ராஜாவாகிய சவுலுக்கு எதிர்கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And the women answered one another as they played, and said, Saul has slain his thousands, and David his ten thousands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அந்த ஸ்திரீகள் ஆடிப்பாடுகையில்: சவுல் கொன்றது ஆயிரம், தாவீது கொன்றது பதினாயிரம் என்று முறைமுறையாகப் பாடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And Saul was very angry, and the saying displeased him; and he said, They have ascribed unto David ten thousands, and to me they have ascribed but thousands: and what can he have more but the kingdom?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அந்த வார்த்தை சவுலுக்கு விசனமாயிருந்தது; அவன் மிகுந்த எரிச்சலடைந்து, தாவீதுக்குப் பதினாயிரம், எனக்கோ ஆயிரம் கொடுத்தார்கள்; இன்னும் ராஜாங்கமாத்திரம் அவனுக்கு குறைவாயிருக்கிறது என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And Saul eyed David from that day and forward.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அந்நாள் முதற்கொண்டு சவுல் தாவீதைக் காய்மகாரமாய்ப் பார்த்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And it came to pass on the next day, that the evil spirit from God came upon Saul, and he prophesied in the midst of the house: and David played with his hand, as at other times: and there was a javelin in Saul's hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">மறுநாளிலே தேவனால் விடப்பட்ட பொல்லாத ஆவி சவுலின்மேல் இறங்கிற்று; அவன் வீட்டிற்குள்ளே தீர்க்கதரிசனம் சொல்லிக்கொண்டிருந்தான்; அப்பொழுது தாவீது தினந்தோறும் செய்கிறபடி, தன் கையினால் சுரமண்டலத்தை வாசித்துக்கொண்டிருந்தான்; சவுலின் கையிலே ஈட்டியிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And Saul cast the javelin; for he said, I will strike David even to the wall with it. And David avoided out of his presence twice.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அப்பொழுது சவுல் தாவீதைச் சுவரோடே சேர்த்து உருவக் குத்திப்போடுவேன் என்று ஈட்டியை அவன்மேல் எறிந்தான்; ஆனாலும் தாவீது விலகி இரண்டுதரம் அவனுக்குத் தப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And Saul was afraid of David, because the LORD was with him, and was departed from Saul.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">கர்த்தர் தாவீதோடேகூட இருக்கிறார் என்றும் தன்னை விட்டு விலகிப்போனார் என்றும், சவுல் கண்டு, தாவீதுக்குப் பயந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Therefore Saul removed him from him, and made him his captain over a thousand; and he went out and came in before the people.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அவனைத் தன்னைவிட்டு அப்புறப்படுத்தி, அவனை ஆயிரம்பேருக்கு அதிபதியாக வைத்தான்; அப்படியே அவன் ஜனத்திற்கு முன்பாகப் போக்கும் வரத்துமாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And David behaved himself wisely in all his ways; and the LORD was with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">தாவீது தன் செய்கைகளிலெல்லாம் புத்திமானாய் நடந்தான்; கர்த்தர் அவனோடேகூட இருந்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Wherefore when Saul saw that he behaved himself very wisely, he was afraid of him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவன் மகா புத்திமானாய் நடக்கிறதைச் சவுல் கண்டு, அவனுக்குப் பயந்திருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">But all Israel and Judah loved David, because he went out and came in before them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">இஸ்ரவேலரும் யூதா ஜனங்களுமாகிய யாவரும் தாவீதைச் சிநேகித்தார்கள்; அவர்களுக்கு முன்பாக அவன் போக்கும் வரத்துமாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And Saul said to David, Behold my elder daughter Merab, her will I give you to wife: only be you valiant for me, and fight the LORD's battles. For Saul said, Let not mine hand be upon him, but let the hand of the Philistines be upon him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">என் கை அல்ல, பெலிஸ்தரின் கையே அவன்மேல் விழட்டும் என்று சவுல் நினைத்துக்கொண்டு, சவுல் தாவீதை நோக்கி: இதோ, என் மூத்த குமாரத்தியாகிய மேராவை உனக்கு மனைவியாகக் கொடுப்பேன்; நீ எனக்கு நல்ல சேவகனாய்மாத்திரம் இருந்து, கர்த்தருடைய யுத்தங்களை நடத்து என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And David said unto Saul, Who am I? and what is my life, or my father's family in Israel, that I should be son in law to the king?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அப்பொழுது தாவீது சவுலைப் பார்த்து: ராஜாவுக்கு மருமகனாகிறதற்கு நான் எம்மாத்திரம், என் ஜீவன் எம்மாத்திரம், இஸ்ரவேலிலே என் தகப்பன் வம்சமும் எம்மாத்திரம் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">But it came to pass at the time when Merab Saul's daughter should have been given to David, that she was given unto Adriel the Meholathite to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">சவுலின் குமாரத்தியாகிய மேராப் தாவீதுக்குக் கொடுக்கப்படுங் காலம் வந்தபோது, அவள் மேகோலாத்தியனாகிய ஆதரியேலுக்கு மனைவியாகக் கொடுக்கப்பட்டாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And Michal Saul's daughter loved David: and they told Saul, and the thing pleased him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">சவுலின் குமாரத்தியாகிய மீகாள் தாவீதை நேசித்தாள்; அது சவுலுக்கு அறிவிக்கப்பட்டபோது, அது அவனுக்குச் சந்தோஷமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And Saul said, I will give him her, that she may be a snare to him, and that the hand of the Philistines may be against him. Wherefore Saul said to David, You shall this day be my son in law in the one of the two.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவள் அவனுக்குக் கண்ணியாயிருக்கவும், பெலிஸ்தரின் கை அவன்மேல் விழவும், அவளை அவனுக்குக் கொடுப்பேன் என்று சவுல் எண்ணி, தாவீதை நோக்கி: நீ என்னுடைய இரண்டாம் குமாரத்தியினால் இன்று எனக்கு மருமகனாவாய் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Saul commanded his servants, saying, Commune with David secretly, and say, Behold, the king has delight in you, and all his servants love you: now therefore be the king's son in law.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">பின்பு சவுல் தன் ஊழியக்காரரைப் பார்த்து: நீங்கள் தாவீதோடே இரகசியமாய்ப் பேசி: இதோ, ராஜா உன்மேல் பிரியமாயிருக்கிறார்; அவருடைய ஊழியக்காரர் எல்லாரும் உம்மைச் சிநேகிக்கிறார்கள்; இப்பொழுதும் நீர் ராஜாவுக்கு மருமகனானால் நலம் என்று சொல்லுங்கள் என்று கற்பித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And Saul's servants spoke those words in the ears of David. And David said, Seems it to you a light thing to be a king's son in law, seeing that I am a poor man, and lightly esteemed?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">சவுலின் ஊழியக்காரர் இந்த வார்த்தைகளைத் தாவீதின் செவிகள் கேட்கப் பேசினார்கள்; அப்பொழுது தாவீது, நான் ராஜாவுக்கு மருமகனாகிறது லேசான காரியமா? நான் எளியவனும், அற்பமாய் எண்ணப்பட்டவனுமாயிருக்கிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And the servants of Saul told him, saying, On this manner spoke David.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">தாவீது இன்ன இன்னபடி சொன்னான் என்று சவுலின் ஊழியக்காரர் அவனுக்கு அறிவித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And Saul said, Thus shall all of you say to David, The king desires not any dowry, but an hundred foreskins of the Philistines, to be avenged of the king's enemies. But Saul thought to make David fall by the hand of the Philistines.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அப்பொழுது சவுல்: ராஜா பரிசத்தை விரும்பாமல், பெலிஸ்தரின் நூறு நுனித்தோல்களினால் ராஜாவின் சத்துருக்களிடத்தில் பழிவாங்க விருப்பமாயிருக்கிறார் என்று தாவீதுக்குச் சொல்லுங்கள் என்றான்; தாவீதை பெலிஸ்தரின் கையினால் விழப்பண்ணுவதே சவுலுடைய எண்ணமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And when his servants told David these words, it pleased David well to be the king's son in law: and the days were not expired.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அவன் ஊழியக்காரர் தாவீதுக்கு இந்த வார்த்தைகளைச் சொன்னபோது, ராஜாவுக்கு மருமகனாகிறது தாவீதுக்குப் பிரியமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Wherefore David arose and went, he and his men, and slew of the Philistines two hundred men; and David brought their foreskins, and they gave them in full tale to the king, that he might be the king's son in law. And Saul gave him Michal his daughter to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அதற்குக் குறித்த நாட்கள் நிறைவேறுமுன்னே, தாவீது எழுந்து, தன் மனுஷரைக் கூட்டிக்கொண்டுபோய், பெலிஸ்தரில் இருநூறுபேரை வெட்டி, அவர்கள் நுனித்தோல்களைக் கொண்டு வந்து, நான் ராஜாவுக்கு மருமகனாகும்படிக்கு, அவைகளை ராஜாவுக்கு எண்ணிச் செலுத்தினான்; அப்பொழுது சவுல் தன் குமாரத்தியாகிய மீகாளை அவனுக்கு மனைவியாகக் கொடுத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And Saul saw and knew that the LORD was with David, and that Michal Saul's daughter loved him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">கர்த்தர் தாவீதோடிருக்கிறார் என்று சவுல் கண்டறிந்துகொண்டான்; சவுலின் குமாரத்தியாகிய மீகாளும் அவனை நேசித்தாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And Saul was yet the more afraid of David; and Saul became David's enemy continually.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">ஆகையால் இன்னும் அதிகமாய்த் தாவீதுக்குப் பயந்து, தான் உயிரோடிருந்த நாளெல்லாம் தாவீதுக்குச் சத்துருவாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Then the princes of the Philistines went forth: and it came to pass, after they went forth, that David behaved himself more wisely than all the servants of Saul; so that his name was much set by.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">பெலிஸ்தருடைய பிரபுக்கள் புறப்படுகிறபோதெல்லாம் தாவீது சவுலுடைய ஊழியக்காரர் எல்லாரைப்பார்க்கிலும் புத்திமானாய் நடந்துகொண்டான்; அவன் பேர் மிகவும் கனம்பெற்றது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

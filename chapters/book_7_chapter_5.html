@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 5 |  5 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 5 ( 5) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 5 |  5</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then sang Deborah and Barak the son of Abinoam on that day, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அந்நாளிலே தெபொராளும் அபினோகாமின் குமாரன் பாராக்கும் பாடினதாவது:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Praise all of you the LORD for the avenging of Israel, when the people willingly offered themselves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">கர்த்தர் இஸ்ரவேலுக்காக நீதியைச் சரிக்கட்டினதினிமித்தமும், ஜனங்கள் மனப்பூர்வமாய்த் தங்களை ஒப்புக்கொடுத்ததினிமித்தமும் அவரை ஸ்தோத்திரியுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Hear, O all of you kings; give ear, O all of you princes; I, even I, will sing unto the LORD; I will sing praise to the LORD God of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ராஜாக்களே, கேளுங்கள்; அதிபதிகளே, செவிகொடுங்கள்; நான் கர்த்தரைப்பாடி இஸ்ரவேலின் தேவனாகிய கர்த்தரைக் கீர்த்தனம்பண்ணுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">LORD, when you went out of Seir, when you marched out of the field of Edom, the earth trembled, and the heavens dropped, the clouds also dropped water.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">கர்த்தாவே, நீர் சேயீரிலிருந்து புறப்பட்டு, ஏதோமின் வெளியிலிருந்து நடந்துவருகையில், பூமி அதிர்ந்தது, வானம் சொரிந்தது, மேகங்களும் தண்ணீராய்ப் பொழிந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">The mountains melted from before the LORD, even that Sinai from before the LORD God of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">கர்த்தருக்கு முன்பாகப் பர்வதங்கள் கரைந்தது; இஸ்ரவேலின் தேவனாகிய கர்த்தருக்கு முன்பாக சீனாயும் கரைந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">In the days of Shamgar the son of Anath, in the days of Jael, the highways were unoccupied, and the travellers walked through byways.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஆனாத்தின் குமாரனாகிய சம்காரின் நாட்களிலும், யாகேலின் நாட்களிலும், பெரும்பாதைகள் பாழாய்க் கிடந்தது; வழி நடக்கிறவர்கள் பக்கவழியாய் நடந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">The inhabitants of the villages ceased, they ceased in Israel, until that I Deborah arose, that I arose a mother in Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">தெபொராளாகிய நான் எழும்புமளவும், இஸ்ரவேலிலே நான் தாயாக எழும்புமளவும், கிராமங்கள் பாழாய்ப்போயின, இஸ்ரவேலின் கிராமங்கள் பாழாய்ப்போயின.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">They chose new gods; then was war in the gates: was there a shield or spear seen among forty thousand in Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">நூதன தேவர்களைத் தெரிந்துகொண்டார்கள்; அப்பொழுது யுத்தம் வாசல்வரையும் வந்தது; இஸ்ரவேலிலே நாற்பதினாயிரம் பேருக்குள்ளே கேடகமும் ஈட்டியும் காணப்பட்டதுண்டோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">My heart is toward the governors of Israel, that offered themselves willingly among the people. Bless all of you the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஜனங்களுக்குள்ளே தங்களை மனப்பூர்வமாய் ஒப்புக்கொடுத்த இஸ்ரவேலின் அதிபதிகளை என் இருதயம் நாடுகிறது; கர்த்தரை ஸ்தோத்திரியுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Speak, all of you that ride on white asses, all of you that sit in judgment, and walk by the way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">வெள்ளைக் கழுதைகளின்மேல் ஏறுகிறவர்களே, நியாயஸ்தலத்தில் வீற்றிருக்கிறவர்களே, வழியில் நடக்கிறவர்களே, இதைப் பிரஸ்தாபியுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">They that are delivered from the noise of archers in the places of drawing water, there shall they rehearse the righteous acts of the LORD, even the righteous acts toward the inhabitants of his villages in Israel: then shall the people of the LORD go down to the gates.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">தண்ணீர் மொண்டுகொள்ளும் இடங்களில் வில்வீரரின் இரைச்சலுக்கு நீங்கினவர்கள் அங்கே கர்த்தரின் நீதிநியாயங்களையும், அவர் இஸ்ரவேலிலுள்ள தமது கிராமங்களுக்குச் செய்த நீதிநியாயங்களையுமே பிரஸ்தாபப்படுத்துவார்கள்; அதுமுதல் கர்த்தரின் ஜனங்கள் ஒலிமுக வாசல்களிலே போய் இறங்குவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Awake, awake, Deborah: awake, awake, utter a song: arise, Barak, and lead your captivity captive, you son of Abinoam.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">விழி, விழி, தெபொராளே, விழி, விழி, பாட்டுப்பாடு; பாராக்கே, எழும்பு; அபினோகாமின் குமாரனே, உன்னைச் சிறையாக்கினவர்களைச் சிறையாக்கிக் கொண்டுபோ.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Then he made him that remains have dominion over the nobles among the people: the LORD made me have dominion over the mighty.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">மீதியாயிருந்தவர்கள் ஜனத்தின் பிரபுக்களை ஆளும்படிசெய்தார்; கர்த்தர் எனக்குப் பராக்கிரமசாலிகளின் மேல் ஆளுகை தந்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Out of Ephraim was there a root of them against Amalek; after you, Benjamin, among your people; out of Machir came down governors, and out of Zebulun they that handle the pen of the writer.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அமலேக்குக்கு விரோதமாக இவர்களுடைய வேர் எப்பிராயீமிலிருந்து துளிர்த்தது; உன் ஜனங்களுக்குள்ளே பென்யமீன் மனுஷர் உனக்குப் பின்சென்றார்கள்; மாகீரிலிருந்து அதிபதிகளும், செபுலோனிலிருந்து எழுதுகோலைப் பிடிக்கிறவர்களும் இறங்கிவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And the princes of Issachar were with Deborah; even Issachar, and also Barak: he was sent on foot into the valley. For the divisions of Reuben there were great thoughts of heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இசக்காரின் பிரபுக்களும் தெபொராளோடே இருந்தார்கள்; பாராக்கைப்போல இசக்கார் மனுஷரும் பள்ளத்தாக்கில் கால்நடையாய் அனுப்பப்பட்டுப் போனார்கள்; ரூபனின் பிரிவினைகளால் உண்டான இருதயத்தின் நினைவுகள் மிகுதி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Why abode you among the sheepfolds, to hear the bleatings of the flocks? For the divisions of Reuben there were great searchings of heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">மந்தைகளின் சத்தத்தைக் கேட்க, நீ தொழுவங்களின் நடுவே இருந்துவிட்டதென்ன? ரூபனின் பிரிவினைகளால் மனோவிசாரங்கள் மிகுதி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Gilead abode beyond Jordan: and why did Dan remain in ships? Asher continued on the sea shore, and abode in his breaches.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">கீலேயாத் மனுஷர் யோர்தானுக்கு அக்கரையிலே இருந்துவிட்டார்கள்; தாண் மனுஷர் கப்பல்களில் தங்கியிருந்ததென்ன? ஆசேர் மனுஷர் கடற்கரையிலே தங்கி, தங்கள் குடாக்களில் தாபரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Zebulun and Naphtali were a people that jeopardized their lives unto the death in the high places of the field.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">செபுலோனும் நப்தலியும் போர்க்களத்து முனையிலே தங்கள் உயிரை எண்ணாமல் மரணத்துக்குத் துணிந்து நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">The kings came and fought, then fought the kings of Canaan in Taanach by the waters of Megiddo; they took no gain of money.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ராஜாக்கள் வந்து யுத்தம்பண்ணினார்கள்; அப்பொழுது கானானியரின் ராஜாக்கள் மெகிதோவின் தண்ணீர் அருகான தானாக்கிலே யுத்தம்பண்ணினார்கள்; அவர்களுக்குத் திரவியக்கொள்ளை கிடைக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">They fought from heaven; the stars in their courses fought against Sisera.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">வானத்திலிருந்து யுத்தம் உண்டாயிற்று; நட்சத்திரங்கள் தங்கள் அயனங்களிலிருந்து சிசெராவோடே யுத்தம் பண்ணின.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">The river of Kishon swept them away, that ancient river, the river Kishon. O my soul, you have trodden down strength.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">கீசோன் நதி, பூர்வநதியாகிய கீசோன் நதியே, அவர்களை அடித்துக்கொண்டுபோயிற்று; என் ஆத்துமாவே, நீ பலவான்களை மிதித்தாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Then were the horse-hoofs broken by the means of the prancings, the prancings of their mighty ones.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பொழுது குதிரைகளின் குளம்புகள்; பாய்ச்சலினாலே, பலவான்களின் பாய்ச்சலினாலேயே, பிளந்துபோயின.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Curse all of you Meroz, said the angel of the LORD, curse all of you bitterly the inhabitants thereof; because they came not to the help of the LORD, to the help of the LORD against the mighty.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">மேரோசைச் சபியுங்கள்; அதின் குடிகளைச் சபிக்கவே சபியுங்கள் என்று கர்த்தருடைய தூதனானவர் சொல்லுகிறார்; அவர்கள் கர்த்தர் பட்சத்தில் துணைநிற்க வரவில்லை; பராக்கிரமசாலிகளுக்கு விரோதமாய் அவர்கள் கர்த்தர் பட்சத்தில் துணை நிற்க வரவில்லையே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Blessed above women shall Jael the wife of Heber the Kenite be, blessed shall she be above women in the tent.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">ஸ்திரீகளுக்குள்ளே கேனியனான ஏபேரின் மனைவியாகிய யாகேல் ஆசீர்வதிக்கப்பட்டவள், கூடாரத்தில் வாசமாயிருக்கிற ஸ்திரீகளுக்குள்ளே அவள் ஆசீர்வதிக்கப்பட்டவளே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">He asked water, and she gave him milk; she brought forth butter in a lordly dish.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">தண்ணீரைக் கேட்டான், பாலைக்கொடுத்தாள்; ராஜாக்களின் கிண்ணியிலே வெண்ணெயைக் கொண்டு வந்து கொடுத்தாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">She put her hand to the nail, and her right hand to the workmen's hammer; and with the hammer she stroke Sisera, she stroke off his head, when she had pierced and stricken through his temples.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">தன் கையால் ஆணியையும், தன் வலதுகையால் தொழிலாளரின் கத்தியையும் பிடித்து, சிசெராவை அடித்தாள்; அவன் நெறியில் உருவக்கடாவி, அவன் தலையை உடைத்துப்போட்டாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">At her feet he bowed, he fell, he lay down: at her feet he bowed, he fell: where he bowed, there he fell down dead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அவள் கால் அருகே அவன் மடங்கி விழுந்துகிடந்தான், அவள் கால் அருகே மடங்கி விழுந்தான்; அவன் எங்கே மடங்கி விழுந்தானோ அங்கே மடிந்து கிடந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">The mother of Sisera looked out at a window, and cried through the lattice, Why is his chariot so long in coming? why tarry the wheels of his chariots?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">சிசெராவின் தாய் ஜன்னலில் நின்று பலகணிவழியாய்ப் பார்த்துக்கொண்டிருந்து: அவனுடைய ரதம் வராமல் பிந்திப்போனதென்ன? அவனுடைய ரதங்களின் ஓட்டம் தாமதிக்கிறதென்ன என்று புலம்பினாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Her wise ladies answered her, yea, she returned answer to herself,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அவளுடைய நாயகிகளில் புத்திசாலிகள் அவளுக்கு உத்தரவு சொன்னதுமன்றி, அவள் தானும் தனக்கு மறுமொழியாக:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Have they not succeeded? have they not divided the prey; to every man a damsel or two; to Sisera a prey of divers colours, a prey of divers colours of needlework, of divers colours of needlework on both sides, meet for the necks of them that take the spoil?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அவர்கள் கொள்ளையைக் கண்டு பிடிக்கவில்லையோ, அதைப் பங்கிடவேண்டாமோ, ஆளுக்கு இரண்டொரு பெண்களையும், சிசெராவுக்குக் கொள்ளையிட்ட பலவருணமான ஆடைகளையும், கொள்ளையிட்ட பலவருணமான சித்திரத் தையலாடைகளையும், கொள்ளையிட்டவர்களின் கழுத்துக்கு இருபுறமும் பொருந்தும் சித்திரத்தையலுள்ள பலவருணமான ஆடையையும் கொடுக்கவேண்டாமோ என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">So let all yours enemies perish, O LORD: but let them that love him be as the sun when he goes forth in his might. And the land had rest forty years.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">கர்த்தாவே, உம்மைப் பகைக்கிற யாவரும் இப்படியே அழியக்கடவர்கள்; யாவரும் இப்படியே அழியக்கடவர்கள்; அவரில் அன்புகூருகிறவர்களோ, வல்லமையோடே உதிக்கிற சூரியனைப்போல இருக்கக்கடவர்கள் என்று பாடினார்கள். பின்பு தேசம் நாற்பது வருஷம் அமைதலாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

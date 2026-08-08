@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 8 |  8 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 8 ( 8) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 8 |  8</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">ஆனபடியால், கிறிஸ்து இயேசுவுக்குட்பட்டவர்களாயிருந்து, மாம்சத்தின்படி நடவாமல் ஆவியின்படியே நடக்கிறவர்களுக்கு ஆக்கினைத்தீர்ப்பில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">For the law of the Spirit of life in Christ Jesus has made me free from the law of sin and death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">கிறிஸ்து இயேசுவினாலே ஜீவனுடைய ஆவியின் பிரமாணம் என்னைப் பாவம் மரணம் என்பவைகளின் பிரமாணத்தினின்று விடுதலையாக்கிற்றே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">For what the law could not do, in that it was weak through the flesh, God sending his own Son in the likeness of sinful flesh, and for sin, condemned sin in the flesh:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அதெப்படியெனில், மாம்சத்தினாலே பலவீனமாயிருந்த நியாயப்பிரமாணம் செய்யக்கூடாததை தேவனே செய்யும்படிக்கு, தம்முடைய குமாரனைப் பாவமாம்சத்தின் சாயலாகவும், பாவத்தைப் போக்கும் பலியாகவும் அனுப்பி, மாம்சத்திலே பாவத்தை ஆக்கினைக்குள்ளாகத் தீர்த்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">மாம்சத்தின்படி நடவாமல் ஆவியின்படி நடக்கிற நம்மிடத்தில் நியாயப்பிரமாணத்தின் நீதி நிறைவேறும்படிக்கே அப்படிச் செய்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">For they that are after the flesh do mind the things of the flesh; but they that are after the Spirit the things of the Spirit.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அன்றியும் மாம்சத்தின்படி நடக்கிறவர்கள் மாம்சத்துக்குரியவைகளைச் சிந்திக்கிறார்கள்; ஆவியின்படி நடக்கிறவர்கள் ஆவிக்குரியவைகளைச் சிந்திக்கிறார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">In order to be carnally minded is death; but to be spiritually minded is life and peace.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">மாம்சசிந்தை மரணம்; ஆவியின் சிந்தையோ ஜீவனும் சமாதானமுமாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">Because the carnal mind is enmity against God: for it is not subject to the law of God, neither indeed can be.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">எப்படியென்றால், மாம்சசிந்தை தேவனுக்கு விரோதமான பகை; அது தேவனுடைய நியாயப்பிரமாணத்துக்குக் கீழ்ப்படியாமலும், கீழ்ப்படியக்கூடாமலும் இருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">So then they that are in the flesh cannot please God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">மாம்சத்துக்குட்பட்டவர்கள் தேவனுக்குப் பிரியமாயிருக்கமாட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">But all of you are not in the flesh, but in the Spirit, if so be that the Spirit of God dwell in you. Now if any man have not the Spirit of Christ, he is none of his.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">தேவனுடைய ஆவி உங்களில் வாசமாயிருந்தால், நீங்கள் மாம்சத்துக்குட்பட்டவர்களாயிராமல் ஆவிக்குட்பட்டவர்களாயிருப்பீர்கள். கிறிஸ்துவின் ஆவியில்லாதவன் அவருடையவனல்ல.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And if Christ be in you, the body is dead because of sin; but the Spirit is life because of righteousness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">மேலும் கிறிஸ்து உங்களிலிருந்தால், சரீரமானது பாவத்தினிமித்தம் மரித்ததாயும், ஆவியானது நீதியினிமித்தம் ஜீவனுள்ளதாயும் இருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">But if the Spirit of him that raised up Jesus from the dead dwell in you, he that raised up Christ from the dead shall also retore life in your mortal bodies by his Spirit that dwells in you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அன்றியும் இயேசுவை மரித்தோரிலிருந்து எழுப்பினவருடைய ஆவி உங்களில் வாசமாயிருந்தால், கிறிஸ்துவை மரித்தோரிலிருந்து எழுப்பினவர் உங்களில் வாசமாயிருக்கிற தம்முடைய ஆவியினாலே சாவுக்கேதுவான உங்கள் சரீரங்களையும் உயிர்ப்பிப்பார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Therefore, brethren, we are debtors, not to the flesh, to live after the flesh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">ஆகையால் சகோதரரே, மாம்சத்தின்படி பிழைப்பதற்கு நாம் மாம்சத்துக்குக் கடனாளிகளல்ல.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">For if all of you live after the flesh, all of you shall die: but if all of you through the Spirit do mortify the deeds of the body, all of you shall live.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">மாம்சத்தின்படி பிழைத்தால் சாவீர்கள்; ஆவியினாலே சரீரத்தின் செய்கைகளை அழித்தால் பிழைப்பீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">For as many as are led by the Spirit of God, they are the sons of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">மேலும் எவர்கள் தேவனுடைய ஆவியினாலே நடத்தப்படுகிறார்களோ, அவர்கள் தேவனுடைய புத்திரராயிருக்கிறார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">For all of you have not received the spirit of bondage again to fear; but all of you have received the Spirit of adoption, whereby we cry, Abba, Father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அந்தப்படி, திரும்பவும் பயப்படுகிறதற்கு நீங்கள் அடிமைத்தனத்தின் ஆவியைப் பெறாமல், அப்பா பிதாவே, என்று கூப்பிடப்பண்ணுகிற புத்திர சுவிகாரத்தின் ஆவியைப் பெற்றீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">The Spirit itself bears witness with our spirit, that we are the children of God:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">நாம் தேவனுடைய பிள்ளைகளாயிருக்கிறோமென்று ஆவியானவர்தாமே நம்முடைய ஆவியுடனேகூடச் சாட்சிகொடுக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And if children, then heirs; heirs of God, and joint-heirs with Christ; if so be that we suffer with him, that we may be also glorified together.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">நாம் பிள்ளைகளானால் சுதந்தரருமாமே; தேவனுடைய சுதந்தரரும், கிறிஸ்துவுக்கு உடன் சுதந்தரருமாமே; கிறிஸ்துவுடனேகூட நாம் மகிமைப்படும்படிக்கு அவருடனேகூடப் பாடுபட்டால் அப்படியாகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">For I reckon that the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">ஆதலால் இக்காலத்துப் பாடுகள் இனி நம்மிடத்தில் வெளிப்படும் மகிமைக்கு ஒப்பிடத்தக்கவைகள் அல்லவென்று எண்ணுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">For the earn expectation of the creature waits for the manifestation of the sons of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">மேலும் தேவனுடைய புத்திரர் வெளிப்படுவதற்குச் சிருஷ்டியானது மிகுந்த ஆவலோடே காத்துக்கொண்டிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">For the creature was made subject to vanity, not willingly, but by reason of him who has subjected the same in hope,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அதேனென்றால் சிருஷ்டியானது அழிவுக்குரிய அடிமைத்தனத்தினின்று விடுதலையாக்கப்பட்டு, தேவனுடைய பிள்ளைகளுக்குரிய மகிமையான சுயாதீனத்தைப் பெற்றுக்கொள்ளும் என்கிற நம்பிக்கையோடே,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அந்தச் சிருஷ்டியானது சுய இஷ்டத்தினாலே அல்ல, கீழ்ப்படுத்தினவராலேயே மாயைக்குக் கீழ்ப்பட்டிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">For we know that the whole creation groans and labors in pain together until now.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ஆகையால் நமக்குத் தெரிந்திருக்கிறபடி, இதுவரைக்கும் சர்வ சிருஷ்டியும் ஏகமாய்த் தவித்துப் பிரசவவேதனைப்படுகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And not only they, but ourselves also, which have the first-fruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption, to know, the redemption of our body.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அதுவுமல்லாமல், ஆவியின் முதற்பலன்களைப் பெற்ற நாமுங்கூட நம்முடைய சரீரமீட்பாகிய புத்திரசுவிகாரம் வருகிறதற்குக் காத்திருந்து, நமக்குள்ளே தவிக்கிறோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">For we are saved by hope: but hope that is seen is not hope: for what a man sees, why does he yet hope for?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அந்த நம்பிக்கையினாலே நாம் இரட்சிக்கப்பட்டிருக்கிறோம். காணப்படுகிறதை நம்புகிறது நம்பிக்கையல்ல; ஒருவன் தான் காண்கிறதை நம்பவேண்டுவதென்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But if we hope for that we see not, then do we with patience wait for it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">நாம் காணாததை நம்பினோமாகில், அது வருகிறதற்குப் பொறுமையோடே காத்திருப்போம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Likewise the Spirit also helps our infirmities: for we know not what we should pray for as we ought: but the Spirit itself makes intercession for us with groanings which cannot be uttered.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அந்தப்படியே ஆவியானவரும் நமது பலவீனங்களில் நமக்கு உதவிசெய்கிறார். நாம் ஏற்றபடி வேண்டிக்கொள்ளவேண்டியதின்னதென்று அறியாமலிருக்கிறபடியால், ஆவியானவர்தாமே வாக்குக்கடங்காத பெருமூச்சுகளோடு நமக்காக வேண்டுதல்செய்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And he that searches the hearts knows what is the mind of the Spirit, because he makes intercession for the saints according to the will of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">ஆவியானவர் தேவனுடைய சித்தத்தின்படியே பரிசுத்தவான்களுக்காக வேண்டுதல் செய்கிறபடியால், இருதயங்களை ஆராய்ந்துபார்க்கிறவர் ஆவியின் சிந்தனை இன்னதென்று அறிவார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And we know that all things work together for good to them that love God, to them who are the called according to his purpose.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அன்றியும், அவருடைய தீர்மானத்தின்படி அழைக்கப்பட்டவர்களாய் தேவனிடத்தில் அன்புகூருகிறவர்களுக்குச் சகலமும் நன்மைக்கு ஏதுவாக நடக்கிறதென்று அறிந்திருக்கிறோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">For whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the firstborn among many brethren.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">தம்முடைய குமாரன் அநேக சகோதரருக்குள்ளே முதற்பேறானவராயிருக்கும்பொருட்டு, தேவன் எவர்களை முன்னறிந்தாரோ அவர்களைத் தமது குமாரனுடைய சாயலுக்கு ஒப்பாயிருப்பதற்கு முன்குறித்திருக்கிறார்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Moreover whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">எவர்களை முன்குறித்தாரோ அவர்களை அழைத்துமிருக்கிறார்; எவர்களை அழைத்தாரோ அவர்களை நீதிமான்களாக்கியுமிருக்கிறார்; எவர்களை நீதிமான்களாக்கினாரோ அவர்களை மகிமைப்படுத்தியுமிருக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">What shall we then say to these things? If God be for us, who can be against us?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">இவைகளைக்குறித்து நாம் என்னசொல்லுவோம்? தேவன் நம்முடைய பட்சத்திலிருந்தால் நமக்கு விரோதமாயிருப்பவன் யார்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">தம்முடைய சொந்தக்குமாரனென்றும் பாராமல் நம்மெல்லாருக்காகவும் அவரை ஒப்புக்கொடுத்தவர், அவரோகூட மற்ற எல்லாவற்றையும் நமக்கு அருளாதிருப்பதெப்படி?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Who shall lay any thing to the charge of God's elect? It is God that justifies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">தேவன் தெரிந்துகொண்டவர்கள்மேல் குற்றஞ்சாட்டுகிறவன் யார்? தேவனே அவர்களை நீதிமான்களாக்குகிறவர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Who is he that condemns? It is Christ that died, yea rather, that has risen again, who is even at the right hand of God, who also makes intercession for us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">ஆக்கினைக்குள்ளாகத் தீர்க்கிறவன் யார்? கிறிஸ்துவே மரித்தவர்; அவரே எழுந்துமிருக்கிறவர்; அவரே தேவனுடைய வலதுபாரிசத்திலும் இருக்கிறவர், நமக்காக வேண்டுதல் செய்கிறவரும் அவரே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">Who shall separate us from the love of Christ? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">உமதுநிமித்தம் எந்நேரமும் கொல்லப்படுகிறோம், அடிக்கப்படும் ஆடுகளைப்போல எண்ணப்படுகிறோம் என்று எழுதியிருக்கிறபடி நேரிட்டாலும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">As it is written, For your sake we are killed all the day long; we are accounted as sheep for the slaughter.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">கிறிஸ்துவின் அன்பைவிட்டு நம்மைப் பிரிப்பவன் யார்? உபத்திரவமோ, வியாகுலமோ, துன்பமோ, பசியோ, நிர்வாணமோ, நாசமோசமோ, பட்டயமோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">Nay, in all these things we are more than conquerors through him that loved us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">இவையெல்லாவற்றிலேயும் நாம் நம்மில் அன்புகூருகிறவராலே முற்றும் ஜெயங்கொள்ளுகிறவர்களாயிருக்கிறோமே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">மரணமானாலும், ஜீவனானாலும், தேவதூதர்களானாலும், அதிகாரங்களானாலும், வல்லமைகளானாலும், நிகழ்காரியங்களானாலும், வருங்காரியங்களானாலும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">உயர்வானாலும், தாழ்வானாலும், வேறெந்தச் சிருஷ்டியானாலும் நம்முடைய கர்த்தராகிய கிறிஸ்து இயேசுவிலுள்ள தேவனுடைய அன்பைவிட்டு நம்மைப் பிரிக்கமாட்டாதென்று நிச்சயித்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

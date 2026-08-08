@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 13 |  13 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 13 ( 13) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 13 |  13</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">The same day went Jesus out of the house, and sat by the sea side.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">இயேசு அன்றையத்தினமே வீட்டிலிருந்து புறப்பட்டுப்போய், கடலோரத்திலே உட்கார்ந்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And great multitudes were gathered together unto him, so that he went into a ship, and sat; and the whole multitude stood on the shore.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">திரளான ஜனங்கள் அவரிடத்தில் கூடிவந்தபடியால், அவர் படவில் ஏறி உட்கார்ந்தார்; ஜனங்களெல்லாரும் கரையிலே நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And he spoke many things unto them in parables, saying, Behold, a sower went forth to sow;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவர் அநேக விஷேசங்களை உவமைகளாக அவர்களுக்குச் சொன்னார்; கேளுங்கள், விதைக்கிறவன் ஒருவன் விதைக்கப்புறப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And when he sowed, some seeds fell by the way side, and the fowls came and devoured them up:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அவன் விதைக்கையில், சில விதை வழியருகே விழுந்தது; பறவைகள் வந்து அதைப் பட்சித்துப்போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Some fell upon stony places, where they had not much earth: and forthwith they sprung up, because they had no deepness of earth:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">சில விதை அதிக மண்ணில்லாத கற்பாறை இடங்களில் விழுந்தது; மண் ஆழமாயிராததினாலே அது சீக்கிரமாய் முளைத்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And when the sun was up, they were scorched; and because they had no root, they withered away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">வெயில் ஏறினபோதோ, தீய்ந்துபோய், வேரில்லாமையால் உலர்ந்து போயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And some fell among thorns; and the thorns sprung up, and choked them:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">சில விதை முள்ளுள்ள இடங்களில் விழுந்தது; முள் வளர்ந்து அதை நெருக்கிப்போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">But other fell into good ground, and brought forth fruit, some an hundredfold, some sixtyfold, some thirtyfold.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">சில விதையோ நல்ல நிலத்தில் விழுந்து, சிலது நூறாகவும், சிலது அறுபதாகவும், சிலது முப்பதாகவும் பலன் தந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Who has ears to hear, let him hear.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">கேட்கிறதற்கு காதுள்ளவன் கேட்கக்கடவன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And the disciples came, and said unto him, Why speak you unto them in parables?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அப்பொழுது, சீஷர்கள் அவரிடத்தில் வந்து: ஏன் அவர்களோடே உவமைகளாகப் பேசுகிறீர் என்று கேட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">He answered and said unto them, Because it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அவர்களுக்கு அவர் பிரதியுத்தரமாக: பரலோகராஜ்யத்தின் ரகசியங்களை அறியும்படி உங்களுக்கு அருளப்பட்டிருக்கிறது. அவர்களுக்கோ அருளப்படவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">For whosoever has, to him shall be given, and he shall have more abundance: but whosoever has not, from him shall be taken away even that he has.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">உள்ளவன் எவனோ அவனுக்குக் கொடுக்கப்படும், பரிபூரணமும் அடைவான்; இல்லாதவன் எவனோ அவனிடத்திலிருந்து உள்ளதும் எடுத்துக்கொள்ளப்படும்</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Therefore speak I to them in parables: because they seeing see not; and hearing they hear not, neither do they understand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அவர்கள் கண்டும் காணாதவர்களாயும், கேட்டும் கேளாதவர்களாயும், உணர்ந்துகொள்ளாதவர்களாயும் இருக்கிறபடியினால், நான் உவமைகளாக அவர்களோடே பேசுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And in them is fulfilled the prophecy of Isaiah, which says, By hearing all of you shall hear, and shall not understand; and seeing all of you shall see, and shall not perceive:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ஏசாயாவின் தீர்க்கதரிசனம் அவர்களிடத்தில் நிறைவேறுகிறது; அதாவது: காதாரக்கேட்டும் உணராதிருப்பீர்கள்; கண்ணாரக்கண்டும் அறியாதிருப்பீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">For this people's heart is waxed gross, and their ears are dull of hearing, and their eyes they have closed; lest at any time they should see with their eyes and hear with their ears, and should understand with their heart, and should be converted, and I should heal them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இந்த ஜனங்கள் கண்களினால் காணாமலும், காதுகளினால் கேளாமலும், இருதயத்தினால் உணர்ந்து மனந்திரும்பாமலும், நான் அவர்களை ஆரோக்கியமாக்காமலும் இருக்கும்படியாக, அவர்கள் இருதயம் கொழுத்திருக்கிறது; காதால் மந்தமாய்க் கேட்டு, தங்கள் கண்களை மூடிக்கொண்டார்கள் என்பதே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">But blessed are your eyes, for they see: and your ears, for they hear.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">உங்கள் கண்கள் காண்கிறதினாலும், உங்கள் காதுகள் கேட்கிறதினாலும், அவைகள் பாக்கியமுள்ளவைகள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">For verily I say unto you, That many prophets and righteous men have desired to see those things which all of you see, and have not seen them; and to hear those things which all of you hear, and have not heard them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அநேக தீர்க்கதரிசிகளும் நீதிமான்களும் நீங்கள் காண்கிறவைகளைக் காணவும், நீங்கள் கேட்கிறவைகளைக் கேட்கவும் விரும்பியும், காணாமலும் கேளாமலும் போனார்களென்று, மெய்யாகவே உங்களுக்குச் சொல்லுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Hear all of you therefore the parable of the sower.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">ஆகையால் விதைக்கிறவனைப்பற்றிய உவமையைக் கேளுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">When any one hears the word of the kingdom, and understands it not, then comes the wicked one, and catches away that which was sown in his heart. This is he which received seed by the way side.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ஒருவன், ராஜ்யத்தின் வசனத்தைக் கேட்டும் உணராதிருக்கும்போது, பொல்லாங்கன் வந்து, அவன் இருதயத்தில் விதைக்கப்பட்டதைப் பறித்துக்கொள்ளுகிறான்; அவனே வழியருகே விதைக்கப்பட்டவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">But he that received the seed into stony places, the same is he that hears the word, and soon with joy receives it;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">கற்பாறை இடங்களில் விதைக்கப்பட்டவன், வசனத்தைக்கேட்டு, உடனே அதைச் சந்தோஷத்தோடே ஏற்றுக்கொள்ளுகிறவன்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Yet has he not root in himself, but endures for a while: for when tribulation or persecution arises because of the word, by and by he is offended.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">ஆகிலும் தனக்குள்ளே வேரில்லாதவனாய், கொஞ்சக்காலமாத்திரம் நிலைத்திருப்பான்; வசனத்தினிமித்தம் உபத்திரவமும் துன்பமும் உண்டானவுடனே இடறலடைவான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">He also that received seed among the thorns is he that hears the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becomes unfruitful.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">முள்ளுள்ள இடங்களில் விதைக்கப்பட்டவன், வசனத்தைக் கேட்கிறவனாயிருந்தும், உலகக்கவலையும் ஐசுவரியத்தின் மயக்கமும் வசனத்தை நெருக்கிப் போடுகிறதினால், அவனும் பலனற்றுப்போவான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">But he that received seed into the good ground is he that hears the word, and understands it; which also bears fruit, and brings forth, some an hundredfold, some sixty, some thirty.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">நல்ல நிலத்தில் விதைக்கப்பட்டவனோ, வசனத்தைக் கேட்கிறவனும் உணருகிறவனுமாயிருந்து, நூறாகவும் அறுபதாகவும், முப்பதாகவும் பலன் தருவான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">வேறொரு உவமையை அவர்களுக்குச் சொன்னார்: பரலோகராஜ்யம் நல்ல நிலத்தில் விதைக்கப்பட்ட நல்ல விதையை விதைத்த மனுஷனுக்கு ஒப்பாயிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But while men slept, his enemy came and sowed tares among the wheat, and went his way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">மனுஷர் நித்திரை பண்ணுகையில் அவனுடைய சத்துரு வந்து, கோதுமைக்குள் களைகளை விதைத்துவிட்டுப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">But when the blade was sprung up, and brought forth fruit, then appeared the tares also.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">பயிரானது வளர்ந்து கதிர் விட்டபோது, களைகளும் காணப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">So the servants of the householder came and said unto him, Sir, did not you sow good seed in your field? from whence then has it tares?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">வீட்டெஜமானுடைய வேலைக்காரர் அவனிடத்தில் வந்து: ஆண்டவனே, நீர் உமது நிலத்தில் நல்ல விதையை விதைத்தீர் அல்லவா? பின்னை அதில் களைகள் எப்படி உண்டானது என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">He said unto them, An enemy has done this. The servants said unto him, Will you then that we go and gather them up?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அதற்கு அவன்: சத்துரு அதைச் செய்தான் என்றான். அப்பொழுது வேலைக்காரர்: நாங்கள் போய் அவைகளைப் பிடுங்கிப்போட உமக்குச் சித்தமா? என்று கேட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">But he said, Nay; lest while all of you gather up the tares, all of you root up also the wheat with them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அதற்கு அவன் வேண்டாம், களைகளைப் பிடுங்கும்போது நீங்கள் கோதுமையையுங்கூட வேரோடே பிடுங்காதபடிக்கு இரண்டையும் அறுப்பு மட்டும் வளரவிடுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather all of you together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அறுப்புக்காலத்தில் நான் அறுக்கிறவர்களை நோக்கி: முதலாவது களைகளைப்பிடுங்கி, அவைகளைச் சுட்டெரிக்கிறதற்கு கட்டுகளாகக் கட்டுங்கள்; கோதுமையையோ என் களஞ்சியத்தில் சேர்த்துவையுங்கள் என்பேன் என்று சொன்னான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">வேறொரு உவமையை அவர்களுக்குச் சொன்னார்: பரலோகராஜ்யம் கடுகு விதைக்கு ஒப்பாயிருக்கிறது; அதை ஒரு மனுஷன் எடுத்துத் தன் நிலத்தில் விதைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becomes a tree, so that the birds of the air come and lodge in the branches thereof.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அது சகல விதைகளிலும் சிறிதாயிருந்தும், வளரும்போது, சகல பூண்டுகளிலும் பெரிதாகி, ஆகாயத்துப்பறவைகள் அதின் கிளைகளில் வந்து அடையத்தக்க மரமாகுமென்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Another parable spoke he unto them; The kingdom of heaven is like unto leaven, which a woman took, and hid in three measures of meal, till the whole was leavened.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">வேறொரு உவமையை அவர்களுக்குச் சொன்னார்: பரலோகராஜ்யம் புளித்த மாவுக்கு ஒப்பாயிருக்கிறது; அதை ஒரு ஸ்திரீ எடுத்து, முழுவதும் புளிக்கும் வரைக்கும், மூன்றுபடி மாவிலே அடக்கிவைத்தாள் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">All these things spoke Jesus unto the multitude in parables; and without a parable spoke he not unto them:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">இவைகளையெல்லாம் இயேசு ஜனங்களோடே உவமைகளாகப் பேசினார். உவமைகளினாலேயன்றி, அவர்களோடே பேசவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">That it might be fulfilled which was spoken by the prophet, saying, I will open my mouth in parables; I will utter things which have been kept secret from the foundation of the world.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">என் வாயை உவமைகளால் திறப்பேன், உலகத்தோற்றமுதல் மறைபொருளானவைகளை வெளிப்படுத்துவேன் என்று தீர்க்கதரிசியால் உரைக்கப்பட்டது நிறைவேறும்படி இப்படி நடந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Then Jesus sent the multitude away, and went into the house: and his disciples came unto him, saying, Declare unto us the parable of the tares of the field.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அப்பொழுது இயேசு ஜனங்களை அனுப்பிவிட்டு வீட்டுக்குப்போனார். அவருடைய சீஷர்கள் அவரிடத்தில் வந்து, நிலத்தின் களைகளைப்பற்றிய உவமையை எங்களுக்கு வெளிப்படுத்தவேண்டுமென்று கேட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">He answered and said unto them, He that sows the good seed is the Son of man;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">அவர் பிரதியுத்தரமாக நல்ல விதையை விதைக்கிறவன் மனுஷகுமாரன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">நிலம் உலகம்; நல்ல விதை ராஜ்யத்தின் புத்திரர்; களைகள் பொல்லாங்கனுடைய புத்திரர்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">அவைகளை விதைக்கிற சத்துரு பிசாசு; அறுப்பு உலகத்தின் முடிவு; அறுக்கிறவர்கள் தேவதூதர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">As therefore the tares are gathered and burned in the fire; so shall it be in the end of this world.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">ஆதலால், களைகளைச் சேர்த்து அக்கினியால் சுட்டெரிக்கிறதுபோல, இவ்வுலகத்தின் முடிவிலே நடக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">The Son of man shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">மனுஷகுமாரன் தம்முடைய தூதர்களை அனுப்புவார்; அவர்கள் அவருடைய ராஜ்யத்தில் இருக்கிற சகல இடறல்களையும் அக்கிரமஞ் செய்கிறவர்களையும் சேர்த்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">அவர்களை அக்கினிச் சூளையிலே போடுவார்கள்; அங்கே அழுகையும் பற்கடிப்பும் உண்டாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">Then shall the righteous shine forth as the sun in the kingdom of their Father. Who has ears to hear, let him hear.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">அப்பொழுது நீதிமான்கள் தங்கள் பிதாவின் ராஜ்யத்திலே சூரியனைப்போலப் பிரகாசிப்பார்கள். கேட்கிறதற்கு காதுள்ளவன் கேட்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">Again, the kingdom of heaven is like unto treasure hid in a field; the which when a man has found, he hides, and for joy thereof goes and sells all that he has, and buys that field.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">அன்றியும், பரலோகராஜ்யம் நிலத்தில் புதைத்திருக்கிற பொக்கிஷத்துக்கு ஒப்பாயிருக்கிறது; அதை ஒரு மனுஷன் கண்டு, மறைத்து, அதைப் பற்றிய சந்தோஷத்தினாலே போய், தனக்கு உண்டான எல்லாவற்றையும் விற்று, அந்த நிலத்தைக் கொள்ளுகிறான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">Again, the kingdom of heaven is like unto a merchant man, seeking goodly pearls:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">மேலும், பரலோகராஜ்யம் நல்ல முத்துக்களைத் தேடுகிற வியாபாரிக்கு ஒப்பாயிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">Who, when he had found one pearl of great price, went and sold all that he had, and bought it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">அவன் விலையுயர்ந்த ஒரு முத்தைக் கண்டு, போய், தனக்குண்டான எல்லாவற்றையும் விற்று, அதைக் கொள்ளுகிறான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">Again, the kingdom of heaven is like unto a net, that was cast into the sea, and gathered of every kind:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">அன்றியும், பரலோகராஜ்யம் கடலிலே போடப்பட்டு, சகல விதமான மீன்களையும் சேர்த்து வாரிக்கொள்ளும் வலைக்கு ஒப்பாயிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">Which, when it was full, they drew to shore, and sat down, and gathered the good into vessels, but cast the bad away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">அது நிறைந்தபோது, அதைக் கரையில் இழுத்து உட்கார்ந்து, நல்லவைகளைக் கூடைகளில் சேர்த்து, ஆகாதவைகளை எறிந்துபோடுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">So shall it be at the end of the world: the angels shall come forth, and sever the wicked from among the just,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">இப்படியே உலகத்தின் முடிவிலே நடக்கும். தேவதூதர்கள் புறப்பட்டு, நீதிமான்களின் நடுவிலிருந்து பொல்லாதவர்களைப் பிரித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="50">
+          <div class="verse-item lang-en">
+            <span class="verse-num">50</span>
+            <span class="verse-text">And shall cast them into the furnace of fire: there shall be wailing and gnashing of teeth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">50</span>
+            <span class="verse-text">அவர்களை அக்கினிச் சூளையிலே போடுவார்கள்; அங்கே அழுகையும் பற்கடிப்பும் உண்டாயிருக்கும் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="51">
+          <div class="verse-item lang-en">
+            <span class="verse-num">51</span>
+            <span class="verse-text">Jesus says unto them, Have all of you understood all these things? They say unto him, Yea, Lord.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">51</span>
+            <span class="verse-text">பின்பு, இயேசு அவர்களை நோக்கி: இவைகளையெல்லாம் அறிந்துகொண்டீர்களா என்று கேட்டார். அதற்கு அவர்கள்: ஆம், அறிந்துகொண்டோம், ஆண்டவரே, என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="52">
+          <div class="verse-item lang-en">
+            <span class="verse-num">52</span>
+            <span class="verse-text">Then said he unto them, Therefore every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which brings forth out of his treasure things new and old.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">52</span>
+            <span class="verse-text">அப்பொழுது அவர் அவர்களை நோக்கி: இப்படியிருக்கிறபடியால், பரலோகராஜ்யத்துக்கடுத்தவைகளில் உபதேசிக்கப்பட்டுத் தேறின வேதபாரகன் எவனும் தன் பொக்கிஷத்திலிருந்து புதியவைகளையும் பழையவைகளையும் எடுத்துக்கொடுக்கிற வீட்டெஜமானாகிய மனுஷனுக்கு ஒப்பாயிருக்கிறான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="53">
+          <div class="verse-item lang-en">
+            <span class="verse-num">53</span>
+            <span class="verse-text">And it came to pass, that when Jesus had finished these parables, he departed thence.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">53</span>
+            <span class="verse-text">இயேசு இந்த உவமைகளைச் சொல்லி முடித்தபின்பு, அவ்விடம் விட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="54">
+          <div class="verse-item lang-en">
+            <span class="verse-num">54</span>
+            <span class="verse-text">And when he was come into his own country, he taught them in their synagogue, insomuch that they were astonished, and said, Whence has this man this wisdom, and these mighty works?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">54</span>
+            <span class="verse-text">தாம் வளர்ந்த ஊரிலே வந்து, அவர்களுடைய ஜெப ஆலயத்திலே உபதேசம்பண்ணினார். அவர்கள் ஆச்சரியப்பட்டு: இவனுக்கு இந்த ஞானமும் பலத்த செய்கைகளும் எப்படி வந்தது?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="55">
+          <div class="verse-item lang-en">
+            <span class="verse-num">55</span>
+            <span class="verse-text">Is not this the carpenter's son? is not his mother called Mary? and his brethren, James, and Joses, and Simon, and Judas?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">55</span>
+            <span class="verse-text">இவன் தச்சனுடைய குமாரன் அல்லவா? இவன் தாய் மரியாள் என்பவள் அல்லவா? யாக்கோபு யோசே சீமோன் யூதா என்பவர்கள் இவனுக்குச் சகோதரர் அல்லவா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="56">
+          <div class="verse-item lang-en">
+            <span class="verse-num">56</span>
+            <span class="verse-text">And his sisters, are they not all with us? Whence then has this man all these things?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">56</span>
+            <span class="verse-text">இவன் சகோதரிகள் எல்லாரும் நம்மிடத்தில் இருக்கிறார்கள் அல்லவா? இப்படியிருக்க, இதெல்லாம் இவனுக்கு எப்படி வந்தது? என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="57">
+          <div class="verse-item lang-en">
+            <span class="verse-num">57</span>
+            <span class="verse-text">And they were offended in him. But Jesus said unto them, A prophet is not without honour, save in his own country, and in his own house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">57</span>
+            <span class="verse-text">அவரைக் குறித்து இடறலடைந்தார்கள். இயேசு அவர்களை நோக்கி: தீர்க்கதரிசி ஒருவன் தன் ஊரிலும் தன் வீட்டிலுமேயன்றி வேறெங்கும் கனவீனமடையான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="58">
+          <div class="verse-item lang-en">
+            <span class="verse-num">58</span>
+            <span class="verse-text">And he did not many mighty works there because of their unbelief.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">58</span>
+            <span class="verse-text">அவர்களுடைய அவிசுவாசத்தினிமித்தம் அவர் அங்கே அநேக அற்புதங்களைச் செய்யவில்லை.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

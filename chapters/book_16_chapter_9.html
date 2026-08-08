@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 9 |  9 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 9 ( 9) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 9 |  9</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now in the twenty and fourth day of this month the children of Israel were assembled with fasting, and with sack clothes, and earth upon them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அந்த மாதம் இருபத்துநாலாந்தேதியிலே இஸ்ரவேல் புத்திரர் உபவாசம்பண்ணி, இரட்டுடுத்தி, தங்கள்மேல் புழுதியைப் போட்டுக்கொண்டவர்களாய்க் கூடிவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And the seed of Israel separated themselves from all strangers, and stood and confessed their sins, and the iniquities of their fathers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">இஸ்ரவேல் சந்ததியார் மறு ஜாதியாரையெல்லொம் விட்டுப்பிரிந்து வந்து நின்று தங்கள் பாவங்களையும் தங்கள் பிதாக்களின் அக்கிரமங்களையும் அறிக்கையிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And they stood up in their place, and read in the book of the law of the LORD their God one fourth part of the day; and another fourth part they confessed, and worshipped the LORD their God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவர்கள் எழுந்திருந்து, தங்கள் நிலையில் நின்றார்கள்; அப்பொழுது ஒரு ஜாமமட்டும் அவர்களுடைய தேவனாகிய கர்த்தரின் நியாயப்பிரமாணப் புஸ்தகம் வாசிக்கப்பட்டது; பின்பு ஒரு ஜாமமட்டும் அவர்கள் பாவ அறிக்கை பண்ணி, தங்கள் தேவனாகிய கர்த்தரைப் பணிந்துகொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Then stood up upon the stairs, of the Levites, Jeshua, and Bani, Kadmiel, Shebaniah, Bunni, Sherebiah, Bani, and Chenani, and cried with a loud voice unto the LORD their God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">யெசுவா, பானி கத்மியேல் செப்பனியா, புன்னி, செரெபியா பானி, கெனானி என்பவர்கள் லேவியருடையபடிகளின்மேல் நின்று தங்கள் தேவனாகிய கர்த்தரை நோக்கி மகா சத்தமாய் ஓலமிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Then the Levites, Jeshua, and Kadmiel, Bani, Hashabniah, Sherebiah, Hodijah, Shebaniah, and Pethahiah, said, Stand up and bless the LORD your God for ever and ever: and blessed be your glorious name, which is exalted above all blessing and praise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">பின்பு லேவியரான யெசுவா, கத்மியேல், பானி, ஆசாப்நெயா, செரெபியா, ஒதியா, செபனியா, பெத்தகியா என்பவர்கள் ஜனங்களைப் பார்த்து: நீங்கள் எழுந்திருந்து, அநாதியாய் என்றென்றைக்குமிருக்கிற உங்கள் தேவனாகிய கர்த்தரை ஸ்தோத்திரியுங்கள் என்று சொல்லி, கர்த்தரை நோக்கி: எந்த ஸ்துதி ஸ்தோத்திரத்துக்கும் மேலான உம்முடைய மகிமையுள்ள நாமத்துக்கு ஸ்தோத்திரமுண்டாவதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">You, even you, are LORD alone; you have made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and you preserve them all; and the host of heaven worships you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">நீர் ஒருவரே கர்த்தர்; நீர் வானங்களையும், வானாதி வானங்களையும், அவைகளுடைய சர்வ சேனைகளையும் பூமியையும் அதிலுள்ள எல்லாவற்றையும், சமுத்திரங்களையும் அவைகளிலுள்ள எல்லாவற்றையும் உண்டாக்கினீர்; அவைகளையெல்லாம் நீர் காப்பாற்றுகிறீர்; வானசேனைகள் உம்மைப் பணிந்துகொள்ளுகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">You are the LORD the God, who did choose Abram, and brought him forth out of Ur of the Chaldees, and gave him the name of Abraham;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">ஆபிராமைத் தெரிந்துகொண்டு, அவனை ஊர் என்னும் கல்தேயரின் பட்டணத்திலிருந்து புறப்படப்பண்ணி, அவனுக்கு ஆபிரகாம் என்னும் பேரிட்ட தேவனாகிய கர்த்தர் நீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And found his heart faithful before you, and made a covenant with him to give the land of the Canaanites, the Hittites, the Amorites, and the Perizzites, and the Jebusites, and the Girgashites, to give it, I say, to his seed, and have performed your words; for you are righteous:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அவன் இருதயத்தை உமக்கு முன்பாக உண்மையுள்ளதாகக்கண்டு, கானானியர் ஏத்தியர், எமோரியர், பெரிசியர், எபூசியர், கிர்காசியருடைய தேசத்தை அவன் சந்ததிக்குக் கொடுக்கும்படி, அவனோடு உடன்படிக்கைபண்ணி, உம்முடைய வார்த்தைகளை நிறைவேற்றினீர்; நீர் நீதியுள்ளவர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And did see the affliction of our fathers in Egypt, and heard their cry by the Red sea;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">எகிப்திலே எங்கள் பிதாக்கள் அநுபவித்த சிறுமையை நீர் கண்டு, சிவந்த சமுத்திரத்தில் அவர்கள் கூப்பிடுதலைக்கேட்டீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And showed signs and wonders upon Pharaoh, and on all his servants, and on all the people of his land: for you knew that they dealt proudly against them. So did you get you a name, as it is this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">பார்வோனிடத்திலும், அவனுடைய எல்லா ஊழியக்காரரிடத்திலும், அவன் தேசத்தின் சகல ஜனத்தினிடத்திலும், அடையாளங்களையும் அற்புதங்களையும் செய்தீர்; அவர்கள் உமது ஜனங்களை அகந்தையாய் நடத்தினார்கள் என்பதை அறிந்திருந்தீர்; இப்படியே இந்நாள்வரைக்கும் இருக்கிறபடி உமக்குக் கீர்த்தியை உண்டாக்கினீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And you did divide the sea before them, so that they went through the midst of the sea on the dry land; and their persecutors you threw into the deeps, as a stone into the mighty waters.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நீர் அவர்களுக்கு முன்பாகச் சமுத்திரத்தைப் பிரித்ததினால், கடலின் நடுவாகக் கால்நனையாமல் நடந்தார்கள்; வலுவான தண்ணீர்களிலே கல்லைப்போடுகிறதுபோல, அவர்களைத் தொடர்ந்தவர்களை ஆழங்களிலே போட்டுவிட்டீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Moreover you led them in the day by a cloudy pillar; and in the night by a pillar of fire, to give them light in the way wherein they should go.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">நீர் பகலிலே மேகஸ்தம்பத்தினாலும் அவர்கள் நடக்கவேண்டிய வழியை அவர்களுக்கு வெளிச்சமாக்க இரவிலே அக்கினி ஸ்தம்பத்தினாலும், அவர்களை வழிநடத்தினீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">You came down also upon mount Sinai, and spoke with them from heaven, and gave them right judgments, and true laws, good statutes and commandments:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">நீர் சீனாய் மலையிலிறங்கி வானத்திலிருந்து அவர்களோடே பேசி, அவர்களுக்குச் செம்மையான நீதிநியாயங்களையும், நல்ல கட்டளைகளும் கற்பனைகளுமாகிய உண்மையான பிரமாணங்களையும் கொடுத்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And made known unto them your holy sabbath, and commandedst them precepts, statutes, and laws, by the hand of Moses your servant:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">உமது பரிசுத்த ஓய்வுநாளை அவர்களுக்குத் தெரியப்படுத்தி, உமது தாசனாகிய மோசேயைக்கொண்டு, அவர்களுக்குக் கற்பனைகளையும், கட்டளைகளையும் நியாயப்பிரமாணங்களையும் கற்பித்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And gave them bread from heaven for their hunger, and brought forth water for them out of the rock for their thirst, and promised them that they should go in to possess the land which you had sworn to give them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவர்கள் பசிக்கு வானத்திலிருந்து அப்பம் கொடுத்து, அவர்கள் தாகத்துக்குக் கன்மலையிலிருந்து தண்ணீர் புறப்படப்பண்ணி, நீர் அவர்களுக்குக் கொடுப்பேன் என்று ஆணையிட்ட தேசத்தைச் சுதந்தரித்துக்கொள்ளப் பிரவேசியுங்கள் என்று அவர்களுக்குச் சொன்னீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">But they and our fathers dealt proudly, and hardened their necks, and hearkened not to your commandments,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">எங்கள் பிதாக்களாகிய அவர்களோ அகங்காரமாய் நடந்து, தங்கள் கழுத்தைக் கடினப்படுத்தி, உம்முடைய கற்பனைகளுக்குச் செவிகொடாதேபோனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And refused to obey, neither were mindful of your wonders that you did among them; but hardened their necks, and in their rebellion appointed a captain to return to their bondage: but you are a God ready to pardon, gracious and merciful, slow to anger, and of great kindness, and forsook them not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அவர்கள் செவிகொடுக்க மனதில்லாமலும், அவர்களிடத்திலே நீர் செய்த உம்முடைய அற்புதங்களை நினையாமலும் போய், தங்கள் கழுத்தைக் கடினப்படுத்தி, தங்கள் அடிமைத்தனத்துக்குத் திரும்பும்படிக்கு அவர்கள் கலகம்பண்ணி, ஒரு தலைவனை ஏற்படுத்தினார்கள்; ஆகிலும் வெகுவாய் மன்னிக்கிறவரும் இரக்கமும் மனஉருக்கமும், நீடிய சாந்தமும், மகா கிருபையுமுள்ளவருமான தேவனாகிய நீர் அவர்களைக் கைவிடவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Yea, when they had made them a molten calf, and said, This is your God that brought you up out of Egypt, and had wrought great provocations;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்கள் வார்ப்பிக்கப்பட்ட ஒரு கன்றுக்குட்டியைத் தங்களுக்கு உண்டாக்கி: இது உன்னை எகிப்திலிருந்து கொண்டுவந்த உன் தெய்வம் என்று சொல்லி, கோபமூட்டத்தக்க பெரிய அக்கிரமங்களைச் செய்திருந்தாலும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Yet you in your manifold mercies forsook them not in the wilderness: the pillar of the cloud departed not from them by day, to lead them in the way; neither the pillar of fire by night, to show them light, and the way wherein they should go.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">நீர் உம்முடைய மிகுந்த மன உருக்கத்தின்படியே, அவர்களை வனாந்தரத்திலே கைவிடவில்லை; அவர்களை வழிநடத்தப் பகலிலே மேகஸ்தம்பமும், அவர்களுக்கு வெளிச்சத்தையும் அவர்கள் நடக்கவேண்டிய வழியையும் காட்ட இரவிலே அக்கினி ஸ்தம்பமும், அவர்களை விட்டு விலகவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">You gave also your good spirit to instruct them, and withheld not your manna from their mouth, and gave them water for their thirst.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அவர்களுக்கு அறிவை உணர்த்த உம்முடைய நல்ல ஆவியைக் கட்டளையிட்டீர், அவர்கள் வாய்க்கு உம்முடைய மன்னாவை அருளி, அவர்கள் தாகத்துக்குத் தண்ணீரைக் கொடுத்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Yea, forty years did you sustain them in the wilderness, so that they lacked nothing; their clothes waxed not old, and their feet swelled not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">இப்படி நாற்பது வருஷமாக வனாந்தரத்தில் அவர்களுக்கு ஒன்றும் குறைவுபடாதபடிக்கு அவர்களைப் பராமரித்துவந்தீர்; அவர்கள் வஸ்திரங்கள் பழமையாய்ப்போகவுமில்லை, அவர்கள் கால்கள் வீங்கவுமில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Moreover you gave them kingdoms and nations, and did divide them into corners: so they possessed the land of Sihon, and the land of the king of Heshbon, and the land of Og king of Bashan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அவர்களுக்கு ராஜ்யங்களையும் ஜனங்களையும் ஒப்புக்கொடுத்து, அவைகளை எல்லை எல்லையாக அவர்களுக்குப் பங்கிட்டீர்; எஸ்போனின் ராஜாவாகிய சீகோனின் தேசத்தையும் பாசானின் ராஜாவாகிய ஓகின் தேசத்தையும் கட்டிக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Their children also multiplied you as the stars of heaven, and brought them into the land, concerning which you had promised to their fathers, that they should go in to possess it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவர்கள் பிள்ளைகளை வானத்து நட்சத்திரங்களைப்போலப் பெருகப்பண்ணி, சுதந்தரித்துக்கொள்ளும்படி நீர் அவர்கள் பிதாக்களுக்குச் சொன்ன தேசத்திலே அவர்களை அழைத்து வந்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">So the children went in and possessed the land, and you subdued before them the inhabitants of the land, the Canaanites, and gave them into their hands, with their kings, and the people of the land, that they might do with them as they would.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அப்படியே பிள்ளைகள் உட்பிரவேசித்து, தேசத்தைச் சுதந்தரித்துக்கொண்டார்கள்; நீர் அவர்களுக்கு முன்பாகத் தேசத்தின் குடிகளாகிய கானானியரைத் தாழ்த்தி, அவர்களையும் அவர்கள் ராஜாக்களையும், தேசத்தின் ஜனங்களையும், தங்கள் இஷ்டப்படி செய்ய, அவர்கள் கையிலே ஒப்புக்கொடுத்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And they took strong cities, and a fat land, and possessed houses full of all goods, wells dug, vineyards, and olive yards, and fruit trees in abundance: so they did eat, and were filled, and became fat, and delighted themselves in your great goodness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அவர்கள் அரணான பட்டணங்களையும், செழுமையான பூமியையும் கட்டிக்கொண்டு, சகலவித உடமைகள் நிறைந்த வீடுகளையும், வெட்டப்பட்ட துரவுகளையும் ஏராளமான திராட்சத்தோட்டங்களையும் ஒலிவத்தோப்புகளையும், கனிகொடுக்கும் விருட்சங்களையும் சுதந்தரித்துக்கொண்டு புசித்துத் திருப்தியாகிக் கொழுத்து, உம்முடைய பெரிய தயையினால் செல்வமாய் வாழ்ந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Nevertheless they were disobedient, and rebelled against you, and cast your law behind their backs, and slew your prophets which testified against them to turn them to you, and they wrought great provocations.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஆனாலும் அவர்கள் கீழ்ப்படியாதவர்களாகி உமக்கு விரோதமாய்க் கலகம்பண்ணி, உம்முடைய நியாயப்பிரமாணத்தை தங்களுக்குப் புறம்பே எறிந்துவிட்டு, தங்களை உம்மிடத்தில் திருப்பும்படி அவர்களைத் திடசாட்சியாய்க் கடிந்துகொண்ட உம்முடைய தீர்க்கதரிசிகளைக் கொன்றுபோட்டு, கோபமூட்டுகிற பெரிய அக்கிரமங்களைச் செய்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Therefore you delivered them into the hand of their enemies, who vexed them: and in the time of their trouble, when they cried unto you, you heard them from heaven; and according to your manifold mercies you gave them saviours, who saved them out of the hand of their enemies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">ஆகையால் அவர்களை நெருக்குகிற அவர்கள் சத்துருக்களின் கையில் அவர்களை ஒப்புக்கொடுத்தீர்; அவர்கள் நெருக்கம் அநுபவிக்கிற காலத்தில் அவர்கள் உம்மை நோக்கிக் கூப்பிடுகிறபோதோ, நீர் பரலோகத்திலிருந்து கேட்டு உம்முடைய மிகுந்த இரக்கத்தினால் அவர்களை அவர்கள் சத்துருக்களுக்கு நீங்கலாக்கிவிடுகிற இரட்சகர்களை அவர்களுக்குக் கொடுத்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">But after they had rest, they did evil again before you: therefore left you them in the land of their enemies, so that they had the dominion over them: yet when they returned, and cried unto you, you heard them from heaven; and many times did you deliver them according to your mercies;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அவர்களுக்கு இளைப்பாறுதல் உண்டானபோதோ, உமக்கு முன்பாக மறுபடியும் பொல்லாப்புச் செய்யத்தொடங்கினார்கள்; ஆகையால் அவர்கள் சத்துருக்கள் அவர்களை ஆளும்படிக்கு அவர்கள் கையிலே ஒப்புவித்தீர்; அவர்கள் மனந்திரும்பி உம்மை நோக்கிக் கூப்பிட்டபோதோ, நீர் பரலோகத்திலிருந்து கேட்டு, அவர்களை உம்முடைய இரக்கங்களின்படியே அநேகந்தரம், விடுதலையாக்கிவிட்டீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And testified against them, that you might bring them again unto your law: yet they dealt proudly, and hearkened not unto your commandments, but sinned against your judgments, (which if a man do, he shall live in them;) and withdrew the shoulder, and hardened their neck, and would not hear.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அவர்களை உம்முடைய நியாயப்பிரமாணத்துக்குத் திருப்ப அவர்களைத் திடசாட்சியாய்க் கடிந்துகொண்டீர்; அவர்கள் அகங்காரங் கொண்டு, உம்முடைய கற்பனைகளுக்குச் செவிகொடாமல் கீழ்ப்படிந்து நடக்கிற மனுஷன் செய்து பிழைக்கிற உம்முடைய நீதி நியாயங்களுக்கு விரோதமாகப் பாவஞ்செய்து, தங்கள் தோளை முரண்டுத்தனமாய் விலக்கி, செவிகொடாமல் தங்கள் கழுத்தைக் கடினப்படுத்திக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Yet many years did you forbear them, and testified against them by your spirit in your prophets: yet would they not give ear: therefore gave you them into the hand of the people of the lands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">நீர் அநேக வருஷமாக அவர்கள்மேல் பொறுமையாயிருந்து, உம்முடைய ஆவியினால் பேசின உம்முடைய தீர்க்கதரிசிகளைக்கொண்டு அவர்களைத் திடசாட்சியாய்க் கடிந்துகொண்டாலும், அவர்கள் செவிகொடாதபடியினாலே, அவர்களை அந்நிய தேசஜனங்களின் கையில் ஒப்புக்கொடுத்தீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Nevertheless for your great mercies' sake you did not utterly consume them, nor forsake them; for you are a gracious and merciful God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">ஆகிலும் உம்முடைய மிகுந்த இரக்கங்களின்படியே, அவர்களை நிர்மூலமாக்காமலும் அவர்களைக் கைவிடாமலும் இருந்தீர்; நீர் கிருபையும் இரக்கமுமுள்ள தேவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Now therefore, our God, the great, the mighty, and the terrible God, who keep covenant and mercy, let not all the trouble seem little before you, that has come upon us, on our kings, on our princes, and on our priests, and on our prophets, and on our fathers, and on all your people, since the time of the kings of Assyria unto this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">இப்பொழுதும் உடன்படிக்கையையும் கிருபையையும் காக்கிற வல்லமையும் பயங்கரமுமுள்ள மகா தேவனாகிய எங்கள் தேவனே, அசீரியா ராஜாக்களின் நாட்கள் முதற்கொண்டு இந்நாள்வரைக்கும் எங்களுக்கும் எங்கள் ராஜாக்களுக்கும், எங்கள் பிரபுக்களுக்கும், எங்கள் ஆசாரியர்களுக்கும் எங்கள் தீர்க்கதரிசிகளுக்கும், எங்கள் பிதாக்களுக்கும் உம்முடைய ஜனங்கள் அனைவருக்கும் நேரிட்ட சகல வருத்தமும் உமக்கு முன்பாக அற்பமாய்க் காணப்படாதிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Nevertheless you are just in all that is brought upon us; for you have done right, but we have done wickedly:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">எங்களுக்கு நேரிடப்பண்ணின எல்லாவற்றிலும் நீர் நீதியுள்ளவர்; நீர் உண்மையாய் நடப்பித்தீர்; நாங்களோ ஆகாமியம் பண்ணினோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Neither have our kings, our princes, our priests, nor our fathers, kept your law, nor hearkened unto your commandments and your testimonies, wherewith you did testify against them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">எங்கள் ராஜாக்களும், எங்கள் பிரபுக்களும், எங்கள் ஆசாரியர்களும் எங்கள் பிதாக்களும் உம்முடைய நியாயப்பிரமாணத்தின்படி செய்யாமலும், உம்முடைய கற்பனைகளையும் நீர் அவர்களைக் கடிந்துகொண்ட உம்முடைய சாட்சிகளையும் கவனியாமலும்போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">For they have not served you in their kingdom, and in your great goodness that you gave them, and in the large and fat land which you gave before them, neither turned they from their wicked works.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவர்கள் தங்கள் ராஜ்யத்திலும், நீர் அவர்களுக்குக் கொடுத்த உம்முடைய பெரிய தயையிலும், நீர் அவர்களுக்கு முன்பாகத் திறந்துவைத்த விசாலமும் செழிப்புமான தேசத்திலும் உமக்கு ஊழியஞ்செய்யாமலும், தங்கள் துர்க்கருமங்களை விட்டுத் திரும்பாமலும் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Behold, we are servants this day, and for the land that you gave unto our fathers to eat the fruit thereof and the good thereof, behold, we are servants in it:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">இதோ, இன்றையதினம் நாங்கள் அடிமைகளாயிருக்கிறோம், இதோ பலனையும் நன்மையையும் அனுபவிக்கும்படி நீர் எங்கள் பிதாக்களுக்குக் கொடுத்த இந்தத் தேசத்தில்தானே நாங்கள் அடிமைகளாயிருக்கிறோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And it yields much increase unto the kings whom you have set over us because of our sins: also they have dominion over our bodies, and over our cattle, at their pleasure, and we are in great distress.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">அதின் வருமானம் எங்கள் பாவங்களினிமித்தம் நீர் எங்கள்மேல் வைத்த ராஜாக்களுக்குத் திரளாகப்போகிறது; அவர்கள் தங்களுக்கு இஷ்டமானபடியே எங்கள் சரீரங்களையும் எங்கள் மிருக ஜீவன்களையும் ஆளுகிறார்கள்; நாங்கள் மகா இக்கட்டில் அகப்பட்டிருக்கிறோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And because of all this we make a sure covenant, and write it; and our princes, Levites, and priests, seal unto it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">இவையெல்லாம் இப்படி இருக்கிறபடியால் நாங்கள் உறுதியான உடன்படிக்கைபண்ணி அதை எழுதிவைக்கிறோம்; எங்கள் பிரபுக்களும் எங்கள் லேவியரும், எங்கள் ஆசாரியரும் அதற்கு முத்திரைபோடுவார்கள் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

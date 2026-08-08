@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 12 |  12 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 12 ( 12) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 12 |  12</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">The word of the LORD also came unto me, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">கர்த்தருடைய வார்த்தை எனக்கு உண்டாகி அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Son of man, you dwell in the midst of a rebellious house, which have eyes to see, and see not; they have ears to hear, and hear not: for they are a rebellious house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">மனுபுத்திரனே, நீ கலகவீட்டாரின் நடுவிலே தங்கியிருக்கிறாய்; காணும்படிக்கு அவர்களுக்குக் கண்கள் இருந்தாலும் காணாமற்போகிறார்கள்; கேட்கும்படிக்கு அவர்களுக்குக் காதுகள் இருந்தாலும் கேளாமற்போகிறார்கள்; அவர்கள் கலகவீட்டார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Therefore, you son of man, prepare you stuff for removing, and remove by day in their sight; and you shall remove from your place to another place in their sight: it may be they will consider, though they be a rebellious house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">இப்போதும் மனுபுத்திரனே, நீ பரதேசம் போகும்படி பிரயாண சாமான்களை ஆயத்தப்படுத்தி, பகற்காலத்திலே அவர்கள் முன்பாகப் பிரயாணப்படு; உன் ஸ்தலத்தைவிட்டு வேறே ஸ்தலத்துக்கு அவர்களுடைய கண்களுக்கு முன்பாகப் புறப்பட்டுப்போ; அவர்கள் கலகவீட்டாரானபோதிலும் ஒருவேளை சிந்தித்து உணருவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Then shall you bring forth your stuff by day in their sight, as stuff for removing: and you shall go forth at even in their sight, as they that go forth into captivity.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அவர்களுடைய கண்களுக்கு முன்பாக நீ சுவரிலே துவாரமிட்டு, அதின் வழியாய் அவைகளை வெளியே கொண்டுபோவாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Dig you through the wall in their sight, and carry out thereby.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">சிறையிருப்புக்குப் போகிறவனைப்போல் உன் சாமான்களை நீ பகற்காலத்திலே அவர்கள் கண்களுக்கு முன்பாக வெளியே வைத்து, நீ சாயங்காலத்திலே அவர்கள் கண்களுக்கு முன்பாகச் சிறையிருப்புக்குப் போகிறவனைப்போல புறப்படுவாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">In their sight shall you bear it upon your shoulders, and carry it forth in the twilight: you shall cover your face, that you see not the ground: for I have set you for a sign unto the house of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அவர்களுடைய கண்களுக்கு முன்பாக அவைகளை உன் தோளின்மேல் எடுத்து, மாலைமயங்கும் வேளையிலே வெளியே கொண்டுபோவாயாக; நீ தேசத்தைப் பாராதபடி உன் முகத்தை மூடிக்கொள்; இஸ்ரவேல் வம்சத்தாருக்கு உன்னை அடையாளமாக்கினேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And I did so as I was commanded: I brought forth my stuff by day, as stuff for captivity, and in the even I dug through the wall with mine hand; I brought it forth in the twilight, and I bare it upon my shoulder in their sight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">எனக்குக் கட்டளையிட்டபடியே நான் செய்தேன்; சிறைப்பட்டுப்போகும்போது சாமான்களைக் கொண்டுபோவதுபோல என் சாமான்களைப் பகற்காலத்தில் வெளியே வைத்தேன்; சாயங்காலத்திலோ கையினால் சுவரிலே துவாரமிட்டு, மாலை மயங்கும் வேளையிலே அவைகளை வெளியே கொண்டுபோய், அவர்கள் கண்களுக்கு முன்பாக அவைகளைத் தோளின்மேல் எடுத்துக்கொண்டுபோனேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And in the morning came the word of the LORD unto me, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">விடியற்காலத்திலே கர்த்தருடைய வார்த்தை எனக்கு உண்டாகி, அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Son of man, has not the house of Israel, the rebellious house, said unto you, What do you?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">மனுபுத்திரனே, கலகவீட்டாராகிய இஸ்ரவேல் வம்சத்தார் உன்னை பார்த்து: நீ செய்கிறது என்னவென்று உன்னைக் கேட்டார்கள் அல்லவா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Say you unto them, Thus says the Lord GOD; This burden concerns the prince in Jerusalem, and all the house of Israel that are among them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">இது எருசலேமில் இருக்கிற அதிபதியின்மேலும் அதின் நடுவில் இருக்கிற இஸ்ரவேல் வம்சத்தார் அனைவரின்மேலும் சுமரும் பாரம் என்று கர்த்தராகிய ஆண்டவர் உரைக்கிறார் என்று அவர்களிடத்தில் சொல்லு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Say, I am your sign: like I have done, so shall it be done unto them: they shall remove and go into captivity.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நீ அவர்களை நோக்கி: நான் உங்களுக்கு அடையாளமாயிருக்கிறேன்; நான் செய்வது எப்படியோ, அப்படியே அவர்களுக்கும் செய்யப்படும்; சிறைப்பட்டுப் பரதேசம் போவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And the prince that is among them shall bear upon his shoulder in the twilight, and shall go forth: they shall dig through the wall to carry out thereby: he shall cover his face, that he see not the ground with his eyes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அவர்கள் நடுவில் இருக்கிற அதிபதி மாலைமயங்கும்போது தோளின்மேல் சுமைசுமந்து புறப்படுவான்; வெளியே சுமைகொண்டுபோகச் சுவரிலே துவாரமிடுவார்கள்; கண்ணினாலே அவன் தன் தேசத்தைக் காணாதபடி தன் முகத்தை மூடிக்கொள்வான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">My net also will I spread upon him, and he shall be taken in my snare: and I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">நான் என் வலையை அவன்மேல் வீசுவேன், அவன் என் கண்ணியிலே பிடிபடுவான்; அவனைக் கல்தேயர் தேசமாகிய பாபிலோனுக்குக் கொண்டுபோவேன்; அங்கே அவன் சாவான்; ஆகிலும் அதைக் காணமாட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And I will scatter toward every wind all that are about him to help him, and all his bands; and I will draw out the sword after them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அவனுக்கு உதவியாக அவனைச் சுற்றிலும் இருக்கிற யாவரையும் அவனுடைய எல்லா இராணுவங்களையும் நான் சகல திசைகளிலும் தூற்றி, அவர்கள் பின்னே பட்டயத்தை உருவுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And they shall know that I am the LORD, when I shall scatter them among the nations, and disperse them in the countries.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அப்படி நான் அவர்களை ஜாதிகளுக்குள்ளே தூற்றி, அவர்களை தேசங்களிலே சிதறடிக்கும்போது, நான் கர்த்தர் என்று அறிந்துகொள்வார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">But I will leave a few men of them from the sword, from the famine, and from the pestilence; that they may declare all their abominations among the heathen where they come; and they shall know that I am the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஆனாலும் தாங்கள் போய்ச்சேரும் ஜாதிகளுக்குள்ளே தங்கள் அருவருப்புகளையெல்லாம் விவரிக்கும்படி, நான் அவர்களில் கொஞ்சம்பேரைப் பஞ்சத்துக்கும் பட்டயத்துக்கும் கொள்ளைநோய்க்கும் தப்பி மீந்திருக்கப்பண்ணுவேன்; அப்பொழுது நான் கர்த்தர் என்று அறிந்து கொள்வார்கள் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Moreover the word of the LORD came to me, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பின்னும் கர்த்தருடைய வார்த்தை எனக்கு உண்டாகி, அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Son of man, eat your bread with quaking, and drink your water with trembling and with carefulness;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">மனுபுத்திரனே, நீ உன் அப்பத்தை நடுக்கத்தோடே புசித்து, உன் தண்ணீரைத் தத்தளிப்போடும் விசாரத்தோடும் குடித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And say unto the people of the land, Thus says the Lord GOD of the inhabitants of Jerusalem, and of the land of Israel; They shall eat their bread with carefulness, and drink their water with astonishment, that her land may be desolate from all that is therein, because of the violence of all them that dwell therein.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">தேசத்திலுள்ள ஜனங்களை நோக்கி: இஸ்ரவேல் தேசத்திலுள்ள எருசலேமின் குடிகளைக்குறித்துக் கர்த்தராகிய ஆண்டவர் சொல்லுகிறது என்னவென்றால், தங்கள் அப்பத்தை விசாரத்தோடே புசித்து, தங்கள் தண்ணீரைத் திகிலோடே குடிப்பார்கள்; அவர்களுடைய தேசத்துக் குடிகளுடைய கொடுமைகளினிமித்தம் அதிலுள்ளதெல்லாம் அழிய, அது பாழாகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the cities that are inhabited shall be laid waste, and the land shall be desolate; and all of you shall know that I am the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">குடியேறியிருக்கிற பட்டணங்கள் வனாந்தரங்களாகி, தேசம் பாழாய்ப்போகும்; அப்பொழுது நான் கர்த்தர் என்று அறிந்துகொள்வீர்கள் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And the word of the LORD came unto me, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">பின்னும் கர்த்தருடைய வார்த்தை எனக்கு உண்டாகி, அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Son of man, what is that proverb that all of you have in the land of Israel, saying, The days are prolonged, and every vision fails?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">மனுபுத்திரனே, நாட்கள் நீடிக்கும், தரிசனம் எல்லாம் அவமாகும் என்று இஸ்ரவேல் தேசத்திலே வழங்கும் பழமொழி என்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Tell them therefore, Thus says the Lord GOD; I will make this proverb to cease, and they shall no more use it as a proverb in Israel; but say unto them, The days are at hand, and the effect of every vision.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">ஆகையால் நீ அவர்களை நோக்கி: கர்த்தராகிய ஆண்டவர் உரைக்கிறது என்னவென்றால், அவர்கள் இனி இஸ்ரவேலிலே இந்தப் பழமொழியைச் சொல்லிவராதபடிக்கு நான் அதை ஒழியப் பண்ணுவேன்; நாட்களும் எல்லாத் தரிசனத்தின் பொருளும் சமீபித்து வந்தன என்று அவர்களோடே சொல்லு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">For there shall be no more any vain vision nor flattering divination within the house of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">இஸ்ரவேல் வம்சத்தாரின் நடுவில் இனிச் சகல கள்ளத்தரிசனமும் முகஸ்துதியான குறிசொல்லுதலும் இராமற்போகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">For I am the LORD: I will speak, and the word that I shall speak shall come to pass; it shall be no more prolonged: for in your days, O rebellious house, will I say the word, and will perform it, says the Lord GOD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">நான் கர்த்தர், நான் சொல்லுவேன், நான் சொல்லும் வார்த்தை நிறைவேறும்; இனித் தாமதியாது; கலகவீட்டாரே, உங்கள் நாட்களிலே நான் வார்த்தையைச் சொல்லுவேன், அதை நிறைவேறவும் பண்ணுவேன் என்று கர்த்தராகிய ஆண்டவர் உரைக்கிறார் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Again the word of the LORD came to me, saying.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">பின்னும் கர்த்தருடைய வார்த்தை எனக்கு உண்டாகி, அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Son of man, behold, they of the house of Israel say, The vision that he sees is for many days to come, and he prophesies of the times that are far off.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">மனுபுத்திரனே, இதோ, இஸ்ரவேல் வம்சத்தார்: இவன் காண்கிற தரிசனம் நிறைவேற அநேகநாள் செல்லும்; தூரமாயிருக்கிற காலங்களைக்குறித்து இவன் தீர்க்கதரிசனம் சொல்லுகிறான் என்கிறார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Therefore say unto them, Thus says the Lord GOD; There shall none of my words be prolonged any more, but the word which I have spoken shall be done, says the Lord GOD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஆகையால் என் வார்த்தைகளில் ஒன்றாகிலும் இனித் தாமதிப்பதில்லையென்று கர்த்தராகிய ஆண்டவர் உரைக்கிறார்; நான் சொன்ன வார்த்தை நிறைவேறும் என்று கர்த்தராகிய ஆண்டவர் உரைக்கிறார் என்று அவர்களோடே சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

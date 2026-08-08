@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 41 |  41 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 41 ( 41) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 41 |  41</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And it came to pass at the end of two full years, that Pharaoh dreamed: and, behold, he stood by the river.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">இரண்டு வருஷம் சென்றபின்பு, பார்வோன் ஒரு சொப்பனம் கண்டான்; அது என்னவென்றால், அவன் நதியண்டையிலே நின்றுகொண்டிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And, behold, there came up out of the river seven well favoured cattle and well fed; and they fed in a meadow.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்பொழுது அழகும் புஷ்டியுமான ஏழு பசுக்கள் நதியிலிருந்து ஏறிவந்து புல் மேய்ந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And, behold, seven other cattle came up after them out of the river, ill favoured and thin; and stood by the other cattle upon the brink of the river.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவைகளின்பின் அவலட்சணமும் கேவலமுமான வேறே ஏழு பசுக்கள் நதியிலிருந்து ஏறிவந்து, நதி ஓரத்தில் மற்றப் பசுக்களண்டையிலே நின்றது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And the ill favoured and thin cattle did eat up the seven well favoured and fat cattle. So Pharaoh awoke.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அவலட்சணமும் கேவலமுமான பசுக்கள் அழகும் புஷ்டியுமான ஏழு பசுக்களையும் பட்சித்துப்போட்டது; இப்படிப் பார்வோன் கண்டு விழித்துக்கொண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And he slept and dreamed the second time: and, behold, seven ears of corn came up upon one stalk, rank and good.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">மறுபடியும் அவன் நித்திரை செய்து, இரண்டாம்விசை ஒரு சொப்பனம் கண்டான்; நல்ல செழுமையான ஏழு கதிர்கள் ஒரே தாளிலிருந்து ஓங்கி வளர்ந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And, behold, seven thin ears and blasted with the east wind sprung up after them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">பின்பு, சாவியானதும் கீழ்க்காற்றினால் தீய்ந்ததுமான ஏழு கதிர்கள் முளைத்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And the seven thin ears devoured the seven rank and full ears. And Pharaoh awoke, and, behold, it was a dream.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">சாவியான கதிர்கள் செழுமையும் நிறைமேனியுமான அந்த ஏழு கதிர்களையும் விழுங்கிப்போட்டது; அப்பொழுது பார்வோன் விழித்துக்கொண்டு, அது சொப்பனம் என்று அறிந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And it came to pass in the morning that his spirit was troubled; and he sent and called for all the magicians of Egypt, and all the wise men thereof: and Pharaoh told them his dream; but there was none that could interpret them unto Pharaoh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">காலமே பார்வோனுடைய மனம் கலக்கங்கொண்டிருந்தது; அப்பொழுது அவன் எகிப்திலுள்ள சகல மந்திரவாதிகளையும் சகல சாஸ்திரிகளையும் அழைப்பித்து, அவர்களுக்குத் தன் சொப்பனத்தைச் சொன்னான்; ஒருவராலும் அதின் அர்த்தத்தைப் பார்வோனுக்குச் சொல்லக் கூடாமற்போயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Then spoke the chief butler unto Pharaoh, saying, I do remember my faults this day:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அப்பொழுது பானபாத்திரக்காரரின் தலைவன் பார்வோனை நோக்கி: நான் செய்த குற்றம் இன்றுதான் என் நினைவில் வந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Pharaoh was angry with his servants, and put me in ward in the captain of the guard's house, both me and the chief baker:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">பார்வோன் தம்முடைய ஊழியக்காரர்மேல் கடுங்கோபங்கொண்டு, என்னையும் சுயம்பாகிகளின் தலைவனையும் தலையாரிகளின் அதிபதி வீடாகிய சிறைச்சாலையிலே வைத்திருந்த காலத்தில்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And we dreamed a dream in one night, I and he; we dreamed each man according to the interpretation of his dream.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நானும் அவனும் ஒரே ராத்திரியிலே வெவ்வேறு பொருள்கொண்ட சொப்பனம் கண்டோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And there was there with us a young man, an Hebrew, servant to the captain of the guard; and we told him, and he interpreted to us our dreams; to each man according to his dream he did interpret.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது தலையாரிகளின் அதிபதிக்கு வேலைக்காரனாகிய எபிரெய பிள்ளையாண்டான் ஒருவன் அங்கே எங்களோடே இருந்தான்; அவனிடத்தில் அவைகளைச் சொன்னோம், அவன் நாங்கள் கண்ட சொப்பனங்களுக்குரிய வெவ்வேறு அர்த்தத்தின்படியே எங்கள் சொப்பனத்தின் பயனைச் சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And it came to pass, as he interpreted to us, so it was; me he restored unto mine office, and him he hanged.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அவன் எங்களுக்குச் சொல்லிய அர்த்தத்தின்படியே நடந்தது; என்னைத் திரும்ப என் நிலையிலே நிறுத்தி, அவனைத் தூக்கிப்போடுவித்தார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Then Pharaoh sent and called Joseph, and they brought him hastily out of the dungeon: and he shaved himself, and changed his raiment, and came in unto Pharaoh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அப்பொழுது பார்வோன் யோசேப்பை அழைப்பித்தான்; அவனைத் தீவிரமாய்க் காவல்கிடங்கிலிருந்து கொண்டுவந்தார்கள். அவன் சவரம்பண்ணிக்கொண்டு, வேறு வஸ்திரம் தரித்து, பார்வோனிடத்தில் வந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And Pharaoh said unto Joseph, I have dreamed a dream, and there is none that can interpret it: and I have heard say of you, that you can understand a dream to interpret it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">பார்வோன் யோசேப்பை நோக்கி: ஒரு சொப்பனம் கண்டேன்; அதின் அர்த்தத்தைச் சொல்ல ஒருவரும் இல்லை; நீ ஒரு சொப்பனத்தைக் கேட்டால், அதின் அர்த்தத்தைச் சொல்லுவாய் என்று உன்னைக்குறித்து நான் கேள்விப்பட்டேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And Joseph answered Pharaoh, saying, It is not in me: God shall give Pharaoh an answer of peace.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அப்பொழுது யோசேப்பு பார்வோனுக்குப் பிரதியுத்தரமாக: நான் அல்ல, தேவனே பார்வோனுக்கு மங்களமான உத்தரவு அருளிச் செய்வார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And Pharaoh said unto Joseph, In my dream, behold, I stood upon the bank of the river:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பார்வோன் யோசேப்பை நோக்கி: என் சொப்பனத்திலே, நான் நதியோரத்தில் நின்றுகொண்டிருந்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And, behold, there came up out of the river seven cattle, well fed and well favoured; and they fed in a meadow:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அழகும் புஷ்டியுமான ஏழு பசுக்கள் நதியிலிருந்து ஏறி வந்து புல்மேய்ந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And, behold, seven other cattle came up after them, poor and very ill favoured and thin, such as I never saw in all the land of Egypt for badness:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அவைகளின்பின் இளைத்ததும் மகா அவலட்சணமும் கேவலமுமான வேறே ஏழு பசுக்கள் ஏறிவந்தது; இவைகளைப் போல அவலட்சணமான பசுக்களை எகிப்து தேசமெங்கும் நான் கண்டதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the lean and the ill favoured cattle did eat up the first seven fat cattle:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">கேவலமும் அவலட்சணமுமான பசுக்கள் கொழுமையான முந்தின ஏழு பசுக்களையும் பட்சித்துப் போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And when they had eaten them up, it could not be known that they had eaten them; but they were still ill favoured, as at the beginning. So I awoke.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவைகள் இவைகளின் வயிற்றுக்குள் போயும், வயிற்றுக்குள் போயிற்றென்று தோன்றாமல், முன் இருந்தது போலவே அவலட்சணமாயிருந்தது; இப்படிக் கண்டு விழித்துக்கொண்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And I saw in my dream, and, behold, seven ears came up in one stalk, full and good:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">பின்னும் நான் என் சொப்பனத்திலே, நிறைமேனியுள்ள ஏழு நல்ல கதிர்கள் ஒரே தாழிலிருந்து ஓங்கி வளரக்கண்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And, behold, seven ears, withered, thin, and blasted with the east wind, sprung up after them:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">பின்பு சாவியானவைகளும் கீழ்காற்றினால் தீய்ந்து பதரானவைகளுமான ஏழு கதிர்கள் முளைத்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And the thin ears devoured the seven good ears: and I told this unto the magicians; but there was none that could declare it to me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">சாவியான கதிர்கள் அந்த ஏழு நல்ல கதிர்களையும் விழுங்கிப்போட்டது. இதை மந்திரவாதிகளிடத்தில் சொன்னேன்; இதின் பொருளை எனக்கு விடுவிக்கிறவன் ஒருவனும் இல்லை என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And Joseph said unto Pharaoh, The dream of Pharaoh is one: God has showed Pharaoh what he is about to do.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அப்பொழுது யோசேப்பு பார்வோனை நோக்கி: பார்வோனின் சொப்பனம் ஒன்றுதான்; தேவன் தாம் செய்யப்போகிறது இன்னதென்று பார்வோனுக்கு அறிவித்திருக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">The seven good cattle are seven years; and the seven good ears are seven years: the dream is one.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அந்த ஏழு நல்ல பசுக்களும் ஏழு வருஷமாம்; அந்த ஏழு நல்ல கதிர்களும் ஏழு வருஷமாம்; சொப்பனம் ஒன்றே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And the seven thin and ill favoured cattle that came up after them are seven years; and the seven empty ears blasted with the east wind shall be seven years of famine.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அவைகளின் பின் ஏறிவந்த கேவலமும் அவலட்சணமுமான ஏழு பசுக்களும் ஏழு வருஷமாம்; கீழ்காற்றினால் தீய்ந்து சாவியான ஏழு கதிர்களும் ஏழு வருஷமாம்; இவைகள் பஞ்சமுள்ள ஏழு வருஷமாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">This is the thing which I have spoken unto Pharaoh: What God is about to do he shows unto Pharaoh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">பார்வோனுக்கு நான் சொல்லவேண்டிய காரியம் இதுவே; தேவன் தாம் செய்யப்போகிறதைப் பார்வோனுக்குக் காண்பித்திருக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Behold, there come seven years of great plenty throughout all the land of Egypt:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">எகிப்து தேசமெங்கும் பரிபூரணமான விளைவு உண்டாயிருக்கும் ஏழு வருஷம் வரும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And there shall arise after them seven years of famine; and all the plenty shall be forgotten in the land of Egypt; and the famine shall consume the land;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அதன்பின் பஞ்சமுண்டாயிருக்கும் ஏழு வருஷம் வரும்; அப்பொழுது எகிப்து தேசத்தில் அந்தப் பரிபூரணமெல்லாம் மறக்கப்பட்டுப்போம்; அந்தப் பஞ்சம் தேசத்தைப் பாழாக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And the plenty shall not be known in the land by reason of that famine following; for it shall be very grievous.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">வரப்போகிற மகா கொடுமையான பஞ்சத்தால் தேசத்தில் முன்னிருந்த பரிபூரணமெல்லாம் ஒழிந்துபோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And for that the dream was doubled unto Pharaoh twice; it is because the thing is established by God, and God will shortly bring it to pass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">இந்தக் காரியம் தேவனால் நிச்சயப்பட்டிருக்கிறது என்பதையும், தேவன் இதைச் சீக்கிரத்தில் செய்வார் என்பதையும் குறிக்கும்பொருட்டு, இந்தச் சொப்பனம் பார்வோனுக்கு இரட்டித்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Now therefore let Pharaoh look out a man discreet and wise, and set him over the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">ஆகையால் விவேகமும் ஞானமுமுள்ள ஒரு மனுஷனைத் தேடி, அவனை எகிப்து தேசத்துக்கு அதிகாரியாகப் பார்வோன் ஏற்படுத்துவாராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Let Pharaoh do this, and let him appoint officers over the land, and take up the fifth part of the land of Egypt in the seven abundant years.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">இப்படிப் பார்வோன் செய்து, தேசத்தின்மேல் விசாரணைக்காரரை வைத்து, பரிபூரணமுள்ள ஏழு வருஷங்களில் எகிப்து தேசத்திலே விளையும் விளைச்சலில் ஐந்தில் ஒரு பங்கை வாங்கும்படி செய்வாராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவர்கள் வரப்போகிற நல்ல வருஷங்களில் விளையும் தானியங்களையெல்லாம் சேர்த்து, பட்டணங்களில் ஆகாரம் உண்டாயிருக்கும்படிக்கு, பார்வோனுடைய அதிகாரத்துக்குள்ளாகத் தானியங்களைப் பத்திரப்படுத்தி வைத்துவைப்பார்களாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And that food shall be for store to the land against the seven years of famine, which shall be in the land of Egypt; that the land perish not through the famine.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">தேசம் பஞ்சத்தினால் அழிந்து போகாதபடிக்கு, அந்தத் தானியம் இனி எகிப்து தேசத்தில் உண்டாகும் பஞ்சமுள்ள ஏழு வருஷங்களுக்காக தேசத்திற்கு ஒரு வைப்பாயிருப்பதாக என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And the thing was good in the eyes of Pharaoh, and in the eyes of all his servants.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">இந்த வார்த்தை பார்வோனுடைய பார்வைக்கும் அவன் எல்லாருடைய பார்வைக்கும் நன்றாய்க் கண்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of God is?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">அப்பொழுது பார்வோன் தன் ஊழியக்காரரை நோக்கி: தேவ ஆவியைப் பெற்ற இந்த மனுஷனைப்போல வேறொருவன் உண்டோ என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And Pharaoh said unto Joseph, Forasmuch as God has showed you all this, there is none so discreet and wise as you are:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">பின்பு, பார்வோன் யோசேப்பை நோக்கி: தேவன் இவையெல்லாவற்றையும் உனக்கு வெளிப்படுத்தியிருக்கிறபடியால், உன்னைப்போல விவேகமும் ஞானமுமுள்ளவன் வேறொருவனும் இல்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">You shall be over my house, and according unto your word shall all my people be ruled: only in the throne will I be greater than you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">நீ என் அரமனைக்கு அதிகாரியாயிருப்பாய்; உன் வாக்கின்படியே என் ஜனங்கள் எல்லாரும் அடங்கி நடக்கக் கடவர்கள்; சிங்காசனத்தில் மாத்திரம் உன்னிலும் நான் பெரியவனாய் இருப்பேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And Pharaoh said unto Joseph, See, I have set you over all the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">பின்னும் பார்வோன் யோசேப்பை நோக்கி: பார், எகிப்து தேசம் முழுமைக்கும் உன்னை அதிகாரியாக்கினேன் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">And Pharaoh took off his ring from his hand, and put it upon Joseph's hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">பார்வோன் தன் கையில் போட்டிருந்த தன் முத்திரை மோதிரத்தைக் கழற்றி, அதை யோசேப்பின் கையிலே போட்டு, மெல்லிய வஸ்திரங்களை, அவனுக்கு உடுத்தி, பொன் சரப்பணியை அவன் கழுத்திலே தரித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">தன்னுடைய இரண்டாம் இரதத்தின்மேல் அவனை ஏற்றி, தெண்டனிட்டுப் பணியுங்கள் என்று அவனுக்கு முன்பாகக் கூறுவித்து, எகிப்துதேசம் முழுமைக்கும் அவனை அதிகாரியாக்கினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And Pharaoh said unto Joseph, I am Pharaoh, and without you shall no man lift up his hand or foot in all the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">பின்னும் பார்வோன் யோசேப்பை நோக்கி: நான் பார்வோன்; ஆனாலும் எகிப்து தேசத்திலுள்ளவர்களில் ஒருவனும் உன் உத்தரவில்லாமல் தன் கையையாவது தன் காலையாவது அசைக்கக் கூடாது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And Pharaoh called Joseph's name Zaphnathpaaneah; and he gave him to wife Asenath the daughter of Potipherah priest of On. And Joseph went out over all the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">மேலும், பார்வோன் யோசேப்புக்கு சாப்நாத்பன்னேயா என்கிற பெயரையிட்டு; ஓன்பட்டணத்து ஆசாரியனாகிய போத்திபிராவின் குமாரத்தியாகிய ஆஸ்நாத்தை அவனுக்கு மனைவியாகக் கொடுத்தான். யோசேப்பு எகிப்து தேசத்தைச் சுற்றிப்பார்க்கும்படி புறப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">And Joseph was thirty years old when he stood before Pharaoh king of Egypt. And Joseph went out from the presence of Pharaoh, and went throughout all the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">யோசேப்பு எகிப்தின் ராஜாவாகிய பார்வோனுக்கு முன்பாக நிற்கும்போது முப்பது வயதாயிருந்தான்; யோசேப்பு பார்வோனுடைய சந்நிதியிலிருந்து புறப்பட்டு, எகிப்துதேசம் எங்கும் போய்ச் சுற்றிப்பார்த்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">And in the seven abundant years the earth brought forth by handfuls.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">பரிபூரணமுள்ள ஏழு வருஷங்களிலும் பூமி மிகுதியான பலனைக் கொடுத்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">And he gathered up all the food of the seven years, which were in the land of Egypt, and laid up the food in the cities: the food of the field, which was round about every city, laid he up in the same.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">அவ்வேழு வருஷங்களில் எகிப்து தேசத்தில் விளைந்த தானியங்களையெல்லாம் அவன் சேர்த்து, அந்தத் தானியங்களைப் பட்டணங்களில் கட்டிவைத்தான்; அந்தந்தப் பட்டணத்தில் அதினதின் சுற்றுப்புறத்துத் தானியங்களைக் கட்டிவைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">And Joseph gathered corn as the sand of the sea, very much, until he left numbering; for it was without number.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">இப்படி யோசேப்பு அளவிறந்ததாய்க் கடற்கரை மணலைப் போல மிகுதியாகத் தானியத்தைச் சேர்த்துவைத்தான்; அது அளவுக்கு அடங்காததாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="50">
+          <div class="verse-item lang-en">
+            <span class="verse-num">50</span>
+            <span class="verse-text">And unto Joseph were born two sons before the years of famine came, which Asenath the daughter of Potipherah priest of On bare unto him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">50</span>
+            <span class="verse-text">பஞ்சமுள்ள வருஷங்கள் வருவதற்கு முன்னே யோசேப்புக்கு இரண்டு குமாரர்கள் பிறந்தார்கள்; அவர்களை ஓன் பட்டணத்து ஆசாரியனாகிய போத்திபிராவின் குமாரத்தியாகிய ஆஸ்நாத்து அவனுக்குப் பெற்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="51">
+          <div class="verse-item lang-en">
+            <span class="verse-num">51</span>
+            <span class="verse-text">And Joseph called the name of the firstborn Manasseh: For God, said he, has made me forget all my toil, and all my father's house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">51</span>
+            <span class="verse-text">யோசேப்பு: என் வருத்தம் யாவையும் என் தகப்பனுடைய குடும்பம் அனைத்தையும் நான் மறக்கும்படி தேவன் பண்ணினார் என்று சொல்லி, மூத்தவனுக்கு மனாசே என்று பேரிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="52">
+          <div class="verse-item lang-en">
+            <span class="verse-num">52</span>
+            <span class="verse-text">And the name of the second called he Ephraim: For God has caused me to be fruitful in the land of my affliction.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">52</span>
+            <span class="verse-text">நான் சிறுமைப்பட்டிருந்த தேசத்தில் தேவன் என்னைப் பலுகப்பண்ணினார் என்று சொல்லி இளையவனுக்கு எப்பிராயீம் என்று பேரிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="53">
+          <div class="verse-item lang-en">
+            <span class="verse-num">53</span>
+            <span class="verse-text">And the seven years of plenteousness, that was in the land of Egypt, were ended.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">53</span>
+            <span class="verse-text">எகிப்துதேசத்தில் வந்த பரிபூரணமுள்ள ஏழு வருஷங்களும் முடிந்தபின்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="54">
+          <div class="verse-item lang-en">
+            <span class="verse-num">54</span>
+            <span class="verse-text">And the seven years of dearth began to come, according as Joseph had said: and the dearth was in all lands; but in all the land of Egypt there was bread.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">54</span>
+            <span class="verse-text">யோசேப்பு சொல்லியபடி ஏழு வருஷ பஞ்சம் தொடங்கினது; சகல தேசங்களிலும் பஞ்சம் உண்டாயிற்று; ஆனாலும் எகிப்துதேசமெங்கும் ஆகாரம் இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="55">
+          <div class="verse-item lang-en">
+            <span class="verse-num">55</span>
+            <span class="verse-text">And when all the land of Egypt was famished, the people cried to Pharaoh for bread: and Pharaoh said unto all the Egyptians, Go unto Joseph; what he says to you, do.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">55</span>
+            <span class="verse-text">எகிப்துதேசமெங்கும் பஞ்சம் உண்டானபோது, ஜனங்கள் உணவுக்காகப் பார்வோனை நோக்கி: ஓலமிட்டார்கள்; அதற்குப் பார்வோன்: நீங்கள் யோசேப்பினிடத்துக்குப் போய், அவன் உங்களுக்குச் சொல்லுகிறபடி செய்யுங்கள் என்று எகிப்தியர் எல்லாருக்கும் சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="56">
+          <div class="verse-item lang-en">
+            <span class="verse-num">56</span>
+            <span class="verse-text">And the famine was over all the face of the earth: and Joseph opened all the storehouses, and sold unto the Egyptians; and the famine waxed sore in the land of Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">56</span>
+            <span class="verse-text">தேசமெங்கும் பஞ்சம் உண்டானபடியால், யோசேப்பு களஞ்சியங்களையெல்லாம் திறந்து, எகிப்தியருக்கு விற்றான்; பஞ்சம் எகிப்து தேசத்தில் வரவரக் கொடிதாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="57">
+          <div class="verse-item lang-en">
+            <span class="verse-num">57</span>
+            <span class="verse-text">And all countries came into Egypt to Joseph in order to buy corn; because that the famine was so sore in all lands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">57</span>
+            <span class="verse-text">சகல தேசங்களிலும் பஞ்சம் கொடிதாயிருந்தபடியால், சகல தேசத்தார்களும் யோசேப்பினிடத்தில் தானியம் கொள்ளும்படி எகிப்துக்கு வந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

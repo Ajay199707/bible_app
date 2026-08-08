@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 11 |  11 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 11 ( 11) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 11 |  11</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now Jephthah the Gileadite was a mighty man of valour, and he was the son of an harlot: and Gilead brings forth Jephthah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">கீலேயாத்தியனான யெப்தா பலத்த பராக்கிரமசாலியாயிருந்தான்; அவன் பரஸ்திரீயின் குமாரன்; கிலெயாத் அவனைப் பெற்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And Gilead's wife bare him sons; and his wife's sons grew up, and they thrust out Jephthah, and said unto him, You shall not inherit in our father's house; for you are the son of a strange woman.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">கிலெயாத்தின் மனைவியும் அவனுக்குக் குமாரர்களைப் பெற்றாள்; அவன் மனைவி பெற்ற குமாரர் பெரியவர்களான பின்பு, அவர்கள் யெப்தாவை நோக்கி: உனக்கு எங்கள் தகப்பன் வீட்டிலே சுதந்தரம் இல்லை; நீ அந்நிய ஸ்திரீயின் மகன் என்று சொல்லி அவனைத் துரத்தினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Then Jephthah fled from his brethren, and dwelt in the land of Tob: and there were gathered vain men to Jephthah, and went out with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அப்பொழுது யெப்தா: தன் சகோதரரை விட்டு ஓடிப்போய், தோப்தேசத்திலே குடியிருந்தான்; வீணரான மனுஷர் யெப்தாவோடே கூடிக்கொண்டு, அவனோடேகூட யுத்தத்திற்குப் போவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And it came to pass in process of time, that the children of Ammon made war against Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">சில நாளைக்குப்பின்பு, அம்மொன் புத்திரர் இஸ்ரவேலின் மேல் யுத்தம் பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And it was so, that when the children of Ammon made war against Israel, the elders of Gilead went to fetch Jephthah out of the land of Tob:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவர்கள் இஸ்ரவேலின்மேல் யுத்தம் பண்ணும்போது கீலேயாத்தின் மூப்பர் யெப்தாவைத் தோப்தேசத்திலிருந்து அழைத்துவரப்போய்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And they said unto Jephthah, Come, and be our captain, that we may fight with the children of Ammon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">யெப்தாவை நோக்கி: நீ வந்து, நாங்கள் அம்மோன் புத்திரரோடு யுத்தம் பண்ண எங்கள் சேனாபதியாயிருக்க வேண்டும் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And Jephthah said unto the elders of Gilead, Did not all of you hate me, and expel me out of my father's house? and why are all of you come unto me now when all of you are in distress?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அதற்கு யெப்தா கீலேயாத்தி மூப்பரைப் பார்த்து: நீங்கள் அல்லவா என்னைப் பகைத்து, என் தகப்பன் வீட்டிலிருந்து என்னைத் துரத்தினவர்கள்? இப்பொழுது உங்களுக்கு ஆபத்து நேரிட்டிருக்கிற சமயத்தில் நீங்கள் என்னிடத்தில் ஏன் வருகிறீர்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And the elders of Gilead said unto Jephthah, Therefore we return to you now, that you may go with us, and fight against the children of Ammon, and be our head over all the inhabitants of Gilead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அதற்குக் கீலேயாத்தின் மூப்பர் யெப்தாவை நோக்கி: நீ எங்களுடனேகூட வந்து, அம்மோன் புத்திரரோடு யுத்தம்பண்ணி, கீலேயாத்தின் குடிகளாகிய எங்கள் அனைவர்மேலும் தலைவனாயிருக்க வேண்டும்; இதற்காக இப்பொழுது உன்னிடத்தில் வந்தோம் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And Jephthah said unto the elders of Gilead, If all of you bring me home again to fight against the children of Ammon, and the LORD deliver them before me, shall I be your head?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அதற்கு யெப்தா: அம்மோன் புத்திரரோடே யுத்தம்பண்ண, நீங்கள் என்னைத் திரும்ப அழைத்துப்போனபின்பு, கர்த்தர் அவர்களை என் முன்னிலையாய் ஒப்புக்கொடுத்தால், என்னை உங்களுக்குத் தலைவனாய் வைப்பீர்களா என்று கீலேயாத்தின் மூப்பரைக் கேட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And the elders of Gilead said unto Jephthah, The LORD be witness between us, if we do not so according to your words.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">கீலேயாத்தின் மூப்பர் யெப்தாவைப் பார்த்து: நாங்கள் உன் வார்த்தையின்படியே செய்யாவிட்டால், கர்த்தர் நமக்கு நடுநின்று கேட்பாராக என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Then Jephthah went with the elders of Gilead, and the people made him head and captain over them: and Jephthah uttered all his words before the LORD in Mizpeh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அப்பொழுது யெப்தா கீலேயாத்தின் மூப்பரோடே கூடப்போனான்; ஜனங்கள் அவனைத் தங்கள்மேல் தலைவனும் சேனாபதியுமாக வைத்தார்கள். யெப்தா தன் காரியங்களையெல்லாம் மிஸ்பாவிலே கர்த்தருடைய சந்நிதியிலே சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And Jephthah sent messengers unto the king of the children of Ammon, saying, What have you to do with me, that you are come against me to fight in my land?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">பின்பு யெப்தா அம்மோன் புத்திரரின் ராஜாவினிடத்திற்கு ஸ்தானாபதிகளை அனுப்பி: நீ என் தேசத்தில் எனக்கு விரோதமாக யுத்தம்பண்ண வருகிறதற்கு, எனக்கும் உனக்கும் என்ன வழக்கு இருக்கிறது என்று கேட்கச்சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And the king of the children of Ammon answered unto the messengers of Jephthah, Because Israel took away my land, when they came up out of Egypt, from Arnon even unto Jabbok, and unto Jordan: now therefore restore those lands again peaceably.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அம்மோன் புத்திரரின் ராஜா யெப்தாவின் ஸ்தானாபதிகளை நோக்கி: இஸ்ரவேலர் எகிப்திலிருந்து வருகிறபோது, அர்னோன் துவக்கி யாபோக்மட்டும், யோர்தான்மட்டும் இருக்கிற என் தேசத்தைக் கட்டிக்கொண்டார்களே; இப்பொழுது அதை எனக்குச் சமாதானமாய்த் திரும்பக்கொடுத்துவிட வேண்டும் என்று சொல்லுங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And Jephthah sent messengers again unto the king of the children of Ammon:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">யெப்தா மறுபடியும் அம்மோன் புத்திரரின் ராஜாவினிடத்திற்கு ஸ்தானாபதிகளை அனுப்பி, அவனுக்குச் சொல்லச் சொன்னதாவது:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And said unto him, Thus says Jephthah, Israel took not away the land of Moab, nor the land of the children of Ammon:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">யெப்தா சொல்லுகிறது என்னவென்றால்: இஸ்ரவேலர் மோவாபியரின் தேசத்தையாகிலும், அம்மோன் புத்திரரின் தேசத்தையாகிலும் கட்டிக்கொண்டதில்லையே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">But when Israel came up from Egypt, and walked through the wilderness unto the Red sea, and came to Kadesh;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">இஸ்ரவேலர் எகிப்திலிருந்து வருகிறபோது, வனாந்தரத்தில் சிவந்த சமுத்திர மட்டும் நடந்து, பின்பு காதேசுக்கு வந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Then Israel sent messengers unto the king of Edom, saying, Let me, I pray you, pass through your land: but the king of Edom would not hearken thereto. And in like manner they sent unto the king of Moab: but he would not consent: and Israel abode in Kadesh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">இஸ்ரவேலர் ஏதோமின் ராஜாவினிடத்திற்கு ஸ்தானாபதிகளை அனுப்பி: நாங்கள் உன் தேசத்துவழியாய்க் கடந்து போகட்டும் என்று சொல்லச்சொன்னார்கள்; அதற்கு ஏதோமின் ராஜா செவிகொடுக்கவில்லை; அப்படியே மோவாபின் ராஜாவிடத்திற்கும் அனுப்பினார்கள்; அவனும் சம்மதிக்கவில்லை. ஆதலால் இஸ்ரவேலர் காதேசிலே தரித்திருந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Then they went along through the wilderness, and compassed the land of Edom, and the land of Moab, and came by the east side of the land of Moab, and pitched on the other side of Arnon, but came not within the border of Moab: for Arnon was the border of Moab.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">பின்பு வனாந்தரவழியாய் நடந்து ஏதோம் தேசத்தையும் மோவாப் தேசத்தையும் சுற்றிப்போய், மோவாபின் தேசத்திற்குக் கிழக்கே வந்து, மோவாபின் எல்லைக்குள் பிரவேசியாமல், மோவாபின் எல்லையான அர்னோன் நதிக்கு அப்பாலே பாளயமிறங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And Israel sent messengers unto Sihon king of the Amorites, the king of Heshbon; and Israel said unto him, Let us pass, we pray you, through your land into my place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேலர் எஸ்போனில் ஆளுகிற சீகோன் என்னும் எமோரியரின் ராஜாவினிடத்திற்கு ஸ்தானாபதிகளை அனுப்பி: நாங்கள் உன் தேசத்து வழியாய் எங்கள் ஸ்தானத்திற்குக் கடந்துபோக இடங்கொடு என்று சொல்லச்சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">But Sihon trusted not Israel to pass through his coast: but Sihon gathered all his people together, and pitched in Jahaz, and fought against Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">சீகோன் இஸ்ரவேலரை நம்பாததினால், தன் எல்லையைக் கடந்துபோகிறதற்கு இடங்கொடாமல் தன் ஜனங்களையெல்லாம் கூட்டி, யாகாசிலே பாளயமிறங்கி, இஸ்ரவேலரோடே யுத்தம் பண்ணினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And the LORD God of Israel delivered Sihon and all his people into the hand of Israel, and they stroke them: so Israel possessed all the land of the Amorites, the inhabitants of that country.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேலின் தேவனாகிய கர்த்தர் சீகோனையும் அவனுடைய எல்லா ஜனங்களையும் இஸ்ரவேலரின் கையில் ஒப்புக்கொடுத்தார்; அவர்களை முறிய அடித்தார்கள்; அப்படியே இஸ்ரவேலர் அந்த தேசத்திலே குடியிருந்த எமோரியரின் சீமையையெல்லாம் பிடித்து, அர்னோன் துவக்கி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And they possessed all the coasts of the Amorites, from Arnon even unto Jabbok, and from the wilderness even unto Jordan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">யாபோக்மட்டும் வனாந்தரம் துவக்கி யோர்தான்மட்டும் இருக்கிற எமோரியரின் எல்லையையெல்லாம் சுதந்தரமாய்க் கட்டிக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">So now the LORD God of Israel has dispossessed the Amorites from before his people Israel, and should you possess it?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">இப்படி இஸ்ரவேலின் தேவனாகிய கர்த்தர் எமோரியரைத் தம்முடைய ஜனமாகிய இஸ்ரவேலுக்கு முன்பாகத் துரத்தியிருக்க, நீர் அந்த தேசத்தைக் கட்டிக்கொள்ளத்தகுமா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Will not you possess that which Chemosh your god gives you to possess? So whomsoever the LORD our God shall drive out from before us, them will we possess.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">உம்முடைய தேவனாகிய காமோஸ் உமக்கு முன்பாகத் துரத்துகிறவர்களின் தேசத்தை நீர் கட்டிக்கொள்ளமாட்டீரோ? அப்படியே எங்கள் தேவனாகிய கர்த்தர் எங்களுக்கு முன்பாகத் துரத்துகிறவர்களின் தேசத்தையெல்லாம் நாங்களும் கட்டிக்கொள்ளுகிறோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And now are you any thing better than Balak the son of Zippor, king of Moab? did he ever strive against Israel, or did he ever fight against them,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">மேலும் சிப்போரின் குமாரனாகிய பாலாக் என்னும் மோவாபின் ராஜாவைப் பார்க்கிலும் உமக்கு அதிக நியாயம் உண்டோ? அவன் இஸ்ரவேலோடே எப்போதாகிலும் வழக்காடினானா? எப்போதாகிலும் அவர்களுக்கு விரோதமாக யுத்தம் பண்ணினானா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">While Israel dwelt in Heshbon and her towns, and in Aroer and her towns, and in all the cities that be along by the coasts of Arnon, three hundred years? why therefore did all of you not recover them within that time?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">இஸ்ரவேலர் எஸ்போனிலும் அதின் கிராமங்களிலும், ஆரோவேரிலும் அதின் கிராமங்களிலும், அர்னோன் நதியருகான எல்லா ஊர்களிலும், முந்நூறு வருஷம் குடியிருக்கையில், இவ்வளவுகாலமாய் நீங்கள் அதைத் திருப்பிக்கொள்ளாதே போனதென்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Wherefore I have not sinned against you, but you do me wrong to war against me: the LORD the Judge be judge this day between the children of Israel and the children of Ammon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">நான் உமக்கு விரோதமாய்க் குற்றம் செய்யவில்லை; நீர் எனக்கு விரோதமாய் யுத்தம் பண்ணுகிறதினால் நீர் தான் எனக்கு அநியாயம் செய்கிறீர்; நியாயாதிபதியாகிய கர்த்தர் இன்று இஸ்ரவேல் புத்திரருக்கும் அம்மோன் புத்திரருக்கும் நடுநின்று நியாயம் தீர்க்கக்கடவர் என்று சொல்லி அனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Nevertheless the king of the children of Ammon hearkened not unto the words of Jephthah which he sent him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஆனாலும் அம்மோன் புத்திரரின் ராஜா தனக்கு யெப்தா சொல்லியனுப்பின வார்த்தைகளுக்குச் செவிகொடாதே போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Then the Spirit of the LORD came upon Jephthah, and he passed over Gilead, and Manasseh, and passed over Mizpeh of Gilead, and from Mizpeh of Gilead he passed over unto the children of Ammon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அப்பொழுது கர்த்தருடைய ஆவி யெப்தாவின் மேல் இறங்கினார்; அவன் கீலேயாத்தையும் மனாசே நாட்டையும் கடந்துபோய், கீலேயாத்திலிருக்கிற மிஸ்பாவுக்கு வந்து, அங்கேயிருந்து அம்மோன் புத்திரருக்கு விரோதமாகப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Jephthah vowed a vow unto the LORD, and said, If you shall without fail deliver the children of Ammon into mine hands,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அப்பொழுது யெப்தா கர்த்தருக்கு ஒரு பொருத்தனையைப் பண்ணி: தேவரீர் அம்மோன் புத்திரரை என் கையில் ஒப்புக்கொடுக்கவே ஒப்புக்கொடுத்தால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Then it shall be, that whatsoever comes out of the doors of my house to meet me, when I return in peace from the children of Ammon, shall surely be the LORD's, and I will offer it up for a burnt offering.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">நான் அம்மோன் புத்திரரிடத்திலிருந்து சமாதானத்தோடே திரும்பி வரும்போது, என் வீட்டு வாசற்படியிலிருந்து எனக்கு எதிர்கொண்டு வருவது எதுவோ அது கர்த்தருக்கு உரியதாகும். அதைச் சர்வாங்க தகனபலியாகச் செலுத்துவேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">So Jephthah passed over unto the children of Ammon to fight against them; and the LORD delivered them into his hands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">யெப்தா அம்மோன் புத்திரரின்மேல் யுத்தம்பண்ண, அவர்களுக்கு விரோதமாய்ப் புறப்பட்டுப்போனான்; கர்த்தர் அவர்களை அவன் கையில் ஒப்புக்கொடுத்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And he stroke them from Aroer, even till you come to Minnith, even twenty cities, and unto the plain of the vineyards, with a very great slaughter. Thus the children of Ammon were subdued before the children of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அவன் அவர்களை ஆரோவேர் துவக்கி மின்னித்திற்குப் போகுமட்டும், திராட்சத்தோட்டத்து நிலங்கள் வரைக்கும், மகா சங்காரமாய் முறிய அடித்து, இருபது பட்டணங்களைப் பிடித்தான்; இப்படி அம்மோன் புத்திரர் இஸ்ரவேல் புத்திரருக்கு முன்பாகத் தாழ்த்தப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And Jephthah came to Mizpeh unto his house, and, behold, his daughter came out to meet him with timbrels and with dances: and she was his only child; beside her he had neither son nor daughter.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">யெப்தா மிஸ்பாவிலிருக்கிற தன் வீட்டுக்கு வருகிறபோது, இதோ, அவன் குமாரத்தி தம்புரு வாசித்து நடனஞ்செய்து, அவனுக்கு எதிர்கொண்டு வந்தாள்; அவள் அவனுக்கு ஒரே பிள்ளையானவள்; அவளையல்லாமல் அவனுக்குக் குமாரனும் இல்லை குமாரத்தியும் இல்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And it came to pass, when he saw her, that he rent his clothes, and said, Alas, my daughter! you have brought me very low, and you are one of them that trouble me: for I have opened my mouth unto the LORD, and I cannot go back.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவன் அவளைக் கண்டவுடனே தன் வஸ்திரங்களைக் கிழித்துக்கொண்டு: ஐயோ! என் மகளே, என்னை மிகவும் மனமடியவும் கலங்கவும் பண்ணுகிறாய்; நான் கர்த்தரை நோக்கி என் வாயைத் திறந்து சொல்லிவிட்டேன்; அதை நான் மாற்றக் கூடாது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And she said unto him, My father, if you have opened your mouth unto the LORD, do to me according to that which has proceeded out of your mouth; forasmuch as the LORD has taken vengeance for you of yours enemies, even of the children of Ammon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அப்பொழுது அவள்: என் தகப்பனே, நீர் கர்த்தரை நோக்கி உம்முடைய வாயைத் திறந்து பேசினீரல்லவோ? அம்மோன் புத்திரராகிய, உம்முடைய சத்துருக்களுக்கு நீதியைச் சரிக்கட்டும் ஜெயத்தைக் கர்த்தர் உமக்குக் கட்டளையிட்டபடியினால், உம்முடைய வாயிலிருந்து புறப்பட்டபடியே எனக்குச் செய்யும் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And she said unto her father, Let this thing be done for me: let me alone two months, that I may go up and down upon the mountains, and mourn for my virginity, I and my fellows.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">பின்னும் அவன் தன் தகப்பனை நோக்கி: நீர் எனக்கு ஒரு காரியம் செய்ய வேண்டும்; நான் மலைகளின்மேல் போய்த்திரிந்து, நானும் என் தோழிமார்களும் என் கன்னிமையினிமித்தம் துக்கங்கொண்டாட, எனக்கு இரண்டுமாதம் தவணைகொடும் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And he said, Go. And he sent her away for two months: and she went with her companions, and bewailed her virginity upon the mountains.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">அதற்கு அவன்: போய் வா என்று அவளை இரண்டு மாதத்திற்கு அனுப்பிவிட்டான்; அவள் தன் தோழிமார்களோடும் கூடப்போய், தன் கன்னிமையினிமித்தம் மலைகளின் மேல் துக்கங்கொண்டாடி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And it came to pass at the end of two months, that she returned unto her father, who did with her according to his vow which he had vowed: and she knew no man. And it was a custom in Israel,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">இரண்டுமாதம் முடிந்தபின்பு, தன் தகப்பனிடத்திற்குத் திரும்பிவந்தாள்; அப்பொழுது அவன் பண்ணியிருந்த தன் பொருத்தனையின் படி அவளுக்குச் செய்தான்; அவள் புருஷனை அறியாதிருந்தாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">That the daughters of Israel went yearly to lament the daughter of Jephthah the Gileadite four days in a year.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">இதினிமித்தம் இஸ்ரவேலின் குமாரத்திகள் வருஷந்தோறும் போய், நாலு நாள் கீலேயாத்தியனான யெப்தாவின் குமாரத்தியைக்குறித்துப் புலம்புவது இஸ்ரவேலிலே வழக்கமாயிற்று.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 18 |  18 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 18 ( 18) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 18 |  18</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And after these things I saw another angel come down from heaven, having great power; and the earth was lightened with his glory.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">இவைகளுக்குப்பின்பு, வேறொரு தூதன் மிகுந்த அதிகாரமுடையவனாய், வானத்திலிருந்து இறங்கிவரக்கண்டேன்; இவனுடைய மகிமையினால் பூமி பிரகாசமாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அவன் பலத்த சத்தமிட்டு: மகா பாபிலோன் விழுந்தது! விழுந்தது! அது பேய்களுடைய குடியிருப்பும், அசுத்த ஆவிகளுடைய காவல்வீடும், அசுத்தமும் அருவருப்புமுள்ள சகலவித பறவைகளுடைய கூடுமாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">For all nations have drunk of the wine of the wrath of her fornication, and the kings of the earth have committed fornication with her, and the merchants of the earth are waxed rich through the abundance of her delicacies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவளுடைய வேசித்தனத்தின் உக்கிரமான மதுவை எல்லா ஜாதிகளும் குடித்தார்கள்; பூமியின் ராஜாக்கள் அவளோடே வேசித்தனம்பண்ணினார்கள்; பூமியின் வர்த்தகர் அவளுடைய செல்வச்செருக்கின் மிகுதியினால் ஐசுவரியவான்களானார்கள் என்று விளம்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And I heard another voice from heaven, saying, Come out of her, my people, that all of you be not partakers of her sins, and that all of you receive not of her plagues.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பின்பு, வேறொரு சத்தம் வானத்திலிருந்து உண்டாகக் கேட்டேன். அது: என் ஜனங்களே, நீங்கள் அவளுடைய பாவங்களுக்கு உடன்படாமலும், அவளுக்கு நேரிடும் வாதைகளில் அகப்படாமலும் இருக்கும்படிக்கு அவளைவிட்டு வெளியே வாருங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">For her sins have reached unto heaven, and God has remembered her iniquities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவளுடைய பாவம் வானபரியந்தம் எட்டினது, அவளுடைய அநியாயங்களை தேவன் நினைவுகூர்ந்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Reward her even as she rewarded you, and double unto her double according to her works: in the cup which she has filled fill to her double.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அவள் உங்களுக்குப் பலனளித்ததுபோல நீங்களும் அவளுக்குப் பலனளியுங்கள்; அவளுடைய கிரியைகளுக்குத்தக்கதாக அவளுக்கு இரட்டிப்பாகக் கொடுத்துத் தீருங்கள்; அவள் உங்களுக்குக் கலந்துகொடுத்த பாத்திரத்திலே இரட்டிப்பாக அவளுக்குக் கலந்துகொடுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">How much she has glorified herself, and lived deliciously, so much torment and sorrow give her: for she says in her heart, I sit a queen, and am no widow, and shall see no sorrow.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அவள் தன்னை மகிமைப்படுத்தி, செல்வச்செருக்காய் வாழ்ந்ததெவ்வளவோ அவ்வளவாய் வாதையையும் துக்கத்தையும் அவளுக்குக் கொடுங்கள். நான் ராஜஸ்திரீயாய் வீற்றிருக்கிறேன்; நான் கைம்பெண்ணல்ல, நான் துக்கத்தைக் காண்பதில்லையென்று அவள் தன் இருதயத்திலே எண்ணினாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is the Lord God who judges her.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">ஆகையால் அவளுக்கு வரும் வாதைகளாகிய சாவும் துக்கமும் பஞ்சமும் ஒரே நாளிலே வரும்; அவள் அக்கினியினாலே சுட்டெரிக்கப்படுவாள்; அவளுக்கு நியாயத்தீர்ப்புக் கொடுக்கும் தேவனாகிய கர்த்தர் வல்லமையுள்ளவர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And the kings of the earth, who have committed fornication and lived deliciously with her, shall mourn for her, and lament for her, when they shall see the smoke of her burning,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அவளுடனே வேசித்தனஞ்செய்து செல்வச்செருக்காய் வாழ்ந்த பூமியின் ராஜாக்களும் அவள் வேகிறதினால் உண்டான புகையைக் காணும்போது அவளுக்காக அழுது புலம்பி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Standing far off for the fear of her torment, saying, Alas, alas that great city Babylon, that mighty city! for in one hour is your judgment come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அவளுக்கு உண்டான வாதையினால் பயந்து, தூரத்திலே நின்று: ஐயையோ! பாபிலோன், மகாநகரமே! பலமான பட்டணமே! ஒரே நாழிகையில் உனக்கு ஆக்கினை வந்ததே! என்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the merchants of the earth shall weep and mourn over her; for no man buys their merchandise any more:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">பூமியின் வர்த்தகர்களும் தங்கள் தங்கள் சரக்குகளாகிய பொன்னையும், வெள்ளியையும், இரத்தினங்களையும், முத்துக்களையும், சல்லாவையும், இரத்தாம்பரத்தையும், பட்டாடைகளையும், சிவப்பாடைகளையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">The merchandise of gold, and silver, and precious stones, and of pearls, and fine linen, and purple, and silk, and scarlet, and all thyine wood, and all manner vessels of ivory, and all manner vessels of most precious wood, and of brass, and iron, and marble,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">சகலவித வாசனைக் கட்டைகளையும், தந்தத்தினால் செய்திருக்கிற சகலவித வஸ்துக்களையும், விலையுயர்ந்த மரத்தினாலும் வெண்கலத்தினாலும் இரும்பினாலும் வெள்ளைக் கல்லினாலும் செய்திருக்கிற சகலவித வஸ்துக்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And cinnamon, and odours, and ointments, and frankincense, and wine, and oil, and fine flour, and wheat, and beasts, and sheep, and horses, and chariots, and slaves, and souls of men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">இலவங்கப்பட்டையையும், தூபவர்க்கங்களையும், தைலங்களையும், சாம்பிராணியையும், திராட்சரசத்தையும், எண்ணெயையும், மெல்லிய மாவையும் கோதுமையையும், மாடுகளையும், ஆடுகளையும், குதிரைகளையும், இரதங்களையும், அடிமைகளையும், மனுஷருடைய ஆத்துமாக்களையும் இனிக் கொள்வாரில்லாதபடியால், அவளுக்காக அழுது புலம்புவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And the fruits that your soul lusted after are departed from you, and all things which were dainty and goodly are departed from you, and you shall find them no more at all.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">உன் ஆத்துமா இச்சித்த பழவர்க்கங்கள் உன்னைவிட்டு நீங்கிப்போயின; கொழுமையானவைகளும் சம்பிரமமானவைகளும் உன்னைவிட்டு நீங்கிப்போயின; நீ அவைகளை இனிக் காண்பதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">The merchants of these things, which were made rich by her, shall stand far off for the fear of her torment, weeping and wailing,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இப்படிப்பட்டவைகளைக் கொண்டு வர்த்தகம்பண்ணி அவளால் ஐசுவரியவான்களானவர்கள் அவளுக்கு உண்டான வாதையினால் பயந்து, தூரத்திலே நின்று;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And saying, Alas, alas that great city, that was clothed in fine linen, and purple, and scarlet, and decked with gold, and precious stones, and pearls!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஐயையோ! சல்லாவும் இரத்தாம்பரமும் சிவப்பாடையும் தரித்து, பொன்னினாலும் இரத்தினங்களினாலும் முத்துக்களினாலும் சிங்காரிக்கப்பட்டிருந்த மகா நகரமே! ஒரு நாழிகையிலே இவ்வளவு ஐசுவரியமும் அழிந்துபோயிற்றே! என்று சொல்லி, அழுது துக்கிப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">For in one hour so great riches has come to nothing. And every ship captain, and all the company in ships, and sailors, and as many as trade by sea, stood far off,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">மாலுமிகள் யாவரும், கப்பல்களில் யாத்திரை பண்ணுகிறவர்கள் யாவரும், கப்பலாட்களும், சமுத்திரத்திலே தொழில்செய்கிற யாவரும் தூரத்திலே நின்று,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And cried when they saw the smoke of her burning, saying, What city is like unto this great city!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவள் வேகிறதினால் உண்டான புகையைப் பார்த்து: இந்த மகா நகரத்திற்கொப்பான நகரம் உண்டோ என்று சத்தமிட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And they cast dust on their heads, and cried, weeping and wailing, saying, Alas, alas that great city, wherein were made rich all that had ships in the sea by reason of her costliness! for in one hour is she made desolate.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">தங்கள் தலைகள்மேல் புழுதியைப்போட்டுக்கொண்டு: ஐயையோ, மகா நகரமே! சமுத்திரத்திலே கப்பல்களையுடைய அனைவரும் இவளுடைய உச்சிதமான சம்பூரணத்தினால் ஐசுவரியவான்களானார்களே! ஒரு நாழிகையில் இவள் பாழாய்ப்போனாளே! என்று அழுது துக்கித்து ஓலமிடுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Rejoice over her, you heaven, and all of you holy apostles and prophets; for God has avenged you on her.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">பரலோகமே! பரிசுத்தவான்களாகிய அப்போஸ்தலர்களே! தீர்க்கதரிசிகளே! அவளைக்குறித்துக் களிகூருங்கள். உங்கள் நிமித்தம் தேவன் அவளை நியாயந்தீர்த்தாரே! என்று தூதன் சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது, பலமுள்ள தூதனொருவன் பெரிய ஏந்திரக்கல்லையொத்த ஒரு கல்லை எடுத்துச் சமுத்திரத்திலே எறிந்து: இப்படியே பாபிலோன் மகாநகரம் வேகமாய்த் தள்ளுண்டு, இனி ஒருபோதும் காணப்படாமற்போகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And the voice of harpers, and musicians, and of pipers, and trumpeters, shall be heard no more at all in you; and no craftsman, of whatsoever craft he be, shall be found any more in you; and the sound of a millstone shall be heard no more at all in you;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">சுரமண்டலக்காரரும், கீதவாத்தியக்காரரும். நாகசுரக்காரரும், எக்காளக்காரருமானவர்களுடைய சத்தம் இனி உன்னிடத்தில் கேட்கப்படுவதுமில்லை; எந்தத் தொழிலாளியும் இனி உன்னிடத்தில் காணப்படுவதுமில்லை; ஏந்திரசத்தம் இனி உன்னிடத்தில் கேட்கப்படுவதுமில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And the light of a candle shall shine no more at all in you; and the voice of the bridegroom and of the bride shall be heard no more at all in you: for your merchants were the great men of the earth; for by your sorceries were all nations deceived.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">விளக்குவெளிச்சம் இனி உன்னிடத்தில் பிரகாசிப்பதுமில்லை; மணவாளனும் மணவாட்டியுமானவர்களுடைய சத்தம் இனி உன்னிடத்தில் கேட்கப்படுவதுமில்லை. உன் வர்த்தகர் பூமியில் பெரியோர்களாயிருந்தார்களே; உன் சூனியத்தால் எல்லா ஜாதிகளும் மோசம்போனார்களே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">தீர்க்கதரிசிகளுடைய இரத்தமும் பரிசுத்தவான்களுடைய இரத்தமும் பூமியில் கொல்லப்பட்ட அனைவருடைய இரத்தமும் அவளிடத்தில் காணப்பட்டது என்று விளம்பினான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

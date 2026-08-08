@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 20 |  20 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 20 ( 20) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 20 |  20</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then all the children of Israel went out, and the congregation was gathered together as one man, from Dan even to Beersheba, with the land of Gilead, unto the LORD in Mizpeh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அப்பொழுது தாண்முதல் பெயெர்செபாமட்டுமுள்ள இஸ்ரவேல் புத்திரர் அனைவரும் கீலேயாத் தேசத்தாருடன் மிஸ்பாவிலே கர்த்தருக்கு முன்பாக ஏகோபித்து சபையாகக் கூடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And the chief of all the people, even of all the tribes of Israel, presented themselves in the assembly of the people of God, four hundred thousand footmen that drew sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">சகல ஜனங்களின் அதிபதிகளும், இஸ்ரவேலின் சகல கோத்திரத்தாரும் தேவனுடைய ஜனமாகிய சபையாகக் கூடிநின்றார்கள்; அவர்கள் பட்டயம் உருவுகிற நாலு லட்சம் காலாட்கள்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">(Now the children of Benjamin heard that the children of Israel were gone up to Mizpeh.) Then said the children of Israel, Tell us, how was this wickedness?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரர் மிஸ்பாவுக்கு வந்த செய்தியைப் பென்யமீன் புத்திரர் கேள்விப்பட்டார்கள்; அந்த அக்கிரமம் நடந்தது எப்படி, சொல்லுங்கள் என்று இஸ்ரவேல் புத்திரர் கேட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And the Levite, the husband of the woman that was slain, answered and said, I came into Gibeah that belongs to Benjamin, I and my concubine, to lodge.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்பொழுது கொலைசெய்யப்பட்ட ஸ்திரீயின் புருஷனாகிய லேவியன் மாறுத்தரமாக: நானும் என் மறுமனையாட்டியும் பென்யமீன் நாட்டிலுள்ள கிபியாவிலே இராத்தங்க வந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the men of Gibeah rose against me, and beset the house round about upon me by night, and thought to have slain me: and my concubine have they forced, that she is dead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அப்பொழுது கிபியாபட்டணத்தார் எனக்கு விரோதமாய் எழும்பி, என்னைக் கொலைசெய்ய நினைத்து, நான் இருந்த வீட்டை இராத்திரியிலே வளைந்து கொண்டு, என் மறுமனையாட்டியை அவமானப்படுத்தினார்கள்; அதினாலே அவள் செத்துப்போனாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And I took my concubine, and cut her in pieces, and sent her throughout all the country of the inheritance of Israel: for they have committed lewdness and folly in Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஆகையால் இஸ்ரவேலிலே அவர்கள் இப்படிப்பட்ட முறைகேட்டையும் மதிகேட்டையும் செய்தபடியினால், நான் என் மறுமனையாட்டியைப் பிடித்துத் துண்டித்து, இஸ்ரவேலின் சுதந்தரமான சகல நாடுகளுக்கும் அனுப்பினேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">Behold, all of you are all children of Israel; give here your advice and counsel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">நீங்கள் எல்லாரும் இஸ்ரவேல் புத்திரராமே, இங்கே ஆலோசித்துத் தீர்மானம் பண்ணுங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And all the people arose as one man, saying, We will not any of us go to his tent, neither will we any of us turn into his house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அப்பொழுது எல்லா ஜனங்களும் ஏகமாய் எழும்பி: நம்மில் ஒருவரும் தன் கூடாரத்திற்குப் போகவும்படாது, ஒருவனும் தன் வீட்டிற்குத் திரும்பவும்படாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">But now this shall be the thing which we will do to Gibeah; we will go up by lot against it;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இப்பொழுது கிபியாவுக்குச் செய்ய வேண்டியது என்னவென்றால்: சீட்டுப்போட்டு அதற்கு விரோதமாகப் போவோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And we will take ten men of an hundred throughout all the tribes of Israel, and an hundred of a thousand, and a thousand out of ten thousand, to fetch victual for the people, that they may do, when they come to Gibeah of Benjamin, according to all the folly that they have wrought in Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">பென்யமீன் கோத்திரமான கிபியாபட்டணத்தார் இஸ்ரவேலிலே செய்த எல்லா மதிகேட்டுக்கும் தக்கதாக ஜனங்கள் வந்து செய்யும்படிக்கு, நாம் தானியதவசங்களைச் சம்பாதிக்கிறதற்கு, இஸ்ரவேல் கோத்திரங்களிலெல்லாம் நூறு பேரில் பத்துப்பேரையும், ஆயிரம்பேரில் நூறுபேரையும், பதினாயிரம்பேரில் ஆயிரம்பேரையும், தெரிந்தெடுப்போம் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">So all the men of Israel were gathered against the city, knit together as one man.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">இஸ்ரவேலரெல்லாரும் ஒன்றுபோல ஏகோபித்துப் பட்டணத்திற்கு முன்பாகக் கூட்டங்கூடி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And the tribes of Israel sent men through all the tribe of Benjamin, saying, What wickedness is this that is done among you?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அங்கே இருந்த இஸ்ரவேலின் கோத்திரத்தார் பென்யமீன் கோத்திரமெங்கும் ஆட்களை அனுப்பி: உங்களுக்குள்ளே நடந்த இந்த அக்கிரமம் என்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Now therefore deliver us the men, the children of Belial, which are in Gibeah, that we may put them to death, and put away evil from Israel. But the children of Benjamin would not hearken to the voice of their brethren the children of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">இப்பொழுது கிபியாவில் இருக்கிற பேலியாளின் மக்களாகிய அந்த மனுஷரை நாங்கள் கொன்று, பொல்லாப்பை இஸ்ரவேலை விட்டு விலக்கும்படிக்கு, அவர்களை ஒப்புக்கொடுங்கள் என்று சொல்லச்சொன்னார்கள்; பென்யமீன் புத்திரர் இஸ்ரவேல் புத்திரராகிய தங்கள் சகோதரரின் சொல்லைக் கேட்க மனமில்லாமல்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">But the children of Benjamin gathered themselves together out of the cities unto Gibeah, to go out to battle against the children of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரரோடு யுத்தம் பண்ணப் புறப்படும்படிக்கு, பட்டணங்களிலிருந்து கிபியாவுக்கு வந்து கூடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And the children of Benjamin were numbered at that time out of the cities twenty and six thousand men that drew sword, beside the inhabitants of Gibeah, which were numbered seven hundred chosen men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">கிபியாவின் குடிகளிலே தெரிந்து கொள்ளப்பட்ட எழுநூறுபேரையல்லாமல் அந்நாளில் பட்டணங்களிலிருந்து வந்து கூடின பட்டயம் உருவுகிற மனுஷரின் இலக்கம் இருபத்தாறாயிரம்பேர் என்று தொகையிடப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Among all this people there were seven hundred chosen men lefthanded; every one could sling stones at an hair breadth, and not miss.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அந்த ஜனங்களெல்லாருக்குள்ளும் தெரிந்துகொள்ளப்பட்ட இடதுகை வாக்கான எழுநூறுபேர் இருந்தார்கள்; அவர்கள் அனைவரும் ஒரு மயிரிழையும் தப்பாதபடிக்குக் கவண்கள் எறிவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And the men of Israel, beside Benjamin, were numbered four hundred thousand men that drew sword: all these were men of war.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பென்யமீன் கோத்திரத்தையல்லாமல் இஸ்ரவேலிலே பட்டயம் உருவுகிற மனுஷர் நாலு லட்சம்பேர் என்று தொகையிடப்பட்டது; இவர்களெல்லாரும் யுத்தவீரராயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And the children of Israel arose, and went up to the house of God, and asked counsel of God, and said, Which of us shall go up first to the battle against the children of Benjamin? And the LORD said, Judah shall go up first.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரரான அவர்கள் எழும்பி, தேவனுடைய வீட்டிற்குப் போய்: எங்களில் யார் முந்திப் போய் பென்யமீன் புத்திரரோடு யுத்தம்பண்ண வேண்டும் என்று தேவனிடத்தில் விசாரித்தார்கள்; அதற்குக் கர்த்தர்: யூதா முந்திப் போகவேண்டும் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And the children of Israel rose up in the morning, and encamped against Gibeah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேல் புத்திரர் காலமே எழுந்து புறப்பட்டு, கிபியாவுக்கு எதிராகப் பாளயமிறங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the men of Israel went out to battle against Benjamin; and the men of Israel put themselves in array to fight against them at Gibeah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">பின்பு இஸ்ரவேல் மனுஷர் பென்யமீனோடு யுத்தம்பண்ணப் புறப்பட்டு, கிபியாவிலே அவர்களுக்கு எதிராகப் போர் செய்ய அணிவகுத்து நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And the children of Benjamin came forth out of Gibeah, and destroyed down to the ground of the Israelites that day twenty and two thousand men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">ஆனாலும் பென்யமீன் புத்திரர் கிபியாவிலிருந்து புறப்பட்டு, இஸ்ரவேலில் இருபத்தீராயிரம்பேரை அன்றையதினம் தரையிலே விழும்படி சங்கரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And the people the men of Israel encouraged themselves, and set their battle again in array in the place where they put themselves in array the first day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">இஸ்ரவேல் ஜனங்கள் தங்களைத் திடப்படுத்திக்கொண்டு, முதல்நாளில் அணிவகுத்து நின்ற ஸ்தலத்திலே, மறுபடியும் போர்செய்ய அணிவகுத்து நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">(And the children of Israel went up and wept before the LORD until even, and asked counsel of the LORD, saying, Shall I go up again to battle against the children of Benjamin my brother? And the LORD said, Go up against him.)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவர்கள் போய், கர்த்தருடைய சந்நிதியில் சாயங்காலமட்டும் அழுது: எங்கள் சகோதரராகிய பென்யமீன் புத்திரரோடே திரும்பவும் யுத்தம் கலக்கப்போவோமா என்று கர்த்தரிடத்தில் விசாரித்தார்கள்; அப்பொழுது கர்த்தர்; அவர்களுக்கு விரோதமாய்ப் போங்கள் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And the children of Israel came near against the children of Benjamin the second day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">மறுநாளிலே இஸ்ரவேல் புத்திரர் பென்யமீன் புத்திரர் கிட்டச் சேருகிறபோது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And Benjamin went forth against them out of Gibeah the second day, and destroyed down to the ground of the children of Israel again eighteen thousand men; all these drew the sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">பென்யமீன் கோத்திரத்தாரும் அந்நாளிலே கிபியாவிலிருந்து அவர்களுக்கு எதிராகப் புறப்பட்டுவந்து, பின்னும் இஸ்ரவேல் புத்திரரில் பட்டயம் உருவுகிற பதினெண்ணாயிரம்பேரைத் தரையிலே விழும்படி சங்கரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Then all the children of Israel, and all the people, went up, and came unto the house of God, and wept, and sat there before the LORD, and fasted that day until even, and offered burnt offerings and peace offerings before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேல் புத்திரராகிய சகல ஜனங்களும் புறப்பட்டு, தேவனுடைய வீட்டிற்குப்போய், அங்கே கர்த்தருடைய சந்நிதியில் அழுது, தரித்திருந்து, அன்று சாயங்காலமட்டும் உபவாசித்து, கர்த்தருடைய சந்நிதியில் சர்வாங்க தகனபலிகளையும் சமாதானபலிகளையும் இட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And the children of Israel enquired of the LORD, (for the ark of the covenant of God was there in those days,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">கர்த்தரிடத்தில் விசாரித்தார்கள்; தேவனுடைய உடன்படிக்கையின் பெட்டி அந்நாட்களில் அங்கே இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And Phinehas, the son of Eleazar, the son of Aaron, stood before it in those days,) saying, Shall I yet again go out to battle against the children of Benjamin my brother, or shall I cease? And the LORD said, Go up; in order to morrow I will deliver them into yours hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஆரோனின் குமாரனாகிய எலெயாசாரின் மகன் பினெகாஸ் அந்நாட்களில் அவருடைய சந்நிதியில் நின்றான்; எங்கள் சகோதரராகிய பென்யமீன் புத்திரரோடே பின்னும் யுத்தம்பண்ணப் புறப்படலாமா புறப்படலாகாதா என்று அவர்கள் விசாரித்தார்கள்; அப்பொழுது கர்த்தர்: போங்கள்; நாளைக்கு அவர்களை உங்கள் கையில் ஒப்புக்கொடுப்பேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And Israel set hidden attackers in wait round about Gibeah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேல் புத்திரர் கிபியாவைச் சுற்றிலும் பதிவிடையாட்களை வைத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And the children of Israel went up against the children of Benjamin on the third day, and put themselves in array against Gibeah, as at other times.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">மூன்றாம்நாளிலே பென்யமீன் புத்திரருக்கு விரோதமாய்ப் போய், முன் இரண்டுதரம் செய்ததுபோல, கிபியாவுக்குச் சமீபமாய்ப் போருக்கு அணிவகுத்து நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And the children of Benjamin went out against the people, and were drawn away from the city; and they began to strike of the people, and kill, as at other times, in the highways, of which one goes up to the house of God, and the other to Gibeah in the field, about thirty men of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அப்பொழுது பென்யமீன் புத்திரர் ஜனத்திற்கு விரோதமாய்ப் புறப்பட்டுப் பட்டணத்தை விட்டு, அப்பாலே வந்து, வெளியிலே பெத்தேலுக்கும் கிபியாவுக்கும் போகிற இரண்டு வழிகளில் இஸ்ரவேல் ஜனத்தில் ஏறக்குறைய முப்பது பேரை, முதல் இரண்டுதரம் செய்தது போல, வெட்டவும் கொல்லவும் தொடங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And the children of Benjamin said, They are smitten down before us, as at the first. But the children of Israel said, Let us flee, and draw them from the city unto the highways.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">முன்போல நமக்கு முன்பாக முறிய அடிக்கப்படுகிறார்கள் என்று பென்யமீன்புத்திரர் சொன்னார்கள்; இஸ்ரவேல் புத்திரரோ: அவர்களைப் பட்டணத்தை விட்டு அப்பாலேயிருக்கிற வழிகளிலே வரப்பண்ணும்படிக்கு, நாம் ஓடவேண்டும் என்று சொல்லியிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And all the men of Israel rose up out of their place, and put themselves in array at Baaltamar: and the hidden attackers in wait of Israel came forth out of their places, even out of the meadows of Gibeah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேல் மனுஷர் எல்லாரும் தங்கள் ஸ்தானத்திலிருந்து எழும்பி, பாகால்தாமாரிலே யுத்தத்திற்கு அணிவகுத்து நின்றார்கள்; இஸ்ரவேலரில் கிபியாவின் பள்ளத்தாக்கிலே பதிவிருந்தவர்கள் தங்கள் ஸ்தானத்திலிருந்து புறப்பட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And there came against Gibeah ten thousand chosen men out of all Israel, and the battle was sore: but they knew not that evil was near them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">அவர்களில் எல்லா இஸ்ரவேலிலும் தெரிந்துகொள்ளப்பட்ட பதினாயிரம்பேர் கிபியாவுக்கு எதிரே வந்தார்கள்; யுத்தம் பலத்தது; ஆனாலும் தங்களுக்கு விக்கினம் நேரிட்டது என்று அவர்கள் அறியாதிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And the LORD stroke Benjamin before Israel: and the children of Israel destroyed of the Benjamites that day twenty and five thousand and an hundred men: all these drew the sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">கர்த்தர் இஸ்ரவேலுக்கு முன்பாகப் பென்யமீனை முறிய அடித்தார்; அந்நாளிலே இஸ்ரவேல் புத்திரர் பென்யமீனிலே பட்டயம் உருவுகிற ஆட்களாகிய இருபத்தையாயிரத்து நூறுபேரைச் சங்கரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">So the children of Benjamin saw that they were smitten: for the men of Israel gave place to the Benjamites, because they trusted unto the hidden attackers in wait which they had set beside Gibeah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">இஸ்ரவேலர் கிபியாவுக்கு அப்பாலே வைத்த பதிவிடையை நம்பியிருந்தபடியினாலே, பென்யமீனருக்கு இடம் கொடுத்தார்கள்; அதினாலே அவர்கள் முறிய அடிக்கப்படுகிறார்கள் என்று பென்யமீன் புத்திரருக்குக் காணப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And the hidden attackers in wait hasted, and rushed upon Gibeah; and the hidden attackers in wait drew themselves along, and stroke all the city with the edge of the sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">அப்பொழுது பதிவிடையிருந்தவர்கள் தீவிரமாய்க் கிபியாவின்மேல் பாய்ந்து பரவி, பட்டணத்தில் இருக்கிறவர்களெல்லாரையும் பட்டயக்கருக்கினால் வெட்டினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">Now there was an appointed sign between the men of Israel and the hidden attackers in wait, that they should make a great flame with smoke rise up out of the city.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">பட்டணத்திலிருந்து மகா பெரிய புகையை எழும்பப்பண்ணுவதே இஸ்ரவேலருக்கும் பதிவிடைக்காரருக்கும் குறிக்கப்பட்ட அடையாளமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And when the men of Israel retired in the battle, Benjamin began to strike and kill of the men of Israel about thirty persons: for they said, Surely they are smitten down before us, as in the first battle.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">ஆகையால் இஸ்ரவேலர் யுத்தத்திலே பின்வாங்கினபோது, பென்யமீனர்: முந்தின யுத்தத்தில் நடந்ததுபோல, அவர்கள் நமக்கு முன்பாக முறிய அடிக்கப்படுகிறார்களே என்று சொல்லி, இஸ்ரவேலரில் ஏறக்குறைய முப்பதுபேரை வெட்டவும் கொல்லவும் தொடங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">But when the flame began to arise up out of the city with a pillar of smoke, the Benjamites looked behind them, and, behold, the flame of the city ascended up to heaven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">பட்டணத்திலிருந்து புகையானது ஸ்தம்பம்போல உயர எழும்பினபோது, பென்யமீனர் பின்னாகப் பார்த்தார்கள்; இதோ, பட்டணத்தின் அக்கினிஜுவாலை வானபரியந்தம் எழும்பிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And when the men of Israel turned again, the men of Benjamin were amazed: for they saw that evil was come upon them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேலர் திரும்பிக் கொண்டார்கள்; பென்யமீன் மனுஷரோ, தங்களுக்கு விக்கினம் நேரிட்டதைக் கண்டு திகைத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">Therefore they turned their backs before the men of Israel unto the way of the wilderness; but the battle overtook them; and them which came out of the cities they destroyed in the midst of them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரரைவிட்டு, வனாந்தரத்திற்குப் போகிற வழிக்கு நேராய்த் திரும்பி ஓடிப்போனார்கள்; ஆனாலும் யுத்தம் அவர்களைத் தொடர்ந்தது; பட்டணங்களில் இருந்தவர்களும் தங்கள் நடுவே அகப்பட்டவர்களைக் கொன்றுபோட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">Thus they enclosed the Benjamites round about, and chased them, and trode them down with ease opposite to Gibeah toward the sunrising.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">இப்படியே பென்யமீனரை வளைந்து கொண்டு துரத்தி, கிபியாவுக்குக் கிழக்குப்புறமாக வருமட்டும், அவர்களை லேசாய் மிதித்துப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And there fell of Benjamin eighteen thousand men; all these were men of valour.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">இதினால் பென்யமீனரிலே பதினெண்ணாயிரம்பேர் விழுந்தார்கள்; அவர்களெல்லாரும் பலவான்களாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And they turned and fled toward the wilderness unto the rock of Rimmon: and they gleaned of them in the highways five thousand men; and pursued hard after them unto Gidom, and slew two thousand men of them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">மற்றவர்கள் விலகி, வனாந்தரத்தில் இருக்கிற ரிம்மோன் கன்மலைக்கு ஓடிப்போனார்கள்; அவர்களில் இன்னும் ஐயாயிரம்பேரை வழிகளிலே கொன்று, மற்றவர்களைக் கீதோம்மட்டும் பின் தொடர்ந்து, அவர்களில் இரண்டாயிரம் பேரை வெட்டிப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">So that all which fell that day of Benjamin were twenty and five thousand men that drew the sword; all these were men of valour.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">இவ்விதமாய் பென்யமீனரில் அந்நாளில் விழுந்தவர்களெல்லாரும் இருபத்தையாயிரம் பேர்; அவர்களெல்லாரும் பட்டயம் உருவுகிற பலவான்களாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">But six hundred men turned and fled to the wilderness unto the rock Rimmon, and abode in the rock Rimmon four months.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">அறுநூறுபேர் திரும்பிக்கொண்டு ஓடி, வனாந்தரத்திலிருக்கிற ரிம்மோன் கன்மலைக்குப் போய், ரிம்மோன் கன்மலையிலே நாலு மாதம் இருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">And the men of Israel turned again upon the children of Benjamin, and stroke them with the edge of the sword, as well the men of every city, as the beast, and all that came to hand: also they set on fire all the cities that they came to.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">இஸ்ரவேலரோ பென்யமீன் புத்திரர் மேல் திரும்பி, பட்டணத்தில் மனுஷர் தொடங்கி மிருகங்கள்மட்டும் கண்டவைகள் எல்லாவற்றையும் பட்டயக்கருக்கினால் வெட்டி, கண்ட பட்டணங்களையெல்லாம் அக்கினியால் கொளுத்திப் போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

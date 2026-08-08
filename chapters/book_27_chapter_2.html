@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 2 |  2 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 2 ( 2) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 2 |  2</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And in the second year of the reign of Nebuchadnezzar Nebuchadnezzar dreamed dreams, wherewith his spirit was troubled, and his sleep brake from him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">நேபுகாத்நேச்சார் ராஜ்யபாரம்பண்ணும் இரண்டாம் வருஷத்திலே, நேபுகாத்நேச்சார் சொப்பனங்களைக் கண்டான்; அதினால், அவனுடைய ஆவி கலங்கி, அவனுடைய நித்திரை கலைந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Then the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans, in order to show the king his dreams. So they came and stood before the king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்பொழுது ராஜா தன் சொப்பனங்களைத் தனக்குத் தெரிவிக்கும்பொருட்டு சாஸ்திரிகளையும் ஜோசியரையும் சூனியக்காரரையும் கல்தேயரையும் அழைக்கச்சொன்னான்; அவர்கள் வந்து, ராஜசமுகத்தில் நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the king said unto them, I have dreamed a dream, and my spirit was troubled to know the dream.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ராஜா அவர்களை நோக்கி: ஒரு சொப்பனம் கண்டேன்; அந்தச் சொப்பனத்தை அறியவேண்டுமென்று என் ஆவி கலங்கியிருக்கிறது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Then spoke the Chaldeans to the king in Syriack, O king, live for ever: tell your servants the dream, and we will show the interpretation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்பொழுது கல்தேயர் ராஜாவை நோக்கி: ராஜாவே, நீர் என்றும் வாழ்க; சொப்பனத்தை உமது அடியாருக்குச் சொல்லும், அப்பொழுது அதின் அர்த்தத்தை விடுவிப்போம் என்று சீரியபாஷையிலே சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">The king answered and said to the Chaldeans, The thing is gone from me: if all of you will not make known unto me the dream, with the interpretation thereof, all of you shall be cut in pieces, and your houses shall be made a dunghill.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">ராஜா கல்தேயருக்குப் பிரதியுத்தரமாக: என்னிடத்திலிருந்து பிறக்கிற தீர்மானம் என்னவென்றால், நீங்கள் சொப்பனத்தையும் அதின் அர்த்தத்தையும் எனக்கு அறிவியாமற்போனால் துண்டித்துப்போடப்படுவீர்கள்; உங்கள் வீடுகள் எருக்களங்களாக்கப்படும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">But if all of you show the dream, and the interpretation thereof, all of you shall receive of me gifts and rewards and great honour: therefore show me the dream, and the interpretation thereof.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">சொப்பனத்தையும் அதின் அர்த்தத்தையும் தெரிவித்தீர்களேயாகில், என்னிடத்தில் வெகுமதிகளையும் பரிசுகளையும் மிகுந்த கனத்தையும் பெறுவீர்கள்; ஆகையால் சொப்பனத்தையும் அதின் அர்த்தத்தையும் எனக்குத் தெரிவியுங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">They answered again and said, Let the king tell his servants the dream, and we will show the interpretation of it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அவர்கள் மறுபடியும் பிரதியுத்தரமாக: ராஜா அடியாருக்குச் சொப்பனத்தைச் சொல்வாராக; அப்பொழுது அதின் அர்த்தத்தை விடுவிப்போம் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">The king answered and said, I know of certainty that all of you would gain the time, because all of you see the thing is gone from me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அதற்கு ராஜா பிரதியுத்தரமாக என்னிடத்திலிருந்து தீர்மானம் பிறந்தபடியினாலே நீங்கள் காலதாமசம்பண்ணப்பார்க்கிறீர்களென்று நிச்சயமாக எனக்குத் தெரியவருகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">But if all of you will not make known unto me the dream, there is but one decree for you: for all of you have prepared lying and corrupt words to speak before me, till the time be changed: therefore tell me the dream, and I shall know that all of you can show me the interpretation thereof.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">காலம் மாறுமென்று நீங்கள் எனக்குமுன்பாக பொய்யும் புரட்டுமான விசேஷத்தைச் சொல்லும்படி எத்தனம்பண்ணி இருக்கிறீர்கள்; நீங்கள் சொப்பனத்தை எனக்குத் தெரிவிக்காமற்போனால், உங்கள் எல்லாருக்கும் இந்த ஒரே தீர்ப்பு பிறந்திருக்கிறது; ஆகையால் சொப்பனத்தை எனக்குச் சொல்லுங்கள்; அப்பொழுது அதின் அர்த்தத்தையும் உங்களால் காண்பிக்கக்கூடுமென்று அறிந்துகொள்ளுவேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">The Chaldeans answered before the king, and said, There is not a man upon the earth that can show the king's matter: therefore there is no king, lord, nor ruler, that asked such things at any magician, or astrologer, or Chaldean.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">கல்தேயர் ராஜசமுகத்தில் பிரதியுத்தரமாக; ராஜா கேட்கும் காரியத்தை அறிவிக்கத்தக்க மனுஷன் பூமியில் ஒருவனும் இல்லை; ஆகையால் மகத்துவமும் வல்லமையுமான எந்த ராஜாவும் இப்படிப்பட்ட காரியத்தை ஒரு சாஸ்திரியினிடத்திலாவது ஜோசியனிடத்திலாவது கல்தேயனிடத்திலாவது கேட்டதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And it is a rare thing that the king requires, and there is no other that can show it before the king, except the gods, whose dwelling is not with flesh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">ராஜா கேட்கிற காரியம் மிகவும் அருமையானது; மாம்சமாயிருக்கிறவர்களோடே வாசம்பண்ணாத தேவர்களேயொழிய ராஜசமுகத்தில் அதை அறிவிக்கத்தக்கவர் ஒருவரும் இல்லை என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">For this cause the king was angry and very furious, and commanded to destroy all the wise men of Babylon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">இதினிமித்தம் ராஜா மகா கோபமும் உக்கிரமுங்கொண்டு, பாபிலோனில் இருக்கிற எல்லா ஞானிகளையும் கொலைசெய்யும்படி கட்டளையிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And the decree went forth that the wise men should be slain; and they sought Daniel and his fellows to be slain.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அவர்களை கொலைசெய்யவேண்டுமென்ற கட்டளை வெளிப்பட்டபோது தானியேலையும் அவன் தோழரையும் கொலைசெய்யத் தேடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Then Daniel answered with counsel and wisdom to Arioch the captain of the king's guard, which was gone forth to slay the wise men of Babylon:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">பாபிலோனின் ஞானிகளைக் கொலைசெய்யப் புறப்பட்ட ராஜாவினுடைய தலையாரிகளுக்கு அதிபதியாகிய ஆரியோகோடே தானியேல் யோசனையும் புத்தியுமாய்ப் பேசி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">He answered and said to Arioch the king's captain, Why is the decree so hasty from the king? Then Arioch made the thing known to Daniel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இந்தக் கட்டளை ராஜாவினால் இத்தனை அவசரமாய்ப் பிறந்ததற்குக் காரணம் என்ன என்று ராஜாவின் சேர்வைக்காரனாகிய ஆரியோகினிடத்தில் கேட்டான்; அப்பொழுது ஆரியோகு தானியேலுக்குக் காரியத்தை அறிவித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Then Daniel went in, and desired of the king that he would give him time, and that he would show the king the interpretation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">தானியேல் ராஜாவினிடத்தில்போய், சொப்பனத்தின் அர்த்தத்தை ராஜாவுக்குக் காண்பிக்கும்படித் தனக்குத் தவணை கொடுக்க விண்ணப்பம் பண்ணினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Then Daniel went to his house, and made the thing known to Hananiah, Mishael, and Azariah, his companions:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பின்பு தானியேல் தன் வீட்டுக்குப்போய், தானும் தன் தோழரும் பாபிலோனின் மற்ற ஞானிகளோடேகூட அழியாதபடிக்கு இந்த மறைபொருளைக்குறித்துப் பரலோகத்தின் தேவனை நோக்கி, இரக்கம் கேட்கிறதற்காக,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">That they would desire mercies of the God of heaven concerning this secret; that Daniel and his fellows should not perish with the rest of the wise men of Babylon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அனனியா, மீஷாவேல், அசரியா என்னும் தன்னுடைய தோழருக்கு இந்தக் காரியத்தை அறிவித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Then was the secret revealed unto Daniel in a night vision. Then Daniel blessed the God of heaven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பின்பு இராக்காலத்தில் தரிசனத்திலே தானியேலுக்கு மறைபொருள் வெளிப்படுத்தப்பட்டது; அப்பொழுது தானியேல் பரலோகத்தின் தேவனை ஸ்தோத்திரித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Daniel answered and said, Blessed be the name of God for ever and ever: for wisdom and might are his:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">பின்பு தானியேல் சொன்னது: தேவனுடைய நாமத்துக்கு என்றென்றைக்குமுள்ள சதாகாலங்களிலும் ஸ்தோத்திரமுண்டாவதாக; ஞானமும் வல்லமையும் அவருக்கே உரியது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And he changes the times and the seasons: he removes kings, and sets up kings: he gives wisdom unto the wise, and knowledge to them that know understanding:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவர் காலங்களையும் சமயங்களையும் மாற்றுகிறவர்; ராஜாக்களைத் தள்ளி, ராஜாக்களை ஏற்படுத்துகிறவர்; ஞானிகளுக்கு ஞானத்தையும், அறிவாளிகளுக்கு அறிவையும் கொடுக்கிறவர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">He reveals the deep and secret things: he knows what is in the darkness, and the light dwells with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அவரே ஆழமும் மறைபொருளுமானதை வெளிப்படுத்துகிறவர்; இருளிலிருக்கிறதை அவர் அறிவார்; வெளிச்சம் அவரிடத்தில் தங்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">I thank you, and praise you, O you God of my fathers, who have given me wisdom and might, and have made known unto me now what we desired of you: for you have now made known unto us the king's matter.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">என் பிதாக்களின் தேவனே, நீர் எனக்கு ஞானமும் வல்லமையும் கொடுத்து, நாங்கள் உம்மிடத்தில் வேண்டிக்கொண்டதை இப்பொழுது எனக்கு அறிவித்து, ராஜாவின் காரியத்தை எங்களுக்குத் தெரிவித்தபடியினால் உம்மைத் துதித்துப் புகழுகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Therefore Daniel went in unto Arioch, whom the king had ordained to destroy the wise men of Babylon: he went and said thus unto him; Destroy not the wise men of Babylon: bring me in before the king, and I will show unto the king the interpretation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பின்பு தானியேல் பாபிலோனின் ஞானிகளை அழிக்க ராஜா கட்டளையிட்ட ஆரியோகினிடத்தில் போய்; பாபிலோனின் ஞானிகளை அழிக்காதேயும் என்னை ராஜாவின் முன்பாக அழைத்துக்கொண்டுபோம்; ராஜாவுக்கு அர்த்தத்தைத் தெரிவிப்பேன் என்று சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Then Arioch brought in Daniel before the king in haste, and said thus unto him, I have found a man of the captives of Judah, that will make known unto the king the interpretation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அப்பொழுது ஆரியோகு தானியேலை ராஜாவின் முன்பாகத் தீவிரமாய் அழைத்துக்கொண்டுபோய்: சிறைப்பட்டுவந்த யூதேயா தேசத்தாரில் ஒரு புருஷனைக் கண்டுபிடித்தேன்; அவன் ராஜாவுக்கு அர்த்தத்தைத் தெரிவிப்பான் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">The king answered and said to Daniel, whose name was Belteshazzar, Are you able to make known unto me the dream which I have seen, and the interpretation thereof?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ராஜா பெல்தெஷாத்சாரென்னும் நாமமுள்ள தானியேலை நோக்கி: நான் கண்ட சொப்பனத்தையும் அதின் அர்த்தத்தையும் நீ எனக்கு அறிவிக்கக்கூடுமா என்று கேட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Daniel answered in the presence of the king, and said, The secret which the king has demanded cannot the wise men, the astrologers, the magicians, the soothsayers, show unto the king;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">தானியேல் ராஜசமுகத்தில் பிரதியுத்தரமாக: ராஜா கேட்கிற மறைபொருளை ராஜாவுக்குத் தெரிவிக்க ஞானிகளாலும் ஜோசியராலும், சாஸ்திரிகளாலும், குறிசொல்லுகிறவர்களாலும் கூடாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">But there is a God in heaven that reveals secrets, and makes known to the king Nebuchadnezzar what shall be in the latter days. Your dream, and the visions of your head upon your bed, are these;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">மறைபொருள்களை வெளிப்படுத்துகிற பரலோகத்திலிருக்கிற தேவன் கடைசிநாட்களில் சம்பவிப்பதை ராஜாவாகிய நேபுகாத்நேச்சாருக்குத் தெரிவித்திருக்கிறார்; உம்முடைய சொப்பனமும் உமது படுக்கையின்மேல் உம்முடைய தலையில் உண்டான தரிசனங்களும் என்னவென்றால்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">As for you, O king, your thoughts came into your mind upon your bed, what should come to pass hereafter: and he that reveals secrets makes known to you what shall come to pass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">ராஜாவே, உம்முடைய படுக்கையின்மேல் நீர் படுத்திருக்கையில், இனிமேல் சம்பவிக்கப்போகிறதென்ன என்கிற நினைவுகள் உமக்குள் எழும்பிற்று; அப்பொழுது மறைபொருள்களை வெளிப்படுத்துகிறவர் சம்பவிக்கப்போகிறதை உமக்குத் தெரிவித்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">But as for me, this secret is not revealed to me for any wisdom that I have more than any living, but for their sakes that shall make known the interpretation to the king, and that you might know the thoughts of your heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">உயிரோடிருக்கிற எல்லாரைப்பார்க்கிலும் எனக்கு அதிக ஞானம் உண்டென்பதினாலே அல்ல; அர்த்தம் ராஜாவுக்குத் தெரியவரவும், உம்முடைய இருதயத்தின் நினைவுகளை நீர் அறியவும், இந்த மறைபொருள் எனக்கு வெளியாக்கப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">You, O king, saw, and behold a great image. This great image, whose brightness was excellent, stood before you; and the form thereof was terrible.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">ராஜாவே, நீர் ஒரு பெரிய சிலையைக்கண்டீர்; அந்தப் பெரிய சிலை மிகுந்த பிரகாசமுள்ளதாயிருந்தது; அது உமக்கு எதிரே நின்றது; அதின் ரூபம் பயங்கரமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">This image's head was of fine gold, his breast and his arms of silver, his belly and his thighs of brass,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அந்தச் சிலையின் தலை பசும்பொன்னும், அதின் மார்பும் அதின் புயங்களும் வெள்ளியும், அதின் வயிறும் அதின் தொடையும் வெண்கலமும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">His legs of iron, his feet part of iron and part of clay.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அதின் கால்கள் இரும்பும், அதின் பாதங்கள் பாதி இரும்பும் பாதி களிமண்ணுமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">You saw till that a stone was cut out without hands, which stroke the image upon his feet that were of iron and clay, and brake them to pieces.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">நீர் பார்த்துக்கொண்டிருக்கும்போதே, கைகளால் பெயர்க்கப்படாத ஒரு கல் பெயர்ந்து உருண்டுவந்தது; அது அந்தச் சிலையை இரும்பும் களிமண்ணுமாகிய அதின் பாதங்களில் மோதி அவைகளை நொறுக்கிப்போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshing floors; and the wind carried them away, that no place was found for them: and the stone that stroke the image became a great mountain, and filled the whole earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அப்பொழுது அந்த இரும்பும் களிமண்ணும் வெண்கலமும் வெள்ளியும் பொன்னும் ஏகமாய் நொறுங்குண்டு, கோடைகாலத்தில் போரடிக்கிற களத்திலிருந்து பறந்துபோகிற பதரைப்போலாயிற்று; அவைகளுக்கு ஒரு இடமும் கிடையாதபடி காற்று அவைகளை அடித்துக்கொண்டுபோயிற்று; சிலையை மோதின கல்லோவென்றால், ஒரு பெரிய பர்வதமாகி பூமியையெல்லாம் நிரப்பிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">This is the dream; and we will tell the interpretation thereof before the king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">சொப்பனம் இதுதான்; அதின் அர்த்தத்தையும் ராஜசமுகத்தில் தெரிவிப்போம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">You, O king, are a king of kings: for the God of heaven has given you a kingdom, power, and strength, and glory.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">ராஜாவே, நீர் ராஜாதி ராஜாவாயிருக்கிறீர்; பரலோகத்தின் தேவன் உமக்கு ராஜரீகத்தையும் பராக்கிரமத்தையும் வல்லமையையும் மகிமையையும் அருளினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And where ever the children of men dwell, the beasts of the field and the fowls of the heaven has he given into yours hand, and has made you ruler over them all. You are this head of gold.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">சகல இடங்களிலுமுள்ள மனுபுத்திரரையும் வெளியின் மிருகங்களையும் ஆகாயத்துப் பறவைகளையும் அவர் உமது கையில் ஒப்புக்கொடுத்து, உம்மை அவைகளையெல்லாம் ஆளும்படி செய்தார். பொன்னான அந்தத் தலை நீரே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And after you shall arise another kingdom inferior to you, and another third kingdom of brass, which shall bear rule over all the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">உமக்குப்பிறகு உமக்குக் கீழ்த்தரமான வேறொரு ராஜ்யம் தோன்றும்; பின்பு பூமியையெல்லாம் ஆண்டுகொள்ளும் வெண்கலமான மூன்றாம் ராஜ்யமொன்று எழும்பும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">And the fourth kingdom shall be strong as iron: forasmuch as iron breaks in pieces and subdues all things: and as iron that breaks all these, shall it break in pieces and bruise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">நாலாவது ராஜ்யம் இரும்பைப்போல உரமாயிருக்கும்; இரும்பு எல்லாவற்றையும் எப்படி நொறுக்கிச் சின்னபின்னமாக்குகிறதோ, அப்படியே இது நொறுக்கிப்போடுகிற இரும்பைபோல அவைகளையெல்லாம் நொறுக்கித் தகர்த்துப்போடும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And whereas you saw the feet and toes, part of potters' clay, and part of iron, the kingdom shall be divided; but there shall be in it of the strength of the iron, forasmuch as you saw the iron mixed with miry clay.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">பாதங்களும் கால்விரல்களும் பாதிகுயவனின் களிமண்ணும், பாதி இரும்புமாயிருக்க நீர் கண்டீரே, அந்த ராஜ்யம் பிரிக்கப்படும்; ஆனாலும் களிமண் இரும்பு கலந்திருக்க நீர் கண்டபடியே இரும்பினுடைய உறுதியில் கொஞ்சம் அதிலே இருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">And as the toes of the feet were part of iron, and part of clay, so the kingdom shall be partly strong, and partly broken.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">கால்விரல்கள் பாதி இரும்பும் பாதி களிமண்ணுமாயிருந்தது என்னவென்றால் அந்த ராஜ்யம் ஒருபங்கு உயரமும் ஒருபங்கு நெரிசலுமாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And whereas you saw iron mixed with miry clay, they shall mingle themselves with the seed of men: but they shall not cleave one to another, even as iron is not mixed with clay.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">நீர் இரும்பைக் களிமண்ணோடே கலந்ததாகக் கண்டீரே, அவர்கள் மற்ற மனுஷரோடே சம்பந்தங்கலப்பார்கள்; ஆகிலும் இதோ, களிமண்ணோடே இரும்பு கலவாததுபோல அவர்கள் ஒருவரோடொருவர் ஒட்டிக்கொள்ளாதிருப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">அந்த ராஜாக்களின் நாட்களிலே, பரலோகத்தின் தேவன் என்றென்றைக்கும் அழியாத ஒரு ராஜ்யத்தை எழும்பப்பண்ணுவார்; அந்த ராஜ்யம் வேறே ஜனத்துக்கு விடப்படுவதில்லை; ஒரு கல் கையில்பெயர்க்கப்படாமல் மலையிலிருந்து பெயர்ந்து, உருண்டுவந்து, இரும்பையும் வெண்கலத்தையும் களிமண்னையும் வெண்கலத்தையும் பொன்னையும் நொறுக்கினதை நீர் கண்டீரே, அப்படியே அது அந்த ராஜ்யங்களையெல்லாம் நொறுக்கி, நிர்மூலமாக்கி, தானோ என்றென்றைக்கும் நிற்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">Forasmuch as you saw that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God has made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">இனிமேல் சம்பவிக்கப்போகிறதை மகா தேவன் ராஜாவுக்குத் தெரிவித்திருக்கிறார்; சொப்பனமானது நிச்சயம், அதின் அர்த்தம் சத்தியம் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">Then the king Nebuchadnezzar fell upon his face, and worshipped Daniel, and commanded that they should offer an oblation and sweet odours unto him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">அப்பொழுது ராஜாவாகிய நேபுகாத்நேச்சார் முகங்குப்புற விழுந்து, தானியேலை வணங்கி, அவனுக்குக் காணிக்கை செலுத்தவும் தூபங்காட்டவும் கட்டளையிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">The king answered unto Daniel, and said, Truthfully it is, that your God is a God of gods, and a Lord of kings, and a revealer of secrets, seeing you could reveal this secret.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">ராஜா தானியேலை நோக்கி: நீ இந்த மறைபொருளை வெளிப்படுத்தினபடியினால் மெய்யாய் உங்கள் தேவனே தேவர்களுக்கு தேவனும், ராஜாக்களுக்கு ஆண்டவரும், மறைபொருள்களை வெளிப்படுத்துகிறவருமாயிருக்கிறார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">Then the king made Daniel a great man, and gave him many great gifts, and made him ruler over the whole province of Babylon, and chief of the governors over all the wise men of Babylon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">பின்பு ராஜா தானியேலைப் பெரியவனாக்கி, அவனுக்கு அநேகம் சிறந்த வெகுமதிகளைக் கொடுத்து, அவனை பாபிலோன் மாகாணம் முழுதுக்கும் அதிபதியாகவும், பாபிலோனிலுள்ள சகல ஞானிகளின் பிரதான அதிகாரியாகவும் நியமித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">Then Daniel requested of the king, and he set Shadrach, Meshach, and Abednego, over the affairs of the province of Babylon: but Daniel sat in the gate of the king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">தானியேல் ராஜாவை வேண்டிக்கொண்டதின்பேரில் அவன் சாத்ராக்கையும், மேஷாக்கையும், ஆபேத்நேகோவையும் பாபிலோன் மகாநகரத்துக் காரியங்களை விசாரிக்கும்படி வைத்தான்; தானியேலோவென்றால் ராஜாவின் கொலுமண்டபத்தில் இருந்தான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

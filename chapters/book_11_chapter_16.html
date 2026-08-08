@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 16 |  16 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 16 ( 16) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 16 |  16</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then the word of the LORD came to Jehu the son of Hanani against Baasha, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பாஷாவுக்கு விரோதமாகக் கர்த்தருடைய வார்த்தை ஆனானியின் குமாரனாகிய யெகூவுக்கு உண்டாயிற்று, அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Forasmuch as I exalted you out of the dust, and made you prince over my people Israel; and you have walked in the way of Jeroboam, and have made my people Israel to sin, to provoke me to anger with their sins;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">நான் உன்னைத் தூளிலிருந்து உயர்த்தி, உன்னை என் ஜனமாகிய இஸ்ரவேலின்மேல் தலைவனாக வைத்திருக்கையில், நீ யெரொபெயாமின் வழியிலே நடந்து, என் ஜனமாகிய இஸ்ரவேல் தங்கள் பாவங்களால் எனக்குக் கோபமுண்டாக்கும்படி அவர்களைப் பாவஞ்செய்யப்பண்ணுகிறபடியினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Behold, I will take away the posterity of Baasha, and the posterity of his house; and will make your house like the house of Jeroboam the son of Nebat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">இதோ, நான் பாஷாவின் பின்னடியாரையும் அவன் வீட்டாரின் பின்னடியாரையும் அழித்துப்போட்டு, உன் வீட்டை நேபாத்தின் குமாரனாகிய யெரொபெயாமின் வீட்டைப்போல ஆக்குவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Him that dies of Baasha in the city shall the dogs eat; and him that dies of his in the fields shall the fowls of the air eat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பாஷாவின் சந்ததியிலே பட்டணத்தில் சாகிறவனை நாய்கள் தின்னும்; வெளியிலே சாகிறவனை ஆகாயத்துப் பறவைகள் தின்னும் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Now the rest of the acts of Baasha, and what he did, and his might, are they not written in the book of the chronicles of the kings of Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">பாஷாவின் மற்ற வர்த்தமானங்களும், அவன் செய்ததும், அவனுடைய வல்லமையும், இஸ்ரவேல் ராஜாக்களின் நாளாகமப் புஸ்தகத்தில் அல்லவோ எழுதியிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">So Baasha slept with his fathers, and was buried in Tirzah: and Elah his son reigned in his position.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">பாஷா தன் பிதாக்களோடே நித்திரையடைந்து திர்சாவில் அடக்கம்பண்ணப்பட்டான்; அவன் குமாரனாகிய ஏலா அவன் ஸ்தானத்தில் ராஜாவானான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And also by the hand of the prophet Jehu the son of Hanani came the word of the LORD against Baasha, and against his house, even for all the evil that he did in the sight of the LORD, in provoking him to anger with the work of his hands, in being like the house of Jeroboam; and because he killed him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">பாஷா தன் கைகளின் செய்கையால் கர்த்தருக்குக் கோபமுண்டாக்கி, அவர் பார்வைக்குச் செய்த எல்லாப் பொல்லாப்பினிமித்தமும், அவன் யெரொபெயாமின் வீட்டாரை வெட்டிப்போட்டதினிமித்தமும், இவர்களைப்போல் ஆவான் என்று அவனுக்கும் அவன் வீட்டுக்கும் விரோதமாக ஆனானியின் குமாரனாகிய யெகூ என்னும் தீர்க்கதரிசியினால் கர்த்தருடைய வார்த்தை பின்னும் உண்டாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">In the twenty and sixth year of Asa king of Judah began Elah the son of Baasha to reign over Israel in Tirzah, two years.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">யூதாவின் ராஜாவான ஆசாவின் இருபத்தாறாம் வருஷத்திலே பாஷாவின் குமாரனாகிய ஏலா இஸ்ரவேலின்மேல் திர்சாவிலே ராஜாவாகி இரண்டு வருஷம் அரசாண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And his servant Zimri, captain of half his chariots, conspired against him, as he was in Tirzah, drinking himself drunk in the house of Arza steward of his house in Tirzah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இரதங்களில் பாதிபங்குக்குத் தலைவனாகிய சிம்ரி என்னும் அவன் ஊழியக்காரன் அவனுக்கு விரோதமாய்க் கட்டுப்பாடுபண்ணி, அவன் திர்சாவிலே அவ்விடத்து அரமனை உக்கிராணக்காரனாகிய அர்சாவின் வீட்டிலே குடித்து வெறி கொண்டிருக்கையில்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And Zimri went in and stroke him, and killed him, in the twenty and seventh year of Asa king of Judah, and reigned in his position.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">சிம்ரி உள்ளே புகுந்து, யூதாவின் ராஜாவாகிய ஆசாவின் இருபத்தேழாம் வருஷத்தில் அவனை வெட்டிக் கொன்று போட்டு, அவன் ஸ்தானத்தில் ராஜாவானான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And it came to pass, when he began to reign, as soon as he sat on his throne, that he slew all the house of Baasha: he left him not one that pisses against a wall, neither of his kinsfolks, nor of his friends.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அவன் ராஜாவாகி, சிங்காசனத்தின் மேல் உட்கார்ந்தபோது, அவன் பாஷாவின் வீட்டாரையெல்லாம் வெட்டிப்போட்டான்; அவன் இனத்தாரையாகிலும், அவன் சிநேகிதரையாகிலும், சுவரில் நீர்விடும் ஒரு நாயையாகிலும், அவன் உயிரோடே வைக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Thus did Zimri destroy all the house of Baasha, according to the word of the LORD, which he spoke against Baasha by Jehu the prophet.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்படியே பாஷாவும், அவன் குமாரனாகிய ஏலாவும், தங்கள் வீணான விக்கிரகங்களினாலே இஸ்ரவேலின் தேவனாகிய கர்த்தருக்குக் கோபமுண்டாக்கிச் செய்ததும் இஸ்ரவேலைச் செய்யப்பண்ணினதுமான அவர்களுடைய எல்லாப் பாவங்களினிமித்தமும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">For all the sins of Baasha, and the sins of Elah his son, by which they sinned, and by which they made Israel to sin, in provoking the LORD God of Israel to anger with their vanities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">கர்த்தர் தீர்க்கதரிசியாகிய யெகூவினால் பாஷாவைக்குறித்துச் சொல்லியிருந்த அவருடைய வார்த்தையின்படியே, சிம்ரி பாஷாவின் வீட்டாரையெல்லாம் அழித்துப்போட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Now the rest of the acts of Elah, and all that he did, are they not written in the book of the chronicles of the kings of Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ஏலாவின் மற்ற வர்த்தமானங்களும், அவன் செய்தவை யாவும் இஸ்ரவேல் ராஜாக்களின் நாளாகமப் புஸ்தகத்தில் அல்லவோ எழுதியிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">In the twenty and seventh year of Asa king of Judah did Zimri reign seven days in Tirzah. And the people were encamped against Gibbethon, which belonged to the Philistines.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">யூதாவின் ராஜாவாகிய ஆசாவின் இருபத்தேழாம் வருஷத்திலே சிம்ரி திர்சாவிலே ஏழுநாள் ராஜாவாயிருந்தான்; ஜனங்கள் அப்பொழுது பெலிஸ்தருக்கு இருக்கிற கிபெத்தோனுக்கு எதிராகப் பாளயமிறங்கியிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And the people that were encamped heard say, Zimri has conspired, and has also slain the king: wherefore all Israel made Omri, the captain of the host, king over Israel that day in the camp.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">சிம்ரி கட்டுப்பாடுபண்ணி, ராஜாவைக் கொன்றுபோட்டான் என்பதை அங்கே பாளயமிறங்கின ஜனங்கள் கேட்டபோது, இஸ்ரவேலரெல்லாம் அந்நாளிலேதானே பாளயத்திலே படைத்தலைவனாகிய உம்ரியை இஸ்ரவேல்மேல் ராஜாவாக்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And Omri went up from Gibbethon, and all Israel with him, and they besieged Tirzah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அப்பொழுது உம்ரியும் அவனோடேகூட இஸ்ரவேல் அனைத்தும் கிபெத்தோனிலிருந்து வந்து, திர்சாவை முற்றிக்கை போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And it came to pass, when Zimri saw that the city was taken, that he went into the palace of the king's house, and burnt the king's house over him with fire, and died.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">பட்டணம் பிடிபட்டதைச் சிம்ரி கண்டபோது, அவன் ராஜாவின் வீடாகிய அரமனைக்குள் பிரவேசித்து, தான் இருக்கிற ராஜ அரமனையைத் தீக்கொளுத்தி, அதிலே செத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">For his sins which he sinned in doing evil in the sight of the LORD, in walking in the way of Jeroboam, and in his sin which he did, to make Israel to sin.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அவன் கர்த்தரின் பார்வைக்குப் பொல்லாப்பானதைச் செய்து, யெரொபெயாமின் வழியிலும் அவன் இஸ்ரவேலைப் பாவஞ்செய்யப்பண்ணின அவன் பாவத்திலும் நடந்ததினால், கட்டிக்கொண்ட அவனுடைய பாவங்களினிமித்தம் அப்படி நடந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Now the rest of the acts of Zimri, and his treason that he wrought, are they not written in the book of the chronicles of the kings of Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">சிம்ரியின் மற்ற வர்த்தமானங்களும், அவன் பண்ணின அவனுடைய கட்டுப்பாடும் இஸ்ரவேல் ராஜாக்களின் நாளாகமப் புஸ்தகத்தில் அல்லவோ எழுதியிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Then were the people of Israel divided into two parts: half of the people followed Tibni the son of Ginath, to make him king; and half followed Omri.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேல் ஜனங்கள் இரண்டு வகுப்பாய்ப் பிரிந்து, பாதி ஜனங்கள் கீனாத்தின் குமாரனாகிய திப்னியை ராஜாவாக்க, அவனைப் பின்பற்றினார்கள்; பாதி ஜனங்கள் உம்ரியைப் பின் பற்றினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">But the people that followed Omri prevailed against the people that followed Tibni the son of Ginath: so Tibni died, and Omri reigned.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ஆனாலும் கீனாத்தின் குமாரனாகிய திப்னியைப் பின்பற்றின ஜனங்களைப் பார்க்கிலும், உம்ரியைப் பின்பற்றின ஜனங்கள் பலத்துப் போனார்கள்; திப்னி செத்துப்போனான்; உம்ரி அரசாண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">In the thirty and first year of Asa king of Judah began Omri to reign over Israel, twelve years: six years reigned he in Tirzah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">யூதாவின் ராஜாவாகிய ஆசாவின் முப்பத்தோராம் வருஷத்தில், உம்ரி இஸ்ரவேல்மேல் ராஜாவாகிய, பன்னிரண்டு வருஷம் ராஜ்யபாரம்பண்ணினான்; அவன் திர்சாவிலே ஆறுவருஷம் அரசாண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And he bought the hill Samaria of Shemer for two talents of silver, and built on the hill, and called the name of the city which he built, after the name of Shemer, owner of the hill, Samaria.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பின்பு சேமேரின் கையிலிருந்து சமாரியா மலையை இரண்டு தாலந்து வெள்ளிக்கு வாங்கி, அந்த மலையின்மேல் ஒரு பட்டணத்தைக் கட்டி, அதற்கு மலையினுடைய எஜமானாயிருந்த சேமேருடைய பேரின்படியே சமாரியா என்னும் பேரைத் தரித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But Omri wrought evil in the eyes of the LORD, and did worse than all that were before him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">உம்ரி கர்த்தரின் பார்வைக்குப் பொல்லாப்பானதைச் செய்து, தனக்கு முன்னிருந்த எல்லாரைப் பார்க்கிலும் கேடாய் நடந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">For he walked in all the way of Jeroboam the son of Nebat, and in his sin wherewith he made Israel to sin, to provoke the LORD God of Israel to anger with their vanities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">நேபாத்தின் குமாரனாகிய யெரொபெயாமின் சகல வழியிலும், இஸ்ரவேலின் தேவனாகிய கர்த்தருக்குத் தங்கள் வீணான விக்கிரகங்களாலே கோபம் மூட்டும்படியாய் இஸ்ரவேலைப் பாவஞ்செய்யப்பண்ணின அவனுடைய பாவங்களிலும் நடந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Now the rest of the acts of Omri which he did, and his might that he showed, are they not written in the book of the chronicles of the kings of Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">உம்ரி செய்த அவனுடைய மற்ற வர்த்தமானங்களும், அவன் காண்பித்த வல்லமையும், இஸ்ரவேல் ராஜாக்களின் நாளாகமப் புஸ்தகத்தில் அல்லவோ எழுதியிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">So Omri slept with his fathers, and was buried in Samaria: and Ahab his son reigned in his position.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">உம்ரி தன் பிதாக்களோடே நித்திரையடைந்து, சமாரியாவிலே அடக்கம் பண்ணப்பட்டான்; அவன் குமாரனாகிய ஆகாப் அவன் ஸ்தானத்தில் ராஜாவானான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And in the thirty and eighth year of Asa king of Judah began Ahab the son of Omri to reign over Israel: and Ahab the son of Omri reigned over Israel in Samaria twenty and two years.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">யூதாவின் ராஜாவாகிய ஆசாவின் முப்பத்தெட்டாம் வருஷத்தில் உம்ரியின் குமாரனாகிய ஆகாப் இஸ்ரவேலின்மேல் ராஜாவாகி, சமாரியாவில் இஸ்ரவேலின் மேல் இருபத்திரண்டு வருஷம் ராஜ்யபாரம்பண்ணினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Ahab the son of Omri did evil in the sight of the LORD above all that were before him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">உம்ரியின் குமாரனாகிய ஆகாப், தனக்கு முன்னிருந்த எல்லாரைப்பார்க்கிலும் கர்த்தரின் பார்வைக்குப் பொல்லாப்பானதைச் செய்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And it came to pass, as if it had been a light thing for him to walk in the sins of Jeroboam the son of Nebat, that he took to wife Jezebel the daughter of Ethbaal king of the Zidonians, and went and served Baal, and worshipped him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">நேபாத்தின் குமாரனாகிய யெரொபெயாமின் பாவங்களில் நடப்பது அவனுக்குக் கொஞ்சக்காரியமென்று நினைத்தாற்போல் அவன் சீதோனியரின் ராஜாவாகிய ஏத்பாகாலின் குமாரத்தி யேசபேலை விவாகம்பண்ணினதுமல்லாமல், அவன் போய் பாகாலையும் சேவித்து அதைப் பணிந்துகொண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And he reared up an altar for Baal in the house of Baal, which he had built in Samaria.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">தான் சமாரியாவிலே கட்டின பாகாலின் கோவிலில் பாகாலுக்குப் பலிபீடத்தை எடுப்பித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And Ahab made a grove; and Ahab did more to provoke the LORD God of Israel to anger than all the kings of Israel that were before him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">ஆகாப் ஒரு விக்கிரகத்தோப்பையும் வைத்து, இஸ்ரவேலின் தேவனாகிய கர்த்தருக்குக் கோபம் உண்டாக்கும்படிக்கு தனக்கு முன்னிருந்த இஸ்ரவேலின் ராஜாக்களெல்லாம் செய்ததைப்பார்க்கிலும் அதிகமாய்ச் செய்துவந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">In his days did Hiel the Bethelite build Jericho: he laid the foundation thereof in Abiram his firstborn, and set up the gates thereof in his youngest son Segub, according to the word of the LORD, which he spoke by Joshua the son of Nun.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">அவன் நாட்களிலே பெத்தேல் ஊரானாகிய ஈயேல் எரிகோவைக் கட்டினான்; கர்த்தர் நூனின் குமாரனாகிய யோசுவாவைக் கொண்டு சொல்லியிருந்த வார்த்தையின்படியே, அவன் அதின் அஸ்திபாரத்தைப் போடுகிறபோது, அபிராம் என்னும் தன் மூத்த குமாரனையும், அதின் வாசல்களை வைக்கிறபோது செகூப் என்னும் தன் இளையகுமாரனையும் சாகக்கொடுத்தான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 35 |  35 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 35 ( 35) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 35 |  35</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And the LORD spoke unto Moses in the plains of Moab by Jordan near Jericho, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">எரிகோவின் அருகே யோர்தானைச் சேர்ந்த மோவாபின் சமனான வெளிகளிலே கர்த்தர் மோசேயை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Command the children of Israel, that they give unto the Levites of the inheritance of their possession cities to dwell in; and all of you shall give also unto the Levites suburbs for the cities round about them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரர் தங்கள் காணியாட்சியாகிய சுதந்தரத்திலே லேவியருக்குக் குடியிருக்கும்படி பட்டணங்களைக் கொடுக்கவேண்டும் என்று அவர்களுக்குக் கட்டளையிடு; அந்தப் பட்டணங்களைச் சூழ்ந்திருக்கிற வெளிநிலங்களையும் லேவியருக்குக் கொடுக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the cities shall they have to dwell in; and the suburbs of them shall be for their cattle, and for their goods, and for all their beasts.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அந்தப் பட்டணங்கள் அவர்கள் குடியிருப்பதற்கும், அவைகளைச் சூழ்ந்த வெளிநிலங்கள் அவர்களுடைய ஆடுமாடுகளுக்கும், அவர்களுடைய ஆஸ்திகளுக்கும், அவர்களுடைய சகல மிருக ஜீவன்களுக்கும் குறிக்கப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And the suburbs of the cities, which all of you shall give unto the Levites, shall reach from the wall of the city and outward a thousand cubits round about.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">நீங்கள் லேவியருக்குக் கொடுக்கும் பட்டணங்களைச் சூழ்ந்த வெளிநிலங்கள் பட்டணத்தின் மதில்தொடங்கி, வெளியிலே சுற்றிலும் ஆயிரமுழ தூரத்துக்கு எட்டவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And all of you shall measure from without the city on the east side two thousand cubits, and on the south side two thousand cubits, and on the west side two thousand cubits, and on the north side two thousand cubits; and the city shall be in the midst: this shall be to them the suburbs of the cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">பட்டணம் மத்தியில் இருக்க, பட்டணத்தின் வெளிப்புறந்தொடங்கி, கிழக்கே இரண்டாயிரமுழமும், தெற்கே இரண்டாயிரமுழமும், மேற்கே இரண்டாயிரமுழமும், வடக்கே இரண்டாயிரமுழமும் அளந்துவிடக்கடவீர்கள்; இது அவர்கள் பட்டணங்களுக்கு வெளிநிலங்களாயிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And among the cities which all of you shall give unto the Levites there shall be six cities for refuge, which all of you shall appoint for the murderer, that he may flee thither: and to them all of you shall add forty and two cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">நீங்கள் லேவியருக்குக் கொடுக்கும் பட்டணங்களில் அடைக்கலத்துக்காக ஆறு பட்டணங்கள் இருக்கவேண்டும்; கொலைசெய்தவன் அங்கே தப்பி ஓடிப்போகிறதற்கு அவைகளைக் குறிக்கக்கடவீர்கள்; அவைகளையல்லாமல், நாற்பத்திரண்டு பட்டணங்களை அவர்களுக்குக் கொடுக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">So all the cities which all of you shall give to the Levites shall be forty and eight cities: them shall all of you give with their suburbs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">நீங்கள் லேவியருக்குக் கொடுக்கவேண்டிய பட்டணங்களெல்லாம் நாற்பத்தெட்டுப் பட்டணங்களும் அவைகளைச் சூழ்ந்த வெளிநிலங்களுமே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And the cities which all of you shall give shall be of the possession of the children of Israel: from them that have many all of you shall give many; but from them that have few all of you shall give few: every one shall give of his cities unto the Levites according to his inheritance which he inherits.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">நீங்கள் இஸ்ரவேல் புத்திரரின் சுதந்தரத்திலிருந்து அந்தப் பட்டணங்களைப்பிரித்துக் கொடுக்கும்போது, அதிகமுள்ளவர்களிடத்திலிருந்து அதிகமும், கொஞ்சமுள்ளவர்களிடத்திலிருந்து கொஞ்சமும் பிரித்துக்கொடுக்கவேண்டும்; அவரவர் சுதந்தரித்துக்கொண்ட சுதந்தரத்தின்படியே தங்கள் பட்டணங்களில் லேவியருக்குக் கொடுக்கக்கடவர்கள் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And the LORD spoke unto Moses, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">பின்னும் கர்த்தர் மோசேயை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Speak unto the children of Israel, and say unto them, When all of you be come over Jordan into the land of Canaan;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">நீ இஸ்ரவேல் புத்திரரோடே சொல்லவேண்டியது என்னவென்றால்: நீங்கள் யோர்தானைக் கடந்து, கானான்தேசத்தில் பிரவேசிக்கும்போது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Then all of you shall appoint you cities to be cities of refuge for you; that the slayer may flee thither, which kills any person at unexpectedly.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">கைப்பிசகாய் ஒருவனைக் கொன்று போட்டவன் ஓடிப்போயிருக்கத்தக்க அடைக்கலப்பட்டணங்களாகச் சில பட்டணங்களைக் குறிக்கக்கடவீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And they shall be unto you cities for refuge from the avenger; that the murderer die not, until he stand before the congregation in judgment.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">கொலைசெய்தவன் நியாயசபையிலே நியாயம் விசாரிக்கப்படுமுன் சாகாமல், பழிவாங்குகிறவன் கைக்குத் தப்பிப்போயிருக்கும்படி, அவைகள் உங்களுக்கு அடைக்கலப்பட்டணங்களாய் இருக்கக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And of these cities which all of you shall give six cities shall all of you have for refuge.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">நீங்கள் கொடுக்கும் பட்டணங்களில் ஆறு பட்டணங்கள் அடைக்கலத்துக்காக இருக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">All of you shall give three cities on this side Jordan, and three cities shall all of you give in the land of Canaan, which shall be cities of refuge.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">யோர்தானுக்கு இப்புறத்தில் மூன்று பட்டணங்களையும், கானான்தேசத்தில் மூன்று பட்டணங்களையும் கொடுக்கவேண்டும், அவைகள் அடைக்கலப்பட்டணங்களாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">These six cities shall be a refuge, both for the children of Israel, and for the stranger, and for the sojourner among them: that every one that kills any person unexpectedly may flee thither.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">கைப்பிசகாய் ஒருவனைக் கொன்றவன் எவனோ, அவன் அங்கே ஓடிப்போயிருக்கும்படிக்கு, அந்த ஆறு பட்டணங்களும் இஸ்ரவேல் புத்திரருக்கும் உங்கள் நடுவே இருக்கும் பரதேசிக்கும் அந்நியனுக்கும் அடைக்கலப்பட்டணங்களாய் இருக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And if he strike him with an instrument of iron, so that he die, he is a murderer: the murderer shall surely be put to death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஒருவன் இருப்பு ஆயுதத்தினால் ஒருவனை வெட்டினதினால் அவன் செத்துப்போனால், வெட்டினவன் கொலைபாதகனாயிருக்கிறான்; கொலைபாதகன் கொலைசெய்யப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And if he strike him with throwing a stone, wherewith he may die, and he die, he is a murderer: the murderer shall surely be put to death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">ஒருவன் ஒரு கல்லை எடுத்து, சாகத்தக்கதாக ஒருவன்மேல் எறிகிறதினாலே அவன் செத்துப்போனால், கல்லெறிந்தவன் கொலைபாதகனாயிருக்கிறான், அவன் கொலைசெய்யப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Or if he strike him with an hand weapon of wood, wherewith he may die, and he die, he is a murderer: the murderer shall surely be put to death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">ஒருவன் தன் கையில் ஒரு மர ஆயுதத்தை எடுத்து, சாகத்தக்கதாக ஒருவனை அடித்ததினால் அவன் செத்துப்போனால், அடித்தவன் கொலைபாதகனாயிருக்கிறான்; கொலைபாதகன் கொலைசெய்யப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">The revenger of blood himself shall slay the murderer: when he meet him, he shall slay him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பழிவாங்கவேண்டியவனே கொலைபாதகனைக் கொல்லவேண்டும்; அவனைக் கண்டமாத்திரத்தில் அவனைக் கொன்றுபோடலாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">But if he thrust him of hatred, or hurl at him by laying of wait, that he die;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஒருவன் பகையினால் ஒருவனை விழத்தள்ளினதினாலாயினும், பதுங்கியிருந்து அவன் சாகத்தக்கதாய் அவன்மேல் ஏதாகிலும் எறிந்ததினாலாயினும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Or in enmity strike him with his hand, that he die: he that stroke him shall surely be put to death; for he is a murderer: the revenger of blood shall slay the murderer, when he meet him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவனைப் பகைத்து, தன் கையினால் அடித்ததினாலாயினும், அவன் செத்துப்போனால், அடித்தவன் கொலைபாதகன்; அவன் கொலைசெய்யப்படவேண்டும் பழிவாங்குகிறவன் கொலைபாதகனைக் கண்டமாத்திரத்தில் கொன்றுபோடலாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">But if he thrust him suddenly without enmity, or have cast upon him any thing without laying of wait,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ஒருவன் பகையொன்றும் இல்லாமல் சடுதியில் ஒருவனைத் தள்ளி விழப்பண்ணினதினாலாயினும், பதுங்கியிராமல் யாதொரு ஆயுதத்தை அவன்மேல் பட எறிந்ததினாலாயினும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Or with any stone, wherewith a man may die, seeing him not, and cast it upon him, that he die, and was not his enemy, neither sought his harm:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவனுக்குப் பகைஞனாயிராமலும் அவனுக்குத் தீங்கு செய்ய நினையாமலுமிருக்கையில், ஒருவனைக் கொன்றுபோடத்தக்க ஒரு கல்லினால் அவனைக்காணாமல் எறிய, அது அவன்மேல் பட்டதினாலாயினும், அவன் செத்துப்போனால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Then the congregation shall judge between the slayer and the revenger of blood according to these judgments:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அப்பொழுது கொலைசெய்தவனையும் பழிவாங்குகிறவனையும் சபையார் இந்த நியாயப்படி விசாரித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And the congregation shall deliver the slayer out of the hand of the revenger of blood, and the congregation shall restore him to the city of his refuge, where he was fled: and he shall abide in it unto the death of the high priest, which was anointed with the holy oil.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">கொலைசெய்தவனைப் பழிவாங்குகிறவனுடைய கைக்குத் தப்புவித்து, அவன் ஓடிப்போயிருந்த அடைக்கலப்பட்டணத்துக்கு அவனைத் திரும்பப் போகும்படி செய்யக்கடவர்கள்; பரிசுத்த தைலத்தினால் அபிஷேகம் பெற்ற பிரதான ஆசாரியன் மரணமடையுமட்டும் அவன் அதிலே இருக்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">But if the slayer shall at any time come without the border of the city of his refuge, where he was fled;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஆனாலும் கொலைசெய்தவன் தான் ஓடிப்போயிருக்கிற அடைக்கலப்பட்டணத்தின் எல்லையை விட்டு வெளிப்பட்டிருக்கும்போது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And the revenger of blood find him without the borders of the city of his refuge, and the revenger of blood kill the slayer; he shall not be guilty of blood:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">பழிவாங்குகிறவன் கொலை செய்தவனை அடைக்கலப்பட்டணத்துக்கு வெளியே கண்டுபிடித்துக் கொன்றுபோட்டால், அவன்மேல் இரத்தப்பழி இல்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Because he should have remained in the city of his refuge until the death of the high priest: but after the death of the high priest the slayer shall return into the land of his possession.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">கொலைசெய்தவன் பிரதான ஆசாரியன் மரணமடையுமட்டும் அடைக்கலப் பட்டணத்திலிருக்கவேண்டும்; பிரதான ஆசாரியன் மரணமடைந்தபின்பு, தன் சுதந்தரமான காணியாட்சிக்குத் திரும்பிப்போகலாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">So these things shall be for a statute of judgment unto you throughout your generations in all your dwellings.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">இவைகள் உங்கள் வாசஸ்தலங்களிலெங்கும் உங்கள் தலைமுறைதோறும் உங்களுக்கு நியாயவிதிப் பிரமாணமாயிருக்கக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Whoso kills any person, the murderer shall be put to death by the mouth of witnesses: but one witness shall not testify against any person to cause him to die.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">எவனாகிலும், ஒரு மனிதனைக் கொன்றுபோட்டால், அப்பொழுது சாட்சிகளுடைய வாக்குமூலத்தின்படியே அந்தக் கொலைபாதகனைக் கொலைசெய்யக்கடவர்கள்; ஒரே சாட்சியைக்கொண்டுமாத்திரம் ஒரு மனிதன் சாகும்படி தீர்ப்புச்செய்யலாகாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Moreover all of you shall take no satisfaction for the life of a murderer, which is guilty of death: but he shall be surely put to death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">சாகிறதற்கேற்ற குற்றஞ்சுமந்த கொலைபாதகனுடைய ஜீவனுக்காக நீங்கள் மீட்கும்பொருளை வாங்கக் கூடாது; அவன் தப்பாமல் கொலைசெய்யப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And all of you shall take no satisfaction for him that is fled to the city of his refuge, that he should come again to dwell in the land, until the death of the priest.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">தன் அடைக்கலப்பட்டணத்துக்கு ஓடிப்போனவன் ஆசாரியன் மரணமடையாததற்கு முன்னே தன் நாட்டிற்குத் திரும்பிவரும்படி நீங்கள் அவனுக்காக மீட்கும்பொருளை வாங்கக் கூடாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">So all of you shall not pollute the land wherein all of you are: for blood it defiles the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">நீங்கள் இருக்கும் தேசத்தைப் பரிசுத்தக் குலைச்சலாக்காதிருங்கள்; இரத்தம் தேசத்தைத் தீட்டுப்படுத்தும்; இரத்தம் சிந்தினவனுடைய இரத்தத்தினாலேயொழிய, வேறொன்றினாலும் தேசத்திலே சிந்துண்ட இரத்தத்திற்காகப் பாவநிவிர்த்தியில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Defile not therefore the land which all of you shall inhabit, wherein I dwell: for I the LORD dwell among the children of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">நீங்கள் குடியிருக்கும் என் வாசஸ்தலமாகிய தேசத்தைத் தீட்டுப்படுத்தவேண்டாம்; கர்த்தராகிய நான் இஸ்ரவேல் புத்திரர் நடுவே வாசம்பண்ணுகிறேன் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 8 |  8 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 8 ( 8) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 8 |  8</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And the men of Ephraim said unto him, Why have you served us thus, that you called us not, when you went to fight with the Midianites? And they did chide with him sharply.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அப்பொழுது எப்பிராயீம் மனுஷர் அவனை நோக்கி: நீ மீதியானியர்மேல் யுத்தம் பண்ணப்போகிறபோது; எங்களை அழைப்பிக்கவில்லையே, இப்படி நீ எங்களுக்குச் செய்தது என்ன என்று; அவனோடே பலத்த வாக்குவாதம் பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And he said unto them, What have I done now in comparison of you? Is not the gleaning of the grapes of Ephraim better than the vintage of Abiezer?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அதற்கு அவன்: நீங்கள் செய்ததற்கு நான் செய்தது எம்மாத்திரம்? அபியேஸ்ரியரின் திராட்சப்பழத்தின் முழு அறுப்பைப்பார்க்கிலும், எப்பிராயீமரின் மீதியான அறுப்பு அதிகம் அல்லவா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">God has delivered into your hands the princes of Midian, Oreb and Zeeb: and what was I able to do in comparison of you? Then their anger was decreased toward him, when he had said that.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">தேவன் உங்கள் கையிலே மீதியானியரின் அதிபதிகளாகிய ஓரேபையும் சேபையும் ஒப்புக்கொடுத்தாரே; நீங்கள் செய்ததிலும் நான் செய்யக்கூடியது எம்மாத்திரம் என்றான்; இந்த வார்த்தையை அவன் சொன்னபோது, அவன்மேலிருந்த அவர்களுடைய கோபம் ஆறிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And Gideon came to Jordan, and passed over, he, and the three hundred men that were with him, faint, yet pursuing them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">கிதியோன் யோர்தானுக்கு வந்தபோது, அவனும் அவனோடிருந்த முந்நூறுபேரும் அதைக் கடந்துபோய், விடாய்த்திருந்தும் (சத்துருவை) பின் தொடர்ந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And he said unto the men of Succoth, Give, I pray you, loaves of bread unto the people that follow me; for they be faint, and I am pursuing after Zebah and Zalmunna, kings of Midian.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவன் சுக்கோத்தின் மனுஷரை நோக்கி: என்னோடிருக்கிற ஜனத்திற்குச் சில அப்பங்களைக் கொடுங்கள்; அவர்கள் விடாய்த்திருக்கிறார்கள், நான் மீதியானியரின் ராஜாக்களாகிய சேபாவையும் சல்முனாவையும் பின்தொடருகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And the princes of Succoth said, Are the hands of Zebah and Zalmunna now in yours hand, that we should give bread unto yours army?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அதற்குச் சுக்கோத்தின் பிரபுக்கள்: உன் சேனைக்கு நாங்கள் அப்பம் கொடுக்கிறதற்குச் சேபா சல்முனா என்பவர்களின் கை உன் கைவசமாயிற்றோ என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And Gideon said, Therefore when the LORD has delivered Zebah and Zalmunna into mine hand, then I will tear your flesh with the thorns of the wilderness and with briers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அப்பொழுது கிதியோன் அவர்களை நோக்கி: கர்த்தர் சேபாவையும் சல்முனாவையும் என் கையில் ஒப்புக்கொடுக்கும் போது, உங்கள் மாம்சத்தை வனாந்தரத்தின் முள்ளுகளாலும் நெரிஞ்சில்களாலும் கிழித்துவிடுவேன் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And he went up thence to Penuel, and spoke unto them likewise: and the men of Penuel answered him as the men of Succoth had answered him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அவ்விடம் விட்டு, பெனூவேலுக்குப்போய், அவ்வூராரிடத்தில் அந்தப்படியே கேட்டான்; சுக்கோத்தின் மனுஷர் பிரதியுத்தரமாகச் சொன்னபடியே பெனூவேலின் மனுஷரும் அவனுக்குச் சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And he spoke also unto the men of Penuel, saying, When I come again in peace, I will break down this tower.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அப்பொழுது அவன், பெனூவேலின் மனுஷரைப் பார்த்து: நான் சமாதானத்தோடே திரும்பிவரும்போது, இந்தக் கோபுரத்தை இடித்துப்போடுவேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Now Zebah and Zalmunna were in Karkor, and their hosts with them, about fifteen thousand men, all that were left of all the hosts of the children of the east: for there fell an hundred and twenty thousand men that drew sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">சேபாவும் சல்முனாவும் அவர்களோடேகூட அவர்களுடைய சேனைகளும் ஏறக்குறைய பதினையாயிரம் பேர் கர்கோரில் இருந்தார்கள்; பட்டயம் உருவத்தக்க லட்சத்து இருபதினாயிரம் பேர் விழுந்தபடியால், கிழக்கத்தியாரின் சகல சேனையிலும் இவர்கள் மாத்திரம் மீந்திருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And Gideon went up by the way of them that dwelt in tents on the east of Nobah and Jogbehah, and stroke the host; for the host was secure.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">கிதியோன் கூடாரங்களிலே குடியிருக்கிறவர்கள் வழியாய் நோபாகுக்கும், யொகிபெயாவுக்கும் கிழக்கே போய், அந்தச் சேனை பயமில்லை என்றிருந்தபோது, அதை முறிய அடித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And when Zebah and Zalmunna fled, he pursued after them, and took the two kings of Midian, Zebah and Zalmunna, and humiliated all the host.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">சேபாவும் சல்முனாவும் ஓடிப்போனார்கள்; அவனோ அவர்களைத் தொடர்ந்து, சேபா சல்முனா என்னும் மீதியானியரின் இரண்டு ராஜாக்களையும் பிடித்து, சேனை முழுவதையும் கலங்கடித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And Gideon the son of Joash returned from battle before the sun was up,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">யோவாசின் குமாரனாகிய கிதியோன் யுத்தம்பண்ணி, சூரியன் உதிக்கும் முன்னே திரும்பிவந்தபோது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And caught a young man of the men of Succoth, and enquired of him: and he described unto him the princes of Succoth, and the elders thereof, even threescore and seventeen men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">சுக்கோத்தின் மனுஷரில் ஒரு வாலிபனைப் பிடித்து, அவனிடத்தில் விசாரித்தான்; அவன் சுக்கோத்தின் பிரபுக்களும் அதின் மூப்பருமாகிய எழுபத்தேழு மனுஷரின் பேரை அவனுக்கு எழுதிக்கொடுத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And he came unto the men of Succoth, and said, Behold Zebah and Zalmunna, with whom all of you did reproach me, saying, Are the hands of Zebah and Zalmunna now in yours hand, that we should give bread unto your men that are weary?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவன் சுக்கோத்து ஊராரிடத்தில் வந்து: இதோ, விடாய்த்திருக்கிற உன் மனுஷருக்கு நாங்கள் அப்பம் கொடுக்கிறதற்குச் சேபா சல்முனா என்பவர்களின் கை உன் கைவசமாயிற்றோ என்று நீங்கள் என்னை நிந்தித்துச் சொன்ன சேபாவும் சல்முனாவும் இங்கே இருக்கிறார்கள் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And he took the elders of the city, and thorns of the wilderness and briers, and with them he taught the men of Succoth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">பட்டணத்தின் மூப்பரைப் பிடித்து, வனாந்தரத்தின் முள்ளுகளையும் நெரிஞ்சில்களையும் கொண்டுவந்து, அவைகளால் சுக்கோத்தின் மனுஷருக்குப் புத்திவரப்பண்ணி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And he beat down the tower of Penuel, and slew the men of the city.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பெனூவேலின் கோபுரத்தை இடித்து, அவ்வூர் மனுஷரையும் கொன்று போட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Then said he unto Zebah and Zalmunna, What manner of men were they whom all of you slew at Tabor? And they answered, As you are, so were they; each one resembled the children of a king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">பின்பு அவன் சேபாவையும் சல்முனாவையும் நோக்கி: நீங்கள் தாபோரிலே கொன்று போட்ட அந்த மனுஷர் எப்படிப்பட்டவர்கள் என்று கேட்டான்; அதற்கு அவர்கள்: நீர் எப்படிப்பட்டவரோ அவர்களும் அப்படிப்பட்டவர்களே; ஒவ்வொருவனும் பார்வைக்கு ராஜகுமாரனைப்போலிருந்தான் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And he said, They were my brethren, even the sons of my mother: as the LORD lives, if all of you had saved them alive, I would not slay you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்பொழுது அவன்: அவர்கள் என் சகோதரரும் என் தாயின் பிள்ளைகளுமாயிருந்தார்கள்; அவர்களை உயிரோடே வைத்திருந்தீர்களானால், உங்களைக் கொல்லாதிருப்பேன் என்று கர்த்தரின் ஜீவனைக்கொண்டு சொல்லுகிறேன் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And he said unto Jether his firstborn, Up, and slay them. But the youth drew not his sword: for he feared, because he was yet a youth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">தன் மூத்தகுமாரனாகிய யெத்தேரை நோக்கி: நீ எழுந்து, இவர்களை வெட்டிப்போடு என்றான்; அந்த வாலிபன் இளைஞனானபடியால் பயந்து தன் பட்டயத்தை உருவாதிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Then Zebah and Zalmunna said, Rise you, and fall upon us: for as the man is, so is his strength. And Gideon arose, and slew Zebah and Zalmunna, and took away the ornaments that were on their camels' necks.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது சேபாவும் சல்முனாவும்; நீரே எழுந்து எங்கள்மேல் விழும்; மனுஷன் எப்படியோ அப்படியே அவன் பெலனும் இருக்கும் என்றார்கள்; கிதியோன் எழுந்து, சேபாவையும் சல்முனாவையும் கொன்றுபோட்டு, அவர்கள் ஒட்டகங்களின் கழுத்துகளில் இருந்த சாந்துக் காறைகளை எடுத்துக்கொண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Then the men of Israel said unto Gideon, Rule you over us, both you, and your son, and your son's son also: for you have delivered us from the hand of Midian.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பொழுது இஸ்ரவேல் மனுஷர் கிதியோனை நோக்கி: நீர் எங்களை மீதியானியர் கைக்கு நீங்கலாக்கிவிட்டபடியினால் நீரும் உம்முடைய குமாரனும், உம்முடைய குமாரனின் குமாரனும், எங்களை ஆளக்கடவீர்கள் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And Gideon said unto them, I will not rule over you, neither shall my son rule over you: the LORD shall rule over you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அதற்குக் கிதியோன்: நான் உங்களை ஆளமாட்டேன்; என் குமாரனும் உங்களை ஆளமாட்டான்; கர்த்தரே உங்களை ஆளுவாராக என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And Gideon said unto them, I would desire a request of you, that all of you would give me every man the earrings of his prey. (For they had golden earrings, because they were Ishmaelites.)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பின்பு கிதியோன் அவர்களை நோக்கி: உங்களிடத்தில் ஒரு காரியத்தைக் கேட்கிறேன்; நீங்கள் அவரவர் கொள்ளையிட்ட கடுக்கன்களை என்னிடத்தில் கொண்டுவாருங்கள் என்றான். அவர்கள் இஸ்மவேலராயிருந்தபடியினால் அவர்களிடத்தில் பொன்கடுக்கன்கள் இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And they answered, We will willingly give them. And they spread a garment, and did cast therein every man the earrings of his prey.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">இஸ்ரவேலர்: சந்தோஷமாய்க் கொடுப்போம் என்று சொல்லி, ஒரு வஸ்திரத்தை விரித்து, அவரவர் கொள்ளையிட்ட கடுக்கன்களை அதிலே போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And the weight of the golden earrings that he requested was a thousand and seven hundred shekels of gold; beside ornaments, and collars, and purple raiment that was on the kings of Midian, and beside the chains that were about their camels' necks.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">பிறைச் சிந்தாக்குகளும், ஆரங்களும், மீதியானியரின் ராஜாக்கள் போர்த்துக்கொண்டிருந்த இரத்தாம்பரங்களும், அவர்களுடைய ஒட்டகங்களின் கழுத்துகளிலிருந்த சரப்பணிகளும் அல்லாமல், அவன் கேட்டு வாங்கின பொன்கடுக்கன்களின் நிறை ஆயிரத்து எழுநூறு பொன் சேக்கலின் நிறையாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And Gideon made an ephod thereof, and put it in his city, even in Ophrah: and all Israel went thither a whoring after it: which thing became a snare unto Gideon, and to his house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அதினால் கிதியோன் ஒரு எபோத்தை உண்டாக்கி, அதைத் தன் ஊரான ஒப்ராவிலே வைத்தான்; இஸ்ரவேலரெல்லாரும் அதைப் பின்பற்றிச் சோரம்போனார்கள்; அது கிதியோனுக்கும் அவன் வீட்டாருக்கும் கண்ணியாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Thus was Midian subdued before the children of Israel, so that they lifted up their heads no more. And the country was in quietness forty years in the days of Gideon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">இந்தப்பிரகாரம் மீதியானியர் திரும்ப தலையெடுக்கக் கூடாதபடிக்கு, இஸ்ரவேல் புத்திரருக்கு முன்பாகத் தாழ்த்தப்பட்டார்கள்; தேசமானது கிதியோனின் நாட்களில் நாற்பதுவருஷம் அமைதலாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And Jerubbaal the son of Joash went and dwelt in his own house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">யோவாசின் குமாரனாகிய யெருபாகால் போய், தன் வீட்டிலே வாசமாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Gideon had threescore and ten sons of his body begotten: for he had many wives.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">கிதியோனுக்கு அநேகம் ஸ்திரீகள் இருந்தார்கள்; அவனுடைய கர்ப்பப்பிறப்பான குமாரர் எழுபதுபேர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And his concubine that was in Shechem, she also bare him a son, whose name he called Abimelech.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">சீகேமிலிருந்த அவனுடைய மறுமனையாட்டியும் அவனுக்கு ஒரு குமாரனைப் பெற்றாள்; அவனுக்கு அபிமெலேக்கு என்று பேரிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And Gideon the son of Joash died in a good old age, and was buried in the tomb of Joash his father, in Ophrah of the Abiezrites.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">பின்பு யோவாசின் குமாரனாகிய கிதியோன் நல்ல விருத்தாப்பியத்திலே மரித்து, ஒப்ராவிலே தன் தகப்பனாகிய யோவாஸ் என்னும் அபியேஸ்ரியனுடைய கல்லறையில் அடக்கம்பண்ணப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And it came to pass, as soon as Gideon was dead, that the children of Israel turned again, and went a whoring after Baalim, and made Baalberith their god.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">கிதியோன் மரித்தபின் இஸ்ரவேல் புத்திரர் திரும்பவும் பாகால்களைப் பின்பற்றிச் சோரம்போய், பாகல்பேரீத்தைத் தங்களுக்கு தேவனாக வைத்துக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And the children of Israel remembered not the LORD their God, who had delivered them out of the hands of all their enemies on every side:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரர் தங்களைச் சுற்றிலுமிருந்த தங்கள் எல்லாச் சத்துருக்களின் கையினின்றும் தங்களை இரட்சித்த தங்கள் தேவனாகிய கர்த்தரை நினையாமலும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">Neither showed they kindness to the house of Jerubbaal, namely, Gideon, according to all the goodness which he had showed unto Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">கிதியோன் என்னும் யெருபாகால் இஸ்ரவேலுக்குச் செய்த சகல நன்மைக்குந்தக்க தயவை அவன் வீட்டாருக்குப் பாராட்டாமலும் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

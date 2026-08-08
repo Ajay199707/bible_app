@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 25 |  25 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 25 ( 25) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 25 |  25</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Amaziah was twenty and five years old when he began to reign, and he reigned twenty and nine years in Jerusalem. And his mother's name was Jehoaddan of Jerusalem.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அமத்சியா இருபத்தைந்தாம் வயதிலே ராஜாவாகி, இருபத்தொன்பது வருஷம் எருசலேமில் அரசாண்டான்; எருசலேம் நகரத்தாளாகிய அவனுடைய தாயின்பேர் யோவதானாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And he did that which was right in the sight of the LORD, but not with a perfect heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அவன் கர்த்தரின் பார்வைக்குச் செம்மையானதைச் செய்தான்; ஆனாலும் முழுமனதோடே அப்படிச் செய்யவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Now it came to pass, when the kingdom was established to him, that he slew his servants that had killed the king his father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ராஜ்யபாரம் அவனுக்கு ஸ்திரப்பட்டபோது, அவன் தன் தகப்பனாகிய ராஜாவைக் கொலைசெய்த தன்னுடைய ஊழியக்காரரைக் கொன்றுபோட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">But he slew not their children, but did as it is written in the law in the book of Moses, where the LORD commanded, saying, The fathers shall not die for the children, neither shall the children die for the fathers, but every man shall die for his own sin.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">ஆனாலும் பிள்ளைகளினிமித்தம் பிதாக்களும், பிதாக்களினிமித்தம் பிள்ளைகளும் கொலைசெய்யப்படாமல், அவனவன் செய்த பாவத்தினிமித்தம் அவனவன் கொலைசெய்யப்படவேண்டுமென்று மோசேயின் நியாயப்பிரமாண புஸ்தகத்தில் எழுதியிருக்கிறபடி, கர்த்தர் கட்டளையிட்டபிரகாரம், அவர்களுடைய பிள்ளைகளை அவன் கொல்லாதிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Moreover Amaziah gathered Judah together, and made them captains over thousands, and captains over hundreds, according to the houses of their fathers, throughout all Judah and Benjamin: and he numbered them from twenty years old and above, and found them three hundred thousand choice men, able to go forth to war, that could handle spear and shield.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அமத்சியா யூதா மனுஷரைக் கூடிவரச் செய்து, அவர்கள் பிதாக்களுடைய வம்சங்களின்படியே, யூதா பென்யமீன் தேசங்கள் எங்கும் ஆயிரம்பேருக்கு அதிபதிகளையும் நூறுபேருக்கு அதிபதிகளையும் வைத்து, இருபது வயதுமுதற்கொண்டு அதற்கு மேற்பட்டவர்களை இலக்கம்பார்த்து, யுத்தத்திற்குப் புறப்படவும், சட்டியையும் கேடகத்தையும் பிடிக்கவுந்தக்க யுத்தவீரர் மூன்றுலட்சம்பேரென்று கண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">He hired also an hundred thousand mighty men of valour out of Israel for an hundred talents of silver.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">இஸ்ரவேலிலும் லட்சம் பராக்கிரமசாலிகளை நூறுதாலந்து வெள்ளி கொடுத்துக் கூலிக்கு அமர்த்தினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">But there came a man of God to him, saying, O king, let not the army of Israel go with you; for the LORD is not with Israel, to know, with all the children of Ephraim.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">தேவனுடைய மனுஷன் ஒருவன் அவனிடத்தில் வந்து: ராஜாவே, இஸ்ரவேலின் சேனை உம்முடனே வரலாகாது; கர்த்தர் எப்பிராயீமின் சகல புத்திரராகிய இஸ்ரவேலோடும் இருக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">But if you will go, do it; be strong for the battle: God shall make you fall before the enemy: for God has power to help, and to cast down.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">போக மனதானால் நீர் போம், காரியத்தை நடத்தும்; யுத்தத்திற்குத் திடன்கொண்டு நில்லும்; தேவன் உம்மைச் சத்துருவுக்கு முன்பாக விழப்பண்ணுவார்; ஒத்தாசை செய்யவும் விழப்பண்ணவும் தேவனாலே கூடும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And Amaziah said to the man of God, But what shall we do for the hundred talents which I have given to the army of Israel? And the man of God answered, The LORD is able to give you much more than this.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அப்பொழுது அமத்சியா: அப்படியானால் நான் இஸ்ரவேலின் சேனைக்குக் கொடுத்த நூறுதாலந்திற்காகச் செய்யவேண்டியது என்ன என்று தேவனுடைய மனுஷனைக் கேட்டான். அதற்கு தேவனுடைய மனுஷன்: அதைப்பார்க்கிலும் அதிகமாய்க் கர்த்தர் உமக்குக் கொடுக்கக்கூடும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Then Amaziah separated them, to know, the army that was come to him out of Ephraim, to go home again: wherefore their anger was greatly kindled against Judah, and they returned home in great anger.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அப்பொழுது அமத்சியா எப்பிராயீமரில் தன்னிடத்துக்கு வந்த சேனையைத் தங்கள் வீட்டிற்குப் போய்விடப் பிரித்துவிட்டான்; அதினால் அவர்களுக்கு யூதாவின்மேல் மிகுந்த கோபமூண்டு, உக்கிரமான எரிச்சலோடே தங்களிடத்திற்குத் திரும்பிப்போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And Amaziah strengthened himself, and led forth his people, and went to the valley of salt, and stroke of the children of Seir ten thousand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அமத்சியாவோ திடன்கொண்டு, தன் ஜனத்தைக் கூட்டி, உப்புப் பள்ளத்தாக்குக்குப் போய், சேயீர் புத்திரரில் பதினாயிரம்பேரை வெட்டினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And other ten thousand left alive did the children of Judah carry away captive, and brought them unto the top of the rock, and cast them down from the top of the rock, that they all were broken in pieces.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">யூதா புத்திரர், பதினாயிரம்பேரை உயிரோடு பிடித்து, ஒரு கன்மலையுச்சியிலே கொண்டுபோய், அவர்களெல்லாரும் நொறுங்கிப்போகத்தக்கதாய் அந்தக் கன்மலையுச்சியிலிருந்து கீழே தள்ளிவிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">But the soldiers of the army which Amaziah sent back, that they should not go with him to battle, fell upon the cities of Judah, from Samaria even unto Bethhoron, and stroke three thousand of them, and took much spoil.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">தன்னோடுகூட யுத்தத்திற்கு வராதபடிக்கு, அமத்சியா திருப்பிவிட்ட யுத்தபுருஷர், சமாரியா துவக்கிப் பெத்தொரோன்மட்டுமுள்ள யூதா பட்டணங்களின்மேல் விழுந்து, அவைகளில் மூவாயிரம்பேரை வெட்டி, திரளாய்க் கொள்ளையிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Now it came to pass, after that Amaziah was come from the slaughter of the Edomites, that he brought the gods of the children of Seir, and set them up to be his gods, and bowed down himself before them, and burned incense unto them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அமத்சியா ஏதோமியரை முறிய அடித்து, சேயீர் புத்திரரின் தெய்வங்களைக் கொண்டுவந்தபின்பு, அவன் அவைகளைத் தனக்கு தெய்வங்களாக வைத்து, அவைகளுக்கு முன்பாகப் பணிந்து அவைகளுக்குத் தூபங்காட்டினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Wherefore the anger of the LORD was kindled against Amaziah, and he sent unto him a prophet, which said unto him, Why have you sought after the gods of the people, which could not deliver their own people out of yours hand?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அப்பொழுது, கர்த்தர் அமத்சியாவின்மேல் கோபமூண்டவராகி, அவனிடத்துக்கு ஒரு தீர்க்கதரிசியை அனுப்பினார்; இவன் அவனை நோக்கி: தங்கள் ஜனத்தை உமது கைக்குத் தப்புவிக்காதேபோன ஜனத்தின் தெய்வங்களை நீர் நாடுவானேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And it came to pass, as he talked with him, that the king said unto him, Are you made of the king's counsel? forbear; why should you be smitten? Then the prophet ceased, and said, I know that God has determined to destroy you, because you have done this, and have not hearkened unto my counsel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">தன்னோடே அவன் இப்படிப் பேசினபோது, ராஜா அவனை நோக்கி: உன்னை ராஜாவுக்கு ஆலோசனைக்காரனாக வைத்தார்களோ? அதை விட்டுவிடு; நீ ஏன் வெட்டப்படவேண்டும் என்றான்; அப்பொழுது அந்தத் தீர்க்கதரிசி அதைவிட்டுவிட்டு: நீர் இப்படிச் செய்து, என் ஆலோசனையைக் கேளாமற்போனபடியினால், தேவன் உம்மை அழிக்க யோசனையாயிருக்கிறார் என்பதை அறிவேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Then Amaziah king of Judah took advice, and sent to Joash, the son of Jehoahaz, the son of Jehu, king of Israel, saying, Come, let us see one another in the face.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பின்பு யூதாவின் ராஜாவாகிய அமத்சியா யோசனைபண்ணி, யெகூவின் குமாரனாகிய யோவாகாசின் புத்திரன் யோவாஸ் என்னும் இஸ்ரவேலின் ராஜாவுக்கு: நம்முடைய சாமர்த்தியத்தைப் பார்ப்போம்வா என்று சொல்லியனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And Joash king of Israel sent to Amaziah king of Judah, saying, The thistle that was in Lebanon sent to the cedar that was in Lebanon, saying, Give your daughter to my son to wife: and there passed by a wild beast that was in Lebanon, and trode down the thistle.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அதற்கு இஸ்ரவேலின் ராஜாவாகிய யோவாஸ் யூதாவின் ராஜாவாகிய அமத்சியாவுக்கு ஆள் அனுப்பி: லீபனோனிலுள்ள முட்செடியானது லீபனோனிலுள்ள கேதுருமரத்தை நோக்கி: நீ உன் மகளை என் மகனுக்கு மனைவியாக விவாகஞ்செய்து கொடு என்று கேட்கச்சொல்லிற்று; ஆனாலும் லீபனோனிலுள்ள ஒருகாட்டுமிருகம் அந்த வழி போகையில் ஓடி அந்த முட்செடியை மிதித்துப்போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">You says, Lo, you have smitten the Edomites; and yours heart lifts you up to boast: abide now at home; why should you meddle to yours hurt, that you should fall, even you, and Judah with you?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">நீ ஏதோமியரை அடித்தாய் என்று பெருமைபாராட்ட உன் இருதயம் உன்னைக் கர்வங்கொள்ளப்பண்ணினது; இப்போதும் நீ உன் வீட்டிலே இரு; நீயும் உன்னோடே யூதாவும்கூட விழும்படிக்கு, பொல்லாப்பைத் தேடிக்கொள்வானேன் என்று சொல்லச்சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">But Amaziah would not hear; for it came of God, that he might deliver them into the hand of their enemies, because they sought after the gods of Edom.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஆனாலும் அமத்சியா செவிகொடாதேபோனான்; அவர்கள் ஏதோமின் தெய்வங்களை நாடினதினிமித்தம் அவர்களை அவர்கள் சத்துருக்கள் கையில் ஒப்புக்கொடுக்கும்படிக்கு தேவனாலே இப்படி நடந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">So Joash the king of Israel went up; and they saw one another in the face, both he and Amaziah king of Judah, at Bethshemesh, which belongs to Judah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்படியே இஸ்ரவேலின் ராஜாவாகிய யோவாஸ் வந்தான்; யூதாவிலிருக்கிற பெத்ஷிமேசிலே அவனும், அமத்சியா என்னும் யூதாவின் ராஜாவும் தங்கள் சாமர்த்தியத்தைப் பார்த்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Judah was put to the worse before Israel, and they fled every man to his tent.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">யூதா இஸ்ரவேலுக்கு முன்பாக முறிந்து, அவரவர் தங்கள் கூடாரங்களுக்கு ஓடிப்போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And Joash the king of Israel took Amaziah king of Judah, the son of Joash, the son of Jehoahaz, at Bethshemesh, and brought him to Jerusalem, and brake down the wall of Jerusalem from the gate of Ephraim to the corner gate, four hundred cubits.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">இஸ்ரவேலின் ராஜாவாகிய யோவாஸ் அகசியாவின் குமாரனாகிய யோவாசுக்குப் பிறந்த அமத்சியா என்னும் யூதாவின் ராஜாவைப் பெத்மேசிலே பிடித்து, அவனை எருசலேமுக்குக்கொண்டுவந்து, எருசலேமின் அலங்கத்திலே எப்பிராயீம் வாசல்தொடங்கி மூலைவாசல்மட்டும் நானூறுமுழ நீளம் இடித்துப்போட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And he took all the gold and the silver, and all the vessels that were found in the house of God with Obededom, and the treasures of the king's house, the hostages also, and returned to Samaria.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">தேவனுடைய ஆலயத்தில் ஓபேத் ஏதோமின் வசத்திலே அகப்பட்ட சகல பொன்னையும், வெள்ளியையும், சகல பணிமுட்டுகளையும், ராஜாவின் அரமனைப்பொக்கிஷங்களையும், கிரியிருப்பவர்களையும், பிடித்துக்கொண்டு சமாரியாவுக்குத் திரும்பிப்போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And Amaziah the son of Joash king of Judah lived after the death of Joash son of Jehoahaz king of Israel fifteen years.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">யோவாகாசின் குமாரனாகிய யோவாஸ் என்னும் இஸ்ரவேலின் ராஜா மரணமடைந்தபின்பு, யோவாசின் குமாரனாகிய அமத்சியா என்னும் யூதாவின் ராஜா பதினைந்து வருஷம் உயிரோடிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Now the rest of the acts of Amaziah, first and last, behold, are they not written in the book of the kings of Judah and Israel?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அமத்சியாவின் ஆதியோடந்த நடபடியான மற்ற வர்த்தமானங்கள் யூதா இஸ்ரவேல் ராஜாக்களின் புஸ்தகத்தில் அல்லவோ எழுதியிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Now after the time that Amaziah did turn away from following the LORD they made a conspiracy against him in Jerusalem; and he fled to Lachish: but they sent to Lachish after him, and slew him there.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அமத்சியா கர்த்தரை விட்டுப் பின்வாங்கின காலமுதற்கொண்டு எருசலேமிலிருந்தவர்கள் அவனுக்கு விரோதமாகக் கட்டுப்பாடுபண்ணிக்கொண்டார்கள்; அதினிமித்தம் அவன் லாகீசுக்கு ஓடிப்போனான்; ஆனாலும் அவன் பிறகே லாகீசுக்கு மனுஷரை அனுப்பினார்கள்; அவர்கγ் அங்கே அவனȠΕ் கொன்றுபǠξட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And they brought him upon horses, and buried him with his fathers in the city of Judah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">குதிரைகள்மேல் அவனை எடுத்துவந்து, யூதாவின் நகரத்தில் அவன் பிதாக்களண்டையிலே அடக்கம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

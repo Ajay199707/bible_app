@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 9 |  9 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for  chapter 9 ( 9) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-ByeMP6EF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title"> 9 |  9</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And Elisha the prophet called one of the children of the prophets, and said unto him, Gird up your loins, and take this box of oil in yours hand, and go to Ramothgilead:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அப்பொழுது தீர்க்கதரிசியாகிய எலிசா தீர்க்கதரிசிகளின் புத்திரரில் ஒருவனை அழைத்து: நீ இடைக்கட்டிக் கொண்டு, இந்தத் தைலக்குப்பியை உன் கையில் எடுத்துக்கொண்டு, கீலேயாத்திலுள்ள ராமோத்திற்குப் போ.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And when you come thither, look out there Jehu the son of Jehoshaphat the son of Nimshi, and go in, and make him arise up from among his brethren, and carry him to an inner chamber;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">நீ அங்கே சேர்ந்தபோது, நிம்சியின் மகனான யோசபாத்தின் குமாரன் யெகூ எங்கே இருக்கிறான் என்று பார்த்து, அங்கே உட்பிரவேசித்து, அவனைத் தன் சகோதரரின் நடுவிலிருந்து எழுந்திருக்கப்பண்ணி, அவனை உள்ளான ஒரு அறையிலே அழைத்துக்கொண்டுபோய்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">Then take the box of oil, and pour it on his head, and say, Thus says the LORD, I have anointed you king over Israel. Then open the door, and flee, and tarry not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">தைலக்குப்பியை எடுத்து, அவன் தலையின்மேல் வார்த்து: உன்னை இஸ்ரவேலின்மேல் ராஜாவாக அபிஷேகம்பண்ணினேன் என்று கர்த்தர் சொல்லுகிறார் என்று சொல்லி, கதவைத் திறந்து தாமதியாமல் ஓடிப்போ என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">So the young man, even the young man the prophet, went to Ramothgilead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்படியே தீர்க்கதரிசியின் ஊழியக்காரனாகிய அந்த வாலிபன் கீலேயாத்திலுள்ள ராமோத்திற்குப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And when he came, behold, the captains of the host were sitting; and he said, I have an errand to you, O captain. And Jehu said, Unto which of all us? And he said, To you, O captain.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவன் உட்பிரவேசித்தபோது, சேனாபதிகள் அங்கே உட்கார்ந்திருந்தார்கள்; அப்பொழுது அவன்: சேனாபதியே, உமக்குச் சொல்லவேண்டிய ஒரு வார்த்தை உண்டு என்றான். அதற்கு யெகூ: எங்களெல்லாருக்குள்ளும் யாருக்கு என்று கேட்டதற்கு, அவன், சேனாபதியாகிய உமக்குத்தான் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And he arose, and went into the house; and he poured the oil on his head, and said unto him, Thus says the LORD God of Israel, I have anointed you king over the people of the LORD, even over Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அவன் எழுந்து, அறைவீட்டிற்குள் பிரவேசித்தான்; அவன் அந்தத் தைலத்தை அவன் தலையின்மேல் வார்த்து, அவனை நோக்கி: இஸ்ரவேலின் தேவனாகிய கர்த்தர் சொல்லுகிறது என்னவென்றால், உன்னைக் கர்த்தருடைய ஜனமாகிய இஸ்ரவேலின்மேல் ராஜாவாக அபிஷேகம்பண்ணினேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And you shall strike the house of Ahab your master, that I may avenge the blood of my servants the prophets, and the blood of all the servants of the LORD, at the hand of Jezebel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">நான் என் ஊழியக்காரராகிய தீர்க்கதரிசிகளின் இரத்தப்பழியையும், கர்த்தருடைய சகல ஊழியக்காரரின் இரத்தப் பழியையும், யேசபேலின் கையிலே வாங்கும்படிக்கு நீ உன் ஆண்டவனாகிய ஆகாபின் குடும்பத்தை அழித்துவிடக்கடவாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">For the whole house of Ahab shall perish: and I will cut off from Ahab him that pisses against the wall, and him that is shut up and left in Israel:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">ஆகாபின் குடும்பமெல்லாம் அழியும் படிக்கு, நான் ஆகாபுக்குச் சுவரில் நீர் விடும் ஒரு நாய் முதலாய் இராதபடிக்கு, இஸ்ரவேலிலே அவனுடையவர்களில் அடைப்பட்டவனையும் விடுபட்டவனையும் கருவறுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And I will make the house of Ahab like the house of Jeroboam the son of Nebat, and like the house of Baasha the son of Ahijah:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஆகாபின் குடும்பத்தை நேபாத்தின் குமாரனாகிய யெரொபெயாமின் குடும்பத்துக்கும், அகியாவின் குமாரனாகிய பாஷாவின் குடும்பத்துக்கு சரியாக்குவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And the dogs shall eat Jezebel in the portion of Jezreel, and there shall be none to bury her. And he opened the door, and fled.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">யேசபேலை யெஸ்ரயேலின் நிலத்திலே நாய்கள் தின்றுவிடும்; அவளை அடக்கம்பண்ணுகிறவன் இல்லையென்கிறார் என்று சொல்லி, கதவைத் திறந்து ஓடிப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Then Jehu came forth to the servants of his lord: and one said unto him, Is all well? wherefore came this mad fellow to you? And he said unto them, All of you know the man, and his communication.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">யெகூ தன் ஆண்டவனுடைய ஊழியக்காரரிடத்துக்குத் திரும்பிவந்தபோது, அவர்கள் அவனை நோக்கி: சுகசெய்தியா? அந்தப் பயித்தியக்காரன் உன்னிடத்தில் வந்தது என்ன என்று கேட்டார்கள். அதற்கு அவன்: அந்த மனுஷனையும், அவன் சொன்ன காரியத்தையும் நீங்கள் அறிவீர்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And they said, It is false; tell us now. And he said, Thus and thus spoke he to me, saying, Thus says the LORD, I have anointed you king over Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அதற்கு அவர்கள்: அது பொய், அதை எங்களுக்குச் சொல்லும் என்றார்கள். அப்பொழுது அவன்: நான் உன்னை இஸ்ரவேலின்மேல் ராஜாவாக அபிஷேகம் பண்ணினேன் என்று கர்த்தர் உரைக்கிறார் என்று இன்ன இன்ன பிரகாரமாக என்னிடத்தில் சொன்னான் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Then they hasted, and took every man his garment, and put it under him on the top of the stairs, and blew with trumpets, saying, Jehu is king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது அவர்கள் தீவிரமாய் அவரவர் தங்கள் வஸ்திரத்தைப் படிகளின் உயரத்தில் அவன் கீழே விரித்து, எக்காளம் ஊதி: யெகூ ராஜாவானான் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">So Jehu the son of Jehoshaphat the son of Nimshi conspired against Joram. (Now Joram had kept Ramothgilead, he and all Israel, because of Hazael king of Syria.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அப்படியே நிம்சியின் மகனாகிய யோசபாத்தின் குமாரன் யெகூ என்பவன் யோராமுக்கு விரோதமாய்க் கட்டுப்பாடு பண்ணினான்; யோராமோ இஸ்ரவேலர் எல்லாரோடுங்கூட கீலேயாத்திலுள்ள ராமோத்திலே சீரியாவின் ராஜாவாகிய ஆசகேலினிமித்தம் காவல் வைத்து வைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">But king Joram was returned to be healed in Jezreel of the wounds which the Syrians had given him, when he fought with Hazael king of Syria.) And Jehu said, If it be your minds, then let none go forth nor escape out of the city to go to tell it in Jezreel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">ஆனாலும் சீரியாவின் ராஜாவாகிய ஆசகேலோடே பண்ணின யுத்தத்திலே, சீரியர் தன்னை வெட்டின காயங்களை யெஸ்ரயேலிலே ஆற்றிக்கொள்ளுகிறதற்கு, ராஜாவாகிய யோராம் திரும்பிப் போயிருந்தான். யெகூ என்பவன்: இது; உங்களுக்குச் சம்மதியாயிருந்தால் யெஸ்ரயேலில் இதை அறிவிக்கிறதற்கு ஒருவரும் பட்டணத்திலிருந்து தப்பிப் போகும்படி விடாதிருங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">So Jehu rode in a chariot, and went to Jezreel; for Joram lay there. And Ahaziah king of Judah was come down to see Joram.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அப்பொழுது யெகூ இரதத்தின்மேல் ஏறி, யெஸ்ரயேலுக்கு நேராகப் போனான், யோராம் அங்கே வியாதியாய்க் கிடந்தான்; யோராமைப்பார்க்க, யூதாவின் ராஜாவாகிய அகசியாவும் அங்கே வந்திருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And there stood a watchman on the tower in Jezreel, and he spied the company of Jehu as he came, and said, I see a company. And Joram said, Take an horseman, and send to meet them, and let him say, Is it peace?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">யெஸ்ரயேலில் கோபுரத்தின்மேல் நிற்கிற ஜாமக்காரன், யெகூவின் கூட்டம் வருகிறதைக் கண்டு: ஒரு கூட்டத்தைக் காண்கிறேன் என்றான். அப்பொழுது யோராம்: நீ ஒரு குதிரைவீரனைக் கூப்பிட்டு, அவர்களுக்கு எதிராக அனுப்பிச் சமாதானமா என்று கேட்கச்சொல் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">So there went one on horseback to meet him, and said, Thus says the king, Is it peace? And Jehu said, What have you to do with peace? turn you behind me. And the watchman told, saying, The messenger came to them, but he comes not again.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அந்தக் குதிரைவீரன்: அவனுக்கு எதிர்கொண்டுபோய், சமாதானமா என்று ராஜா கேட்கச்சொன்னார் என்றான். அதற்கு யெகூ: சமாதானத்தைப் பற்றி உனக்கு என்ன? என் பிறகே திரும்பிவா என்றான். அப்பொழுது ஜாமக்காரன்: அனுப்பப்பட்டவன் அவர்கள் இருக்கும் இடமட்டும் போனபோதிலும் திரும்பிவரவில்லை என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Then he sent out a second on horseback, which came to them, and said, Thus says the king, Is it peace? And Jehu answered, What have you to do with peace? turn you behind me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ஆகையால் வேறொரு குதிரைவீரனை அனுப்பினான், அவன் அவர்களிடத்தில் போய்: சமாதானமா என்று ராஜா கேட்கச்சொன்னார் என்றான். அதற்கு யெகூ சமாதானத்தைப்பற்றி உனக்கு என்ன? என் பிறகே திரும்பிவா என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the watchman told, saying, He came even unto them, and comes not again: and the driving is like the driving of Jehu the son of Nimshi; for he drives furiously.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அப்பொழுது ஜாமக்காரன்: அவன் அவர்கள் இருக்கும் இடமட்டும் போனபோதிலும் திரும்பிவரவில்லை என்றும், ஓட்டுகிறது நிம்சியின் குமாரனாகிய யெகூ ஓட்டுகிறது; போல இருக்கிறது; அதிவேகமாய் ஓட்டுகிறான் என்றும் சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And Joram said, Make ready. And his chariot was made ready. And Joram king of Israel and Ahaziah king of Judah went out, each in his chariot, and they went out against Jehu, and met him in the portion of Naboth the Jezreelite.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது யோராம்: இரதத்தை ஆயத்தப்படுத்து என்றான்; அவனுடைய இரத்ததை ஆயத்தப்படுத்தினபோது, இஸ்ரவேலின் ராஜாவாகிய யோராமும், யூதாவின் ராஜாவாகிய அகசியாவும் அவனவன் தன் தன் இரதத்தில் ஏறி யெகூவுக்கு நேராகப் புறப்பட்டு, யெஸ்ரயேலியனாகிய நாபோத்தின் நிலத்திலே அவனுக்கு எதிர்ப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And it came to pass, when Joram saw Jehu, that he said, Is it peace, Jehu? And he answered, What peace, so long as the whoredoms of your mother Jezebel and her witchcrafts are so many?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">யோராம் யெகூவைக் கண்டவுடனே: யெகூவே, சமாதானமா என்றான். அதற்கு யெகூ: உன் தாயாகிய யேசபேலின் வேசித்தனங்களும் அவளுடைய பில்லி சூனியங்களும், இத்தனை ஏராளமாயிருக்கையில் சமாதானம் ஏது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And Joram turned his hands, and fled, and said to Ahaziah, There is treachery, O Ahaziah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அப்பொழுது யோராம் தன் இரதத்தைத் திருப்பிக்கொண்டு ஓடிப்போய், அகசியாவை நோக்கி: அகசியாவே, இது சதி என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And Jehu drew a bow with his full strength, and stroke Jehoram between his arms, and the arrow went out at his heart, and he sunk down in his chariot.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">யெகூ தன் கையால் வில்லை நாணேற்றி, அம்பு யோராமுடைய நெஞ்சில் உருவிப் புறப்படத்தக்கதாய், அவனை அவன் புயங்களின் நடுவே எய்தான்; அதினால் அவன் தன் இரதத்திலே சுருண்டு விழுந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Then said Jehu to Bidkar his captain, Take up, and cast him in the portion of the field of Naboth the Jezreelite: for remember how that, when I and you rode together after Ahab his father, the LORD laid this burden upon him;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அப்பொழுது யெகூ, தன் சேனாபதியாகிய பித்காரை நோக்கி: அவனை எடுத்து, யெஸ்ரயேலியனாகிய நாபோத்தின் வயல்நிலத்தில் எறிந்து போடு; நானும் நீயும் ஒரு சோடாய் அவன் தகப்பனாகிய ஆகாபின் பிறகே குதிரை ஏறி வருகிறபோது, கர்த்தர் இந்த ஆக்கினையை அவன்மேல் சுமத்தினார் என்பதை நினைத்துக்கொள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Surely I have seen yesterday the blood of Naboth, and the blood of his sons, says the LORD; and I will requite you in this portion, says the LORD. Now therefore take and cast him into the portion of ground, according to the word of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">நேற்று நாபோத்தின் இரத்தத்தையும், அவன் குமாரரின் இரத்தத்தையும் கண்டேன் அல்லவா என்றும், இந்த நிலத்தில்; உனக்கு நீதியைச் சரிக்கட்டுவேன் என்றும் அப்பொழுது கர்த்தர் சொன்னாரே; இப்போதும் அவனை எடுத்து, கர்த்தருடைய வார்த்தையின்படியே இந்த நிலத்தில் எறிந்துபோடு என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">But when Ahaziah the king of Judah saw this, he fled by the way of the garden house. And Jehu followed after him, and said, Strike him also in the chariot. And they did so at the going up to Gur, which is by Ibleam. And he fled to Megiddo, and died there.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">இதை யூதாவின் ராஜாவாகிய அகசியா கண்டு, தோட்டத்தின் வீட்டுவழியாய் ஓடிப்போனான்; யெகூ அவனைப் பின் தொடர்ந்து: அவனையும் இரதத்திலே வெட்டிப்போடுங்கள் என்றான்; அவர்கள் இப்லேயாம் கிட்ட இருக்கிற கூர்மலையின் மேல் ஏறுகிற வழியிலே அப்படிச் செய்தார்கள்; அவன் மெகிதோவுக்கு ஓடிப்போய் அங்கே செத்துப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And his servants carried him in a chariot to Jerusalem, and buried him in his tomb with his fathers in the city of David.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அவனுடைய ஊழியக்காரர் அவனை இரதத்தின்மேல் எருசலேமுக்குக் கொண்டுபோய், அவனைத் தாவீதின் நகரத்தில் அவன் பிதாக்களோடு அவனுடைய கல்லறையிலே அடக்கம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And in the eleventh year of Joram the son of Ahab began Ahaziah to reign over Judah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">இந்த அகசியா, ஆகாபுடைய குமாரனாகிய யோராமின் பதினோராம் வருஷத்தில் யூதாவின்மேல் ராஜாவானான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And when Jehu was come to Jezreel, Jezebel heard of it; and she painted her face, and tired her head, and looked out at a window.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">யெகூ யெஸ்ரயேலுக்கு வந்தான்; அதை யேசபேல் கேட்டபோது, தன் கண்களுக்கு மையிட்டு, தன் தலையைச் சிங்காரித்துக்கொண்டு, ஜன்னல்வழியாய் எட்டிப்பார்த்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And as Jehu entered in at the gate, she said, Had Zimri peace, who slew his master?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">யெகூ ஒலிமுகவாசலில் வந்தபோது, அவள்: தன் ஆண்டவனைக் கொன்ற சிம்ரி ேமம் அடைந்தானா என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And he lifted up his face to the window, and said, Who is on my side? who? And there looked out to him two or three eunuchs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அப்பொழுது அவன் தன் முகத்தை அந்த ஜன்னலுக்கு நேராக ஏறெடுத்து: என் பட்சத்தில் இருக்கிறது யார்? யார்? என்று கேட்டதற்கு, இரண்டு மூன்று பிரதானிகள் அவனை எட்டிப்பார்த்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And he said, Throw her down. So they threw her down: and some of her blood was sprinkled on the wall, and on the horses: and he trode her under foot.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அப்பொழுது அவன்: அவளைக் கீழே தள்ளுங்கள் என்றான்; அப்படியே அவளைக் கீழே தள்ளினதினால், அவளுடைய இரத்தம் சுவரிலும் குதிரைகளிலும் தெறித்தது; அவன் அவளை மிதித்துக் கொண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And when he was come in, he did eat and drink, and said, Go, see now this cursed woman, and bury her: for she is a king's daughter.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">உள்ளேபோய், புசித்துக் குடித்தபின்பு: நீங்கள் போய் சபிக்கப்பட்ட அந்த ஸ்திரீயைப் பார்த்து, அவளை அடக்கம்பண்ணுங்கள்; அவள் ஒரு ராஜகுமாரத்தி என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And they went to bury her: but they found no more of her than the skull, and the feet, and the palms of her hands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவர்கள் அவளை அடக்கம்பண்ணப் போகிறபோது, அவளுடைய தலையோட்டையும் கால்களையும் உள்ளங்கைகளையுமே அல்லாமல் வேறொன்றையும் காணவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Wherefore they came again, and told him. And he said, This is the word of the LORD, which he spoke by his servant Elijah the Tishbite, saying, In the portion of Jezreel shall dogs eat the flesh of Jezebel:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">ஆகையால் அவர்கள் திரும்பவந்து அவனுக்கு அறிவித்தார்கள்; அப்பொழுது அவன்: இது கர்த்தர் திஸ்பியனாகிய எலியா என்னும் தம்முடைய ஊழியக்காரனைக் கொண்டு சொன்ன வார்த்தை; யெஸ்ரயேலின் நிலத்திலே நாய்கள் யேசபேலின் மாம்சத்தைத் தின்னும் என்றும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And the carcass of Jezebel shall be as dung upon the face of the field in the portion of Jezreel; so that they shall not say, This is Jezebel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">இன்னது யேசபேலென்று சொல்லக் கூடாதபடிக்கு, யேசபேலின் பிரேதம் யெஸ்ரயேலின் நிலத்திலே வயல்வெளியின்மேல் போடும் எருவைப்போல் ஆகும் என்றும் சொன்னாரே என்றான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
