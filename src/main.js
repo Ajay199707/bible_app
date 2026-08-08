@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load full authentic Bible datasets first
   const dbLoadPromise = initBibleData().then(() => {
-    loadScripture(currentBookId, currentChapter);
+    // Pass pushToHistory=false on initial load — only update the URL when user actively navigates
+    loadScripture(currentBookId, currentChapter, null, false);
   });
 
   // Enable play button after ResponsiveVoice is ready or a 2.5-second timeout
