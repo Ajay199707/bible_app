@@ -93,9 +93,6 @@ englishBooks.forEach((enBookObj, bIdx) => {
     // Modify template for this chapter
     let pageHtml = template;
 
-    // 1. Adjust relative asset paths for subfolder chapters/
-    pageHtml = pageHtml.replace(/(href|src)="\.\//g, '$1="../');
-
     // 2. Set title and metadata for SEO
     const cleanBookName2 = enBookName.toLowerCase().replace(/[^a-z0-9]+/g, '_');
     const pageUrl = `https://ajay199707.github.io/bible_app/chapters/${cleanBookName2}_chapter_${chapterNum}.html`;
