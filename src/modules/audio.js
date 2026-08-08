@@ -74,8 +74,10 @@ function speakNextVerse() {
     return;
   }
 
-  // Try Web Speech API first
-  if (synth) {
+  // Try ResponsiveVoice first as it is cross-browser stable and avoids SpeechSynthesis bugs
+  if (typeof responsiveVoice !== 'undefined') {
+    playAudioStream(textToRead, itemLang);
+  } else if (synth) {
     playWebSpeech(textToRead, itemLang);
   } else {
     playAudioStream(textToRead, itemLang);
