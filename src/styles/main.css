@@ -283,6 +283,12 @@ body {
   transform: scale(1.05);
 }
 
+.play-chapter-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
 /* Language & Mode Selector Pills */
 .mode-pills-group {
   display: flex;

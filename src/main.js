@@ -39,6 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Enable play button after ResponsiveVoice is ready or a 2-second timeout
+  const enablePlayBtn = () => {
+    const playBtn = document.getElementById('btn-play-chapter');
+    if (playBtn) playBtn.disabled = false;
+  };
+  if (typeof window !== 'undefined' && window.responsiveVoice) {
+    window.responsiveVoice.OnVoiceReady = enablePlayBtn;
+  }
+  setTimeout(enablePlayBtn, 2000);
 });
 
 function loadScripture(bookId, chapter) {
