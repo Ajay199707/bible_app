@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ajay199707.github.io/bible_app/sitemap.xml
