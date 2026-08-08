@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { BIBLE_BOOKS } from '../src/data/books.js';
 
 const distPath = path.resolve('dist');
 const publicPath = path.resolve('public');
@@ -41,11 +42,12 @@ const tamilBooks = tamilData.Book || [];
 // Loop through each book and chapter
 englishBooks.forEach((enBookObj, bIdx) => {
   const bookId = bIdx + 1;
-  const enBookName = enBookObj.BookName || '';
-  
+  const bookMeta = BIBLE_BOOKS[bIdx] || { nameEn: '', nameTa: '' };
+  const enBookName = bookMeta.nameEn;
+  const taBookName = bookMeta.nameTa;
+
   // Find matching Tamil book
   const taBookObj = tamilBooks[bIdx] || {};
-  const taBookName = taBookObj.BookName || '';
 
   const enChapters = enBookObj.Chapter || [];
   const taChapters = taBookObj.Chapter || [];
