@@ -152,6 +152,11 @@ function loadScripture(bookId, chapter, targetVerse = null, pushToHistory = true
     updateBrowserUrl(currentBookId, currentChapter);
   }
 
+  // Update streak, mark chapter read, and update lock screen metadata
+  updateReadingStreak();
+  markChapterRead(currentBookId, currentChapter);
+  setupMediaSession(currentBookId, currentChapter);
+
   if (targetVerse) {
     setTimeout(() => {
       const activeRow = document.querySelector(`.verse-row[data-verse="${targetVerse}"]`);
@@ -506,6 +511,137 @@ function setupEventListeners() {
       }
     });
   });
+
+  // -------------------------------------------------------
+  // SWIPE GESTURES: Left/Right to navigate chapters on mobile
+  // -------------------------------------------------------
+  let touchStartX = 0;
+  let touchStartY = 0;
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    // Only trigger if horizontal swipe is dominant and >= 60px
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      // Don't swipe if a modal is open
+      if (document.querySelector('.modal-overlay.open')) return;
+      if (dx < 0) {
+        // Swipe left → next chapter
+        goNextChapter();
+      } else {
+        // Swipe right → previous chapter
+        goPrevChapter();
+      }
+    }
+  }, { passive: true });
+
+  // -------------------------------------------------------
+  // VERSE SHARE BUTTON: Copy deep-link to a specific verse
+  // -------------------------------------------------------
+  document.getElementById('reader-root')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action="share"]');
+    if (!btn) return;
+    const row = btn.closest('.verse-row');
+    if (!row) return;
+    const bookId = Number(row.dataset.bookId);
+    const chapter = Number(row.dataset.chapter);
+    const verse = Number(row.dataset.verse);
+    const book = getBookById(bookId);
+    const cleanName = book.nameEn.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+    const url = `https://ajay199707.github.io/bible_app/chapters/${cleanName}_chapter_${chapter}.html#verse-${verse}`;
+    if (navigator.share) {
+      navigator.share({
+        title: `${book.nameEn} ${chapter}:${verse}`,
+        text: `${book.nameEn} ${chapter}:${verse} | ${book.nameTa} ${chapter}:${verse}`,
+        url
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(url).then(() => {
+        alert(`Verse link copied!\n${url}`);
+      });
+    }
+  });
+}
+
+// -------------------------------------------------------
+// CHAPTER NAVIGATION HELPERS (used by swipe + buttons)
+// -------------------------------------------------------
+function goNextChapter() {
+  const book = getBookById(currentBookId);
+  if (currentChapter < book.chapters) {
+    loadScripture(currentBookId, currentChapter + 1);
+  } else if (currentBookId < 66) {
+    loadScripture(currentBookId + 1, 1);
+  }
+}
+
+function goPrevChapter() {
+  if (currentChapter > 1) {
+    loadScripture(currentBookId, currentChapter - 1);
+  } else if (currentBookId > 1) {
+    const prevBook = getBookById(currentBookId - 1);
+    loadScripture(currentBookId - 1, prevBook.chapters);
+  }
+}
+
+// -------------------------------------------------------
+// DAILY READING STREAK
+// -------------------------------------------------------
+function updateReadingStreak() {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{"lastDate":"","streak":0,"completed":{}}');
+    if (data.lastDate === today) return; // Already counted today
+    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    data.streak = data.lastDate === yesterday ? data.streak + 1 : 1;
+    data.lastDate = today;
+    localStorage.setItem('bible_streak_v1', JSON.stringify(data));
+    const badge = document.getElementById('streak-badge');
+    if (badge) badge.textContent = `🔥 ${data.streak} day${data.streak > 1 ? 's' : ''}`;
+  } catch (e) {}
+}
+
+// -------------------------------------------------------
+// CHAPTER COMPLETION TRACKING
+// -------------------------------------------------------
+export function markChapterRead(bookId, chapter) {
+  try {
+    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{"lastDate":"","streak":0,"completed":{}}');
+    const key = `${bookId}_${chapter}`;
+    if (!data.completed) data.completed = {};
+    data.completed[key] = true;
+    localStorage.setItem('bible_streak_v1', JSON.stringify(data));
+  } catch (e) {}
+}
+
+export function isChapterRead(bookId, chapter) {
+  try {
+    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{}');
+    return !!(data.completed && data.completed[`${bookId}_${chapter}`]);
+  } catch (e) { return false; }
+}
+
+// -------------------------------------------------------
+// MEDIA SESSION API: Lock screen / notification audio controls
+// -------------------------------------------------------
+function setupMediaSession(bookId, chapter) {
+  if (!('mediaSession' in navigator)) return;
+  const book = getBookById(bookId);
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: `${book.nameEn} ${chapter}`,
+    artist: `${book.nameTa} ${chapter}`,
+    album: 'Holy Bible — English & Tamil',
+    artwork: [
+      { src: 'https://ajay199707.github.io/bible_app/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: 'https://ajay199707.github.io/bible_app/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ]
+  });
+  navigator.mediaSession.setActionHandler('previoustrack', () => goPrevChapter());
+  navigator.mediaSession.setActionHandler('nexttrack', () => goNextChapter());
 }
 
 function updateAudioUiState() {

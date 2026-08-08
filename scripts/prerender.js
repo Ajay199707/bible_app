@@ -97,11 +97,32 @@ englishBooks.forEach((enBookObj, bIdx) => {
     pageHtml = pageHtml.replace(/(href|src)="\.\//g, '$1="../');
 
     // 2. Set title and metadata for SEO
+    const cleanBookName2 = enBookName.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+    const pageUrl = `https://ajay199707.github.io/bible_app/chapters/${cleanBookName2}_chapter_${chapterNum}.html`;
     const titleText = `${enBookName} ${chapterNum} | ${taBookName} ${chapterNum} — Parallel English & Tamil Bible`;
     const descriptionText = `Read and listen to the Holy Bible parallel view for ${enBookName} chapter ${chapterNum} (${taBookName} ${chapterNum}) in English and Tamil side-by-side.`;
 
     pageHtml = pageHtml.replace(/<title>.*?<\/title>/, `<title>${titleText}</title>`);
     pageHtml = pageHtml.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${descriptionText}" />`);
+
+    // Inject Open Graph + Twitter Card tags after </title>
+    const ogTags = `
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="${pageUrl}" />
+  <meta property="og:title" content="${titleText}" />
+  <meta property="og:description" content="${descriptionText}" />
+  <meta property="og:image" content="https://ajay199707.github.io/bible_app/icon-512.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ta_IN" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="${titleText}" />
+  <meta name="twitter:description" content="${descriptionText}" />
+  <meta name="twitter:image" content="https://ajay199707.github.io/bible_app/icon-512.png" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="${pageUrl}" />`;
+    pageHtml = pageHtml.replace('</title>', `</title>${ogTags}`);
 
     // 3. Inject pre-rendered reader content
     pageHtml = pageHtml.replace('<main id="reader-root">', `<main id="reader-root">${readerHtml}`);
