@@ -4,7 +4,8 @@ import { renderReaderContent } from './modules/reader.js';
 import { 
   getSettings, saveSettings, getLastRead, saveLastRead, 
   toggleBookmark, setHighlight, saveVerseNote, getVerseNote, 
-  getBookmarks, getNotes 
+  getBookmarks, getNotes,
+  markChapterRead, isChapterRead, updateReadingStreak
 } from './modules/storage.js';
 import { playChapterVerses, pauseAudio, resumeAudio, stopAudio, setPlaybackRate, getAudioState, initAudio } from './modules/audio.js';
 import { searchBible } from './modules/search.js';
@@ -153,7 +154,7 @@ function loadScripture(bookId, chapter, targetVerse = null, pushToHistory = true
   }
 
   // Update streak, mark chapter read, and update lock screen metadata
-  updateReadingStreak();
+  updateStreakUI();
   markChapterRead(currentBookId, currentChapter);
   setupMediaSession(currentBookId, currentChapter);
 
@@ -591,18 +592,17 @@ function goPrevChapter() {
 // -------------------------------------------------------
 // DAILY READING STREAK
 // -------------------------------------------------------
-function updateReadingStreak() {
-  try {
-    const today = new Date().toISOString().slice(0, 10);
-    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{"lastDate":"","streak":0,"completed":{}}');
-    if (data.lastDate === today) return; // Already counted today
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-    data.streak = data.lastDate === yesterday ? data.streak + 1 : 1;
-    data.lastDate = today;
-    localStorage.setItem('bible_streak_v1', JSON.stringify(data));
-    const badge = document.getElementById('streak-badge');
-    if (badge) badge.textContent = `🔥 ${data.streak} day${data.streak > 1 ? 's' : ''}`;
-  } catch (e) {}
+function updateStreakUI() {
+  const streakCount = updateReadingStreak(); // call the imported storage function
+  const badge = document.getElementById('streak-badge');
+  if (badge) {
+    if (streakCount > 0) {
+      badge.textContent = `🔥 ${streakCount} day${streakCount > 1 ? 's' : ''}`;
+      badge.style.display = 'inline-flex';
+    } else {
+      badge.style.display = 'none';
+    }
+  }
 }
 
 // -------------------------------------------------------
