@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esther 9 | எஸ்தர் 9 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Esther chapter 9 (எஸ்தர் 9) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Esther 9 | எஸ்தர் 9</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now in the twelfth month, that is, the month Adar, on the thirteenth day of the same, when the king's commandment and his decree drew near to be put in execution, in the day that the enemies of the Jews hoped to have power over them, (though it was turned to the contrary, that the Jews had rule over them that hated them;)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">ராஜாவின் வார்த்தையின்படியும் அவனுடைய கட்டளையின்படியும் செய்யப்படுகிறதற்கு, ஆதார் மாதம் என்கிற பன்னிரண்டாம் மாதம் பதின்மூன்றாந் தேதியிலே, யூதரின் பகைஞர் அவர்களை மேற்கொள்ளலாம் என்று நம்பினார்களே; அந்த நாளிலேதானே, யூதரானவர்கள் தங்கள் பகைஞரை மேற்கொள்ளும்படிக்குக் காரியம் மாறுதலாய் முடிந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">The Jews gathered themselves together in their cities throughout all the provinces of the king Ahasuerus, to lay hand on such as sought their hurt: and no man could withstand them; for the fear of them fell upon all people.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">யூதர் அகாஸ்வேரு ராஜாவின் சகல நாடுகளிலுமுள்ள பட்டணங்களிலே தங்களுக்குப் பொல்லாப்பு வரப்பண்ணப்பார்த்தவர்கள்மேல் கைபோடக் கூடிக்கொண்டார்கள்; ஒருவரும் அவர்களுக்கு முன்பாக நிற்கக் கூடாதிருந்தது; அவர்களைப் பற்றி சகல ஜனங்களுக்கும் பயமுண்டாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And all the rulers of the provinces, and the lieutenants, and the deputies, and officers of the king, helped the Jews; because the fear of Mordecai fell upon them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">நாடுகளின் சகல அதிகாரிகளும், தேசாதிபதிகளும், துரைகளும், ராஜாவின் காரியங்களை நடப்பிக்கிறவர்களும், யூதருக்குத் துணைநின்றார்கள்; மொர்தெகாயினால் உண்டான பயங்கரம் அவர்களைப் பிடித்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">For Mordecai was great in the king's house, and his fame went out throughout all the provinces: for this man Mordecai waxed greater and greater.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">மொர்தெகாய் ராஜாவின் அரமனையில் பெரியவனாயிருந்தான்; அவனுடைய கீர்த்தி எல்லா நாடுகளிலும் பிரசித்தமாயிற்று; இந்த மொர்தெகாய் என்பவன் மேன்மேலும் பெரியவனானான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Thus the Jews stroke all their enemies with the stroke of the sword, and slaughter, and destruction, and did what they would unto those that hated them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அப்படியே யூதர் தங்கள் சத்துருக்களையெல்லாம் பட்டயத்தால் வெட்டிக்கொன்று நிர்மூலமாக்கி, தங்கள் இஷ்டப்படி தங்கள் பகைஞருக்குச் செய்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And in Shushan the palace the Jews slew and destroyed five hundred men.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">யூதர் சூசான் அரமனையிலும் ஐந்நூறுபேரைக் கொன்று நிர்மூலமாக்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And Parshandatha, and Dalphon, and Aspatha,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அம்மெதாத்தாவின் குமாரனாகிய ஆமான் என்னும் யூதருடைய சத்துருவின் குமாரரான பர்சான்தாத்தா, தல்போன், அஸ்பாதா,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And Poratha, and Adalia, and Aridatha,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">பொராதா, அதலியா, அரிதாத்தா,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And Parmashta, and Arisai, and Aridai, and Vajezatha,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">பர்மஷடா, அரிசாய், அரிதாய், வாய்சாதா ஆகிய பத்துப்பேரையும் கொன்றுபோட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">The ten sons of Haman the son of Hammedatha, the enemy of the Jews, slew they; but on the spoil laid they not their hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">ஆனாலும் கொள்ளையிடத் தங்கள் கையை நீட்டவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">On that day the number of those that were slain in Shushan the palace was brought before the king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அன்றையதினம் சூசான் அரமனையில் கொன்றுபோடப்பட்டவர்களின் தொகை ராஜசமுகத்தில் கொண்டுவரப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And the king said unto Esther the queen, The Jews have slain and destroyed five hundred men in Shushan the palace, and the ten sons of Haman; what have they done in the rest of the king's provinces? now what is your petition? and it shall be granted you: or what is your request further? and it shall be done.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது ராஜா, ராஜாத்தியாகிய எஸ்தரை நோக்கி: யூதர் சூசான் அரமனையில் ஐந்நூறுபேரையும் ஆமானின் பத்துக் குமாரரையும் கொன்று நிர்மூலமாக்கினார்கள்; ராஜாவின் மற்ற நாடுகளிலும் என்ன செய்திருப்பார்களோ! இப்போதும் உன் வேண்டுதல் என்ன? அது உனக்குக் கட்டளையிடப்படும்; உன் மன்றாட்டு என்ன? அதின்படி செய்யப்படும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Then said Esther, If it please the king, let it be granted to the Jews which are in Shushan to do tomorrow also according unto this day's decree, and let Haman's ten sons be hanged upon the gallows.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது எஸ்தர்: ராஜாவுக்குச் சித்தமாயிருந்தால், இன்றையத்தினத்துக் கட்டளையின்படியே சூசானிலிருக்கிற யூதர் நாளையதினமும் செய்யவும், ஆமானின் பத்துக் குமாரரின் உடலையும் தூக்குமரத்தில் தூக்கிப்போடவும் உத்தரவாகவேண்டும் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And the king commanded it so to be done: and the decree was given at Shushan; and they hanged Haman's ten sons.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அப்படியே செய்யும்படிக்கு ராஜா உத்தரவு கொடுத்தான், அதற்குச் சூசானிலே கட்டளை பிறந்தது; ஆமானின் பத்துக் குமாரருடைய உடலையும் தூக்கிப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">For the Jews that were in Shushan gathered themselves together on the fourteenth day also of the month Adar, and slew three hundred men at Shushan; but on the prey they laid not their hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">சூசானிலிருக்கிற யூதர் ஆதார் மாதத்தின் பதினாலாந்தேதியிலும் கூடிச்சேர்ந்து, சூசானில் முந்நூறுபேரைக்கொன்றுபோட்டார்கள்; ஆனாலும் கொள்ளையிடத் தங்கள் கையை நீட்டவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">But the other Jews that were in the king's provinces gathered themselves together, and stood for their lives, and had rest from their enemies, and slew of their foes seventy and five thousand, but they laid not their hands on the prey,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ராஜாவின் நாடுகளிலுள்ள மற்ற யூதர்கள் தங்கள் பிராணனைத் தற்காக்கவும், தங்கள் பகைஞருக்கு விலகி இளைப்பாறுதல் அடையவும் ஒருமிக்கச் சேர்ந்து, தங்கள் விரோதிகளில் எழுபத்தையாயிரம் பேரைக் கொன்றுபோட்டார்கள்; ஆனாலும் கொள்ளையிடத் தங்கள் கையை நீட்டவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">On the thirteenth day of the month Adar; and on the fourteenth day of the same rested they, and made it a day of feasting and gladness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">ஆதார் மாதத்தின் பதின்முன்றாந்தேதியிலே இப்படிச் செய்து, பதினாலாந்தேதியிலே இளைப்பாறி, அதை விருந்துண்டு சந்தோஷப்படுகிற பண்டிகை நாளாக்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">But the Jews that were at Shushan assembled together on the thirteenth day thereof, and on the fourteenth thereof; and on the fifteenth day of the same they rested, and made it a day of feasting and gladness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">சூசானிலுள்ள யூதரோவென்றால், அந்த மாதத்தின் பதின்முன்றாந்தேதியிலும் பதினாலாந்தேதியிலும் ஏகமாய்க்கூடி, பதினைந்தாந்தேதியில் இளைப்பாறி, அதை விருந்துண்டு சந்தோஷப்படுகிற பண்டிகைநாளாக்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Therefore the Jews of the villages, that dwelt in the towns without protective walls, made the fourteenth day of the month Adar a day of gladness and feasting, and a good day, and of sending portions one to another.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ஆதலால் அலங்கமில்லாத ஊர்களில் குடியிருக்கிற நாட்டுப்புறத்தாரான யூதர்கள் ஆதார் மாதத்தின் பதினாலாந்தேதியைச் சந்தோஷமும், விருந்துண்கிற பூரிப்புமான நாளும், ஒருவருக்கொருவர் வரிசைகளை அனுப்புகிற நாளுமாக்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And Mordecai wrote these things, and sent letters unto all the Jews that were in all the provinces of the king Ahasuerus, both nigh and far,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">மொர்தெகாய் இந்த வர்த்தமானங்களை எழுதி, சமீபத்திலும் தூரத்திலுமிருக்கிற அகாஸ்வேரு ராஜாவின் சகல நாடுகளிலுமுள்ள எல்லா யூதருக்கும் நிருபங்களை அனுப்பி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">To establish this among them, that they should keep the fourteenth day of the month Adar, and the fifteenth day of the same, yearly,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">வருஷந்தோறும் ஆதார் மாதத்தின் பதினாலாம் பதினைந்தாந்தேதிகளை யூதர் தங்கள் பகைஞருக்கு நீங்கலாகி இளைப்பாறுதல் அடைந்த நாட்களாகவும், அவர்கள் சஞ்சலம் சந்தோஷமாகவும், அவர்கள் துக்கம் மகிழ்ச்சியாகவும் மாறின மாதமாகவும் ஆசரித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">As the days wherein the Jews rested from their enemies, and the month which was turned unto them from sorrow to joy, and from mourning into a good day: that they should make them days of feasting and joy, and of sending portions one to another, and gifts to the poor.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அந்நாட்களில் விருந்துண்டு சந்தோஷங்கொண்டாடவும், ஒருவருக்கொருவர் வரிசைகளை அனுப்பவும், எளியவர்களுக்குத் தானதர்மஞ்செய்யவும் வேண்டுமென்று திட்டம்பண்ணினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And the Jews undertook to do as they had begun, and as Mordecai had written unto them;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அப்பொழுது யூதர் தாங்கள் செய்யத்தொடங்கினபடியும் மொர்தெகாய் தங்களுக்கு எழுதினபடியும் செய்யச் சம்மதித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Because Haman the son of Hammedatha, the Agagite, the enemy of all the Jews, had devised against the Jews to destroy them, and had cast Pur, that is, the lot, to consume them, and to destroy them;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அம்மெதாத்தாவின் குமாரனாகிய ஆமான் என்னும் ஆகாகியன், யூதருக்கெல்லாம் சத்துருவாயிருந்து யூதரைச் சங்கரிக்க நினைத்து, அவர்களை அழிக்கவும் நிர்மூலமாக்கவும், பூர் என்னப்பட்ட சீட்டைப் போடுவித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But when Esther came before the king, he commanded by letters that his wicked device, which he devised against the Jews, should return upon his own head, and that he and his sons should be hanged on the gallows.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">ஆனாலும் எஸ்தர், ராஜசமுகத்தில்போய், யூதருக்கு விரோதமாய் அவன் நினைத்த அவனுடைய பொல்லாத யோசனை அவனுடைய தலையின்மேல் திரும்பும்படி கட்டளை பிறப்பித்ததினாலே, அவனையும் அவன் குமாரரையும் மரத்திலே தூக்கிப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Wherefore they called these days Purim after the name of Pur. Therefore for all the words of this letter, and of that which they had seen concerning this matter, and which had come unto them,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஆகையினால் அந்த நாட்கள் பூர் என்னும் பேரினால் பூரீம் என்னப்பட்டது; அவன் அந்த நிருபத்தில் எழுதியிருந்த எல்லா வார்த்தைகளினிமித்தமும், தாங்களே இந்த விஷயத்தில் அநுபவித்தவைகளினித்தமும், தங்களுக்கு நேரிட்டவைகளினிமித்தமும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">The Jews ordained, and took upon them, and upon their seed, and upon all such as joined themselves unto them, so as it should not fail, that they would keep these two days according to their writing, and according to their appointed time every year;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">யூதர் அதைத் திட்டப்படுத்தி, அந்த இரண்டு நாட்களைக்குறித்து எழுதியிருக்கிறபடியே, அவைகளை வருஷந்தோறும் அவைகளின் சரியான காலத்திலே ஆசரியாமலிருப்பதில்லை என்பதையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And that these days should be remembered and kept throughout every generation, every family, every province, and every city; and that these days of Purim should not fail from among the Jews, nor the memorial of them perish from their seed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">இந்த நாட்கள் எல்லாத் தலைமுறைகளிலும், வம்சங்களிலும், தேசங்களிலும், ஊர்களிலும் நினைவுகூரப்பட்டு ஆசரிக்கப்படவேண்டும் என்பதையும் இந்தப் பூரீம் என்னும் பண்டிகை நாட்கள் யூதருக்குள்ளே தவறிப்போகாமலும், அவைகளை நினைவுருதல் தங்கள் சந்ததியாருக்குள்ளே ஒழிந்துபோகாமலும் இருக்கவேண்டும் என்பதையும், தங்கள்மேலும், தங்கள் சந்ததியார்மேலும், தங்கள் மார்க்கத்தில் அமையப்போகிற மற்ற யாவர்மேலும் கடனாக நியமித்துக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Then Esther the queen, the daughter of Abihail, and Mordecai the Jew, wrote with all authority, to confirm this second letter of Purim.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">பூரீமைக்குறித்து எழுதியிருக்கிற இந்த இரண்டாம் நிருபத்தைத் திடப்படுத்தும்படிக்கு, அபியாயேலின் குமாரத்தியாகிய எஸ்தர் என்னும் ராஜாத்தியும், யூதனாகிய மொர்தெகாயும், பின்னும் மகா உறுதியாய் எழுதினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And he sent the letters unto all the Jews, to the hundred twenty and seven provinces of the kingdom of Ahasuerus, with words of peace and truth,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">யூதனாகிய மொர்தெகாயும், ராஜாத்தியாகிய எஸ்தரும் யூதருக்கு உறுதிப்பாடுபண்ணினதும், அவர்கள்தானே உபவாசத்தோடும் அலறுதலோடும் ஆசரிப்போம் என்று தங்கள்மேலும் தங்கள் சந்ததியார்மேலும் கடனாக நியமித்துக்கொண்டதுமான, பூரீம் என்னப்பட்ட இந்த நாட்கள் அவைகளின் சரியான காலங்களில் ஆசரிக்கப்படும் காரியத்தை உறுதியாக்க,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">To confirm these days of Purim in their times appointed, according as Mordecai the Jew and Esther the queen had commanded with authority them, and as they had decreed for themselves and for their seed, the matters of the fastings and their cry.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அவன் அகாஸ்வேருவின் ராஜ்யத்திலுள்ள நூற்றிருபத்தேழு நாடுகளிலுமிருக்கிற எல்லா யூதருக்கும் சமாதானமும் உண்மையுமான வார்த்தைகளையுடைய நிருபங்களை அனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And the decree of Esther confirmed these matters of Purim; and it was written in the book.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">இப்படியே எஸ்தரின் கட்டளையானது பூரீம் நாட்களைப்பற்றின இந்த வர்த்தமானங்களைத் திடப்படுத்தினது; அது ஒரு புஸ்தகத்தில் எழுதப்பட்டது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

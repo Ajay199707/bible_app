@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesis 31 | ஆதியாகமம் 31 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Genesis chapter 31 (ஆதியாகமம் 31) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Genesis 31 | ஆதியாகமம் 31</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And he heard the words of Laban's sons, saying, Jacob has taken away all that was our father's; and of that which was our father's has he got all this glory.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்பு, லாபானுடைய குமாரர்: எங்கள் தகப்பனுக்கு உண்டானவைகள் யாவையும் யாக்கோபு எடுத்துக் கொண்டான் என்றும், எங்கள் தகப்பனுடைய பொருளினாலே இந்தச் செல்வத்தையெல்லாம் அடைந்தான் என்றும் சொன்ன வார்த்தைகளை யாக்கோபு கேட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And Jacob beheld the countenance of Laban, and, behold, it was not toward him as before.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">லாபானின் முகத்தை யாக்கோபு பார்த்தபோது, அது நேற்று முந்தைநாள் இருந்ததுபோல் இராமல் வேறுபட்டிருக்கக் கண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the LORD said unto Jacob, Return unto the land of your fathers, and to your kindred; and I will be with you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">கர்த்தர் யாக்கோபை நோக்கி: உன் பிதாக்களுடைய தேசத்திற்கும் உன் இனத்தாரிடத்திற்கும் நீ திரும்பிப்போ; நான் உன்னோடேகூட இருப்பேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And Jacob sent and called Rachel and Leah to the field unto his flock,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்பொழுது யாக்கோபு, ராகேலையும் லேயாளையும் வெளியிலே தன் மந்தையிடத்தில் அழைப்பித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And said unto them, I see your father's countenance, that it is not toward me as before; but the God of my father has been with me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவர்களை நோக்கி: உங்கள் தகப்பனுடைய முகம் நேற்று முந்தைநாள் இருந்ததுபோல இருக்கவில்லையென்று எனக்குத் தோன்றுகிறது; ஆனாலும் என் தகப்பனுடைய தேவன் என்னோடேகூட இருக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And all of you know that with all my power I have served your father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">என்னால் இயன்றமட்டும் நான் உங்கள் தகப்பனுக்கு ஊழியஞ்செய்தேன் என்று நீங்கள் அறிந்திருக்கிறீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And your father has deceived me, and changed my wages ten times; but God suffered him not to hurt me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">உங்கள் தகப்பனோ, என்னை வஞ்சித்து, என் சம்பளத்தைப் பத்துமுறை மாற்றினான்; ஆனாலும் அவன் எனக்குத் தீங்குசெய்ய தேவன் அவனுக்கு இடங்கொடுக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">If he said thus, The speckled shall be your wages; then all the cattle bare speckled: and if he said thus, The striped with bands shall be your hire; then bare all the cattle striped with bands.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">புள்ளியுள்ளவைகள் உன் சம்பளமாயிருக்கும் என்று அவன் சொன்னபோது, ஆடுகளெல்லாம் புள்ளியுள்ள குட்டிகளைப் போட்டது; கலப்பு நிறமானவைகள் உன் சம்பளமாயிருக்கும் என்று அவன் சொன்னபோது, ஆடுகளெல்லாம் கலப்புநிறக் குட்டிகளைப் போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Thus God has taken away the cattle of your father, and given them to me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இவ்விதமாய் தேவன் உங்கள் தகப்பனுடைய ஆடுகளை எடுத்து, எனக்குத் தந்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And it came to pass at the time that the cattle conceived, that I lifted up mine eyes, and saw in a dream, and, behold, the rams which leaped upon the cattle were striped with bands, speckled, and greyed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">ஆடுகள் பொலியும் காலத்திலே நான் கண்ட சொப்பனத்தில் என் கண்களை ஏறெடுத்துப் பார்க்கும்போது, ஆடுகளோடே பொலியும் கடாக்கள் கலப்பு நிறமும் புள்ளியும் வரியும் உள்ளவைகளாகக் கண்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the angel of God spoke unto me in a dream, saying, Jacob: And I said, Here am I.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அன்றியும் தேவதூதன் ஒருவர் சொப்பனத்தில் யாக்கோபே என்றார்; இதோ, இருக்கிறேன் என்றேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And he said, Lift up now yours eyes, and see, all the rams which leap upon the cattle are striped with bands, speckled, and greyed: for I have seen all that Laban does unto you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது அவர்: உன் கண்களை ஏறெடுத்துப்பார்; ஆடுகளோடே பொலியும் கடாக்களெல்லாம் கலப்புநிறமும் புள்ளியும் வரியுமுள்ளவைகளாய் இருக்கிறது; லாபான் உனக்குச் செய்கிற யாவையும் கண்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">I am the God of Bethel, where you anointed the pillar, and where you vowed a vow unto me: now arise, get you out from this land, and return unto the land of your kindred.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">நீ தூணுக்கு அபிஷேகம் செய்து, எனக்கு ஒரு பொருத்தனையைப் பண்ணின பெத்தேலிலே உனக்குத் தரிசனமான தேவன் நானே; இப்பொழுது நீ எழுந்து, இந்தத் தேசத்தைவிட்டுப் புறப்பட்டு, உன் இனத்தாரிருக்கிற தேசத்திற்குத் திரும்பிப்போ என்று சொன்னார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And Rachel and Leah answered and said unto him, Is there yet any portion or inheritance for us in our father's house?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அதற்கு ராகேலும் லேயாளும்: எங்கள் தகப்பன் வீட்டில் இனி எங்களுக்குப் பங்கும் சுதந்தரமும் உண்டோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Are we not counted of him strangers? for he has sold us, and has quite devoured also our money.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவரால் நாங்கள் அந்நியராய் எண்ணப்படவில்லையா? அவர் எங்களை விற்று, எங்கள் பணத்தையும் வாயிலே போட்டுக்கொண்டார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">For all the riches which God has taken from our father, that is ours, and our children's: now then, whatsoever God has said unto you, do.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஆகையால் தேவன் எங்கள் தகப்பனிடத்திலிருந்து எடுத்த ஐசுவரியம் எல்லாம் நமக்கும் நம்முடைய பிள்ளைகளுக்கும் உரியது; இப்படியிருக்க, தேவன் உமக்குச் சொன்னபடியெல்லாம் செய்யும் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Then Jacob rose up, and set his sons and his wives upon camels;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அப்பொழுது யாக்கோபு எழுந்து, தன் பிள்ளைகளையும் தன் மனைவிகளையும் ஒட்டகங்களின்மேல் ஏற்றி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And he carried away all his cattle, and all his goods which he had got, the cattle of his getting, which he had got in Padanaram, in order to go to Isaac his father in the land of Canaan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">தான் பதான் அராமிலே சம்பாதித்த மிருகஜீவன்களாகிய மந்தைகள் அனைத்தையும் தன் பொருள்கள் எல்லாவற்றையும் எடுத்துக்கொண்டு, கானான் தேசத்தில் இருக்கிற தன் தகப்பனாகிய ஈசாக்கிடத்துக்குப் போகப் புறப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And Laban went to shear his sheep: and Rachel had stolen the images that were her father's.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">லாபான், தன் ஆடுகளை மயிர்கத்தரிக்கப் போயிருந்தான்; அந்தச் சமயத்திலே ராகேல் தன் தகப்பனுடைய சொரூபங்களைத் திருடிக்கொண்டாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And Jacob stole away unexpectedly to Laban the Syrian, in that he told him not that he fled.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">யாக்கோபு தான் ஓடிப்போகிறதைச் சீரியனாகிய லாபானுக்கு அறிவியாமல், திருட்டளவாய்ப் போய்விட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">So he fled with all that he had; and he rose up, and passed over the river, and set his face toward the mount Gilead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">இப்படியே அவன் தனக்கு உண்டானவைகளையெல்லாம் எடுத்துக்கொண்டு, ஆற்றைக் கடந்து, கீலேயாத் மலையை நோக்கி ஓடிப்போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And it was told Laban on the third day that Jacob was fled.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">யாக்கோபு ஓடிப்போனது மூன்றாம் நாளிலே லாபானுக்கு அறிவிக்கப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And he took his brethren with him, and pursued after him seven days' journey; and they overtook him in the mount Gilead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அப்பொழுது அவன், தன் சகோதரரைக் கூட்டிக்கொண்டு, ஏழுநாள் பிரயாணபரியந்தம் அவனைத் தொடர்ந்துபோய், கீலேயாத் மலையிலே அவனைக் கண்டுபிடித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And God came to Laban the Syrian in a dream by night, and said unto him, Take heed that you speak not to Jacob either good or bad.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அன்று ராத்திரி தேவன் சீரியா தேசத்தானாகிய லாபானுக்குச் சொப்பனத்தில் தோன்றி: நீ யாக்கோபோடே நன்மையே அன்றித் தீமை ஒன்றும் பேசாதபடிக்கு எச்சரிக்கையாயிரு என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Then Laban overtook Jacob. Now Jacob had pitched his tent in the mount: and Laban with his brethren pitched in the mount of Gilead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">லாபான் யாக்கோபினிடத்தில் வந்தான்; யாக்கோபு மலையிலே தன் கூடாரத்தைப் போட்டிருந்தான்; லாபானும் தன் சகோதரரோடேகூடக் கீலேயாத் மலையிலே கூடாரம் போட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And Laban said to Jacob, What have you done, that you have stolen away unexpectedly to me, and carried away my daughters, as captives taken with the sword?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அப்பொழுது லாபான் யாக்கோபை நோக்கி: நீ திருட்டளவாய்ப் புறப்பட்டு, என் குமாரத்திகளை யுத்தத்தில் பிடித்த சிறைகளைப்போலக் கொண்டுவந்தது என்ன செய்கை?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Wherefore did you flee away secretly, and steal away from me; and did not tell me, that I might have sent you away with delight, and with songs, with timbrel, and with harp?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">நீ ஓடிப்போவதை மறைத்து, எனக்கு அறிவியாமல், திருட்டளவாய் என்னிடத்திலிருந்து வந்துவிட்டது என்ன? நான் உன்னைச் சந்தோஷமாய், சங்கீதம் மேளதாளம் கின்னரமுழக்கத்துடனே அனுப்புவேனே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And have not suffered me to kiss my sons and my daughters? you have now done foolishly in so doing.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">என் பிள்ளைகளையும் என் குமாரத்திகளையும் நான் முத்தஞ்செய்ய விடாமல் போனதென்ன? இந்தச் செய்கையை நீ மதியில்லாமல் செய்தாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">It is in the power of my hand to do you hurt: but the God of your father spoke unto me last night, saying, Take you heed that you speak not to Jacob either good or bad.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">உங்களுக்குப் பொல்லாப்புச் செய்ய எனக்கு வல்லமையுண்டு; ஆகிலும் உங்கள் தகப்பனுடைய தேவன் நீ யாக்கோபோடே நன்மையே அன்றித் தீமை ஒன்றும் பேசாதபடிக்கு எச்சரிக்கையாயிரு என்று நேற்று ராத்திரி என்னோடே சொன்னார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And now, though you would essentially be gone, because you sore longed after your father's house, yet wherefore have you stolen my gods?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">இப்பொழுதும் உன் தகப்பனுடைய வீட்டின்மேலுள்ள வாஞ்சையினால் புறப்பட்டுப்போகிறதானால் போகலாம், என் தெய்வங்களை ஏன் திருடிக்கொண்டுபோகிறாய் என்று கேட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And Jacob answered and said to Laban, Because I was afraid: for I said, Possibly you would take by force your daughters from me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">யாக்கோபு லாபானுக்குப் பிரதியுத்தரமாக: உம்முடைய குமாரத்திகளைப் பலாத்காரமாய்ப் பிடித்து வைத்துக்கொள்வீர் என்று நான் அஞ்சினதினாலே இப்படி வந்துவிட்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">With whomsoever you find your gods, let him not live: before our brethren discern you what is yours with me, and take it to you. For Jacob knew not that Rachel had stolen them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">ஆனாலும் யாரிடத்தில் உம்முடைய தெய்வங்களைக் கண்டுபிடிக்கிறீரோ, அவனை உயிரோடே விடவேண்டாம்; உம்முடைய பொருள்கள் ஏதாவது என் வசத்தில் உண்டானால் நீர் அதை நம்முடைய சகோதரருக்கு முன்பாகப் பரிசோதித்தறிந்து, அதை எடுத்துக்கொள்ளும் என்றான். ராகேல் அவைகளைத் திருடிக்கொண்டுவந்ததை யாக்கோபு அறியாதிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And Laban went into Jacob's tent, and into Leah's tent, and into the two maidservants' tents; but he found them not. Then went he out of Leah's tent, and entered into Rachel's tent.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அப்பொழுது லாபான் யாக்கோபின் கூடாரத்திலும், லேயாளின் கூடாரத்திலும், இரண்டு வேலைக்காரிகளின் கூடாரத்திலும் பிரவேசித்துப் பார்த்தும் ஒன்றும் கண்டுபிடிக்கவில்லை; பின்பு, லேயாளின் கூடாரத்தைவிட்டு ராகேலின் கூடாரத்துக்குப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Now Rachel had taken the images, and put them in the camel's furniture, and sat upon them. And Laban searched all the tent, but found them not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">ராகேல் அந்தச் சுரூபங்களை எடுத்து, ஒட்டகச் சேணத்தின்கீழ் வைத்து, அதின்மேல் உட்கார்ந்திருந்தாள், லாபான் கூடாரம் எங்கும் தடவிப்பார்த்தும், அவைகளைக் கண்டுபிடிக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And she said to her father, Let it not displease my lord that I cannot rise up before you; for the custom of women is upon me. And he searched but found not the images.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவள் தன் தகப்பனை நோக்கி: என் ஆண்டவனாகிய உமக்கு முன்பாக நான் எழுந்திராததைக்குறித்துக் கோபங்கொள்ளவேண்டாம்; ஸ்திரீகளுக்குள்ள வழிபாடு எனக்கு உண்டாயிருக்கிறது என்றாள்; அப்படியே அவன் அந்தச் சுரூபங்களைத் தேடியும் கண்டுபிடிக்கவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And Jacob was angry, and find fault with Laban: and Jacob answered and said to Laban, What is my trespass? what is my sin, that you have so hotly pursued after me?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அப்பொழுது யாக்கோபுக்குக் கோபம் எழும்பி, லாபானோடே வாக்குவாதம்பண்ணி: நீர் என்னை இவ்வளவு உக்கிரமாய்த் தொடர்ந்துவரும்படிக்கு நான் செய்த தப்பிதம் என்ன? நான் செய்த துரோகம் என்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">Whereas you have searched all my stuff, what have you found of all your household stuff? set it here before my brethren and your brethren, that they may judge between us both.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">என் தட்டுமுட்டுகளையெல்லாம் தடவிப்பார்த்தீரே; உம்முடைய வீட்டுத் தட்டுமுட்டுகளில் என்னத்தைக் கண்டுபிடித்தீர்? அதை என்னுடைய சகோதரருக்கும் உம்முடைய சகோதரருக்கும் முன்பாக இங்கே வையும்; அவர்கள் எனக்கும் உமக்கும் நடுத்தீர்க்கட்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">This twenty years have I been with you; your ewes and your she goats have not cast their young, and the rams of your flock have I not eaten.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">இந்த இருபது வருஷகாலமாய் நான் உம்மிடத்தில் இருந்தேன்; உம்முடைய செம்மறியாடுகளும் வெள்ளாடுகளும் சினையழியவில்லை; உம்முடைய மந்தைகளின் கடாக்களை நான் தின்னவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">That which was torn of beasts I brought not unto you; I bare the loss of it; of my hand did you require it, whether stolen by day, or stolen by night.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">பீறுண்டதை நான் உம்மிடத்துக்குக் கொண்டுவராமல், அதற்காக நான் உத்தரவாதம்பண்ணினேன்; பகலில் களவுபோனதையும், இரவில் களவுபோனதையும் என் கையில் கேட்டு வாங்கினீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">Thus I was; in the day the drought consumed me, and the frost by night; and my sleep departed from mine eyes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">பகலிலே வெயிலும் இரவிலே குளிரும் என்னைப் பட்சித்தது; நித்திரை என் கண்களுக்குத் தூரமாயிருந்தது; இவ்விதமாய்ப் பாடுபட்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">Thus have I been twenty years in your house; I served you fourteen years for your two daughters, and six years for your cattle: and you have changed my wages ten times.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">இந்த இருபது வருஷகாலம் உம்முடைய வீட்டிலே இருந்தேன்; பதினாலு வருஷம் உம்முடைய இரண்டு குமாரத்திகளுக்காகவும், ஆறு வருஷம் உம்முடைய மந்தைக்காகவும் உம்மிடத்தில் சேவித்தேன்; பத்துமுறை என் சம்பளத்தை மாற்றினீர்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">Except the God of my father, the God of Abraham, and the fear of Isaac, had been with me, surely you had sent me away now empty. God has seen mine affliction and the labour of my hands, and rebuked you last night.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">என் பிதாவின் தேவனாகிய ஆபிரகாமின் தேவனும் ஈசாக்கின் பயபக்திக்குரியவரும் என்னோடிராமற்போனால், நீர் இப்பொழுது என்னை வெறுமையாய் அனுப்பிவிட்டிருப்பீர்; தேவன் என் சிறுமையையும் என் கைப்பிரயாசத்தையும் பார்த்து, நேற்று ராத்திரி உம்மைக் கடிந்துகொண்டார் என்று சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And Laban answered and said unto Jacob, These daughters are my daughters, and these children are my children, and these cattle are my cattle, and all that you see is mine: and what can I do this day unto these my daughters, or unto their children which they have born?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">அப்பொழுது லாபான் யாக்கோபுக்குப் பிரதியுத்தரமாக: இந்தக் குமாரத்திகள் என் குமாரத்திகள், இந்தப் பிள்ளைகள் என் பிள்ளைகள், இந்த மந்தை என் மந்தை; நீ காண்கிற யாவும் என்னுடையவைகள்; என் குமாரத்திகளாகிய இவர்களையும், இவர்கள் பெற்ற பிள்ளைகளையும் இன்று நான் என்ன செய்யக்கூடும்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">Now therefore come you, let us make a covenant, I and you; and let it be for a witness between me and you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">இப்பொழுதும் எனக்கும் உனக்கும் சாட்சியாயிருக்கும் பொருட்டு, நீயும் நானும் உடன்படிக்கைபண்ணிக்கொள்ளக்கடவோம் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And Jacob took a stone, and set it up for a pillar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">அப்பொழுது யாக்கோபு ஒரு கல்லை எடுத்து, அதைத் தூணாக நிறுத்தினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">And Jacob said unto his brethren, Gather stones; and they took stones, and made an heap: and they did eat there upon the heap.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">பின்னும் யாக்கோபு தன் சகோதரரைப் பார்த்து, கற்களைக் குவியலாகச் சேருங்கள் என்றான்; அவர்கள் கற்களை எடுத்துக்கொண்டுவந்து, ஒரு குவியலாக்கி, அந்தக் குவியலின்மேல் போஜனம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">And Laban called it Jegarsahadutha: but Jacob called it Galeed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">லாபான் அதற்கு ஜெகர்சகதூதா என்று பேரிட்டான்; யாக்கோபு அதற்குக் கலயெத் என்று பேரிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">And Laban said, This heap is a witness between me and you this day. Therefore was the name of it called Galeed;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">இந்தக் குவியல் இன்று எனக்கும் உனக்கும் சாட்சி என்று லாபான் சொன்னபடியினாலே, அதின் பெயர் கலயெத் என்னப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">And Mizpah; for he said, The LORD watch between me and you, when we are absent one from another.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">அல்லாமலும் அவன்: நாம் ஒருவரை ஒருவர் விட்டு மறைந்தபின், நீ என் குமாரத்திகளைத் துயரப்படுத்தி, அவர்களையல்லாமல் வேறே ஸ்திரீகளை விவாகம்பண்ணினாயானால், கர்த்தர் எனக்கும் உனக்கும் நடுநின்று கண்காணிக்கக்கடவர்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="50">
+          <div class="verse-item lang-en">
+            <span class="verse-num">50</span>
+            <span class="verse-text">If you shall afflict my daughters, or if you shall take other wives beside my daughters, no man is with us; see, God is witness between me and you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">50</span>
+            <span class="verse-text">நம்முடனே ஒருவரும் இல்லை; பார், தேவனே எனக்கும் உனக்கும் சாட்சி என்று சொன்னபடியால், அது மிஸ்பா என்னும் பேர் பெற்றது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="51">
+          <div class="verse-item lang-en">
+            <span class="verse-num">51</span>
+            <span class="verse-text">And Laban said to Jacob, Behold this heap, and behold this pillar, which I have cast between me and you:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">51</span>
+            <span class="verse-text">பின்னும் லாபான் யாக்கோபை நோக்கி: இதோ, இந்தக் குவியலையும் எனக்கும் உனக்கும் நடுவாக நான் நிறுத்தின தூணையும் பார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="52">
+          <div class="verse-item lang-en">
+            <span class="verse-num">52</span>
+            <span class="verse-text">This heap be witness, and this pillar be witness, that I will not pass over this heap to you, and that you shall not pass over this heap and this pillar unto me, for harm.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">52</span>
+            <span class="verse-text">தீங்கு செய்ய நான் இந்தக் குவியலைக் கடந்து உன்னிடத்துக்கு வராதபடிக்கும், நீ இந்தக் குவியலையும் இந்தத் தூணையும் கடந்து என்னிடத்துக்கு வராதபடிக்கும் இந்தக் குவியலும் சாட்சி, இந்தத் தூணும் சாட்சி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="53">
+          <div class="verse-item lang-en">
+            <span class="verse-num">53</span>
+            <span class="verse-text">The God of Abraham, and the God of Nahor, the God of their father, judge between us. And Jacob swore by the fear of his father Isaac.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">53</span>
+            <span class="verse-text">ஆபிரகாமின் தேவனும் நாகோரின் தேவனும் அவர்கள் பிதாக்களின் தேவனுமாயிருக்கிறவர் நமக்குள்ளே நடுநின்று நியாயந்தீர்ப்பாராக என்றான். அப்பொழுது யாக்கோபு தன் தகப்பனாகிய ஈசாக்கின் பயபக்திக்குரியவர்மேல் ஆணையிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="54">
+          <div class="verse-item lang-en">
+            <span class="verse-num">54</span>
+            <span class="verse-text">Then Jacob offered sacrifice upon the mount, and called his brethren to eat bread: and they did eat bread, and tarried all night in the mount.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">54</span>
+            <span class="verse-text">பின்பு யாக்கோபு மலையின்மேல் பலியிட்டு, போஜனம்பண்ணும்படி தன் சகோதரரை அழைத்தான்; அப்படியே அவர்கள் போஜனம்பண்ணி மலையிலே இராத்தங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="55">
+          <div class="verse-item lang-en">
+            <span class="verse-num">55</span>
+            <span class="verse-text">And early in the morning Laban rose up, and kissed his sons and his daughters, and blessed them: and Laban departed, and returned unto his place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">55</span>
+            <span class="verse-text">லாபான் அதிகாலமே எழுந்திருந்து, தன் குமாரரையும் தன் குமாரத்திகளையும் முத்தஞ்செய்து, அவர்களை ஆசீர்வதித்தான். பின்பு லாபான் புறப்பட்டு, தன் இடத்துக்குத் திரும்பிப்போனான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

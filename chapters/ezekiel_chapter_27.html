@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezekiel 27 | எசேக்கியேல் 27 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Ezekiel chapter 27 (எசேக்கியேல் 27) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Ezekiel 27 | எசேக்கியேல் 27</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">The word of the LORD came again unto me, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">கர்த்தருடைய வார்த்தை எனக்கு உண்டாகி, அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Now, you son of man, take up a lamentation for Tyrus;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">மனுபுத்திரனாகிய நீ இப்போது தீருவின்பேரிலே புலம்பி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And say unto Tyrus, O you that are situated at the entry of the sea, which are a merchant of the people for many isles, Thus says the Lord GOD; O Tyrus, you have said, I am of perfect beauty.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">சமுத்திரக் கரைதுறையிலே குடியிருந்து அநேகம் தீவுகளின் ஜனங்களோடே வியாபாரம்பண்ணுகிற தீருவை நோக்கி: கர்த்தராகிய ஆண்டவர் உரைக்கிறது என்னவென்றால், தீருவே, நீ உன்னைப் பூரணசொந்தரியவதி என்கிறாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Your borders are in the midst of the seas, your builders have perfected your beauty.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">கடல்களின் நடுமையத்திலே உன்தாபரம் இருக்கிறது; உன்னைக் கட்டினவர்கள் உன்னைப் பூரணவடிவாய்க் கட்டினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">They have made all your ship boards of fir trees of Senir: they have taken cedars from Lebanon to make masts for you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">சேனீரிலிருந்து வந்த தேவதாரு மரத்தால் உன் கப்பற் பலகைகளைச் செய்தார்கள்; பாய்மரங்களைச் செய்யும்படிக்கு லீபனோனிலிருந்து கேதுருமரங்களைக் கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Of the oaks of Bashan have they made yours oars; the company of the Ashurites have made your benches of ivory, brought out of the isles of Chittim.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">பாசானின் கர்வாலிமரங்களினாலே உன் துடுப்புகளைச் செய்தார்கள்; கித்தீம் தீவுகளிலிருந்து வந்த ஆஷூர் மரத்தால் உன் வரிபலகைகளைச் செய்து, அதிலே யானைத்தந்தம் அழுத்தியிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">Fine linen with broidered work from Egypt was that which you spread forth to be your sail; blue and purple from the isles of Elishah was that which covered you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">எகிப்திலிருந்து வந்த சித்திரத்தையலுள்ள சணல்நூல் புடவை நீ விரித்த பாயாயிருந்தது; தீவுகளின் இளநீலமும் இரத்தாம்பரமும் உன் விதானமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">The inhabitants of Zidon and Arvad were your seamen: your wise men, O Tyrus, that were in you, were your pilots.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">சீதோன் அர்வாத் என்னும் பட்டணங்களின் குடிகள் உனக்குத் தண்டுவலிக்கிறவர்களாயிருந்தார்கள். தீருவே, உன்னிடத்திலிருந்த உன் சாஸ்திரிகள் உன் மாலுமிகளாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">The ancients of Gebal and the wise men thereof were in you your repairer of breaches: all the ships of the sea with their seamen were in you to occupy your merchandise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">கேபாரின் முதியோரும் அதின் சாஸ்திரிகளும் உன்னில் கம்பத்துப்பார்க்கிறவர்களாயிருந்தார்கள்; சமுத்திரத்தின் சகல கப்பல்களும் அவைகளிலுள்ள கப்பற்காரரும் உன்னோடே தொழில்துறை வியாபாரம் பண்ணுகிறதற்காக உன்னிடத்தில் இருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">They of Persia and of Lud and of Phut were in yours army, your men of war: they hanged the shield and helmet in you; they set forth your loveliness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">பெர்சியரும், லுூதியரும், பூத்தியரும் உன் இராணுவத்தில் யுத்தவீரராயிருந்து உனக்குள் கேடகமும் தலைச்சீராவும் தூக்கிவைத்து, உன்னை அலங்கரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">The men of Arvad with yours army were upon your walls round about, and the Gammadims were in your towers: they hanged their shields upon your walls round about; they have made your beauty perfect.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அர்வாத் புத்திரரும் உன் இராணுவ மனுஷரும் உன் மதில்கள்மேல் சுற்றிலும், கம்மாத்தியர் உன் கொத்தளங்களிலும் இருந்தார்கள்; இவர்கள் உன் மதில்கள் சுற்றிலும் தங்கள் பரிசைகளைத் தூக்கிவைத்து, உன் வடிவத்தைப் பூரணப்படுத்தினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Tarshish was your merchant by reason of the multitude of all kind of riches; with silver, iron, tin, and lead, they traded in your fairs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">சகலவித பொருள்களின் திரளினாலும் தர்ஷீஸ் ஊரார் உன்னோடே வியாபாரம்பண்ணினார்கள்; வெள்ளியையும் இரும்பையும் தகரத்தையும் ஈயத்தையும் உன் சந்தைகளில் விற்க வந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Javan, Tubal, and Meshech, they were your merchants: they traded the persons of men and vessels of brass in your market.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">யாவன், தூபால், மேசேக் என்னும் ஜாதியார் உன் வியாபாரிகளாயிருந்து மனுஷர்களையும் வெண்கலப்பாத்திரங்களையும் உன் தொழில்துறைக் கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">They of the house of Togarmah traded in your fairs with horses and horsemen and mules.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">தொகர்மா வம்சத்தார் குதிரைகளையும் குதிரைவீரரையும் கோவேறுகழுதைகளையும் உன் சந்தைகளுக்குக் கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">The men of Dedan were your merchants; many isles were the merchandise of yours hand: they brought you for a present horns of ivory and ebony.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">தேதான் புத்திரர் உன் வியாபாரிகளாயிருந்தார்கள்; அநேகம் தீவுகளின் வர்த்தகம் உன் வசமாகச் சேர்ந்தது; யானைத்தந்தங்களையும் கருங்காலி மரங்களையும் அவைகளுக்குப் பதிலாகக் கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Syria was your merchant by reason of the multitude of the wares of your making: they occupied in your fairs with emeralds, purple, and broidered work, and fine linen, and coral, and agate.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">சீரியர் உன் வேலைப்பாடான பற்பல பொருள்களினிமித்தம் உன்னோடே வியாபாரம்பண்ணி, மரகதங்களையும், இரத்தாம்பரங்களையும், சித்திரத்தையாலாடைகளையும், உயர்ந்த வஸ்திரங்களையும், பவளங்களையும், பளிங்கையும் உன் சந்தைகளில் விற்கவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Judah, and the land of Israel, they were your merchants: they traded in your market wheat of Minnith, and Pannag, and honey, and oil, and balm.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">யூதரும் இஸ்ரவேல் தேசத்தாரும் உன்னோடே வியாபாரம்பண்ணி, மின்னீத் பன்னாக் என்கிற ஊர்களின் கோதுமையையும், தேனையும், எண்ணெயையும், பிசின்தைலத்தையும் உன் தொழில்துறைக்குக் கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Damascus was your merchant in the multitude of the wares of your making, for the multitude of all riches; in the wine of Helbon, and white wool.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">தமஸ்கு உன் வேலைப்பாடான பற்பல பொருள்களினிமித்தமும், சகலவிதப் பொருள்களின் திரட்சியினிமித்தமும் உன்னோடே வர்த்தகம்பண்ணி, கல்போனின் திராட்சரசத்தையும் வெண்மையான ஆட்டுமயிரையும் உனக்கு விற்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Dan also and Javan going back and forth occupied in your fairs: bright iron, cassia, and calamus, were in your market.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">தாண் நாட்டாரும், போக்கும்வரத்துமான யாவானரும் துலக்கப்பட்ட இரும்பையும் இலவங்கத்தையும் வம்பையும் உன் சந்தைகளில் கொண்டுவந்து உன் தொழில்துறையில் விற்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Dedan was your merchant in precious clothes for chariots.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">இரதங்களுக்குப் போடுகிற மேன்மையான இரத்தினக்கம்பளங்களை தேதானின் மனுஷர் கொண்டுவந்து, உன்னோடே வியாபாரம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Arabia, and all the princes of Kedar, they occupied with you in lambs, and rams, and goats: in these were they your merchants.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அரபியரும், கேதாரின் சகல பிரபுக்களும் உனக்கு வாடிக்கையான வர்த்தகராகி ஆட்டுக்குட்டிகளையும் ஆட்டுக்கடாக்களையும் வெள்ளாட்டுக்கடாக்களையும் கொண்டுவந்து, உன்னோடே வியாபாரம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">The merchants of Sheba and Raamah, they were your merchants: they occupied in your fairs with chief of all spices, and with all precious stones, and gold.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">சேபா, ராமா பட்டணங்களின் வியாபாரிகள் உன்னோடே வர்த்தகம்பண்ணி, மேல்தரமான சகலவித சம்பாரங்களையும், சகலவித இரத்தினக்கற்களையும் பொன்னையும் உன் சந்தைகளில் கொண்டுவந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Haran, and Canneh, and Eden, the merchants of Sheba, Asshur, and Chilmad, were your merchants.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">ஆரான், கன்னே, ஏதேன் என்னும் பட்டணத்தாரும், சேபாவின் வியாபாரிகளும் அசீரியரும் கில்மாத் பட்டணத்தாரும் உன்னோடே வியாபாரம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">These were your merchants in all sorts of things, in blue clothes, and broidered work, and in chests of rich apparel, bound with cords, and made of cedar, among your merchandise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">இவர்கள் சகலவித உயர்ந்த சரக்குகளையும், இளநீலப் பட்டுகளும் விசித்திரத்தையலாடைகளும் அடங்கிய புடவைக்கட்டுகளையும், விலை உயர்ந்த வஸ்திரங்கள் வைக்கப்பட்டு கயிறுகளால் கட்டியிருக்கும் கேதுருமரப்பெட்டிகளையும் கொண்டுவந்து, உன்னோடே வியாபாரம்பண்ணினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">The ships of Tarshish did sing of you in your market: and you were replenished, and made very glorious in the midst of the seas.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">உன் தொழில்துறையில் தர்ஷீசின் கப்பலாட்கள் உன்னைப் போற்றிப் பாடினார்கள்; நீ சமுத்திரத்தின் நடுவிலே உன்னைப் பூரணப்படுத்தி உன்னை மிகவும் மகிமைப்படுத்தினாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Your rowers have brought you into great waters: the east wind has broken you in the midst of the seas.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">தண்டுவலிக்கிறவர்கள் ஆழமானதண்ணீர்களில் உன்னை வலித்துக்கொண்டு போனார்கள்; நடுச்சமுத்திரத்திலே கொண்டற்காற்று உன்னை உடைத்துப்போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Your riches, and your fairs, your merchandise, your seamen, and your pilots, your repairer of breaches, and the occupiers of your merchandise, and all your men of war, that are in you, and in all your company which is in the midst of you, shall fall into the midst of the seas in the day of your ruin.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">நீ நாசமடையும் நாளிலே உன் ஆஸ்தியோடும், உன் சந்தைகளோடும், உன் தொழில்துறையோடுங்கூட உன் கப்பலாட்களும் உன் மாலுமிகளும் உன்னிலுள்ள கம்பத்துப்பார்க்கிறவர்களும், உன் வியாபாரிகளும் உன்னிலுள்ள எல்லா யுத்தவீரரும், உன் நடுவிலிருக்கிற எல்லாக்கூட்டத்தாரும் நடுச்சமுத்திரத்திலே விழுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">The suburbs shall shake at the sound of the cry of your pilots.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">உன் மாலுமிகள் ஓலமிடும் சத்தத்தினால் சுற்றுப்புறங்கள் அதிரும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And all that handle the oar, the seamen, and all the pilots of the sea, shall come down from their ships, they shall stand upon the land;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">தண்டுவலிக்கிற யாவரும், கப்பலாட்களும், கடல் மாலுமிகள் அனைவரும், தங்கள் கப்பல்களை விட்டுஇறங்கி, கரையிலே நின்று,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And shall cause their voice to be heard against you, and shall cry bitterly, and shall cast up dust upon their heads, they shall wallow themselves in the ashes:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">உன்னிமித்தம் சத்தமிட்டுப்புலம்பி, மனங்கசந்து அழுது, தங்கள் தலைகளின்மேல் புழுதியைப் போட்டுக்கொண்டு, சாம்பலில் புரண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And they shall make themselves utterly bald for you, and gird them with sackcloth, and they shall weep for you with bitterness of heart and bitter wailing.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">உனக்காக மொட்டையிட்டு இரட்டுடுத்திக்கொண்டு, உனக்காக மனங்கசந்து அழுது, துக்கங்கொண்டாடுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And in their wailing they shall take up a lamentation for you, and lament over you, saying, What city is like Tyrus, like the destroyed in the midst of the sea?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அவர்கள் உனக்காத் தங்கள் துக்கத்திலே ஓலமிட்டு, உன்னிமித்தம் புலம்பி, உன்னைக்குறித்து: சமுத்திரத்தின் நடுவிலே அழிந்துபோன தீருவுக்குச் சமான நகரம் உண்டோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">When your wares went forth out of the seas, you filled many people; you did enrich the kings of the earth with the multitude of your riches and of your merchandise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">உன் சந்தைச்சரக்குகள் சமுத்திரங்கள் வழியாய்க் கொண்டுவரப்படுகையில், அநேக ஜனங்களைத் திருப்தியாக்கினாய்; உன் ஆஸ்தியின் திரளினாலும் உன் வியாபாரத்தினாலும் பூமியின் ராஜாக்களை ஐசுவரியவான்களாக்கினாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">In the time when you shall be broken by the seas in the depths of the waters your merchandise and all your company in the midst of you shall fall.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">நீ சமுத்திரத் திரைகளினாலே ஆழங்களில் உடைக்கப்பட்டபோது, உன் தொழில் துறையும் உன் நடுவிலுள்ள கூட்டம் அனைத்தும் அழிந்துபோயின என்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">All the inhabitants of the isles shall be astonished at you, and their kings shall be sore afraid, they shall be troubled in their countenance.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">தீவுகளின் குடிகள் எல்லாம் உன்னிமித்தம் திகைப்பார்கள்; அவர்களுடைய ராஜாக்கள் மிகவும் பிரமித்து, கலங்கின முகமாயிருப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">The merchants among the people shall hiss at you; you shall be a terror, and never shall be any more.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">சகல ஜனங்களிலுமுள்ள வர்த்தகர் உன்பேரில் ஈசல்போடுவார்கள்; நீ பயங்கரமாவாய்; இனி ஒருபோதும் இருக்கமாட்டாய் என்கிறார் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeremiah 29 | எரேமியா 29 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Jeremiah chapter 29 (எரேமியா 29) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Jeremiah 29 | எரேமியா 29</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now these are the words of the letter that Jeremiah the prophet sent from Jerusalem unto the residue of the elders which were carried away captives, and to the priests, and to the prophets, and to all the people whom Nebuchadnezzar had carried away captive from Jerusalem to Babylon;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">எகொனியா ராஜாவும், ராஜஸ்திரீயும், பிரதானிகளும், யூதாவிலும் எருசலேமிலுமுள்ள பிரபுக்களும், தச்சரும், கொல்லரும் எருசலேமைவிட்டுப் புறப்பட்டுப்போன பிற்பாடு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">(After that Jeconiah the king, and the queen, and the eunuchs, the princes of Judah and Jerusalem, and the carpenters, and the smiths, were departed from Jerusalem;)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">எரேமியா தீர்க்கதரிசி சிறைப்பட்டுப்போன மூப்பர்களில் மீதியானவர்களுக்கும், ஆசாரியர்களுக்கும், தீர்க்கதரிசிகளுக்கும், நேபுகாத்நேச்சார் சிறைப்படுத்தி எருசலேமிலிருந்து பாபிலோனுக்குக் கொண்டுபோன சகல ஜனங்களுக்கும் எழுதி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">By the hand of Elasah the son of Shaphan, and Gemariah the son of Hilkiah, (whom Zedekiah king of Judah sent unto Babylon to Nebuchadnezzar king of Babylon) saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">யூதாவின் ராஜாவாகிய சிதேக்கியா பாபிலோன் ராஜாவாகிய நேபுகாத்நேச்சாரிடத்தில் கொடுக்கும்படி சாப்பானின் குமாரனாகிய எலெயாசாரின் கையிலும், இல்க்கியாவின் குமாரனாகிய கெமரியாவின் கையிலும் கொடுத்து, எருசலேமிலிருந்து பாபிலோனுக்கு அனுப்பின நிருபத்தின் விபரம்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Thus says the LORD of hosts, the God of Israel, unto all that are carried away captives, whom I have caused to be carried away from Jerusalem unto Babylon;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">இஸ்ரவேலின் தேவனாகிய சேனைகளின் கர்த்தர், தாம் எருசலேமிலிருந்து பாபிலோனுக்குச் சிறைப்பட்டுப்போகப்பண்ணின அனைவருக்கும் அறிவிக்கிறது என்னவென்றால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Build all of you houses, and dwell in them; and plant gardens, and eat the fruit of them;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">நீங்கள் வீடுகளைக் கட்டி, குடியிருந்து, தோட்டங்களை நாட்டி, அவைகளின் கனியைச் சாப்பிடுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Take all of you wives, and brought forth sons and daughters; and take wives for your sons, and give your daughters to husbands, that they may bear sons and daughters; that all of you may be increased there, and not diminished.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">நீங்கள் பெண்களை விவாகம்பண்ணி, குமாரரையும் குமாரத்திகளையும் பெற்று, உங்கள் குமாரருக்குப் பெண்களைக்கொண்டு, உங்கள் குமாரத்திகளைப் புருஷருக்குக் கொடுங்கள்; இவர்களும் குமாரரையும் குமாரத்திகளையும் பெறட்டும்; நீங்கள் அங்கே குறுகாமல் பெருகி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And seek the peace of the city where I have caused you to be carried away captives, and pray unto the LORD for it: for in the peace thereof shall all of you have peace.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">நான் உங்களைச் சிறைப்பட்டுப்போகப்பண்ணின பட்டணத்தின் சமாதானத்தைத் தேடி, அதற்காகக் கர்த்தரை விண்ணப்பம்பண்ணுங்கள்; அதற்குச் சமாதானமிருக்கையில் உங்களுக்கும் சமாதானமிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">For thus says the LORD of hosts, the God of Israel; Let not your prophets and your diviners, that be in the midst of you, deceive you, neither hearken to your dreams which all of you cause to be dreamed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">மேலும், உங்கள் நடுவிலிருக்கிற உங்கள் தீர்க்கதரிசிகளும் உங்கள் குறிகாரரும் உங்களை மோசம்போக்கவொட்டாதிருங்கள்; சொப்பனம் காணப்பண்ணுகிற உங்கள் சொப்பனக்காரருக்குச் செவிகொடாமலும் இருங்கள் என்று இஸ்ரவேலின் தேவனாகிய சேனைகளின் கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">For they prophesy falsely unto you in my name: I have not sent them, says the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அவர்கள் என் நாமத்தைச் சொல்லி உங்களுக்குப் பொய்யான தீர்க்கதரிசனம் உரைக்கிறார்கள்; நான் அவர்களை அனுப்பினதில்லை என்று கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">For thus says the LORD, That after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">பாபிலோனிலே எழுபதுவருஷம் நிறைவேறினபின்பு நான் உங்களைச் சந்தித்து, உங்களை இவ்விடத்துக்குத் திரும்பிவரப்பண்ணும்படிக்கு உங்கள்மேல் என் நல்வார்த்தையை நிறைவேறப்பண்ணுவேன் என்று கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">For I know the thoughts that I think toward you, says the LORD, thoughts of peace, and not of evil, to give you an expected end.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நீங்கள் எதிர்பார்த்திருக்கும் முடிவை உங்களுக்கு கொடுக்கும்படிக்கு நான் உங்கள்பேரில் நினைத்திருக்கிற நினைவுகளை அறிவேன் என்று கர்த்தர் சொல்லுகிறார்; அவைகள் தீமைக்கல்ல, சமாதானத்துக்கேதுவான நினைவுகளே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Then shall all of you call upon me, and all of you shall go and pray unto me, and I will hearken unto you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது நீங்கள் கூடிவந்து, என்னைத் தொழுதுகொண்டு என்னை நோக்கி விண்ணப்பம்பண்ணுவீர்கள்; நான் உங்களுக்குச் செவிகொடுப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And all of you shall seek me, and find me, when all of you shall search for me with all your heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">உங்கள் முழு இருதயத்தோடும் என்னைத் தேடினீர்களானால், என்னைத் தேடுகையில் கண்டுபிடிப்பீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And I will be found of you, says the LORD: and I will turn away your captivity, and I will gather you from all the nations, and from all the places where I have driven you, says the LORD; and I will bring you again into the place whence I caused you to be carried away captive.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">நான் உங்களுக்குக் காணப்படுவேன் என்று கர்த்தர் சொல்லுகிறார்; நான் உங்கள் சிறையிருப்பைத் திருப்பி நான் உங்களைத் துரத்திவிட்ட எல்லா ஜாதிகளிலும் எல்லா இடங்களிலுமிருந்து உங்களைச் சேர்த்து, நான் உங்களை விலக்கியிருந்த ஸ்தலத்துக்கே உங்களைத் திரும்பிவரப்பண்ணுவேன் என்று கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Because all of you have said, The LORD has raised us up prophets in Babylon;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">கர்த்தர் எங்களுக்குப் பாபிலோனிலும் தீர்க்கதரிசிகளை எழுப்பினார் என்று சொல்லுகிறீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Know that thus says the LORD of the king that sits upon the throne of David, and of all the people that dwells in this city, and of your brethren that are not gone forth with you into captivity;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஆனால் தாவீதின் சிங்காசனத்தில் உட்கார்ந்திருக்கிற ராஜாவைக்குறித்தும் உங்களோடேகூடச் சிறையிருப்பில் புறப்பட்டுப்போகாமல் இந்த நகரத்தில் குடியிருக்கிற உங்கள் சகோதரராகிய எல்லா ஜனங்களைக்குறித்தும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Thus says the LORD of hosts; Behold, I will send upon them the sword, the famine, and the pestilence, and will make them like vile figs, that cannot be eaten, they are so evil.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">இதோ, நான் பட்டயத்தையும், பஞ்சத்தையும், கொள்ளைநோயையும் அவர்களுக்குள் அனுப்புவேன் என்று கர்த்தர் சொல்லுகிறார்; புசிக்கத்தகாத கெட்டுப்போன அத்திப்பழங்களுக்கு அவர்களை ஒப்பாக்குவேன் என்று சேனைகளின் கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And I will persecute them with the sword, with the famine, and with the pestilence, and will deliver them to be removed to all the kingdoms of the earth, to be a curse, and an astonishment, and an hissing, and a reproach, among all the nations where I have driven them:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்கள் என் வார்த்தைகளைக் கேளாமற்போனபடியால், நான் அவர்களைப் பட்டயத்தாலும், பஞ்சத்தாலும் கொள்ளைநோயாலும் பின்தொடர்ந்து, அவர்களைப் பூமியிலுள்ள எல்லா ராஜ்யங்களிலும் அலைந்து திரிகிறவர்களாகவும், நான் அவர்களைத் துரத்துகிற எல்லா ஜாதிகளிடத்திலும் சாபமாகவும், பாழாகவும் ஈசலிடுதலுக்கிடமாகவும், நிந்தையாகவும் வைப்பேன் என்று கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Because they have not hearkened to my words, says the LORD, which I sent unto them by my servants the prophets, rising up early and sending them; but all of you would not hear, says the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">நான் உங்களிடத்திற்குத் தீர்க்கதரிசிகளாகிய என் ஊழியக்காரரை ஏற்கனவே அனுப்பிக்கொண்டேயிருந்தும், நீங்கள் செவிகொடாமற்போனீர்களே என்று கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Hear all of you therefore the word of the LORD, all you of the captivity, whom I have sent from Jerusalem to Babylon:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">இப்போதும் சிறையிருக்கும்படி நான் எருசலேமிலிருந்து பாபிலோனுக்கு அனுப்பிவிட்ட நீங்களெல்லாரும் கர்த்தருடைய வார்த்தையைக் கேளுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Thus says the LORD of hosts, the God of Israel, of Ahab the son of Kolaiah, and of Zedekiah the son of Maaseiah, which prophesy a lie unto you in my name; Behold, I will deliver them into the hand of Nebuchadrezzar king of Babylon; and he shall slay them before your eyes;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">என் நாமத்தைச் சொல்லி உங்களுக்குப் பொய்யான தீர்க்கதரிசனம் உரைக்கிற கொலாயாவின் குமாரனாகிய ஆகாபையும், மாசெயாவின் குமாரனாகிய சிதேக்கியாவையுங்குறித்து: இதோ, நான் அவர்களைப் பாபிலோன் ராஜாவாகிய நேபுகாத்நேச்சாரின் கையிலே ஒப்புக்கொடுக்கிறேன், அவன் அவர்களை உங்கள் கண்களுக்கு முன்பாகக் கொன்றுபோடுவான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And of them shall be taken up a curse by all the captivity of Judah which are in Babylon, saying, The LORD make you like Zedekiah and like Ahab, whom the king of Babylon roasted in the fire;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">பாபிலோன் ராஜா அக்கினியினால் சுட்டுப்போட்ட சிதேக்கியாவுக்கும் ஆகாபுக்கும் கர்த்தர் உன்னைச் சமானமாக்கக்கடவரென்று, அவர்களைக் குறித்து ஒரு சாபவார்த்தை பாபிலோனிலே சிறையிருக்கிற யூதா அனைவருக்குள்ளும் வழங்கும் என்று இஸ்ரவேலின் தேவனாகிய சேனைகளின் கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Because they have committed villainy in Israel, and have committed adultery with their neighbours' wives, and have spoken lying words in my name, which I have not commanded them; even I know, and am a witness, says the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவர்கள் இஸ்ரவேலிலே மதிகெட்ட காரியத்தைச் செய்து தங்கள் அயலாருடைய பெண்ஜாதிகளோடே விபசாரம்பண்ணி, நான் அவர்களுக்குக் கற்பியாத பொய்யான வார்த்தையை என் நாமத்தைச் சொல்லி உரைத்தார்கள்; நான் அதை அறிவேன்; அதற்கு நானே சாட்சி என்று கர்த்தர் உரைக்கிறார் என்று எழுதினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Thus shall you also speak to Shemaiah the Nehelamite, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பின்னும் கர்த்தர் என்னை நோக்கி: நீ நெகெலாமியனாகிய செமாயாவுக்கும் சொல்லியனுப்பவேண்டியது என்னவென்றால்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Thus speaks the LORD of hosts, the God of Israel, saying, Because you have sent letters in your name unto all the people that are at Jerusalem, and to Zephaniah the son of Maaseiah the priest, and to all the priests, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">நீ எருசலேமிலிருக்கிற எல்லா ஜனங்களுக்கும் மாசெயாவின் குமாரனாகிய செப்பனியா என்னும் ஆசாரியனுக்கும், மற்ற ஆசாரியர்களுக்கும் உன் நாமத்திலே நிருபத்தை எழுதியனுப்பினது என்னவென்று இஸ்ரவேலின் தேவனாகிய சேனைகளின் கர்த்தர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">The LORD has made you priest in the position of Jehoiada the priest, that all of you should be officers in the house of the LORD, for every man that is mad, and makes himself a prophet, that you should put him in prison, and in the stocks.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">இவனுக்கு அவன் எழுதியிருந்த நிருபமாவது: நீங்கள் கர்த்தருடைய ஆலயத்தின் விசாரிப்புக்காரராயிருக்கும்படிக்கும், பிரமைகொண்டு தன்னைத் தீர்க்கதரிசியாக்கிக்கொள்கிறவகினாகிய எந்த மனுஷனையும் நீர் காவலறையிலும் தொழுவிலும் போடும்படிக்கும், கர்த்தர் உம்மை ஆசாரியனாயிருந்த யோய்தாவின் ஸ்தானத்திலே ஆசாரியனாக வைத்தாரே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Now therefore why have you not reproved Jeremiah of Anathoth, which makes himself a prophet to you?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">இப்போதும் உங்களுக்குத் தீர்க்கதரிசனம் கூறிவருகிற ஆனதோத் ஊரானாகிய எரேமியாவை நீர் கடிந்துகொள்ளாமற்போனதென்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">For therefore he sent unto us in Babylon, saying, This captivity is long: build all of you houses, and dwell in them; and plant gardens, and eat the fruit of them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">இந்தச் சிறையிருப்பு நெடுங்காலமாக இருக்கும்; நீங்கள் வீடுகளைக்கட்டி, அவைகளில் குடியிருந்து, தோட்டங்களை நாட்டி, அவைகளின் கனிகளைச் சாப்பிடுங்கள் என்று பாபிலோனிலிருக்கிற எங்களுக்குச் சொல்லியனுப்பினானென்று எழுதியிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And Zephaniah the priest read this letter in the ears of Jeremiah the prophet.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">இந்த நிருபத்தைச் செப்பனியா என்கிற ஆசாரியன் எரேமியா தீர்க்கதரிசியின் காதுகள் கேட்க வாசித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Then came the word of the LORD unto Jeremiah, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">ஆதலால் கர்த்தருடைய வார்த்தை எரேமியாவுக்கு உண்டாகி அவர்:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Send to all them of the captivity, saying, Thus says the LORD concerning Shemaiah the Nehelamite; Because that Shemaiah has prophesied unto you, and I sent him not, and he caused you to trust in a lie:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">சிறையிருக்கிற அனைவருக்கும் நீ சொல்லியனுப்பவேண்டியது என்னவென்றால்: நெகெலாமியனாகிய செமாயாவைக்குறித்து கர்த்தர்: செமாயாவை நான் அனுப்பாதிருந்தும், அவன் உங்களுக்குத் தீர்க்கதரிசனஞ்சொல்லி, உங்களைப் பொய்யை நம்பப்பண்ணுகிறபடியினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Therefore thus says the LORD; Behold, I will punish Shemaiah the Nehelamite, and his seed: he shall not have a man to dwell among this people; neither shall he behold the good that I will do for my people, says the LORD; because he has taught rebellion against the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">இதோ, நான் நெகெலாமியனாகிய செமாயாவையும், அவன் சந்ததியையும் தண்டிப்பேன்; இந்த ஜனத்தின் நடுவிலே குடியிருப்பவன் ஒருவனும் அவனுக்கு இல்லாதிருப்பான்; நான் என் ஜனத்துக்குச் செய்யும் நன்மையை அவன் காண்பதில்லை என்று கர்த்தர் சொல்லுகிறார்; கர்த்தருக்கு விரோதமாய்க் கலகமுண்டாகப் பேசினான் என்று கர்த்தர் சொல்லுகிறார் என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua 21 | யோசுவா 21 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Joshua chapter 21 (யோசுவா 21) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Joshua 21 | யோசுவா 21</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then came near the heads of the fathers of the Levites unto Eleazar the priest, and unto Joshua the son of Nun, and unto the heads of the fathers of the tribes of the children of Israel;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அப்பொழுது லேவியரின் வம்சப் பிதாக்களின் தலைவர்; கானான் தேசத்திலிருக்கிற சீலோவிலே ஆசாரியனாகிய எலெயாசாரிடத்திலும், நூனின் குமாரனாகிய யோசுவாவிடனித்திலும், இஸ்ரவேல் புத்திரருடைய கோத்திரப் பிதாக்களிலுள்ள தலைவரிடத்திலும் சேர்ந்து வந்து:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And they spoke unto them at Shiloh in the land of Canaan, saying, The LORD commanded by the hand of Moses to give us cities to dwell in, with the suburbs thereof for our cattle.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">நாங்கள் குடியிருக்கும் பட்டணங்களையும், எங்கள் மிருகஜீவன்களுக்காக வெளிநிலங்களையும் எங்களுக்குக் கொடுக்கும்படி, கர்த்தர் மோசேயைக்கொண்டு கட்டளையிட்டாரே என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the children of Israel gave unto the Levites out of their inheritance, at the commandment of the LORD, these cities and their suburbs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">கர்த்தருடைய வாக்கின்படியே, இஸ்ரவேல் புத்திரர் தங்கள் சுதந்தரத்திலே லேவியருக்குப் பட்டணங்களையும் அவைகளின் வெளிநிலங்களையும் கொடுத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And the lot came out for the families of the Kohathites: and the children of Aaron the priest, which were of the Levites, had by lot out of the tribe of Judah, and out of the tribe of Simeon, and out of the tribe of Benjamin, thirteen cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">கோகாத்தியரின் வம்சங்களுக்குச் சீட்டு விழுந்தது; அந்தச் சீட்டின்படி லேவியரில் ஆசாரியனாகிய ஆரோனின் குமாரருக்கு யூதா கோத்திரத்திலும், சிமியோன் கோத்திரத்திலும், பென்யமீன் கோத்திரத்திலும் கிடைத்த பட்டணங்கள் பதின்மூன்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the rest of the children of Kohath had by lot out of the families of the tribe of Ephraim, and out of the tribe of Dan, and out of the half tribe of Manasseh, ten cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">கோகாத்தின் மற்றப்புத்திரருக்கு, எப்பிராயீம் கோத்திரத்தின் வம்சங்களுக்குள்ளும், தாண் கோத்திரத்திலும் மனாசேயின் பாதிக்கோத்திரத்திலும், சீட்டினால் கிடைத்த பட்டணங்கள் பத்து.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And the children of Gershon had by lot out of the families of the tribe of Issachar, and out of the tribe of Asher, and out of the tribe of Naphtali, and out of the half tribe of Manasseh in Bashan, thirteen cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">கெர்சோன் புத்திரருக்கு, இசக்கார் கோத்திரத்தின் வம்சங்களுக்குள்ளும், ஆசேர் கோத்திரத்திலும், நப்தலி கோத்திரத்திலும், பாசானிலிருக்கிற மனாசேயின் பாதிக்கோத்திரத்திலும், சீட்டினால் கிடைத்த பட்டணங்கள் பதின்மூன்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">The children of Merari by their families had out of the tribe of Reuben, and out of the tribe of Gad, and out of the tribe of Zebulun, twelve cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">மெராரி புத்திரருக்கு அவர்கள் வம்சங்களின்படியே, ரூபன் கோத்திரத்திலும் கிடைத்த பட்டணங்கள் பன்னிரண்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And the children of Israel gave by lot unto the Levites these cities with their suburbs, as the LORD commanded by the hand of Moses.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">இந்தப் பட்டணங்களையும் அவைகளின் வெளிநிலங்களையும் இஸ்ரவேல் புத்திரர், கர்த்தர் மோசேயைக்கொண்டு கட்டளையிட்டபடியே, சீட்டுப்போட்டு லேவியருக்குக் கொடுத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And they gave out of the tribe of the children of Judah, and out of the tribe of the children of Simeon, these cities which are here mentioned by name.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">லேவியின் குமாரரில் முதலாம் சீட்டைப்பெற்ற கோகாத்தியரின் வம்சங்களிலே இருக்கிற ஆரோனின் குமாரருக்கு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Which the children of Aaron, being of the families of the Kohathites, who were of the children of Levi, had: for theirs was the first lot.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">யூதா புத்திரரின் கோத்திரத்திலும், சிமியோன் புத்திரரின் கோத்திரத்திலும், அவர்கள் கொடுத்தவைகளும் பேர்பேராய்ச் சொல்லப்பட்டவைகளுமான பட்டணங்களின் நாήங்களாவன:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And they gave them the city of Arba the father of Anak, which city is Hebron, in the hill country of Judah, with the suburbs thereof round about it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">யூதޠεின் மலைத்தேசத்தில் ஆனாக்கின் தகப்பனாகிய அர்பாவின் பட்டணமான எபிரோனையும் அதைச் சூழ்ந்த வெளிநிலங்களையும் அவர்களுக்குக் கொடுத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">But the fields of the city, and the villages thereof, gave they to Caleb the son of Jephunneh for his possession.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">பட்டணத்தைச் சேர்ந்த வயல்களையும் அதின் பட்டிகளையும் எப்புன்னேயின் குமாரனாகிய காலேபுக்குக் காணியாட்சியாகக் கொடுத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Thus they gave to the children of Aaron the priest Hebron with her suburbs, to be a city of refuge for the slayer; and Libnah with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">இப்படியே கொலை செய்தவனுக்கு அடைக்கலப்பட்டணமாக ஆசாரியனாகிய ஆரோனின் குமாரருக்கு எபிரோனையும் அதின் வெளிநிலங்களையும், லிப்னாவையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And Jattir with her suburbs, and Eshtemoa with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">யாத்தீரையும் அதின் வெளிநிலங்களையும், எஸ்தெமொவாவையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And Holon with her suburbs, and Debir with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">ஓலோனையும் அதின் வெளி நிலங்களையும், தெபீரையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And Ain with her suburbs, and Juttah with her suburbs, and Bethshemesh with her suburbs; nine cities out of those two tribes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஆயீனையும் அதின் வெளி நிலங்களையும், யுத்தாவையும் அதின் வெளிநிலங்களையும், பெத்ஷிமேசையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; அந்த இரண்டு கோத்திரங்களிலிருக்கிற பட்டணங்கள் ஒன்பது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And out of the tribe of Benjamin, Gibeon with her suburbs, Geba with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">பென்யமீன் கோத்திரத்திலே அவர்களுக்குக் கிபியோனையும் அதின் வெளிநிலங்களையும் கேபாவையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Anathoth with her suburbs, and Almon with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">ஆனதோத்தையும் அதின் வெளிநிலங்களையும், அல்மோனையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப்பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">All the cities of the children of Aaron, the priests, were thirteen cities with their suburbs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ஆசாரியரான ஆரோனுடைய குமாரரின் பட்டணங்களெல்லாம் அவைகளின் வெளிநிலங்களுட்பட பதின்மூன்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the families of the children of Kohath, the Levites which remained of the children of Kohath, even they had the cities of their lot out of the tribe of Ephraim.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">லேவியரான கோகாத்தின் புத்திரரில் மீதியான அவர்களுடைய மற்ற வம்சங்களுக்கு எப்பிராயீமின் கோத்திரத்திலே அவர்களுக்குப் பங்குவீதமாக அவர்கள் கொடுத்த பட்டணங்களாவன:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">For they gave them Shechem with her suburbs in mount Ephraim, to be a city of refuge for the slayer; and Gezer with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">கொலைசெய்த அடைக்கலப்பட்டணமான எப்பிராயீமின் மலைத்தேசத்தில் இருக்கிற சீகேமையும் அதின் வெளிநிலங்களையும், கேசேரையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Kibzaim with her suburbs, and Bethhoron with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">கிப்சாயீமையும் அதின் வெளிநிலங்களையும், பெத்தொரோனையும் அதின் வெளிநிலங்களையும், அவர்களுக்குக் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And out of the tribe of Dan, Eltekeh with her suburbs, Gibbethon with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">தாண் கோத்திரத்திலே எல்தெக்கேயையும் அதின் வெளிநிலங்களையும், கிபெத்தோனையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Aijalon with her suburbs, Gathrimmon with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">ஆயலோனையும் அதின் வெளிநிலங்களையும், காத்ரிம்மோனையும் அதின் வெளிநிலங்களையும் அவர்களுக்குக் கொடுத்தார்கள்; இந்தப்பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And out of the half tribe of Manasseh, Tanach with her suburbs, and Gathrimmon with her suburbs; two cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">மனாசேயின் பாதிக் கோத்திரத்திலே தானாகையும் அதின் வெளிநிலங்களையும், காத்ரிம்மோனையும் அதின் வெளிநிலங்களையும் அவர்களுக்குக் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் இரண்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">All the cities were ten with their suburbs for the families of the children of Kohath that remained.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">கோகாத் புத்திரரின் மீதியான வம்சங்களுக்கு உண்டான பட்டணங்களெல்லாம் அவைகளின் வெளிநிலங்களுட்படப் பத்து.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And unto the children of Gershon, of the families of the Levites, out of the other half tribe of Manasseh they gave Golan in Bashan with her suburbs, to be a city of refuge for the slayer; and Beeshterah with her suburbs; two cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">லேவியரின் வம்சங்களிலே கெர்சோன் புத்திரருக்கு மனாசேயின் பாதிக்கோத்திரத்தில் கொலைசெய்தவனுக்கு அடைக்கலப் பட்டணமான பாசானிலுள்ள கோலானையும் அதின் வெளிநிலங்களையும், பெயெஸ்திராவையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் இரண்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And out of the tribe of Issachar, Kishon with her suburbs, Dabareh with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">இசக்காரின் கோத்திரத்திலே கீசோனையும் அதின் வெளிநிலங்களையும், தாபராத்தையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Jarmuth with her suburbs, Engannim with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">யர்மூத்தையும் அதின் வெளிநிலங்களையும், என்கன்னீமையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள். இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And out of the tribe of Asher, Mishal with her suburbs, Abdon with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">ஆசேரின் கோத்திரத்திலே மிஷயாலையும் அதின் வெளிநிலங்களையும், அப்தோனையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Helkath with her suburbs, and Rehob with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">எல்காத்தையும் அதின் வெளிநிலங்களையும், ரேகோபையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள். இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And out of the tribe of Naphtali, Kedesh in Galilee with her suburbs, to be a city of refuge for the slayer; and Hammothdor with her suburbs, and Kartan with her suburbs; three cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">நப்தலி கோத்திரத்திலே கொலைசெய்தவனுக்கு அடைக்கலப்பட்டணமாகக் கலிலேயாவிலுள்ள கேதேசையும் அதின் வெளிநிலங்களையும், அம்மோத்தோரையும் அதின் வெளிநிலங்களையும், கர்தானையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் மூன்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">All the cities of the Gershonites according to their families were thirteen cities with their suburbs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">கெர்சோனியருக்கு அவர்கள் வம்சங்களின்படி உண்டான பட்டணங்களெல்லாம் அவைகளின் வெளிநிலங்களுட்பட பதின்மூன்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And unto the families of the children of Merari, the rest of the Levites, out of the tribe of Zebulun, Jokneam with her suburbs, and Kartah with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">மற்ற லேவியராகிய மெராரி புத்திரரின் வம்சங்களுக்குச் செபுலோன் கோத்திரத்திலே யொக்னியாமையும் அதின் வெளிநிலங்களையும், கர்தாவையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">Dimnah with her suburbs, Nahalal with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">திம்னாவையும் அதின் வெளிநிலங்களையும், நகலாலையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And out of the tribe of Reuben, Bezer with her suburbs, and Jahazah with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">ரூபன் கோத்திரத்திலே பேசேரையும் அதின் வெளிநிலங்களையும், கெதெமோத்தையும் அதின் வெளிநிலங்களையும், மெபாகாத்தையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">Kedemoth with her suburbs, and Mephaath with her suburbs; four cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">கெதெமோத்தையும் அதின் வெளிநிலங்களையும், மெபாகாத்தையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள். இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And out of the tribe of Gad, Ramoth in Gilead with her suburbs, to be a city of refuge for the slayer; and Mahanaim with her suburbs,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">காத் கோத்திரத்திலே கொலைசெய்தவனுக்கு அடைக்கலப் பட்டணமாக, கீலேயாத்திலுள்ள ராமோத்தையும் அதின் வெளிநிலங்களையும், மக்னாயீமையும் அதின் வெளிநிலங்களையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">Heshbon with her suburbs, Jazer with her suburbs; four cities in all.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">எஸ்போனையும் அதின் வெளிநிலங்களையும், யாசேரையும் அதின் வெளிநிலங்களையும் கொடுத்தார்கள்; இந்தப் பட்டணங்கள் நாலு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">So all the cities for the children of Merari by their families, which were remaining of the families of the Levites, were by their lot twelve cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">இவைகளெல்லாம் லேவியரின் மற்ற வம்சங்களாகிய மெராரி புத்திரருக்கு, அவர்கள் வம்சங்களின்படி கிடைத்த பட்டணங்கள்; அவர்களுடைய பங்குவீதம் பன்னிரண்டு பட்டணங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">All the cities of the Levites within the possession of the children of Israel were forty and eight cities with their suburbs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரருடைய காணியாட்சியின் நடுவிலே இருக்கிற லேவியரின் பட்டணங்களெல்லாம் அவைகளின் வெளிநிலங்களுட்பட நாற்பத்தெட்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">These cities were every one with their suburbs round about them: thus were all these cities.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">இந்தப் பட்டணங்களில் ஒவ்வொன்றிற்கும் அததைச் சூழ்ந்த வெளிநிலங்கள் இருந்தது; எல்லாப்பட்டணங்களுக்கும் அப்படியே இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And the LORD gave unto Israel all the land which he swore to give unto their fathers; and they possessed it, and dwelt therein.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">இந்தப் பிரகாரமாகக் கர்த்தர் இஸ்ரவேலுக்குக் கொடுப்பேன் என்று அவர்களுடைய பிதாக்களுக்கு ஆணையிட்ட தேசத்தையெல்லாம் கொடுத்தார்; அவர்கள் அவைகளைச் சுதந்தரித்துக்கொண்டு, அவைகளிலே குடியிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And the LORD gave them rest round about, according to all that he swore unto their fathers: and there stood not a man of all their enemies before them; the LORD delivered all their enemies into their hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">கர்த்தர் அவர்களுடைய பிதாக்களுக்கு ஆணையிட்டபடியெல்லாம் அவர்களைச் சுற்றிலும் யுத்தமில்லாமல் இளைப்பாறப்பண்ணினார்; அவர்களுடைய எல்லாச் சத்துருக்களிலும் ஒருவரும் அவர்களுக்கு முன்பாக நிற்கவில்லை; அவர்கள் சத்துருக்களையெல்லாம் கர்த்தர் அவர்கள் கையில் ஒப்புக்கொடுத்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">There failed not ought of any good thing which the LORD had spoken unto the house of Israel; all came to pass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">கர்த்தர் இஸ்ரவேல் குடும்பத்தாருக்குச் சொல்லியிருந்த நல்வார்த்தைகளிலெல்லாம் ஒரு வார்த்தையும் தவறிப்போகவில்லை; எல்லாம் நிறைவேறிற்று.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

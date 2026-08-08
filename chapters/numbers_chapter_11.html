@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numbers 11 | எண்ணாகமம் 11 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Numbers chapter 11 (எண்ணாகமம் 11) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Numbers 11 | எண்ணாகமம் 11</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And when the people complained, it displeased the LORD: and the LORD heard it; and his anger was kindled; and the fire of the LORD burnt among them, and consumed them that were in the uttermost parts of the camp.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்பு, ஜனங்கள் முறையிட்டுக்கொண்டிருந்தார்கள்; அது கர்த்தருடைய செவிகளில் பொல்லாப்பாயிருந்தது; கர்த்தர் அதைக் கேட்டபோது, அவருடைய கோபம் மூண்டது; கர்த்தருடைய அக்கினி அவர்களுக்குள்ளே பற்றியெரிந்து, பாளயத்தின் கடைசியிலிருந்த சிலரைப் பட்சித்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And the people cried unto Moses; and when Moses prayed unto the LORD, the fire was quenched.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்பொழுது ஜனங்கள் மோசேயை நோக்கிக் கூப்பிட்டார்கள்; மோசே கர்த்தரை நோக்கி விண்ணப்பம்பண்ணினான்; உடனே அக்கினி அவிந்துபோயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And he called the name of the place Taberah: because the fire of the LORD burnt among them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">கர்த்தருடைய அக்கினி அவர்களுக்குள்ளே பற்றியெரிந்ததினால், அவ்விடத்துக்குத் தபேரா என்று பேரிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And the mixt multitude that was among them fell a lusting: and the children of Israel also wept again, and said, Who shall give us flesh to eat?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பின்பு அவர்களுக்குள் இருந்த பலஜாதியான அந்நிய ஜனங்கள் மிகுந்த இச்சையுள்ளவர்களானார்கள்; இஸ்ரவேல் புத்திரரும் திரும்ப அழுது, நமக்கு இறைச்சியைப் புசிக்கக்கொடுப்பவர் யார்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">We remember the fish, which we did eat in Egypt freely; the cucumbers, and the melons, and the leeks, and the onions, and the garlick:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">நாம் எகிப்திலே கிரயமில்லாமல் சாப்பிட்ட மச்சங்களையும், வெள்ளரிக்காய்களையும், கொம்மட்டிக்காய்களையும், கீரைகளையும், வெண்காயங்களையும், வெள்ளைப்பூண்டுகளையும் நினைக்கிறோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">But now our soul is dried away: there is nothing at all, beside this manna, before our eyes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">இப்பொழுது நம்முடைய உள்ளம் வாடிப்போகிறது; இந்த மன்னாவைத்தவிர, நம்முடைய கண்களுக்கு முன்பாக வேறொன்றும் இல்லையே என்று சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And the manna was as coriander seed, and the colour thereof as the colour of bdellium.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அந்த மன்னா கொத்துமல்லி விதையம்மாத்திரமும், அதின் நிறம் முத்துப்போலவும் இருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And the people went about, and gathered it, and ground it in mills, or beat it in a mortar, and baked it in pans, and made cakes of it: and the taste of it was as the taste of fresh oil.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">ஜனங்கள் போய் அதைப் பொறுக்கிக்கொண்டுவந்து, ஏந்திரங்களில் அரைத்தாவது உரல்களில் இடித்தாவது, பானைகளில் சமைப்பார்கள்; அதை அப்பங்களுமாகச் சுடுவார்கள்; அதின் ருசி புது ஒலிவ எண்ணெயின் ருசிபோலிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And when the dew fell upon the camp in the night, the manna fell upon it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இரவிலே பாளயத்தின்மேல் பனிபெய்யும்போது, மன்னாவும் அதின்மேல் விழும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Then Moses heard the people weep throughout their families, every man in the door of his tent: and the anger of the LORD was kindled greatly; Moses also was displeased.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அந்தந்த வம்சங்களைச் சேர்ந்த ஜனங்கள் தங்கள் தங்கள் கூடாரவாசலில் நின்று அழுகிறதை மோசே கேட்டான்; கர்த்தருக்கு மிகவும் கோபம் மூண்டது; மோசேயின் பார்வைக்கும் அது பொல்லாப்பாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And Moses said unto the LORD, Wherefore have you afflicted your servant? and wherefore have I not found favour in your sight, that you lay the burden of all this people upon me?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அப்பொழுது மோசே கர்த்தரை நோக்கி: நீர் இந்த ஜனங்கள் எல்லாருடைய பாரத்தையும் என்மேல் சுமத்தினதினால், உமது அடியானுக்கு உபத்திரவம் வரப்பண்ணினதென்ன? உம்முடைய கண்களில் எனக்குக் கிருபை கிடையாதே போனதென்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Have I conceived all this people? have I begotten them, that you should say unto me, Carry them in your bosom, as a nursing father bears the nursing infant, unto the land which you sware unto their fathers?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">இவர்களுடைய பிதாக்களுக்கு நான் ஆணையிட்டுக்கொடுத்த தேசத்துக்கு நீ இவர்களை முலையுண்கிற பாலகனைத் தகப்பன் சுமந்துகொண்டுபோவதுபோல, உன் மார்பிலே அணைத்துக்கொண்டுபோ என்று நீர் என்னோடே சொல்லும்படி இந்த ஜனங்களையெல்லாம் கர்ப்பந்தரித்தேனோ? இவர்களைப் பெற்றது நானோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Whence should I have flesh to give unto all this people? for they weep unto me, saying, Give us flesh, that we may eat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">இந்த ஜனங்கள் எல்லாருக்கும் கொடுக்கிறதற்கு எனக்கு இறைச்சி எங்கேயிருந்து வரும்? எனக்கு இறைச்சிகொடு என்று என்னைப் பார்த்து அழுகிறார்களே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">I am not able to bear all this people alone, because it is too heavy for me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">இந்த ஜனங்களெல்லாரையும் நான் ஒருவனாய்த் தாங்கக் கூடாது; எனக்கு இது மிஞ்சின பாரமாயிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And if you deal thus with me, kill me, I pray you, instantly, if I have found favour in your sight; and let me not see my wretchedness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">உம்முடைய கண்களிலே எனக்குக் கிருபை கிடைத்ததானால், இப்படி எனக்குச் செய்யாமல், என் உபத்திரவத்தை நான் காணாதபடிக்கு இப்பொழுதே என்னைக் கொன்றுபோடும் என்று வேண்டிக்கொண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And the LORD said unto Moses, Gather unto me seventy men of the elders of Israel, whom you know to be the elders of the people, and officers over them; and bring them unto the tabernacle of the congregation, that they may stand there with you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர் மோசேயை நோக்கி: இஸ்ரவேல் ஜனங்களுக்கு மூப்பரும் தலைவருமானவர்கள் இன்னார் என்று நீ அறிந்திருக்கிறாயே, அந்த மூப்பரில் எழுபதுபேரைக் கூட்டி, அவர்களை ஆசரிப்புக் கூடாரத்தினிடத்தில் அங்கே உன்னோடேகூட வந்து நிற்கும்படி செய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And I will come down and talk with you there: and I will take of the spirit which is upon you, and will put it upon them; and they shall bear the burden of the people with you, that you bear it not yourself alone.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அப்பொழுது நான் இறங்கிவந்து அங்கே உன்னோடே பேசி, நீ ஒருவன் மாத்திரம் ஜனங்களின் பாரத்தைச் சுமக்காமல், உன்னோடேகூட அவர்களும் அதைச் சுமப்பதற்காக உன்மேல் இருக்கிற ஆவியை அவர்கள்மேலும் வைப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And say you unto the people, Sanctify yourselves against tomorrow, and all of you shall eat flesh: for all of you have wept in the ears of the LORD, saying, Who shall give us flesh to eat? for it was well with us in Egypt: therefore the LORD will give you flesh, and all of you shall eat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">நீ ஜனங்களை நோக்கி: நாளைக்காக உங்களைப் பரிசுத்தம்பண்ணுங்கள்; நீங்கள் இறைச்சி சாப்பிடுவீர்கள்; எங்களுக்கு இறைச்சி சாப்பிடக் கொடுப்பவர் யார் என்றும், எகிப்திலே எங்களுக்குச் செளக்கியமாயிருந்தது என்றும், கர்த்தருடைய செவிகள் கேட்க அழுதீர்களே; ஆகையால், நீங்கள் சாப்பிடும்படி கர்த்தர் உங்களுக்கு இறைச்சி கொடுப்பார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">All of you shall not eat one day, nor two days, nor five days, neither ten days, nor twenty days;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">நீங்கள் ஒருநாள், இரண்டுநாள், ஐந்துநாள், பத்துநாள், இருபதுநாள் மாத்திரமல்ல,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">But even a whole month, until it come out at your nostrils, and it be loathsome unto you: because that all of you have despised the LORD which is among you, and have wept before him, saying, Why came we forth out of Egypt?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஒரு மாதம்வரைக்கும் புசிப்பீர்கள், அது உங்கள் மூக்காலே புறப்பட்டு, உங்களுக்குத் தெவிட்டிப்போகுமட்டும் புசிப்பீர்கள், உங்களுக்குள்ளே இருக்கிற கர்த்தரை அசட்டைபண்ணி, நாங்கள் ஏன் எகிப்திலிருந்து புறப்பட்டோம் என்று அவருக்கு முன்பாக அழுதீர்களே என்று சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And Moses said, The people, among whom I am, are six hundred thousand footmen; and you have said, I will give them flesh, that they may eat a whole month.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அதற்கு மோசே: என்னோடிருக்கிற காலாட்கள் ஆறுலட்சம்பேர்; ஒருமாதம் முழுவதும் புசிக்கும்படி அவர்களுக்கு இறைச்சி கொடுப்பேன் என்று சொன்னீரே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Shall the flocks and the herds be slain for them, to suffice them? or shall all the fish of the sea be gathered together for them, to suffice them?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ஆடுமாடுகளை அவர்களுக்காக அடித்தாலும் அவர்களுக்குப் போதுமா? சமுத்திரத்து மச்சங்களையெல்லாம் அவர்களுக்காகச் சேர்த்தாலும் அவர்களுக்குப் போதுமா என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And the LORD said unto Moses, Is the LORD's hand waxed short? you shall see now whether my word shall come to pass unto you or not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அதற்குக் கர்த்தர் மோசேயை நோக்கி: கர்த்தருடய கை குறுகியிருக்கிறதோ? என் வார்த்தையின்படி நடக்குமோ? நடவாதோ என்று, நீ இப்பொழுது காண்பாய் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And Moses went out, and told the people the words of the LORD, and gathered the seventy men of the elders of the people, and set them round about the tabernacle.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அப்பொழுது மோசே புறப்பட்டு, கர்த்தருடைய வார்த்தைகளை ஜனங்களுக்குச் சொல்லி, ஜனங்களின் மூப்பரில் எழுபதுபேரைக் கூட்டி, கூடாரத்தைச் சுற்றிலும் அவர்களை நிறுத்தினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And the LORD came down in a cloud, and spoke unto him, and took of the spirit that was upon him, and gave it unto the seventy elders: and it came to pass, that, when the spirit rested upon them, they prophesied, and did not cease.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">கர்த்தர் மேகத்தில் இறங்கி, அவனோடே பேசி, அவன்மேலிருந்த ஆவியை மூப்பராகிய அந்த எழுபதுபேர்மேலும் வைத்தார் அந்த ஆவி அவர்கள்மேல் வந்து தங்கினமாத்திரத்தில் தீர்க்கதரிசனஞ் சொன்னார்கள்; சொல்லி, பின்பு ஓய்ந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">But there remained two of the men in the camp, the name of the one was Eldad, and the name of the other Medad: and the spirit rested upon them; and they were of them that were written, but went not out unto the tabernacle: and they prophesied in the camp.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அப்பொழுது இரண்டுபேர் பாளயத்தில் இருந்துவிட்டார்கள்; ஒருவன்பேர் எல்தாத், மற்றவன்பேர் மேதாத்; அவர்களும் பேர்வழியில் எழுதப்பட்டிருந்தும், கூடாரத்துக்குப் போகப் புறப்படாதிருந்தார்கள்; அவர்கள்மேலும் ஆவி வந்து தங்கினதினால், பாளயத்தில் தீர்க்கதரிசனஞ் சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And there ran a young man, and told Moses, and said, Eldad and Medad do prophesy in the camp.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">ஒரு பிள்ளையாண்டான் ஓடிவந்து, எல்தாதும் மேதாதும் பாளயத்தில் தீர்க்கதரிசனஞ் சொல்லுகிறார்கள் என்று மோசேக்கு அறிவித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And Joshua the son of Nun, the servant of Moses, one of his young men, answered and said, My lord Moses, forbid them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">உடனே மோசேயினிடத்தில் உள்ள வாலிபரில் ஒருவனும் அவனுடைய ஊழியக்காரனும் நூனின் குமாரனுமாகிய யோசுவா பிரதியுத்தரமாக: என் ஆண்டவனாகிய மோசேயே, அவர்களைத் தடைபண்ணும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And Moses said unto him, Envy you for my sake? would God that all the LORD's people were prophets, and that the LORD would put his spirit upon them!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அதற்கு மோசே: நீ எனக்காக வைராக்கியம் காண்பிக்கிறாயோ? கர்த்தருடைய ஜனங்கள் எல்லாரும் தீர்க்கதரிசனஞ் சொல்லத்தக்கதாக, கர்த்தர் தம்முடைய ஆவியை அவர்கள்மேல் இறங்கப்பண்ணினால் நலமாயிருக்குமே என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Moses got him into the camp, he and the elders of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">பின்பு, மோசேயும் இஸ்ரவேலின் மூப்பரும் பாளயத்திலே வந்து சேர்ந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And there went forth a wind from the LORD, and brought quails from the sea, and let them fall by the camp, as it were a day's journey on this side, and as it were a day's journey on the other side, round about the camp, and as it were two cubits high upon the face of the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அப்பொழுது கர்த்தரிடத்திலிருந்து புறப்பட்ட ஒரு காற்று சமுத்திரத்திலிருந்து காடைகளை அடித்துக்கொண்டுவந்து, பாளயத்திலும் பாளயத்தைச் சுற்றிலும், இந்தப்பக்கம் ஒருநாள் பிரயாணமட்டும் அந்தப்பக்கம் ஒருநாள் பிரயாணமட்டும், தரையின்மேல் இரண்டுமுழ உயரம் விழுந்துகிடக்கச் செய்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And the people stood up all that day, and all that night, and all the next day, and they gathered the quails: he that gathered least gathered ten homers: and they spread them all abroad for themselves round about the camp.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அப்பொழுது ஜனங்கள் எழும்பி அன்று பகல்முழுவதும், இராமுழுவதும், மறுநாள் முழுவதும் காடைகளைச் சேர்த்தார்கள்; கொஞ்சமாய்ச் சேர்த்தவன் பத்து ஓமர் அளவு சேர்த்தான்; அவைகளைப் பாளயத்தைச் சுற்றிலும் தங்களுக்காகக் குவித்துவைத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And while the flesh was yet between their teeth, before it was chewed, the wrath of the LORD was kindled against the people, and the LORD stroke the people with a very great plague.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">தங்கள் பற்கள் நடுவே இருக்கும் இறைச்சியை அவர்கள் மென்று தின்னுமுன்னே கர்த்தருடைய கோபம் ஜனங்களுக்குள்ளே மூண்டது; கர்த்தர் ஜனங்களை மகா பெரிய வாதையால் வாதித்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And he called the name of that place Kibrothhattaavah: because there they buried the people that lusted.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">இச்சித்த ஜனங்களை அங்கே அடக்கம்பண்ணினதினால், அந்த ஸ்தலத்துக்குக் கிப்ரோத் அத்தாவா என்று பேரிட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And the people journeyed from Kibrothhattaavah unto Hazeroth; and abode at Hazeroth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">பின்பு, ஜனங்கள் கிப்ரோத் அத்தாவா என்னும் இடத்தை விட்டு, ஆஸரோத்துக்குப் பிரயாணம்பண்ணி, ஆஸரோத்திலே தங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesis 34 | ஆதியாகமம் 34 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Genesis chapter 34 (ஆதியாகமம் 34) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Genesis 34 | ஆதியாகமம் 34</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And Dinah the daughter of Leah, which she bare unto Jacob, went out to see the daughters of the land.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">லேயாள் யாக்கோபுக்குப் பெற்ற குமாரத்தியாகிய தீனாள் தேசத்துப் பெண்களைப் பார்க்கப் புறப்பட்டாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And when Shechem the son of Hamor the Hivite, prince of the country, saw her, he took her, and lay with her, and defiled her.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அவளை ஏவியனான ஏமோரின் குமாரனும் அத்தேசத்தின் பிரபுவுமாகிய சீகேம் என்பவன் கண்டு, அவளைக் கொண்டுபோய், அவளோடே சயனித்து, அவளைத் தீட்டுப்படுத்தினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And his soul clave unto Dinah the daughter of Jacob, and he loved the damsel, and spoke kindly unto the damsel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவனுடைய மனம் யாக்கோபின் குமாரத்தியாகிய தீனாள்மேல் பற்றுதலாயிருந்தது; அவன் அந்தப் பெண்ணை நேசித்து, அந்தப் பெண்ணின் மனதுக்கு இன்பமாய்ப் பேசினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And Shechem spoke unto his father Hamor, saying, Get me this damsel to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">சீகேம் தன் தகப்பனாகிய ஏமோரை நோக்கி: இந்தப்பெண்ணை எனக்குக் கொள்ளவேண்டும் என்று சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And Jacob heard that he had defiled Dinah his daughter: now his sons were with his cattle in the field: and Jacob held his peace until they were come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">தன் குமாரத்தியாகிய தீனாளை அவன் தீட்டுப்படுத்தினதை யாக்கோபு கேள்விப்பட்டபோது , அவன் குமாரர் அவனுடைய மந்தையினிடத்தில் வெளியிலே இருந்தார்கள்; அவர்கள் வருமளவும் யாக்கோபு பேசாமலிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And Hamor the father of Shechem went out unto Jacob to commune with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அத்தருணத்தில் சீகேமின் தகப்பனாகிய ஏமோர் புறப்பட்டு, யாக்கோபோடே பேசும்படி அவனிடத்தில் வந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very angry, because he had wrought folly in Israel in lying with Jacob's daughter: which thing ought not to be done.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">யாக்கோபின் குமாரர் இந்தச் செய்தியைக் கேட்டவுடனே, வெளியிலிருந்து வந்தார்கள். அவன் யாக்கோபின் குமாரத்தியோடே சயனித்து, செய்யத்தகாத மதிகெட்ட காரியத்தை இஸ்ரவேலில் செய்ததினாலே, அந்த மனிதர் மனங்கொதித்து மிகவும் கோபங்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And Hamor communed with them, saying, The soul of my son Shechem longs for your daughter: I pray you give her him to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">ஏமோர் அவர்களோடே பேசி: என் குமாரனாகிய சீகேமின் மனது உங்கள் குமாரத்தியின்மேல் பற்றுதலாயிருக்கிறது; அவளை அவனுக்கு மனைவியாகக் கொடுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And make all of you marriages with us, and give your daughters unto us, and take our daughters unto you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">நீங்கள் எங்களோடே சம்பந்தங் கலந்து, உங்கள் குமாரத்திகளை எங்களுக்குக் கொடுத்து, எங்கள் குமாரத்திகளை உங்களுக்குக் கொண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And all of you shall dwell with us: and the land shall be before you; dwell and trade all of you therein, and get you possessions therein.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">எங்களோடே வாசம்பண்ணுங்கள்; தேசம் உங்கள் முன்பாக இருக்கிறது; இதிலே குடியிருந்து, வியாபாரம்பண்ணி, பொருள் சம்பாதித்து, அதைக் கையாண்டுகொண்டிருங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And Shechem said unto her father and unto her brethren, Let me find grace in your eyes, and what all of you shall say unto me I will give.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">சீகேமும் அவள் தகப்பனையும் அவள் சகோதரரையும் நோக்கி: உங்கள் கண்களின் எனக்குத் தயவு கிடைக்கவேண்டும்; நீங்கள் என்னிடத்தில் எதைக் கேட்டாலும் தருகிறேன்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Ask me never so much dowry and gift, and I will give according as all of you shall say unto me: but give me the damsel to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">பரிசமும் வெகுமதியும் நீங்கள் எவ்வளவு கேட்டாலும், உங்கள் சொற்படி தருகிறேன்; அந்தப் பெண்ணை மாத்திரம் எனக்கு மனைவியாகக் கொடுக்கவேண்டும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And the sons of Jacob answered Shechem and Hamor his father deceitfully, and said, because he had defiled Dinah their sister:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது யாக்கோபின் குமாரர் தங்கள் சகோதரியாகிய தீனாளைச் சீகேம் என்பவன் தீட்டுப்படுத்தினபடியால், அவனுக்கும் அவன் தகப்பனாகிய ஏமோருக்கும் வஞ்சகமான மறுமொழியாக:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And they said unto them, We cannot do this thing, to give our sister to one that is uncircumcised; for that were a reproach unto us:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">விருத்தசேதனமில்லாத புருஷனுக்கு நாங்கள் எங்கள் சகோதரியைக் கொடுக்கலாகாது; அது எங்களுக்கு நிந்தையாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">But in this will we consent unto you: If all of you will be as we be, that every male of you be circumcised;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">நீங்களும் உங்களுக்குள்ளிருக்கும் ஆண்மக்கள் யாவரும் விருத்தசேதனம் பண்ணப்பட்டு எங்களைப் போலாவீர்களானால், நாங்கள் சம்மதித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Then will we give our daughters unto you, and we will take your daughters to us, and we will dwell with you, and we will become one people.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">உங்களுக்கு எங்கள் குமாரத்திகளைக் கொடுத்து, உங்கள் குமாரத்திகளை எங்களுக்குக் கொண்டு, உங்களோடே குடியிருந்து, ஏகஜனமாயிருப்போம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">But if all of you will not hearken unto us, to be circumcised; then will we take our daughter, and we will be gone.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">விருத்தசேதனம் பண்ணிக்கொள்வதற்கு எங்கள் சொல் கேளாமற்போவீர்களானால், நாங்கள் எங்கள் குமாரத்தியை அழைத்துக்கொண்டு போய்விடுவோம் என்று சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And their words pleased Hamor, and Shechem Hamor's son.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்களுடைய வார்த்தைகள் ஏமோருக்கும் ஏமோரின் குமாரனாகிய சீகேமுக்கும் நலமாய்த் தோன்றினது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And the young man deferred not to do the thing, because he had delight in Jacob's daughter: and he was more honourable than all the house of his father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அந்த வாலிபன் யாக்கோபுடைய குமாரத்தியின்மேல் பிரியம் வைத்திருந்தபடியால், அந்தக் காரியத்தைச் செய்ய அவன் தாமதம்பண்ணவில்லை. அவன் தன் தகப்பன் வீட்டார் அனைவருக்குள்ளும் மேன்மையுள்ளவனாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And Hamor and Shechem his son came unto the gate of their city, and communed with the men of their city, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஏமோரும் அவன் குமாரன் சீகேமும் தங்கள் பட்டணத்தின் வாசலில் வந்து, தங்கள் பட்டணத்து மனிதரோடே பேசி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">These men are peaceable with us; therefore let them dwell in the land, and trade therein; for the land, behold, it is large enough for them; let us take their daughters to us for wives, and let us give them our daughters.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">இந்த மனிதர் நம்மோடே சமாதானமாயிருக்கிறார்கள்; ஆகையால், அவர்கள் இந்தத் தேசத்தில் வாசம்பண்ணி, இதிலே வியாபாரம்பண்ணட்டும்; அவர்களும் வாசம்பண்ணுகிறதற்கு தேசம் விஸ்தாரமாயிருக்கிறது; அவர்களுடைய குமாரத்திகளை நமக்கு மனைவிகளாகக் கொண்டு, நம்முடைய குமாரத்திகளை அவர்களுக்குக் கொடுப்போம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Only herein will the men consent unto us in order to dwell with us, to be one people, if every male among us be circumcised, as they are circumcised.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அந்த மனிதர் விருத்தசேதனம் பண்ணப்பட்டவர்களாயிருக்கிறது போல, நம்மிலுள்ள ஆண்மக்கள் யாவரும் விருத்தசேதனம் பண்ணப்பட்டால் அவர்கள் ஏகஜனமாக நம்மோடே வாசம்பண்ணச் சம்மதிப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Shall not their cattle and their substance and every beast of their's be our's? only let us consent unto them, and they will dwell with us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவர்களுடைய ஆடுமாடுகள் ஆஸ்திகள் மிருகஜீவன்கள் எல்லாம் நம்மைச் சேருமல்லவா? அவர்களுக்குச் சம்மதிப்போமானால், அவர்கள் நம்முடனே வாசம்பண்ணுவார்கள் என்று சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And unto Hamor and unto Shechem his son hearkened all that went out of the gate of his city; and every male was circumcised, all that went out of the gate of his city.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அப்பொழுது ஏமோரின் பட்டணத்து வாசலில் புறப்பட்டுவரும் அனைவரும் அவன் சொல்லையும் அவன் குமாரனாகிய சீகேமின் சொல்லையும் கேட்டு, அவனுடைய பட்டணத்து வாசலில் புறப்பட்டுவரும் ஆண்மக்கள் யாவரும் விருத்தசேதனம் பண்ணப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah's brethren, took each man his sword, and came upon the city boldly, and slew all the males.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">மூன்றாம் நாளில் அவர்களுக்கு நோவெடுத்துக்கொண்டபோது, யாக்கோபின் குமாரரும் தீனாளின் சகோதரருமான சிமியோன் லேவி என்ற இவ்விரண்டு பேரும் தன்தன் பட்டயத்தை எடுத்துக்கொண்டு, துணிகரமாய்ப் பட்டணத்தில்மேல் பாய்ந்து, ஆண்மக்கள் யாவரையும் கொன்றுபோட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And they slew Hamor and Shechem his son with the edge of the sword, and took Dinah out of Shechem's house, and went out.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஏமோரையும் அவன் குமாரன் சீகேமையும் பட்டயக்கருக்காலே கொன்று, சீகேமின் வீட்டிலிருந்த தீனாளை அழைத்துக்கொண்டு போய்விட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">The sons of Jacob came upon the slain, and spoiled the city, because they had defiled their sister.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">மேலும் யாக்கோபின் குமாரர் வெட்டுண்டவர்களிடத்தில் வந்து, தங்கள் சகோதரியை அவர்கள் தீட்டுப்படுத்தினதற்காகப் பட்டணத்தைக் கொள்ளையிட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">They took their sheep, and their oxen, and their asses, and that which was in the city, and that which was in the field,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அவர்களுடைய ஆடுமாடுகளையும் கழுதைகளையும், பட்டணத்திலும் வயல்வெளியிலும் இருந்தவைகள் யாவையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And all their wealth, and all their little ones, and their wives took they captive, and spoiled even all that was in the house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அவர்களுடைய எல்லாத் தட்டுமுட்டுகளையும் எடுத்துக்கொண்டு, அவர்களுடைய எல்லாக் குழந்தைகளையும் ஸ்திரீகளையும் சிறைபிடித்து, வீட்டிலிருந்த எல்லாவற்றையும் கொள்ளையிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Jacob said to Simeon and Levi, All of you have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அப்பொழுது யாக்கோபு சிமியோனையும் லேவியையும் பார்த்து: இந்தத் தேசத்தில் குடியிருக்கிற கானானியரிடத்திலும் பெரிசியரிடத்திலும் என் வாசனையை நீங்கள் கெடுத்ததினாலே என்னைக் கலங்கப் பண்ணினீர்கள்; நான் கொஞ்ச ஜனமுள்ளவன்; அவர்கள் எனக்கு விரோதமாய்க் கூட்டங்கூடி, நானும் என் குடும்பமும் அழியும்படி என்னை வெட்டிப்போடுவார்களே என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And they said, Should he deal with our sister as with an harlot?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அதற்கு அவர்கள்: எங்கள் சகோதரியை அவர்கள் ஒரு வேசியைப்போல நடத்தலாமோ என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

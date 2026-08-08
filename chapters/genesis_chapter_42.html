@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesis 42 | ஆதியாகமம் 42 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Genesis chapter 42 (ஆதியாகமம் 42) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Genesis 42 | ஆதியாகமம் 42</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do all of you look one upon another?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">எகிப்திலே தானியம் உண்டென்று யாக்கோபு அறிந்து, தன் குமாரரை நோக்கி: நீங்கள் ஒருவர் முகத்தை ஒருவர் பார்த்துக்கொண்டிருக்கிறது என்ன?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And he said, Behold, I have heard that there is corn in Egypt: get you down thither, and buy for us from thence; that we may live, and not die.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">எகிப்திலே தானியம் உண்டென்று கேள்விப்படுகிறேன்; நாம் சாகாமல் உயிரோடிருக்கும்படி நீங்கள் அவ்விடத்துக்குப் போய் நமக்காகத் தானியம் கொள்ளுங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And Joseph's ten brethren went down to buy corn in Egypt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">யோசேப்பின் சகோதரர் பத்துப்பேர் தானியங்கொள்ள எகிப்துக்குப் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">But Benjamin, Joseph's brother, Jacob sent not with his brethren; for he said, Lest possibly mischief befall him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">யோசேப்பின் தம்பியாகிய பென்யமீனுக்கு ஏதோ மோசம் வரும் என்று சொல்லி, யாக்கோபு அவனை அவன் சகோதரரோடு அனுப்பவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the sons of Israel came to buy corn among those that came: for the famine was in the land of Canaan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">கானான் தேசத்திலே பஞ்சம் உண்டாயிருந்தபடியால், தானியம் கொள்ளப்போகிறவர்களுடனேகூட இஸ்ரவேலின் குமாரரும் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph's brethren came, and bowed down themselves before him with their faces to the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">யோசேப்பு அத்தேசத்துக்கு அதிபதியாயிருந்து, தேசத்தின் ஜனங்கள் யாவருக்கும் விற்றான். யோசேப்பின் சகோதரர் வந்து, முகங்குப்புறத் தரையிலே விழுந்து அவனை வணங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And Joseph saw his brethren, and he knew them, but made himself strange unto them, and spoke roughly unto them; and he said unto them, Whence come all of you? And they said, From the land of Canaan to buy food.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">யோசேப்பு அவர்களைப் பார்த்து, தன் சகோதரர் என்று அறிந்துகொண்டான்; அறிந்தும் அறியாதவன்போலக் கடினமாய் அவர்களோடே பேசி: நீங்கள் எங்கேயிருந்து வந்தீர்கள் என்று கேட்டான்; அதற்கு அவர்கள்: கானான் தேசத்திலிருந்து தானியம் கொள்ள வந்தோம் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And Joseph knew his brethren, but they knew not him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">யோசேப்பு அவர்களைத் தன் சகோதரர் என்று அறிந்தும், அவர்கள் அவனை அறியவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And Joseph remembered the dreams which he dreamed of them, and said unto them, All of you are spies; to see the nakedness of the land all of you are come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">யோசேப்பு அவர்களைக் குறித்துத் தான் கண்ட சொப்பனங்களை நினைத்து, அவர்களை நோக்கி: நீங்கள் வேவுகாரர், தேசம் எங்கே திறந்து கிடக்கிறது என்று பார்க்க வந்தீர்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And they said unto him, Nay, my lord, but to buy food are your servants come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அதற்கு அவர்கள்: அப்படியல்ல, ஆண்டவனே, உமது அடியாராகிய நாங்கள் தானியம் கொள்ள வந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">We are all one man's sons; we are true men, your servants are no spies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நாங்கள் எல்லாரும் ஒரு தகப்பனுடைய பிள்ளைகள்; நாங்கள் நிஜஸ்தர்; உமது அடியார் வேவுகாரர் அல்ல என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And he said unto them, Nay, but to see the nakedness of the land all of you are come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அதற்கு அவன்: அப்படியல்ல, தேசம் எங்கே திறந்து கிடக்கிறது என்று பார்க்கவே வந்தீர்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And they said, Your servants are twelve brethren, the sons of one man in the land of Canaan; and, behold, the youngest is this day with our father, and one is not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது அவர்கள்: உமது அடியாராகிய நாங்கள் பன்னிரண்டு சகோதரர்; கானான் தேசத்தில் இருக்கிற ஒரு தகப்பன் புத்திரர்; இளையவன் இப்பொழுது எங்கள் தகப்பனிடத்தில் இருக்கிறான்; ஒருவன் காணாமற்போனான் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And Joseph said unto them, That is it that I spoke unto you, saying, All of you are spies:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">யோசேப்பு அவர்களை நோக்கி: உங்களை வேவுகாரர் என்று நான் சொன்னது சரி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Hereby all of you shall be proved: By the life of Pharaoh all of you shall not go forth behind, except your youngest brother come here.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">உங்கள் இளைய சகோதரன் இங்கே வந்தாலொழிய நீங்கள் இங்கேயிருந்து புறப்படுவது இல்லை என்று பார்வோனின் ஜீவனைக்கொண்டு ஆணையிட்டுச் சொல்லுகிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Send one of you, and let him fetch your brother, and all of you shall be kept in prison, that your words may be proved, whether there be any truth in you: or else by the life of Pharaoh surely all of you are spies.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">இதினாலே நீங்கள் சோதிக்கப்படுவீர்கள்; உங்கள் சகோதரனை அழைத்துவரும்படி உங்களில் ஒருவனை அனுப்புங்கள்; உங்களிடத்தில் உண்மையுண்டோ இல்லையோ என்று உங்கள் வார்த்தைகள் சோதிக்கப்படுமளவும், நீங்கள் காவலில் இருக்கவேண்டும்; இல்லாவிட்டால், நீங்கள் வேவுகாரர்தான் என்று பார்வோனின் ஜீவனைக்கொண்டு ஆணையிட்டுச் சொல்லுகிறேன் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And he put them all together into ward three days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அவர்கள் எல்லாரையும் மூன்றுநாள் காவலிலே வைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And Joseph said unto them the third day, This do, and live; for I fear God:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">மூன்றாம் நாளிலே யோசேப்பு அவர்களை நோக்கி: நான் தேவனுக்குப் பயப்படுகிறவன்; நீங்கள் உயிரோடே இருக்கும்படிக்கு ஒன்று செய்யுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">If all of you be true men, let one of your brethren be bound in the house of your prison: go all of you, carry corn for the famine of your houses:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">நீங்கள் நிஜஸ்தரானால், சகோதரராகிய உங்களில் ஒருவன் காவற் கூடத்தில் கட்டுண்டிருக்கட்டும்; மற்றவர்கள் புறப்பட்டு, பஞ்சத்தினால் வருந்துகிற உங்கள் குடும்பத்துக்குத் தானியம் கொண்டுபோய்க் கொடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">But bring your youngest brother unto me; so shall your words be verified, and all of you shall not die. And they did so.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">உங்கள் இளைய சகோதரனை என்னிடத்துக்கு அழைத்துக்கொண்டுவாருங்கள்; அப்பொழுது உங்கள் வார்த்தைகள் மெய்யென்று விளங்கும்; நீங்கள் சாவதில்லை என்றான். அவர்கள் அப்படிச் செய்கிறதற்கு இசைந்து:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">நம்முடைய சகோதரனுக்கு நாம் செய்த துரோகம் நம்மேல் சுமந்தது; அவன் நம்மைக் கெஞ்சி வேண்டிக்கொண்டபோது, அவனுடைய மன வியாகுலத்தை நாம் கண்டும், அவனுக்குச் செவிகொடாமற்போனோமே; ஆகையால் இந்த ஆபத்து நமக்கு நேரிட்டது என்று ஒருவரை ஒருவர் பார்த்துச் சொல்லிக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Reuben answered them, saying, Spoke I not unto you, saying, Do not sin against the child; and all of you would not hear? therefore, behold, also his blood is required.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பொழுது ரூபன் அவர்களைப் பார்த்து: இளைஞனுக்கு விரோதமாகப் பாவஞ்செய்யாதிருங்கள் என்று நான் உங்களுக்குச் சொல்லவில்லையா? நீங்கள் கேளாமற்போனீர்கள்; இப்பொழுது, இதோ, அவன் இரத்தப்பழி நம்மிடத்தில் வாங்கப்படுகிறது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And they knew not that Joseph understood them; for he spoke unto them by an interpreter.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">யோசேப்பு துபாசியைக்கொண்டு அவர்களிடத்தில் பேசினபடியால், தாங்கள் சொன்னது அவனுக்குத் தெரியும் என்று அறியாதிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அவன் அவர்களை விட்டு அப்புறம் போய் அழுது, திரும்ப அவர்களிடத்தில் வந்து, அவர்களோடே பேசி, அவர்களில் சிமியோனைப் பிடித்து, அவர்கள் கண்களுக்கு முன்பாகக் கட்டுவித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Then Joseph commanded to fill their sacks with corn, and to restore every man's money into his sack, and to give them provision for the way: and thus did he unto them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">பின்பு, அவர்கள் சாக்குகளைத் தானியத்தால் நிரப்பவும், அவர்கள் பணத்தைத் திரும்ப அவனவன் சாக்கிலே போடவும், வழிக்கு வேண்டிய ஆகாரத்தைக் கொடுக்கவும் யோசேப்பு கட்டளையிட்டான்; அப்படியே அவர்களுக்குச் செய்யப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And they laded their asses with the corn, and departed thence.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அவர்கள் அந்தத் தானியத்தைத் தங்கள் கழுதைகள்மேல் ஏற்றிக்கொண்டு, அவ்விடம்விட்டுப் புறப்பட்டுப் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And as one of them opened his sack to give his ass animal food in the inn, he espied his money; for, behold, it was in his sack's mouth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">தங்குகிற இடத்திலே அவர்களில் ஒருவன் தன் கழுதைக்குத் தீவனம்போடத் தன் சாக்கைத் திறந்தபோது, சாக்கின் வாயிலே தன் பணம் இருக்கிறதைக் கண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And he said unto his brethren, My money is restored; and, lo, it is even in my sack: and their heart failed them, and they were afraid, saying one to another, What is this that God has done unto us?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">தன் சகோதரரைப் பார்த்து, என் பணம் திரும்ப வந்திருக்கிறது; இதோ, அது என் சாக்கிலே இருக்கிறது என்றான். அப்பொழுது அவர்களுடைய இருதயம் சோர்ந்துபோய், அவர்கள் பயந்து, ஒருவரை ஒருவர் பார்த்து, தேவன் நமக்கு இப்படிச் செய்தது என்ன என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And they came unto Jacob their father unto the land of Canaan, and told him all that befell unto them; saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அவர்கள் கானான் தேசத்திலுள்ள தங்கள் தகப்பனாகிய யாக்கோபினிடத்தில் வந்து, தங்களுக்குச் சம்பவித்தவைகளையெல்லாம் அவனுக்கு அறிவித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">The man, who is the lord of the land, spoke roughly to us, and took us for spies of the country.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">தேசத்துக்கு அதிபதியாயிருக்கிறவன் எங்களை தேசத்தை வேவுபார்க்க வந்தவர்கள் என்று எண்ணி எங்களோடே கடினமாய்ப் பேசினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And we said unto him, We are true men; we are no spies:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">நாங்களோ அவனை நோக்கி: நாங்கள் நிஜஸ்தர், வேவுகாரர் அல்ல.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">We be twelve brethren, sons of our father; one is not, and the youngest is this day with our father in the land of Canaan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">நாங்கள் பன்னிரண்டு சகோதரர், ஒரு தகப்பன் புத்திரர், ஒருவன் காணாமற்போனான், இளையவன் இப்பொழுது கானான் தேசத்தில் எங்கள் தகப்பனிடத்தில் இருக்கிறான் என்றோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And the man, the lord of the country, said unto us, Hereby shall I know that all of you are true men; leave one of your brethren here with me, and take food for the famine of your households, and be gone:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அப்பொழுது தேசத்தின் அதிபதியானவன்: நீங்கள் நிஜஸ்தர் என்பதை நான் அறியும்படி உங்கள் சகோதரரில் ஒருவனை நீங்கள் என்னிடத்தில் விட்டு, பஞ்சத்தினால் வருந்துகிற உங்கள் குடும்பத்துக்குத் தானியம் வாங்கிக்கொண்டுபோய்க் கொடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And bring your youngest brother unto me: then shall I know that all of you are no spies, but that all of you are true men: so will I deliver you your brother, and all of you shall trade in the land.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">உங்கள் இளைய சகோதரனை என்னிடத்தில் அழைத்துக்கொண்டுவாருங்கள்; அதினாலே நீங்கள் வேவுகாரர் அல்ல, நிஜஸ்தர் என்பதை நான் அறிந்துகொண்டு, உங்கள் சகோதரனை விடுதலை செய்வேன்; நீங்கள் இந்தத்தேசத்திலே வியாபாரமும் பண்ணலாம் என்றான் என்று சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And it came to pass as they emptied their sacks, that, behold, every man's bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவர்கள் தங்கள் சாக்குகளிலுள்ள தானியத்தைக் கொட்டுகையில், இதோ, அவனவன் சாக்கிலே அவனவன் பணமுடிப்பு இருந்தது; அந்தப் பணமுடிப்புகளை அவர்களும் அவர்கள் தகப்பனும் கண்டு பயந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And Jacob their father said unto them, Me have all of you bereaved of my children: Joseph is not, and Simeon is not, and all of you will take Benjamin away: all these things are against me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அவர்கள் தகப்பனாகிய யாக்கோபு அவர்களை நோக்கி: என்னைப் பிள்ளையற்றவனாக்குகிறீர்கள்; யோசேப்பும் இல்லை, சிமியோனும் இல்லை, பென்யமீனையும் கொண்டுபோகப் பார்க்கிறீர்கள்; இதெல்லாம் எனக்கு விரோதமாய் நேரிடுகிறது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And Reuben spoke unto his father, saying, Slay my two sons, if I bring him not to you: deliver him into my hand, and I will bring him to you again.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">அப்பொழுது ரூபன் தன் தகப்பனைப் பார்த்து, அவனை என் கையில் ஒப்புவியும், நான் அவனைத் திரும்ப உம்மிடத்தில் கொண்டுவருவேன்; அவனைக் கொண்டுவராவிட்டால், என் இரண்டு குமாரரையும் கொன்றுபோடும் என்று சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which all of you go, then shall all of you bring down my gray hairs with sorrow to the grave.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">அதற்கு அவன்: என் மகன் உங்களோடேகூடப் போவதில்லை; அவன் தமையன் இறந்துபோனான், இவன் ஒருவன் மீதியாயிருக்கிறான்; நீங்கள் போகும் வழியில் இவனுக்கு மோசம் நேரிட்டால், நீங்கள் என் நரைமயிரைச் சஞ்சலத்தோடே பாதாளத்தில் இறங்கப் பண்ணுவீர்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

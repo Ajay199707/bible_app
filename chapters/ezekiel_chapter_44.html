@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezekiel 44 | எசேக்கியேல் 44 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Ezekiel chapter 44 (எசேக்கியேல் 44) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Ezekiel 44 | எசேக்கியேல் 44</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then he brought me back the way of the gate of the outward sanctuary which looks toward the east; and it was shut.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்பு அவர் என்னைக் ՠοழக்குக்கு எதߠΰே பரிசுத்த ஸ்தலத்தρக்குப் புறவாசல் வԠοயே திரும்பப்பண்ணினார்; அது பூட்டப்பட்டிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Then said the LORD unto me; This gate shall be shut, it shall not be opened, and no man shall enter in by it; because the LORD, the God of Israel, has entered in by it, therefore it shall be shut.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர் என்னை நோக்கி: இந்த வாசல் திறக்கப்படாமல் பூட்டப்பட்டிருக்கும்; ஒருவரும் இதற்குள் பிரவேசிப்பதில்லை; இஸ்ரவேலின் தேவனாகிய கர்த்தர் இதற்குள் பிரவேசித்தார், ஆகையால் இது பூட்டப்பட்டிருக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">It is for the prince; the prince, he shall sit in it to eat bread before the LORD; he shall enter by the way of the porch of that gate, and shall go out by the way of the same.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">இது அதிபதிக்கே உரியது, அதிபதி கர்த்தருடைய சந்நிதியில் போஜனம்பண்ணும்படி இதில் உட்காருவான்; அவன் வாசல் மண்டபத்தின் வழியாய்ப் பிரவேசித்து, மறுபடியும் அதின் வழியாய்ப் புறப்படுவான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Then brought he me the way of the north gate before the house: and I looked, and, behold, the glory of the LORD filled the house of the LORD: and I fell upon my face.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பின்பு அவர் என்னை வடக்கு வாசல்வழியாய் ஆலயத்தின் முகப்பிலே அழைத்துக்கொண்டுபோனார்; இதோ, கர்த்தருடைய ஆலயம், கர்த்தருடைய மகிமையால் நிறைந்ததை நான் கண்டு, முகங்குப்புற விழுந்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the LORD said unto me, Son of man, mark well, and behold with yours eyes, and hear with yours ears all that I say unto you concerning all the ordinances of the house of the LORD, and all the laws thereof; and mark well the entering in of the house, with every going out of the sanctuary.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர் என்னை நோக்கி: மனுபுத்திரனே கர்த்தருடைய ஆலயத்தின் சகல நியமங்களையும் அதின் சகல சட்டங்களையுங்குறித்து நான் உன்னோடே சொல்வதையெல்லாம் நீ உன் மனதிலே கவனித்து, உன் கண்களினாலே பார்த்து உன் காதுகளினாலே கேட்டு, பரிசுத்த ஸ்தலத்தினுடைய எல்லா வாசற்படிகளின் வழியாய் ஆலயத்துக்குள் பிரவேசிப்பதும் அதிலிருந்து புறப்படுவதும் இன்னவிதமென்று நீ ஆலோசித்துப் பார்த்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And you shall say to the rebellious, even to the house of Israel, Thus says the Lord GOD; O all of you house of Israel, let it suffice you of all your abominations,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">இஸ்ரவேல் வம்சத்தாராகிய கலகக்காரரோடே சொல்லவேண்டியது என்னவென்றால்: கர்த்தராகிய ஆண்டவர் உரைக்கிறார், இஸ்ரவேல் வம்சத்தாரே, நீங்கள் செய்த சகல அருவருப்புகளும் போதும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">In that all of you have brought into my sanctuary strangers, uncircumcised in heart, and uncircumcised in flesh, to be in my sanctuary, to pollute it, even my house, when all of you offer my bread, the fat and the blood, and they have broken my covenant because of all your abominations.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">நீங்கள் எனக்குச் செலுத்தவேண்டிய ஆகாரமாகிய நிணத்தையும் இரத்தத்தையும் செலுத்துகையில், என் ஆலயத்தைப் பரிசுத்தக்குலைச்சலாக்கும்படி விருத்தசேதனமில்லாத இருதயமும் விருத்தசேதனமில்லாத மாம்சமுமுள்ள அந்நிய புத்திரரை என் பரிசுத்த ஸ்தலத்துக்குள் இருக்கிறதற்காக அழைத்துக்கொண்டுவந்தீர்கள்; நீங்கள் செய்த எல்லா அருவருப்புகளினாலும் அவர்கள் என் உடன்படிக்கையை மீறினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And all of you have not kept the charge of mine holy things: but all of you have set keepers of my charge in my sanctuary for yourselves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">நீங்கள் என் பரிசுத்த வஸ்துக்களின் காவலைக் காவாமல், உங்களுக͠Εு இஷ்டமானவர்களை என் பரிசுத்த ஸ்தலத்திலே என் காவலைக் காக்கிறதற்காக வைத்தீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Thus says the Lord GOD; No stranger, uncircumcised in heart, nor uncircumcised in flesh, shall enter into my sanctuary, of any stranger that is among the children of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">கர்த்தராகிய ஆண்டவர் சொல்லுகிறது என்னவென்றால்: இஸ்ரவேல் புத்திரரின் நடுவில் இருக்கிற சகல அந்நிய புத்திரரிலும், விருத்தசேதனமில்லாத இருதயமும் விருத்தசேதனமில்லாத மாம்சமுமுள்ள அந்நிய புத்திரன் ஒருவனும் என் பரிசுத்த ஸ்தலத்துக்குள் பிரவேசிப்பதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And the Levites that are gone away far from me, when Israel went astray, which went astray away from me after their idols; they shall even bear their iniquity.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">இஸ்ரவேல் வழிதப்பிப்போகையில், என்னை விட்டுத் தூரமானவர்களும், என்னைவிட்டு வழிதப்பித் தங்கள் நரகலான விக்கிரகங்களைப் பின்பற்றினவர்களுமாகிய லேவியரும் தங்கள் அக்கிரமத்தைச் சுமப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Yet they shall be ministers in my sanctuary, having charge at the gates of the house, and ministering to the house: they shall slay the burnt offering and the sacrifice for the people, and they shall stand before them to minister unto them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">ஆகிலும் அவர்கள் என் ஆலயத்தின் வாசல்களைக் காத்து, என் ஆலயத்தில் ஊழியஞ்செய்து, என் பரிசுத்தஸ்தலத்திலே பணிவிடைக்காரராயிருப்பார்கள்; அவர்கள் ஜனங்களுக்காக தகனபலிகளையும் மற்றப் பலிகளையும் செலுத்தி, இவர்களுக்கு ஊழியஞ்செய்கிறதற்கு இவர்கள் முன்பாக என் பரிசுத்த ஸ்தலத்திலே பணிவிடைக்காரராயிருப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Because they ministered unto them before their idols, and caused the house of Israel to fall into iniquity; therefore have I lifted up mine hand against them, says the Lord GOD, and they shall bear their iniquity.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அவர்கள் இவர்களுடைய நரகலான விக்கிரகங்களுக்கு முன்பாக நின்று இவர்களுக்கு ஊழியஞ்செய்து, இஸ்ரவேல் வம்சத்தார் அக்கிரமத்தில் விழப்பண்ணினபடியினால், நான் என் கையை அவர்களுக்கு விரோதமாய் உயர்த்தினேன், அவர்கள் தங்கள் அக்கிரமத்தைச் சுமப்பார்கள் என்று கர்த்தராகிய ஆண்டவர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And they shall not come near unto me, to do the office of a priest unto me, nor to come near to any of my holy things, in the most holy place: but they shall bear their shame, and their abominations which they have committed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">இவர்கள் எனக்கு ஆசாரியராய் ஆராதனை செய்யும்படி என் சமீபத்தில் வராமலும், மகா பரிசுத்தமான ஸ்தலத்தில் என் பரிசுத்த வஸ்துக்களில் யாதொன்றையும் கிட்டாமலும் இருக்கவேண்டும், அவர்கள் தங்கள் இலச்சையையும் தாங்கள் செய்த அருவருப்புகளையும் சுமக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">But I will make them keepers of the charge of the house, for all the service thereof, and for all that shall be done therein.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ஆலயத்தின் சகல வேளைகளுக்கும் அதில் செய்யப்படவேண்டிய எல்லாவற்றிற்கும் நான் அவர்களை அதில் காவல்காக்கிறவர்களாயிருக்கக் கட்டளையிடுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">But the priests the Levites, the sons of Zadok, that kept the charge of my sanctuary when the children of Israel went astray from me, they shall come near to me to minister unto me, and they shall stand before me to offer unto me the fat and the blood, says the Lord GOD:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரரே, என்னைவிட்டு வழிதப்பிப்போகையில், என் பரிசுத்த ஸ்தலத்தின் காவலைக் காக்கிற சாதோக்கின் புத்திரராகிய லேவியர் என்னும் ஆசாரியர்களே எனக்கு ஆராதனைசெய்ய என் சமீபத்தில் சேர்ந்து, நிணத்தையும் இரத்தத்தையும் எனக்குச் செலுத்த என் சந்நிதியில் நிற்பார்களென்று கர்த்தராகிய ஆண்டவர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">They shall enter into my sanctuary, and they shall come near to my table, to minister unto me, and they shall keep my charge.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">இவர்கள் என் பரிசுத்த ஸ்தலத்துக்குள் பிரவேசிப்பார்கள்; இவர்களே எனக்கு ஆராதனை செய்ய என் பீடத்தைக் கிட்டிவந்து, என் காவலைக் காப்பார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And it shall come to pass, that when they enter in at the gates of the inner court, they shall be clothed with linen garments; and no wool shall come upon them, while they minister in the gates of the inner court, and within.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">உட்பிராகாரத்தின் வாசல்களுக்குள் பிரவேசிக்கிறபோது சணல்நூல் வஸ்திரங்களை உடுத்திக்கொள்வார்களாக; அவர்கள் உட்பிராகாரத்தின் வாசல்களிலும், உள்ளேயும் ஆராதனைசெய்கையில் ஆட்டுமயிர் உடுப்பைத் தரிக்கலாகாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">They shall have linen bonnets upon their heads, and shall have linen breeches upon their loins; they shall not gird themselves with any thing that causes sweat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்களுடைய தலைகளில் சணல்நூல் குல்லாக்களையும், அவர்களுடைய இடைகளில் சணல்நூல் சல்லடங்களையும் தரிக்கவேண்டும்; வேர்வையுண்டாக்கத்தக்கதொன்றையும் அரையில் கட்டலாகாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And when they go forth into the utter court, even into the utter court to the people, they shall put off their garments wherein they ministered, and lay them in the holy chambers, and they shall put on other garments; and they shall not sanctify the people with their garments.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அவர்கள் வெளிப்பிராகாரமாகிய புறமுற்றத்திலே ஜனங்களிடத்தில் போகும்போது, அவர்கள் தாங்கள் ஆராதனைசெய்யும் சமயத்தில் உடுத்தியிருந்த தங்கள் வஸ்திரங்களைக் கழற்றி அவைகளைப் பரிசுத்த அறைவீடுகளில் வைத்து, வேறே வஸ்திரங்களை உடுத்திக்கொள்ளக்கடவர்கள்; தங்கள் வஸ்திரங்களாலே ஜனங்களைப் பரிசுத்தப்படுத்தலாகாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Neither shall they shave their heads, nor suffer their locks to grow long; they shall only poll their heads.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அவர்கள் தங்கள் தலைகளைச் சிரையாமலும், தங்கள் மயிரை நீளமாய் வளர்க்காமலும், தங்கள் தலைமயிரைக் கத்தரிக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">Neither shall any priest drink wine, when they enter into the inner court.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">ஆசாரியர்களில் ஒருவனும் உட்பிராகாரத்துக்குள் பிரவேசிக்கும்போது, திராட்சரசம் குடிக்கலாகாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Neither shall they take for their wives a widow, nor her that is put away: but they shall take maidens of the seed of the house of Israel, or a widow that had a priest before.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">விதவையையும் தள்ளிவிடப்பட்டவளையும் அவர்கள் விவாகம்பண்ணாமல், இஸ்ரவேல் வம்சத்தாளாகிய கன்னிகையையாகிலும் ஒரு ஆசாரியனின் மனைவியாயிருந்த விதவையையாகிலும் விவாகம்பண்ணலாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவர்கள் பரிசுத்தமானதற்கும் பரிசுத்தமல்லாததற்கும், தீட்டானதற்கும் தீட்டல்லாததற்கும் இருக்கும் வித்தியாசத்தை என் ஜனத்துக்குப் போதித்து, அவர்களுக்குத் தெரியப்பண்ணக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And in controversy they shall stand in judgment; and they shall judge it according to my judgments: and they shall keep my laws and my statutes in all mine assemblies; and they shall hallow my sabbaths.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">வழக்கிருந்தால் அவர்கள் நியாயந்தீர்க்க ஆயத்தமாயிருந்து, என் நியாயங்களின்படி அதைத் தீர்த்து, என்னுடைய பண்டிகைகளில் எல்லாம் என் நியாயப்பிரமாணத்தையும் என் கட்டளைகளையும் கைக்கொண்டு என் ஓய்வுநாட்களைப் பரிசுத்தமாக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And they shall come at no dead person to defile themselves: but for father, or for mother, or for son, or for daughter, for brother, or for sister that has had no husband, they may defile themselves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">தகப்பன், தாய், குமாரன், குமாரத்தி, சகோதரன் புருஷனுக்கு வாழ்க்கைப்படாத சகோதரி என்னும் இவர்களுடைய சவத்தினால் அவர்கள் தீட்டுப்படலாமேயல்லாமல், அவர்களிலொருவனும் செத்த ஒருவனிடத்தில்போய்த் தீட்டுப்படலாகாது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And after he is cleansed, they shall reckon unto him seven days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அவன் சுத்திகரிகப்பட்டபின்பு, அவனுக்கு ஏழுநாள் எண்ணப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And in the day that he goes into the sanctuary, unto the inner court, to minister in the sanctuary, he shall offer his sin offering, says the Lord GOD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அவன் பரிசுத்த ஸ்தலத்தில் ஆராதனை செய்யும்படி பரிசுத்த ஸ்தலமிருக்கிற உட்பிராகாரத்துக்குள் பிரவேசிக்கிறநாளிலே, அவன் தனக்காகப் பாவநிவாரண பலியைச் செலுத்தக்கடவன் என்று கர்த்தராகிய ஆண்டவர் சொல்லுகிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And it shall be unto them for an inheritance: I am their inheritance: and all of you shall give them no possession in Israel: I am their possession.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அவர்களுக்குரிய சுதந்தரமென்னவென்றால்: நானே அவர்கள் சுதந்தரம்; ஆகையால் இஸ்ரவேலில் அவர்களுக்குக் காணியாட்சியைக் கொடாதிருப்பீர்களாக; நான் அவர்கள் காணியாட்சி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">They shall eat the food offering, and the sin offering, and the trespass offering: and every dedicated thing in Israel shall be theirs.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">போஜனபலியையும் பாவநிவாரணபலியையும் குற்றநிவாரணபலியையும் அவர்கள் புசிப்பார்கள்; இஸ்ரவேலிலே பொருத்தனை பண்ணப்பட்டதெல்லாம் அவர்களுடையதாயிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And the first of all the first-fruits of all things, and every oblation of all, of every sort of your oblations, shall be the priest's: all of you shall also give unto the priest the first of your dough, that he may cause the blessing to rest in yours house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">சகலவித முதற்கனிகளில் எல்லாம் முந்தின பலனும், நீங்கள் காணிக்கையாய்ச் செலுத்தும் எவ்விதமானபொருள்களும் ஆசாரியர்களுடையதாயிருப்பதாக; உங்கள் வீட்டில் ஆசீர்வாதம் தங்கும்படிக்கு நீங்கள் பிசைந்தமாவில் முதற்பாகத்தையும் ஆசாரியனுக்குக் கொடுக்கக்கடவீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">The priests shall not eat of any thing that is dead of itself, or torn, whether it be fowl or beast.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">பறவைகளிலும் மிருகங்களிலும் தானாய்ச் செத்ததும் பீறுண்டதுமான ஒன்றையும் ஆசாரியர்கள் புசிக்கலாகாது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

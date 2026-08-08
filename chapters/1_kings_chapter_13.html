@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Kings 13 | 1 இராஜாக்கள் 13 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for 1 Kings chapter 13 (1 இராஜாக்கள் 13) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">1 Kings 13 | 1 இராஜாக்கள் 13</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And, behold, there came a man of God out of Judah by the word of the LORD unto Bethel: and Jeroboam stood by the altar to burn incense.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">யெரொபெயாம் தூபங்காட்ட பலிபீடத்தண்டையிலே நிற்கையில், இதோ, தேவனுடைய மனுஷன் ஒருவன் கர்த்தருடைய வார்த்தையின்படியே, யூதாவிலிருந்து பெத்தேலுக்கு வந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And he cried against the altar in the word of the LORD, and said, O altar, altar, thus says the LORD; Behold, a child shall be born unto the house of David, Josiah by name; and upon you shall he offer the priests of the high places that burn incense upon you, and men's bones shall be burnt upon you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அந்த பலிபீடத்தை நோக்கி: பலிபீடமே பலிபீடமே, இதோ, தாவீதின் வம்சத்தில் யோசியா என்னும் பேருள்ள ஒரு குமாரன் பிறப்பான்; அவன் உன்மேல் தூபங்காட்டுகிற மேடைகளின் ஆசாரியர்களை உன்மேல் பலியிடுவான்; மனுஷரின் எலும்புகளும் உன்மேல் சுட்டெரிக்கப்படும் என்பதைக் கர்த்தர் உரைக்கிறார் என்று கர்த்தருடைய வார்த்தையைக் கூறி;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And he gave a sign the same day, saying, This is the sign which the LORD has spoken; Behold, the altar shall be rent, and the ashes that are upon it shall be poured out.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அன்றைய தினம் அவன் ஒரு அடையாளத்தையும் சொல்லி, இதோ, இந்தப் பலிபீடம் வெடித்து, அதின்மேலுள்ள சாம்பல் கொட்டுண்டுபோம்; கர்த்தர் உரைத்ததற்கு இதுவே அடையாளம் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And it came to pass, when king Jeroboam heard the saying of the man of God, which had cried against the altar in Bethel, that he put forth his hand from the altar, saying, Lay hold on him. And his hand, which he put forth against him, dried up, so that he could not pull it in again to him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பெத்தேலில் இருக்கிற அந்தப் பலிபீடத்திற்கு எதிராக தேவனுடைய மனுஷன் கூறின வார்த்தையை ராஜாவாகிய யெரொபெயாம் கேட்டபோது, அவனைப் பிடியுங்கள் என்று தன் கையைப் பலிபீடத்திலிருந்து நீட்டினான்; அவனுக்கு விரோதமாய் நீட்டின கை தன்னிடமாக முடக்கக் கூடாதபடிக்கு மரத்துப்போயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">The altar also was rent, and the ashes poured out from the altar, according to the sign which the man of God had given by the word of the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">தேவனுடைய மனுஷன் கர்த்தருடைய வார்த்தையால் குறித்திருந்த அடையாளத்தின்படியே பலிபீடம் வெடித்து, சாம்பல் பலிபீடத்திலிருந்து கொட்டுண்டுபோயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And the king answered and said unto the man of God, Implore now the face of the LORD your God, and pray for me, that my hand may be restored me again. And the man of God besought the LORD, and the king's hand was restored him again, and became as it was before.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அப்பொழுது ராஜா, தேவனுடைய மனுஷனுக்குப் பிரதியுத்தரமாக: நீ உன் தேவனாகிய கர்த்தருடைய சமுகத்தை நோக்கி வேண்டிக்கொண்டு, என் கை முன் போலிருக்கும்படிக்கு எனக்காக விண்ணப்பம்பண்ணவேண்டும் என்றான்; அப்பொழுது தேவனுடைய மனுஷன் கர்த்தருடைய சமுகத்தை நோக்கி வருந்தி விண்ணப்பம் செய்தான், ராஜாவின் கை முன்னிருந்தபடி சீர்ப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And the king said unto the man of God, Come home with me, and refresh yourself, and I will give you a reward.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அப்பொழுது ராஜா தேவனுடைய மனுஷனை நோக்கி: நீ என்னோடேகூட வீட்டுக்கு வந்து இளைப்பாறு; உனக்கு வெகுமானம் தருவேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And the man of God said unto the king, If you will give me half yours house, I will not go in with you, neither will I eat bread nor drink water in this place:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">தேவனுடைய மனுஷன் ராஜாவை நோக்கி: நீர் எனக்கு உம்முடைய வீட்டில் பாதி கொடுத்தாலும், நான் உம்மோடே வருவதில்லை, இந்த ஸ்தலத்தில் அப்பம் புசிப்பதுமில்லை, தண்ணீர் குடிப்பதுமில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">For so was it charged me by the word of the LORD, saying, Eat no bread, nor drink water, nor return by the same way that you came.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஏனென்றால் நீ அப்பம் புசியாமலும், தண்ணீர் குடியாமலும், போனவழியாய்த் திரும்பாமலும் இருவென்று கர்த்தர் தம்முடைய வார்த்தையால் எனக்குக் கட்டளையிட்டிருக்கிறார் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">So he went another way, and returned not by the way that he came to Bethel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அவன் பெத்தேலுக்கு வந்தவழியாய்த் திரும்பாமல், வேறுவழியாய்ப் போய்விட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Now there dwelt an old prophet in Bethel; and his sons came and told him all the works that the man of God had done that day in Bethel: the words which he had spoken unto the king, them they told also to their father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">கிழவனான ஒரு தீர்க்கதரிசி பெத்தேலிலே குடியிருந்தான்; அவன் குமாரர் வந்து தேவனுடைய மனுஷன் அன்றைய தினம் பெத்தேலிலே செய்த எல்லாச் செய்கைகளையும், அவன் ராஜாவோடே சொன்ன வார்த்தைகளையும் தங்கள் தகப்பனுக்கு அறிவித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And their father said unto them, What way went he? For his sons had seen what way the man of God went, which came from Judah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது அவர்கள் தகப்பன்: அவன் எந்த வழி போனான் என்று அவர்களைக் கேட்டான். யூதாவிலிருந்து வந்த தேவனுடைய மனுஷன் போனவழி இன்னதென்று அவன் குமாரர் பார்த்திருந்தபடியால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And he said unto his sons, Saddle me the ass. So they saddled him the ass: and he rode thereon,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அவன் தன் குமாரருடனே: கழுதையின்மேல் சேணம்வைத்துக் கொடுங்கள் என்றான்; அவர்கள் கழுதையின்மேல் சேணம்வைத்துக் கொடுத்தபின், அவன் அதின்மேல் ஏறி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And went after the man of God, and found him sitting under an oak: and he said unto him, Are you the man of God that came from Judah? And he said, I am.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">தேவனுடைய மனுஷனைத் தொடர்ந்துபோய், ஒரு கர்வாலி மரத்தின்கீழ் உட்கார்ந்திருக்கிற அவனைக் கண்டு: யூதாவிலிருந்துவந்த தேவனுடைய மனுஷன் நீர்தானா என்று அவனைக் கேட்டதற்கு; அவன், நான் தான் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Then he said unto him, Come home with me, and eat bread.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அப்பொழுது அவனை நோக்கி: என்னோடே வீட்டுக்கு வந்து அப்பம் புசியும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And he said, I may not return with you, nor go in with you: neither will I eat bread nor drink water with you in this place:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அதற்கு அவன்: நான் உம்மோடே திரும்பவும் உம்மோடே உள்ளே போகவுமாட்டேன்; இந்த ஸ்தலத்திலே உம்மோடே நான் அப்பம் புசிக்கவும் தண்ணீர் குடிக்கவுமாட்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">For it was said to me by the word of the LORD, You shall eat no bread nor drink water there, nor return to go by the way that you came.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">ஏனென்றால் நீ அப்பம் புசியாமலும், அங்கே தண்ணீர் குடியாமலும், நீ போனவழியாய்த் திரும்பிவராமலும் இரு என்று கர்த்தருடைய வார்த்தை எனக்கு உண்டாயிருக்கிறது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">He said unto him, I am a prophet also as you are; and an angel spoke unto me by the word of the LORD, saying, Bring him back with you into yours house, that he may eat bread and drink water. But he lied unto him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அதற்கு அவன்: உம்மைப்போல நானும் தீர்க்கதரிசிதான்; அவன் அப்பம் புசித்துத் தண்ணீர் குடிக்க, நீ அவனைத் திருப்பி, உன் வீட்டுக்கு அழைத்துக் கொண்டுவா என்று ஒரு தூதன் கர்த்தருடைய வார்த்தையாக என்னோடே சொன்னான் என்று அவனிடத்தில் பொய் சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">So he went back with him, and did eat bread in his house, and drank water.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்பொழுது அவன் இவனோடே திரும்பிப் போய், இவன் வீட்டிலே அப்பம் புசித்துத் தண்ணீர் குடித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And it came to pass, as they sat at the table, that the word of the LORD came unto the prophet that brought him back:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அவர்கள் பந்தியில் உட்கார்ந்திருக்கிறபோது, அவனைத் திருப்பிக்கொண்டு வந்த தீர்க்கதரிசிக்குக் கர்த்தருடைய வார்த்தை உண்டானதினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And he cried unto the man of God that came from Judah, saying, Thus says the LORD, Forasmuch as you have disobeyed the mouth of the LORD, and have not kept the commandment which the LORD your God commanded you,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவன் யூதாவிலிருந்து வந்த தேவனுடைய மனுஷனைப் பார்த்துச் சத்தமிட்டு, உன் தேவனாகிய கர்த்தர் உனக்குக் கற்பித்த கட்டளையை நீ கைக்கொள்ளாமல் கர்த்தருடைய வாக்கை மீறி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">But came back, and have eaten bread and drunk water in the place, of the which the Lord did say to you, Eat no bread, and drink no water; your carcass shall not come unto the tomb of your fathers.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பம் புசிக்கவும் தண்ணீர் குடிக்கவும் வேண்டாம் என்று அவர் விலக்கின ஸ்தலத்திற்கு நீ திரும்பி, அப்பம் புசித்துத் தண்ணீர் குடித்தபடியினால், உன்னுடைய பிரேதம் உன் பிதாக்களின் கல்லறையிலே சேருவதில்லை என்று கர்த்தர் சொல்லுகிறார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And it came to pass, after he had eaten bread, and after he had drunk, that he saddled for him the ass, to know, for the prophet whom he had brought back.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவன் போஜனபானம்பண்ணி முடிந்தபின்பு, அந்தத் தீர்க்கதரிசியைத் திருப்பிக்கொண்டுவந்தவன் அவனுக்குக் கழுதையின்மேல் சேணம்வைத்துக் கொடுத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And when he was gone, a lion met him by the way, and slew him: and his carcass was cast in the way, and the ass stood by it, the lion also stood by the carcass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அவன் போனபிற்பாடு வழியிலே ஒரு சிங்கம் அவனுக்கு எதிர்ப்பட்டு அவனைக் கொன்றுபோட்டது; அவன் பிரேதம் வழியிலே கிடந்தது; கழுதை அதினண்டையிலே நின்றது; சிங்கமும் பிரேதத் தண்டையிலே நின்றது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And, behold, men passed by, and saw the carcass cast in the way, and the lion standing by the carcass: and they came and told it in the city where the old prophet dwelt.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அந்த வழியே கடந்துவருகிற மனுஷர், வழியிலே கிடக்கிற பிரேதத்தையும், பிரேதத்தண்டையிலே நிற்கிற சிங்கத்தையும் கண்டு, கிழவனான தீர்க்கதரிசி குடியிருந்த பட்டணத்திலே வந்து சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And when the prophet that brought him back from the way heard thereof, he said, It is the man of God, who was disobedient unto the word of the LORD: therefore the LORD has delivered him unto the lion, which has torn him, and slain him, according to the word of the LORD, which he spoke unto him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அவனை வழியிலிருந்து திரும்பப் பண்ணின தீர்க்கதரிசி அதைக் கேட்டபோது, அவன் கர்த்தருடைய வாக்கை மீறின தேவனுடைய மனுஷன் தான், கர்த்தர் அவனுக்குச் சொன்ன வார்த்தையின்படியே, கர்த்தர் அவனை ஒரு சிங்கத்திற்கு ஒப்புக்கொடுத்தார்; அது அவனை முறித்துக் கொன்றுபோட்டது என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And he spoke to his sons, saying, Saddle me the ass. And they saddled him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">தன் குமாரரை நோக்கி: எனக்குக் கழுதையின்மேல் சேணம்வைத்துக் கொடுங்கள் என்றான்; அவர்கள் சேணம் வைத்துக் கொடுத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And he went and found his carcass cast in the way, and the ass and the lion standing by the carcass: the lion had not eaten the carcass, nor torn the ass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அப்பொழுது அவன் போய், வழியிலே கிடக்கிற அவன் பிரேதத்தையும், பிரேதத்தண்டையிலே கழுதையும் சிங்கமும் நிற்கிறதையும் கண்டான்; அந்தச் சிங்கம் பிரேதத்தைத் தின்னவுமில்லை, கழுதையை முறித்துப்போடவுமில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And the prophet took up the carcass of the man of God, and laid it upon the ass, and brought it back: and the old prophet came to the city, to mourn and to bury him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அப்பொழுது கிழவனான அந்தத் தீர்க்கதரிசி தேவனுடைய மனுஷனின் பிரேதத்தை எடுத்து, அதைக் கழுதையின்மேல் வைத்து, அதற்காகத் துக்கங்கொண்டாடவும் அதை அடக்கம்பண்ணவும், அதைத் தன் பட்டணத்திற்குக் கொண்டுவந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And he laid his carcass in his own grave; and they mourned over him, saying, Alas, my brother!</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அவன் பிரேதத்தைத் தன்னுடைய கல்லறையிலே வைத்தான். அவனுக்காக: ஐயோ, என் சகோதரனே என்று புலம்பி, துக்கங்கொண்டாடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And it came to pass, after he had buried him, that he spoke to his sons, saying, When I am dead, then bury me in the tomb wherein the man of God is buried; lay my bones beside his bones:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அவனை அடக்கம்பண்ணினபின்பு, அவன் தன் குமாரரை நோக்கி: நான் மரிக்கும்போது, தேவனுடைய மனுஷன் அடக்கம்பண்ணப்பட்ட கல்லறையிலே என்னையும் நீங்கள் அடக்கம்பண்ணி, அவன் எலும்புகளண்டையிலே என் எலும்புகளையும் வையுங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">For the saying which he cried by the word of the LORD against the altar in Bethel, and against all the houses of the high places which are in the cities of Samaria, shall surely come to pass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அவன் பெத்தேலில் இருக்கிற பலிபீடத்திற்கும், சமாரியாவின் பட்டணங்களில் இருக்கிற மேடைகளாகிய சகல கோவில்களுக்கும் விரோதமாகக் கூறின கர்த்தருடைய வார்த்தை நிச்சயமாய் நிறைவேறும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">After this thing Jeroboam returned not from his evil way, but made again of the low of the people priests of the high places: whosoever would, he consecrated him, and he became one of the priests of the high places.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">இந்த நடபடிக்குப்பின்பு, யெரொபெயாம் தன் பொல்லாத வழியைவிட்டுத் திரும்பாமல், மறுபடியும் ஜனத்தில் ஈனமானவர்களை மேடைகளின் ஆசாரியராக்கினான்; எவன் மேல் அவனுக்கு மனதிருந்ததோ அவனைப் பிரதிஷ்டைப்பண்ணினான்; அப்படிப்பட்டவர்கள் மேடைகளின் ஆசாரியரானார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And this thing became sin unto the house of Jeroboam, even to cut it off, and to destroy it from off the face of the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">யெரொபெயாமின் வீட்டாரை பூமியின்மேல் வைக்காமல் அதம்பண்ணி அழிக்கும்படியாக இந்தக் காரியம் அவர்களுக்குப் பாவமாயிற்று.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

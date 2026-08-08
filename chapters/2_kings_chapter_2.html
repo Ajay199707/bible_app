@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Kings 2 | 2 இராஜாக்கள் 2 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for 2 Kings chapter 2 (2 இராஜாக்கள் 2) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">2 Kings 2 | 2 இராஜாக்கள் 2</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And it came to pass, when the LORD would take up Elijah into heaven by a whirlwind, that Elijah went with Elisha from Gilgal.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">கர்த்தர் எலியாவைச் சுழல்காற்றிலே பரலோகத்திற்கு எடுத்துக் கொள்ளப் போகிறபோது, எலியா எலிசாவோடேகூடக் கில்காலிலிருந்து புறப்பட்டுப்போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And Elijah said unto Elisha, Tarry here, I pray you; for the LORD has sent me to Bethel. And Elisha said unto him, As the LORD lives, and as your soul lives, I will not leave you. So they went down to Bethel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">எலியா எலிசாவை நோக்கி: நீ இங்கே இரு; கர்த்தர் என்னைப் பெத்தேல்மட்டும் போக அனுப்புகிறார் என்றான். அதற்கு எலிசா: நான் உம்மை விடுகிறதில்லை என்று கர்த்தரின் ஜீவனையும் உம்முடைய ஜீவனையும்கொண்டு சொல்லுகிறேன் என்றான்; அப்படியே இருவரும் பெத்தேலுக்குப் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the sons of the prophets that were at Bethel came forth to Elisha, and said unto him, Know you that the LORD will take away your master from your head to day? And he said, Yea, I know it; hold all of you your peace.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அப்பொழுது பெத்தேலிலிருந்த தீர்க்கதரிசிகளின் புத்திரர் எலிசாவினிடத்தில் வந்து: இன்றைக்குக் கர்த்தர் உனக்குத் தலைமையாயிருக்கிற உன் எஜமானை உன்னைவிட்டு எடுத்துக் கொள்வார் என்பது உனக்குத் தெரியுமா என்றார்கள். அதற்கு அவன்: எனக்குத் தெரியும், சும்மா இருங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And Elijah said unto him, Elisha, tarry here, I pray you; for the LORD has sent me to Jericho. And he said, As the LORD lives, and as your soul lives, I will not leave you. So they came to Jericho.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பின்பு எலியா அவனை நோக்கி: எலிசாவே, நீ இங்கே இரு; கர்த்தர் என்னை எரிகோமட்டும் போக அனுப்புகிறார் என்றான். அதற்கு அவன்: நான் உம்மை விடுகிறதில்லை என்று கர்த்தருடைய ஜீவனையும் உம்முடைய ஜீவனையும்கொண்டு சொல்லுகிறேன் என்றான்; அப்படியே அவர்கள் எரிகோவுக்கு வந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the sons of the prophets that were at Jericho came to Elisha, and said unto him, Know you that the LORD will take away your master from your head to day? And he answered, Yea, I know it; hold all of you your peace.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">எரிகோவிலிருந்த தீர்க்கதரிசிகளின் புத்திரர் எலிசாவினிடத்தில் வந்து: இன்றைக்குக் கர்த்தர் உனக்குத் தலைமையாயிருக்கிற உன் எஜமானை உன்னைவிட்டு எடுத்துக்கொள்வார் என்பது உனக்குத் தெரியுமா என்று அவனைக் கேட்டார்கள். அதற்கு அவன்: எனக்குத் தெரியும், சும்மா இருங்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And Elijah said unto him, Tarry, I pray you, here; for the LORD has sent me to Jordan. And he said, As the LORD lives, and as your soul lives, I will not leave you. And they two went on.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">பின்பு எலியா அவனை நோக்கி: நீ இங்கே இரு; கர்த்தர் என்னை யோர்தானுக்கு அனுப்புகிறார் என்றான். அதற்கு அவன்: நான் உம்மை விடுகிறதில்லை என்று கர்த்தருடைய ஜீவனையும் உம்முடைய ஜீவனையும்கொண்டு சொல்லுகிறேன் என்றான்; அப்படியே இருவரும் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And fifty men of the sons of the prophets went, and stood to view far off: and they two stood by Jordan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">தீர்க்கதரிசிகளின் புத்திரரில் ஐம்பதுபேர் போய், தூரத்திலே பார்த்துக்கொண்டு நின்றார்கள்; அவர்கள் இருவரும் யோர்தான் கரையிலே நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And Elijah took his mantle, and wrapped it together, and stroke the waters, and they were divided here and thither, so that they two went over on dry ground.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அப்பொழுது எலியா, தன் சால்வையை எடுத்து முறுக்கித் தண்ணீரை அடித்தான்; அது இருபக்கமாகப் பிரிந்தது; அவர்கள் இருவரும் உலர்ந்த தரைவழியாய் அக்கரைக்குப் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And it came to pass, when they were gone over, that Elijah said unto Elisha, Ask what I shall do for you, before I be taken away from you. And Elisha said, I pray you, let a double portion of your spirit be upon me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அவர்கள் அக்கரைப்பட்டபின்பு, எலியா எலிசாவை நோக்கி: நான் உன்னைவிட்டு எடுத்துக்கொள்ளப்படு முன்னே நான் உனக்குச் செய்யவேண்டியது என்ன கேள் என்றான். அதற்கு எலிசா: உம்மிடத்திலுள்ள ஆவியின் வரம் எனக்கு இரட்டிப்பாய்க் கிடைக்கும்படி வேண்டுகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And he said, You have asked a hard thing: nevertheless, if you see me when I am taken from you, it shall be so unto you; but if not, it shall not be so.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அதற்கு அவன்: அரிதான காரியத்தைக் கேட்டாய்; உன்னைவிட்டு நான் எடுத்துக்கொள்ளப்படுகையில் என்னை நீ கண்டால் உனக்குக் கிடைக்கும்; இல்லாவிட்டால் கிடையாது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And it came to pass, as they still went on, and talked, that, behold, there appeared a chariot of fire, and horses of fire, and parted them both asunder; and Elijah went up by a whirlwind into heaven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அவர்கள் பேசிக்கொண்டு நடந்துபோகையில், இதோ, அக்கினிரதமும் அக்கினிக் குதிரைகளும் அவர்கள் நடுவாக வந்து இருவரையும் பிரித்தது; எலியா சுழல்காற்றிலே பரலோகத்திற்கு ஏறிப்போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And Elisha saw it, and he cried, My father, my father, the chariot of Israel, and the horsemen thereof. And he saw him no more: and he took hold of his own clothes, and rent them in two pieces.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அதை எலிசா கண்டு: என் தகப்பனே, என் தகப்பனே, இஸ்ரவேலுக்கு இரதமும் குதிரைவீரருமாய் இருந்தவரே என்று புலம்பினான்; அவனை அப்புறம் காணாமல், தன் வஸ்திரத்தைப் பிடித்து இரண்டு துண்டாகக் கிழித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">He took up also the mantle of Elijah that fell from him, and went back, and stood by the bank of Jordan;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">பின்பு அவன் எலியாவின் மேலிருந்துகீழே விழுந்த சால்வையை எடுத்துத் திரும்பிப்போய், யோர்தானின் கரையிலே நின்று,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And he took the mantle of Elijah that fell from him, and stroke the waters, and said, Where is the LORD God of Elijah? and when he also had smitten the waters, they parted here and thither: and Elisha went over.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">எலியாவின்மேலிருந்து கீழே விழுந்த சால்வையைப் பிடித்து: எலியாவின் தேவனாகிய கர்த்தர் எங்கே என்று சொல்லித் தண்ணீரை அடித்தான்; தண்ணீரை அடித்தவுடனே அது இருபக்கமாகப் பிரிந்ததினால் எலிசா இக்கரைப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And when the sons of the prophets which were to view at Jericho saw him, they said, The spirit of Elijah does rest on Elisha. And they came to meet him, and bowed themselves to the ground before him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">எரிகோவில் பார்த்துக்கொண்டு நின்ற தீர்க்கதரிசிகளின் புத்திரர் அவனைக் கண்டவுடனே, எலியாவின் ஆவி எலிசாவின்மேல் இறங்கியிருக்கிறது என்று சொல்லி, அவனுக்கு எதிர் கொண்டுபோய்த் தரைமட்டும் குனிந்து அவனை வணங்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And they said unto him, Behold now, there be with your servants fifty strong men; let them go, we pray you, and seek your master: lest possibly the Spirit of the LORD has taken him up, and cast him upon some mountain, or into some valley. And he said, All of you shall not send.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">இதோ, உமது அடியாரோடே ஐம்பது பலவான்கள் இருக்கிறார்கள்; அவர்கள் போய் உம்முடைய எஜமானைத் தேடும்படி உத்தரவுகொடும்; ஒரு வேளை கர்த்தருடைய ஆவியானவர் அவரை எடுத்து, பர்வதங்களில் ஒன்றின்மேலாகிலும், பள்ளத்தாக்குகளில் ஒன்றிலாகிலும் கொண்டுபோய் வைத்திருப்பார் என்றார்கள். அதற்கு அவன்: அவர்களை அனுப்பவேண்டாம் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And when they urged him till he was ashamed, he said, Send. They sent therefore fifty men; and they sought three days, but found him not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அவன் சலித்துப்போகுமட்டும் அவர்கள் அவனை அலட்டிக்கொண்டிருந்தபடியால் அனுப்புங்கள் என்றான்; அப்படியே ஐம்பது பேரை அனுப்பினார்கள்; அவர்கள் மூன்றுநாள் அவனைத் தேடியும் காணாமல்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And when they came again to him, (for he tarried at Jericho,) he said unto them, Did I not say unto you, Go not?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">எரிகோவிலிருந்த அவனிடத்திற்குத் திரும்பிவந்தபோது, அவன் இவர்களைப் பார்த்து: போகவேண்டாம் என்று நான் உங்களுக்குச் சொல்லவில்லையா என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And the men of the city said unto Elisha, Behold, I pray you, the situation of this city is pleasant, as my lord sees: but the water is nil, and the ground barren.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பின்பு அந்தப் பட்டணத்தின் மனுஷர் எலிசாவை நோக்கி: இதோ, எங்கள் ஆண்டவன் காண்கிறபடி இந்தப் பட்டணம் குடியிருப்புக்கு நல்லது; தண்ணீரோ கெட்டது, நிலமும் பாழ்நிலம் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And he said, Bring me a new cruse, and put salt therein. And they brought it to him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அப்பொழுது அவன்: ஒரு புதுத் தோண்டியை எடுத்து, அதிலே உப்புப் போட்டுக் கொண்டுவாருங்கள் என்றான்; அதை அவனிடத்தில் கொண்டு வந்தபோது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And he went forth unto the spring of the waters, and cast the salt in there, and said, Thus says the LORD, I have healed these waters; there shall not be from thence any more death or barren land.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவன் நீரூற்றண்டைக்குப் போய், உப்பை அதிலே போட்டு: இந்தத் தண்ணீரை ஆரோக்கியமாக்கினேன்; இனி இதினால் சாவும் வராது, நிலப்பாழும் இராது என்று கர்த்தர் சொல்லுகிறார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">So the waters were healed unto this day, according to the saying of Elisha which he spoke.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">எலிசா சொன்ன வார்த்தையின்படியே அந்தத் தண்ணீர் இந்நாள் வரைக்கும் இருக்கிறபடி ஆரோக்கியமாயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And he went up from thence unto Bethel: and as he was going up by the way, there came forth little children out of the city, and mocked him, and said unto him, Go up, you bald head; go up, you bald head.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவன் அவ்விடத்தை விட்டுப் பெத்தேலுக்குப் போனான்; அவன் வழி நடந்து போகையில் பிள்ளைகள் பட்டணத்திலிருந்து வந்து, அவனைப் பார்த்து: மொட்டைத்தலையா, மொட்டைத்தலையா ஏறிப்போ என்று சொல்லி நிந்தித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And he turned back, and looked on them, and cursed them in the name of the LORD. And there came forth two she bears out of the wood, and tare forty and two children of them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அப்பொழுது அவன் திரும்பி அவர்களைப் பார்த்து: கர்த்தரின் நாமத்திலே அவர்களைச் சபித்தான்; உடனே காட்டிலிருந்து இரண்டு கரடிகள் புறப்பட்டு வந்து, அவர்களில் நாற்பத்திரண்டு பிள்ளைகளைப் பீறிப்போட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And he went from thence to mount Carmel, and from thence he returned to Samaria.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அவன் அவ்விடத்தை விட்டுக் கர்மேல் பர்வதத்திற்குப்போய், அங்கேயிருந்து சமாரியாவுக்குத் திரும்பினான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

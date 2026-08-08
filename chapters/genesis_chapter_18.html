@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesis 18 | ஆதியாகமம் 18 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Genesis chapter 18 (ஆதியாகமம் 18) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Genesis 18 | ஆதியாகமம் 18</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And the LORD appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்பு, கர்த்தர் மம்ரேயின் சமபூமியிலே அவனுக்குத் தரிசனமானார். அவன் பகலின் உஷ்ணவேளையில் கூடாரவாசலிலே உட்கார்ந்திருந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And he lift up his eyes and looked, and, lo, three men stood by him: and when he saw them, he ran to meet them from the tent door, and bowed himself toward the ground,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">தன் கண்களை ஏறெடுத்துப் பார்க்கும்போது, இதோ, மூன்று புருஷர் அவனுக்கு எதிரே நின்றார்கள்; அவர்களைக் கண்டவுடனே, அவன் கூடாரவாசலிலிருந்து அவர்களுக்கு எதிர் கொண்டு ஓடித் தரை மட்டும் குனிந்து;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And said, My LORD, if now I have found favour in your sight, pass not away, I pray you, from your servant:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ஆண்டவரே, உம்முடைய கண்களில் எனக்குக் கிருபை கிடைத்ததானால், நீர் உமது அடியேனைவிட்டுக் கடந்து போகவேண்டாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Let a little water, I pray you, be fetched, and wash your feet, and rest yourselves under the tree:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">கொஞ்சம் தண்ணீர் கொண்டு வரட்டும், உங்கள் கால்களைக் கழுவி, மரத்தடியில் சாய்ந்துகொண்டிருங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And I will fetch a morsel of bread, and comfort all of you your hearts; after that all of you shall pass on: for therefore are all of you come to your servant. And they said, So do, as you have said.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">நீங்கள் உங்கள் இருதயங்களைத் திடப்படுத்தக் கொஞ்சம் அப்பம் கொண்டுவருகிறேன்; அப்புறம் நீங்கள் உங்கள் வழியே போகலாம்; இதற்காகவே அடியேன் இடம்வரைக்கும் வந்தீர்கள் என்றான். அதற்கு அவர்கள்: நீ சொன்னபடி செய் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And Abraham hastened into the tent unto Sarah, and said, Make ready quickly three measures of fine meal, knead it, and make cakes upon the hearth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அப்பொழுது ஆபிரகாம் தீவிரமாய்க் கூடாரத்தில் சாராளிடத்திற்குப் போய்: நீ சீக்கிரமாய் மூன்றுபடி மெல்லிய மாவு எடுத்துப் பிசைந்து, அப்பம் சுடு என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And Abraham ran unto the herd, and fetched a calf tender and good, and gave it unto a young man; and he hasted to dress it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">ஆபிரகாம் மாட்டுமந்தைக்கு ஓடி, ஒரு நல்ல இளங்கன்றைப் பிடித்து, வேலைக்காரன் கையிலே கொடுத்தான்; அவன் அதைச் சீக்கிரத்திலே சமைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And he took butter, and milk, and the calf which he had dressed, and set it before them; and he stood by them under the tree, and they did eat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">ஆபிரகாம் வெண்ணெயையும் பாலையும் சமைப்பித்த கன்றையும் எடுத்து வந்து, அவர்கள் முன்பாக வைத்து, அவர்கள் அருகே மரத்தடியில் நின்று கொண்டிருந்தான்; அவர்கள் புசித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And they said unto him, Where is Sarah your wife? And he said, Behold, in the tent.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அவர்கள் அவனை நோக்கி: உன் மனைவி சாராள் எங்கே என்றார்கள்? அதோ கூடாரத்தில் இருக்கிறாள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And he said, I will certainly return unto you according to the time of life; and, lo, Sarah your wife shall have a son. And Sarah heard it in the tent door, which was behind him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அப்பொழுது அவர்: ஒரு உற்பவகாலத்திட்டத்தில் நிச்சயமாய் உன்னிடத்திற்கு திரும்ப வருவேன்; அப்பொழுது உன் மனைவியாகிய சாராளுக்கு ஒரு குமாரன் இருப்பான் என்றார். சாராள் அவருக்குப் பின்புறமாய்க் கூடாரவாசலில் இதைக் கேட்டுக்கொண்டிருந்தாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Now Abraham and Sarah were old and well stricken in age; and it ceased to be with Sarah after the manner of women.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">ஆபிரகாமும் சாராளும் வயது சென்று முதிர்ந்தவர்களாயிருந்தார்கள்; ஸ்திரீகளுக்குள்ள வழிபாடு சாராளுக்கு நின்றுபோயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Therefore Sarah laughed within herself, saying, After I am waxed old shall I have pleasure, my lord being old also?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">ஆகையால், சாராள் தன் உள்ளத்திலே நகைத்து: நான் கிழவியும், என் ஆண்டவன் முதிர்ந்த வயதுள்ளவருமானபின்பு, எனக்கு இன்பம் உண்டாயிருக்குமோ என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And the LORD said unto Abraham, Wherefore did Sarah laugh, saying, Shall I certainly bear a child, which am old?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர் ஆபிரகாமை நோக்கி: சாராள் நகைத்து, நான் கிழவியாயிருக்கப் பிள்ளைபெறுவது மெய்யோ என்று சொல்வானேன்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Is any thing too hard for the LORD? At the time appointed I will return unto you, according to the time of life, and Sarah shall have a son.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">கர்த்தரால் ஆகாத காரியம் உண்டோ? உற்பவகாலத்திட்டத்தில் உன்னிடத்திற்குத் திரும்பவருவேன்; அப்பொழுது சாராளுக்கு ஒரு குமாரன் இருப்பான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but you did laugh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">சாராள் பயந்து, நான் நகைக்கவில்லை என்று மறுத்தாள். அதற்கு அவர்: இல்லை, நீ நகைத்தாய் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And the men rose up from thence, and looked toward Sodom: and Abraham went with them to bring them on the way.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">பின்பு அந்தப் புருஷர் எழுந்து அவ்விடம் விட்டு, சோதோமை நோக்கிப் போனார்கள்; ஆபிரகாமும் அவர்களோடே கூடப்போய் வழிவிட்டனுப்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And the LORD said, Shall I hide from Abraham that thing which I do;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர்: ஆபிரகாம் பெரிய பலத்த ஜாதியாவதினாலும், அவனுக்குள் பூமியிலுள்ள சகல ஜாதிகளும் ஆசீர்வதிக்கப்படுவதினாலும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Seeing that Abraham shall surely become a great and mighty nation, and all the nations of the earth shall be blessed in him?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">நான் செய்யப்போகிறதை ஆபிரகாமுக்கு மறைப்பேனோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">For I know him, that he will command his children and his household after him, and they shall keep the way of the LORD, to do justice and judgment; that the LORD may bring upon Abraham that which he has spoken of him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">கர்த்தர் ஆபிரகாமுக்குச் சொன்னதை நிறைவேற்றும்படியாய் அவன் தன் பிள்ளைகளுக்கும், தனக்குப் பின்வரும் தன் வீட்டாருக்கும்: நீங்கள் நீதியையும் நியாயத்தையும் செய்து, கர்த்தருடைய வழியைக் காத்து நடவுங்கள் என்று கட்டளையிடுவான் என்பதை அறிந்திருக்கிறேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the LORD said, Because the cry of Sodom and Gomorrah is great, and because their sin is very grievous;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">பின்பு கர்த்தர் சோதோம் கொமோராவின் கூக்குரல் பெரிதாயிருப்பதினாலும், அவைகளின் பாவம் மிகவும் கொடிதாயிருப்பதினாலும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">I will go down now, and see whether they have done altogether according to the cry of it, which has come unto me; and if not, I will know.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">நான் இறங்கிப்போய், என்னிடத்தில் வந்து எட்டின அதின் கூக்குரலின்படியே அவர்கள் செய்திருக்கிறார்களோ இல்லையோ என்று பார்த்து அறிவேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And the men turned their faces from thence, and went toward Sodom: but Abraham stood yet before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பொழுது அந்தப் புருஷர் அவ்விடம் விட்டுச் சோதோமை நோக்கிப் போனார்கள்; ஆபிரகாமோ பின்னும் கர்த்தருக்கு முன்பாக நின்றுகொண்டிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And Abraham drew near, and said, Will you also destroy the righteous with the wicked?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அப்பொழுது ஆபிரகாம் சமீபமாய்ச் சேர்ந்து: துன்மார்க்கனோடே நீதிமானையும் அழிப்பீரோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Possibly there be fifty righteous within the city: will you also destroy and not spare the place for the fifty righteous that are therein?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பட்டணத்துக்குள்ளே ஒருவேளை ஐம்பது நீதிமான்கள் இருப்பார்கள், அதற்குள் இருக்கும் அந்த ஐம்பது நீதிமான்கள் நிமித்தம் இரட்சியாமல் அந்த ஸ்தலத்தை அழிப்பீரோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">That be far from you to do after this manner, to slay the righteous with the wicked: and that the righteous should be as the wicked, that be far from you: Shall not the Judge of all the earth do right?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">துன்மார்க்கனோடே நீதிமானையும் சங்கரிப்பது உமக்குத் தூரமாயிருப்பதாக; நீதிமானையும் துன்மார்க்கனையும் சமமாய் நடப்பிப்பது உமக்குத்தூரமாயிருப்பதாக; சர்வலோக நியாயாதிபதி நீதிசெய்யாதிருப்பாரோ என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And the LORD said, If I find in Sodom fifty righteous within the city, then I will spare all the place for their sakes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அதற்குக் கர்த்தர்: நான் சோதோமில் ஐம்பது நீதிமான்களைக் கண்டால், அவர்கள் நிமித்தம் அந்த ஸ்தலமுழுதையும் இரட்சிப்பேன் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And Abraham answered and said, Behold now, I have taken upon me to speak unto the LORD, which am but dust and ashes:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அப்பொழுது ஆபிரகாம் பிரதியுத்தரமாக: இதோ, தூளும் சாம்பலுமாயிருக்கிற அடியேன் ஆண்டவரோடே பேசத்துணிந்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Possibly there shall lack five of the fifty righteous: will you destroy all the city for lack of five? And he said, If I find there forty and five, I will not destroy it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஒருவேளை ஐம்பது நீதிமான்களுக்கு ஐந்துபேர் குறைந்திருப்பார்கள்; அந்த ஐந்துபேர் நிமித்தம் பட்டணமுழுதையும் அழிப்பீரோ என்றான். அதற்கு அவர்: நான் நாற்பத்தைந்து நீதிமான்களை அங்கே கண்டால், அதை அழிப்பதில்லை என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And he spoke unto him yet again, and said, Possibly there shall be forty found there. And he said, I will not do it for forty's sake.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அவன் பின்னும் அவரோடே பேசி: நாற்பது நீதிமான்கள் அங்கே காணப்பட்டாலோ என்றான். அதற்கு அவர்: நாற்பது நீதிமான்கள்நிமித்தம் அதை அழிப்பதில்லை என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And he said unto him, Oh let not the LORD be angry, and I will speak: Possibly there shall thirty be found there. And he said, I will not do it, if I find thirty there.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அப்பொழுது அவன்: நான் இன்னும் பேசுகிறேன், ஆண்டவருக்குக் கோபம் வராமலிருப்பதாக; முப்பது நீதிமான்கள் அங்கே காணப்பட்டாலோ என்றான். அதற்கு அவர்: நான் முப்பது நீதிமான்களை அங்கே கண்டால், அதை அழிப்பதில்லை என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And he said, Behold now, I have taken upon me to speak unto the LORD: Possibly there shall be twenty found there. And he said, I will not destroy it for twenty's sake.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அப்பொழுது அவன்: இதோ ஆண்டவரோடே பேசத்துணிந்தேன்; இருபது நீதிமான்கள் அங்கே காணப்பட்டாலோ என்றான். அதற்கு அவர்: இருபது நீதிமான்கள்நிமித்தம் அதை அழிப்பதில்லை என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And he said, Oh let not the LORD be angry, and I will speak yet but this once: Possibly ten shall be found there. And he said, I will not destroy it for ten's sake.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அப்பொழுது அவன்: ஆண்டவருக்குக் கோபம் வராதிருப்பதாக; நான் இன்னும் இந்த ஒருவிசைமாத்திரம் பேசுகிறேன்; பத்து நீதிமான்கள் அங்கே காணப்பட்டாலோ என்றான். அதற்கு அவர்: பத்து நீதிமான்கள் நிமித்தம் அதை அழிப்பதில்லை என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And the LORD went his way, as soon as he had left communing with Abraham: and Abraham returned unto his place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">கர்த்தர் ஆபிரகாமோடே பேசிமுடிந்தபின்பு போய்விட்டார்; ஆபிரகாமும் தன்னுடைய இடத்துக்குத் திரும்பினான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

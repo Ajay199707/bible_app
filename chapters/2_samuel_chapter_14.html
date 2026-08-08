@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Samuel 14 | 2 சாமுவேல் 14 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for 2 Samuel chapter 14 (2 சாமுவேல் 14) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">2 Samuel 14 | 2 சாமுவேல் 14</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now Joab the son of Zeruiah perceived that the king's heart was toward Absalom.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">ராஜாவின் இருதயம் அப்சலோமின்மேல் இன்னும் தாங்கலாயிருக்கிறதைச் செரூயாவின் குமாரன் யோவாப் கண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And Joab sent to Tekoah, and fetched thence a wise woman, and said unto her, I pray you, feign yourself to be a mourner, and put on now mourning apparel, and anoint not yourself with oil, but be as a woman that had a long time mourned for the dead:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அவன் தெக்கோவாவிலிருக்கிற புத்தியுள்ள ஒரு ஸ்திரீயை அழைத்து: நீ இழவுகொண்டாடுகிறவளைப்போல, துக்கவஸ்திரங்களை உடுத்திக்கொண்டு, எண்ணெய் பூசிக்கொள்ளாமல், இறந்துபோனவனுக்காக நெடுநாள் துக்கிக்கிற ஸ்திரீயைப்போலக் காண்பித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And come to the king, and speak on this manner unto him. So Joab put the words in her mouth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ராஜாவினிடத்தில் போய், அவரை நோக்கி: இன்ன இன்ன பிரகாரமாகச் சொல் என்று அவள் சொல்லவேண்டிய வார்த்தைகளை யோவாப் அவள் வாயிலே போட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And when the woman of Tekoah spoke to the king, she fell on her face to the ground, and did reverence, and said, Help, O king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்படியே தெக்கோவா ஊராளான அந்த ஸ்திரீ ராஜாவோடே பேசப்போய், தரையிலே முகங்குப்புற விழுந்துவணங்கி, ராஜாவே, இரட்சியும் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the king said unto her, What disturbs you? And she answered, I am indeed a widow woman, and mine husband is dead.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">ராஜா அவளைப் பார்த்து உனக்கு என்ன வேண்டும் என்றதற்கு, அவள்: நான் விதவையானவள், என் புருஷன் சென்றுபோனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And your handmaid had two sons, and they two strove together in the field, and there was none to part them, but the one stroke the other, and slew him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">உமது அடியாளுக்கு இரண்டு குமாரர் இருந்தார்கள்; அவர்கள் இருவரும் வெளியிலே சண்டைபண்ணி, அவர்களை விலக்க ஒருவரும் இல்லாதபடியினால், ஒருவன் மற்றவனை அடித்துக் கொன்றுபோட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And, behold, the whole family has risen against yours handmaid, and they said, Deliver him that stroke his brother, that we may kill him, for the life of his brother whom he slew; and we will destroy the heir also: and so they shall quench my coal which is left, and shall not leave to my husband neither name nor remainder upon the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">வம்சத்தார் எல்லாரும் உம்முடைய அடியாளுக்கு விரோதமாய் எழும்பி, தன் சகோதரரைக் கொன்றுபோட்டவனை ஒப்பி; அவன் கொன்ற அவன் சகோதரனுடைய பிராணனுக்காக நாங்கள் அவனைக் கொன்றுபோடுவோம்; சுதந்தரவாளனாயினும் அவனையும் அழித்துப்போடுவோம் என்கிறார்கள். இப்படி என் புருஷனுக்குப் பேரும் நீதியும் பூமியின்மேல் வைக்கப்படாதபடிக்கு, எனக்கு இன்னும் மீதியாயிருக்கிற பொறியையும் அவித்துப்போட மனதாயிருக்கிறார்கள் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And the king said unto the woman, Go to yours house, and I will give charge concerning you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">ராஜா அந்த ஸ்திரீயைப் பார்த்து: நீ உன் வீட்டுக்குப் போ, உன் காரியத்தைக்குறித்து உத்தரவு கொடுப்பேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And the woman of Tekoah said unto the king, My lord, O king, the iniquity be on me, and on my father's house: and the king and his throne be guiltless.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">பின்னும் அந்தத் தெக்கோவாவூர் ஸ்திரீ ராஜாவைப் பார்த்து: ராஜாவாகிய என் ஆண்டவனே, ராஜாவின்மேலும் அவர் சிங்காசனத்தின்மேலும் குற்றமில்லாதபடிக்கு, அந்தப் பழி என்மேலும் என் தகப்பன் வீட்டின்மேலும் சுமரக்கடவது என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And the king said, Whoever says ought unto you, bring him to me, and he shall not touch you any more.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அதற்கு ராஜா: உனக்கு விரோதமாப் பேசுகிறவனை என்னிடத்தில் கொண்டுவா; அப்பொழுது அவன் இனி உன்னைத் தொடராதிருப்பான் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Then said she, I pray you, let the king remember the LORD your God, that you would not suffer the revengers of blood to destroy any more, lest they destroy my son. And he said, As the LORD lives, there shall not one hair of your son fall to the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">பின்னும் அவள்: இரத்தப்பழிவாங்குகிறவர்கள் அழிம்புசெய்து, என் குமாரனை அதம்பண்ணப் பெருகிப்போகாதபடிக்கு, ராஜாவானவர் தம்முடைய தேவனாகிய கர்த்தரை நினைப்பாராக என்றாள். அதற்கு ராஜா: உன் குமாரனுடைய மயிரில் ஒன்றாவது தரையில் விழுவதில்லை என்று கர்த்தரின் ஜீவனைக்கொண்டு சொல்லுகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Then the woman said, Let yours handmaid, I pray you, speak one word unto my lord the king. And he said, Say on.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அப்பொழுது அந்த ஸ்திரீ: ராஜாவாகிய என் ஆண்டவனோடே உமது அடியாள் ஒரு வார்த்தைசொல்ல உத்தரவாகவேண்டும் என்றாள். அவன்: சொல்லு என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And the woman said, Wherefore then have you thought such a thing against the people of God? for the king does speak this thing as one which is faulty, in that the king does not fetch home again his banished.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது அந்த ஸ்திரீ: பின்னை ஏன் தேவனுடைய ஜனத்திற்கு விரோதமாய் இப்படிப்பட்ட நினைவை நீர் கொண்டிருக்கிறீர், துரத்துண்ட தம்முடையவனை ராஜா திரும்ப அழைக்காததினாலே, ராஜா இப்பொழுது சொன்ன வார்த்தையினால் குற்றமுள்ளவரைப்போல் இருக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">For we must essentially die, and are as water spilt on the ground, which cannot be gathered up again; neither does God respect any person: yet does he devise means, that his banished be not expelled from him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">நாம் மரிப்பது நிச்சயம், திரும்பச்சேர்க்கக் கூடாதபடிக்கு, தரையிலே சுவறுகிற தண்ணீரைப்போல் இருக்கிறோம்; தேவன் ஜீவனை எடுத்துக்கொள்ளாமல், துரத்துண்டவன் முற்றிலும் தம்மைவிட்டு விலக்கப்படாதிருக்கும் நினைவுகளை நினைக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Now therefore that I am come to speak of this thing unto my lord the king, it is because the people have made me afraid: and your handmaid said, I will now speak unto the king; it may be that the king will perform the request of his handmaid.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இப்போதும் நான் என் ஆண்டவனாகிய ராஜாவோடே இந்த வார்த்தையைப் பேசவந்த முகாந்தரம் என்னவென்றால்: ஜனங்கள் எனக்குப் பயமுண்டாக்கினதினால், நான் ராஜாவோடே பேசவந்தேன்; ஒருவேளை ராஜா தமது அடியாளுடைய வார்த்தையின்படி செய்வாரென்று உமது அடியாளாகிய நான் நினைத்ததினாலும் வந்தேனே ஒழிய வேறில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">For the king will hear, to deliver his handmaid out of the hand of the man that would destroy me and my son together out of the inheritance of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">என்னையும் என் குமாரரையும் ஏகமாய் தேவனுடைய சுதந்தரத்திற்குப் புறம்பாக்கி, அழிக்க நினைக்கிற மனுஷனுடைய கைக்குத் தமது அடியாளை நீங்கலாக்கிவிடும்படிக்கு ராஜா கேட்பார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Then yours handmaid said, The word of my lord the king shall now be comfortable: for as an angel of God, so is my lord the king to discern good and bad: therefore the LORD your God will be with you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">ராஜாவாகிய என் ஆண்டவனுடைய வார்த்தை எனக்கு ஆறுதலாயிருக்குமென்று உமது அடியாளாகிய நான் எண்ணினேன்; நன்மையையும் தீமையையும் கேட்கும்படி, ராஜாவாகிய என் ஆண்டவன் தேவனுடைய தூதனைப்ப்போல இருக்கிறார்; இதற்காக உம்முடைய தேவனாகிய கர்த்தர் உம்மோடேகூட இருக்கிறார் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Then the king answered and said unto the woman, Hide not from me, I pray you, the thing that I shall ask you. And the woman said, Let my lord the king now speak.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அப்பொழுது ராஜா அந்த ஸ்திரீக்குப் பிரதியுத்தரமாக: நான் உன்னிடத்தில் கேட்கும் காரியத்தை நீ எனக்கு மறைக்கவேண்டாம் என்றான். அதற்கு அந்த ஸ்திரீ, ராஜாவாகிய என் ஆண்டவர் சொல்வாராக என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And the king said, Is not the hand of Joab with you in all this? And the woman answered and said, As your soul lives, my lord the king, none can turn to the right hand or to the left from ought that my lord the king has spoken: for your servant Joab, he bade me, and he put all these words in the mouth of yours handmaid:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அப்பொழுது ராஜா இதிலெல்லாம் யோவாப் உனக்கு உட்கையாய் இருக்கவில்லையா என்று கேட்டான். அதற்கு ஸ்திரீ பிரதியுத்தரமாக, ராஜாவாகிய என் ஆண்டவன் சொன்னதற்கெல்லாம் வலதுபக்கத்திலாவது இடதுபக்கத்திலாவது விலகுவதற்கு ஒருவராலும் கூடாது என்று ராஜாவாகிய என் ஆண்டவனுடைய ஜீவனைக் கொண்டு சொல்லுகிறேன்; உமது அடியானாகிய யோவாப்தான் இதை எனக்குக் கற்பித்து, அவனே இந்த எல்லா வார்த்தைகளையும் உமது அடியாளின் வாயிலே போட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">To fetch about this form of speech has your servant Joab done this thing: and my lord is wise, according to the wisdom of an angel of God, to know all things that are in the earth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">நான் இந்தக் காரியத்தை உபமானமாய்ப் பேசுகிறதற்கு உமது அடியானாகிய யோவாப் அதற்குக் காரணமாயிருந்தான்; ஆனாலும் தேசத்தில் நடக்கிறதையெல்லாம் அறிய, என் ஆண்டவனுடைய ஞானம் தேவதூதனுடைய ஞானத்தைப்போல் இருக்கிறது என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And the king said unto Joab, Behold now, I have done this thing: go therefore, bring the young man Absalom again.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது ராஜா யோவாபைப்பார்த்து: இதோ, இந்தக் காரியத்தைச் செய்கிறேன், நீ போய் அப்சலோம் என்னும் பிள்ளையாண்டானைத் திரும்ப அழைத்துக்கொண்டுவா என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Joab fell to the ground on his face, and bowed himself, and thanked the king: and Joab said, To day your servant knows that I have found grace in your sight, my lord, O king, in that the king has fulfilled the request of his servant.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அப்பொழுது யோவாப் தரையிலேமுகங்குப்புற விழுந்துவணங்கி, ராஜாவை வாழ்த்தி: ராஜா தமது அடியானுடைய வார்த்தையின்படி செய்ததினால், என் ஆண்டவனாகிய ராஜாவின் கண்ணில் எனக்குத் தயை கிடைத்தது என்று இன்று உமது அடியானுக்குத் தெரியவந்தது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">So Joab arose and went to Geshur, and brought Absalom to Jerusalem.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">பின்பு யோவாப் எழுந்து, கேசூருக்குப் போய், அப்சலோமை எருசலேமுக்கு அழைத்துக்கொண்டுவந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And the king said, Let him turn to his own house, and let him not see my face. So Absalom returned to his own house, and saw not the king's face.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">ராஜா அவன் என் முகத்தைப்பார்க்கவேண்டியதில்லை; தன் வீட்டுக்குத் திரும்பிப்போகட்டும் என்றான், அப்படியே அப்சலோம் ராஜாவின் முகத்தைப் பார்க்காமல் தன் வீட்டுக்குத் திரும்பிப்போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But in all Israel there was none to be so much praised as Absalom for his beauty: from the sole of his foot even to the crown of his head there was no blemish in him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">இஸ்ரவேலர் அனைவருக்குள்ளும் அப்சலோமைப்போல் சவுந்தரியமுள்ளவனும் மெச்சிக்கொள்ளப்பட்டவனும் இல்லை, உள்ளங்கால் தொடங்கி உச்சந்தலைமட்டும் அவனில் ஒரு பழுதும் இல்லாதிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And when he polled his head, (for it was at every year's end that he polled it: because the hair was heavy on him, therefore he polled it:) he weighed the hair of his head at two hundred shekels after the king's weight.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அவன் தன் தலைமயிர் தனக்குப்பாரமாயிருப்பதினால் வருஷாந்தரம் சிரைத்துக்கொள்ளுவான்; சிரைக்கும்போது, அவன் தலைமயிர் ராஜாவுடைய நிறையின்படி இருநூறு சேக்கல் நிறையாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And unto Absalom there were born three sons, and one daughter, whose name was Tamar: she was a woman of a fair countenance.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அப்சலோமுக்கு மூன்று குமாரரும், தாமார் என்னும் பேர்கொண்ட ஒரு குமாரத்தியும் பிறந்திருந்தார்கள்; இவள் ரூபவதியான பெண்ணாயிருந்தாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">So Absalom dwelt two full years in Jerusalem, and saw not the king's face.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அப்சலோம், ராஜாவின் முகத்தைக்காணாமலே இரண்டு வருஷம் எருசலேமிலே குடியிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Therefore Absalom sent for Joab, to have sent him to the king; but he would not come to him: and when he sent again the second time, he would not come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">ஆகையால் அப்சலோம் யோவாபை ராஜாவினிடத்தில் அனுப்பும்படி அழைப்பித்தான், அவனோ அவனிடத்திற்கு வரமாட்டேன் என்றான்; இரண்டாம்விசையும் அவன் அழைத்தனுப்பினான்; அவன் வரமாட்டேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">Therefore he said unto his servants, See, Joab's field is near mine, and he has barley there; go and set it on fire. And Absalom's servants set the field on fire.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அப்பொழுது அவன் தன் வேலைக்காரரைப் பார்த்து: இதோ என் நிலத்திற்கு அருகே யோவாபின் நிலம் இருக்கிறது; அதிலே அவனுக்கு வாற்கோதுமை விளைந்திருக்கிறது; நீங்கள் போய் அதைத் தீக்கொளுத்திப்போடுங்கள் என்றான்; அப்படியே அப்சலோமின் வேலைக்காரர் அந்த நிலத்தை தீக்கொளுத்திப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Then Joab arose, and came to Absalom unto his house, and said unto him, Wherefore have your servants set my field on fire?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அப்பொழுது யோவாப் எழுந்திருந்து, அப்சலோமிடத்தில் வீட்டிற்குள்போய், என்னுடைய நிலத்தையும் உம்முடைய வேலைக்காரர் தீக்கொளுத்திப்போட்டது என்ன என்று அவனைக் கேட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And Absalom answered Joab, Behold, I sent unto you, saying, Come here, that I may send you to the king, to say, Wherefore am I come from Geshur? it had been good for me to have been there still: now therefore let me see the king's face; and if there be any iniquity in me, let him kill me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அப்சலோம் யோவாபைப் பார்த்து: இதோ, நான் ஏன் கேசூரிலிருந்து வந்தேன்; நான் அங்கே இருந்துவிட்டால் நலம் என்று ராஜாவுக்குச் சொல்லும்படி உம்மை ராஜாவினிடத்தில் அனுப்புவதற்காக உம்மை இங்கே வரும்படி அழைப்பித்தேன், இப்போதும் நான் ராஜாவின்முகத்தைப் பார்க்கட்டும்; என்மேல் குற்றமிருந்தால் அவர் என்னைக் கொன்றுபோடட்டும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">So Joab came to the king, and told him: and when he had called for Absalom, he came to the king, and bowed himself on his face to the ground before the king: and the king kissed Absalom.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">யோவாப் ராஜாவினிடத்தில் போய், அதை அவனுக்கு அறிவித்தபோது, அப்சலோமை அழைப்பித்தான், அவன் ராஜாவினிடத்தில் வந்து, ராஜாவுக்கு முன்பாகத் தரையிலே முகங்குப்புற விழுந்துவணங்கினான், அப்பொழுது ராஜா அப்சலோமை முத்தமிட்டான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

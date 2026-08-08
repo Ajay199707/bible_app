@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acts 27 | அப்போஸ்தலர் 27 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Acts chapter 27 (அப்போஸ்தலர் 27) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Acts 27 | அப்போஸ்தலர் 27</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And when it was determined that we should sail into Italy, they delivered Paul and certain other prisoners unto one named Julius, a centurion of Augustus' band.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">நாங்கள் இத்தாலியா தேசத்துக்குக் கப்பல் ஏறிப் போகும்படி தீர்மானிக்கப்பட்டபோது, பவுலையும் காவலில் வைக்கப்பட்டிருந்த வேறுசிலரையும் அகுஸ்து பட்டாளத்தைச் சேர்ந்த யூலியு என்னும்பேர் கொண்ட நூற்றுக்கு அதிபதியினிடத்தில் ஒப்புவித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And entering into a ship of Adramyttium, we launched, meaning to sail by the coasts of Asia; one Aristarchus, a Macedonian of Thessalonica, being with us.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அதிரமித்தியம் ஊர்க்கப்பலில் நாங்கள் ஏறி, ஆசியா நாட்டுக் கரைபிடித்தோடவேண்டுமென்று நினைத்துப் புறப்பட்டோம். மக்கெதோனியா தேசத்துத் தெசலோனிக்கே பட்டணத்தானாகிய அரிஸ்தர்க்கு எங்களுடனேகூட இருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the next day we touched at Sidon. And Julius courteously pleaded Paul, and gave him liberty to go unto his friends to refresh himself.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">மறுநாள் சீதோன் துறைபிடித்தோம். யூலியு பவுலைப் பட்சமாய் நடப்பித்து, அவன் தன் சிநேகிதரிடத்திலே போய்ப் பராமரிப்படையும்படிக்கு உத்தரவு கொடுத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And when we had launched from thence, we sailed under Cyprus, because the winds were contrary.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அவ்விடம்விட்டு நாங்கள் புறப்பட்டு, எதிர்காற்றாயிருந்தபடியினால், சீப்புருதீவின் ஒதுக்கிலே ஓடினோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And when we had sailed over the sea of Cilicia and Pamphylia, we came to Myra, a city of Lycia.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">பின்பு சிலிசியா பம்பிலியா நாடுகளின் கடல்வழியாய் ஓடி, லீசியா நாட்டு மீறாப்பட்டணத்தில் சேர்ந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And there the centurion found a ship of Alexandria sailing into Italy; and he put us therein.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">இத்தாலியாவுக்குப் போகிற அலெக்சந்திரியா பட்டணத்துக் கப்பலை நூற்றுக்கு அதிபதி அங்கே கண்டு, எங்களை அதில் ஏற்றினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And when we had sailed slowly many days, and scarce were come opposite to Cnidus, the wind not suffering us, we sailed under Crete, opposite to Salmone;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">காற்று எங்களைத் தடுத்தபடியினாலே, நாங்கள் அநேகநாள் மெதுவாய்ச் சென்று, வருத்தத்தோடே கினீதுபட்டணத்திற்கு எதிரே வந்து, சல்மோனே ஊருக்கு எதிராய்க் கிரேத்தாதீவின் ஒதுக்கில் ஓடினோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And, hardly passing it, came unto a place which is called The fair havens; nigh unto which was the city of Lasea.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அதை வருத்தத்தோடே கடந்து, நல்ல துறைமுகம் என்னப்பட்ட ஒரு இடத்திற்கு வந்தோம்; லசேயப்பட்டணம் அதற்குச் சமீபமாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Now when much time was spent, and when sailing was now dangerous, because the fast was now already past, Paul admonished them,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">வெகுகாலம் சென்று, உபவாசநாளும் கழிந்துபோனபடியினாலே, இனிக் கப்பல்யாத்திரை செய்கிறது மோசத்திற்கு ஏதுவாயிருக்குமென்று, பவுல் அவர்களை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And said unto them, Sirs, I perceive that this voyage will be with hurt and much damage, not only of the lading and ship, but also of our lives.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">மனுஷரே, இந்த யாத்திரையினாலே சரக்குக்கும் கப்பலுக்கும் மாத்திரமல்ல, நம்முடைய ஜீவனுக்கும் வருத்தமும் மிகுந்த சேதமும் உண்டாயிருக்குமென்று காண்கிறேன் என்று சொல்லி, அவர்களை எச்சரித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Nevertheless the centurion believed the master and the owner of the ship, more than those things which were spoken by Paul.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நூற்றுக்கு அதிபதி பவுலினால் சொல்லப்பட்டவைகளைப் பார்க்கிலும் மாலுமியையும் கப்பல் எஜமானையும் அதிகமாய் நம்பினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And because the haven was not commodious to winter in, the more part advised to depart thence also, if by any means they might attain to Phenice, and there to winter; which is an haven of Crete, and lies toward the south west and north west.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அந்தத் துறைமுகம் மழைகாலத்திலே தங்குவதற்கு வசதியாயிராதபடியினால், அவ்விடத்தை விட்டுத் தென்மேற்கையும் வடமேற்கையும் நோக்கியிருக்கும் கிரேத்தாதீவிலுள்ள துறைமுகமாகிய பேனிக்ஸ் என்னும் இடத்தில் சேரக்கூடுமானால் சேர்ந்து, மழைகாலத்தில் தங்கும்படி அநேகம்பேர் ஆலோசனை சொன்னார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And when the south wind blew softly, supposing that they had obtained their purpose, loosing thence, they sailed close by Crete.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">தென்றல் மெதுவாயடித்தபடியால், தாங்கள் கோரினது கைகூடிவந்ததென்று எண்ணி, அவ்விடம்விட்டுப் பெயர்ந்து கிரேத்தாதீவுக்கு அருகாக ஓடினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">But not long after there arose against it a tempestuous wind, called Euroclydon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">கொஞ்சநேரத்துக்குள்ளே யூரோக்கிலிதோன் என்னுங் கடுங்காற்று அதில் மோதிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And when the ship was caught, and could not bear up into the wind, we let her drive.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">கப்பல் அதில் அகப்பட்டுக்கொண்டு, காற்றுக்கு எதிர்த்துப்போகக்கூடாதபடியினால் காற்றின் போக்கிலே கொண்டுபோகப்பட்டோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And running under a certain island which is called Clauda, we had much work to come by the boat:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அப்படிக் கிலவுதா என்னப்பட்ட ஒரு சின்ன தீவின் ஒதுக்கிலே ஓடுகையில் வெகு வருத்தத்தோடே படவை வசப்படுத்தினோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">Which when they had taken up, they used support cables, undergirding the ship; and, fearing lest they should fall into the quicksand, strake sail, and so were driven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அதை அவர்கள் தூக்கியெடுத்த பின்பு, பல உபாயங்கள் செய்து, கப்பலைச் சுற்றிக் கட்டி, சொரிமணலிலே விழுவோமென்று பயந்து, பாய்களை இறக்கி, இவ்விதமாய்க் கொண்டுபோகப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And we being exceedingly tossed with a tempest, the next day they lightened the ship;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">மேலும் பெருங்காற்று மழையில் நாங்கள் மிகவும் அடிபட்டபடியினால், மறுநாளில் சில சரக்குகளைக் கடலில் எறிந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And the third day we cast out with our own hands the cordage of the ship.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">மூன்றாம் நாளிலே கப்பலின் தளவாடங்களை எங்கள் கைகளினாலே எடுத்து எறிந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And when neither sun nor stars in many days appeared, and no small tempest lay on us, all hope that we should be saved was then taken away.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அநேகநாளாய்ச் சூரியனாவது நட்சத்திரங்களாவது காணப்படாமல், மிகுந்த பெருங்காற்றுமழையும் அடித்துக்கொண்டிருந்தபடியினால், இனி தப்பிப்பிழைப்போமென்னும் நம்பிக்கை முழுமையும் அற்றுப்போயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">But after long abstinence Paul stood forth in the midst of them, and said, Sirs, all of you should have hearkened unto me, and not have loosed from Crete, and to have gained this harm and loss.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அநேகநாள் அவர்கள் போஜனம்பண்ணாமல் இருந்தபோது, பவுல் அவர்கள் நடுவிலே நின்று: மனுஷரே, இந்த வருத்தமும் சேதமும் வாராதபடிக்கு என் சொல்லைக்கேட்டு, கிரேத்தாதீவை விட்டுப்புறப்படாமல் இருக்கவேண்டியதாயிருந்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And now I exhort you to be of good cheer: for there shall be no loss of any man's life among you, but of the ship.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ஆகிலும், திடமனதாயிருங்களென்று இப்பொழுது உங்களுக்குத் தைரியஞ்சொல்லுகிறேன். கப்பற்சேதமேயல்லாமல் உங்களில் ஒருவனுக்கும் பிராணச்சேதம் வராது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">For there stood by me this night the angel of God, whose I am, and whom I serve,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">ஏனென்றால், என்னை ஆட்கொண்டவரும் நான் சேவிக்கிறவருமான தேவனுடைί தூதனானவன் இந்த இராத்திரியிலே என்னிடத்தில் வந்துநிɠύறு:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Saying, Fear not, Paul; you must be brought before Caesar: and, lo, God has given you all them that sail with you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">பவுலே, பயப்படாதே, நீ இராயனுக்கு முன்பாக நிற்கவேண்டும். இதோ, உன்னுடனேகூட யாத்திரைபண்ணுகிற யாவரையும் தேவன் உனக்குத் தயவுபண்ணினார் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">Wherefore, sirs, be of good cheer: for I believe God, that it shall be even as it was told me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">ஆனபடியினால் மனுஷரே, திடமனதாயிருங்கள். எனக்குச் சொல்லப்பட்டபிரகாரமாகவே நடக்கும் என்று தேவனிடத்தில் நம்பிக்கையாயிருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Nevertheless we must be cast upon a certain island.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஆயினும் நாம் ஒரு தீவிலே விழவேண்டியதாயிருக்கும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">But when the fourteenth night was come, as we were driven up and down in Adria, about midnight the sailors deemed that they drew near to some country;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">பதினாலாம் இராத்திரியானபோது, நாங்கள் ஆதிரியாக் கடலிலே அலைவுபட்டு ஓடுகையில், நடுஜாமத்திலே கப்பலாட்களுக்கு ஒரு கரை கிட்டிவருகிறதாகத் தோன்றிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And sounded, and found it twenty fathoms: and when they had gone a little further, they sounded again, and found it fifteen fathoms.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">உடனே அவர்கள் விழுதுவிட்டு இருபது பாகமென்று கண்டார்கள்; சற்றப்புறம் போனபொழுது, மறுபடியும் விழுதுவிட்டுப் பதினைந்து பாகமென்று கண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Then fearing lest we should have fallen upon rocks, they cast four anchors out of the stern, and wished for the day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">பாறையிடங்களில் விழுவோமென்று பயந்து, பின்னணியத்திலிருந்து நாலு நங்கூரங்களைப்போட்டு, பொழுது எப்போது விடியுமோ என்றிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And as the sailors were about to flee out of the ship, when they had let down the boat into the sea, under colour as though they would have cast anchors out of the bow,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அப்பொழுது கப்பலாட்கள் கப்பலை விட்டோடிப்போக வகைதேடி, முன்னணியத்திலிருந்து நங்கூரங்களைப் போடப்போகிற பாவனையாய்ப் படவைக் கடலிலிறக்குகையில்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Paul said to the centurion and to the soldiers, Except these abide in the ship, all of you cannot be saved.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">பவுல் நூற்றுக்கு அதிபதியையும் சேவகரையும் நோக்கி: இவர்கள் கப்பலிலிராவிட்டால் நீங்கள் தப்பிப் பிழைக்கமாட்டீர்கள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Then the soldiers cut off the ropes of the boat, and let her fall off.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அப்பொழுது, போர்ச்சேவகர் படவின் கயிறுகளை. அறுத்து, அதைத் தாழவிழவிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And while the day was coming on, Paul besought them all to take food, saying, This day is the fourteenth day that all of you have tarried and continued fasting, having taken nothing.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">பொழுது விடிகையில் எல்லாரும் போஜனம்பண்ணும்படி பவுல் அவர்களுக்குத் தைரியஞ்சொல்லி: நீங்கள் இன்று பதினாலுநாளாய் ஒன்றும் சாப்பிடாமல் பட்டினியாயிருக்கிறீர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">Wherefore I pray you to take some food: for this is for your health: for there shall not an hair fall from the head of any of you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">ஆகையால் போஜனம்பண்ணும்படி உங்களை வேண்டிக்கொள்ளுகிறேன், நீங்கள் தப்பிப் பிழைப்பதற்கு அது உதவியாயிருக்கும்; உங்கள் தலையிலிருந்து ஒரு மயிரும் விழாது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And when he had thus spoken, he took bread, and gave thanks to God in presence of them all: and when he had broken it, he began to eat.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">இப்படிச் சொல்லி, அப்பத்தை எடுத்து, எல்லாருக்கு முன்பாகவும் தேவனை ஸ்தோத்திரித்து, அதைப் பிட்டுப் புசிக்கத்தொடங்கினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Then were they all of good cheer, and they also took some food.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அப்பொழுது எல்லாரும் திடமனப்பட்டுப் புசித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And we were in all in the ship two hundred threescore and sixteen souls.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">கப்பலில் இருநூற்றெழுபத்தாறுபேர் இருந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And when they had eaten enough, they lightened the ship, and cast out the wheat into the sea.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">திருப்தியாகப் புசித்தபின்பு அவர்கள் கோதுமையைக் கடலிலே எறிந்து, கப்பலை இலகுவாக்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And when it was day, they knew not the land: but they discovered a certain creek with a shore, into the which they were minded, if it were possible, to thrust in the ship.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">பொழுது விடிந்தபின்பு, இன்னபூமியென்று அறியாதிருந்தார்கள். அப்பொழுது சமமான கரையுள்ள ஒரு துறைமுகம் அவர்களுக்குத் தென்பட்டது; கூடுமானால் அதற்குள் கப்பலையோட்ட யோசனையாயிருந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">And when they had taken up the anchors, they committed themselves unto the sea, and loosed the rudder bands, and hoisted up the mainsail to the wind, and made toward shore.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">நங்கூரங்களை அறுத்துக் கடலிலே விட்டுவிட்டு, சுக்கான்களுடைய கட்டுகளைத் தளரவிட்டு, பெரும்பாயைக் காற்றுமுகமாய் விரித்து, கரைக்கு நேராய் ஓடி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And falling into a place where two seas met, they ran the ship aground; and the front part stuck fast, and remained immoveable, but the hinder part was broken with the violence of the waves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">இருபுறமும் கடல் மோதிய ஒருஇடத்திலே கப்பலைத் தட்டவைத்தார்கள்; முன்னணியம் ஊன்றி அசையாமலிருந்தது, பின்னணியம் அலைகளுடைய பலத்தினால் உடைந்துபோயிற்று.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">And the soldiers' counsel was to kill the prisoners, lest any of them should swim out, and escape.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">அப்பொழுது காவல்பண்ணப்பட்டவர்களில் ஒருவனும் நீந்தி ஓடிப்போகாதபடிக்கு அவர்களைக் கொன்றுபோடவேண்டுமென்று போர்ச்சேவகர் யோசனையாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">But the centurion, willing to save Paul, kept them from their purpose; and commanded that they which could swim should cast themselves first into the sea, and get to land:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">நூற்றுக்கு அதிபதி பவுலைக் காப்பாற்ற மனதாயிருந்து, அவர்களுடைய யோசனையைத் தடுத்து, நீந்தத்தக்கவர்கள் முந்திக் கடலில் விழுந்து கரையேறவும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And the rest, some on boards, and some on broken pieces of the ship. And so it came to pass, that they escaped all safe to land.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">மற்றவர்களில் சிலர் பலகைகள்மேலும், சிலர் கப்பல் துண்டுகள்மேலும் போய்க் கரையேறவும் கட்டளையிட்டான்; இவ்விதமாய் எல்லாரும் தப்பிக் கரைசேர்ந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

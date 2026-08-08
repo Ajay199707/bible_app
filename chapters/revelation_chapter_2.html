@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revelation 2 | வெளிப்படுத்தின விசேஷம் 2 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Revelation chapter 2 (வெளிப்படுத்தின விசேஷம் 2) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Revelation 2 | வெளிப்படுத்தின விசேஷம் 2</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Unto the angel of the church of Ephesus write; These things says he that holds the seven stars in his right hand, who walks in the midst of the seven golden candlesticks;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">எபேசு சபையின் தூதனுக்கு நீ எழுதவேண்டியது என்னவெனில்: ஏழு நட்சத்திரங்களைத் தம்முடைய வலதுகரத்தில் ஏந்திக்கொண்டு, ஏழு பொன் குத்துவிளக்குகளின் மத்தியிலே உலாவிக்கொண்டிருக்கிறவர் சொல்லுகிறதாவது;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">I know your works, and your labour, and your patience, and how you can not bear them which are evil: and you have tried them which say they are apostles, and are not, and have found them liars:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">உன் கிரியைகளையும், உன் பிரயாசத்தையும், உன் பொறுமையையும், நீ பொல்லாதவர்களைச் சகிக்கக்கூடாமலிருக்கிறதையும், அப்போஸ்தலரல்லாதவர்கள் தங்களை அப்போஸ்தலரென்று சொல்லுகிறதை நீ சோதித்து அவர்களைப் பொய்யரென்று கண்டறிந்ததையும்;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And have borne, and have patience, and for my name's sake have laboured, and have not fainted.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">நீ சகித்துக்கொண்டிருக்கிறதையும், பொறுமையாயிருக்கிறதையும், என் நாமத்தினிமித்தம் இளைப்படையாமல் பிரயாசப்பட்டதையும் அறிந்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Nevertheless I have somewhat against you, because you have left your first love.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">ஆனாலும், நீ ஆதியில் கொண்டிருந்த அன்பை விட்டாய் என்று உன்பேரில் எனக்குக் குறை உண்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Remember therefore from whence you are fallen, and repent, and do the first works; or else I will come unto you quickly, and will remove your candlestick out of his place, except you repent.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">ஆகையால், நீ இன்ன நிலைமையிலிருந்து விழுந்தாயென்பதை நினைத்து, மனந்திரும்பி, ஆதியில் செய்த கிரியைகளைச் செய்வாயாக; இல்லாவிட்டால் நான் சீக்கிரமாய் உன்னிடத்தில் வந்து, நீ மனந்திரும்பாதபட்சத்தில், உன் விளக்குத்தண்டை அதனிடத்தினின்று நீக்கிவிடுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">But this you have, that you hate the deeds of the Nicolaitanes, which I also hate.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">நான் வெறுக்கிற நிக்கொலாய் மதஸ்தரின் கிரியைகளை நீயும் வெறுக்கிறாய், இது உன்னிடத்திலுண்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">He that has an ear, let him hear what the Spirit says unto the churches; To him that overcomes will I give to eat of the tree of life, which is in the midst of the paradise of God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">ஆவியானவர் சபைகளுக்குச் சொல்லுகிறதைக் காதுள்ளவன் கேட்கக்கடவன்; ஜெயங்கொள்ளுகிறவனெவனோ அவனுக்கு தேவனுடைய பரதீசின் மத்தியிலிருக்கிற ஜீவவிருட்சத்தின் கனியைப் புசிக்கக்கொடுப்பேன் என்றெழுது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And unto the angel of the church in Smyrna write; These things says the first and the last, which was dead, and is alive;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">சிமிர்னா சபையின் தூதனுக்கு நீ எழுதவேண்டியது என்னவெனில்: முந்தினவரும் பிந்தினவரும், மரித்திருந்து பிழைத்தவருமானவர் சொல்லுகிறதாவது;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">I know your works, and tribulation, and poverty, (but you are rich) and I know the blasphemy of them which say they are Jews, and are not, but are the synagogue of Satan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">உன் கிரியைகளையும், உன் உபத்திரவத்தையும், நீ ஐசுவரியமுள்ளவனாயிருந்தும் உனக்கிருக்கிற தரித்திரத்தையும், தங்களை யூதரென்று சொல்லியும் யூதராயிராமல் சாத்தானுடைய கூட்டமாயிருக்கிறவர்கள் செய்யும் தூஷணத்தையும் அறிந்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Fear none of those things which you shall suffer: behold, the devil shall cast some of you into prison, that all of you may be tried; and all of you shall have tribulation ten days: be you faithful unto death, and I will give you a crown of life.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">நீ படப்போகிற பாடுகளைக்குறித்து எவ்வளவும் பயப்படாதே; இதோ, நீங்கள் சோதிக்கப்படும்பொருட்டாகப் பிசாசானவன் உங்களில் சிலரைக் காவலில் போடுவான்; பத்துநாள் உபத்திரப்படுவீர்கள். ஆகிலும் நீ மரணபரியந்தம் உண்மையாயிரு, அப்பொழுது ஜீவகிரீடத்தை உனக்குத் தருவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">He that has an ear, let him hear what the Spirit says unto the churches; He that overcomes shall not be hurt of the second death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">ஆவியானவர் சபைகளுக்குச் சொல்லுகிறதைக் காதுள்ளவன் கேட்கக்கடவன்; ஜெயங்கொள்ளுகிறவன் இரண்டாம் மரணத்தினால் சேதப்படுவதில்லை என்றெழுது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And to the angel of the church in Pergamos write; These things says he which has the sharp sword with two edges;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">பெர்கமு சபையின் தூதனுக்கு நீ எழுதவேண்டியது என்னவெனில்: இருபுறமும் கருக்குள்ள பட்டயத்தை உடையவர் சொல்லுகிறதாவது;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">I know your works, and where you dwell, even where Satan's seat is: and you hold fast my name, and have not denied my faith, even in those days wherein Antipas was my faithful martyr, who was slain among you, where Satan dwells.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">உன் கிரியைகளையும், சாத்தானுடைய சிங்காசனமிருக்கிற இடத்தில் நீ குடியிருக்கிறதையும் நீ என் நாமத்தைப் பற்றிக்கொண்டிருக்கிறதையும், சாத்தான் குடிகொண்டிருக்கிற இடத்திலே உங்களுக்குள்ளே எனக்கு உண்மையுள்ள சாட்சியான அந்திப்பா என்பவன் கொல்லப்பட்ட நாட்களிலும் என்னைப் பற்றும் விசுவாசத்தை நீ மறுதலியாமலிருந்ததையும் அறிந்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">But I have a few things against you, because you have there them that hold the doctrine of Balaam, who taught Balac to cast a stumbling block before the children of Israel, to eat things sacrificed unto idols, and to commit fornication.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ஆகிலும், சில காரியங்களைக்குறித்து உன்பேரில் எனக்குக் குறை உண்டு; விக்கிரகங்களுக்குப் படைத்தவைகளைப் புசிப்பதற்கும் வேசித்தனம்பண்ணுவதற்கும் ஏதுவான இடறலை இஸ்ரவேல் புத்திரர்முன்பாகப் போடும்படி பாலாக் என்பவனுக்குப் போதனை செய்த பிலேயாமுடைய போதகத்தைக் கைக்கொள்ளுகிறவர்கள் உன்னிடத்திலுண்டு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">So have you also them that hold the doctrine of the Nicolaitanes, which thing I hate.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அப்படியே நிக்கொலாய் மதஸ்தருடைய போதகத்தைக் கைக்கொள்ளுகிறவர்களும் உன்னிடத்திலுண்டு; அதை நான் வெறுக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">Repent; or else I will come unto you quickly, and will fight against them with the sword of my mouth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">நீ மனந்திரும்பு, இல்லாவிட்டால் நான் சீக்கிரமாய் உன்னிடத்தில் வந்து, என் வாயின் பட்டயத்தால் அவர்களோடே யுத்தம்பண்ணுவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">He that has an ear, let him hear what the Spirit says unto the churches; To him that overcomes will I give to eat of the hidden manna, and will give him a white stone, and in the stone a new name written, which no man knows saving he that receives it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">ஆவியானவர் சபைகளுக்குச் சொல்லுகிறதைக் காதுள்ளவன் கேட்கக்கடவன்; ஜெயங்கொள்ளுகிறவனுக்கு நான் மறைவான மன்னாவைப் புசிக்கக்கொடுத்து, அவனுக்கு வெண்மையான குறிக்கல்லையும், அந்தக் கல்லின்மேல் எழுதப்பட்டதும் அதைப் பெறுகிறவனேயன்றி வேறொருவனும் அறியக்கூடாததுமாகிய புதிய நாமத்தையும் கொடுப்பேன் என்றெழுது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And unto the angel of the church in Thyatira write; These things says the Son of God, who has his eyes like unto a flame of fire, and his feet are like fine brass;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">தியத்தீரா சபையின் தூதனுக்கு நீ எழுதவேண்டியது என்னவெனில்: அக்கினிஜுவாலை போன்ற கண்களும், பிரகசமான வெண்கலம்போன்ற பாதங்களுமுள்ள தேவகுமாரன் சொல்லுகிறதாவது;</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">I know your works, and love, and service, and faith, and your patience, and your works; and the last to be more than the first.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">உன் கிரியைகளையும் உன் அன்பையும், உன் ஊழியத்தையும், உன் விசுவாசத்தையும், உன் பொறுமையையும், நீ முன்பு செய்த கிரியைகளிலும் பின்புசெய்த கிரியைகள் அதிகமாயிருக்கிறதையும் அறிந்திருக்கிறேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Notwithstanding I have a few things against you, because you suffer that woman Jezebel, which calls herself a prophetess, to teach and to seduce my servants to commit fornication, and to eat things sacrificed unto idols.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஆகிலும், உன்பேரில் எனக்குக் குறை உண்டு; என்னவெனில், தன்னைத் தீர்க்கதரிசியென்று சொல்லுகிற யேசபேல் என்னும் ஸ்திரீயானவள் என்னுடைய ஊழியக்காரர் வேசித்தனம்பண்ணவும் விக்கிரகங்களுக்குப் படைத்தவைகளைப் புசிக்கவும் அவர்களுக்குப் போதித்து, அவர்களை வஞ்சிக்கும்படி நீ அவளுக்கு இடங்கொடுக்கிறாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And I gave her space to repent of her fornication; and she repented not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவள் மனந்திரும்பும்படியாய் அவளுக்குத் தவணைகொடுத்தேன்; தன் வேசிமார்க்த்தை விட்டு மனந்திரும்ப அவளுக்கு விருப்பமில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Behold, I will cast her into a bed, and them that commit adultery with her into great tribulation, except they repent of their deeds.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">இதோ, நான் அவளைக் கட்டில்கிடையாக்கி, அவளுடனே விபசாரஞ்செய்தவர்கள் தங்களுடைய கிரியைகளைவிட்டு மனந்திரும்பாவிட்டால் அவர்களையும் மிகுந்த உபத்திரவத்திலே தள்ளி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And I will kill her children with death; and all the churches shall know that I am he which searches the reins and hearts: and I will give unto every one of you according to your works.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அவளுடைய பிள்ளைகளையும் கொல்லவே கொல்லுவேன்; அப்பொழுது நானே உள்ளிந்திரியங்களையும் இருதயங்களையும் ஆராய்கிறவரென்று எல்லாச் சபைகளும் அறிந்துகொள்ளும்; அன்றியும் உங்களில் ஒவ்வொருவனுக்கும் உங்கள் கிரியைகளின்படியே பலனளிப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">But unto you I say, and unto the rest in Thyatira, as many as have not this doctrine, and which have not known the depths of Satan, as they speak; I will put upon you no other burden.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">தியத்தீராவிலே இந்தப் போதகத்தைப் பற்றிக்கொள்ளாமலும், சாத்தனுடைய ஆழங்கள் என்று அவர்கள் சொல்லுகிறார்களே, அந்த ஆழங்களை அறிந்துகொள்ளாமலுமிருக்கிற மற்றவர்களாகிய உங்களுக்கு நான் சொல்கிறதாவது, உங்கள்மேல் வேறொரு பாரத்தையும் சுமத்தமாட்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But that which all of you have already hold fast till I come.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">உங்களுக்குள்ளதை நான் வருமளவும் பற்றிக்கொண்டிருங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And he that overcomes, and keeps my works unto the end, to him will I give power over the nations:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஜெயங்கொண்டு முடிவுபரியந்தம் என் கிரியைகளைக் கைக்கொள்ளுகிறவனெவனோ அவனுக்கு, நான் என் பிதாவினிடத்தில் அதிகாரம் பெற்றதுபோல, ஜாதிகள்மேல் அதிகாரம் கொடுப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And he shall rule them with a rod of iron; as the vessels of a potter shall they be broken to shivers: even as I received of my Father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அவன் இருப்புக்கோலால் அவர்களை ஆளுவான்; அவர்கள் மண்பாண்டங்களைப்போல நொறுக்கப்படுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And I will give him the morning star.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">விடிவெள்ளி நட்சத்திரத்தையும் அவனுக்குக் கொடுப்பேன்</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">He that has an ear, let him hear what the Spirit says unto the churches.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">ஆவியானவர் சபைகளுக்குச் சொல்லுகிறதைக் காதுள்ளவன் கேட்கக்கடவன் என்றெழுது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

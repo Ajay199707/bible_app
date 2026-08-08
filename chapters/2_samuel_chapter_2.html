@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Samuel 2 | 2 சாமுவேல் 2 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for 2 Samuel chapter 2 (2 சாமுவேல் 2) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">2 Samuel 2 | 2 சாமுவேல் 2</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And it came to pass after this, that David enquired of the LORD, saying, Shall I go up into any of the cities of Judah? And the LORD said unto him, Go up. And David said, Where shall I go up? And he said, Unto Hebron.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்பு தாவீது கர்த்தரை நோக்கி: நான் யூதாவின் பட்டணங்கள் ஒன்றிலே போய் இருக்கலாமா என்று விசாரித்தான், அதற்குக் கர்த்தர்: போ என்றார்; எவ்விடத்திற்குப் போகலாம் என்று தாவீது கேட்டதற்கு, அவர்: எப்ரோனுக்குப் போ என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">So David went up thither, and his two wives also, Ahinoam the Jezreelitess, and Abigail Nabal's wife the Carmelite.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்படியே தாவீது தன் இரண்டு மனைவிகளாகிய யெஸ்ரயேல் ஊரானான அகினோவாமோடும், நாபாலின் மனைவியாயிருந்த கர்மேல் ஊராளான அபிகாயிலோடும்கூட அவ்விடத்திற்குப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And his men that were with him did David bring up, every man with his household: and they dwelt in the cities of Hebron.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அன்றியும் தன்னோடிருந்த மனுஷரையும் அவர்கள் குடும்பங்களையும் கூட்டிக்கொண்டுபோனான்; அவர்கள் எப்ரோனின் சுற்றூர்களிலே குடியேறினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And the men of Judah came, and there they anointed David king over the house of Judah. And they told David, saying, That the men of Jabeshgilead were they that buried Saul.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அப்பொழுது யூதாவின் மனுஷர் வந்து, அங்கே தாவீதை யூதா வம்சத்தாரின்மேல் ராஜாவாக அபிஷேகம்பண்ணினார்கள். கீலேயாத்தேசத்து யாபேசின் மனுஷர் சவுலை அடக்கம்பண்ணினவர்கள் என்று அவர்கள் தாவீதுக்கு அறிவித்த போது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And David sent messengers unto the men of Jabeshgilead, and said unto them, Blessed be all of you of the LORD, that all of you have showed this kindness unto your lord, even unto Saul, and have buried him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">தாவீது கீலேயாத்தேசத்து யாபேசின் மனுஷரிடத்தில் ஸ்தானாபதிகளை அனுப்பி, நீங்கள் உங்கள் ஆண்டவனாகிய சவுலுக்கு இந்தத் தயவைச் செய்து அவரை அடக்கம்பண்ணினபடியினலே கர்த்தர் உங்களை ஆசீர்வதிப்பாராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And now the LORD show kindness and truth unto you: and I also will requite you this kindness, because all of you have done this thing.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">கர்த்தர் உங்களைக் கிருபையும் உண்மையுமாய் நடத்துவாராக; நீங்கள் இந்தக் காரியத்தைச் செய்தபடியினால், நானும் இந்த நன்மைக்குத்தக்கதாக உங்களை நடத்துவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">Therefore now let your hands be strengthened, and be all of you valiant: for your master Saul is dead, and also the house of Judah have anointed me king over them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">இப்போதும் நீங்கள் உங்கள் கைகளைத் திடப்படுத்திக்கொண்டு நல்ல சேவகராயிருங்கள்; உங்கள் ஆண்டவனாகிய சவுல் மரித்தபின்பு, யூதா வம்சத்தார் என்னைத் தங்கள்மேல் ராஜாவாக அபிஷேகம்பண்ணினார்கள் என்று அவர்களுக்குச் சொல்லச்சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">But Abner the son of Ner, captain of Saul's host, took Ishbosheth the son of Saul, and brought him over to Mahanaim;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">சவுலின் படைத்தலைவனான நேரின் குமாரனாகிய அப்னேர் சவுலின் குமாரனாகிய இஸ்போசேத்தை மகனாயீக்கு அழைத்துக்கொண்டுபோய்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And made him king over Gilead, and over the Ashurites, and over Jezreel, and over Ephraim, and over Benjamin, and over all Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">அவனைக் கீலேயாத்தின்மேலும் அஷூரியர்மேலும், யெஸ்ரயேலின்மேலும், எப்பிராயீமின்மேலும், பென்யமீனின்மேலும், இஸ்ரவேலனைத்தின் மேலும் ராஜாவாகிக்கினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Ishbosheth Saul's son was forty years old when he began to reign over Israel, and reigned two years. But the house of Judah followed David.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">சவுலின் குமாரனாகிய இஸ்போசேத் இஸ்ரவேலின்மேல் ராஜாவாகிறபோது நாற்பது வயதாயிருந்தான்; அவன் இரண்டு வருடம் ராஜ்யபாரம்பண்ணினான்; யூதா கோத்திரத்தார்மாத்திரம் தாவீதைப் பின்பற்றினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the time that David was king in Hebron over the house of Judah was seven years and six months.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">தாவீது எப்ரோனிலே யூதா கோத்திரத்தின்மேல் ராஜாவாயிருந்த நாட்களின் இலக்கம் ஏழு வருஷமும் ஆறு மாதமுமாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And Abner the son of Ner, and the servants of Ishbosheth the son of Saul, went out from Mahanaim to Gibeon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">நேரின் குமாரனாகிய அப்னேர் சவுலின் குமாரனாகிய இஸ்போசேத்தின் சேவகரைக் கூட்டிக்கொண்டு மகனாயீமிலிருந்து கிபியோனுக்குப் புறப்பட்டுப் போனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And Joab the son of Zeruiah, and the servants of David, went out, and met together by the pool of Gibeon: and they sat down, the one on the one side of the pool, and the other on the other side of the pool.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அப்பொழுது செருயாவின் குமாரனாகிய யோவாபும் தாவீதின் சேவகரும் புறப்பட்டுப்போய் கிபியோனின் குளத்தண்டையில் ஒருவருக்கொருவர் எதிர்ப்பட்டு குளத்திற்கு அந்தப்பக்கத்தில் அவர்களும் குளத்திற்கு இந்தப்பக்கத்தில் இவர்களும் இறங்கினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And Abner said to Joab, Let the young men now arise, and play before us. And Joab said, Let them arise.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அப்னேர் யோவாபை நோக்கி: வாலிபர் எழுந்து நமக்கு முன்பாகச் சிலம்பம் பண்ணட்டும் என்றான்; அதற்கு யோவாப்: அவர்கள் எழுந்து அப்படிச் செய்யட்டும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Then there arose and went over by number twelve of Benjamin, which pertained to Ishbosheth the son of Saul, and twelve of the servants of David.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அப்பொழுது சவுலின் குமாரனாகிய இஸ்போசேத்தின் பக்கத்திற்குப் பென்யமீன் மனுஷரில் பன்னிரண்டுபேரும், தாவீதுடைய சேவகரிலே பன்னிரண்டுபேரும் எழுந்து ஒரு பக்கமாய் போய்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And they caught every one his fellow by the head, and thrust his sword in his fellow's side; so they fell down together: wherefore that place was called Helkathhazzurim, which is in Gibeon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஒருவர் தலையை ஒருவர் பிடித்து ஒருவருடைய விலாவிலே ஒருவர் பட்டயத்தினாலே குத்தி ஒருமிக்க விழுந்தார்கள்; அதினாலே கிபியோனிலிருக்கிற அந்த ஸ்தலம் எல்காத் அசூரிம் என்னப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And there was a very sore battle that day; and Abner was beaten, and the men of Israel, before the servants of David.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அன்றையதினம் மிகவும் கடினமான யுத்தமாகி அப்பேனரும் இஸ்ரவேல் மனுஷரும் தாவீதின் சேவகரால் முறிய அடிக்கப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And there were three sons of Zeruiah there, Joab, and Abishai, and Asahel: and Asahel was as light of foot as a wild roe.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அங்கே செருயாவின் மூன்று குமாரராகிய யோவாயும் அபிசாயும் ஆசகேலும் இருந்தார்கள்; ஆசகேல் வெளியிலிருக்கிற கலைமான்களில் ஒன்றைப்போல வேகமாய் ஓடுகிறவனாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And Asahel pursued after Abner; and in going he turned not to the right hand nor to the left from following Abner.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">அவன் அப்னேரைப் பின் தொடர்ந்து வலதுபுறத்திலாகிலும் இடதுபுறத்திலாகிலும் அவனைவிட்டு விலகாமல் துரத்திக்கொண்டுபோனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Then Abner looked behind him, and said, Are you Asahel? And he answered, I am.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அப்னேர் திரும்பிப் பார்த்து: நீ ஆசகேல் அல்லவா என்றான்; அவன்: நான்தான் என்றான்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And Abner said to him, Turn you aside to your right hand or to your left, and lay you hold on one of the young men, and take you his armour. But Asahel would not turn aside from following of him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது அப்னேர் அவனை நோக்கி: நீ வலது பக்கத்திற்காகிலும் இடதுபக்கத்திற்காகிலும் விலகி வாலிபரில் ஒருவனைப் பிடித்து அவனை உரிந்துகொள் என்றான் ஆசகேலோ விடமாட்டேன் என்று தொடர்ந்துபோனான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And Abner said again to Asahel, Turn you aside from following me: wherefore should I strike you to the ground? how then should I hold up my face to Joab your brother?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">பின்னும் அப்னேர் ஆசகேலை நோக்கி: நீ என்னை விட்டுப்போ, நான் உன்னைத் தரையோடே ஏன் வெட்டவேண்டும்? பிற்பாடு உன் சகோதரனாகிய யோவாபின் முகத்திலே எப்படி விழிப்பேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Nevertheless he refused to turn aside: wherefore Abner with the hinder end of the spear stroke him under the fifth rib, that the spear came out behind him; and he fell down there, and died in the same place: and it came to pass, that as many as came to the place where Asahel fell down and died stood still.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">ஆனாலும் அவன் விலகிப்போகமாட்டேன் என்றபடியினால், அப்னேர் அவனை ஈட்டியின் பின்புற அலகினால் அவன் வயிற்றிலே குத்தினான்; ஈட்டி முதுகிலே புறப்பட்டது அவன் அங்கேதானே விழுந்து செத்தான்; ஆசகேல் விழுந்துகிடக்கிற இடத்திலே வந்தவர்களெல்லாரும் தரித்து நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Joab also and Abishai pursued after Abner: and the sun went down when they were come to the hill of Ammah, that lies before Giah by the way of the wilderness of Gibeon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">யோவாபும் அபிசாயும் சூரியன் அஸ்தமிக்குமட்டும் அப்னேரைப் பின் தொடர்ந்தார்கள்; கிபியோன் வனாந்தர வழிக்கு அருகான கீயாவுக்கு எதிரே இருக்கிற அம்மா மேடுமட்டும் வந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And the children of Benjamin gathered themselves together after Abner, and became one troop, and stood on the top of an hill.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">அப்பொழுது அப்னேரைப் பின் சென்ற பென்யமீன் புத்திரர் ஒரே படையாகக் கூடி ஒரு மலையின் உச்சியிலே நின்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Then Abner called to Joab, and said, Shall the sword devour for ever? know you not that it will be bitterness in the latter end? how long shall it be then, before you bid the people return from following their brethren?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அப்பொழுது அப்னேர் யோவாபைப் பார்த்துக் கூப்பிட்டு: பட்டயம் எப்போதும் சங்காரம் பண்ணிக்கொண்டிருக்கவேண்டுமோ, முடிவிலே கசப்புண்டாகும் என்று அறியீரோ, தங்கள் சகோதரரை விட்டுப் பின்வாங்கும்படிக்கு எந்த மட்டும் ஜனங்களுக்குச் சொல்லாதிருப்பீர் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And Joab said, As God lives, unless you had spoken, surely then in the morning the people had gone up every one from following his brother.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அதற்கு யோவாப்: இன்று காலமே நீர் பேசாதிருந்தீரானால் ஜனங்கள் அவரவர் தங்கள் சகோதரரைப் பின்தொடராமல் அப்பொழுதே திரும்பிவிடுவார்கள் என்று தேவனுடைய ஜீவனைக்கொண்டு சொல்லுகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">So Joab blew a trumpet, and all the people stood still, and pursued after Israel no more, neither fought they any more.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">யோவாப் எக்காளம் ஊதினான்; அப்பொழுது ஜனங்கள் எல்லாரும் இஸ்ரவேலைத் தொடராமலும் யுத்தம்பண்ணாமலும் நின்றுவிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And Abner and his men walked all that night through the plain, and passed over Jordan, and went through all Bithron, and they came to Mahanaim.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அன்று ராமுழுதும் அப்னேரும் அவன் மனுஷரும் அந்தரவெளி வழியாய்ப் போய், யோர்தானைக் கடந்து, பித்ரோனை உருவ நடந்து தாண்டி, மகனாயீமுக்குப் போனார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Joab returned from following Abner: and when he had gathered all the people together, there lacked of David's servants nineteen men and Asahel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">யோவாப் அப்னேரைத் தொடராமல் ஜனங்களையெல்லாம் கூடிவரச்செய்தான்; தாவீதின் சேவகரில் பத்தொண்பதுபேரும் ஆகசேலும் குறைந்திருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">But the servants of David had smitten of Benjamin, and of Abner's men, so that three hundred and threescore men died.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">தாவீதின் சேகவரோ பென்யமீனரிலும் அப்னேரின் மனுஷரிலும் முந்நூற்றறுபதுபேரை மடங்கடித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And they took up Asahel, and buried him in the tomb of his father, which was in Bethlehem. And Joab and his men went all night, and they came to Hebron at break of day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அவர்கள் ஆசகேலை எடுத்து பெத்லெகேமிலுள்ள அவனுடைய தகப்பன் கல்லறையிலே அவனை அடக்கம்பண்ணினார்கள்; யோவாபும் அவன் மனுஷரும் இரா முழுவதும் நடந்து, பொழுது விடியும்போது எப்ரோனிலே சேர்ந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

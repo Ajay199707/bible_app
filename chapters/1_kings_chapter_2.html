@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Kings 2 | 1 இராஜாக்கள் 2 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for 1 Kings chapter 2 (1 இராஜாக்கள் 2) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">1 Kings 2 | 1 இராஜாக்கள் 2</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Now the days of David drew nigh that he should die; and he charged Solomon his son, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">தாவீது மரணமடையும் காலம் சமீபத்தபோது, அவன் தன் குமாரனாகிய சாலொமோனுக்குக் கட்டளையிட்டுச் சொன்னது:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">I go the way of all the earth: be you strong therefore, and show yourself a man;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">நான் பூலோகத்தார் யாவரும் போகிற வழியே போகிறேன்; நீ திடன் கொண்டு புருஷனாயிரு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And keep the charge of the LORD your God, to walk in his ways, to keep his statutes, and his commandments, and his judgments, and his testimonies, as it is written in the law of Moses, that you may prosper in all that you do, and anywhere you turn yourself:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">நீ என்ன செய்தாலும், நீ எங்கே போனாலும், எல்லாவற்றிலும் புத்திமானாயிருக்கிறதற்கும், கர்த்தர் என்னைக் குறித்து: உன் பிள்ளைகள் தங்கள் முழு இருதயத்தோடும் தங்கள் முழு ஆத்துமாவோடும் எனக்கு முன்பாக உண்மையாய் நடக்கும்படிக்குத் தங்கள் வழியைக் காத்துக்கொண்டால், இஸ்ரவேலின் சிங்காசனத்தின்மேல் வீற்றிருக்கத்தக்க புருஷன் உனக்கு இல்லாமற்போவதில்லை என்று சொன்ன தம்முடைய வார்த்தையைத் திடப்படுத்துகிறதற்கும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">That the LORD may continue his word which he spoke concerning me, saying, If your children take heed to their way, to walk before me in truth with all their heart and with all their soul, there shall not fail you (said he) a man on the throne of Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">மோசேயின் நியாயப்பிரமாணத்தில் எழுதியிருக்கிறபடி, நீ உன் தேவனாகிய கர்த்தருடைய கட்டளைகளையும், கற்பனைகளையும், நியாயங்களையும், சாட்சிகளையும் கைக்கொள்ள, அவர் வழிகளில் நடக்கும் படிக்கு அவருடைய காவலைக் காப்பாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Moreover you know also what Joab the son of Zeruiah did to me, and what he did to the two captains of the hosts of Israel, unto Abner the son of Ner, and unto Amasa the son of Jether, whom he slew, and shed the blood of war in peace, and put the blood of war upon his girdle that was about his loins, and in his shoes that were on his feet.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">செருயாவின் குமாரனாகிய யோவாப், இஸ்ரவேலின் இரண்டு சேனாபதிகளாகிய நேரின் குமாரன் அப்னேருக்கும், ஏத்தேரின் குமாரன் அமாசாவுக்கும் செய்தகாரியத்தினால் எனக்குச் செய்த குற்றத்தை நீ அறிந்திருக்கிறாயே; அவன் அவர்களைக் கொன்று, சமாதானகாலத்திலே யுத்தகாலத்து இரத்தத்தைச் சிந்தி, யுத்தகாலத்து இரத்தத்தைத் தன் அரையிலுள்ள தன் கால்களில் இருந்த பாதரட்சையிலும் வடியவிட்டானே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Do therefore according to your wisdom, and let not his hoar head go down to the grave in peace.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஆகையால் உன் யுக்தியின்படியே நீ செய்து, அவனுடைய நரைமயிர் சமாதானமாய்ப் பாதாளத்தில் இறங்கவொட்டாதிரு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">But show kindness unto the sons of Barzillai the Gileadite, and let them be of those that eat at your table: for so they came to me when I fled because of Absalom your brother.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">கீலேயாத்தியனான பர்சிலாயின் குமாரருக்குத் தயைசெய்வாயாக; அவர்கள் உன் பந்தியிலே சாப்பிடுகிறவர்களுடன் இருப்பார்களாக; உன் சகோதரனாகிய அப்சலோமுக்கு முன்பாக நான் ஓடிப்போகையில், அவர்கள் என்னை ஆதரித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And, behold, you have with you Shimei the son of Gera, a Benjamite of Bahurim, which cursed me with a grievous curse in the day when I went to Mahanaim: but he came down to meet me at Jordan, and I swore to him by the LORD, saying, I will not put you to death with the sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">மேலும் பகூரிம் ஊரானான பென்யமீனனாகிய கேராவின் மகன் சீமேயி உன்னிடத்தில் இருக்கிறான்; நான் மக்னாயீமுக்குப் போகிற நாளிலே, அவன் என்னைக் கொடிய தூஷணமாய்த் தூஷித்தான்; ஆனாலும் அவன் யோர்தானிலே எனக்கு எதிர்கொண்டுவந்தபடியினால்: நான் உன்னைப் பட்டயத்தாலே கொன்றுபோடுவதில்லை என்று கர்த்தர்மேல் அவனுக்கு ஆணையிட்டுக்கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">Now therefore hold him not guiltless: for you are a wise man, and know what you ought to do unto him; but his hoar head bring you down to the grave with blood.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஆகிலும் நீ அவனைக் குற்றமற்றவன் என்று எண்ணாதே; நீ புத்திமான்; அவனுடைய நரைமயிரை இரத்தத்துடன் பாதாளத்தில் இறங்கப்பண்ண, நீ அவனுக்குச் செய்யவேண்டியதை அறிவாய் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">So David slept with his fathers, and was buried in the city of David.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">பின்பு தாவீது தன் பிதாக்களோடே நித்திரையடைந்து, தாவீதின் நகரத்தில் அடக்கம்பண்ணப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the days that David reigned over Israel were forty years: seven years reigned he in Hebron, and thirty and three years reigned he in Jerusalem.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">தாவீது இஸ்ரவேலை அரசாண்ட நாட்கள் நாற்பது வருஷம்; அவன் எப்ரோனில் ஏழு வருஷமும், எருசலேமில் முப்பத்துமூன்று வருஷமும் அரசாண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Then sat Solomon upon the throne of David his father; and his kingdom was established greatly.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">சாலொமோன் தன் தகப்பனாகிய தாவீதுடைய சிங்காசனத்தின்மேல் வீற்றிருந்தான்; அவன் ராஜ்யபாரம் மிகவும் ஸ்திரப்பட்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And Adonijah the son of Haggith came to Bathsheba the mother of Solomon. And she said, Come you peaceably? And he said, Peaceably.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">ஆகித்தின் குமாரனாகிய அதோனியா சாலொமோனின் தாயாகிய பத்சேபாளிடத்தில் வந்தான். நீ சமாதானமாய் வருகிறாயா என்று அவள் கேட்டதற்கு: சமாதானமாய்த் தான் வருகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">He said moreover, I have somewhat to say unto you. And she said, Say on.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">பின்பு அவன்: உம்மோடே நான் பேசவேண்டிய ஒரு காரியம் இருக்கிறது என்றான். அதற்கு அவள்: சொல் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And he said, You know that the kingdom was mine, and that all Israel set their faces on me, that I should reign: nevertheless the kingdom is turned about, and is become my brother's: for it was his from the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அப்பொழுது அவன்: ராஜ்யம் என்னுடையதாயிருந்தது என்றும், நான் அரசாளுகிறதற்கு இஸ்ரவேலரெல்லாரும் என்மேல் நோக்கமாய் இருந்தார்கள் என்றும் நீர் அறிவீர்; ஆனாலும் ராஜ்யபாரம் என்னைவிட்டுத் தாண்டி, என் சகோதரனுக்கு ஆயிற்று; கர்த்தரால் அது அவருக்குக் கிடைத்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And now I ask one petition of you, deny me not. And she said unto him, Say on.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">இப்பொழுது நான் உம்மிடத்தில் ஒரு மன்றாட்டைக் கேட்கிறேன்; அதை எனக்கு மறுக்கவேண்டாம் என்றான். அவள்: சொல் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And he said, Speak, I pray you, unto Solomon the king, (for he will not say you nay,) that he give me Abishag the Shunammite to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">அப்பொழுது அவன்: ராஜாவாகிய சாலொமோன் உம்முடைய சொல்லை மறுப்பதில்லை; சூனேம் ஊராளாகிய அபிஷாகை எனக்கு அவர் விவாகம் பண்ணிக்கொடுக்க, அவரோடே பேசும்படி வேண்டுகிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And Bathsheba said, Well; I will speak for you unto the king.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அதற்குப் பத்சேபாள்: நல்லது, நான் உனக்காக ராஜாவிடத்தில் பேசுவேன் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">Bathsheba therefore went unto king Solomon, to speak unto him for Adonijah. And the king rose up to meet her, and bowed himself unto her, and sat down on his throne, and caused a seat to be set for the king's mother; and she sat on his right hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பத்சேபாள் அதோனியாவுக்காக ராஜாவாகிய சாலொமோனிடத்தில் பேசும்படி போனாள்; அப்பொழுது ராஜா எழுந்திருந்து, அவளுக்கு எதிர்கொண்டு வந்து அவளை வணங்கி, தன் சிங்காசனத்தின்மேல் உட்கார்ந்து, ராஜாவின் தாயார் தன் வலதுபுறமாக உட்கார, அவளுக்கு ஒரு ஆசனத்தை வைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Then she said, I desire one small petition of you; I pray you, say me not nay. And the king said unto her, Ask on, my mother: for I will not say you nay.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அப்பொழுது அவள்: நான் உம்மை ஒரு சிறிய மன்றாட்டைக் கேட்க விரும்புகிறேன்; எனக்கு அதை மறுக்கவேண்டாம் என்றாள். அதற்கு ராஜா: என் தாயாரே, கேளும்; நான் உமக்கு மறுப்பதில்லை என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And she said, Let Abishag the Shunammite be given to Adonijah your brother to wife.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது அவள்: சூனேம் ஊராளாகிய அபிஷாகை உம்முடைய சகோதரனாகிய அதோனியாவுக்கு விவாகம்பண்ணிக்கொடுக்கவேண்டும் என்றாள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And king Solomon answered and said unto his mother, And why do you ask Abishag the Shunammite for Adonijah? ask for him the kingdom also; for he is mine elder brother; even for him, and for Abiathar the priest, and for Joab the son of Zeruiah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ராஜாவாகிய சாலொமோன் தன் தாயாருக்குப் பிரதியுத்தரமாக: நீர் சூனேம் ஊராளாகிய அபிஷாகை அதோனியாவுக்குக் கேட்பானேன்? அப்படியானால் ராஜ்யபாரத்தையும் அவனுக்குக் கேளும்; அவன் எனக்கு மூத்த சகோதரன்; அவனுக்கும் ஆசாரியனாகிய அபியத்தாருக்கும் செருயாவின் குமாரன் யோவாபுக்குமே அதைக் கேளும் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Then king Solomon swore by the LORD, saying, God do so to me, and more also, if Adonijah have not spoken this word against his own life.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">பின்பு சாலொமோன் ராஜா: அதோனியா இந்த வார்த்தையைத் தன் பிராணனுக்குச் சேதமாகச் சொல்லாதிருந்தால், தேவன் அதற்குச் சரியாகவும் அதற்கு அதிகமாகவும் எனக்குச் செய்யக்கடவர் என்று கர்த்தர்மேல் ஆணையிட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">Now therefore, as the LORD lives, which has established me, and set me on the throne of David my father, and who has made me an house, as he promised, Adonijah shall be put to death this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">இப்போதும் இன்றைக்கு அதோனியா கொலையுண்பான் என்று என்னைத் திடப்படுத்தினவரும், என்னை என் தகப்பனாகிய தாவீதின் சிங்காசனத்தில் வீற்றிருக்கப்பண்ணி, தாம் சொன்னபடி எனக்கு வீட்டைக் கட்டுவித்தவருமாகிய கர்த்தருடைய ஜீவனைக் கொண்டு சொல்லுகிறேன் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And king Solomon sent by the hand of Benaiah the son of Jehoiada; and he fell upon him that he died.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">ராஜாவாகிய சாலொமோன் யோய்தாவின் குமாரன் பெனாயாவுக்குக் கட்டளைகொடுத்து அவனை அனுப்பினான்; இவன் அவன்மேல் விழுந்து அவனைக் கொன்றுபோட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And unto Abiathar the priest said the king, Get you to Anathoth, unto yours own fields; for you are worthy of death: but I will not at this time put you to death, because you bare the ark of the LORD God before David my father, and because you have been afflicted in all wherein my father was afflicted.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ராஜா: ஆசாரியனாகிய அபியத்தாரை நோக்கி: நீ உன் நிலங்கள் இருக்கிற ஆனதோத்திற்குப் போய்விடு; நீ மரணத்திற்குப் பாத்திரவானாயிருந்தும், நீ என் தகப்பனாகிய தாவீதுக்கு முன்பாகக் கர்த்தராகிய ஆண்டவருடைய பெட்டியைச் சுமந்தபடியினாலும், என் தகப்பன் அநுபவித்த உபத்திரவத்தையெல்லாம் நீகூட அநுபவித்தபடியினாலும், இன்றைய தினம் நான் உன்னைக் கொலைசெய்யமாட்டேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">So Solomon thrust out Abiathar from being priest unto the LORD; that he might fulfill the word of the LORD, which he spoke concerning the house of Eli in Shiloh.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">அப்படியே கர்த்தர் சீலோவிலே ஏலியின் வீட்டாரைக்குறித்துச் சொன்ன வார்த்தையை நிறைவேற்றும்படியாக, சாலொமோன் அபியத்தாரைக் கர்த்தருடைய ஆசாரியனாயிராதபடிக்குத் தள்ளிப்போட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Then tidings came to Joab: for Joab had turned after Adonijah, though he turned not after Absalom. And Joab fled unto the tabernacle of the LORD, and caught hold on the horns of the altar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">நடந்த இந்தச் செய்தி யோவாபுக்கு வந்தபோது, அவன் கர்த்தருடைய கூடாரத்திற்கு ஓடிப்போய், பலிபீடத்தின் கொம்புகளைப் பிடித்துக்கொண்டான்; யோவாப் அப்சலோமின் பட்சம் சாயாதவனாயிருந்தும், அதோனியாவின் பட்சம் சாய்ந்திருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And it was told king Solomon that Joab was fled unto the tabernacle of the LORD; and, behold, he is by the altar. Then Solomon sent Benaiah the son of Jehoiada, saying, Go, fall upon him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">யோவாப் கர்த்தரின் கூடாரத்திற்கு ஓடிப்போனான் என்றும், இதோ, பலி பீடத்தண்டையில் நிற்கிறான் என்றும், ராஜாவாகிய சாலொமோனுக்கு அறிவிக்கப்பட்டபோது, சாலொமோன் யோய்தாவின் குமாரனாகிய பெனாயாவை அனுப்பி, நீ போய் அவன்மேல் விழு என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Benaiah came to the tabernacle of the LORD, and said unto him, Thus says the king, Come forth. And he said, Nay; but I will die here. And Benaiah brought the king word again, saying, Thus said Joab, and thus he answered me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">பெனாயா கர்த்தரின் கூடாரத்திற்குப் போய், அவனைப்பார்த்து: வெளியே வா என்று ராஜா சொல்லுகிறார் என்றான். அதற்கு அவன்: நான் வரமாட்டேன்; இங்கேயே சாவேன் என்றான்; ஆகையால் பெனாயா ராஜாவினிடத்தில் போய், யோவாப் இன்னபடி சொல்லி, இன்னபடி எனக்கு மறுஉத்தரவு கொடுத்தான் என்று மறுசெய்தி சொன்னான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And the king said unto him, Do as he has said, and fall upon him, and bury him; that you may take away the innocent blood, which Joab shed, from me, and from the house of my father.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அப்பொழுது ராஜா அவனை நோக்கி: அவன் சொன்னபடியே நீ செய்து, அவனைக் கொன்று, அடக்கம்பண்ணி, இவ்விதமாய் யோவாப் முகாந்தரமில்லாமல் சிந்தின இரத்தத்தை என்னைவிட்டும் என் பிதாவின் வீட்டைவிட்டும் விலக்கிப் போடு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And the LORD shall return his blood upon his own head, who fell upon two men more righteous and better than he, and slew them with the sword, my father David not knowing thereof, to know, Abner the son of Ner, captain of the host of Israel, and Amasa the son of Jether, captain of the host of Judah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அவன் தன்னைப்பார்க்கிலும் நீதியும் நற்குணமுமுள்ள இரண்டுபேராகிய நேரின் குமாரன் அப்னேர் என்னும் இஸ்ரவேலின் படைத்தலைவன் மேலும், ஏதேரின் குமாரன் அமாசா என்னும் யூதாவின் படைத்தலைவன்மேலும் விழுந்து, என் தகப்பனாகிய தாவீதுக்குத் தெரியாமல் அவர்களைப் பட்டயத்தால் கொன்ற அவனுடைய இரத்தப்பழியைக் கர்த்தர் அவனுடைய தலையின்மேல் திரும்பப்பண்ணுவாராக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">Their blood shall therefore return upon the head of Joab, and upon the head of his seed for ever: but upon David, and upon his seed, and upon his house, and upon his throne, shall there be peace for ever from the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">இப்படியே அவர்களுடைய இரத்தப்பழி என்றும் யேޠεாபுடைய தலையின் மǠβும், அவன் சந்ததியாரின் தலையின் மேலும் திரும்பவும், தாவீதுக்கும் அவர் சந்ததியாருக்கும் அவர் வீட்டாருக்கும் அவர் சிங்காசனத்திற்கும் என்றென்றைக்கும் கர்த்தராலே சமாதானம் உண்டாயிருக்கவும் கடவது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">So Benaiah the son of Jehoiada went up, and fell upon him, and slew him: and he was buried in his own house in the wilderness.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">அப்படியே யோய்தாவின் குமாரன் பெனாயா போய், அவன்மேல் விழுந்து அவனைக் கொன்றுபோட்டான்; அவன் வனாந்தரத்திலிருக்கிற தன்னுடைய வீட்டிலே அடக்கம்பண்ணப்பட்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And the king put Benaiah the son of Jehoiada in his room over the host: and Zadok the priest did the king put in the room of Abiathar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அவனுக்குப் பதிலாக ராஜா யோய்தாவின் குமாரன் பெனாயாவை இராணுவத்தின்மேலும், ஆசாரியனாகிய சாதோக்கை அபியத்தாரின் ஸ்தானத்திலும் வைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And the king sent and called for Shimei, and said unto him, Build you an house in Jerusalem, and dwell there, and go not forth thence any where.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">பின்பு ராஜா சீமேயியை அழைப்பித்து, அவனை நோக்கி: நீ எருசலேமிலே உனக்கு ஒரு வீட்டைக் கட்டி, அங்கேயிருந்து எங்கேயாவது வெளியே போகாமல், அங்கேதானே குடியிரு.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">For it shall be, that on the day you go out, and pass over the brook Kidron, you shall know for certain that you shall surely die: your blood shall be upon yours own head.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">நீ வெளியே போய்க் கீதரோன் ஆற்றைக் கடக்கும் நாளில், நீ சாகவே சாவாய்; அப்பொழுது உன் இரத்தப்பழி உன் தலையின்மேல் இருக்கும் என்பதை நீ நிச்சயமாய் அறிந்துகொள் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">And Shimei said unto the king, The saying is good: as my lord the king has said, so will your servant do. And Shimei dwelt in Jerusalem many days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">சீமேயி ராஜாவைப் பார்த்து: அது நல்ல வார்த்தை; ராஜாவாகிய என் ஆண்டவன் சொன்னபடியே, உமது அடியானாகிய நான் செய்வேன் என்று சொல்லி, சீமேயி அநேகநாள் எருசலேமிலே குடியிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And it came to pass at the end of three years, that two of the servants of Shimei ran away unto Achish son of Maachah king of Gath. And they told Shimei, saying, Behold, your servants be in Gath.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">மூன்று வருஷம் சென்றபோது, சீமேயியின் வேலைக்காரர் இரண்டுபேர் மாக்காவின் குமாரனாகிய ஆகீஸ் என்னும் காத்தின் ராஜாவினிடத்துக்கு ஓடிப்போனார்கள்; உன் வேலைக்காரர் காத் ஊரில் இருக்கிறார்கள் என்று சீமேயிக்கு அறிவித்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">And Shimei arose, and saddled his ass, and went to Gath to Achish to seek his servants: and Shimei went, and brought his servants from Gath.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">அப்பொழுது சீமேயி எழுந்து, தன் கழுதையின்மேல் சேணம்வைத்து, தன் வேலைக்காரரைத் தேட, காத் ஊரிலிருக்கிற ஆகீசிடத்துக்குப் புறப்பட்டுப் போனான்; இப்படிச் சீமேயி போய், தன் வேலைக்காரரைக் காத் ஊரிலிருந்து கொண்டுவந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And it was told Solomon that Shimei had gone from Jerusalem to Gath, and was come again.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">சீமேயி எருசலேமிலிருந்து காத் ஊருக்குப் போய், திரும்பிவந்தான் என்று சாலொமோனுக்கு அறிவிக்கப்பட்டபோது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">And the king sent and called for Shimei, and said unto him, Did I not make you to swear by the LORD, and protested unto you, saying, Know for a certain, on the day you go out, and walk abroad any where, that you shall surely die? and you said unto me, The word that I have heard is good.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">ராஜா சீமேயியை அழைப்பித்து: நீ வெளியே புறப்பட்டு எங்கேயாவது போகிறநாளிலே சாகவே சாவாய் என்பதை நீ நிச்சயமாய் அறிந்துகொள் என்று நான் உன்னைக் கர்த்தர்மேல் ஆணையிடச் செய்து, உனக்குத் திடச்சாட்சியாகச் சொல்லியிருக்க, அதற்கு நீ: நான் கேட்ட வார்த்தை நல்லதென்று சொல்லவில்லையா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">Why then have you not kept the oath of the LORD, and the commandment that I have charged you with?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">நீ கர்த்தரின் ஆணையையும், நான் உனக்குக் கற்பித்த கட்டளையையும் கைக்கொள்ளாதே போனதென்ன? என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">The king said moreover to Shimei, You know all the wickedness which yours heart is privy to, that you did to David my father: therefore the LORD shall return your wickedness upon yours own head;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">பின்னும் ராஜா சீமேயியைப் பார்த்து: நீ என் தகப்பனாகிய தாவீதுக்குச் செய்ததும் உன் மனதுக்குத் தெரிந்திருக்கிறதுமான எல்லாப் பொல்லாப்பையும் அறிந்திருக்கிறாய்; ஆகையால் கர்த்தர் உன் பொல்லாப்பை உன் தலையின் மேல் திரும்பப்பண்ணுவார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And king Solomon shall be blessed, and the throne of David shall be established before the LORD for ever.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">ராஜாவாகிய சாலொமோனோ ஆசீர்வதிக்கப்பட்டவனாயிருப்பான்; தாவீதின் சிங்காசனம் என்றைக்கும் கர்த்தருக்கு முன்பாக உறுதியாயிருக்கும் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">So the king commanded Benaiah the son of Jehoiada; which went out, and fell upon him, that he died. And the kingdom was established in the hand of Solomon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">ராஜா யோய்தாவின் குமாரனாகிய பெனாயாவுக்குக் கட்டளைகொடுத்தான்; அவன் வெளியே போய், அவன்மேல் விழுந்து அவனைக் கொன்றுபோட்டான். ராஜ்யபாரம் சாலொமோனின் கையிலே ஸ்திரப்பட்டது.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leviticus 27 | லேவியராகமம் 27 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Leviticus chapter 27 (லேவியராகமம் 27) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Leviticus 27 | லேவியராகமம் 27</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And the LORD spoke unto Moses, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்னும் கர்த்தர் மோசேயை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">Speak unto the children of Israel, and say unto them, When a man shall make a singular vow, the persons shall be for the LORD by your estimation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">நீ இஸ்ரεேல͠புத்திரரோடே சொல்லவேண்டியது என்னவென்றால்: யாதாமொருவர் ஒரு விசேஷித்த பொருத்தனை பண்ணியிருந்தால், பொருத்தனை பண்ணப்பட்டவர்கள் உன் மதிப்பின்படி கர்த்தருக்கு உரியவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And your estimation shall be of the male from twenty years old even unto sixty years old, even your estimation shall be fifty shekels of silver, after the shekel of the sanctuary.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">இருபது வயதுமுதல் அறுபது வயதுக்குட்பட்ட ஆண்பிள்ளையை நீ பரிசுத்த ஸ்தலத்தின் சேக்கலாகிய ஐம்பது வெள்ளிச்சேக்கலாகவும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And if it be a female, then your estimation shall be thirty shekels.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">பெண்பிள்ளையை முப்பது சேக்கலாகவும் மதிப்பாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And if it be from five years old even unto twenty years old, then your estimation shall be of the male twenty shekels, and for the female ten shekels.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">ஐந்து வயதுமுதல் இருபது வயதுக்கு உட்பட்ட ஆண்பிள்ளையை இருபது சேக்கலாகவும், பெண்பிள்ளையை பத்துச்சேக்கலாகவும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And if it be from a month old even unto five years old, then your estimation shall be of the male five shekels of silver, and for the female your estimation shall be three shekels of silver.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஒரு மாதம்முதல் ஐந்து வயதுக்கு உட்பட்ட ஆண்பிள்ளையை ஐந்து வெள்ளிச்சேக்கலாகவும், பெண்பிள்ளையை மூன்று வெள்ளிச்சேக்கலாகவும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And if it be from sixty years old and above; if it be a male, then your estimation shall be fifteen shekels, and for the female ten shekels.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அறுபது வயது தொடங்கி, அதற்கு மேற்பட்ட வயதுள்ள ஆண்பிள்ளையைப் பதினைந்து சேக்கலாகவும், பெண்பிள்ளையைப் பத்துச்சேக்கலாகவும் மதிக்கக்கடவாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">But if he be poorer than your estimation, then he shall present himself before the priest, and the priest shall value him; according to his ability that vowed shall the priest value him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">உன் மதிப்பின்படி செலுத்தக் கூடாத தரித்திரனாயிருந்தால், அவன் ஆசாரியனுக்கு முன்பாக வந்து நிற்கக்கடவன்; ஆசாரியன் அவனை மதிப்பானாக; பொருத்தனை பண்ணினவனுடைய திராணிக்கேற்றபடி ஆசாரியன் அவனை மதிக்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And if it be a beast, whereof men bring an offering unto the LORD, all that any man gives of such unto the LORD shall be holy.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஒருவன் பொருத்தனை பண்ணினது கர்த்தருக்குப் பலியிடப்படத்தக்க மிருக ஜீவனானால் அவன் கர்த்தருக்குக் கொடுக்கிற அப்படிப்பட்டதெல்லாம் பரிசுத்தமாயிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">He shall not alter it, nor change it, a good for a bad, or a bad for a good: and if he shall at all change beast for beast, then it and the exchange thereof shall be holy.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அதை மாற்றாமலும் வேறுபடுத்தாமலும் இருப்பானாக; இளப்பமானதற்குப் பதிலாக நலமானதையும், நலமானதற்குப் பதிலாக இளப்பமானதையும் செலுத்தாமல் இருப்பானாக; அவன் மிருகத்துக்குப் பதிலாக மிருகத்தை மாற்றிக்கொடுப்பானாகில், அப்பொழுது அதுவும் அதற்குப் பதிலாகக் கொடுத்ததும் பரிசுத்தமாயிருப்பதாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And if it be any unclean beast, of which they do not offer a sacrifice unto the LORD, then he shall present the beast before the priest:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">அது கர்த்தருக்குப் பலியிடப்படத்தகாத சுத்தமில்லாத யாதொரு மிருகமானால், அதை ஆசாரியனுக்கு முன்பாக நிறுத்தக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And the priest shall value it, whether it be good or bad: as you value it, who are the priest, so shall it be.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">ஆசாரியன் அது நல்லதானாலும் இளப்பமானதானாலும் அதை மதிப்பானாக; உன் மதிப்பின்படியே இருக்கக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">But if he will at all redeem it, then he shall add a fifth part thereof unto your estimation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அதை மீட்டுக்கொள்ளமனதாயிருந்தானாகில், உன் மதிப்போடே ஐந்தில் ஒரு பங்கைக் கூட்டிக்கொடுக்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And when a man shall sanctify his house to be holy unto the LORD, then the priest shall estimate it, whether it be good or bad: as the priest shall estimate it, so shall it stand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">ஒருவன் தன்வீட்டைக் கர்த்தருக்குப் பரிசுத்தம் என்று நேர்ந்துகொண்டால், ஆசாரியன் அதின் நலத்துக்கும் இளப்பத்துக்கும் தக்கதாக அதை மதிக்கக்கடவன்; ஆசாரியன் மதிக்கிறபடி அது இருக்கக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And if he that sanctified it will redeem his house, then he shall add the fifth part of the money of your estimation unto it, and it shall be his.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">தன் வீட்டைப் பரிசுத்தம் என்று நேர்ந்துகொண்டவன் அதை மீட்டுக்கொள்ள மனதாயிருந்தால், நீ மதிக்கும் திரவியத்தோடே ஐந்தில் ஒரு பங்கைக் கூட்டிக்கொடுக்கக்கடவன்; அப்பொழுது அது அவனுடையதாகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And if a man shall sanctify unto the LORD some part of a field of his possession, then your estimation shall be according to the seed thereof: an homer of barley seed shall be valued at fifty shekels of silver.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">ஒருவன் தன் காணியாட்சியான வயலில் யாதொரு பங்கைக் கர்த்தருக்குப் பரிசுத்தம் என்று நேர்ந்துகொண்டால், உன் மதிப்பு அதின் விதைப்புக்குத்தக்கதாய் இருக்கவேண்டும்; ஒரு கலம் வாற்கோதுமை விதைக்கிற வயல் ஐம்பது வெள்ளிச்சேக்கலாக மதிக்கப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">If he sanctify his field from the year of jubile, according to your estimation it shall stand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">யூபிலி வருஷமுதல் அவன் தன் வயலைப் பரிசுத்தம் என்று நேர்ந்துகொண்டால், அது உன் மதிப்பின்படி இருக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">But if he sanctify his field after the jubile, then the priest shall reckon unto him the money according to the years that remain, even unto the year of the jubile, and it shall be decreased from your estimation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">யூபிலி வருஷத்துக்குப்பின் தன் வயலைப் பரிசுத்தம் என்று நேர்ந்துகொண்டானானால், யூபிலி வருஷம்மட்டுமுள்ள மற்றவருஷங்களின்படியே ஆசாரியன் திரவியத்தைக் கணக்குப்பார்த்து, அதற்குத்தக்கது உன் மதிப்பிலே தள்ளப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And if he that sanctified the field will in any way redeem it, then he shall add the fifth part of the money of your estimation unto it, and it shall be assured to him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">வயலைப் பரிசுத்தம் என்று நேர்ந்து கொண்டவன் அதை மீட்டுக்கொள்ள மனதாயிருந்தால், உன் மதிப்பான திரவியத்தோடே ஐந்தில் ஒரு பங்கைக்கூட்டிக் கொடுக்கக்கடவன்; அப்பொழுது அது அவனுக்கு உறுதியாகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And if he will not redeem the field, or if he have sold the field to another man, it shall not be redeemed any more.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அவன் வயலை மீட்டுக்கொள்ளாமல், வயலை வேறொருவனுக்கு விற்றுப்போட்டால், அது திரும்ப மீட்கப்படாமல்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">But the field, when it goes out in the jubile, shall be holy unto the LORD, as a field devoted; the possession thereof shall be the priest's.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">யூபிலி வருஷத்தில் மீட்கப்படும்போது, சாபத்தீடான வயலாகக் கர்த்தருக்கென்று நியமிக்கப்பட்டதாயிருக்கக்கடவது; அது ஆசாரியனுக்குக் காணியாட்சியாகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And if a man sanctify unto the LORD a field which he has bought, which is not of the fields of his possession;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">ஒருவன் தனக்குக் காணியாட்சி வயலாயிராமல் தான் விலைக்கு வாங்கின ஒரு வயலைக் கர்த்தருக்குப் பரிசுத்தம் என்று நேர்ந்துகொண்டால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">Then the priest shall reckon unto him the worth of your estimation, even unto the year of the jubile: and he shall give yours estimation in that day, as a holy thing unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அது யூபிலி வருஷம்மட்டும், உன் மதிப்பின்படி பெறும் விலை இன்னதென்று ஆசாரியன் அவனோடே கணக்குப்பார்த்து, அந்த உன் மதிப்பை, கர்த்தருக்குப் பரிசுத்தமாயிருக்கும்படி, அவன் அந்நாளிலே கொடுக்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">In the year of the jubile the field shall return unto him of whom it was bought, even to him to whom the possession of the land did belong.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">யார் கையிலே அந்த வயலைக் கொண்டானோ, அந்தக் காணியாட்சிக்காரன் வசமாய் அது யூபிலி வருஷத்தில் திரும்பச் சேரும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And all your estimations shall be according to the shekel of the sanctuary: twenty gerahs shall be the shekel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">உன் மதிப்பெல்லாம் பரிசுத்த ஸ்தலத்துச் சேக்கல் கணக்காயிருக்கக்கடவது; ஒரு சேக்கலானது இருபது கேரா.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Only the first born of the beasts, which should be the LORD's first born, no man shall sanctify it; whether it be ox, or sheep: it is the LORD's.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">தலையீற்றானவைகள் கர்த்தருடையது, ஆகையால் ஒருவரும் தலையீற்றாகிய மிருகஜீவனைப் பரிசுத்தம் என்று நேர்ந்து கொள்ளலாகாது; அது மாடானாலும் ஆடானாலும் கர்த்தருடையது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And if it be of an unclean beast, then he shall redeem it according to yours estimation, and shall add a fifth part of it thereto: or if it be not redeemed, then it shall be sold according to your estimation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">சுத்தமில்லாத மிருகத்தினுடைய தலையீற்றினால், அதை அவன் உன் மதிப்பின்படி மீட்டுக்கொண்டு, அதனுடனே ஐந்தில் ஒரு பங்கைக் கூட்டிக்கொடுக்கக்கடவன்; மீட்கப்படாதிருந்தால், உன் மதிப்பின்படி அது விற்கப்படக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Notwithstanding no devoted thing, that a man shall devote unto the LORD of all that he has, both of man and beast, and of the field of his possession, shall be sold or redeemed: every devoted thing is most holy unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஒருவன் தன் வசத்திலுள்ள நரஜீவனிலாவது, காணியாட்சி நிலத்திலாவது, எதையாகிலும் கர்த்தருக்கென்று சாபத்தீடாக நேர்ந்துகொண்டால், அது விற்கப்படவும் மீட்கப்படவும் கூடாது; நேர்ந்துகொள்ளப்பட்டவைகளெல்லாம் கர்த்தருக்காகப் பரிசுத்தமாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">None devoted, which shall be devoted of men, shall be redeemed; but shall surely be put to death.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">நரஜீவனில் சாபத்தீடாக நியமிக்கப்பட்டவைகளெல்லாம் மீட்கப்படாமல் கொலைசெய்யப்படக்கடவது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD's: it is holy unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">தேசத்திலே நிலத்தின் வித்திலும், விருட்சங்களின் கனியிலும், தசமபாகம் எல்லாம் கர்த்தருக்கு உரியது; அது கர்த்தருக்குப் பரிசுத்தமானது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And if a man will at all redeem ought of his tithes, he shall add thereto the fifth part thereof.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">ஒருவன் தன் தசமபாகத்திலே எவ்வளவாவது மீட்டுக்கொள்ள மனதாயிருந்தானானால், அதனுடன் ஐந்தில் ஒரு பங்கைக் கூட்டிக்கொடுக்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And concerning the tithe of the herd, or of the flock, even of whatsoever passes under the rod, the tenth shall be holy unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">கோலின் கீழ்ப்பட்ட ஆடுமாடுகளிலே பத்தில் ஒரு பங்காகிறதெல்லாம் கர்த்தருக்குப் பரிசுத்தமானது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">He shall not search whether it be good or bad, neither shall he change it: and if he change it at all, then both it and the change thereof shall be holy; it shall not be redeemed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அது நல்லதோ இளப்பமானதோ என்று அவன் பார்க்கவேண்டாம்; மாற்றினால், அதுவும் அதற்குப் பதிலாகக் கொடுக்கப்பட்டதுமாகிய இரண்டும் பரிசுத்தமாகும்; அது மீட்கப்படக் கூடாதென்று அவர்களோடே சொல் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">These are the commandments, which the LORD commanded Moses for the children of Israel in mount Sinai.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரருக்குச் சொல்லும்படி, கர்த்தர் சீனாய்மலையில் மோசேக்கு விதித்த கட்டளைகள் இவைகளே.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

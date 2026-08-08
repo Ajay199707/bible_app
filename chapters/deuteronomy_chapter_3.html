@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deuteronomy 3 | உபாகமம் 3 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Deuteronomy chapter 3 (உபாகமம் 3) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Deuteronomy 3 | உபாகமம் 3</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">Then we turned, and went up the way to Bashan: and Og the king of Bashan came out against us, he and all his people, to battle at Edrei.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்பு நாம் திரும்பி, பாசானுக்குப் போகிற வழியாய்ப் போனோம்; பாசானின் ராஜாவாகிய ஓக் தன்னுடைய சகல ஜனங்களோடும் நம்மோடே எதிர்த்து யுத்தம்பண்ணும்படி புறப்பட்டு, எத்ரேயிக்கு வந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And the LORD said unto me, Fear him not: for I will deliver him, and all his people, and his land, into your hand; and you shall do unto him as you did unto Sihon king of the Amorites, which dwelt at Heshbon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர் என்னை நோக்கி: அவனுக்குப் பயப்படவேண்டாம்; அவனையும் அவனுடைய ஜனங்கள் எல்லாரையும் அவன் தேசத்தையும் உன் கையில் ஒப்புக்கொடுத்தேன்; எஸ்போனிலே குடியிருந்த எமோரியரின் ராஜாவாகிய சீகோனுக்கு நீ செய்ததுபோல, அவனுக்கும் செய்வாய் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">So the LORD our God delivered into our hands Og also, the king of Bashan, and all his people: and we stroke him until none was left to him remaining.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அப்படியே நம்முடைய தேவனாகிய கர்த்தர் பாசானின் ராஜாவாகிய ஓகையும் அவனுடைய சகல ஜனங்களையும் நம்முடைய கையில் ஒப்புக்கொடுத்தார்; அவனுக்கு ஒருவரும் மீதியாயிராமற்போகுமட்டும் அவனை முறிய அடித்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And we took all his cities at that time, there was not a city which we took not from them, threescore cities, all the region of Argob, the kingdom of Og in Bashan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அக்காலத்திலே அவனுடைய பட்டணங்களையெல்லாம் பிடித்தோம்; அவர்களிடத்தில் நாம் பிடித்துக்கொள்ளாத பட்டணம் இல்லை; பாசானிலிருந்த ஓகின் ராஜ்யமான அறுபது பட்டணங்களுள்ள அர்கோப் தேசம் முழுவதையும் பிடித்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">All these cities were fenced with high walls, gates, and bars; beside towns without protective walls a great many.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அந்தப் பட்டணங்களெல்லாம் உயர்ந்த மதில்களாலும் அரணாக்கப்பட்டிருந்தது; அவைகள் அன்றி, மதிலில்லாத பட்டணங்களும் அநேகம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And we utterly destroyed them, as we did unto Sihon king of Heshbon, utterly destroying the men, women, and children, of every city.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அவைகளையும் சங்காரம்பண்ணினோம்; நாம் எஸ்போனின் ராஜாவாகிய சீகோனுக்குச் செய்ததுபோல, அந்த எல்லாப் பட்டணங்களிலுமுள்ள புருஷரையும் ஸ்திரீகளையும் பிள்ளைகளையும் சங்காரம்பண்ணினோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">But all the cattle, and the spoil of the cities, we took for a prey to ourselves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">ஆனாலும் பட்டணங்களிலுள்ள ஆஸ்தியையும் சகல மிருகஜீவன்களையும் நமக்கென்று கொள்ளையிட்டோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And we took at that time out of the hand of the two kings of the Amorites the land that was on this side Jordan, from the river of Arnon unto mount Hermon;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">இப்படியே யோர்தானுக்கு இப்புறத்திலுள்ள அர்னோன் நதிதொடங்கி, எர்மோன் மலைவரைக்குமுள்ள தேசத்தை நாம் அக்காலத்தில் ஏமோரியருடைய இரண்டு ராஜாக்களிடமிருந்து பிடித்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">(Which Hermon the Sidonians call Sirion; and the Amorites call it Shenir;)</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">சீதோனியர் எர்மோனைச் சீரியோன் என்கிறார்கள்; எமோரியரோ அதைச் சேனீர் என்கிறார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">All the cities of the plain, and all Gilead, and all Bashan, unto Salchah and Edrei, cities of the kingdom of Og in Bashan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">சமனான நாட்டின் எல்லாப் பட்டணங்களையும், கீலேயாத் முழுவதையும், சல்காயி, எத்ரேயி என்னும் பாசானிலிருந்த ஓகுடைய ராஜ்யத்தின் பட்டணங்கள்மட்டுமுள்ள பாசான் முழுவதையும் பிடித்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">For only Og king of Bashan remained of the remnant of giants; behold his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">மீந்திருந்த இராட்சதரில் பாசானின் ராஜாவாகிய ஓக் என்பவன்மாத்திரம் தப்பியிருந்தான்; இரும்பினாற் செய்த அவனுடைய கட்டில் மனிதருடைய கை முழத்தின்படியே, ஒன்பது முழ நீளமும் நாலுமுழ அகலமுமாயிருந்தது; அது அம்மோன் புத்திரருடைய ரப்பாபட்டணத்தில் இருக்கிறதல்லவா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And this land, which we possessed at that time, from Aroer, which is by the river Arnon, and half mount Gilead, and the cities thereof, gave I unto the Reubenites and to the Gadites.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அக்காலத்திலே சுதந்தரமாகப் பெற்றுக்கொண்ட தேசத்தை அர்னோன் நதியருகேயுள்ள ஆரோவேர் தொடங்கி, கீலேயாத் மலைநாட்டில் பாதியையும், அதிலிருக்கிற பட்டணங்களையும், ரூபனியருக்கும் காத்தியருக்கும் கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And the rest of Gilead, and all Bashan, being the kingdom of Og, gave I unto the half tribe of Manasseh; all the region of Argob, with all Bashan, which was called the land of giants.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">கீலேயாத்தின் மற்றப்பங்கையும், ஓகின் ராஜ்யமாயிருந்த பாசான் முழுவதையும், மனாசேயின் பாதிக் கோத்திரத்துக்குக் கொடுத்ததும் அன்றி, இராட்சத தேசமென்னப்பட்ட பாசானுக்குள்ளான அர்கோப் சீமை யாவையும் கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Jair the son of Manasseh took all the country of Argob unto the coasts of Geshuri and Maachathi; and called them after his own name, Bashanhavothjair, unto this day.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">மனாசேயின் குமாரனாகிய யாவீர் அர்கோப் சீமை முழுவதையும் கேசூரியர் மாகாத்தியர் என்பவர்களுடைய எல்லைமட்டும் கட்டிக்கொண்டு, அதற்குத் தன் நாமத்தின்படியே பாசான் அவோத்யாயீர் என்று பேரிட்டான், அது இந்நாள்வரைக்கும் வழங்கிவருகிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And I gave Gilead unto Machir.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">மாகீருக்குக் கீலேயாத்தைக் கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And unto the Reubenites and unto the Gadites I gave from Gilead even unto the river Arnon half the valley, and the border even unto the river Jabbok, which is the border of the children of Ammon;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">மேலும் கீலேயாத் தொடங்கி அர்னோன் நதி ஓடுகிற பள்ளத்தாக்கும், கடையாந்தரமுமான அம்மோன் புத்திரரின் எல்லையாகிய யோபோக்கு ஆறுமட்டும் இருக்கிற தேசத்தையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">The plain also, and Jordan, and the coast thereof, from Chinnereth even unto the sea of the plain, even the salt sea, under Ashdothpisgah eastward.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">கின்னரேத் தொடங்கி அஸ்தோத்பிஸ்காவுக்குத் தாழ்வாய்க் கிழக்கே இருக்கிற உப்புக்கடலான சமனான வெளியின் கடல்மட்டும், யோர்தானின் எல்லைக்குள் அடங்கிய சமனான வெளியையும், ரூபனியருக்கும் காத்தியருக்கும் கொடுத்தேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And I commanded you at that time, saying, The LORD your God has given you this land to possess it: all of you shall pass over armed before your brethren the children of Israel, all that are meet for the war.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அக்காலத்திலே நான் உங்களை நோக்கி: உங்கள் தேவனாகிய கர்த்தர் உங்களுக்கு இந்த தேசத்தைச் சுதந்தரமாகக் கொடுத்தார்; யுத்தஞ்செய்யத்தக்கவர்களாகிய நீங்கள் எல்லாரும் இஸ்ரவேல் புத்திரரான உங்கள் சகோதரருக்கு முன்னே ஆயுதபாணிகளாக நடந்து போங்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">But your wives, and your little ones, and your cattle, (for I know that all of you have much cattle,) shall abide in your cities which I have given you;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">உங்கள் மனைவிகளும் உங்கள் பிள்ளைகளும் உங்கள் ஆடுமாடுகளும்மாத்திரம் நான் உங்களுக்குக் கொடுத்த உங்கள் பட்டணங்களில் இருக்கட்டும்; உங்களுக்குத் திரளான ஆடுமாடுகள் உண்டென்று அறிவேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Until the LORD have given rest unto your brethren, as well as unto you, and until they also possess the land which the LORD your God has given them beyond Jordan: and then shall all of you return every man unto his possession, which I have given you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">ஆனாலும் கர்த்தர் உங்களை இளைப்பாறப்பண்ணினதுபோல, உங்கள் சகோதரரையும் இளைப்பாறப்பண்ணி, யோர்தானுக்கு அப்புறத்தில் உங்கள் தேவனாகிய கர்த்தர் கொடுக்கிற தேசத்தைச் சுதந்தரித்துக்கொள்ளுமட்டும் நீங்கள் இருந்து, பின்பு அவரவர் நான் உங்களுக்குக் கொடுத்த உங்கள் சுதந்தரத்துக்குத் திரும்புவீர்களாக என்றேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And I commanded Joshua at that time, saying, Yours eyes have seen all that the LORD your God has done unto these two kings: so shall the LORD do unto all the kingdoms where you pass.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அக்காலத்திலே நான் யோசுவாவை நோக்கி: உங்கள் தேவனாகிய கர்த்தர் அந்த இரண்டு ராஜாக்களுக்கும் செய்தவைகளையெல்லாம் உன் கண்கள் கண்டது; நீ போய்ச் சேரும் எல்லா ராஜ்யங்களுக்கும் கர்த்தர் அப்படியே செய்வார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">All of you shall not fear them: for the LORD your God he shall fight for you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அவர்களுக்குப் பயப்படீர்களாக; உங்கள் தேவனாகிய கர்த்தர் தாமே உங்களுக்காக யுத்தம்பண்ணுவார் என்று சொன்னேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And I besought the LORD at that time, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அக்காலத்திலே நான் கர்த்தரை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">O Lord GOD, you have begun to show your servant your greatness, and your mighty hand: for what God is there in heaven or in earth, that can do according to your works, and according to your might?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">கர்த்தராகிய ஆண்டவரே, நீர் உமது அடியேனுக்கு உமது மகத்துவத்தையும் உமது வல்லமையுள்ள கரத்தையும் காண்பிக்கத் தொடங்கினீர்; வானத்திலும் பூமியிலும் உம்முடைய கிரியைகளுக்கும் உம்முடைய வல்லமைகளுக்கும் ஒப்பாகச் செய்யத்தக்க தேவன்யார்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">I pray you, let me go over, and see the good land that is beyond Jordan, that goodly mountain, and Lebanon.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">நான் கடந்துபோய் யோர்தானுக்கு அப்புறத்திலுள்ள அந்த நல்ல தேசத்தையும் அந்த நல்ல மலையையும், லீபனோனையும் பார்க்கும்படி உத்தரவு கொடுத்தருளும் என்று வேண்டிக்கொண்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">But the LORD was angry with me for your sakes, and would not hear me: and the LORD said unto me, Let it suffice you; speak no more unto me of this matter.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">கர்த்தரோ உங்கள் நிமித்தம் என்மேல் கோபங்கொண்டு, எனக்குச் செவிகொடாமல், என்னை நோக்கி: போதும், இனி இந்தக் காரியத்தைக் குறித்து என்னோடே பேசவேண்டாம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">Get you up into the top of Pisgah, and lift up yours eyes westward, and northward, and southward, and eastward, and behold it with yours eyes: for you shall not go over this Jordan.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">நீ பிஸ்காவின் கொடுமுடியில் ஏறி, உன் கண்களை மேற்கிலும் வடக்கிலும் தெற்கிலும் கிழக்கிலும் ஏறெடுத்து, உன் கண்களினாலே அதைப் பார்; இந்த யோர்தானை நீ கடந்துபோவதில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">But charge Joshua, and encourage him, and strengthen him: for he shall go over before this people, and he shall cause them to inherit the land which you shall see.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">நீ யோசுவாவுக்குக் கட்டளை கொடுத்து, அவனைத் திடப்படுத்திப் பலப்படுத்து; அவன் இந்த ஜனங்களுக்கு முன்பாகக் கடந்துபோய், அவனே நீ காணும் தேசத்தை அவர்களுக்குப் பங்கிட்டுக்கொடுப்பான் என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">So we abode in the valley opposite to Bethpeor.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">பின்பு பெத்பெயோருக்கு எதிரான பள்ளத்தாக்கில் தங்கியிருந்தோம்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

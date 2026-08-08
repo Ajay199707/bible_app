@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acts 28 | அப்போஸ்தலர் 28 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Acts chapter 28 (அப்போஸ்தலர் 28) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Acts 28 | அப்போஸ்தலர் 28</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And when they were escaped, then they knew that the island was called Melita.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">நாங்கள் தப்பிக் கரைசேர்ந்தபின்பு, அந்தத் தீவின்பேர் மெலித்தா என்று அறிந்தோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And the natives people showed us no little kindness: for they kindled a fire, and received us every one, because of the present rain, and because of the cold.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">அந்நியராகிய அந்தத் தீவார் எங்களுக்குப் பாராட்டின அன்பு கொஞ்சமல்ல. அந்த வேளையிலே பிடித்திருந்த மழைக்காகவும் குளிருக்காகவும் அவர்கள் நெருப்பை மூட்டி, எங்கள் அனைவரையும் சேர்த்துக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And when Paul had gathered a bundle of sticks, and laid them on the fire, there came a viper out of the heat, and fastened on his hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">பவுல் சில விறகுகளை வாரி அந்தநெருப்பின்மேல் போடுகையில், ஒரு விரியன்பாம்பு அனலுறைத்துப் புறப்பட்டு அவனுடைய கையைக் கவ்விக்கொண்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And when the barbarians saw the venomous beast hang on his hand, they said among themselves, No doubt this man is a murderer, whom, though he has escaped the sea, yet vengeance suffers not to live.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">விஷப்பூச்சி அவன் கையிலே தொங்குகிறதை அந்நியராகிய அந்தத் தீவார் கண்டபோது, இந்த மனுஷன் கொலைபாதகன், இதற்குச் சந்தேகமில்லை; இவன் சமுத்திரத்துக்குத் தப்பிவந்தும், பழியானது இவனைப் பிழைக்கவொட்டவில்லையென்று தங்களுக்குள்ளே சொல்லிக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And he shook off the beast into the fire, and felt no harm.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவன் அந்தப் பூச்சியைத் தீயிலே உதறிப்போட்டு, ஒரு தீங்கும் அடையாதிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">Nevertheless they looked when he should have swollen, or fallen down dead suddenly: but after they had looked a great while, and saw no harm come to him, they changed their minds, and said that he was a god.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அவனுக்கு வீக்கங்கண்டு, அல்லது அவன் சடிதியாய் விழுந்து சாவானென்று அவர்கள் பார்த்துக்கொண்டிருந்தார்கள்; நெடுநேரமாய்ப் பார்த்துக்கொண்டிருந்தும், ஒரு சேதமும் அவனுக்கு வராததைக் கண்டபோது, வேறு சிந்தையாகி, இவன் தேவனென்று சொல்லிக்கொண்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">In the same quarters were possessions of the chief man of the island, whose name was Publius; who received us, and lodged us three days courteously.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">தீவுக்கு முதலாளியாகிய புபிலியு என்னும் பேர்கொண்டவனுடைய நிலங்கள் அந்த இடத்திற்குச் சமீபமாயிருந்தது, அவன் எங்களை ஏற்றுக்கொண்டு, மூன்றுநாள் பட்சமாய் விசாரித்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And it came to pass, that the father of Publius lay sick of a fever and of a dysentery: to whom Paul entered in, and prayed, and laid his hands on him, and healed him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">புபிலியுவினுடைய தகப்பன் ஜுரத்தினாலும் இரத்தபேதியினாலும் வருத்தப்பட்டுக் கிடந்தான்; பவுல் அவனிடத்திற்குப் போய் ஜெபம்பண்ணி, அவன்மேல் கைகளை வைத்து, அவனைக் குணமாக்கினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">So when this was done, others also, which had diseases in the island, came, and were healed:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இது நடந்தபின்பு, தீவிலே இருந்தமற்ற வியாதிக்காரரும் வந்து, குணமாக்கப்பட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Who also honoured us with many honours; and when we departed, they laded us with such things as were necessary.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அவர்கள் எங்களுக்கு அநேக மரியாதை செய்து, நாங்கள் கப்பல் ஏறிப்போகிறபோது எங்களுக்குத் தேவையானவைகளை ஏற்றினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And after three months we departed in a ship of Alexandria, which had wintered in the isle, whose sign was Castor and Pollux.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">மூன்றுமாதம் சென்றபின்பு, அந்த தீவிலே மழைகாலத்திற்குத் தங்கியிருந்த மிதுனம் என்னும் அடையாளமுடைய அலெக்சந்திரியா பட்டணத்துக் கப்பலிலே நாங்கள் ஏறிப் புறப்பட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And landing at Syracuse, we tarried there three days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">சீரகூசா பட்டணத்தைச் சேர்ந்து, அங்கே மூன்றுநாள் தங்கினோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And from thence we fetched a compass, and came to Rhegium: and after one day the south wind blew, and we came the next day to Puteoli:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">அவ்விடம் விட்டுச் சுற்றியோடி, ரேகியு துறைமுகத்துக்கு வந்து சேர்ந்தோம். மறுநாளில் தென்றற் காற்றெடுக்கையில் புறப்பட்டு, இரண்டாம் நாள் புத்தேயோலி பட்டணத்திற்கு வந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Where we found brethren, and were desired to tarry with them seven days: and so we went toward Rome.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அங்கே சகோதரரைக் கண்டோம்; அவர்கள் எங்களை ஏழுநாள் தங்களிடத்தில் இருக்கும்படி வேண்டிக்கொண்டார்கள்; அந்தப்படி நாங்கள் இருந்து பின்பு ரோமாபுரிக்குப் போனோம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And from thence, when the brethren heard of us, they came to meet us as far as Appii forum, and The three taverns: whom when Paul saw, he thanked God, and took courage.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">அவ்விடத்திலுள்ள சகோதரர்கள் நாங்கள் வருகிற செய்தியைக் கேள்விப்பட்டு, சிலர் அப்பியுபுரம்வரைக்கும், சிலர் மூன்று சத்திரம்வரைக்கும், எங்களுக்கு எதிர்கொண்டுவந்தார்கள்; அவர்களைப் பவுல் கண்டு, தேவனை ஸ்தோத்திரித்துத் தைரியமடைந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And when we came to Rome, the centurion delivered the prisoners to the captain of the guard: but Paul was suffered to dwell by himself with a soldier that kept him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">நாங்கள் ரோமாபுரியில் சேர்ந்தபோது, நூற்றுக்கு அதிபதி தன் காவலிலிருந்தவர்களைச் சேனாபதியினிடத்தில் ஒப்புக்கொடுத்தான்; அப்பொழுது பவுல் தன்னைக் காத்திருக்கிற சேவகனுடனே தனித்துக் குடியிருக்கும்படி உத்தரவு பெற்றுக்கொண்டான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And it came to pass, that after three days Paul called the chief of the Jews together: and when they were come together, he said unto them, Men and brethren, though I have committed nothing against the people, or customs of our fathers, yet was I delivered prisoner from Jerusalem into the hands of the Romans.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">மூன்றுநாளைக்குப்பின்பு, பவுல் யூதரில் பிரதானமானவர்களை வரவழைத்தான்; அவர்கள் கூடிவந்திருந்தபோது, அவன் அவர்களை நோக்கி: சகோதரரே, நம்முடைய ஜனங்களுக்கும் நம்முடைய முன்னோர்களின் முறைமைகளுக்கும் விரோதமானதொன்றையும் நான் செய்யாமலிருந்தும், கட்டப்பட்டவனாக எருசலேமிலிருந்து ரோமர் கைகளில் ஒப்புக்கொடுக்கப்பட்டேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Who, when they had examined me, would have let me go, because there was no cause of death in me.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்கள் என்னை நியாயம் விசாரித்தபோது மரணத்துக்கேதுவான குற்றம் ஒன்றும் என்னிடத்தில் காணாதபடியினால், என்னை விடுதலையாக்க மனதாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">But when the Jews spoke against it, I was constrained to appeal unto Caesar; not that I had ought to accuse my nation of.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">யூதர்கள் அதற்கு எதிர்பேசினபோது, நான் இராயனுக்கு அபயமிடவேண்டியதாயிருந்தது; ஆயினும் என் ஜனத்தார்மேல் யாதொரு குற்றஞ் சாட்டவேண்டுமென்று நான் அப்படிச் செய்யவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">For this cause therefore have I called for you, to see you, and to speak with you: because that for the hope of Israel I am bound with this chain.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">இந்தக் காரியத்தினிமித்தமே உங்களைக் காணவும் உங்களுடனே பேசவும் உங்களை அழைப்பித்தேன். இஸ்ரவேலுடைய நம்பிக்கைக்காகவே இந்தச் சங்கிலியால் கட்டப்பட்டிருக்கிறேன் என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And they said unto him, We neither received letters out of Judaea concerning you, neither any of the brethren that came showed or spoke any harm of you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அதற்கு அவர்கள் உன்னைக்குறித்து யூதேயாவிலிருந்து எங்களுக்குக் காகிதம் வரவுமில்லை, வந்த சகோதரரில் ஒருவனும் உன்பேரில் ஒரு பொல்லாங்கை அறிவித்ததுமில்லை, அதைப்பற்றிப் பேசினதுமில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">But we desire to hear of you what you think: for as concerning this sect, we know that every where it is spoken against.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">எங்கும் இந்த மதபேதத்துக்கு விரோதமாய்ப் பேசுகிறதாக நாங்கள் அறிந்திருக்கிறபடியால், இதைக்குறித்து உன்னுடைய அபிப்பிராயம் என்னவென்று கேட்டறிய விரும்புகிறோம் என்றார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And when they had appointed him a day, there came many to him into his lodging; to whom he expounded and testified the kingdom of God, persuading them concerning Jesus, both out of the law of Moses, and out of the prophets, from morning till evening.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அதற்காக அவர்கள் ஒரு நாளைக்குறித்து, அநேகம்பேர் அவன் தங்கியிருந்த வீட்டிற்கு அவனிடத்தில் வந்தார்கள். அவன் காலமே தொடங்கி சாயங்காலமட்டும் மோசேயின் நியாயப்பிரமாணத்திலும் தீர்க்கதரிசிகளின் ஆகமங்களிலும் இருந்து இயேசுவுக்கடுத்த விசேஷங்களை அவர்களுக்குப் போதித்து, தேவனுடைய ராஜ்யத்தைக் குறித்துச் சாட்சிகொடுத்து விஸ்தரித்துப் பேசினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And some believed the things which were spoken, and some believed not.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அவன் சொன்னவைகளைச் சிலர் விசுவாசித்தார்கள், சிலர் விசுவாசியாதிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And when they agreed not among themselves, they departed, after that Paul had spoken one word, Well spoke the Holy Spirit by Isaiah the prophet unto our fathers,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">இப்படி அவர்கள் ஒருவரோடொருவர் ஒவ்வாமலிருந்து, புறப்பட்டுப்போகையில், பவுல் அவர்களுக்குச் சொன்ன வாக்கியமாவது:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Saying, Go unto this people, and say, Hearing all of you shall hear, and shall not understand; and seeing all of you shall see, and not perceive:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">நீங்கள் காதாரக்கேட்டும் உணராதிருப்பீர்கள், கண்ணாரக்கண்டும் பாராதிருப்பீர்கள்</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">For the heart of this people is waxed gross, and their ears are dull of hearing, and their eyes have they closed; lest they should see with their eyes, and hear with their ears, and understand with their heart, and should be converted, and I should heal them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">இவர்கள் கண்களினால் காணாமலும், காதுகளினால் கேளாமலும், இருதயத்தினால் உணர்ந்து குணப்படாமலும், நான் இவர்களை ஆரோக்கியமாக்காமலும் இருக்கும்படிக்கு, இந்த ஜனத்தின் இருதயம் கொழுத்திருக்கிறது; காதுகளினால் மந்தமாய்க் கேட்டுத் தங்கள் கண்களை மூடிக்கொண்டார்கள் என்று இந்த ஜனத்தினிடத்தில் போய்ச் சொல்லு என்பதைப் பரிசுத்த ஆவி ஏசாயா தீர்க்கதரிசியைக்கொண்டு நம்முடைய பிதாக்களுடனே நன்றாய்ச் சொல்லியிருக்கிறார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Be it known therefore unto you, that the salvation of God is sent unto the Gentiles, and that they will hear it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">ஆதலால் தேவனுடைய இரட்சிப்பு புறஜாதியாருக்கு அனுப்பப்பட்டிருக்கிறதென்றும், அவர்கள் அதற்குச் செவிகொடுப்பார்களென்றும் உங்களுக்குத் தெரிந்திருக்கக்கடவது என்றான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And when he had said these words, the Jews departed, and had great reasoning among themselves.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">இப்படி அவன் சொன்னபின்பு, யூதர்கள் தங்களுக்குள்ளே மிகவும் தர்க்கம்பண்ணிக்கொண்டு, போய்விட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And Paul dwelt two whole years in his own hired house, and received all that came in unto him,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">பின்பு பவுல் தனக்காக வாடகைக்கு வாங்கியிருந்த வீட்டிலே இரண்டு வருஷமுழுதும் தங்கி, தன்னிடத்தில் வந்த யாவரையும் ஏற்றுக்கொண்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Preaching the kingdom of God, and teaching those things which concern the Lord Jesus Christ, with all confidence, no man forbidding him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">மிகுந்த தைரியத்துடனே தடையில்லாமல், தேவனுடைய ராஜ்யத்தைக் குறித்துப் பிரசங்கித்து, கர்த்தராகிய இயேசுகிறிஸ்துவைப்பற்றிய விசேஷங்களை உபதேசித்துக்கொண்டிருந்தான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

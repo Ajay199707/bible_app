@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Chronicles 32 | 2 நாளாகமம் 32 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for 2 Chronicles chapter 32 (2 நாளாகமம் 32) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">2 Chronicles 32 | 2 நாளாகமம் 32</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">After these things, and the establishment thereof, Sennacherib king of Assyria came, and entered into Judah, and encamped against the fenced cities, and thought to win them for himself.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">இக்காரியங்கள் நடந்தேறிவருகையில் அசீரியா ராஜாவாகிய சனகெரிப் வந்து, யூதாவுக்குள் பிரவேசித்து, அரணான பட்டணங்களுக்கு எதிராகப் பாளயமிறங்கி, அவைகளைத் தன் வசமாக்கிக்கொள்ள நினைத்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And when Hezekiah saw that Sennacherib was come, and that he was purposed to fight against Jerusalem,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">சனகெரிப் வந்து, எருசலேமின்மேல் யுத்தம்பண்ண நோக்கங்கொண்டிருப்பதை எசேக்கியா கண்டபோது,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">He took counsel with his princes and his mighty men to stop the waters of the fountains which were without the city: and they did help him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">நகரத்திற்குப் புறம்பேயிருக்கிற ஊற்றுகளைத் தூர்த்துப்போட, தன் பிரபுக்களோடும் தன் பராக்கிரமசாலிகளோடும் ஆலோசனைபண்ணினான்; அதற்கு அவர்கள் உதவியாயிருந்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">So there was gathered much people together, who stopped all the fountains, and the brook that ran through the midst of the land, saying, Why should the kings of Assyria come, and find much water?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">அசீரியா ராஜாக்கள் வந்து, அதிக தண்ணீரைக் கண்டுபிடிப்பானேன் என்று சொல்லி, அநேகம் ஜனங்கள் கூடி, எல்லா ஊற்றுகளையும் நாட்டின் நடுவில் பாயும் ஓடையையும் தூர்த்துப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">Also he strengthened himself, and built up all the wall that was broken, and raised it up to the towers, and another wall without, and repaired Millo in the city of David, and made darts and shields in abundance.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அவன் திடன் கொண்டு, இடிந்துபோன மதிலையெல்லாம் கட்டி, அவைகளையும் வெளியிலுள்ள மற்ற மதிலையும் கொத்தளங்கள்மட்டும் உயர்த்தி, தாவீது நகரத்தின் கோட்டையைப் பலப்படுத்தி, திரளான ஆயுதங்களையும் கேடகங்களையும்பண்ணி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And he set captains of war over the people, and gathered them together to him in the street of the gate of the city, and spoke comfortably to them, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">ஜனத்தின்மேல் படைத்தலைவரை வைத்து, அவர்களை நகரவாசலின் வீதியிலே தன்னண்டையில் கூடிவரச்செய்து, அவர்களை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">Be strong and courageous, be not afraid nor dismayed for the king of Assyria, nor for all the multitude that is with him: for there be more with us than with him:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">நீங்கள் திடன்கொண்டு தைரியமாயிருங்கள்; அசீரியா ராஜாவுக்கும் அவனோடிருக்கிற ஏராளமான கூட்டத்திற்கும் பயப்படாமலும் கலங்காமலுமிருங்கள்; அவனோடிருக்கிறவர்களைப்பார்க்கிலும் நம்மோடிருக்கிறவர்கள் அதிகம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">With him is an arm of flesh; but with us is the LORD our God to help us, and to fight our battles. And the people rested themselves upon the words of Hezekiah king of Judah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">அவனோடிருக்கிறது மாம்சபுயம், நமக்குத் துணைநின்று நம்முடைய யுத்தங்களை நடத்த நம்மோடிருக்கிறவர் நம்முடைய தேவனாகிய கர்த்தர்தானே என்று சொல்லி, அவர்களைத் தேற்றினான்; யூதாவின் ராஜாவாகிய எசேக்கியா சொன்ன இந்த வார்த்தைகளின்மேல் ஜனங்கள் நம்பிக்கை வைத்தார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">After this did Sennacherib king of Assyria send his servants to Jerusalem, (but he himself laid siege against Lachish, and all his power with him,) unto Hezekiah king of Judah, and unto all Judah that were at Jerusalem, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">இதின்பின்பு அசீரியா ராஜாவாகிய சனகெரிப் தன் முழுச் சேனையுடன் லாகீசுக்கு எதிராய் முற்றிக்கைபோட்டிருக்கையில், யூதாவின் ராஜாவாகிய எசேக்கியாவிடத்துக்கும், எருசலேமிலுள்ள யூதா ஜனங்கள் யாவரிடத்துக்கும் தன் ஊழியக்காரரை அனுப்பி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">Thus says Sennacherib king of Assyria, Whereon do all of you trust, that all of you abide in the siege in Jerusalem?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">அசீரியா ராஜாவாகிய சனகெரிப் சொல்லுகிறது என்னவென்றால், முற்றிக்கை போடப்பட்ட எருசலேமிலே நீங்கள் இருக்கும்படிக்கு, நீங்கள் எதின்மேல் நம்பிக்கையாயிருக்கிறீர்கள்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">Does not Hezekiah persuade you to give over yourselves to die by famine and by thirst, saying, The LORD our God shall deliver us out of the hand of the king of Assyria?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">நம்முடைய தேவனாகிய கர்த்தர் நம்மை அசீரியருடைய ராஜாவின் கைக்குத் தப்புவிப்பார் என்று எசேக்கியா சொல்லி, நீங்கள் பசியினாலும் தாகத்தினாலும் சாகும்படி உங்களைப் போதிக்கிறான் அல்லவா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">Has not the same Hezekiah taken away his high places and his altars, and commanded Judah and Jerusalem, saying, All of you shall worship before one altar, and burn incense upon it?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அவருடைய மேடைகளையும் அவருடைய பலிபீடங்களைத் தள்ளிவிட்டவனும், ஒரே பலிபீடத்திற்கு முன்பாகப்பணிந்து, அதின்மேல் தூபங்காட்டுங்கள் என்று யூதாவுக்கும் எருசலேமியருக்கும் சொன்னவனும் அந்த எசேக்கியாதான் அல்லவா?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">Know all of you not what I and my fathers have done unto all the people of other lands? were the gods of the nations of those lands any ways able to deliver their lands out of mine hand?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">நானும் என் பிதாக்களும் தேசத்துச்சகல ஜனங்களுக்கும் செய்ததை அறியீர்களோ? அந்த தேசங்களுடைய ஜாதிகளின் தேவர்கள் அவர்கள் தேசத்தை நம்முடைய கைக்குத் தப்புவிக்க அவர்களுக்குப் பெலன் இருந்ததோ?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">Who was there among all the gods of those nations that my fathers utterly destroyed, that could deliver his people out of mine hand, that your God should be able to deliver you out of mine hand?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">உங்கள் தேவன் உங்களை என் கைக்குத் தப்புவிக்கக்கூடும்படிக்கு, என் பிதாக்கள் பாழாக்கின அந்த ஜாதிகளுடைய எல்லா தேவர்களிலும் எவன் தன் ஜனத்தை என் கைக்குத் தப்புவிக்கப் பலவானாயிருந்தான்?</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">Now therefore let not Hezekiah deceive you, nor persuade you on this manner, neither yet believe him: for no god of any nation or kingdom was able to deliver his people out of mine hand, and out of the hand of my fathers: how much less shall your God deliver you out of mine hand?</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">இப்போதும் எசேக்கியா உங்களை வஞ்சிக்கவும், இப்படி உங்களைப் போதிக்கவும் இடங்கொடுக்கவேண்டாம்; நீங்கள் அவனை நம்பவும் வேண்டாம்; ஏனென்றால் எந்த ஜாதியின் தேவனும், எந்த ராஜ்யத்தின் தேவனும் தன் ஜனத்தை, என் கைக்கும் என் பிதாக்களின் கைக்கும் தப்புவிக்கக் கூடாதிருந்ததே; உங்கள் தேவன் உங்களை என் கைக்குத் தப்புவிப்பது எப்படி என்கிறார் என்று சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And his servants spoke yet more against the LORD God, and against his servant Hezekiah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அவனுடைய ஊழியக்காரர் தேவனாகிய கர்த்தருக்கு விரோதமாகவும் அவருடைய தாசனாகிய எசேக்கியவுக்கு விரோதமாகவும் பின்னும் அதிகமாய்ப் பேசினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">He wrote also letters to rail on the LORD God of Israel, and to speak against him, saying, As the gods of the nations of other lands have not delivered their people out of mine hand, so shall not the God of Hezekiah deliver his people out of mine hand.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">தேசங்களுடைய ஜாதிகளின் தேவர்கள் தங்கள் ஜனங்களை என் கைக்குத் தப்புவிக்காதிருந்ததுபோல, எசேக்கியாவின் தேவனும் தன் ஜனங்களை என் கைக்குத் தப்புவிப்பதில்லையென்று இஸ்ரவேலின் தேவனாகிய கர்த்தரை நிந்திக்கவும், அவருக்கு விரோதமாகப் பேசவும் அவன் நிருபங்களையும் எழுதினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">Then they cried with a loud voice in the Jews' speech unto the people of Jerusalem that were on the wall, to affright them, and to trouble them; that they might take the city.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">அவர்கள் அலங்கத்தின்மேலிருக்கிற எருசலேமின் ஜனங்களைப் பயப்படுத்தி,கலங்கப்பண்ணி, தாங்கள் நகரத்தைப்பிடிக்கும்படி, அவர்களைப் பார்த்து: யூதபாஷையிலே மகா சத்தமாய்க் கூப்பிட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And they spoke against the God of Jerusalem, as against the gods of the people of the earth, which were the work of the hands of man.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">மனுஷர் கைவேலையினால் செய்யப்பட்டதும், பூச்சக்கரத்து ஜனங்களால் தொழுதுகொள்ளப்பட்டதுமாயிருக்கிற தேவர்களைக் குறித்துப் பேசுகிறபிரகாரமாக எருசலேமின் தேவனையும் குறித்துப் பேசினார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And for this cause Hezekiah the king, and the prophet Isaiah the son of Amoz, prayed and cried to heaven.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">இதினிமித்தம் ராஜாவாகிய எசேக்கியாவும் ஆமோத்சின் குமாரனாகிய ஏசாயா தீர்க்கதரிசியும் பிரார்த்தித்து, வானத்தைநோக்கி அபயமிட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And the LORD sent an angel, which cut off all the mighty men of valour, and the leaders and captains in the camp of the king of Assyria. So he returned with shame of face to his own land. And when he was come into the house of his god, they that came out of his own bowels slew him there with the sword.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அப்பொழுது கர்த்தர் ஒரு தூதனை அனுப்பினார்; அவன் அசீரியருடைய ராஜாவின் பாளயத்திலுள்ள சகல பராக்கிரமசாலிகளையும், தலைவரையும், சேனாபதிகளையும் அதம்பண்ணினான்; அப்படியே சனகெரிப் செத்தமுகமாய்த் தன்தேசத்திற்குத் திரும்பினான்; அங்கே அவன் தன் தேவனுடைய கோவிலுக்குள் பிரவேசிக்கிறபோது, அவனுடைய கர்ப்பப்பிறப்பான சிலர் அவனைப் பட்டயத்தால் வெட்டிப்போட்டார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Thus the LORD saved Hezekiah and the inhabitants of Jerusalem from the hand of Sennacherib the king of Assyria, and from the hand of all other, and guided them on every side.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">இப்படிக் கர்த்தர் எசேக்கியாவையும் எருசலேமின் குடிகளையும் அசீரியருடைய ராஜாவாகிய சனகெரிபின் கைக்கும் மற்ற எல்லாருடைய கைக்கும் நீங்கலாக்கி இரட்சித்து, அவர்களைச் சுற்றுப்புறத்தாருக்கு விலக்கி ஆதரித்து நடத்தினார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And many brought gifts unto the LORD to Jerusalem, and presents to Hezekiah king of Judah: so that he was magnified in the sight of all nations from thenceforth.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">அநேகம்பேர் கர்த்தருக்கென்று எருசலேமுக்குக் காணிக்கைகளையும், யூதாவின் ராஜாவாகிய எசேக்கியாவுக்கு உச்சிதங்களையும் கொண்டுவந்தார்கள்; அவன் இதற்குப்பிற்பாடு சகல ஜாதிகளின் பார்வைக்கும் மேன்மைப்பட்டவனாயிருந்தான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">In those days Hezekiah was sick to the death, and prayed unto the LORD: and he spoke unto him, and he gave him a sign.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அந்நாட்களில் எசேக்கியா வியாதிப்பட்டு மரணத்துக்கு ஏதுவாயிருந்தான்; அவன் கர்த்தரை நோக்கி ஜெபம்பண்ணும்போது, அவர் அவனுக்கு வாக்குத்தத்தம்பண்ணி, அவனுக்கு ஒரு அற்புதத்தைக் கட்டளையிட்டார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">But Hezekiah rendered not again according to the benefit done unto him; for his heart was lifted up: therefore there was wrath upon him, and upon Judah and Jerusalem.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">எசேக்கியா தனக்காகச் செய்யப்பட்ட உபகாரத்திற்குத்தக்கதாய் நடவாமல் மேட்டிமையானான்; ஆகையால் அவன்மேலும், யூதாவின்மேலும், எருசலேமின்மேலும் கடுங்கோபமூண்டது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">Notwithstanding Hezekiah humbled himself for the pride of his heart, both he and the inhabitants of Jerusalem, so that the wrath of the LORD came not upon them in the days of Hezekiah.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">எசேக்கியாவின் மனமேட்டிமையினிமித்தம் அவனும் எருசலேமின் குடிகளும் தங்களைத் தாழ்த்தினபடியினால், கர்த்தருடைய கடுங்கோபம் எசேக்கியாவின் நாட்களிலே அவர்கள்மேல் வரவில்லை.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And Hezekiah had exceeding much riches and honour: and he made himself treasuries for silver, and for gold, and for precious stones, and for spices, and for shields, and for all manner of pleasant jewels;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">எசேக்கியாவுக்கு மிகுதியான ஐசுவரியமும் கனமும் உண்டாயிருந்தது; வெள்ளியும் பொன்னும் இரத்தினங்களும் கந்தவர்க்கங்களும் கேடகங்களும் விநோதமான ஆபரணங்களும் வைக்கும்படியான பொக்கிஷசாலைகளையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">Storehouses also for the increase of corn, and wine, and oil; and stalls for all manner of beasts, and cotes for flocks.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">தனக்கு வந்துகொண்டிருந்த தானியமும் திராட்சரசமும் எண்ணெயும் வைக்கும்படியான பண்டகசாலைகளையும், சகலவகையுள்ள மிருகஜீவன்களுக்குக் கொட்டாரங்களையும், மந்தைகளுக்குத் தொழுவங்களையும் உண்டாக்கினான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">Moreover he provided him cities, and possessions of flocks and herds in abundance: for God had given him substance very much.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">அவன் தனக்குப் பட்டணங்களைக் கட்டுவித்து ஏராளமான ஆடுமாடுகளை வைத்திருந்தான்; தேவன் அவனுக்கு மகாதிரளான ஆஸ்தியைக் கொடுத்தார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">This same Hezekiah also stopped the upper watercourse of Gihon, and brought it straight down to the west side of the city of David. And Hezekiah prospered in all his works.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">இந்த எசேக்கியா கீயோன் என்னும் ஆற்றிலே அணைகட்டி, அதின் தண்ணீரை மேற்கேயிருந்து தாழத் தாவீதின் நகரத்திற்கு நேராகத் திருப்பினான்; எசேக்கியா செய்ததெல்லாம் வாய்த்தது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Nevertheless in the business of the ambassadors of the princes of Babylon, who sent unto him to enquire of the wonder that was done in the land, God left him, to try him, that he might know all that was in his heart.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">ஆகிலும் பாபிலோன் பிரபுக்களின் ஸ்தானாபதிகள் தேசத்திலே நடந்த அற்புதத்தைக் கேட்க அவனிடத்துக்கு அனுப்பப்பட்ட விஷயத்தில் அவன் இருதயத்தில் உண்டான எல்லாவற்றையும் அறியும்படி அவனைச் சோதிக்கிறதற்காக தேவன் அவனைக் கைவிட்டார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">Now the rest of the acts of Hezekiah, and his goodness, behold, they are written in the vision of Isaiah the prophet, the son of Amoz, and in the book of the kings of Judah and Israel.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">எசேக்கியாவின் மற்ற வர்த்தமானங்களும், அவன் செய்த நன்மைகளும் ஆமோத்சின் குமாரனாகிய ஏசாயா தீர்க்கதரிசியின் புஸ்தகத்திலும், யூதா இஸ்ரவேல் ராஜாக்களின் புஸ்தகத்திலும் எழுதியிருக்கிறது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And Hezekiah slept with his fathers, and they buried him in the chiefest of the sepulchers of the sons of David: and all Judah and the inhabitants of Jerusalem did him honour at his death. And Manasseh his son reigned in his position.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">எசேக்கியா தன் பிதாக்களோடே நித்திரையடைந்தபின்பு, அவனைத் தாவீது வம்சத்தாரின் கல்லறைகளில் பிரதானமான கல்லறையில் அடக்கம்பண்ணினார்கள்; யூதாவனைத்தும் எருசலேமின் குடிகளும் அவன் மரித்தபோது அவனைக் கனம்பண்ணினார்கள்; அவன் குமாரனாகிய மனாசே அவன் ஸ்தானத்தில் ராஜாவானான்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

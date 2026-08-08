@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leviticus 14 | லேவியராகமம் 14 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Leviticus chapter 14 (லேவியராகமம் 14) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Leviticus 14 | லேவியராகமம் 14</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And the LORD spoke unto Moses, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">பின்னும் கர்த்தர் மோசேயை நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">குஷ்டரோகியினுடைய சுத்திகரிப்பின் நாளில் அவனுக்கடுத்த பிரமாணம் என்னவென்றால்: அவன் ஆசாரியனிடத்தில் கொண்டுவரப்படவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And the priest shall go forth out of the camp; and the priest shall look, and, behold, if the plague of leprosy be healed in the leper;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">ஆசாரியன் பாளயத்துக்குப் புறம்பே போய்; குஷ்டரோகியின் குஷ்டவியாதி சொஸ்தமாயிற்று என்று கண்டால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">சுத்திகரிக்கப்படவேண்டியவனுக்காக, உயிரோடிருக்கும் சுத்தமான இரண்டு குருவிகளையும், கேதுருக் கட்டையையும், சிவப்பு நூலையும், ஈசோப்பையும் வாங்கிவரக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And the priest shall command that one of the birds be killed in an earthen vessel over running water:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">பின்பு, ஆசாரியன் அந்தக் குருவிகளில் ஒன்றை ஒரு மண்பாண்டத்திலுள்ள ஊற்றுநீர்மேல் கொல்லச் சொல்லி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">As for the living bird, he shall take it, and the cedar wood, and the scarlet, and the hyssop, and shall dip them and the living bird in the blood of the bird that was killed over the running water:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">உயிருள்ள குருவியையும், கேதுருக் கட்டையையும், சிவப்பு நூலையும், ஈசோப்பையும் எடுத்து, இவைகளையும் உயிருள்ள குருவியையும் ஊற்றுநீர்மேல் கொல்லப்பட்ட குருவியின் இரத்தத்திலே தோய்த்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">And he shall sprinkle upon him that is to be cleansed from the leprosy seven times, and shall pronounce him clean, and shall let the living bird loose into the open field.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">குஷ்டம் நீங்கச் சுத்திகரிக்கப்படுகிறவன்மேல் ஏழுதரம் தெளித்து, அவனைச் சுத்தம்பண்ணி, உயிருள்ள குருவியை வெளியிலே விட்டுவிடக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And he that is to be cleansed shall wash his clothes, and shave off all his hair, and wash himself in water, that he may be clean: and after that he shall come into the camp, and shall tarry abroad out of his tent seven days.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">சுத்திகரிக்கப்படுகிறவன் தன் வஸ்திரங்களைத் தோய்த்து, தன் மயிர் முழுவதையும் சிரைத்து, தான் சுத்தமாகும்படி ஜலத்தில் ஸ்நானம்பண்ணி, பின்பு பாளயத்தில் பிரவேசித்து, தன் கூடாரத்துக்குப் புறம்பே ஏழுநாள் தங்கி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">But it shall be on the seventh day, that he shall shave all his hair off his head and his beard and his eyebrows, even all his hair he shall shave off: and he shall wash his clothes, also he shall wash his flesh in water, and he shall be clean.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஏழாம் நாளிலே தன் தலையையும் தாடியையும் புருவங்களையும் தன்னுடைய மயிர் முழுவதையும் சிரைத்து, தன் வஸ்திரங்களைத் தோய்த்து, ஜலத்தில் ஸ்நானம்பண்ணவேண்டும்; அப்பொழுது சுத்தமாயிருப்பான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And on the eighth day he shall take two he lambs without blemish, and one ewe lamb of the first year without blemish, and three tenth deals of fine flour for a food offering, mingled with oil, and one log of oil.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">எட்டாம்நாளிலே அவன் பழுதற்ற இரண்டு ஆட்டுக்குட்டிகளையும், ஒரு வயதான பழுதற்ற ஒரு பெண்ணாட்டுக்குட்டியையும், போஜனபலிக்காக எண்ணெயிலே பிசைந்த ஒரு மரக்காலில் பத்தில் மூன்று பங்காகிய மெல்லிய மாவையும், ஆழாக்கு எண்ணெயையும் கொண்டுவரக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And the priest that makes him clean shall present the man that is to be made clean, and those things, before the LORD, at the door of the tabernacle of the congregation:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">சுத்திகரிக்கிற ஆசாரியன் சுத்திகரிக்கப்படும் மனிதனையும் அவ்வஸ்துக்களையும் ஆசரிப்புக் கூடாரவாசலிலே கர்த்தருடைய சந்நிதியில் நிறுத்தக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And the priest shall take one he lamb, and offer him for a trespass offering, and the log of oil, and wave them for a wave offering before the LORD:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">பின்பு ஆசாரியன் ஒரு ஆட்டுக்குட்டியைப் பிடித்து, அதையும் அந்த ஆழாக்கு எண்ணெயையும் குற்றநிவாரணபலியாகக் கொண்டுவந்து, கர்த்தருடைய சந்நிதியில் அசைவாட்டும் பலியாக அசைவாட்டி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And he shall slay the lamb in the place where he shall kill the sin offering and the burnt offering, in the holy place: for as the sin offering is the priest's, so is the trespass offering: it is most holy:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">பாவநிவாரணபலியும் சர்வாங்க தகனபலியும் இடும் பரிசுத்த ஸ்தலத்திலே அந்த ஆட்டுக்குட்டியைக் கொல்லக்கடவன்; குற்றநிவாரணபலி பாவநிவாரணபலியைப்போல ஆசாரியனுக்கு உரியது; அது மகா பரிசுத்தமானது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">And the priest shall take some of the blood of the trespass offering, and the priest shall put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">அந்தக் குற்றநிவாரணபலியின் இரத்தத்தில் ஆசாரியன் கொஞ்சம் எடுத்து, சுத்திகரிக்கப்படுகிறவன் வலது காதின் மடலிலும், அவன் வலது கையின் பெருவிரலிலும், வலதுகாலின் பெருவிரலிலும் பூசக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">And the priest shall take some of the log of oil, and pour it into the palm of his own left hand:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">பின்பு, ஆசாரியன் அந்த ஆழாக்கு எண்ணெயிலே கொஞ்சம் தன் இடது கையில் வார்த்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And the priest shall dip his right finger in the oil that is in his left hand, and shall sprinkle of the oil with his finger seven times before the LORD:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">தன் இடது கையிலுள்ள எண்ணெயில் தன் வலது கையின் விரலைத் தோய்த்து, தன் விரலினால் ஏழுதரம் அந்த எண்ணெயில் எடுத்து, கர்த்தருடைய சந்நிதியில் தெளித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And of the rest of the oil that is in his hand shall the priest put upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the blood of the trespass offering:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">தன் உள்ளங்கையில் இருக்கிற மீதியான எண்ணெயிலே கொஞ்சம் எடுத்து சுத்திகரிக்கப்படுகிறவன் வலதுகாதின் மடலிலும், அவன் வலதுகையின் பெருவிரலிலும், முந்தப் பூசியிருக்கிற குற்றநிவாரணபலியினுடைய இரத்தத்தின்மேல் பூசி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And the remnant of the oil that is in the priest's hand he shall pour upon the head of him that is to be cleansed: and the priest shall make an atonement for him before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">தன் உள்ளங்கையில் இருக்கிற மீதியான எண்ணெயைச் சுத்திகரிக்கப்படுகிறவன் தலையிலே வார்த்து, கர்த்தருடைய சந்நிதியில் அவனுக்காகப் பாவநிவிர்த்தி செய்யக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And the priest shall offer the sin offering, and make an atonement for him that is to be cleansed from his uncleanness; and afterward he shall kill the burnt offering:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">ஆசாரியன் பாவநிவாரணபலியையும் செலுத்தி, சுத்திகரிக்கப்படுகிறவனின் தீட்டு நீங்க, அவனுக்குப் பாவநிவிர்த்தி செய்து, பின்பு சர்வாங்க தகனபலியைக்கொன்று,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">And the priest shall offer the burnt offering and the food offering upon the altar: and the priest shall make an atonement for him, and he shall be clean.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">சர்வாங்க தகனபலியையும் போஜனபலியையும் பலிபீடத்தின்மேல் வைத்து, அவனுக்காகப் பாவநிவிர்த்தி செய்யக்கடவன்; அப்பொழுது அவன் சுத்தமாயிருப்பான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And if he be poor, and cannot get so much; then he shall take one lamb for a trespass offering to be waved, to make an atonement for him, and one tenth deal of fine flour mingled with oil for a food offering, and a log of oil;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">அவன் இம்மாத்திரம் செய்யத் திராணியற்ற தரித்திரனாயிருந்தால், அவன் தன் பாவநிவிர்த்திக்கென்று அசைவாட்டும் குற்றநிவாரணபலியாக ஒரு ஆட்டுக்குட்டியையும், போஜனபலிக்கு எண்ணெயில் பிசைந்த ஒரு மரக்கால் மெல்லிய மாவிலே பத்தில் ஒரு பங்கையும், ஆழாக்கு எண்ணெயையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">And two turtledoves, or two young pigeons, such as he is able to get; and the one shall be a sin offering, and the other a burnt offering.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">தன் திராணிக்குத் தக்கபடி இரண்டு காட்டுப்புறாக்களையாவது இரண்டு புறாக்குஞ்சுகளையாவது ஒன்று பாவநிவாரணபலியாகவும், மற்றொன்று சர்வாங்க தகனபலியாகவும் செலுத்தும்படி வாங்கி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And he shall bring them on the eighth day for his cleansing unto the priest, unto the door of the tabernacle of the congregation, before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">தான் சுத்திகரிக்கும்படி எட்டாம் நாளில் ஆசரிப்புக் கூடாரவாசலிலே கர்த்தருடைய சந்நிதியில் ஆசாரியனிடத்துக்குக் கொண்டுவருவானாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And the priest shall take the lamb of the trespass offering, and the log of oil, and the priest shall wave them for a wave offering before the LORD:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அப்பொழுது ஆசாரியன் குற்றநிவாரணபலிக்குரிய ஆட்டுக்குட்டியையும் அந்த ஆழாக்கு எண்ணெயையும் வாங்கி, கர்த்தருடைய சந்நிதியில் அசைவாட்டும் போஜனபலியாக அசைவாட்டி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And he shall kill the lamb of the trespass offering, and the priest shall take some of the blood of the trespass offering, and put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">குற்றநிவாரணபலிக்கான அந்த ஆட்டுக்குட்டியைக் கொன்று, குற்றநிவாரணபலியின் இரத்தத்தில் கொஞ்சம் எடுத்து, சுத்திகரிக்கப்படுகிறவன் வலது காதின் மடலிலும், அவன் வலதுகையின் பெருவிரலிலும், வலதுகாலின் பெருவிரலிலும் பூசி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And the priest shall pour of the oil into the palm of his own left hand:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">அந்த எண்ணெயிலே கொஞ்சம் தன் இடதுகையில் வார்த்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And the priest shall sprinkle with his right finger some of the oil that is in his left hand seven times before the LORD:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">தன் இடது கையிலுள்ள எண்ணெயிலே தன் வலது விரலைத் தோய்த்து, கர்த்தருடைய சந்நிதியில் ஏழுதரம் தெளித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And the priest shall put of the oil that is in his hand upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the place of the blood of the trespass offering:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">தன் உள்ளங்கையிலிருக்கிற எண்ணெயில் கொஞ்சம் எடுத்துச் சுத்திகரிக்கப்படுகிறவன் வலதுகாதின் மடலிலும், அவன் வலது கையின் பெருவிரலிலும், வலதுகாலின் பெருவிரலிலும் குற்றநிவாரணபலியின் இரத்தம் பூசியிருக்கிற இடத்திலே பூசி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And the rest of the oil that is in the priest's hand he shall put upon the head of him that is to be cleansed, to make an atonement for him before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">தன் உள்ளங்கையில் இருக்கிற மற்ற எண்ணெயைச் சுத்திகரிக்கப்படுகிறவன் தலையின்மேல் அவனுக்காகக் கர்த்தருடைய சந்நிதியில் பாவநிவிர்த்தி செய்யும்படி தடவி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And he shall offer the one of the turtledoves, or of the young pigeons, such as he can get;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">பின்பு, அவன் தன் திராணிக்கும் தகுதிக்கும் தக்கதாய்க் காட்டுப்புறாக்களையாவது புறாக்குஞ்சுகளையாவது கொண்டுவந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">Even such as he is able to get, the one for a sin offering, and the other for a burnt offering, with the food offering: and the priest shall make an atonement for him that is to be cleansed before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">அவைகளில் ஒன்றைப் பாவநிவாரணபலியும், மற்றொன்றைச் சர்வாங்கதகனபலியுமாக்கி, போஜனபலியோடேகூடச் செலுத்தி, இப்படியே ஆசாரியன் சுத்திகரிக்கப்படுகிறவனுக்காக, கர்த்தருடைய சந்நிதியில் பாவநிவிர்த்தி செய்யக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">This is the law of him in whom is the plague of leprosy, whose hand is not able to get that which pertains to his cleansing.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">தன் சுத்திகரிப்புக்கு வேண்டியவைகளைச் சம்பாதிக்கக் கூடாத குஷ்டரோகியைக் குறித்த பிரமாணம் இதுவே என்றார்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And the LORD spoke unto Moses and unto Aaron, saying,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">பின்னும் கர்த்தர் மோசேயையும் ஆரோனையும் நோக்கி:</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">When all of you be come into the land of Canaan, which I give to you for a possession, and I put the plague of leprosy in a house of the land of your possession;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">நான் உங்களுக்குக் காணியாட்சியான தேசத்தில் ஒரு வீட்டிலே குஷ்டதோஷத்தை நான் வரப்பண்ணினால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And he that owns the house shall come and tell the priest, saying, It seems to me there is as it were a plague in the house:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">அந்த வீட்டிற்கு உடையவன் வந்து, வீட்டிலே தோஷம் வந்திருக்கிறதாகத் தோன்றுகிறது என்று ஆசாரியனுக்கு அறிவிக்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">Then the priest shall command that they empty the house, before the priest go into it to see the plague, that all that is in the house be not made unclean: and afterward the priest shall go in to see the house:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">அப்பொழுது வீட்டிலுள்ள யாவும் தீட்டுப்படாதபடிக்கு, ஆசாரியன் அந்தத் தோஷத்தைப் பார்க்கப் போகும்முன்னே வீட்டை ஒழித்துவைக்கும்படி சொல்லி, பின்பு வீட்டைப்பார்க்கும்படி போய்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">And he shall look on the plague, and, behold, if the plague be in the walls of the house with hollow strakes, greenish or reddish, which in sight are lower than the wall;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">அந்தத் தோஷம் இருக்கிற இடத்தைப் பார்க்கக்கடவன்; அப்பொழுது வீட்டுச் சுவர்களிலே கொஞ்சம் பச்சையும் கொஞ்சம் சிவப்புமான குழி விழுந்திருந்து, அவைகள் மற்றச் சுவரைப்பார்க்கிலும் பள்ளமாயிருக்கக்கண்டால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">Then the priest shall go out of the house to the door of the house, and shut up the house seven days:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">ஆசாரியன் வீட்டைவிட்டுப் புறப்பட்டு வாசற்படியிலே வந்து, வீட்டை ஏழுநாள் அடைத்துவைத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">And the priest shall come again the seventh day, and shall look: and, behold, if the plague be spread in the walls of the house;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">ஏழாம்நாளிலே திரும்பப் போய்ப் பார்த்து, தோஷம் வீட்டுச் சுவர்களில் படர்ந்ததென்று கண்டால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">Then the priest shall command that they take away the stones in which the plague is, and they shall cast them into an unclean place without the city:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">தோஷம் இருக்கும் அவ்விடத்துக் கல்லுகளைப் பெயர்க்கவும், பட்டணத்துக்கு புறம்பே அசுத்தமான ஒரு இடத்திலே போடவும் அவன் கட்டளையிட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And he shall cause the house to be scraped within round about, and they shall pour out the dust that they scrape off without the city into an unclean place:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">வீட்டை உள்ளே சுற்றிலும் செதுக்கச்சொல்லி, செதுக்கிப்போட்ட மண்ணைப் பட்டணத்துக்குப் புறம்பே அசுத்தமான ஒரு இடத்திலே கொட்டவும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">And they shall take other stones, and put them in the place of those stones; and he shall take other mortar, and shall daubed the house.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">வேறே கல்லுகளை எடுத்துவந்து, அந்தக் கல்லுகளுக்குப் பதிலாகக் கட்டி, வேறே சாந்தை எடுத்து வீட்டைப் பூசவும் கட்டளையிடுவானாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And if the plague come again, and break out in the house, after that he has taken away the stones, and after he has scraped the house, and after it is plaistered;</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">கல்லுகளைப் பெயர்த்து, வீட்டைச் செதுக்கி, நவமாய்ப் பூசினபின்பும், அந்தத் தோஷம் திரும்ப வீட்டில் வந்ததானால்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">Then the priest shall come and look, and, behold, if the plague be spread in the house, it is a fretting leprosy in the house; it is unclean.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">ஆசாரியன் போய்ப் பார்க்கக்டவன்; தோஷம் வீட்டில் படர்ந்ததானால், அது வீட்டை அரிக்கிற குஷ்டம், அது தீட்டாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And he shall break down the house, the stones of it, and the timber thereof, and all the mortar of the house; and he shall carry them forth out of the city into an unclean place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">ஆகையால் வீடுமுழுவதையும் இடித்து, அதின் கல்லுகளையும், மரங்களையும், அதின் சாந்து எல்லாவற்றையும் பட்டணத்துக்குப் புறம்பே அசுத்தமான இடத்திலே கொண்டுபோகவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">Moreover he that goes into the house all the while that it is shut up shall be unclean until the even.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">வீடு அடைக்கப்பட்டிருக்கும் நாட்களில் அதற்குள் பிரவேசிக்கிறவன் சாயங்காலமட்டும் தீட்டுப்பட்டிருப்பான்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="47">
+          <div class="verse-item lang-en">
+            <span class="verse-num">47</span>
+            <span class="verse-text">And he that lies in the house shall wash his clothes; and he that eats in the house shall wash his clothes.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">47</span>
+            <span class="verse-text">அந்த வீட்டிலே படுத்தவன் தன் வஸ்திரங்களைத் தோய்க்கக்கடவன்; அந்த வீட்டிலே சாப்பிட்டவனும் தன் வஸ்திரங்களைத் தோய்க்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="48">
+          <div class="verse-item lang-en">
+            <span class="verse-num">48</span>
+            <span class="verse-text">And if the priest shall come in, and look upon it, and, behold, the plague has not spread in the house, after the house was plaistered: then the priest shall pronounce the house clean, because the plague is healed.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">48</span>
+            <span class="verse-text">ஆசாரியன் திரும்ப வந்து, வீடு பூசப்பட்டபின்பு வீட்டிலே அந்தத் தோஷம் படரவில்லை என்று கண்டானேயாகில், தோஷம் நிவிர்த்தியானபடியால், ஆசாரியன் அந்த வீட்டைச் சுத்தம் என்று தீர்க்கக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="49">
+          <div class="verse-item lang-en">
+            <span class="verse-num">49</span>
+            <span class="verse-text">And he shall take to cleanse the house two birds, and cedar wood, and scarlet, and hyssop:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">49</span>
+            <span class="verse-text">அப்பொழுது வீட்டிற்குத் தோஷம் கழிக்க, இரண்டு குருவிகளையும், கேதுருக் கட்டையையும், சிவப்பு நூலையும், ஈசோப்பையும் எடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="50">
+          <div class="verse-item lang-en">
+            <span class="verse-num">50</span>
+            <span class="verse-text">And he shall kill the one of the birds in an earthen vessel over running water:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">50</span>
+            <span class="verse-text">ஒரு குருவியை ஒரு மண்பாண்டத்திலுள்ள ஊற்றுநீரின்மேல் கொன்று,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="51">
+          <div class="verse-item lang-en">
+            <span class="verse-num">51</span>
+            <span class="verse-text">And he shall take the cedar wood, and the hyssop, and the scarlet, and the living bird, and dip them in the blood of the slain bird, and in the running water, and sprinkle the house seven times:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">51</span>
+            <span class="verse-text">கேதுருக்கட்டையையும், ஈசோப்பையும், சிவப்புநூலையும், உயிருள்ள குருவியையும் எடுத்து, இவைகளைக் கொல்லப்பட்ட குருவியின் இரத்தத்திலும் ஊற்று நீரிலும் தோய்த்து, வீட்டின்மேல் ஏழுதரம் தெளித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="52">
+          <div class="verse-item lang-en">
+            <span class="verse-num">52</span>
+            <span class="verse-text">And he shall cleanse the house with the blood of the bird, and with the running water, and with the living bird, and with the cedar wood, and with the hyssop, and with the scarlet:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">52</span>
+            <span class="verse-text">குருவியின் இரத்தத்தினாலும், ஊற்றுநீரினாலும், உயிருள்ள குருவியினாலும், கேதுருக்கட்டையினாலும் ஈசோப்பினாலும், சிவப்புநூலினாலும் வீட்டிற்குத் தோஷங்கழித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="53">
+          <div class="verse-item lang-en">
+            <span class="verse-num">53</span>
+            <span class="verse-text">But he shall let go the living bird out of the city into the open fields, and make an atonement for the house: and it shall be clean.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">53</span>
+            <span class="verse-text">உயிருள்ள குருவியைப் பட்டணத்துக்குப் புறம்பே வெளியிலே விட்டுவிட்டு, இப்படி வீட்டிற்குப் பிராயச்சித்தம் செய்யக்கடவன்; அப்பொழுது அது சுத்தமாயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="54">
+          <div class="verse-item lang-en">
+            <span class="verse-num">54</span>
+            <span class="verse-text">This is the law for all manner of plague of leprosy, and scab,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">54</span>
+            <span class="verse-text">இது சகலவித குஷ்டரோகத்துக்கும், சொறிக்கும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="55">
+          <div class="verse-item lang-en">
+            <span class="verse-num">55</span>
+            <span class="verse-text">And for the leprosy of a garment, and of a house,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">55</span>
+            <span class="verse-text">வஸ்திரக் குஷ்டத்துக்கும், வீட்டுக் குஷ்டத்துக்கும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="56">
+          <div class="verse-item lang-en">
+            <span class="verse-num">56</span>
+            <span class="verse-text">And for a rising, and for a scab, and for a bright spot:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">56</span>
+            <span class="verse-text">தடிப்புக்கும், அசறுக்கும், வெள்ளைப் படருக்கும் அடுத்த பிரமாணம்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="57">
+          <div class="verse-item lang-en">
+            <span class="verse-num">57</span>
+            <span class="verse-text">To teach when it is unclean, and when it is clean: this is the law of leprosy.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">57</span>
+            <span class="verse-text">குஷ்டம் எப்பொழுது தீட்டுள்ளது என்றும், எப்பொழுது தீட்டில்லாதது என்றும் தெரிவிப்பதற்குக் குஷ்டரோகத்துக்கு அடுத்த பிரமாணம் இதுவே என்றார்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

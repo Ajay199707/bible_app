@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exodus 29 | யாத்திராகமம் 29 — Parallel English & Tamil Bible</title>
+  <meta name="description" content="Read and listen to the Holy Bible parallel view for Exodus chapter 29 (யாத்திராகமம் 29) in English and Tamil side-by-side." />
+  <meta name="google-site-verification" content="mncU7rBDEo4oik4WUsfKfTX0R3i6rQAqPZOJoT5gwNA" />
+  
+  <!-- PWA & Mobile Web App Support -->
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bible வேதாகமம்" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheets -->
+  
+  <!-- ResponsiveVoice TTS Fallback -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script type="module" crossorigin src="../assets/index-sNMMJ9cX.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/index-KaHpOn5l.css">
+</head>
+<body>
+
+  <!-- App Full-Screen Preloader -->
+  <div id="app-preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h2 class="preloader-title">Holy Bible</h2>
+      <p class="preloader-subtitle">தமிழ் வேதாகமம்</p>
+      <div class="preloader-spinner"></div>
+      <p class="preloader-status">Initializing Bible & Audio Engine...</p>
+    </div>
+  </div>
+
+  <!-- Sticky Header Controls Container -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Reader Container -->
+  <main id="reader-root">
+      <div class="reader-container view-mode-parallel font-size-medium line-height-normal">
+        <h2 class="reader-header-title">Exodus 29 | யாத்திராகமம் 29</h2>
+        <div class="verses-list">
+          
+        <div class="verse-row" data-verse="1">
+          <div class="verse-item lang-en">
+            <span class="verse-num">1</span>
+            <span class="verse-text">And this is the thing that you shall do unto them to hallow them, to minister unto me in the priest's office: Take one young bullock, and two rams without blemish,</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">1</span>
+            <span class="verse-text">அவர்கள் எனக்கு ஆசாரிய ஊழியம் செய்யும்படி அவர்களைப் பரிசுத்தப்படுத்தும் பொருட்டு, நீ அவர்களுக்குச் செய்யவேண்டியதாவது: ஒரு காளையும் பழுதற்ற இரண்டு ஆட்டுக்கடாக்களையும் தெரிந்துகொள்வாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="2">
+          <div class="verse-item lang-en">
+            <span class="verse-num">2</span>
+            <span class="verse-text">And unleavened bread, and cakes unleavened tempered with oil, and wafers unleavened anointed with oil: of wheaten flour shall you make them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">2</span>
+            <span class="verse-text">புளிப்பில்லா அப்பத்தையும், எண்ணெயிலே பிசைந்த புளிப்பில்லா அதிரசங்களையும், எண்ணெய் பூசப்பட்ட புளிப்பில்லா அடைகளையும் கோதுமையின் மெல்லிய மாவினால் பண்ணி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="3">
+          <div class="verse-item lang-en">
+            <span class="verse-num">3</span>
+            <span class="verse-text">And you shall put them into one basket, and bring them in the basket, with the bullock and the two rams.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">3</span>
+            <span class="verse-text">அவைகளை ஒரு கூடையிலே வைத்து, கூடையோடே அவைகளையும் காளையையும் இரண்டு ஆட்டுக்கடாக்களையும் கொண்டுவந்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="4">
+          <div class="verse-item lang-en">
+            <span class="verse-num">4</span>
+            <span class="verse-text">And Aaron and his sons you shall bring unto the door of the tabernacle of the congregation, and shall wash them with water.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">4</span>
+            <span class="verse-text">ஆரோனையும் அவன் குமாரரையும் ஆசரிப்புக் கூடாரத்தின் வாசல் முன்பாகச் சேரப்பண்ணி, அவர்களைத் தண்ணீரினால் கழுவி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="5">
+          <div class="verse-item lang-en">
+            <span class="verse-num">5</span>
+            <span class="verse-text">And you shall take the garments, and put upon Aaron the coat, and the robe of the ephod, and the ephod, and the breastplate, and gird him with the curious girdle of the ephod:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">5</span>
+            <span class="verse-text">அந்த வஸ்திரங்களை எடுத்து, ஆரோனுக்கு உள்சட்டையையும், ஏபோத்தின் கீழ் அங்கியையும், ஏபோத்தையும், மார்ப்பதக்கத்தையும் தரித்து, ஏபோத்தின் விசித்திரமான கச்சையையும் அவனுக்குக் கட்டி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="6">
+          <div class="verse-item lang-en">
+            <span class="verse-num">6</span>
+            <span class="verse-text">And you shall put the turban upon his head, and put the holy crown upon the turban.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">6</span>
+            <span class="verse-text">அவன் தலையிலே பாகையையும் வைத்து, பரிசுத்த கிரீடத்தைப் பாகையின்மேல் தரித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="7">
+          <div class="verse-item lang-en">
+            <span class="verse-num">7</span>
+            <span class="verse-text">Then shall you take the anointing oil, and pour it upon his head, and anoint him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">7</span>
+            <span class="verse-text">அபிஷேக தைலத்தையும் எடுத்து, அவன் தலையின்மேல் வார்த்து, அவனை அபிஷேகஞ்செய்வாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="8">
+          <div class="verse-item lang-en">
+            <span class="verse-num">8</span>
+            <span class="verse-text">And you shall bring his sons, and put coats upon them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">8</span>
+            <span class="verse-text">பின்பு அவன் குமாரரைச் சேரப்பண்ணி, ஆசாரிய ஊழியம் அவர்களுக்கு நித்திய கட்டளையாக இருக்கும்படி, அவர்களுக்கும் அங்கிகளை உடுத்துவாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="9">
+          <div class="verse-item lang-en">
+            <span class="verse-num">9</span>
+            <span class="verse-text">And you shall gird them with girdles, Aaron and his sons, and put the bonnets on them: and the priest's office shall be theirs for a perpetual statute: and you shall consecrate Aaron and his sons.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">9</span>
+            <span class="verse-text">ஆரோனுக்கும் அவன் குமாரருக்கும் இடைக்கச்சைகளைக் கட்டி, அவன் குமாரருக்குக் குல்லாக்களையும் தரித்து, இப்படியே ஆரோனையும் அவன் குமாரரையும் பிரதிஷ்டை பண்ணுவாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="10">
+          <div class="verse-item lang-en">
+            <span class="verse-num">10</span>
+            <span class="verse-text">And you shall cause a bullock to be brought before the tabernacle of the congregation: and Aaron and his sons shall put their hands upon the head of the bullock.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">10</span>
+            <span class="verse-text">காளையை ஆசரிப்புக் கூடாரத்துக்கு முன்பாகக் கொண்டுவருவாயாக; அப்பொழுது ஆரோனும் அவன் குமாரரும் தங்கள் கைகளைக் காளையினுடைய தலையின்மேல் வைக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="11">
+          <div class="verse-item lang-en">
+            <span class="verse-num">11</span>
+            <span class="verse-text">And you shall kill the bullock before the LORD, by the door of the tabernacle of the congregation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">11</span>
+            <span class="verse-text">பின்பு நீ அந்தக் காளையை ஆசரிப்புக் கூடாரத்து வாசலண்டையிலே கர்த்தருடைய சந்நிதானத்தில் அடித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="12">
+          <div class="verse-item lang-en">
+            <span class="verse-num">12</span>
+            <span class="verse-text">And you shall take of the blood of the bullock, and put it upon the horns of the altar with your finger, and pour all the blood beside the bottom of the altar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">12</span>
+            <span class="verse-text">அதின் இரத்தத்தில் கொஞ்சம் எடுத்து, உன் விரலினால் பலிபீடத்தின் கொம்புகள்மேல் இட்டு, மற்ற இரத்தம் முழுவதையும் பலிபீடத்தின் அடியிலே ஊற்றி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="13">
+          <div class="verse-item lang-en">
+            <span class="verse-num">13</span>
+            <span class="verse-text">And you shall take all the fat that covers the inwards, and the lobe that is above the liver, and the two kidneys, and the fat that is upon them, and burn them upon the altar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">13</span>
+            <span class="verse-text">குடல்களை மூடிய கொழுப்பு யாவையும், கல்லீரலின் மேலுள்ள சவ்வையும், இரண்டு குண்டிக்காய்களையும், அவைகளின்மேலுள்ள கொழுப்பையும் எடுத்து, பலிபீடத்தின்மேல் தகித்துப்போட்டு,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="14">
+          <div class="verse-item lang-en">
+            <span class="verse-num">14</span>
+            <span class="verse-text">But the flesh of the bullock, and his skin, and his dung, shall you burn with fire without the camp: it is a sin offering.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">14</span>
+            <span class="verse-text">காளையின் மாம்சத்தையும் அதின் தோலையும் அதின் சாணியையும் பாளயத்துக்குப் புறம்பே அக்கினியால் சுட்டெரிக்கக்கடவாய் ; இது பாவநிவாரணபலி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="15">
+          <div class="verse-item lang-en">
+            <span class="verse-num">15</span>
+            <span class="verse-text">You shall also take one ram; and Aaron and his sons shall put their hands upon the head of the ram.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">15</span>
+            <span class="verse-text">பின்பு அந்த ஆட்டுக்கடாக்களில் ஒன்றைக் கொண்டுவந்து நிறுத்துவாயாக; அதினுடைய தலையின்மேல் ஆரோனும் அவன் குமாரரும் தங்கள் கைகளை வைக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="16">
+          <div class="verse-item lang-en">
+            <span class="verse-num">16</span>
+            <span class="verse-text">And you shall slay the ram, and you shall take his blood, and sprinkle it round about upon the altar.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">16</span>
+            <span class="verse-text">அந்தக் கடாவை அடித்து, அதின் இரத்தத்தைப் பிடித்து, பலிபீடத்தின்மேல் சுற்றிலும் தெளித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="17">
+          <div class="verse-item lang-en">
+            <span class="verse-num">17</span>
+            <span class="verse-text">And you shall cut the ram in pieces, and wash the inwards of him, and his legs, and put them unto his pieces, and unto his head.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">17</span>
+            <span class="verse-text">ஆட்டுக்கடாவைச் சந்துசந்தாகத் துண்டித்து, அதின் குடல்களையும் அதின் தொடைகளையும் கழுவி, அவைகளை அந்தத் துண்டங்களின்மேலும் அதின் தலையின்மேலும் வைத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="18">
+          <div class="verse-item lang-en">
+            <span class="verse-num">18</span>
+            <span class="verse-text">And you shall burn the whole ram upon the altar: it is a burnt offering unto the LORD: it is a sweet savour, an offering made by fire unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">18</span>
+            <span class="verse-text">ஆட்டுக்கடா முழுவதையும் பலிபீடத்தின்மேல் தகித்துவிடுவாயாக; இது கர்த்தருக்குச் செலுத்தும் சர்வாங்க தகனபலி; இது சுகந்த வாசனையும் கர்த்தருக்குச் செலுத்தும் தகனபலியுமாய் இருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="19">
+          <div class="verse-item lang-en">
+            <span class="verse-num">19</span>
+            <span class="verse-text">And you shall take the other ram; and Aaron and his sons shall put their hands upon the head of the ram.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">19</span>
+            <span class="verse-text">பின்பு மற்ற ஆட்டுக்கடாவையும் கொண்டுவந்து நிறுத்துவாயாக; அதினுடைய தலையின்மேல் ஆரோனும் அவன் குமாரரும் தங்கள் கைகளை வைக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="20">
+          <div class="verse-item lang-en">
+            <span class="verse-num">20</span>
+            <span class="verse-text">Then shall you kill the ram, and take of his blood, and put it upon the tip of the right ear of Aaron, and upon the tip of the right ear of his sons, and upon the thumb of their right hand, and upon the great toe of their right foot, and sprinkle the blood upon the altar round about.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">20</span>
+            <span class="verse-text">அப்பொழுது அந்தக் கடாவை அடித்து, அதின் இரத்தத்தில் கொஞ்சம் எடுத்து, ஆரோனின் வலதுகாது மடலிலும், அவன் குமாரரின் வலதுகாது மடலிலும், அவர்கள் வலதுகையின் பெருவிரலிலும், அவர்கள் வலதுகாலின் பெருவிரலிலும் இட்டு, மற்ற இரத்தத்தைப் பலிபீடத்தின்மேல் சுற்றிலும் தெளித்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="21">
+          <div class="verse-item lang-en">
+            <span class="verse-num">21</span>
+            <span class="verse-text">And you shall take of the blood that is upon the altar, and of the anointing oil, and sprinkle it upon Aaron, and upon his garments, and upon his sons, and upon the garments of his sons with him: and he shall be hallowed, and his garments, and his sons, and his sons' garments with him.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">21</span>
+            <span class="verse-text">பலிபீடத்தின் மேலிருக்கும் இரத்தத்திலும் அபிஷேகதைலத்திலும் கொஞ்சம் எடுத்து, ஆரோனும் அவன் வஸ்திரங்களும் அவனுடைய குமாரரும் அவர்களுடைய வஸ்திரங்களும் பரிசுத்தமாக்கப்படும்படி, அவன்மேலும் அவன் வஸ்திரங்கள்மேலும் அவனுடைய குமாரர் மேலும் அவர்களுடைய வஸ்திரங்கள் மேலும் தெளிப்பாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="22">
+          <div class="verse-item lang-en">
+            <span class="verse-num">22</span>
+            <span class="verse-text">Also you shall take of the ram the fat and the rump, and the fat that covers the inwards, and the lobe above the liver, and the two kidneys, and the fat that is upon them, and the right shoulder; for it is a ram of consecration:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">22</span>
+            <span class="verse-text">அந்த ஆட்டுக்கடா பிரதிஷ்டையின் ஆட்டுக்கடாவானதால், அதிலுள்ள கொழுப்பையும் வாலையும் குடல்களை மூடிய கொழுப்பையும் கல்லீரலின்மேலுள்ள சவ்வையும் இரண்டு குண்டிக்காய்களையும் அவைகளின்மேலுள்ள கொழுப்பையும் வலதுபக்கத்து முன்னந்தொடையையும்,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="23">
+          <div class="verse-item lang-en">
+            <span class="verse-num">23</span>
+            <span class="verse-text">And one loaf of bread, and one cake of oiled bread, and one wafer out of the basket of the unleavened bread that is before the LORD:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">23</span>
+            <span class="verse-text">கர்த்தருடைய சந்நிதானத்தில் வைத்திருக்கிற புளிப்பில்லா அப்பங்களுள்ள கூடையில் ஒரு அப்பத்தையும் எண்ணெயிட்ட அப்பமாகிய ஒரு அதிரசத்தையும் ஒரு அடையையும் எடுத்து,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="24">
+          <div class="verse-item lang-en">
+            <span class="verse-num">24</span>
+            <span class="verse-text">And you shall put all in the hands of Aaron, and in the hands of his sons; and shall wave them for a wave offering before the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">24</span>
+            <span class="verse-text">அவைகள் எல்லாவற்றையும் ஆரோனின் உள்ளங்கைகளிலும் அவன் குமாரரின் உள்ளங்கைகளிலும் வைத்து, அவைகளைக் கர்த்தருடைய சந்நிதானத்தில் அசைவாட்டப்படும் காணிக்கையாக அசைவாட்டி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="25">
+          <div class="verse-item lang-en">
+            <span class="verse-num">25</span>
+            <span class="verse-text">And you shall receive them of their hands, and burn them upon the altar for a burnt offering, for a sweet savour before the LORD: it is an offering made by fire unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">25</span>
+            <span class="verse-text">பின்பு அவைகளை அவர்கள் கைகளிலிருந்து எடுத்து, பலிபீடத்தின்மேல் சர்வாங்க தகனபலியோடு வைத்து, கர்த்தருடைய சந்நிதானத்தில் சுகந்த வாசனையாகத் தகிக்கக்கடவாய்; இது கர்த்தருக்குச் செலுத்தப்படும் தகனபலி.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="26">
+          <div class="verse-item lang-en">
+            <span class="verse-num">26</span>
+            <span class="verse-text">And you shall take the breast of the ram of Aaron's consecration, and wave it for a wave offering before the LORD: and it shall be your part.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">26</span>
+            <span class="verse-text">ஆரோனுடைய பிரதிஷ்டையின் ஆட்டுக்கடாவிலே மார்க்கண்டத்தை எடுத்து, அதைக் கர்த்தருடைய சந்நிதானத்தில் அசைவாட்டப்படும் காணிக்கையாக அசைவாட்டக்கடவாய்; அது உன் பங்காயிருக்கும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="27">
+          <div class="verse-item lang-en">
+            <span class="verse-num">27</span>
+            <span class="verse-text">And you shall sanctify the breast of the wave offering, and the shoulder of the heave offering, which is waved, and which is heaved up, of the ram of the consecration, even of that which is for Aaron, and of that which is for his sons:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">27</span>
+            <span class="verse-text">மேலும், ஆரோனுடைய பிரதிஷ்டைக்கும் அவன் குமாரருடைய பிரதிஷ்டைக்கும் நியமித்த ஆட்டுக்கடாவில் அசைவாட்டப்படுகிற மார்க்கண்டத்தையும் ஏறெடுத்துப் படைக்கப்படுகிற முன்னந்தொடையையும் பரிசுத்தப்படுத்துவாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="28">
+          <div class="verse-item lang-en">
+            <span class="verse-num">28</span>
+            <span class="verse-text">And it shall be Aaron's and his sons' by a statute for ever from the children of Israel: for it is an heave offering: and it shall be an heave offering from the children of Israel of the sacrifice of their peace offerings, even their heave offering unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">28</span>
+            <span class="verse-text">அது ஏறெடுத்துப் படைக்கிற படைப்பானதினால், இஸ்ரவேல் புத்திரர் பலியிடுகிறவைகளில் அவைகளே நித்திய கட்டளையாக ஆரோனையும் அவன் குமாரரையும் சேர்வதாக; இஸ்ரவேல் புத்திரர் கர்த்தருடைய சந்நிதானத்தில் ஏறெடுத்துப் படைக்கிற சமாதானபலிகளில் அவைகளே ஏறெடுத்துப் படைக்கும் படைப்பாயிருக்கவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="29">
+          <div class="verse-item lang-en">
+            <span class="verse-num">29</span>
+            <span class="verse-text">And the holy garments of Aaron shall be his sons' after him, to be anointed therein, and to be consecrated in them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">29</span>
+            <span class="verse-text">ஆரோனின் பரிசுத்த வஸ்திரங்கள், அவனுக்குப்பின், அவனுடைய குமாரரைச் சேரும்; அவர்கள் அவைகளை உடுத்திக்கொண்டு, அபிஷேகம்பண்ணப்பட்டுப் பிரதிஷ்டையாக்கப்படுவார்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="30">
+          <div class="verse-item lang-en">
+            <span class="verse-num">30</span>
+            <span class="verse-text">And that son that is priest in his position shall put them on seven days, when he comes into the tabernacle of the congregation to minister in the holy place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">30</span>
+            <span class="verse-text">அவனுடைய குமாரரில் அவன் பட்டத்திற்கு வருகிற ஆசாரியன் பரிசுத்த ஸ்தலத்தில் ஆராதனை செய்வதற்கு ஆசரிப்புக் கூடாரத்தில் பிரவேசிக்கும்போது, அவைகளை ஏழுநாள்மட்டும் உடுத்திக்கொள்ளக்கடவன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="31">
+          <div class="verse-item lang-en">
+            <span class="verse-num">31</span>
+            <span class="verse-text">And you shall take the ram of the consecration, and seethe his flesh in the holy place.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">31</span>
+            <span class="verse-text">பிரதிஷ்டையின் ஆட்டுக்கடாவைக் கொண்டுவந்து, அதின் மாம்சத்தைப் பரிசுத்த இடத்தில் வேவிப்பாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="32">
+          <div class="verse-item lang-en">
+            <span class="verse-num">32</span>
+            <span class="verse-text">And Aaron and his sons shall eat the flesh of the ram, and the bread that is in the basket by the door of the tabernacle of the congregation.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">32</span>
+            <span class="verse-text">அந்த ஆட்டுக்கடாவின் மாம்சத்தையும், கூடையிலிருக்கிற அப்பத்தையும், ஆரோனும் அவன் குமாரரும் ஆசரிப்புக் கூடாரத்தின் வாசலிலே புசிக்கக்கடவர்கள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="33">
+          <div class="verse-item lang-en">
+            <span class="verse-num">33</span>
+            <span class="verse-text">And they shall eat those things wherewith the atonement was made, to consecrate and to sanctify them: but a stranger shall not eat thereof, because they are holy.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">33</span>
+            <span class="verse-text">அவர்களைப் பிரதிஷ்டை பண்ணிப் பரிசுத்தப்படுத்தும்பொருட்டு, அவைகளால் பாவநிவிர்த்தி செய்யப்பட்டபடியால், அவைகளை அவர்கள் புசிக்கக்கடவர்கள்; அந்நியனோ அவைகளைப் புசிக்கலாகாது; அவைகள் பரிசுத்தமானவைகள்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="34">
+          <div class="verse-item lang-en">
+            <span class="verse-num">34</span>
+            <span class="verse-text">And if ought of the flesh of the consecrations, or of the bread, remain unto the morning, then you shall burn the remainder with fire: it shall not be eaten, because it is holy.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">34</span>
+            <span class="verse-text">பிரதிஷ்டையின் மாம்சத்திலும் அப்பத்திலும் ஏதாகிலும் விடியற்காலம் மட்டும் மீந்திருந்ததானால், அதை அக்கினியாலே சுட்டெரிப்பாயாக; அது புசிக்கப்படலாகாது, அது பரிசுத்தமானது.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="35">
+          <div class="verse-item lang-en">
+            <span class="verse-num">35</span>
+            <span class="verse-text">And thus shall you do unto Aaron, and to his sons, according to all things which I have commanded you: seven days shall you consecrate them.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">35</span>
+            <span class="verse-text">இந்தப்பிரகாரம் நான் உனக்குக் கட்டளையிட்டபடி எல்லாவற்றையும் நீ ஆரோனுக்கும் அவன் குமாரருக்கும் செய்வாயாக; ஏழுநாளளவும் நீ அவர்களைப் பிரதிஷ்டைபண்ணி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="36">
+          <div class="verse-item lang-en">
+            <span class="verse-num">36</span>
+            <span class="verse-text">And you shall offer every day a bullock for a sin offering for atonement: and you shall cleanse the altar, when you have made an atonement for it, and you shall anoint it, to sanctify it.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">36</span>
+            <span class="verse-text">பாவநிவிர்த்திக்காக ஒவ்வொருநாளிலும் ஒவ்வொரு காளையைப் பாவநிவாரண பலியாகப் பலியிட்டு; பலிபீடத்துக்காகப் பிராயச்சித்தம் செய்த பின், அந்தப் பிலிபீடத்தைச் சுத்திசெய்ய வேண்டும்; அதைப் பரிசுத்தப்படுத்தும்படி அதை அபிஷேகம் பண்ணக்கடவாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="37">
+          <div class="verse-item lang-en">
+            <span class="verse-num">37</span>
+            <span class="verse-text">Seven days you shall make an atonement for the altar, and sanctify it; and it shall be an altar most holy: whatsoever touches the altar shall be holy.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">37</span>
+            <span class="verse-text">ஏழுநாளளவும் பலிபீடத்திற்காகப் பிராயச்சித்தஞ்செய்து, அதைப் பரிசுத்தமாக்கக்கடவாய்; பலிபீடமானது மகா பரிசுத்தமாயிருக்கும்; பலிபீடத்தைத் தொடுகிறதெல்லாம் பரிசுத்தமாகும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="38">
+          <div class="verse-item lang-en">
+            <span class="verse-num">38</span>
+            <span class="verse-text">Now this is that which you shall offer upon the altar; two lambs of the first year day by day continually.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">38</span>
+            <span class="verse-text">பலிபீடத்தின்மேல் நீ பலியிடவேண்டியது என்னவெனில்; இடைவிடாமல் ஒவ்வொருநாளிலும் ஒரு வயதான இரண்டு ஆட்டுக்குட்டிகளைப் பலியிடவேண்டும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="39">
+          <div class="verse-item lang-en">
+            <span class="verse-num">39</span>
+            <span class="verse-text">The one lamb you shall offer in the morning; and the other lamb you shall offer at even:</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">39</span>
+            <span class="verse-text">ஒரு ஆட்டுக்குட்டியைக் காலையிலும், மற்ற ஆட்டுக்குட்டியை மாலையிலும் பலியிடுவாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="40">
+          <div class="verse-item lang-en">
+            <span class="verse-num">40</span>
+            <span class="verse-text">And with the one lamb a tenth deal of flour mingled with the fourth part of an hin of beaten oil; and the fourth part of an hin of wine for a drink offering.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">40</span>
+            <span class="verse-text">ஒரு மரக்காலிலே பத்திலொரு பங்கானதும், இடித்துப் பிழிந்த காற்படி எண்ணெயிலே பிசைந்ததுமாகிய மெல்லிய மாவையும், பானபலியாகக் கால்படி திராட்சரசத்தையும், ஒரு ஆட்டுக்குட்டியுடனே படைப்பாயாக.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="41">
+          <div class="verse-item lang-en">
+            <span class="verse-num">41</span>
+            <span class="verse-text">And the other lamb you shall offer at even, and shall do thereto according to the food offering of the morning, and according to the drink offering thereof, for a sweet savour, an offering made by fire unto the LORD.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">41</span>
+            <span class="verse-text">மற்ற ஆட்டுக்குட்டியை மாலையிலே பலியிட்டு, காலையிலே செலுத்தின போஜனபலிக்கும் பானபலிக்கும் ஒத்தபிரகாரம் அதைக் கர்த்தருக்குச் சுகந்த வாசனையான தகனபலியாகப் படைக்கக்கடவாய்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="42">
+          <div class="verse-item lang-en">
+            <span class="verse-num">42</span>
+            <span class="verse-text">This shall be a continual burnt offering throughout your generations at the door of the tabernacle of the congregation before the LORD: where I will meet you, to speak there unto you.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">42</span>
+            <span class="verse-text">உன்னுடனே பேசும்படி நான் உங்களைச் சந்திக்கும் இடமாயிருக்கிற ஆசரிப்புக் கூடாரத்தினுடைய வாசலாகிய கர்த்தருடைய சந்நிதியிலே, உங்கள் தலைமுறைதோறும் செலுத்தப்படவேண்டிய நித்திய சர்வாங்க தகனபலி இதுவே.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="43">
+          <div class="verse-item lang-en">
+            <span class="verse-num">43</span>
+            <span class="verse-text">And there I will meet with the children of Israel, and the tabernacle shall be sanctified by my glory.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">43</span>
+            <span class="verse-text">அங்கே இஸ்ரவேல் புத்திரரைச் சந்திப்பேன்; அந்த ஸ்தலம் என்னுடைய மகிமையினால் பரிசுத்தமாக்கப்படும்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="44">
+          <div class="verse-item lang-en">
+            <span class="verse-num">44</span>
+            <span class="verse-text">And I will sanctify the tabernacle of the congregation, and the altar: I will sanctify also both Aaron and his sons, to minister to me in the priest's office.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">44</span>
+            <span class="verse-text">ஆசரிப்புக் கூடாரத்தையும் பலிபீடத்தையும் நான் பரிசுத்தமாக்குவேன்; எனக்கு ஆசாரிய ஊழியம் செய்யும்படிக்கு, ஆரோனையும் அவன் குமாரரையும் பரிசுத்தப்படுத்தி,</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="45">
+          <div class="verse-item lang-en">
+            <span class="verse-num">45</span>
+            <span class="verse-text">And I will dwell among the children of Israel, and will be their God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">45</span>
+            <span class="verse-text">இஸ்ரவேல் புத்திரரின் நடுவே நான் வாசம்பண்ணி, அவர்களுக்குத் தேவனாயிருப்பேன்.</span>
+          </div>
+        </div>
+      
+        <div class="verse-row" data-verse="46">
+          <div class="verse-item lang-en">
+            <span class="verse-num">46</span>
+            <span class="verse-text">And they shall know that I am the LORD their God, that brought them forth out of the land of Egypt, that I may dwell among them: I am the LORD their God.</span>
+          </div>
+          <div class="verse-item lang-ta ta-font">
+            <span class="verse-num">46</span>
+            <span class="verse-text">தங்கள் நடுவே நான் வாசம்பண்ணும்படி, தங்களை எகிப்து தேசத்திலிருந்து புறப்படப்பண்ணின நான் தங்கள் தேவனாகிய கர்த்தர் என்று அவர்கள் அறிவார்கள்; நானே அவர்கள் தேவனாகிய கர்த்தர்.</span>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    
+    <!-- Scripture content rendered dynamically by reader.js -->
+  </main>
+
+
+
+  <!-- BOOK & CHAPTER SELECTOR MODAL -->
+  <div class="modal-overlay" id="modal-books">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Select Book & Chapter / புஸ்தகம் தேர்வு</h3>
+        <button class="modal-close-btn" data-close="modal-books"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="testament-tabs">
+          <button class="testament-tab active" data-testament="all" id="tab-test-all">All (66)</button>
+          <button class="testament-tab" data-testament="OT" id="tab-test-ot">Old Testament (39)</button>
+          <button class="testament-tab" data-testament="NT" id="tab-test-nt">New Testament (27)</button>
+        </div>
+
+        <div id="books-grid-view">
+          <div class="books-grid" id="books-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+
+        <div id="chapters-grid-view" style="display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <button class="nav-btn" id="btn-back-to-books"><i class="fa-solid fa-arrow-left"></i> Back to Books</button>
+            <h4 id="selected-book-title-header" style="color: var(--accent-gold);">John / யோவான்</h4>
+          </div>
+          <div class="chapters-grid" id="chapters-list-container">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-search">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Search Bible / வேத ஆராய்ச்சி</h3>
+        <button class="modal-close-btn" data-close="modal-search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Type word or phrase in English or Tamil (e.g. Love, அன்பு, Light, தேவன்)..." />
+        </div>
+        <div id="search-results-container">
+          <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Type at least 2 characters to search scripture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY VERSE MODAL -->
+  <div class="modal-overlay" id="modal-daily">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Verse of the Day / இன்றைய வசனம்</h3>
+        <button class="modal-close-btn" data-close="modal-daily"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="daily-verse-card">
+          <div class="daily-verse-quote-en" id="daily-en-text">"The LORD is my shepherd; I shall not want."</div>
+          <div class="daily-verse-quote-ta" id="daily-ta-text">"கர்த்தர் என் மேய்ப்பராயிருக்கிறார்; நான் தாழ்ச்சியடையேன்."</div>
+          <div class="daily-verse-ref" id="daily-ref-text">Psalm 23:1 | சங்கீதம் 23:1</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+          <button class="nav-btn" id="btn-copy-daily"><i class="fa-solid fa-copy"></i> Copy Verse</button>
+          <button class="nav-btn" id="btn-read-daily"><i class="fa-solid fa-book-open"></i> Read Full Chapter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- READING PLANS MODAL -->
+  <div class="modal-overlay" id="modal-plans">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Guided Reading Plans / வாசிப்புத் திட்டங்கள்</h3>
+        <button class="modal-close-btn" data-close="modal-plans"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="plans-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVED BOOKMARKS & NOTES MODAL -->
+  <div class="modal-overlay" id="modal-saved">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Saved Bookmarks & Notes</h3>
+        <button class="modal-close-btn" data-close="modal-saved"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="saved-container-body">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="modal-settings">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>App Settings / அமைப்புகள்</h3>
+        <button class="modal-close-btn" data-close="modal-settings"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Theme / தீம்</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-theme-dark" style="flex: 1;">Dark Gold</button>
+            <button class="mode-pill" id="setting-theme-sepia" style="flex: 1;">Sepia Warm</button>
+            <button class="mode-pill" id="setting-theme-light" style="flex: 1;">Light</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Font Size / எழுத்து அளவு</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill" id="setting-size-sm" style="flex: 1;">Small</button>
+            <button class="mode-pill active" id="setting-size-md" style="flex: 1;">Medium</button>
+            <button class="mode-pill" id="setting-size-lg" style="flex: 1;">Large</button>
+            <button class="mode-pill" id="setting-size-xl" style="flex: 1;">Extra</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Voice Gender / குரல் வகை</label>
+          <div class="mode-pills-group" style="width: 100%;">
+            <button class="mode-pill active" id="setting-voice-male" style="flex: 1;">Male / ஆண்</button>
+            <button class="mode-pill" id="setting-voice-female" style="flex: 1;">Female / பெண்</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Input Dialog Modal -->
+  <div class="modal-overlay" id="modal-note-editor">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Add Verse Note / குறிப்பு எழுது</h3>
+        <button class="modal-close-btn" data-close="modal-note-editor"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="note-verse-ref-label" style="font-weight: 700; color: var(--accent-gold); margin-bottom: 0.75rem;"></p>
+        <textarea id="note-input-text" rows="5" style="width: 100%; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 1rem;" placeholder="Write your prayer thoughts, study notes, or reflection..."></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="nav-btn" id="btn-save-note" style="background: var(--accent-gold); color: #fff;"><i class="fa-solid fa-check"></i> Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
