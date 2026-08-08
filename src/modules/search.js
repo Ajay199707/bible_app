@@ -6,7 +6,7 @@ export function searchBible(query, options = {}) {
   if (!query || query.trim().length < 2) return [];
 
   const cleanQuery = query.trim().toLowerCase();
-  const { english, tamil } = getRawBibleData();
+  const { en: english, ta: tamil } = getRawBibleData();
   const results = [];
 
   const targetBooks = BIBLE_BOOKS.filter(b => {
