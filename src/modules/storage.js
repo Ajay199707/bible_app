@@ -14,7 +14,8 @@ const DEFAULT_SETTINGS = {
   viewMode: 'parallel',
   uiLang: 'ta',
   audioLang: 'ta',
-  audioSpeed: 1.0
+  audioSpeed: 1.0,
+  voiceGender: 'male'
 };
 
 const DEFAULT_LAST_READ = {

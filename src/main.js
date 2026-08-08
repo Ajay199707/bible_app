@@ -93,8 +93,25 @@ function applySettings(newSettings) {
 
   // View Mode Pills
   document.querySelectorAll('.mode-pills-group .mode-pill').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.mode === settings.viewMode);
+    if (btn.dataset.mode) {
+      btn.classList.toggle('active', btn.dataset.mode === settings.viewMode);
+    }
   });
+
+  // Settings Modal Theme Pills
+  document.getElementById('setting-theme-dark')?.classList.toggle('active', settings.theme === 'dark');
+  document.getElementById('setting-theme-sepia')?.classList.toggle('active', settings.theme === 'sepia');
+  document.getElementById('setting-theme-light')?.classList.toggle('active', settings.theme === 'light');
+
+  // Settings Modal Font Size Pills
+  document.getElementById('setting-size-sm')?.classList.toggle('active', settings.fontSize === 'sm');
+  document.getElementById('setting-size-md')?.classList.toggle('active', settings.fontSize === 'md');
+  document.getElementById('setting-size-lg')?.classList.toggle('active', settings.fontSize === 'lg');
+  document.getElementById('setting-size-xl')?.classList.toggle('active', settings.fontSize === 'xl');
+
+  // Settings Modal Voice Gender Pills
+  document.getElementById('setting-voice-male')?.classList.toggle('active', settings.voiceGender === 'male');
+  document.getElementById('setting-voice-female')?.classList.toggle('active', settings.voiceGender === 'female');
 
   // Re-render reader if mounted
   const root = document.getElementById('reader-root');
@@ -305,6 +322,9 @@ function setupEventListeners() {
   document.getElementById('setting-size-md')?.addEventListener('click', () => applySettings({ fontSize: 'md' }));
   document.getElementById('setting-size-lg')?.addEventListener('click', () => applySettings({ fontSize: 'lg' }));
   document.getElementById('setting-size-xl')?.addEventListener('click', () => applySettings({ fontSize: 'xl' }));
+
+  document.getElementById('setting-voice-male')?.addEventListener('click', () => applySettings({ voiceGender: 'male' }));
+  document.getElementById('setting-voice-female')?.addEventListener('click', () => applySettings({ voiceGender: 'female' }));
 
   // Reader Action Delegation (Bookmark, Highlight, Note, Copy)
   document.getElementById('reader-root')?.addEventListener('click', (e) => {

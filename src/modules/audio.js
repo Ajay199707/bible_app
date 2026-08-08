@@ -1,3 +1,4 @@
+import { getSettings } from './storage.js';
 
 let synth = typeof window !== 'undefined' ? window.speechSynthesis : null;
 let currentUtterance = null;
@@ -90,32 +91,42 @@ function playWebSpeech(text, itemLang) {
     currentUtterance.pitch = 1.0;
     currentUtterance.volume = 1.0;
 
-    const langObj = getLangByCode(itemLang);
     const targetLang = itemLang === 'en' ? 'en-US' : (itemLang === 'ta' ? 'ta-IN' : (itemLang === 'hi' ? 'hi-IN' : (itemLang === 'ml' ? 'ml-IN' : (itemLang === 'te' ? 'te-IN' : (itemLang === 'kn' ? 'kn-IN' : 'en-US')))));
     currentUtterance.lang = targetLang;
 
-    // Pick best available voice for language
+    const settings = getSettings();
+    const gender = settings.voiceGender || 'male';
+
+    // Pick best available voice for language and gender
     const voices = availableVoices.length > 0 ? availableVoices : (synth.getVoices() || []);
     if (voices.length > 0) {
-      if (itemLang !== 'en') {
-        const localVoice = voices.find(v => {
-          const l = (v.lang || '').toLowerCase();
-          const n = (v.name || '').toLowerCase();
-          return l.includes(itemLang) || n.includes(langObj.name.toLowerCase());
+      // Find voices of target language
+      const langVoices = voices.filter(v => {
+        const l = (v.lang || '').toLowerCase();
+        return l.startsWith(itemLang) || l.includes(itemLang);
+      });
+
+      if (langVoices.length > 0) {
+        // Look for the preferred gender
+        let matchedVoice = langVoices.find(v => {
+          const name = (v.name || '').toLowerCase();
+          const voiceGender = (name.includes('female') || name.includes('zira') || name.includes('susan') || name.includes('hazel') || name.includes('heera') || name.includes('karen') || name.includes('samantha')) ? 'female' : 
+                              (name.includes('male') || name.includes('david') || name.includes('mark') || name.includes('ravi')) ? 'male' : '';
+          return voiceGender === gender;
         });
-        if (localVoice) {
-          currentUtterance.voice = localVoice;
-        } else {
-          // No local voice found on system, fallback immediately
-          playAudioStream(text, itemLang);
-          return;
+
+        if (!matchedVoice) {
+          // If no specific gender match, try to just pick a fallback
+          matchedVoice = langVoices[0];
         }
-      } else {
-        const enVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
-        if (enVoice) currentUtterance.voice = enVoice;
+        currentUtterance.voice = matchedVoice;
+      } else if (itemLang !== 'en') {
+        // No system voice for local language, fallback to stream
+        playAudioStream(text, itemLang);
+        return;
       }
     } else if (itemLang !== 'en') {
-      // If voices array is empty (can happen on some browsers), fallback to stream for local languages
+      // If voices array is empty, fallback to stream for local languages
       playAudioStream(text, itemLang);
       return;
     }
@@ -156,7 +167,15 @@ function playAudioStream(text, itemLang) {
   const targetLang = itemLang;
   
   if (typeof responsiveVoice !== 'undefined') {
-    const rvLang = (itemLang === 'ta') ? 'Tamil Male' : 'UK English Male';
+    const settings = getSettings();
+    const gender = settings.voiceGender || 'male';
+    let rvLang;
+    if (itemLang === 'ta') {
+      rvLang = (gender === 'female') ? 'Tamil Female' : 'Tamil Male';
+    } else {
+      rvLang = (gender === 'female') ? 'UK English Female' : 'UK English Male';
+    }
+
     responsiveVoice.speak(cleanText, rvLang, {
       rate: playbackRate,
       onend: () => {
