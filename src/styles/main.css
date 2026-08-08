@@ -104,11 +104,18 @@ body {
   font-family: var(--font-ta-primary) !important;
 }
 
-/* App Header Navbar */
-.app-navbar {
+/* Sticky Header Container */
+.sticky-header-container {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Header Navbar */
+.app-navbar {
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
