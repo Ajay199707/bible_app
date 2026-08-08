@@ -20,8 +20,8 @@
   
   <!-- ResponsiveVoice TTS Fallback -->
   <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-  <script type="module" crossorigin src="./assets/index-C_gM-5Sz.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B4JZc4K9.css">
+  <script type="module" crossorigin src="./assets/index-DtPazx3u.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D16PtUiH.css">
 </head>
 <body>
 
@@ -38,79 +38,82 @@
     </div>
   </div>
 
-  <!-- App Header Navigation Bar -->
-  <header class="app-navbar">
-    <div class="nav-brand" id="btn-brand">
-      <div class="brand-icon">
-        <i class="fa-solid fa-cross"></i>
+  <!-- Sticky Header Wrapper for Constant Control -->
+  <div class="sticky-header-container">
+    <!-- App Header Navigation Bar -->
+    <header class="app-navbar">
+      <div class="nav-brand" id="btn-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Holy Bible</h1>
+          <p>தமிழ் வேதாகமம்</p>
+        </div>
       </div>
-      <div class="brand-text">
-        <h1>Holy Bible</h1>
-        <p>தமிழ் வேதாகமம்</p>
+
+      <div class="nav-controls">
+        <!-- Search Trigger -->
+        <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+        <!-- Daily Verse Card -->
+        <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
+          <i class="fa-solid fa-sun"></i>
+          <span>Daily Verse</span>
+        </button>
+
+        <!-- Reading Plans -->
+        <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Plans</span>
+        </button>
+
+        <!-- Bookmarks & Highlights -->
+        <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Saved</span>
+        </button>
+
+        <!-- Settings Dropdown -->
+        <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
       </div>
-    </div>
+    </header>
 
-    <div class="nav-controls">
-      <!-- Search Trigger -->
-      <button class="nav-btn" id="btn-open-search" title="Search Bible / தேடு">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <span>Search</span>
-      </button>
+    <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
+    <section class="chapter-toolbar">
+      <div class="nav-jump-group">
+        <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
-      <!-- Daily Verse Card -->
-      <button class="nav-btn" id="btn-open-daily" title="Verse of the Day / இன்றைய வசனம்">
-        <i class="fa-solid fa-sun"></i>
-        <span>Daily Verse</span>
-      </button>
+        <button class="book-select-btn" id="btn-open-book-modal">
+          <i class="fa-solid fa-book-bible"></i>
+          <span id="current-book-label">John 1 | யோவான் 1</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
 
-      <!-- Reading Plans -->
-      <button class="nav-btn" id="btn-open-plans" title="Reading Plans / வாசிப்புத் திட்டங்கள்">
-        <i class="fa-solid fa-calendar-check"></i>
-        <span>Plans</span>
-      </button>
+        <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
 
-      <!-- Bookmarks & Highlights -->
-      <button class="nav-btn" id="btn-open-saved" title="Bookmarks & Notes">
-        <i class="fa-solid fa-bookmark"></i>
-        <span>Saved</span>
-      </button>
+        <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
 
-      <!-- Settings Dropdown -->
-      <button class="nav-btn nav-btn-icon" id="btn-open-settings" title="Settings / அமைப்புகள்">
-        <i class="fa-solid fa-sliders"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Navigation Toolbar (Book & Chapter Selector Bar) -->
-  <section class="chapter-toolbar">
-    <div class="nav-jump-group">
-      <button class="chap-nav-arrow" id="btn-prev-chap" title="Previous Chapter">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-
-      <button class="book-select-btn" id="btn-open-book-modal">
-        <i class="fa-solid fa-book-bible"></i>
-        <span id="current-book-label">John 1 | யோவான் 1</span>
-        <i class="fa-solid fa-caret-down"></i>
-      </button>
-
-      <button class="chap-nav-arrow" id="btn-next-chap" title="Next Chapter">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-
-      <button class="nav-btn play-chapter-btn" id="btn-play-chapter" title="Play Chapter Audio" style="margin-left: 0.5rem;" disabled>
-        <i class="fa-solid fa-play"></i>
-      </button>
-    </div>
-
-    <!-- Mode Selector Pills (Parallel | English | Tamil) -->
-    <div class="mode-pills-group">
-      <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
-      <button class="mode-pill" data-mode="en" id="pill-en">English</button>
-      <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
-    </div>
-  </section>
+      <!-- Mode Selector Pills (Parallel | English | Tamil) -->
+      <div class="mode-pills-group">
+        <button class="mode-pill active" data-mode="parallel" id="pill-parallel">Dual Parallel</button>
+        <button class="mode-pill" data-mode="en" id="pill-en">English</button>
+        <button class="mode-pill" data-mode="ta" id="pill-ta">தமிழ்</button>
+      </div>
+    </section>
+  </div>
 
   <!-- Main Reader Container -->
   <main id="reader-root">
