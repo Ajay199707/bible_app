@@ -7,8 +7,13 @@ let loadPromise = null;
 export function initBibleData() {
   if (bibleCache['en'] && bibleCache['ta']) return Promise.resolve(true);
 
-  const baseUrl = import.meta.env.BASE_URL || './';
-  const cleanBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+  let cleanBase = './';
+  if (typeof window !== 'undefined' && window.location.pathname.includes('/chapters/')) {
+    cleanBase = '../';
+  } else {
+    const baseUrl = import.meta.env.BASE_URL || './';
+    cleanBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+  }
 
   loadPromise = Promise.all([
     fetch(`${cleanBase}data/english_bible.json`).then(res => res.json()).then(data => { bibleCache['en'] = data; }),
