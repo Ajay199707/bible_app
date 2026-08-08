@@ -608,24 +608,6 @@ function updateReadingStreak() {
 // -------------------------------------------------------
 // CHAPTER COMPLETION TRACKING
 // -------------------------------------------------------
-export function markChapterRead(bookId, chapter) {
-  try {
-    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{"lastDate":"","streak":0,"completed":{}}');
-    const key = `${bookId}_${chapter}`;
-    if (!data.completed) data.completed = {};
-    data.completed[key] = true;
-    localStorage.setItem('bible_streak_v1', JSON.stringify(data));
-  } catch (e) {}
-}
-
-export function isChapterRead(bookId, chapter) {
-  try {
-    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{}');
-    return !!(data.completed && data.completed[`${bookId}_${chapter}`]);
-  } catch (e) { return false; }
-}
-
-// -------------------------------------------------------
 // MEDIA SESSION API: Lock screen / notification audio controls
 // -------------------------------------------------------
 function setupMediaSession(bookId, chapter) {
@@ -720,7 +702,13 @@ function showChaptersGrid(bookId) {
 
   let chapButtons = '';
   for (let c = 1; c <= book.chapters; c++) {
-    chapButtons += `<button class="chap-num-btn" data-chap="${c}">${c}</button>`;
+    const isRead = isChapterRead(bookId, c);
+    chapButtons += `
+      <button class="chap-num-btn ${isRead ? 'read' : ''}" data-chap="${c}" title="${isRead ? 'Completed' : ''}">
+        ${c}
+        ${isRead ? '<i class="fa-solid fa-check" style="font-size: 0.6rem; margin-left: 2px; color: var(--accent-gold);"></i>' : ''}
+      </button>
+    `;
   }
   chapContainer.innerHTML = chapButtons;
 

@@ -1,6 +1,6 @@
 import { getBookById } from '../data/books.js';
 import { getChapterScripture } from '../data/bibleData.js';
-import { isBookmarked, getVerseHighlight, getVerseNote } from './storage.js';
+import { isBookmarked, getVerseHighlight, getVerseNote, isChapterRead } from './storage.js';
 
 export function renderReaderContent(containerEl, bookId, chapter, options = {}) {
   const { viewMode = 'parallel', fontSize = 'md', lineHeight = 'relaxed', activeTtsVerse = -1 } = options;
@@ -78,6 +78,9 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-copy" title="Copy" data-action="copy">
             <i class="fa-solid fa-copy"></i>
           </button>
+          <button class="action-btn btn-share" title="Share this verse" data-action="share">
+            <i class="fa-solid fa-share-nodes"></i>
+          </button>
           <button class="action-btn btn-audio-verse" title="Listen (English + Tamil)" data-action="audio-verse">
             <i class="fa-solid fa-volume-high"></i>
           </button>
@@ -94,6 +97,7 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
+          <button class="action-btn btn-share" title="Share this verse" data-action="share"><i class="fa-solid fa-share-nodes"></i></button>
           <button class="action-btn btn-audio-verse" title="Listen (Tamil)" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;
@@ -108,6 +112,7 @@ export function renderReaderContent(containerEl, bookId, chapter, options = {}) 
           <button class="action-btn btn-highlight" title="Highlight" data-action="highlight"><i class="fa-solid fa-highlighter"></i></button>
           <button class="action-btn btn-note ${noteText ? 'has-note' : ''}" title="Notes" data-action="note"><i class="fa-solid fa-note-sticky"></i></button>
           <button class="action-btn btn-copy" title="Copy" data-action="copy"><i class="fa-solid fa-copy"></i></button>
+          <button class="action-btn btn-share" title="Share this verse" data-action="share"><i class="fa-solid fa-share-nodes"></i></button>
           <button class="action-btn btn-audio-verse" title="Listen (English)" data-action="audio-verse"><i class="fa-solid fa-volume-high"></i></button>
         </div>
       `;

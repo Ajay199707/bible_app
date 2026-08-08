@@ -158,7 +158,37 @@ export function getVerseNote(bookId, chapter, verse) {
   return map[key] ? map[key].text : '';
 }
 
-// READING PLAN PROGRESS
+// READING STREAK + CHAPTER COMPLETION
+export function markChapterRead(bookId, chapter) {
+  try {
+    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{"lastDate":"","streak":0,"completed":{}}');
+    const key = `${bookId}_${chapter}`;
+    if (!data.completed) data.completed = {};
+    data.completed[key] = true;
+    localStorage.setItem('bible_streak_v1', JSON.stringify(data));
+  } catch (e) {}
+}
+
+export function isChapterRead(bookId, chapter) {
+  try {
+    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{}');
+    return !!(data.completed && data.completed[`${bookId}_${chapter}`]);
+  } catch (e) { return false; }
+}
+
+export function updateReadingStreak() {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const data = JSON.parse(localStorage.getItem('bible_streak_v1') || '{"lastDate":"","streak":0,"completed":{}}');
+    if (data.lastDate === today) return data.streak || 0;
+    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    data.streak = data.lastDate === yesterday ? data.streak + 1 : 1;
+    data.lastDate = today;
+    localStorage.setItem('bible_streak_v1', JSON.stringify(data));
+    return data.streak;
+  } catch (e) { return 0; }
+}
+
 export function getPlanProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.PLANS);
