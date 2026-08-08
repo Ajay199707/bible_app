@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function loadScripture(bookId, chapter) {
+function loadScripture(bookId, chapter, targetVerse = null) {
   currentBookId = Number(bookId);
   currentChapter = Number(chapter);
   saveLastRead(currentBookId, currentChapter);
@@ -106,8 +106,20 @@ function loadScripture(bookId, chapter) {
     secondaryLang: settings.secondaryLang
   });
 
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (targetVerse) {
+    setTimeout(() => {
+      const activeRow = document.querySelector(`.verse-row[data-verse="${targetVerse}"]`);
+      if (activeRow) {
+        activeRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        activeRow.classList.add('flash-highlight');
+        setTimeout(() => {
+          activeRow.classList.remove('flash-highlight');
+        }, 3000);
+      }
+    }, 200);
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function applySettings(newSettings) {
@@ -584,7 +596,7 @@ function renderSavedModal() {
     html += `<div style="margin-bottom: 1.5rem;">` + bookmarks.map(b => {
       const book = getBookById(b.bookId);
       return `
-        <div class="search-result-item" onclick="window.jumpToSaved(${b.bookId}, ${b.chapter})">
+        <div class="search-result-item" onclick="window.jumpToSaved(${b.bookId}, ${b.chapter}, ${b.verse})">
           <div class="search-result-ref"><i class="fa-solid fa-bookmark" style="color: var(--accent-gold);"></i> ${book.nameEn} ${b.chapter}:${b.verse} (${book.nameTa} ${b.chapter}:${b.verse})</div>
         </div>
       `;
@@ -602,7 +614,7 @@ function renderSavedModal() {
       const book = getBookById(bId);
       const note = notesMap[key];
       return `
-        <div class="search-result-item" onclick="window.jumpToSaved(${bId}, ${chap})">
+        <div class="search-result-item" onclick="window.jumpToSaved(${bId}, ${chap}, ${vNum})">
           <div class="search-result-ref"><i class="fa-solid fa-note-sticky" style="color: var(--accent-blue);"></i> ${book.nameEn} ${chap}:${vNum}</div>
           <div style="font-size: 0.9rem; color: var(--text-main); margin-top: 0.2rem;">"${note.text}"</div>
         </div>
@@ -612,9 +624,9 @@ function renderSavedModal() {
 
   container.innerHTML = html;
 
-  window.jumpToSaved = (bId, chap) => {
+  window.jumpToSaved = (bId, chap, verse = null) => {
     closeModal('modal-saved');
-    loadScripture(bId, chap);
+    loadScripture(bId, chap, verse);
   };
 }
 

@@ -18,23 +18,35 @@ export function getDailyVerse() {
   for (let i = 0; i < dateStr.length; i++) {
     hash = dateStr.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const index = Math.abs(hash) % INSPIRATIONAL_VERSES.length;
-  const target = INSPIRATIONAL_VERSES[index];
+  const seed = Math.abs(hash);
 
-  const book = getBookById(target.bookId);
-  const scripture = getChapterScripture(target.bookId, target.chapter);
+  // 1. Pick a random book index
+  const bookIndex = seed % BIBLE_BOOKS.length;
+  const book = BIBLE_BOOKS[bookIndex];
 
-  const enV = scripture.en.find(v => v.verse === target.verse) || scripture.en[0];
-  const taV = scripture.ta.find(v => v.verse === target.verse) || scripture.ta[0];
+  // 2. Pick a random chapter index (offseting the seed slightly to avoid linear correlation)
+  const chapterNum = ((seed * 31) % book.chapters) + 1;
+
+  // 3. Get the chapter scripture to see how many verses it has
+  const scripture = getChapterScripture(book.id, chapterNum);
+  const enVerses = scripture.en || [];
+  const taVerses = scripture.ta || [];
+  const maxVerses = Math.min(enVerses.length, taVerses.length);
+
+  // 4. Pick a random verse index
+  const verseNum = maxVerses > 0 ? (((seed * 17) + 5) % maxVerses) + 1 : 1;
+
+  const enV = enVerses.find(v => v.verse === verseNum) || enVerses[0] || { text: '' };
+  const taV = taVerses.find(v => v.verse === verseNum) || taVerses[0] || { text: '' };
 
   return {
     bookId: book.id,
     bookNameEn: book.nameEn,
     bookNameTa: book.nameTa,
-    chapter: target.chapter,
-    verse: target.verse,
-    refEn: `${book.nameEn} ${target.chapter}:${target.verse}`,
-    refTa: `${book.nameTa} ${target.chapter}:${target.verse}`,
+    chapter: chapterNum,
+    verse: verseNum,
+    refEn: `${book.nameEn} ${chapterNum}:${verseNum}`,
+    refTa: `${book.nameTa} ${chapterNum}:${verseNum}`,
     textEn: enV.text,
     textTa: taV.text
   };
