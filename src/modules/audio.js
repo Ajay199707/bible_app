@@ -12,6 +12,7 @@ let playbackRate = 1.0;
 let onVerseHighlightCallback = null;
 let onEndCallback = null;
 let availableVoices = [];
+let activeUtterances = [];
 
 export function initAudio() {
   if (typeof window !== 'undefined' && !htmlAudioElement) {
@@ -91,11 +92,11 @@ function speakNextVerse() {
     return;
   }
 
-  // Try ResponsiveVoice first as it is cross-browser stable and avoids SpeechSynthesis bugs
-  if (typeof responsiveVoice !== 'undefined') {
-    playAudioStream(textToRead, itemLang);
-  } else if (synth) {
+  // Try Web Speech API first (local, fast, and does not require an API key or network)
+  if (synth) {
     playWebSpeech(textToRead, itemLang);
+  } else if (typeof responsiveVoice !== 'undefined') {
+    playAudioStream(textToRead, itemLang);
   } else {
     playAudioStream(textToRead, itemLang);
   }
@@ -104,8 +105,12 @@ function speakNextVerse() {
 function playWebSpeech(text, itemLang) {
   try {
     if (synth.paused) synth.resume();
+    // Cancel any previous stuck utterances
+    synth.cancel();
 
     currentUtterance = new SpeechSynthesisUtterance(text);
+    activeUtterances.push(currentUtterance); // Keep reference to prevent garbage collection!
+
     currentUtterance.rate = playbackRate;
     currentUtterance.pitch = 1.0;
     currentUtterance.volume = 1.0;
@@ -141,16 +146,20 @@ function playWebSpeech(text, itemLang) {
         currentUtterance.voice = matchedVoice;
       } else {
         // No system voice for this language, fallback to stream
+        activeUtterances = activeUtterances.filter(u => u !== currentUtterance);
         playAudioStream(text, itemLang);
         return;
       }
     } else {
       // If voices array is empty, fallback to stream for all languages
+      activeUtterances = activeUtterances.filter(u => u !== currentUtterance);
       playAudioStream(text, itemLang);
       return;
     }
 
     currentUtterance.onend = () => {
+      // Clean up reference
+      activeUtterances = activeUtterances.filter(u => u !== currentUtterance);
       if (isPlaying && !isPausedState) {
         activeVerseIndex++;
         speakNextVerse();
@@ -158,12 +167,16 @@ function playWebSpeech(text, itemLang) {
     };
 
     currentUtterance.onerror = (err) => {
+      activeUtterances = activeUtterances.filter(u => u !== currentUtterance);
       console.warn('WebSpeech error, trying Audio Stream fallback:', err);
       playAudioStream(text, itemLang);
     };
 
     synth.speak(currentUtterance);
   } catch (e) {
+    if (currentUtterance) {
+      activeUtterances = activeUtterances.filter(u => u !== currentUtterance);
+    }
     playAudioStream(text, itemLang);
   }
 }
@@ -286,6 +299,7 @@ export function stopAudio() {
   isPausedState = false;
   activeVerseIndex = -1;
   versesQueue = [];
+  activeUtterances = [];
 
   if (synth) {
     try { synth.cancel(); } catch (e) {}
