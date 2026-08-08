@@ -120,13 +120,13 @@ function playWebSpeech(text, itemLang) {
           matchedVoice = langVoices[0];
         }
         currentUtterance.voice = matchedVoice;
-      } else if (itemLang !== 'en') {
-        // No system voice for local language, fallback to stream
+      } else {
+        // No system voice for this language, fallback to stream
         playAudioStream(text, itemLang);
         return;
       }
-    } else if (itemLang !== 'en') {
-      // If voices array is empty, fallback to stream for local languages
+    } else {
+      // If voices array is empty, fallback to stream for all languages
       playAudioStream(text, itemLang);
       return;
     }
