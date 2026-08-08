@@ -170,8 +170,10 @@ function playWebSpeech(text, itemLang) {
 
     currentUtterance.onerror = (err) => {
       activeUtterances = activeUtterances.filter(u => u !== currentUtterance);
-      console.warn('WebSpeech error, trying Audio Stream fallback:', err);
-      playAudioStream(text, itemLang);
+      console.warn('WebSpeech error:', err);
+      if (isPlaying && !isPausedState && err.error !== 'interrupted' && err.error !== 'canceled') {
+        playAudioStream(text, itemLang);
+      }
     };
 
     synth.speak(currentUtterance);
