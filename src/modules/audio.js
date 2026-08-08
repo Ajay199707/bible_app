@@ -14,6 +14,11 @@ let onEndCallback = null;
 let availableVoices = [];
 
 export function initAudio() {
+  if (typeof window !== 'undefined' && !htmlAudioElement) {
+    try {
+      htmlAudioElement = new Audio();
+    } catch (e) {}
+  }
   stopAudio();
   if (synth) {
     const updateVoices = () => {
@@ -31,6 +36,11 @@ export function initAudio() {
 }
 
 export function playChapterVerses(verses, defaultLang = 'ta', rate = 1.0, onVerseHighlight = null, onComplete = null) {
+  if (typeof window !== 'undefined' && !htmlAudioElement) {
+    try {
+      htmlAudioElement = new Audio();
+    } catch (e) {}
+  }
   stopAudio();
 
   if (!verses || verses.length === 0) return;
@@ -202,32 +212,36 @@ function fallbackToGoogleTTS(cleanText, targetLang) {
   if (htmlAudioElement) {
     try {
       htmlAudioElement.pause();
-      htmlAudioElement.src = '';
+    } catch (e) {}
+  } else {
+    try {
+      htmlAudioElement = new Audio();
     } catch (e) {}
   }
 
-  htmlAudioElement = new Audio();
-  htmlAudioElement.src = ttsUrl;
-  htmlAudioElement.playbackRate = playbackRate;
+  if (htmlAudioElement) {
+    htmlAudioElement.src = ttsUrl;
+    htmlAudioElement.playbackRate = playbackRate;
 
-  htmlAudioElement.onended = () => {
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      speakNextVerse();
-    }
-  };
+    htmlAudioElement.onended = () => {
+      if (isPlaying && !isPausedState) {
+        activeVerseIndex++;
+        speakNextVerse();
+      }
+    };
 
-  htmlAudioElement.onerror = (err) => {
-    console.warn('Audio stream play error:', err);
-    if (isPlaying && !isPausedState) {
-      activeVerseIndex++;
-      if (onEndCallback) onEndCallback();
-    }
-  };
+    htmlAudioElement.onerror = (err) => {
+      console.warn('Audio stream play error:', err);
+      if (isPlaying && !isPausedState) {
+        activeVerseIndex++;
+        if (onEndCallback) onEndCallback();
+      }
+    };
 
-  htmlAudioElement.play().catch(err => {
-    console.warn('HTML5 Audio play blocked by browser policy:', err);
-  });
+    htmlAudioElement.play().catch(err => {
+      console.warn('HTML5 Audio play blocked by browser policy:', err);
+    });
+  }
 }
 
 export function pauseAudio() {
@@ -274,7 +288,6 @@ export function stopAudio() {
     try {
       htmlAudioElement.pause();
       htmlAudioElement.src = '';
-      htmlAudioElement = null;
     } catch (e) {}
   }
 
